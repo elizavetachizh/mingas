@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Company from './pages/company';
+import { Route, Routes } from "react-router-dom";
+import NoMatch from './pages/noMatch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  render () {
+    
+    return (
+      <div>
+       <h1>Hellow world</h1>
+       <Routes>
+         <Route path="/" element={<Company></Company>}></Route>
+         <Route path="*" element={<NoMatch></NoMatch>}></Route>
+       </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
