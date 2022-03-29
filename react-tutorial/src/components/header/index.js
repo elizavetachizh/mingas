@@ -1,11 +1,15 @@
 import React from "react";
-import { Container, Logo, Title, ButtonsContainer,LinksContainer,CompanyButton,ServicesButton,ContactButton,PressCenterButtons,ServiceCenterButton,Account } from "./styles";
+import { Container, LinkLogo, Logo, Title, ButtonsContainer,LinksContainer,CompanyButton,ServicesButton,ContactButton,PressCenterButtons,ServiceCenterButton } from "./styles";
 import HeaderLogo from "../../assets/png/mingaz_logo_color.png"
+import ButtonFun from "../button";
 
 export default function Header ({ currentPage }) {
   return(
     <Container>
-      <Logo to ="/" src={HeaderLogo}></Logo>
+       <LinkLogo to ="/">
+           <Logo  src={HeaderLogo}></Logo>
+       </LinkLogo>
+
       <Title>{currentPage}</Title>
       <ButtonsContainer>
         <LinksContainer>
@@ -15,7 +19,7 @@ export default function Header ({ currentPage }) {
         <PressCenterButtons  to="/Press-Center">Пресс-центр</PressCenterButtons>
         <ServiceCenterButton to="/Service-Center">Сервисный центр</ServiceCenterButton>
         </LinksContainer>
-        <Account>Личный кабинет</Account>
+        <ButtonFun infoButton={"Личный кабинет"}></ButtonFun>
       </ButtonsContainer>
     </Container>
   )

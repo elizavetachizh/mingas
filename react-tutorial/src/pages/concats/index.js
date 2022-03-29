@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../styles";
 import Header from "../../components/header";
-export default function Сontacts () {
+export default function Сontacts() {
   return (
     <Container>
       <Header  currentPage={"Contacts"}></Header>
