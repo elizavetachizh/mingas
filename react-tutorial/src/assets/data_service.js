@@ -1,5 +1,5 @@
 export const data = [
-    {cardImg: "../icons8.png",
+    {cardImg: "../../assets/png/icons8.png",
         cardDesc: "Газификация жилых домов"},
     {cardImg: "../../assets/png/master_icon.png",
         cardDesc: "Установка счётчиков газ"},

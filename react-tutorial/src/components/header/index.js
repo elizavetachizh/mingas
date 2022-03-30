@@ -19,7 +19,7 @@ export default function Header ({ currentPage }) {
         <PressCenterButtons  to="/Press-Center">Пресс-центр</PressCenterButtons>
         <ServiceCenterButton to="/Service-Center">Сервисный центр</ServiceCenterButton>
         </LinksContainer>
-        <ButtonFun infoButton={"Личный кабинет"}></ButtonFun>
+        <ButtonFun  backgroundColor={"blue"} infoButton={"Личный кабинет"}></ButtonFun>
       </ButtonsContainer>
     </Container>
   )

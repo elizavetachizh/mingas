@@ -1,0 +1,18 @@
+export const data = [
+    {cardImg: "../../assets/png/master_icon.png",
+        cardDate: "",
+        cardLink: "https://mingas.by/genocid-ne-imeet-sroka-davnosti/",
+        cardDesc: "Газификация жилых домов"},
+    {cardImg: "",
+        cardDate: "",
+        cardLink: "https://mingas.by/genocid-ne-imeet-sroka-davnosti/",
+        cardDesc: "Газификация жилых домов"},
+    {cardImg: "",
+        cardDate: "",
+        cardLink: "https://mingas.by/genocid-ne-imeet-sroka-davnosti/",
+        cardDesc: "Газификация жилых домов"},
+    {cardImg: "",
+        cardDate: "",
+        cardLink: "https://mingas.by/genocid-ne-imeet-sroka-davnosti/",
+        cardDesc: "Газификация жилых домов"},
+]

@@ -9,7 +9,6 @@ import {
     ServicesButton,
     Title
 } from "../header/styles";
-import HeaderLogo from "../../assets/png/mingaz_logo_color.png";
 import ButtonFun from "../button";
 import HeaderLogo from "../../assets/png/mingaz_logo_color.png"
 

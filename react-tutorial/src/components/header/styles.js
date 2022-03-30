@@ -8,10 +8,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center; 
   justify-content: space-around;
-  font-family: 'Play'; 
+  font-family: 'Fira Sans Condensed'; 
   font-size: 16px;
-  font-weight: 700;
-  line-height: 19px;
+  font-weight: 500;
+
 `;
 export const LinkLogo=styled(NavLink)`
   text-decoration: none`;

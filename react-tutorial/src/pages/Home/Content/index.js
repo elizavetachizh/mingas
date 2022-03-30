@@ -14,7 +14,7 @@ export default function ContentHome() {
                    <Text>Добро пожаловать на сайт <br/>
                        производственного республиканского <br/>
                        унитарного предприятия “МИНГАЗ”</Text>
-                   <ButtonFun infoButton={"Подробнее"}></ButtonFun>
+                   <ButtonFun backgroundColor={"blue"} infoButton={"Подробнее"}></ButtonFun>
                </DivText>
                <DivHand src={HandPhone}></DivHand>
            </DivContent>

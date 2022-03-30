@@ -6,7 +6,8 @@ export const Container = styled.div`
   justify-content: center;
   background-color: #E9F1F5;
   margin: 0px;
-padding: 50px 0`;
+  align-items: center;
+  padding: 50px 0`;
 
 export const Title = styled.h2`
   font-family: 'Play';
@@ -19,11 +20,11 @@ export const Title = styled.h2`
   justify-content: center;
   letter-spacing: 0.1em;
   color: #3A5868;
-
 `;
 
 export const DivInform = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-around;  
-align-items: center`;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;  
+  align-items: center`;

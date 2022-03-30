@@ -24,9 +24,9 @@ export const DivText = styled.div`
 `;
 
 export const Text = styled.p`
-  font-family: 'Tahoma';
+  font-family:'Fira Sans Condensed';
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 32px;
   line-height: 39px;
   align-items: center;

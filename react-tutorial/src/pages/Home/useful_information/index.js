@@ -9,16 +9,17 @@ export default function UsefulInform() {
        <Container>
            <Title>Полезная информация</Title>
            <DivInform>
-               {data.map((element)=> (
+               {data.map((element) => (
                    <LinkInform
                    key={element.cardDesc}
                    cardImg={element.cardImg}
+                   src={element.cardImg}
                    cardDesc={element.cardDesc}>
 
                    </LinkInform>
                ))}
            </DivInform>
-           <ButtonFun infoButton={"Подробнее"}></ButtonFun>
+           <ButtonFun backgroundColor={"blue"} justifyContent={"center"} infoButton={"Подробнее"}></ButtonFun>
        </Container>
    )
 }
