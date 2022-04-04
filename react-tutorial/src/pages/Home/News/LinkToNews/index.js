@@ -1,5 +1,5 @@
 import React from "react";
-import {DivNews,ImageLink,DateLink,TitleLink,DescLink} from "./styles";
+import {DivNews,ImageLink,DateLink,DescLink} from "./styles";
 
 export default function LinkNews({cardImg, cardDate, cardLink, cardDesc}) {
     return (

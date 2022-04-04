@@ -7,7 +7,6 @@ export default function Header ({ currentPage }) {
 
     const [navbar, setNavbar] = useState(false);
     const changeBackground = () => {
-        console.log(window.scrollY)
         if(window.scrollY >= 80) {
             setNavbar(true)
 
@@ -22,17 +21,17 @@ export default function Header ({ currentPage }) {
     <Container className={navbar && `active`}>
      <Background className={navbar && `active`}>
          <LinkLogo  to ="/">
-             <Logo className={navbar && `active`} src={HeaderLogo}></Logo>
+             <Logo src={HeaderLogo}></Logo>
          </LinkLogo>
 
          <Title>{currentPage}</Title>
          <ButtonsContainer >
              <LinksContainer>
-                 <CompanyButton className={navbar && `active`} to="/Company">О предприятии</CompanyButton>
-                 <ServicesButton className={navbar && `active`} to="/Services">Услуги</ServicesButton>
-                 <ContactButton className={navbar && `active`} to="/Contacts">Контакты</ContactButton>
-                 <PressCenterButtons className={navbar && `active`} to="/Press-Center">Пресс-центр</PressCenterButtons>
-                 <ServiceCenterButton className={navbar && `active`} to="/Service-Center">Сервисный центр</ServiceCenterButton>
+                 <CompanyButton  to="/company/history">О предприятии</CompanyButton>
+                 <ServicesButton  to="/Services">Услуги</ServicesButton>
+                 <ContactButton  to="/Contacts">Контакты</ContactButton>
+                 <PressCenterButtons  to="/Press-Center">Пресс-центр</PressCenterButtons>
+                 <ServiceCenterButton  to="/Service-Center">Сервисный центр</ServiceCenterButton>
              </LinksContainer>
              <ButtonFun  backgroundColor={"blue"} infoButton={"Личный кабинет"}></ButtonFun>
          </ButtonsContainer>

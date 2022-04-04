@@ -12,8 +12,6 @@ color:#3A5868;
 
 export const DateLink = styled.p``;
 
-export  const TitleLink = styled.p``;
-
 export const DescLink = styled.p``;
 
 export  const ImageLink = styled.img`
