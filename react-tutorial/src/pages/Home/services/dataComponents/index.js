@@ -4,7 +4,7 @@ import {ContainerServices, Imagecard, Textcard} from "./styles";
 export default function LinkServices({img, text}) {
     return(
         <ContainerServices>
-            <Imagecard src={img}></Imagecard>
+            <Imagecard src={require(`../../../../assets/icons_services/${img}.png`)}></Imagecard>
             <Textcard>{text}</Textcard>
         </ContainerServices>
     )

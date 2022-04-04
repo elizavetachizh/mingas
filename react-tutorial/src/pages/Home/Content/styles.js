@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const Container =styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;`;
+  //justify-content: center;
+  align-items: end;
+  height: 729px;
+`;
 
 export const Image = styled.img`
     width: 100%;
@@ -14,8 +16,8 @@ export const DivContent=styled.div`
   position: absolute;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
+  //align-items: end;
+  //flex-direction: row;
 `;
 
 export const DivText = styled.div`

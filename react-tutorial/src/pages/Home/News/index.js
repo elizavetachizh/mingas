@@ -6,24 +6,22 @@ import {data} from '../../../assets/data_news'
 import LinkNews from "./LinkToNews";
 
 
+
 export default function News() {
     return(
-        <Container>
-            <Title>Новости предприятия</Title>
-            <DivInform>
-                {data.map((element)=> (
-                   <LinkNews   key= {element.cardLink}
-
-                               cardImg = {element.cardImg}
-                               cardDate = {element.cardDate}
-                               cardLink={element.cardLink}
-                               cardDesc={element.cardDesc}>
-
-
-                   </LinkNews>
-                ))}
-            </DivInform>
-            <ButtonFun infoButton={"Показать ещё"} backgroundColor={"blue"}></ButtonFun>
+        <Container backgroundColor={"gray"}>
+                        <Title>Новости предприятия</Title>
+                        <DivInform>
+                            {data.map((element)=> (
+                                <LinkNews
+                                    cardImg = {element.cardImg}
+                                    cardDate = {element.cardDate}
+                                    cardLink={element.cardLink}
+                                    cardDesc={element.cardDesc}>
+                                </LinkNews>
+                            ))}
+                        </DivInform>
+                        <ButtonFun infoButton={"Показать ещё"} backgroundColor={"blue"}></ButtonFun>
         </Container>
     )
 }

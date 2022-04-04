@@ -3,10 +3,11 @@ import {Container, Title, DivInform} from "./styles";
 import ButtonFun from '../../../components/button/index';
 import LinkInform from "./components_link_inform";
 import {data} from "../../../assets/data";
+import background from '../../../assets/background/background.png'
 
 export default function UsefulInform() {
    return (
-       <Container>
+       <Container src={background}>
            <Title>Полезная информация</Title>
            <DivInform>
                {data.map((element) => (

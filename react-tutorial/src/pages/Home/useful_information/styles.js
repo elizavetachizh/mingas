@@ -24,7 +24,8 @@ export const Title = styled.h2`
 
 export const DivInform = styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
   flex-direction: row;
   justify-content: space-around;  
-  align-items: center`;
+  align-items: center;
+  padding-bottom: 50px`;

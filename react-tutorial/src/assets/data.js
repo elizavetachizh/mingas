@@ -1,10 +1,10 @@
 export const data = [
-    {cardImg: "../../assets/png/master_icon.png",
+    {cardImg: 1,
         cardDesc: "вызвать мастера"},
-    {cardImg: "../../assets/png/master_icon.png",
+    {cardImg: 1,
         cardDesc: "Отключение от газоснабжения"},
-    {cardImg: "../../assets/png/master_icon.png",
+    {cardImg: 1,
         cardDesc: "как связаться с нами"},
-    {cardImg: "../../assets/png/master_icon.png",
+    {cardImg: 1,
         cardDesc: "Узнать статус заявки"},
 ]

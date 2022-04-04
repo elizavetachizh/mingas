@@ -7,8 +7,8 @@ justify-content: center;
 align-items: center`;
 
 export  const ImageLink = styled.img`
-width: 50px;
-height: 50px`;
+width: 36px;
+height: 36px`;
 
 export const TextLink = styled.p`
   font-family: 'Play';

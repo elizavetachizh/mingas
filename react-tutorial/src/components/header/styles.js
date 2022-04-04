@@ -2,24 +2,57 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
-  width: 100%;
-  height: 102px;
-  background-color:#C8DCE7;
+ width: 100%;
+  height: 70px;
   display: flex;
   align-items: center; 
   justify-content: space-around;
   font-family: 'Fira Sans Condensed'; 
   font-size: 16px;
-  font-weight: 500;
-
+  position: sticky; 
+  top:0px;
+  z-index: 999;
+  .active {
+    background:#C8DCE7;
+    color: #314D5C;
+    opacity: 90%;
+  }
 `;
+
+export const Background= styled.div`
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  top:0px;
+  background: transparent;
+  z-index: 999;
+  .active {
+    background:#C8DCE7;
+    opacity: 90%;
+    color: #314D5C;
+  }
+`;
+
 export const LinkLogo=styled(NavLink)`
-  text-decoration: none`;
+ 
+`;
 
 export const Logo = styled.img`
-  width:70px;
-  height: 70px;
-  transform: rotate(90deg)`;
+  width:60px;
+  height: 60px;
+  transform: rotate(90deg);
+  background: transparent;
+  z-index: 999;
+  .active {
+    background:#C8DCE7;
+    opacity: 90%;
+  }
+`;
+
 
 export const Title = styled.h3``;
 
@@ -35,9 +68,12 @@ export const LinksContainer=styled.div`
   `;
 
 export const CompanyButton=styled(NavLink)`
-  color: #314D5C;
+  color: #fff;
   text-decoration: none;
   padding: 0px 20px 0px 20px;
+  .active {
+    color: #314D5C;
+  }
 `;
 
 export const ServicesButton=CompanyButton;

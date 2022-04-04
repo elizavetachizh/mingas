@@ -1,8 +1,5 @@
 import styled from "styled-components";
-
-export const Parallax = styled.img`
-width: 100%;
-
-  background-size: cover;
-  background-attachment: fixed;
-`;
+// export const ParallaxStyle = styled.div
+// `   width: 100%;
+//   height: 400px;
+// `;

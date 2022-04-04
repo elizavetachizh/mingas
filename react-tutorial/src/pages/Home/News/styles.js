@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const DivInform = styled.div`
 display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;`;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+margin: 30px 0`;

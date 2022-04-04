@@ -10,16 +10,18 @@ export  const Container = styled.div`
   align-items: center;`;
 
 export const ImageFont = styled.img`
-width: 20%;
+  width: 20%;
   filter: blur(3px);
+  margin-bottom: 50px;
 `;
 
 export const DivInform = styled.div`
-position: absolute;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;`;
+  flex-direction: column;
+`;
 
 export const Title = styled.h2`
   display: flex;

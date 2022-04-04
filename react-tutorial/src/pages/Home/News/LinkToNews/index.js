@@ -4,7 +4,7 @@ import {DivNews,ImageLink,DateLink,TitleLink,DescLink} from "./styles";
 export default function LinkNews({cardImg, cardDate, cardLink, cardDesc}) {
     return (
         <DivNews href={cardLink}>
-            <ImageLink src={cardImg}></ImageLink>
+            <ImageLink src={require(`../../../../assets/photo_news/${cardImg}.png`)}></ImageLink>
             <DateLink>{cardDate}</DateLink>
             <DescLink>{cardDesc}</DescLink>
         </DivNews>

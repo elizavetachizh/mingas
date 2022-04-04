@@ -4,7 +4,7 @@ import {ContentLink, ImageLink, TextLink} from "./styles";
 export default function LinkInform({cardImg, cardDesc}) {
     return (
         <ContentLink>
-            <ImageLink src={cardImg}></ImageLink>
+            <ImageLink src={require(`../../../../assets/icons_useful_inform/${cardImg}.png`)}></ImageLink>
             <TextLink>{cardDesc}</TextLink>
         </ContentLink>
     )

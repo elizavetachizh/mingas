@@ -1,10 +1,10 @@
 export const data = [
-    {cardImg: "../../assets/png/icons8.png",
+    {cardImg: 1,
         cardDesc: "Газификация жилых домов"},
-    {cardImg: "../../assets/png/master_icon.png",
+    {cardImg: 2,
         cardDesc: "Установка счётчиков газ"},
-    {cardImg: "../../assets/png/master_icon.png",
+    {cardImg:3,
         cardDesc: "как связаться с нами"},
-    {cardImg: "../../assets/png/master_icon.png",
+    {cardImg: 4,
         cardDesc: "Реализация продукции"},
 ]
