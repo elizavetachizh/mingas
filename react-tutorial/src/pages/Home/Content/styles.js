@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const Container =styled.div`
+export const DivImage =styled.div`
   display: flex;
-  //justify-content: center;
   align-items: end;
-  height: 729px;
+  width: 100%;
 `;
 
 export const Image = styled.img`

@@ -20,18 +20,18 @@ export default function Header ({ currentPage }) {
   return(
     <Container className={navbar && `active`}>
      <Background className={navbar && `active`}>
-         <LinkLogo  to ="/">
+         <LinkLogo to ="/">
              <Logo src={HeaderLogo}></Logo>
          </LinkLogo>
 
          <Title>{currentPage}</Title>
          <ButtonsContainer >
              <LinksContainer>
-                 <CompanyButton  to="/company/history">О предприятии</CompanyButton>
-                 <ServicesButton  to="/Services">Услуги</ServicesButton>
-                 <ContactButton  to="/Contacts">Контакты</ContactButton>
-                 <PressCenterButtons  to="/Press-Center">Пресс-центр</PressCenterButtons>
-                 <ServiceCenterButton  to="/Service-Center">Сервисный центр</ServiceCenterButton>
+                 <CompanyButton to="/company/history">О предприятии</CompanyButton>
+                 <ServicesButton to="/Services">Услуги</ServicesButton>
+                 <ContactButton to="/Contacts">Контакты</ContactButton>
+                 <PressCenterButtons to="/Press-Center">Пресс-центр</PressCenterButtons>
+                 <ServiceCenterButton to="/Service-Center">Сервисный центр</ServiceCenterButton>
              </LinksContainer>
              <ButtonFun  backgroundColor={"blue"} infoButton={"Личный кабинет"}></ButtonFun>
          </ButtonsContainer>

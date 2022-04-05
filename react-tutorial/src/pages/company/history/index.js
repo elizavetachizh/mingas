@@ -7,15 +7,16 @@ import {
     ManagementButton,
     StructureButton,
     WhatDoingCompany
-} from "../header_company/styles";
+} from "./styles";
 import Footer from "../../../components/footer";
 import photoHistory from "../../../assets/photo_news/1.png";
-
-
+import photoBackground from "../../../assets/background/page_3.png"
+import ContentHome from "../../Home/Content";
 
 export default function History() {
     return (
-        <Container>
+        <Container >
+            <ContentHome></ContentHome>
             <HeaderCompany currentPage={"history"}></HeaderCompany>
 
                 <DivTextPhoto>

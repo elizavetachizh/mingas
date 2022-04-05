@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes ,Route } from 'react-router-dom';
-import {Container, HistoryButton, ManagementButton, StructureButton, CareerButton, DocumentsButton, DivButton} from "./styles";
-import {Title} from "../../../components/header/styles";
+import {HeaderCompanyDiv, HistoryButton, ManagementButton, StructureButton, CareerButton, DocumentsButton, DivButton} from "./styles";
 import History from "../history";
 import Management from "../managment";
 import Structure from "../structure";
@@ -27,7 +26,7 @@ clickLink.forEach((element)=> {
 })
 export default function HeaderCompany({currentPage}) {
         return (
-           <Container>
+           <HeaderCompanyDiv>
                   <Routes>
                       <Route path="/company/history" component={<History></History>}></Route>
                       <Route path="/management" component={<Management></Management>}></Route>
@@ -35,9 +34,8 @@ export default function HeaderCompany({currentPage}) {
                       <Route path="/career" component={<Career></Career>}></Route>
                       <Route path="/documentation" component={<Documentation></Documentation>}></Route>
                   </Routes>
-               <Title>{currentPage}</Title>
                <Header></Header>
-               <ContentHome></ContentHome>
+               {/*<ContentHome></ContentHome>*/}
                <DivButton>
                    <HistoryButton href="/company/history">История предприятия</HistoryButton>
                    <ManagementButton href="/company/management">Руководство</ManagementButton>
@@ -47,7 +45,7 @@ export default function HeaderCompany({currentPage}) {
                </DivButton>
                <hr style={hr}
                />
-           </Container>
+           </HeaderCompanyDiv>
         )
     }
 

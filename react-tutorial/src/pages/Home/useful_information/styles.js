@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const DivUsefulInform = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #E9F1F5;
-  margin: 0px;
   align-items: center;
-  padding: 50px 0`;
+  padding: 50px 0;
+`;
 
 export const Title = styled.h2`
   font-family: 'Play';

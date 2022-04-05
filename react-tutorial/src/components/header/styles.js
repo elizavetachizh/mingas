@@ -2,11 +2,10 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
- width: 100%;
-  height: 70px;
+  height: 100px;
   display: flex;
   align-items: center; 
-  justify-content: space-around;
+  justify-content: space-between;
   font-family: 'Fira Sans Condensed'; 
   font-size: 16px;
   position: fixed; 
@@ -21,7 +20,7 @@ export const Container = styled.div`
 
 export const Background= styled.div`
   width: 100%;
-  height: 70px;
+  height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -30,13 +29,21 @@ export const Background= styled.div`
   top:0px;
   background: transparent;
   z-index: 2;
-  .active {
+ 
+  :active {
     background:#C8DCE7;
     color: #314D5C;
   }
 `;
 
 export const LinkLogo=styled(NavLink)`
+  :hover {
+    background-color: rgba(0,0,0,0);
+  }
+  .active {
+    background-color: rgba(0,0,0,0);
+    
+  }
 `;
 
 export const Logo = styled.img`
@@ -51,11 +58,13 @@ export const ButtonsContainer=styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
 `;
 
 export const LinksContainer=styled.div`
   display:flex;
   justify-content: center;
+  max-width: 720px;
   `;
 
 export const CompanyButton=styled(NavLink)`

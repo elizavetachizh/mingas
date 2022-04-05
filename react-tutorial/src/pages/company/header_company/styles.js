@@ -1,23 +1,22 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
 
-export const Container = styled.div`
-  width: 100%;
-  height: 100%;
+export const HeaderCompanyDiv = styled.div`
+
+display: flex;
+  flex-direction: column;`;
+
+export const DivButton = styled.div`
+  max-width: 1440px;
   font-family: 'Bilbo';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-`;
-
-
-export const DivButton = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
- margin: 50px 0px;
+ margin: 50px auto;
 `;
 
 export const HistoryButton = styled.a`
