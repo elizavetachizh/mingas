@@ -3,16 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "eclinter": "^1.0.0-alpha.1",
     "react": "^17.0.2",
+    "react-animated-slider": "^1.1.4",
     "react-devtools": "^4.24.2",
     "react-dom": "^17.0.2",
     "react-parallax": "^3.3.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +46,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "babel-jest": "^27.5.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^10.0.1"
   }
 }

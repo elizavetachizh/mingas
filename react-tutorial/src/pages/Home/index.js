@@ -7,6 +7,9 @@ import { Container, HomeContainer } from "./styles";
  import ParallaxDiv from "./parallax";
  import News from "./News";
  import Footer from "../../components/footer";
+ import Carousel from "./slider";
+ import {ItemOne, ItemThree, ItemTwo} from "./slider/styles";
+
 
  export default  function Home () {
   return (
@@ -14,6 +17,11 @@ import { Container, HomeContainer } from "./styles";
       <Header  currentPage={"Home"}></Header>
       <HomeContainer>
           <ContentHome></ContentHome>
+          <Carousel>
+              <ItemOne>Item 1</ItemOne>
+              <ItemTwo>Item 2</ItemTwo>
+              <ItemThree>Item 3</ItemThree>
+          </Carousel>
           <UsefulInform></UsefulInform>
           <HomeServices></HomeServices>
           <ParallaxDiv></ParallaxDiv>

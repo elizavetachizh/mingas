@@ -6,7 +6,7 @@ export const DivUsefulInform = styled.div`
   justify-content: center;
   background-color: #E9F1F5;
   align-items: center;
-  padding: 50px 0;
+  height: 473px;
 `;
 
 export const Title = styled.h2`
