@@ -6,6 +6,12 @@ const buttonBackgroundColor = {
     blue: `
     background-color: #314D5C;
     color: #FFF`,
+    border: `
+    color: #FFF;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: rgba(0,0,0,0);
+    `,
 };
 
 export const Button = styled.button`
@@ -17,6 +23,5 @@ export const Button = styled.button`
   height: 40px;
   left: 1135px;
   top: 36px;
-  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.25));
   ${({backgroundColor})=> buttonBackgroundColor[backgroundColor]}
 `;

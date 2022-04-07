@@ -6,9 +6,23 @@ export const Container = styled.div`
   background-image: url("../../../assets/background/page_3.png");
 `;
 
-export const DivAboutManagement = styled.div`
+export const DivAboutManagementBackground = styled.div`
 max-width: 1440px;
 margin: 0px auto`;
+
+export const DivAboutmanagementWhiteFont = styled.div`
+  //position: absolute;
+  max-width: 1155px;
+  height: auto;
+  margin: 0 auto;
+  left: 230px;
+  top: 356px;
+
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+`;
+
 
 export const DivBasicManagement = styled.div`
   max-width: 1440px;

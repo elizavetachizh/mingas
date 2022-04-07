@@ -6,7 +6,7 @@ export const ContainerLeaders = styled.div`
     justify-content: center;
     align-items: center;
   width: 200px;
-  height: 354px;
+  height: 250px;
   outline: 2px solid #000; /* Чёрная рамка */
   border: 3px solid #fff; /* Белая рамка */
 }

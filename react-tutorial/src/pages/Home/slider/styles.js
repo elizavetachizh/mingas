@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
-export const ItemOne = styled.div`
-background-color: #61dafb`;
-export const ItemTwo = styled.div`
-background-color: navajowhite`;
+export const ItemOne = styled.img`
+`;
+export const ItemTwo = ItemOne;
 
-export const ItemThree = styled.div`
-background-color: blueviolet`;
+export const ItemThree =ItemOne;
 
 export const Main = styled.div`
-  width: 450px;
-  height: 150px;
+  width: 500px;
   display: flex;
   align-items: center;
 `;
@@ -23,6 +20,11 @@ export const WindowDiv = styled.div`
 export const PagesContainer = styled.div`
   height: 100%;
   display: flex;
+  
+  transition: translate;
+  transition-property: transform;
+  //transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 `;
 
 export const FaChevronLeft = styled.img`

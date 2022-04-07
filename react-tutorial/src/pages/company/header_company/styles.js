@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderCompanyDiv = styled.div`
-
-display: flex;
+  display: flex;
   flex-direction: column;`;
 
 export const DivButton = styled.div`
@@ -16,12 +15,13 @@ export const DivButton = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
- margin: 50px auto;
+ margin: 100px auto;
 `;
 
 export const HistoryButton = styled.a`
-text-decoration: none;
+  text-decoration: none;
   color: #314D5C;
+  margin: 0px 14px;
   :active {
     color: #A69B14
   }

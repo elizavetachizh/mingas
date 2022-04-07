@@ -37,12 +37,22 @@ width: 40%`;
 export const WhatDoingCompany = styled.div`
   max-width: 1440px;
   margin: 0px auto;
+  display: flex;
+  flex-direction: column;
   h2 {
     font-family: 'Bilbo';
     font-style: normal;
-    font-weight: 400;
     font-size: 16px;
-    line-height: 20px;
     color: #314D5C;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    
   }
+`;
+
+export const WhatDoingCompaniInform = styled.div`
+display: flex;
+  flex-direction: column;
+
 `;

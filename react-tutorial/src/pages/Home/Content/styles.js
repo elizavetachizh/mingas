@@ -3,7 +3,13 @@ import styled from "styled-components";
 export const DivImage =styled.div`
   display: flex;
   align-items: end;
-  width: 100%;
+  max-width: 100%;
+  height: 700px;
+  @media (max-width: 1406px) {
+    height: 600px;
+    width: 100%;
+  }
+  
 `;
 
 export const Image = styled.img`
