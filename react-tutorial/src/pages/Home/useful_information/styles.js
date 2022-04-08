@@ -10,7 +10,7 @@ export const DivUsefulInform = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: 'Play';
+  font-family: Bilbo;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;

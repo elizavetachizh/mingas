@@ -38,7 +38,7 @@ export const DivUp = styled.div`
 export const DivDown = styled.div`
   font-style: normal;
   font-size: 18px;
-  font-family: 'Fira Sans Condensed';
+  font-family: Bilbo;
   width: 100%;
   display: grid;
   text-align: center;

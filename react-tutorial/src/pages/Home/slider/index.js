@@ -9,7 +9,7 @@ const TRANSITION_DURATION = 300;
  export default function Carousel({children, infinite}) {
      const[pages, setPages] = useState([]);
      const [offset, setOffset] = useState(0);
-    const [width, setWidth] = useState(450);
+    const [width, setWidth] = useState(500);
      const [clonesCount, setClonesCount] = useState({ head: 0, tail: 0 })
      const [transitionDuration, setTransitionDuration] = useState(300);
 
@@ -31,7 +31,6 @@ const TRANSITION_DURATION = 300;
      useEffect(()=> {
          const resizeHandler = () => {
              const windowElWidth = windowElRef.current.offsetWidth
-             console.log('resized', windowElWidth)
              setWidth(windowElWidth)
              setOffset(-(clonesCount.head * width)) // to prevent wrong offset
          }
@@ -78,10 +77,10 @@ const TRANSITION_DURATION = 300;
          })
      }
      const handleRightArrowClick = () => {
-         setOffset((currentOffset)=> {
-             const newOffset = currentOffset - PAGE_WIDTH;
-             const maxOffset = -(PAGE_WIDTH * (pages.length-1))
-             return Math.max(newOffset, maxOffset);
+         setOffset((currentOffset) => {
+             const newOffset = currentOffset - width
+             const maxOffset = -(width * (pages.length - 1))
+             return Math.max(newOffset, maxOffset)
          })
      }
 

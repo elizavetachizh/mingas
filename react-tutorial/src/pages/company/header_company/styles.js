@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const HeaderCompanyDiv = styled.div`
   display: flex;
-  flex-direction: column;`;
+  flex-direction: column;
+  margin: 6% auto;
+`;
 
 export const DivButton = styled.div`
   max-width: 1440px;
@@ -15,7 +17,7 @@ export const DivButton = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
- margin: 100px auto;
+ margin: 10px auto;
 `;
 
 export const HistoryButton = styled.a`

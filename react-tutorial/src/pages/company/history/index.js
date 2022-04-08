@@ -2,25 +2,21 @@ import React from "react";
 import {Container} from "../styles";
 import HeaderCompany from "../header_company";
 import {
-     DivText, DivTextPhoto, DocumentsButton,
-    HistoryButton, ImageDiv,
-    ManagementButton,
-    StructureButton,
+     DivText, DivTextPhoto, ImageDiv,
     WhatDoingCompany,
     WhatDoingCompaniInform
 } from "./styles";
 import Footer from "../../../components/footer";
 import photoHistory from "../../../assets/photo_news/1.png";
 import ContentHome from "../../Home/Content";
-import {ContainderWhatDoingMinGaz} from "./whatDoingMinGaz/styles";
 import {data} from "../../../assets/whatDoingMinGaz"
-import {DivDown} from "../../Home/services/styles";
-import LinkServices from "../../Home/services/dataComponents";
 import WhatDoingMinGaz from "./whatDoingMinGaz";
+import Header from "../../../components/header";
 
 export default function History() {
     return (
         <Container >
+            <Header></Header>
             <ContentHome></ContentHome>
             <HeaderCompany currentPage={"history"}></HeaderCompany>
 

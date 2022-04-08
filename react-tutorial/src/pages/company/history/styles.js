@@ -8,11 +8,6 @@ text-decoration: none;
   }
 `;
 
-export const ManagementButton = HistoryButton;
-export const StructureButton = HistoryButton;
-export const CareerButton = HistoryButton;
-export const DocumentsButton = HistoryButton;
-
 export const DivTextPhoto = styled.div`
   max-width: 1440px;
   display: flex;
@@ -47,12 +42,10 @@ export const WhatDoingCompany = styled.div`
     font-weight: 600;
     line-height: 1;
     text-transform: uppercase;
-    
   }
 `;
 
 export const WhatDoingCompaniInform = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
-
 `;

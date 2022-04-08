@@ -11,21 +11,18 @@ max-width: 1440px;
 margin: 0px auto`;
 
 export const DivAboutmanagementWhiteFont = styled.div`
-  //position: absolute;
   max-width: 1155px;
   height: auto;
   margin: 0 auto;
   left: 230px;
   top: 356px;
-
   background: #FFFFFF;
   border: 1px solid #000000;
   box-sizing: border-box;
 `;
 
-
 export const DivBasicManagement = styled.div`
-  max-width: 1440px;
+  max-width: 90%;
   font-family: 'Bilbo';
   font-style: normal;
   font-weight: 400;
@@ -33,27 +30,30 @@ export const DivBasicManagement = styled.div`
   line-height: 20px;
   color: #314D5C;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   margin: 50px auto;
 `;
 
-export const FullName = styled.h2``;
+export const FullName = styled.h2`
+  margin: 0
+`;
 
-export const Position = styled.h2``;
+export const Position = styled.h2`
+  margin: 0
+`;
 export const DivPhotoAndDescription = styled.div`
   display: flex;
-  flex-direction: row;
+  width: 50%;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 `;
 
 export const Photo = styled.img`
+  width: 30%`;
 
-  width: 300px`;
-
-export const Description = styled.p`
-width: 50%`;
+export const Description = styled.p``;
 
 export const DivLeadersPhotoPosition = styled.div`
   margin:50px;

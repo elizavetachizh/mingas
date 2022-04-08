@@ -6,13 +6,12 @@ import Management from "../managment";
 import Structure from "../structure";
 import Career from "../career";
 import Documentation from "../documentation";
-import ContentHome from "../../Home/Content";
 import Header from "../../../components/header";
 
 const hr = {
     display: 'flex',
-    'justify-content': 'center',
-    'align-items': 'center',
+    'justifyContent': 'center',
+    'alignItems': 'center',
     width: '60%'
 }
 
@@ -35,7 +34,6 @@ export default function HeaderCompany({currentPage}) {
                       <Route path="/documentation" component={<Documentation></Documentation>}></Route>
                   </Routes>
                <Header></Header>
-               {/*<ContentHome></ContentHome>*/}
                <DivButton>
                    <HistoryButton href="/company/history">История предприятия</HistoryButton>
                    <ManagementButton href="/company/management">Руководство</ManagementButton>

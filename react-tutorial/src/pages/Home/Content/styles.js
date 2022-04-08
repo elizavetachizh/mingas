@@ -4,17 +4,21 @@ export const DivImage =styled.div`
   display: flex;
   align-items: end;
   max-width: 100%;
-  height: 700px;
+  max-height: 100%;
+  position: relative;
   @media (max-width: 1406px) {
     height: 600px;
     width: 100%;
   }
-  
 `;
 
 export const Image = styled.img`
     width: 100%;
-    position: relative`;
+  @media (max-width: 1300px) {
+    max-height: 100%;
+    margin: 0 auto;
+  }
+    `;
 
 export const DivContent=styled.div`
   width: 100%;
@@ -28,10 +32,12 @@ export const DivContent=styled.div`
 export const DivText = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items:flex-end;
 `;
 
 export const Text = styled.p`
-  font-family:'Fira Sans Condensed';
+  font-family: Bilbo;
   font-style: normal;
   font-weight: bold;
   font-size: 32px;

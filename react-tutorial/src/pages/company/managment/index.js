@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderCompany from "../header_company";
-import backgroundPhoto from '../../../assets/background/page_3.png'
 import {Container, DivAboutManagementBackground, DivAboutmanagementWhiteFont, DivBasicManagement, DivPhotoAndDescription, FullName, Position, Photo, Description, DivLeadersPhotoPosition} from "./styles";
 import director from '../../../assets/company/director.jpg'
 import {data} from "../../../assets/data_management"
@@ -8,32 +7,31 @@ import Leaders from "./divmagement";
 import Footer from "../../../components/footer";
 import backgroundImagePng from "../../../assets/background/background_image.png"
 import Header from "../../../components/header";
-import ContentHome from "../../Home/Content";
 
 const backgroundImage ={
-    'background-image': `url(${backgroundImagePng})`,
-    'background-repeat':"no-repeat",
-    'background-size': '100%',
+    'backgroundImage': `url(${backgroundImagePng})`,
+    'backgroundRepeat':"no-repeat",
+    'backgroundSize': '100%',
     margin: '0 auto',
 }
 
 export default function Management() {
     return (
      <Container>
+         <Header backgroundHeader="blue"></Header>
          <HeaderCompany currentPage={"management"}></HeaderCompany>
          <DivAboutManagementBackground style={backgroundImage}>
              <DivAboutmanagementWhiteFont>
                  <DivBasicManagement>
-                     <FullName>ФИО</FullName>
-                     <Position>Должность</Position>
                      <DivPhotoAndDescription>
-
+                         <FullName>ФИО</FullName>
+                         <Position>Должность</Position>
                          <Description>Руководство текущей деятельностью АО «МОСГАЗ» согласно уставу осуществляет генеральный директор,
                              избираемый Общим собранием акционеров сроком на три года.
                              Генеральный директор подотчетен Общему собранию акционеров и Совету директоров Общества.
                          </Description>
-                         <Photo src={director}></Photo>
                      </DivPhotoAndDescription>
+                     <Photo src={director}></Photo>
                  </DivBasicManagement>
                  <DivLeadersPhotoPosition>
                      {data.map((element)=> (

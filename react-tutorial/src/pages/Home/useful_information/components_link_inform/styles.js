@@ -11,7 +11,7 @@ width: 36px;
 height: 36px`;
 
 export const TextLink = styled.p`
-  font-family: 'Play';
+  font-family: Bilbo;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

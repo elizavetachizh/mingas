@@ -12,10 +12,10 @@ import { Container, HomeContainer } from "./styles";
  export default  function Home () {
   return (
     <Container>
-      <Header  currentPage={"Home"}></Header>
+      <Header></Header>
       <HomeContainer>
           <ContentHome></ContentHome>
-          <SliderAuto></SliderAuto>
+          {/*<SliderAuto></SliderAuto>*/}
           <UsefulInform></UsefulInform>
           <HomeServices></HomeServices>
           <ParallaxDiv></ParallaxDiv>

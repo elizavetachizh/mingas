@@ -5,7 +5,8 @@ export default function Services () {
   return (
     <Container>
       <Header  currentPage={"Services"}></Header>
-      <h1>Услуги</h1>
+        <Tittle></Tittle>
+
     </Container>
   )
 }
