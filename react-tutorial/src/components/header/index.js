@@ -15,37 +15,30 @@ export default function Header ({ currentPage, backgroundHeader }) {
         if(window.scrollY >= 80) {
             setNavbar(true)
         } else {
-        setNavbar(false)
+            setNavbar(false)
         }}
 
     window.addEventListener('scroll', changeBackground)
 
-    const [isDefaultColor, setIsDefaultColor] = useState(false);
-    const changeColor = () => {
-        if(window.addEventListener('click', changeColor)) {
-            setIsDefaultColor(true)
-        }
-    }
-
     return(
-    <Container backgroundHeader={backgroundHeader} className={navbar && `opacity`}>
-        <Background backgroundHeader={backgroundHeader} className={navbar && `opacity`}>
-            <LinkLogo to ="/">
-                <Logo src={HeaderLogo}></Logo>
-            </LinkLogo>
+        <Container backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
+            <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
+                <LinkLogo to ="/">
+                    <Logo src={HeaderLogo} />
+                </LinkLogo>
 
-            <Title>{currentPage}</Title>
-            <ButtonsContainer >
-                <LinksContainer>
-                    <CompanyButton className={isDefaultColor && 'color'} to="/company/history">О предприятии</CompanyButton>
-                    <ServicesButton  to="/Services">Услуги</ServicesButton>
-                    <ContactButton  to="/Contacts">Контакты</ContactButton>
-                    <PressCenterButtons  to="/Press-Center">Пресс-центр</PressCenterButtons>
-                    <ServiceCenterButton  to="/Service-Center">Сервисный центр</ServiceCenterButton>
-                </LinksContainer>
-                <ButtonFun  backgroundColor={"border"} infoButton={"Личный кабинет"}></ButtonFun>
-            </ButtonsContainer>
-        </Background>
-    </Container>
-  )
+                <Title>{currentPage}</Title>
+                <ButtonsContainer >
+                    <LinksContainer>
+                        <CompanyButton to="/company/history">О предприятии</CompanyButton>
+                        <ServicesButton  to="/Services">Услуги</ServicesButton>
+                        <ContactButton  to="/Contacts">Контакты</ContactButton>
+                        <PressCenterButtons  to="/Press-Center">Пресс-центр</PressCenterButtons>
+                        <ServiceCenterButton  to="/Service-Center">Сервисный центр</ServiceCenterButton>
+                    </LinksContainer>
+                    <ButtonFun  backgroundColor={"border"} infoButton={"Личный кабинет"} />
+                </ButtonsContainer>
+            </Background>
+        </Container>
+    )
 }

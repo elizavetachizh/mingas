@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "../styles";
 import Header from "../../components/header";
+import {Tittle} from "./styles"
 export default function Services () {
   return (
     <Container>

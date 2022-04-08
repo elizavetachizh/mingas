@@ -57,13 +57,14 @@ export const LinksContainer = styled.div`
 `;
 
 export const CompanyButton = styled(NavLink)`
-
   text-decoration: none;
-  padding: 0px 20px 0px 20px;
+  padding: 0 20px;
   color: #2d9cdb;
-  .color {
+
+  &.active {
     color: #fff
-  }
+  } {
+}
 `;
 
 export const ServicesButton = CompanyButton;
