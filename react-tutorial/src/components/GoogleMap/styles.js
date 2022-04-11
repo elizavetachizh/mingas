@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const DivMap = styled.div`
-    width: 80vw;
-  height: 70vh;
+    width: 70vw;
+    height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const defaultTheme = [

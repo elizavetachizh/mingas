@@ -36,7 +36,6 @@ export default function AutoComplete({isLoaded, onSelect}) {
                 // by setting the second parameter to "false"
                 setValue(description, false);
                 clearSuggestions();
-        console.log(description)
 
                 // Get latitude and longitude via utility functions
                 getGeocode({ address: description })
@@ -47,9 +46,7 @@ export default function AutoComplete({isLoaded, onSelect}) {
                     })
                     .catch((error) => {
                         console.log("😱 Error: ", error);
-
                     });
-
             };
 
     const renderSuggestions = () =>
@@ -78,7 +75,7 @@ export default function AutoComplete({isLoaded, onSelect}) {
                                value={value}
                                onChange={handleInput}
                                disabled={!ready}
-                               placeholder="Where are you going?"
+                               placeholder="Куда вам необходимо?"
             ></InputAutoComplete>
             {/* We can use the "status" to decide whether we should display the dropdown or not */}
             {status === "OK" && <ul>{renderSuggestions()}</ul>}

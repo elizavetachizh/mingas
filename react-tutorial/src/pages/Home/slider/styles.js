@@ -16,6 +16,12 @@ export const WindowDiv = styled.div`
   height: 100%;
   width: 100%;
   overflow: hidden;
+  
+  img {
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.3s;
+  }
 `;
 export const PagesContainer = styled.div`
   height: 100%;

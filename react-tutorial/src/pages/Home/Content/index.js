@@ -4,9 +4,8 @@ import HandPhone from '../../../assets/png/Hand_phone.png'
 import fire from '../../../assets/png/fire.png'
 import {DivImage, Image, DivContent, DivText, Text, DivHand} from "./styles";
 import ButtonFun from "../../../components/button";
-import Carousel from "../slider";
 import {ItemOne, ItemTwo} from "../slider/styles";
-
+import Carousel from "../slider";
 
 export default function ContentHome() {
 
@@ -22,17 +21,7 @@ export default function ContentHome() {
                   </DivText>
                   {/*<DivHand src={HandPhone}></DivHand>*/}
                   <div className="app__main-container">
-                      <Carousel infinite>
-                          <Carousel.Page>
-                              <img src={fire}/>
-                          </Carousel.Page>
-                          <Carousel.Page>
-                              <img src={HandPhone}/>
-                          </Carousel.Page>
-                          <Carousel.Page>
-                              <img src={fire}/>
-                          </Carousel.Page>
-                      </Carousel>
+                 <Carousel></Carousel>
                   </div>
               </DivContent>
           </DivImage>

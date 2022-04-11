@@ -23,5 +23,6 @@ export const Button = styled.button`
   height: 40px;
   left: 1135px;
   top: 36px;
+  cursor: pointer;
   ${({backgroundColor})=> buttonBackgroundColor[backgroundColor]}
 `;

@@ -7,7 +7,6 @@ import { Container, HomeContainer } from "./styles";
  import ParallaxDiv from "./parallax";
  import News from "./News";
  import Footer from "../../components/footer";
- import SliderAuto from "./sliderAuto";
 
  export default  function Home () {
   return (
@@ -15,7 +14,6 @@ import { Container, HomeContainer } from "./styles";
       <Header></Header>
       <HomeContainer>
           <ContentHome></ContentHome>
-          {/*<SliderAuto></SliderAuto>*/}
           <UsefulInform></UsefulInform>
           <HomeServices></HomeServices>
           <ParallaxDiv></ParallaxDiv>
