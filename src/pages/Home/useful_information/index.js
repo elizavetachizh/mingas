@@ -1,7 +1,7 @@
 import React from "react";
 import {DivUsefulInform,Title, DivInform} from "./styles";
 import {Container} from "../styles";
-import ButtonFun from '../../../components/button/index';
+import ButtonFun from '../../../components/button';
 import LinkInform from "./components_link_inform";
 import {data} from "../../../assets/data";
 import background from '../../../assets/background/background.png'
