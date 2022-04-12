@@ -20,12 +20,27 @@ display: flex;
 flex-direction: column;`;
 
 export const DivAfterAndBefore = styled.div`
-  position: relative;
-  &::after {
-    content: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-right.png?2");
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+background: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-left.png?1") left 390px no-repeat;
   }
-  &:before {
-    background-position: left 596px;
-content: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-left.png?1") ;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-right.png?2") right bottom no-repeat
   }
 `;

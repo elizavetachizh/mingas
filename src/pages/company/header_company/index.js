@@ -15,14 +15,6 @@ const hr = {
     width: '60%'
 }
 
-const clickLink = document.querySelectorAll(DivButton)
-clickLink.forEach((element)=> {
-    element.addEventListener('click', function (){
-        element.classList.toggle("red")
-    }
-)
-
-})
 export default function HeaderCompany({currentPage}) {
         return (
            <HeaderCompanyDiv>
@@ -35,11 +27,11 @@ export default function HeaderCompany({currentPage}) {
                   </Routes>
                <Header></Header>
                <DivButton>
-                   <HistoryButton href="/company/history">История предприятия</HistoryButton>
-                   <ManagementButton href="/company/management">Руководство</ManagementButton>
-                   <StructureButton href="/company/structure">Структура предприятия</StructureButton>
-                   <CareerButton href="/company/career">Карерьера в УП "Мингаз"</CareerButton>
-                   <DocumentsButton href="/company/documentation">Документы</DocumentsButton>
+                   <HistoryButton to="/company/history">История предприятия</HistoryButton>
+                   <ManagementButton to="/company/management">Руководство</ManagementButton>
+                   <StructureButton to="/company/structure">Структура предприятия</StructureButton>
+                   <CareerButton to="/company/career">Карерьера в УП "Мингаз"</CareerButton>
+                   <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
                </DivButton>
                <hr style={hr}
                />

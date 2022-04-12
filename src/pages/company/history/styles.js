@@ -31,7 +31,7 @@ width: 40%`;
 
 export const WhatDoingCompany = styled.div`
   max-width: 1440px;
-  margin: 0px auto;
+  margin: 0px auto 6%;
   display: flex;
   flex-direction: column;
   h2 {

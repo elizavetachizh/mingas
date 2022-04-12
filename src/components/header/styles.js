@@ -63,8 +63,7 @@ export const CompanyButton = styled(NavLink)`
 
   &.active {
     color: #fff
-  } {
-}
+  }
 `;
 
 export const ServicesButton = CompanyButton;

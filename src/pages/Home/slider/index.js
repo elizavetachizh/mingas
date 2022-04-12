@@ -1,37 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { images } from "../../../assets/images";
+import React from "react";
+import {images} from "../../../assets/images"
 import {Main, WindowDiv} from "./styles";
+import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+import {DivContent, DivInformAbout, DivText, Text} from "../Content/styles";
+import ButtonFun from "../../../components/button";
 
-export default function Carousel() {
-    const [count, setCount] = useState(0);
-    const [mousedOver, setMousedOver] = useState(false);
-
-    useEffect(() => {
-        // set an interval timer if we are currently moused over
-        if (mousedOver) {
-            const timer = setInterval(() => {
-                // cycle prevCount using mod instead of checking for hard-coded length
-                setCount((prevCount) => (prevCount + 1) % images.length);
-            }, 2000);
-            // automatically clear timer the next time this effect is fired or
-            // the component is unmounted
-            return () => clearInterval(timer);
-        } else {
-            // otherwise (not moused over), reset the counter
-            setCount(0);
-        }
-        // the dependency on mousedOver means that this effect is fired
-        // every time mousedOver changes
-    }, [mousedOver]);
+export default function CarouselFun() {
 
     return (
         <Main>
-            <WindowDiv
-                // just set mousedOver here instead of calling update/origCount
-                onMouseOver={() => setMousedOver(true)}
-                onMouseOut={() => setMousedOver(false)}
-            >
-                <img src={images[count].source} alt={images.name} />
+            <WindowDiv>
+                <Carousel
+                    plugins={[
+                        'infinite',
+                        {
+                            resolve: autoplayPlugin,
+                            options: {
+                                interval: 5000,
+                            }
+                        },
+                    ]}
+                    animationSpeed={1000}
+                >
+                        <DivText>
+                           <DivInformAbout>
+                               <Text>Добро пожаловать на сайт <br/>
+                                   производственного республиканского <br/>
+                                   унитарного предприятия “МИНГАЗ”</Text>
+                               <ButtonFun backgroundColor={"blue"} infoButton={"Подробнее"}></ButtonFun>
+                           </DivInformAbout>
+                            <img src={images[0].source}/>
+                        </DivText>
+
+
+                        <DivText>
+
+                           <DivInformAbout>
+                               <Text>dthytjusftgjfkj <br/>
+                                   унитарного предприятия “МИНГАЗ”</Text>
+                               <ButtonFun backgroundColor={"blue"} infoButton={"Подробнее"}></ButtonFun>
+                           </DivInformAbout>
+                            <img src={images[1].source}/>
+                        </DivText>
+                </Carousel>
             </WindowDiv>
         </Main>
     );

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 
 export const HeaderCompanyDiv = styled.div`
   display: flex;
@@ -20,11 +21,12 @@ export const DivButton = styled.div`
  margin: 10px auto;
 `;
 
-export const HistoryButton = styled.a`
+export const HistoryButton = styled(NavLink)`
   text-decoration: none;
   color: #314D5C;
   margin: 0px 14px;
-  :active {
+  
+  &.active {
     color: #A69B14
   }
 `;
@@ -34,20 +36,3 @@ export const ManagementButton = HistoryButton;
 export const StructureButton = HistoryButton;
 export const CareerButton = HistoryButton;
 export const DocumentsButton = HistoryButton;
-
-export const DivTextPhoto = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0px;
-`;
-
-
-export const DivText = styled.div`
-width: 50%`;
-
-export const ImageDiv = styled.img`
-width: 40%`;
-
-export const WhatDoingCompany = styled.div``;

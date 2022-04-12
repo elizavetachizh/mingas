@@ -15,7 +15,6 @@ export const DivImage =styled.div`
 export const Image = styled.img`
     width: 100%;
   @media (max-width: 1300px) {
-    max-height: 100%;
     margin: 0 auto;
   }
     `;
@@ -25,15 +24,32 @@ export const DivContent=styled.div`
   position: absolute;
   display: flex;
   justify-content: space-around;
-  //align-items: end;
-  //flex-direction: row;
+  
+  &:before {
+    position: absolute;
+    content: '';
+    background: inherit;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
+    filter: blur(10px);
+    border-radius: 15px;
+  }
+  
 `;
 
 export const DivText = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items:flex-end;
+  align-items:center;
+`;
+
+export const DivInformAbout = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Text = styled.p`
@@ -42,8 +58,5 @@ export const Text = styled.p`
   font-weight: bold;
   font-size: 32px;
   line-height: 39px;
-  align-items: center;
   color: #ffff;
 `;
-
-export const DivHand=styled.img``;

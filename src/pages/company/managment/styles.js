@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import backgroundImagePng from "../../../assets/background/background_image.png"
 
 export const Container = styled.div`
   width: 100%;
@@ -7,8 +8,32 @@ export const Container = styled.div`
 `;
 
 export const DivAboutManagementBackground = styled.div`
-max-width: 1440px;
-margin: 0px auto`;
+    max-width: 1440px;
+    margin: 0px auto 6%;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      background: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-left.png?1") left 390px no-repeat;
+    }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-right.png?2") right bottom no-repeat;
+      }
+`;
 
 export const DivAboutmanagementWhiteFont = styled.div`
   max-width: 1155px;

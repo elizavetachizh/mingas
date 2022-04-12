@@ -16,8 +16,8 @@ export default function Career() {
     return (
         <Container>
               <Header backgroundHeader="blue"></Header>
+            <HeaderCompany currentPage={"career"}></HeaderCompany>
             <DivAfterAndBefore>
-              <HeaderCompany currentPage={"career"}></HeaderCompany>
               <DivAboutManagementBackground>
                   <DivAboutmanagementWhiteFont>
                       <DivBasicManagement>

@@ -8,19 +8,12 @@ import Footer from "../../../components/footer";
 import backgroundImagePng from "../../../assets/background/background_image.png"
 import Header from "../../../components/header";
 
-const backgroundImage ={
-    'backgroundImage': `url(${backgroundImagePng})`,
-    'backgroundRepeat':"no-repeat",
-    'backgroundSize': '100%',
-    margin: '0 auto',
-}
-
 export default function Management() {
     return (
      <Container>
          <Header backgroundHeader="blue"></Header>
          <HeaderCompany currentPage={"management"}></HeaderCompany>
-         <DivAboutManagementBackground style={backgroundImage}>
+         <DivAboutManagementBackground>
              <DivAboutmanagementWhiteFont>
                  <DivBasicManagement>
                      <DivPhotoAndDescription>

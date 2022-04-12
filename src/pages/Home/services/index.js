@@ -5,18 +5,10 @@ import {Container,DivInform, DivUp,Title, TitleCard,DivDown, BackgroundStyle} fr
 import LinkServices from "./dataComponents";
 import lines from "../../../assets/background/lines.png"
 
-
-const backgroundImage ={
-    background: `url(${lines})`,
-    backgroundRepeat:"no-repeat",
-    width: '100%',
-    position: 'relative'
-}
 export default function HomeServices() {
     return (
         <Container>
         <BackgroundStyle src={lines}>
-
         </BackgroundStyle>
             <DivInform >
                 <Title>УСЛУГИ РЕСПУБЛИКАНСКОГО УНИТАРНОГО ПРЕДПРИЯТИЯ “МИНГАЗ”</Title>
@@ -33,7 +25,6 @@ export default function HomeServices() {
                         ></LinkServices>
                     ))}
                 </DivDown>
-
             </DivInform>
             <ButtonFun backgroundColor={"gray"} infoButton={"Перейти в раздел"}></ButtonFun>
         </Container>
