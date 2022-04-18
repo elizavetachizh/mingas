@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../styles";
 import Header from "../../components/header";
 import {Title} from "../Home/services/styles";
-import {DivServices,ListServices} from "./styles";
+import {DivServices} from "./styles";
 import {data} from "../../assets/data_services"
 import ServicesList from "./servicesList";
 export default function Services () {

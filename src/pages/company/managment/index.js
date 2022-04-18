@@ -5,7 +5,6 @@ import director from '../../../assets/company/director.jpg'
 import {data} from "../../../assets/data_management"
 import Leaders from "./divmagement";
 import Footer from "../../../components/footer";
-import backgroundImagePng from "../../../assets/background/background_image.png"
 import Header from "../../../components/header";
 
 export default function Management() {
