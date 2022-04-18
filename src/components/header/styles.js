@@ -1,5 +1,20 @@
-import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+
+const HeaderBackgroundColor = {
+  gray: `
+    background-color: #E9F1F5;
+    color: #314D5C`,
+  blue: `
+    background-color: #314D5C;
+    color: #FFF`,
+  border: `
+    color: #FFF;
+    border: 1px solid white;
+    padding: 10px;
+    background-color: rgba(0,0,0,0);
+    `,
+};
 
 export const Container = styled.div`
   display: flex;
@@ -9,9 +24,9 @@ export const Container = styled.div`
   position: fixed;
   top: 0px;
   z-index: 2;
-  ${({backgroundHeader}) => HeaderBackgroundColor[backgroundHeader]};
+  ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
-    color: #314D5C;
+    color: #314d5c;
     background-color: rgba(200, 220, 231, 80%);
   }
 `;
@@ -25,12 +40,11 @@ export const Background = styled.div`
   justify-content: space-around;
   position: fixed;
   top: 0px;
-  background: transparent;
   z-index: 2;
-  ${({backgroundHeader}) => HeaderBackgroundColor[backgroundHeader]};
+  ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
     background-color: rgba(200, 220, 231, 80%);
-    color: #314D5C;
+    color: #314d5c;
   }
 `;
 
@@ -48,21 +62,22 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
 `;
 
 export const LinksContainer = styled.div`
   display: flex;
   justify-content: center;
-  max-width: 720px;
+  max-width: 780px;
 `;
 
 export const CompanyButton = styled(NavLink)`
   text-decoration: none;
   padding: 0 20px;
-  color: #2d9cdb;
+  color: #fff;
 
   &.active {
-    color: #fff
+    color: #a69b14;
   }
 `;
 
@@ -71,17 +86,6 @@ export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const ServiceCenterButton = CompanyButton;
 
-const HeaderBackgroundColor = {
-    gray:`
-    background-color: #E9F1F5,
-    color: #314D5C`,
-    blue:`
-    background-color: #314D5C,
-    color: #FFF`,
-    border:`
-    color: #FFF;
-    border: 1px solid white;
-    padding: 10px;
-    background-color: rgba(0,0,0,0);
-    `,
-};
+export const IconEye = styled.img`
+  margin: 0 10px;
+`;

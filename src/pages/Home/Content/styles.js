@@ -1,30 +1,29 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const DivImage =styled.div`
+export const DivImage = styled.div`
   display: flex;
   align-items: end;
-  max-width: 100%;
-  max-height: 100%;
-  position: relative;
+  max-height: 850px;
   @media (max-width: 1406px) {
-    height: 600px;
+    max-height: 600px;
     width: 100%;
   }
 `;
 
 export const Image = styled.img`
-    width: 100%;
+  width: 100%;
+
   @media (max-width: 1300px) {
     margin: 0 auto;
   }
-    `;
+`;
 
-export const DivContent=styled.div`
+export const DivContent = styled.div`
   width: 100%;
   position: absolute;
   display: flex;
   justify-content: space-around;
-  
+
   &:before {
     position: absolute;
     content: '';
@@ -37,14 +36,13 @@ export const DivContent=styled.div`
     filter: blur(10px);
     border-radius: 15px;
   }
-  
 `;
 
 export const DivText = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 `;
 
 export const DivInformAbout = styled.div`

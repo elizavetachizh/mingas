@@ -7,6 +7,7 @@ import { Container, HomeContainer } from "./styles";
  import ParallaxDiv from "./parallax";
  import News from "./News";
  import Footer from "../../components/footer";
+ import FormQuestion from "../../components/formQuestion";
 
  export default  function Home () {
   return (
@@ -17,6 +18,7 @@ import { Container, HomeContainer } from "./styles";
           <UsefulInform></UsefulInform>
           <HomeServices></HomeServices>
           <ParallaxDiv></ParallaxDiv>
+          <FormQuestion></FormQuestion>
           <News></News>
       </HomeContainer>
         <Footer></Footer>
