@@ -2,12 +2,15 @@ import React from 'react';
 import { Subdivision, Title, Text } from '../styles';
 import { Container } from '../../styles';
 import Header from '../../../../../components/header';
+import ModalSubdivision from '../../../../../components/modalWindow/modalSubdivision';
+export { data } from '../../../../../assets/data_management';
 
 export default function ProductionTechnicalManagement() {
   return (
-    <Container>
+    <Container to={'/company/management/ProductionTechnicalManagement'}>
       <Header backgroundHeader={'blue'} />
       <Subdivision>
+        <ModalSubdivision></ModalSubdivision>
         <Title>ПРОИЗВОДСТВЕННО-ТЕХНИЧЕСКОЕ УПРАВЛЕНИЕ</Title>
         <Text>
           Производственно-техническое управление (ПТУ) создано 01.09.2015 в результате реорганизации

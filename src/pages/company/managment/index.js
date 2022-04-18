@@ -31,9 +31,6 @@ export default function Management() {
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
-  const style = {
-    backgroundColor: '#E9F1F5',
-  };
 
   return (
     <Container>
