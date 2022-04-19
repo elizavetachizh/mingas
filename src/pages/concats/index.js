@@ -1,16 +1,17 @@
 import React from 'react';
 import { Container } from '../styles';
-
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Map, { MODES } from '../../components/GoogleMap';
 import { useJsApiLoader } from '@react-google-maps/api';
 import AutoComplete from '../../components/GoogleMap/AutoComplete';
-import { DivMap, DivButtons } from './styles';
+import { Row, ContactsInform, DivMap, DivButtons } from './styles';
 import { GetBrowserLocation } from '../../components/GoogleMap/utilsGeo';
 import ButtonFun from '../../components/button/index';
-import HeaderCompany from '../company/header_company';
-import GeneralInform from './GeneralInform';
+import GeneralInform from './GeneralContactInform';
+import { Title } from '../Home/useful_information/styles';
+import HeaderConcats from './headerContacts';
+
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 const defaultCenter = {
@@ -19,7 +20,7 @@ const defaultCenter = {
 };
 
 const libraries = ['places'];
-export default function Structure() {
+export default function Сontacts() {
   const [center, setCenter] = React.useState(defaultCenter);
   const [mode, setMode] = React.useState(MODES.MOVE);
   const [markers, setMarkers] = React.useState([]);
@@ -70,7 +71,13 @@ export default function Structure() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
-      <GeneralInform></GeneralInform>
+      <Row>
+        <HeaderConcats></HeaderConcats>
+        <ContactsInform>
+          <Title>Аппарат управления УП "Мингаз"</Title>
+          <GeneralInform />
+        </ContactsInform>
+      </Row>
       <DivMap>
         <AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
         <DivButtons>

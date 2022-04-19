@@ -1,9 +1,8 @@
 import React from 'react';
 import ButtonFun from '../../../components/button';
 import { data } from '../../../assets/data_service';
-import { Container, DivInform, DivUp, Title, TitleCard, DivDown, BackgroundStyle } from './styles';
+import { Container, DivInform, DivUp, Title, TitleCard, DivDown } from './styles';
 import LinkServices from './dataComponents';
-import lines from '../../../assets/background/lines.png';
 
 export default function HomeServices() {
   return (

@@ -9,7 +9,6 @@ export const DivUsefulInform = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: Bilbo;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -19,6 +18,7 @@ export const Title = styled.h2`
   justify-content: center;
   letter-spacing: 0.1em;
   color: #3a5868;
+  margin: 4% auto;
 `;
 
 export const DivInform = styled.div`
@@ -26,7 +26,6 @@ export const DivInform = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 50px;
   width: 70%;
 `;
 
@@ -36,11 +35,11 @@ export const UsefulInformContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin: 4% auto;
 `;
 export const Line = styled.div`
   height: 1px;
   background: #3a5868;
   width: 90rem;
+  margin: 2rem auto;
   max-width: 100%;
 `;

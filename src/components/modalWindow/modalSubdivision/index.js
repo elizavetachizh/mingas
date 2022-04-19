@@ -4,6 +4,9 @@ import { push } from 'connected-react-router';
 
 import { useDispatch } from 'react-redux';
 import { useLocation, useMatch } from 'react-router';
+import { Route, Router, Routes } from 'react-router-dom';
+import ProductionTechnicalManagement from '../../../pages/company/managment/Subdivisions/ProductionTechnicalManagement';
+import ServicesForLegalEntities from '../../../pages/services/servicesForLegalEntities';
 
 export default function ModalSubdivision({ links }) {
   // const { url } = useMatch('/');
@@ -17,10 +20,18 @@ export default function ModalSubdivision({ links }) {
   //   // dispatch(push(`${url}/services/${search}`));
   // }, [dispatch, url, search]);
   return (
-    <Container>
-      {links.map((link) => (
-        <Name href={link}>{link}</Name>
-      ))}
-    </Container>
+    <div>
+      <Routes>
+        <Route
+          path="/ProductionTechnicalManagement"
+          component={<ProductionTechnicalManagement></ProductionTechnicalManagement>}
+        ></Route>
+      </Routes>
+      <Container>
+        {links.map((link) => (
+          <Name to={'/company/management/ProductionTechnicalManagement'}>{link}</Name>
+        ))}
+      </Container>
+    </div>
   );
 }

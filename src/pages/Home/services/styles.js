@@ -7,7 +7,6 @@ export const Container = styled.div`
   margin: 0px;
   height: auto;
   color: #fff;
-  padding-bottom: 50px;
   align-items: center;
 `;
 
@@ -16,13 +15,13 @@ export const DivInform = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 0;
 `;
 
 export const Title = styled.h2`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 4% auto;
 `;
 
 export const TitleCard = styled.h3``;
@@ -32,6 +31,7 @@ export const DivUp = styled.div`
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  margin: auto;
 `;
 
 export const DivDown = styled.div`
@@ -42,14 +42,13 @@ export const DivDown = styled.div`
   display: grid;
   text-align: center;
   grid-template-columns: 400px 400px;
-  margin: 0 20px;
+  margin: auto;
 `;
 
 export const BackgroundStyle = styled.img`
   position: absolute;
   display: flex;
   right: 0;
-  /* top: 0; */
   align-items: flex-start;
   margin: 0;
   padding: 0;

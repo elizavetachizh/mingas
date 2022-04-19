@@ -15,7 +15,7 @@ export default function UsefulInform() {
       <BackgroundStyle src={linesOne} />
       <DivUsefulInform>
         <Search />
-        <Line></Line>
+        <Line />
         <UsefulInformContainer>
           <Title>Полезная информация</Title>
           <DivInform>

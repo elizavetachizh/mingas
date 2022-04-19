@@ -7,7 +7,7 @@ export { data } from '../../../../../assets/data_management';
 
 export default function ProductionTechnicalManagement() {
   return (
-    <Container to={'/company/management/ProductionTechnicalManagement'}>
+    <Container>
       <Header backgroundHeader={'blue'} />
       <Subdivision>
         <ModalSubdivision></ModalSubdivision>

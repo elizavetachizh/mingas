@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NoMatch from './pages/noMatch';
 import Home from './pages/Home';
-import Сontacts from './pages/concats';
 import PressCenter from './pages/PressCenter';
 import ServiceCenter from './pages/serviceCenter';
 import Services from './pages/services';
@@ -14,31 +13,38 @@ import Career from './pages/company/career';
 import Documentation from './pages/company/documentation';
 import ProductionTechnicalManagement from './pages/company/managment/Subdivisions/ProductionTechnicalManagement';
 import ServicesForLegalEntities from './pages/services/servicesForLegalEntities';
+import Requisites from './pages/concats/requisites';
+import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
+import PhoneLineServices from './pages/concats/DirectTelephoneLine';
+import Сontacts from './pages/concats';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/services" element={<Services></Services>}></Route>
-          <Route path="/company/history" element={<History></History>}></Route>
-          <Route path="/contacts" element={<Сontacts></Сontacts>}></Route>
-          <Route path="/Press-Center" element={<PressCenter></PressCenter>}></Route>
-          <Route path="/Service-Center" element={<ServiceCenter></ServiceCenter>}></Route>
-          <Route path="/*" element={<NoMatch></NoMatch>}></Route>
-          <Route path="/company/management/" element={<Management></Management>}></Route>
-          <Route path="/company/structure/" element={<Structure></Structure>}></Route>
-          <Route path="/company/career/" element={<Career></Career>}></Route>
-          <Route path="/company/documentation/" element={<Documentation></Documentation>}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/company/history" element={<History />} />
+          <Route path="/contacts" element={<Сontacts />} />
+          <Route path="/Press-Center" element={<PressCenter />} />
+          <Route path="/Service-Center" element={<ServiceCenter />} />
+          <Route path="/*" element={<NoMatch />} />
+          <Route path="/company/management" element={<Management />} />
+          <Route path="/company/structure/" element={<Structure />} />
+          <Route path="/company/career/" element={<Career />} />
+          <Route path="/company/documentation/" element={<Documentation />} />
           <Route
             path="/company/management/ProductionTechnicalManagement"
-            element={<ProductionTechnicalManagement></ProductionTechnicalManagement>}
-          ></Route>
+            element={<ProductionTechnicalManagement />}
+          />
+          <Route path={'/services/legal-entities'} element={<ServicesForLegalEntities />} />
+          <Route path={'/contacts/requisites'} element={<Requisites />} />
           <Route
-            path={'/services/legal-entities'}
-            element={<ServicesForLegalEntities></ServicesForLegalEntities>}
-          ></Route>
+            path={'/contacts/work-schedule'}
+            element={<SchedulePersonalReceptionOfCitizens />}
+          />
+          <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
         </Routes>
       </div>
     );

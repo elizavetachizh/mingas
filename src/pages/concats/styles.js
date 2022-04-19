@@ -15,3 +15,18 @@ export const DivButtons = styled.div`
   margin: 20px;
   width: 30%;
 `;
+
+export const ContactsInform = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  max-width: 1190px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 8rem auto;
+`;

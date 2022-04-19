@@ -1,40 +1,39 @@
-import {
-  CareerButton,
-  DivButton,
-  DocumentsButton,
-  HeaderCompanyDiv,
-  HistoryButton,
-  ManagementButton,
-  StructureButton,
-} from '../../company/header_company/styles';
 import { Route, Routes } from 'react-router-dom';
-import History from '../../company/history';
-import Management from '../../company/managment';
-import Structure from '../../company/structure';
-import Career from '../../company/career';
-import Documentation from '../../company/documentation';
-import Header from '../../../components/header';
 import React from 'react';
+import Requisites from '../requisites';
+import SchedulePersonalReceptionOfCitizens from '../WorkSchedule';
+import PhoneLineServices from '../DirectTelephoneLine';
 
-export default function HeaderCompany({ currentPage }) {
+import {
+  ConcatsButton,
+  DivButton,
+  HeaderCompanyDiv,
+  PhoneServicesButton,
+  RequisitesButton,
+  WorkScheduleButton,
+} from './styles';
+import Сontacts from '../index';
+
+export default function HeaderConcats() {
   return (
     <HeaderCompanyDiv>
       <Routes>
-        <Route path="/company/history" component={<History></History>}></Route>
-        <Route path="/management" component={<Management></Management>}></Route>
-        <Route path="/structure" component={<Structure></Structure>}></Route>
-        <Route path="/career" component={<Career></Career>}></Route>
-        <Route path="/documentation" component={<Documentation></Documentation>}></Route>
+        <Route path={'/contacts/requisites'} element={<Requisites />} />
+        <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
+        <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
+        <Route path="/contacts" element={<Сontacts />} />
       </Routes>
-      <Header></Header>
       <DivButton>
-        {/*<HistoryButton to="/company/history">История предприятия</HistoryButton>*/}
-        {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
-        {/*<StructureButton to="/company/structure">Структура предприятия</StructureButton>*/}
-        {/*<CareerButton to="/company/career">Карерьера в УП "Мингаз"</CareerButton>*/}
-        {/*<DocumentsButton to="/company/documentation">Документы</DocumentsButton>*/}
+        <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>
+        <WorkScheduleButton to="/contacts/work-schedule">
+          График личного приёма граждан
+        </WorkScheduleButton>
+        <PhoneServicesButton to="/contacts/phone-services">
+          Телефоны служб по работе с клиентами
+        </PhoneServicesButton>
+        {<RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>}
       </DivButton>
-      <hr style={hr} />
+      {/*<hr style={hr} />*/}
     </HeaderCompanyDiv>
   );
 }

@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 
-export const PageSection = styled.div``;
+export const PageSection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 62%;
+  margin: 0 2%;
+`;
 
 export const Table = styled.table`
   max-width: 100%;
   width: 100%;
   background-color: transparent;
   margin-bottom: 30px;
+  font-family: Montserrat-Regular, Helvetica, Arial, sans-serif;
 `;
 
 export const Tbody = styled.tbody`
@@ -23,4 +30,5 @@ export const Td = styled.td`
   vertical-align: top;
   color: #000;
   padding: 1.5rem 0.6rem 1.3rem 2rem;
+  border-top: 0.1rem solid #e0e0e0;
 `;

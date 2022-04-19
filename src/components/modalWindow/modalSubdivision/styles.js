@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const Name = styled.a`
   cursor: pointer;
@@ -6,7 +7,7 @@ export const Name = styled.a`
   color: #314d5c;
 `;
 
-export const Container = styled.div`
+export const Container = styled.p`
   display: flex;
   flex-direction: column;
 `;

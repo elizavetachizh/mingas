@@ -5,11 +5,11 @@ export const DivServices = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 2% auto;
   justify-content: center;
 `;
 
-export const DivTwo = styled.div`
+export const InformServices = styled.div`
   margin: 6% auto;
 `;
 
@@ -21,4 +21,18 @@ export const ButtonsServices = styled.div`
   align-items: center;
 `;
 
-export const ButtonLink = styled(NavLink)``;
+export const ButtonLink = styled(NavLink)`
+  color: white;
+  font-family: Bilbo;
+  font-size: 16px;
+  width: 172px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  cursor: pointer;
+  background-color: #e9f1f5;
+  color: #314d5c;
+`;

@@ -26,7 +26,7 @@ export const Button = styled.a`
   align-items: center;
   height: 40px;
   left: 1135px;
-  margin: auto;
+  margin: 4% auto;
   cursor: pointer;
   ${({ backgroundColor }) => buttonBackgroundColor[backgroundColor]}
 `;
