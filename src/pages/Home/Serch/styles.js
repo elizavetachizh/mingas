@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SearchFunction = styled.div`
   flex: 0 0 auto;
   width: 100%;
-  margin: 6% auto;
+  margin: 4% auto;
 `;
 
 export const PgItemsSearch = styled.div`

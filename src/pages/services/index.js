@@ -9,7 +9,7 @@ import { Title } from '../Home/useful_information/styles';
 import ButtonFun from '../../components/button';
 import ServicesForLegalEntities from './servicesForLegalEntities';
 import { Route, Routes } from 'react-router-dom';
-export default function Services({ currentPage }) {
+export default function Services() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -22,14 +22,7 @@ export default function Services({ currentPage }) {
               component={<ServicesForLegalEntities></ServicesForLegalEntities>}
             ></Route>
           </Routes>
-          <ButtonLink
-            // currentPage={''}
-            // backgroundColor={'gray'}
-            // infoButton={'Для физических лиц'}
-            to={'/services/legal-entities'}
-          >
-            Для физических лиц
-          </ButtonLink>
+          <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>
           <ButtonFun backgroundColor={'gray'} infoButton={'Для юридических лиц'}></ButtonFun>
         </ButtonsServices>
         <DivServices>

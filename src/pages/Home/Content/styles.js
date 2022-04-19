@@ -55,6 +55,6 @@ export const Text = styled.p`
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
-  line-height: 39px;
   color: #ffff;
+  text-transform: uppercase;
 `;

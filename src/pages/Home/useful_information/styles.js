@@ -23,11 +23,11 @@ export const Title = styled.h2`
 
 export const DivInform = styled.div`
   display: flex;
-  width: 80%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding-bottom: 50px;
+  width: 70%;
 `;
 
 export const UsefulInformContainer = styled.div`
@@ -35,7 +35,8 @@ export const UsefulInformContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 50px;
+  width: 100%;
+  margin: 4% auto;
 `;
 export const Line = styled.div`
   height: 1px;
