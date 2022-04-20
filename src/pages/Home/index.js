@@ -8,7 +8,8 @@ import ParallaxDiv from './parallax';
 import News from './News';
 import Footer from '../../components/footer';
 import FormQuestion from '../../components/formQuestion';
-
+import ScrollToTop from 'react-scroll-up';
+import up from '../../assets/png/up_arrow_round.png';
 export default function Home() {
   return (
     <Container>
@@ -21,6 +22,9 @@ export default function Home() {
         <FormQuestion />
         <News />
       </HomeContainer>
+      <ScrollToTop showUnder={160}>
+        <img src={up} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

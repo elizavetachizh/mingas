@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const Name = styled.a`
+export const Name = styled(NavLink)`
   cursor: pointer;
   text-decoration: none;
   color: #314d5c;

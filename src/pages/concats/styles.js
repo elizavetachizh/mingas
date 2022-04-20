@@ -26,7 +26,8 @@ export const ContactsInform = styled.div`
 export const Row = styled.div`
   display: flex;
   max-width: 1190px;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  margin: 8rem auto;
+  margin: 6rem auto;
+  color: #383838;
 `;

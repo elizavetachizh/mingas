@@ -22,6 +22,7 @@ export const Container = styled.div`
   justify-content: space-between;
   font-size: 16px;
   position: fixed;
+  margin-bottom: 3%;
   top: 0px;
   z-index: 2;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};

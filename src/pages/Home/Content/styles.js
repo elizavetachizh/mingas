@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const DivImage = styled.div`
   display: flex;
   align-items: end;
-  max-height: 850px;
+
   @media (max-width: 1406px) {
     max-height: 600px;
     width: 100%;
@@ -12,7 +12,7 @@ export const DivImage = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-
+  max-height: 900px;
   @media (max-width: 1300px) {
     margin: 0 auto;
   }
@@ -22,6 +22,7 @@ export const DivContent = styled.div`
   width: 100%;
   position: absolute;
   display: flex;
+  align-items: end;
   justify-content: space-around;
 
   &:before {
@@ -43,6 +44,12 @@ export const DivText = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  img {
+    @media (max-width: 1200px) {
+      width: 30%;
+    }
+  }
 `;
 
 export const DivInformAbout = styled.div`
@@ -57,4 +64,8 @@ export const Text = styled.p`
   font-size: 32px;
   color: #ffff;
   text-transform: uppercase;
+
+  @media (max-width: 1200px) {
+    font-size: 26px;
+  }
 `;

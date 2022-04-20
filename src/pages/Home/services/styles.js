@@ -52,4 +52,7 @@ export const BackgroundStyle = styled.img`
   align-items: flex-start;
   margin: 0;
   padding: 0;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;

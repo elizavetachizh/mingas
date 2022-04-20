@@ -22,6 +22,5 @@ export const DateLink = styled.p``;
 export const DescLink = styled.p``;
 
 export const ImageLink = styled.img`
-  width: 306px;
-  height: 204px;
+  width: 90%;
 `;

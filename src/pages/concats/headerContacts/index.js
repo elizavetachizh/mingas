@@ -12,7 +12,7 @@ import {
   RequisitesButton,
   WorkScheduleButton,
 } from './styles';
-import Сontacts from '../index';
+import GeneralInform from '../GeneralContactInform';
 
 export default function HeaderConcats() {
   return (
@@ -21,7 +21,7 @@ export default function HeaderConcats() {
         <Route path={'/contacts/requisites'} element={<Requisites />} />
         <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
         <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-        <Route path="/contacts" element={<Сontacts />} />
+        <Route path="/contacts" element={<GeneralInform />} />
       </Routes>
       <DivButton>
         <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>

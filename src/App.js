@@ -16,7 +16,7 @@ import ServicesForLegalEntities from './pages/services/servicesForLegalEntities'
 import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
-import Сontacts from './pages/concats';
+import GeneralInform from './pages/concats/GeneralContactInform';
 
 class App extends Component {
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/company/history" element={<History />} />
-          <Route path="/contacts" element={<Сontacts />} />
+          <Route path="/contacts" element={<GeneralInform />} />
           <Route path="/Press-Center" element={<PressCenter />} />
           <Route path="/Service-Center" element={<ServiceCenter />} />
           <Route path="/*" element={<NoMatch />} />
@@ -35,7 +35,7 @@ class App extends Component {
           <Route path="/company/career/" element={<Career />} />
           <Route path="/company/documentation/" element={<Documentation />} />
           <Route
-            path="/company/management/ProductionTechnicalManagement"
+            path="/company/management/production-technical-management"
             element={<ProductionTechnicalManagement />}
           />
           <Route path={'/services/legal-entities'} element={<ServicesForLegalEntities />} />
