@@ -23,7 +23,7 @@ export const Container = styled.div`
   font-size: 16px;
   position: fixed;
   margin-bottom: 3%;
-  top: 0px;
+  top: 0;
   z-index: 2;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
@@ -40,7 +40,7 @@ export const Background = styled.div`
   align-items: center;
   justify-content: space-around;
   position: fixed;
-  top: 0px;
+  top: 0;
   z-index: 2;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {

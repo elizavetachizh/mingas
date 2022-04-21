@@ -12,7 +12,7 @@ export const ContainerLeaders = styled.a`
   height: 260px;
   outline: 2px solid #000; /* Чёрная рамка */
   border: 3px solid #fff; /* Белая рамка */
-  font-family: 'Bilbo';
+  font-family: 'Bilbo',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

@@ -5,7 +5,7 @@ import Header from "../header";
 export default function ContainerFun({backgroundColor}) {
     return (
         <Container backgroundColor={backgroundColor}>
-            <Header></Header>
+            <Header />
         </Container>
     )
 }

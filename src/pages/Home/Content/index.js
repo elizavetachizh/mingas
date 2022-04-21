@@ -6,9 +6,9 @@ import CarouselFun from '../slider';
 export default function ContentHome() {
   return (
     <DivImage>
-      <Image src={imageContent}></Image>
+      <Image src={imageContent} />
       <DivContent>
-        <CarouselFun></CarouselFun>
+        <CarouselFun />
       </DivContent>
     </DivImage>
   );

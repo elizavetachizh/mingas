@@ -68,8 +68,6 @@ export const Input = styled.input`
   height: 40px;
 `;
 
-export const InputButton = styled.button``;
-
 export const InputCheckbox = styled.input``;
 
 export const InputTextBox = styled.input`

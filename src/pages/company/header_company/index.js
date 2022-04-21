@@ -27,13 +27,13 @@ export default function HeaderCompany() {
   return (
     <HeaderCompanyDiv>
       <Routes>
-        <Route path="/company/history" component={<History></History>}></Route>
-        <Route path="/management" component={<Management></Management>}></Route>
-        <Route path="/structure" component={<Structure></Structure>}></Route>
-        <Route path="/career" component={<Career></Career>}></Route>
-        <Route path="/documentation" component={<Documentation></Documentation>}></Route>
+        <Route path="/company/history" component={<History />} />
+        <Route path="/management" component={<Management />} />
+        <Route path="/structure" component={<Structure />} />
+        <Route path="/career" component={<Career />} />
+        <Route path="/documentation" component={<Documentation />} />
       </Routes>
-      <Header></Header>
+      <Header />
       <DivButton>
         <HistoryButton to="/company/history">История предприятия</HistoryButton>
         <ManagementButton to="/company/management">Руководство</ManagementButton>

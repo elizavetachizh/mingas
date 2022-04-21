@@ -19,9 +19,9 @@ export default function Search() {
       <Title>Поиск по услугам</Title>
       <PgItemsSearch>
         <Form>
-          <Input type={'text'} placeholder={'Введите название услуги'}></Input>
-          <AutocompleteSuggestions></AutocompleteSuggestions>
-          <Button style={searchStyle} type={'submit'}></Button>
+          <Input type={'text'} placeholder={'Введите название услуги'} />
+          <AutocompleteSuggestions />
+          <Button style={searchStyle} type={'submit'} />
         </Form>
       </PgItemsSearch>
     </SearchFunction>

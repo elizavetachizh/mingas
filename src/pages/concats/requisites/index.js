@@ -11,11 +11,11 @@ import Footer from '../../../components/footer';
 export default function Requisites() {
   return (
     <Container>
-      <Header backgroundHeader={'blue'}></Header>
+      <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <Title>Юридическая информация</Title>
         <Row>
-          <HeaderConcats></HeaderConcats>
+          <HeaderConcats />
           <PageSection>
             <Abbreviated>
               <span>Сокращенное наименование:</span>

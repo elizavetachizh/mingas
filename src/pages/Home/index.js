@@ -23,7 +23,7 @@ export default function Home() {
         <News />
       </HomeContainer>
       <ScrollToTop showUnder={160}>
-        <img src={up} />
+        <img src={up} alt={''} />
       </ScrollToTop>
       <Footer />
     </Container>

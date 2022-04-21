@@ -9,7 +9,7 @@ export const HeaderCompanyDiv = styled.div`
 
 export const DivButton = styled.div`
   max-width: 1440px;
-  font-family: 'Bilbo';
+  font-family: 'Bilbo',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -24,7 +24,7 @@ export const DivButton = styled.div`
 export const HistoryButton = styled(NavLink)`
   text-decoration: none;
   color: #314D5C;
-  margin: 0px 14px;
+  margin: 0 14px;
   
   &.active {
     color: #A69B14

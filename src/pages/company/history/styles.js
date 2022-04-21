@@ -15,7 +15,7 @@ export const DivTextPhoto = styled.div`
   justify-content:space-around;
   align-items: center;
   margin: 50px auto;
-  font-family: 'Bilbo';
+  font-family: 'Bilbo',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -35,7 +35,7 @@ export const WhatDoingCompany = styled.div`
   display: flex;
   flex-direction: column;
   h2 {
-    font-family: 'Bilbo';
+    font-family: 'Bilbo',sans-serif;
     font-style: normal;
     font-size: 16px;
     color: #314D5C;

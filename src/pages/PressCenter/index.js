@@ -1,11 +1,11 @@
-import React from "react";
-import { Container } from "../styles";
-import Header from "../../components/header";
-export default function PressCenter () {
+import React from 'react';
+import { Container } from '../styles';
+import Header from '../../components/header';
+export default function PressCenter() {
   return (
     <Container>
-      <Header  currentPage={"PressCenter"}></Header>
+      <Header currentPage={'PressCenter'} />
       <h1>Пресс-центр</h1>
     </Container>
-  )
+  );
 }

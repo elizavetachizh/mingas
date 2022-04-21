@@ -13,14 +13,11 @@ export const DivServicesList = styled.div`
   box-shadow: 0 6px 30px rgb(0 0 0 / 10%);
   color: #314d5c;
   text-decoration: none;
-  -webkit-text-decoration-color: transparent;
   text-decoration-color: transparent;
   text-align: center;
   &:hover {
     text-decoration: underline;
-    -webkit-text-decoration-color: rgba(40, 106, 179, 0.6);
     text-decoration-color: rgba(49, 77, 93, 0.6);
-    -webkit-transform: translateY(-1rem);
     transform: translateY(-1rem);
   }
 `;

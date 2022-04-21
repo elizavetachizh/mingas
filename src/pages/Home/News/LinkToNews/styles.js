@@ -10,9 +10,7 @@ export const DivNews = styled.a`
   color: #3a5868;
   &:hover {
     text-decoration: underline;
-    -webkit-text-decoration-color: rgba(40, 106, 179, 0.6);
     text-decoration-color: rgba(49, 77, 93, 0.6);
-    -webkit-transform: translateY(-1rem);
     transform: translateY(-1rem);
   }
 `;

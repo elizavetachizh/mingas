@@ -18,6 +18,8 @@ import Leaders from './divmagement';
 import Footer from '../../../components/footer';
 import Header from '../../../components/header';
 import Modal from '../../../components/modalWindow';
+import up from '../../../assets/png/up_arrow_round.png';
+import ScrollToTop from 'react-scroll-up';
 
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -68,6 +70,9 @@ export default function Management() {
           )}
         </DivAboutmanagementWhiteFont>
       </DivAboutManagementBackground>
+      <ScrollToTop showUnder={160}>
+        <img src={up} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

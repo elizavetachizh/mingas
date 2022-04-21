@@ -64,7 +64,6 @@ export const Text = styled.p`
   font-size: 32px;
   color: #ffff;
   text-transform: uppercase;
-
   @media (max-width: 1200px) {
     font-size: 26px;
   }

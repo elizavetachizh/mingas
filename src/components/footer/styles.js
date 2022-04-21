@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center; 
   justify-content: space-around;
   flex-direction: column;
-  font-family: 'Fira Sans Condensed'; 
+  font-family: 'Fira Sans Condensed',sans-serif; 
   font-size: 16px;
   font-weight: 500;
   padding: 50px 0;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NoMatchContainer = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ export const NoMatchContainer = styled.div`
   h3,
   h4 {
     text-align: center;
-    font-family: "Inter";
+    font-family: 'Inter', serif;
     font-style: normal;
   }
 `;

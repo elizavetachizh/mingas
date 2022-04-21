@@ -14,7 +14,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #E9F1F5;
-  margin: 0px;
+  margin: 0;
   align-items: center;
   padding: 50px 0;
   ${({backgroundColor})=> ContainerBackgroundColor[backgroundColor]}

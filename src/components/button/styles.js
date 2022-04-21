@@ -15,7 +15,7 @@ const buttonBackgroundColor = {
 
 export const Button = styled.a`
   color: white;
-  font-family: Bilbo;
+  font-family: Bilbo,sans-serif;
   font-size: 16px;
   font-weight: 500;
   width: 172px;

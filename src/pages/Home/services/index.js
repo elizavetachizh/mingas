@@ -15,15 +15,11 @@ export default function HomeServices() {
         </DivUp>
         <DivDown>
           {data.map((element) => (
-            <LinkServices
-              key={element.cardDesc}
-              img={element.cardImg}
-              text={element.cardDesc}
-            ></LinkServices>
+            <LinkServices key={element.cardDesc} img={element.cardImg} text={element.cardDesc} />
           ))}
         </DivDown>
       </DivInform>
-      <ButtonFun backgroundColor={'gray'} infoButton={'Перейти в раздел'}></ButtonFun>
+      <ButtonFun backgroundColor={'gray'} infoButton={'Перейти в раздел'} />
     </Container>
   );
 }

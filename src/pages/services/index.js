@@ -8,6 +8,8 @@ import { Container } from '../company/styles';
 import { Title } from '../Home/useful_information/styles';
 import ServicesForLegalEntities from './servicesForLegalEntities';
 import { Route, Routes } from 'react-router-dom';
+import up from '../../assets/png/up_arrow_round.png';
+import ScrollToTop from 'react-scroll-up';
 export default function Services() {
   return (
     <Container>
@@ -16,10 +18,7 @@ export default function Services() {
         <Title>УСЛУГИ РЕСПУБЛИКАНСКОГО УНИТАРНОГО ПРЕДПРИЯТИЯ “МИНГАЗ”</Title>
         <ButtonsServices>
           <Routes>
-            <Route
-              path="/legal-entities"
-              component={<ServicesForLegalEntities></ServicesForLegalEntities>}
-            ></Route>
+            <Route path="/legal-entities" component={<ServicesForLegalEntities />} />
           </Routes>
           <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>
           <ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>
@@ -35,6 +34,9 @@ export default function Services() {
           ))}
         </DivServices>
       </InformServices>
+      <ScrollToTop showUnder={160}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

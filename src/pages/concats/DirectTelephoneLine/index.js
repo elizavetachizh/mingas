@@ -11,11 +11,11 @@ import { styleTd } from '../GeneralContactInform';
 export default function PhoneLineServices() {
   return (
     <Container>
-      <Header backgroundHeader={'blue'}></Header>
+      <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <Title>Телефоны служб по работе с клиентами</Title>
         <Row>
-          <HeaderConcats></HeaderConcats>
+          <HeaderConcats />
           <PageSection>
             <Table>
               <Tbody>

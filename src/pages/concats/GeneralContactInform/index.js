@@ -79,7 +79,7 @@ export default function GeneralInform() {
       <AdditionalDiv>
         <Title>АППАРАТ УПРАВЛЕНИЯ УП "МИНГАЗ"</Title>
         <Row>
-          <HeaderConcats></HeaderConcats>
+          <HeaderConcats />
           <ContactsInform>
             <PageSection>
               <Table>
