@@ -20,8 +20,10 @@ import Header from '../../../components/header';
 import Modal from '../../../components/modalWindow';
 import up from '../../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
+import { useHttp } from '../../../hooks/http.hooks';
 
 export default function Management() {
+  const { loading, error, request } = useHttp();
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
 
@@ -33,6 +35,12 @@ export default function Management() {
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
+
+  const getManagement = async () => {
+    try {
+      const dataMan = await request('/api/management/id', 'GET', {});
+    } catch (error) {}
+  };
 
   return (
     <Container>
