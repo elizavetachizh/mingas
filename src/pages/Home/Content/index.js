@@ -1,5 +1,5 @@
 import React from 'react';
-import imageContent from '../../../assets/background/mingasContent.jpg';
+import imageContent from '../../../assets/png/oszczedzanie-gazu.jpg';
 import { DivImage, Image, DivContent } from './styles';
 import CarouselFun from '../slider';
 

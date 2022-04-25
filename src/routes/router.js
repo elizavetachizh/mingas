@@ -1,25 +1,34 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
+const csrf = require('csurf');
 const mongoose = require('mongoose');
-const config = require('config');
+const session = require('express-session');
+const MongoStore = require('connect-mongodb-session')(session);
+const defaultKeys = require('../config/default');
 
-const PORT = config.get('port') || 5000;
+const PORT = process.env.PORT || defaultKeys.PORT;
+
 // //
 const app = express();
+
+// const https = require('https').Server(options, app);
+
+app.set('views', path.join(__dirname, 'views'));
 //
 app.use('/api/management/id', require('./routers'));
 //
 async function start() {
   try {
-    await mongoose.connect(config.get('mongoUri'), {
+    await mongoose.connect(defaultKeys.MONGODB_URI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+      useFindAndModify: false,
       useCreateIndex: true,
+      useUnifiedTopology: true,
     });
     app.listen(PORT, () => console.log(`listening port ${PORT}`));
   } catch (error) {
     console.log(error);
-    process.exit(1);
   }
 }
 start();

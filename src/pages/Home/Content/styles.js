@@ -46,6 +46,7 @@ export const DivText = styled.div`
   align-items: center;
 
   img {
+    width: 50%;
     @media (max-width: 1200px) {
       width: 30%;
     }

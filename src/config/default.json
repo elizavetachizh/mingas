@@ -1,4 +1,0 @@
-{
-  "port": 5000,
-  "mongoUri": "mongodb+srv://mingas:mingas@cluster0.osqn6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-}

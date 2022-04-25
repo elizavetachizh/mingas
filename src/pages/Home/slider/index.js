@@ -6,6 +6,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
 import ButtonFun from '../../../components/button';
 import phone from '../../../assets/png/Hand_phone.png';
+import worker from '../../../assets/png/master.png';
 
 export default function CarouselFun() {
   return (
@@ -44,7 +45,7 @@ export default function CarouselFun() {
               </Text>
               <ButtonFun backgroundColor={'blue'} infoButton={'Подробнее'} />
             </DivInformAbout>
-            <img src={images[1].source} alt={''} />
+            <img src={worker} alt={''} />
           </DivText>
         </Carousel>
       </WindowDiv>
