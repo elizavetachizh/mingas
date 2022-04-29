@@ -1,8 +1,7 @@
 import React from 'react';
-import { images } from '../../../assets/images';
 import { Main, WindowDiv } from './styles';
 import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+import './styles.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
 import ButtonFun from '../../../components/button';
 import phone from '../../../assets/png/Hand_phone.png';
@@ -15,10 +14,12 @@ export default function CarouselFun() {
         <Carousel
           plugins={[
             'infinite',
+            'arrows',
+            'clickToChange',
             {
               resolve: autoplayPlugin,
               options: {
-                interval: 5000,
+                interval: 4000,
               },
             },
           ]}
@@ -31,7 +32,7 @@ export default function CarouselFun() {
                 производственного республиканского <br />
                 унитарного предприятия “МИНГАЗ”
               </Text>
-              <ButtonFun backgroundColor={'blue'} infoButton={'Подробнее'} />
+              <ButtonFun href={'/Services'} backgroundColor={'blue'} infoButton={'Подробнее'} />
             </DivInformAbout>
             <img src={phone} alt={''} />
           </DivText>
@@ -43,7 +44,7 @@ export default function CarouselFun() {
                 <br />
                 унитарного предприятия “МИНГАЗ”
               </Text>
-              <ButtonFun backgroundColor={'blue'} infoButton={'Подробнее'} />
+              <ButtonFun href={'/Press-Center'} backgroundColor={'blue'} infoButton={'Подробнее'} />
             </DivInformAbout>
             <img src={worker} alt={''} />
           </DivText>

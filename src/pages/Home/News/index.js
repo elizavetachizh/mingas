@@ -19,7 +19,7 @@ export default function News() {
           ></LinkNews>
         ))}
       </DivInform>
-      <ButtonFun infoButton={'Показать ещё'} backgroundColor={'blue'} />
+      <ButtonFun href={'/Press-Center'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
     </Container>
   );
 }

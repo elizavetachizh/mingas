@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const ContainerContent = styled.div`
+  @media (max-width: 1200px) {
+    height: 600px;
+  }
+`;
+
 export const DivImage = styled.div`
   display: flex;
   align-items: end;
@@ -10,33 +16,29 @@ export const DivImage = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  width: 100%;
-  max-height: 900px;
-  @media (max-width: 1300px) {
-    margin: 0 auto;
-  }
-`;
-
 export const DivContent = styled.div`
   width: 100%;
   position: absolute;
+  height: 800px;
   display: flex;
   align-items: end;
   justify-content: space-around;
-
-  &:before {
-    position: absolute;
-    content: '';
-    background: inherit;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
-    filter: blur(10px);
-    border-radius: 15px;
+  @media (max-width: 1200px) {
+    max-height: 600px;
   }
+
+  //&:before {
+  //  position: absolute;
+  //  content: '';
+  //  background: inherit;
+  //  left: 0;
+  //  right: 0;
+  //  top: 0;
+  //  bottom: 0;
+  //  box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
+  //  filter: blur(10px);
+  //  border-radius: 15px;
+  //}
 `;
 
 export const DivText = styled.div`

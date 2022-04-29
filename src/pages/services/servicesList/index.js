@@ -9,7 +9,7 @@ export default function ServicesList({ imgCard, nameCard, descName, button }) {
       <DivInformService>
         <Name>{nameCard}</Name>
         <Description>{descName}</Description>
-        <ButtonFun backgroundColor={'blue'} infoButton={button} />
+        <ButtonFun href={'/'} backgroundColor={'blue'} infoButton={button} />
       </DivInformService>
     </DivServicesList>
   );

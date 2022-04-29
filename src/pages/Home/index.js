@@ -1,6 +1,6 @@
-import React from 'react';
 import Header from '../../components/header';
 import { Container, HomeContainer } from './styles';
+import React from 'react';
 import ContentHome from './Content';
 import UsefulInform from './useful_information';
 import HomeServices from './services';
@@ -10,7 +10,18 @@ import Footer from '../../components/footer';
 import FormQuestion from '../../components/formQuestion';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
+
 export default function Home() {
+  const defaultProps = {
+    name: 'Data',
+    employer: 'United Federation of Planets',
+    kids: [
+      {
+        name: 'Lal',
+        age: '2',
+      },
+    ],
+  };
   return (
     <Container>
       <Header />

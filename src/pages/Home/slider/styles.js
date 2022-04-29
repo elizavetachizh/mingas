@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Main = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
 `;
 
 export const WindowDiv = styled.div`
-  height: 100%;
+  max-height: 100%;
   width: 100%;
   overflow: hidden;
 

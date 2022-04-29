@@ -27,7 +27,7 @@ import address from '../../assets/formPng/map.png';
 const NameImage = {
   backgroundImage: `url(${name})`,
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'right 10px center',
+  backgroundPosition: 'right 8px center',
 };
 
 const PhoneImage = {
@@ -59,7 +59,7 @@ export default function FormQuestion() {
             ответить на все ваши вопросы
           </h3>
           <h2>Часто задаваемые вопросы</h2>
-          <ButtonFun infoButton={'Перейти'} backgroundColor={'blue'} />
+          <ButtonFun href={'/'} infoButton={'Перейти'} backgroundColor={'blue'} />
         </OneColumn>
         <TwoColumn>
           <Form>
@@ -105,7 +105,7 @@ export default function FormQuestion() {
               </Label>
               <InputCheckbox type="checkbox" />
             </DivInputCheckbox>
-            <ButtonFun backgroundColor={'blue'} infoButton={'Отправить'} />
+            <ButtonFun href={'/'} backgroundColor={'blue'} infoButton={'Отправить'} />
           </Form>
         </TwoColumn>
       </TwoColumnTextAndForm>

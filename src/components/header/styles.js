@@ -31,7 +31,19 @@ export const Container = styled.div`
     background-color: rgba(200, 220, 231, 80%);
   }
 `;
+export const Menu = styled.div`
+  opacity: 0;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0);
+  border: rgba(0, 0, 0, 0);
 
+  @media (max-width: 800px) {
+    opacity: 1;
+  }
+  img {
+    margin: 10px;
+  }
+`;
 export const Background = styled.div`
   width: 100%;
   height: 80px;
@@ -46,6 +58,12 @@ export const Background = styled.div`
   .opacity {
     background-color: rgba(200, 220, 231, 80%);
     color: #314d5c;
+  }
+  .click {
+    opacity: 1;
+  }
+  @media (max-width: 800px) {
+    opacity: 0;
   }
 `;
 
@@ -69,7 +87,7 @@ export const ButtonsContainer = styled.div`
 export const LinksContainer = styled.div`
   display: flex;
   justify-content: center;
-  max-width: 780px;
+  align-items: center;
 `;
 
 export const CompanyButton = styled(NavLink)`
@@ -86,7 +104,7 @@ export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const ServiceCenterButton = CompanyButton;
-
+export const PersonalAccButton = styled.a;
 export const IconEye = styled.img`
   margin: 0 10px;
 `;

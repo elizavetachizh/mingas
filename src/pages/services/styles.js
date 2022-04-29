@@ -11,6 +11,9 @@ export const DivServices = styled.div`
 
 export const InformServices = styled.div`
   margin: 6% auto;
+  @media (max-width: 1500px) {
+    margin: 10% auto;
+  }
 `;
 
 export const Title = styled.h2``;

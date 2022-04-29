@@ -1,21 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Form = styled.div`
-  
-`;
+export const Form = styled.div``;
 
 export const DivInputName = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
 `;
-export const DivInputEmail=DivInputName;
-export const DivInputPhone=DivInputName;
-export const DivInputAdress=DivInputName;
-export const DivInputText=DivInputName;
+export const DivInputEmail = DivInputName;
+export const DivInputPhone = DivInputName;
+export const DivInputAdress = DivInputName;
+export const DivInputText = DivInputName;
 
 export const TwoColumnTextAndForm = styled.div`
-  margin: 6%;
+  margin: 6% 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +25,6 @@ export const OneColumn = styled.div`
     font-weight: bold;
     text-transform: uppercase;
     color: #264c6f;
-    
   }
   h3 {
     color: #2d9cdb;
@@ -42,7 +39,7 @@ export const TwoColumn = styled.div`
   width: 50%;
 `;
 
-export const DivInputCheckbox=styled.div`
+export const DivInputCheckbox = styled.div`
   display: flex;
   margin: 1.5rem 0;
 `;

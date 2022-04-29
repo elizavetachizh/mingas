@@ -1,47 +1,68 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  background-color:#314D5C;
+  background-color: #314d5c;
   display: flex;
-  align-items: center; 
-  justify-content: space-around;
+  //align-items: center;
+  //justify-content: center;
   flex-direction: column;
-  font-family: 'Fira Sans Condensed',sans-serif; 
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 16px;
-  font-weight: 500;
   padding: 50px 0;
-  color:#E9E5D6;
+  color: #e9e5d6;
 `;
 
 export const Contacts = styled.div`
-display: flex;
-  width: 80%;
-flex-direction: row;
-justify-content: space-around;
-margin: 20px 0`;
-
-export const Telephons = styled.div`
-;
-
-`;
-export const ContactInform = Telephons;
-export const WorkTime=Telephons;
-
-export const SocialMedia= styled.div`
   display: flex;
-  width: 20%;
+  width: 100%;
   flex-direction: row;
   justify-content: space-around;
   margin: 20px 0;
-  `;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+`;
+
+export const SocialMedia = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+`;
+
+export const LinksNetwork = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const LinksSocialMedia = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 2%;
+  //width: 10%;
+`;
+
+export const TextSocialMedia = styled.p``;
+
+export const Telephons = styled.div`
+  text-align: center;
+`;
+export const ContactInform = Telephons;
+export const WorkTime = Telephons;
 
 export const Instagram = styled.img`
   width: 40px;
   height: 40px;
+  margin: 2% 0;
 `;
 
-export const Telegram = Instagram
+export const Telegram = Instagram;
 
 export const Viber = Instagram;

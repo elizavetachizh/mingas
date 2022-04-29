@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from './styles';
-export default function ButtonFun({ infoButton, backgroundColor, href }) {
+export default function ButtonFun({ href, infoButton, backgroundColor }) {
   return (
-    <Button href={href} backgroundColor={backgroundColor}>
+    <Button to={href} backgroundColor={backgroundColor}>
       {infoButton}
     </Button>
   );

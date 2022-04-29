@@ -28,7 +28,12 @@ export default function UsefulInform() {
               />
             ))}
           </DivInform>
-          <ButtonFun backgroundColor={'blue'} justifyContent={'center'} infoButton={'Подробнее'} />
+          <ButtonFun
+            href={'/'}
+            backgroundColor={'blue'}
+            justifyContent={'center'}
+            infoButton={'Подробнее'}
+          />
         </UsefulInformContainer>
       </DivUsefulInform>
     </Container>

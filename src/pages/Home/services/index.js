@@ -19,7 +19,7 @@ export default function HomeServices() {
           ))}
         </DivDown>
       </DivInform>
-      <ButtonFun backgroundColor={'gray'} infoButton={'Перейти в раздел'} />
+      <ButtonFun href={'/Services'} backgroundColor={'gray'} infoButton={'Перейти в раздел'} />
     </Container>
   );
 }

@@ -24,7 +24,7 @@ class App extends Component {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/Services" element={<Services />} />
           <Route path="/company/history" element={<History />} />
           <Route path="/contacts" element={<GeneralInform />} />
           <Route path="/Press-Center" element={<PressCenter />} />
@@ -45,6 +45,7 @@ class App extends Component {
             element={<SchedulePersonalReceptionOfCitizens />}
           />
           <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
+          {/*<Route path={'/profile'} element={Profile} />*/}
         </Routes>
       </div>
     );

@@ -111,11 +111,17 @@ export default function GeneralInform() {
         <AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
         <DivButtons>
           <ButtonFun
+            href={'/'}
             backgroundColor={'blue'}
             infoButton={'Установить маркер'}
             onClick={toggleMode}
           />
-          <ButtonFun backgroundColor={'blue'} infoButton={'Очистить маркер'} onClick={clear} />
+          <ButtonFun
+            href={'/'}
+            backgroundColor={'blue'}
+            infoButton={'Очистить маркер'}
+            onClick={clear}
+          />
         </DivButtons>
         {isLoaded ? (
           <Map center={center} mode={mode} markers={markers} onMarkerAdd={onMarkerAdd} />

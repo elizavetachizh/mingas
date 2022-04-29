@@ -10,7 +10,6 @@ export const DivUsefulInform = styled.div`
 
 export const Title = styled.h2`
   font-style: normal;
-  font-weight: 700;
   font-size: 32px;
   line-height: 37px;
   display: flex;
@@ -19,6 +18,7 @@ export const Title = styled.h2`
   letter-spacing: 0.1em;
   color: #3a5868;
   margin: 4% auto;
+  text-align: center;
 `;
 
 export const DivInform = styled.div`

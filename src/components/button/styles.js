@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 const buttonBackgroundColor = {
   gray: `
     background-color: #E9F1F5;
@@ -13,9 +14,9 @@ const buttonBackgroundColor = {
     `,
 };
 
-export const Button = styled.a`
+export const Button = styled(NavLink)`
   color: white;
-  font-family: Bilbo,sans-serif;
+  font-family: Bilbo, sans-serif;
   font-size: 16px;
   font-weight: 500;
   width: 172px;
