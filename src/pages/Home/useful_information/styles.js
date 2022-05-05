@@ -27,6 +27,9 @@ export const DivInform = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 70%;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const UsefulInformContainer = styled.div`

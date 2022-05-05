@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const AdditionalDiv = styled.div`
   margin: 6% auto;
+  max-width: 1440px;
+  text-align: center;
   @media (max-width: 1500px) {
     margin: 10% auto;
   } ;

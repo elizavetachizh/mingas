@@ -5,8 +5,6 @@ export const Container = styled.div`
   height: auto;
   background-color: #314d5c;
   display: flex;
-  //align-items: center;
-  //justify-content: center;
   flex-direction: column;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 16px;
@@ -22,19 +20,6 @@ export const Contacts = styled.div`
   margin: 20px 0;
 `;
 
-export const Row = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  width: 100%;
-`;
-
-export const SocialMedia = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-`;
-
 export const LinksNetwork = styled.div`
   display: flex;
   flex-direction: row;
@@ -46,10 +31,7 @@ export const LinksSocialMedia = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin: 0 2%;
-  //width: 10%;
 `;
-
-export const TextSocialMedia = styled.p``;
 
 export const Telephons = styled.div`
   text-align: center;

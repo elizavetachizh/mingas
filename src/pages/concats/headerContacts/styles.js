@@ -25,9 +25,6 @@ export const ConcatsButton = styled(NavLink)`
   &.active {
     color: #a69b14;
   }
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export const WorkScheduleButton = ConcatsButton;

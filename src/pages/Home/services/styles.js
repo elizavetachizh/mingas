@@ -22,6 +22,7 @@ export const Title = styled.h2`
   align-items: center;
   justify-content: center;
   margin: 4% auto;
+  text-align: center;
 `;
 
 export const TitleCard = styled.h3``;
@@ -37,12 +38,15 @@ export const DivUp = styled.div`
 export const DivDown = styled.div`
   font-style: normal;
   font-size: 18px;
-  font-family: Bilbo;
   width: 100%;
   display: grid;
   text-align: center;
+  justify-content: center;
   grid-template-columns: 400px 400px;
   margin: auto;
+  @media (max-width: 800px) {
+    grid-template-columns: 300px 300px;
+  }
 `;
 
 export const BackgroundStyle = styled.img`

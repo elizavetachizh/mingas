@@ -1,13 +1,11 @@
 import React from 'react';
 import {
-  ButtonsContainer,
   CompanyButton,
   ContactButton,
   IconEye,
   LinkLogo,
   LinksContainer,
   Logo,
-  PersonalAccButton,
   PressCenterButtons,
   ServiceCenterButton,
   ServicesButton,
@@ -23,13 +21,10 @@ import {
   Telephons,
   ContactInform,
   WorkTime,
-  SocialMedia,
   Instagram,
   Telegram,
   Viber,
-  Row,
   LinksNetwork,
-  TextSocialMedia,
   LinksSocialMedia,
 } from './styles';
 import eye from '../../assets/png/visibilityEye.png';

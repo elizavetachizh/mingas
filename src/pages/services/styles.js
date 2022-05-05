@@ -25,17 +25,12 @@ export const ButtonsServices = styled.div`
 `;
 
 export const ButtonLink = styled(NavLink)`
-  color: white;
-  font-family: Bilbo;
   font-size: 16px;
-  width: 172px;
   text-align: center;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
   cursor: pointer;
-  background-color: #e9f1f5;
   color: #314d5c;
 `;

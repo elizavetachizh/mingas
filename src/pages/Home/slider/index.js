@@ -1,5 +1,5 @@
 import React from 'react';
-import { Main, WindowDiv } from './styles';
+import { Main, WindowDiv, WindowDivMaxWidth } from './styles';
 import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import './styles.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
@@ -50,6 +50,18 @@ export default function CarouselFun() {
           </DivText>
         </Carousel>
       </WindowDiv>
+
+      <WindowDivMaxWidth>
+        <Text>
+          Добро пожаловать на сайт <br />
+          производственного республиканского <br />
+          унитарного предприятия “МИНГАЗ”
+        </Text>
+        <DivInformAbout>
+          <ButtonFun href={'/Services'} backgroundColor={'blue'} infoButton={'Подробнее'} />
+          <img src={phone} alt={''} />
+        </DivInformAbout>
+      </WindowDivMaxWidth>
     </Main>
   );
 }

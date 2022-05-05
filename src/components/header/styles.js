@@ -4,10 +4,12 @@ import { NavLink } from 'react-router-dom';
 const HeaderBackgroundColor = {
   gray: `
     background-color: #E9F1F5;
-    color: #314D5C`,
+    color: #314D5C
+    `,
   blue: `
     background-color: #314D5C;
-    color: #FFF`,
+    color: #FFF;
+    `,
   border: `
     color: #FFF;
     border: 1px solid white;
@@ -29,6 +31,12 @@ export const Container = styled.div`
   .opacity {
     color: #314d5c;
     background-color: rgba(200, 220, 231, 80%);
+    Menu {
+      opacity: 0;
+    }
+    @media (max-width: 800px) {
+      background-color: rgba(200, 220, 231, 80%);
+    }
   }
 `;
 export const Menu = styled.div`
@@ -36,14 +44,19 @@ export const Menu = styled.div`
   cursor: pointer;
   background: rgba(0, 0, 0, 0);
   border: rgba(0, 0, 0, 0);
-
   @media (max-width: 800px) {
     opacity: 1;
+  }
+  .opacity {
+    background-color: rgba(200, 220, 231, 0%);
+    color: #314d5c;
   }
   img {
     margin: 10px;
   }
 `;
+
+export const MenuClose = styled.div``;
 export const Background = styled.div`
   width: 100%;
   height: 80px;
@@ -56,14 +69,14 @@ export const Background = styled.div`
   z-index: 2;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
-    background-color: rgba(200, 220, 231, 80%);
+    background-color: rgba(200, 220, 231, 0%);
     color: #314d5c;
   }
   .click {
     opacity: 1;
   }
   @media (max-width: 800px) {
-    opacity: 0;
+    background-color: rgba(200, 220, 231, 80%);
   }
 `;
 
@@ -98,6 +111,10 @@ export const CompanyButton = styled(NavLink)`
   &.active {
     color: #a69b14;
   }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const ServicesButton = CompanyButton;
@@ -107,4 +124,32 @@ export const ServiceCenterButton = CompanyButton;
 export const PersonalAccButton = styled.a;
 export const IconEye = styled.img`
   margin: 0 10px;
+`;
+
+export const DivButtonHeader = styled.div`
+  display: none;
+  position: absolute;
+`;
+export const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover button {
+    background-color: #000;
+  }
+
+  &:hover div {
+    display: block;
+    display: flex;
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+    padding: 10px;
+  }
+  &:hover div a {
+    margin: 5%;
+  }
 `;

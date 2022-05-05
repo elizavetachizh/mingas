@@ -1,16 +1,14 @@
 import React from 'react';
 import parallax from '../../../assets/png/parallax2.jpg';
 import { Parallax } from 'react-parallax';
-
-const ParallaxStyle = {
-  width: '100%',
-  height: '500px',
-};
+import useMediaQuery from './useMediaQuery';
+import { ParallaxDivInter, DivParallax } from './styles';
 
 export default function ParallaxDiv() {
+  const isDesktop = useMediaQuery('(max-width: 800px)');
   return (
-    <Parallax bgImage={parallax} strength={-300}>
-      <div style={ParallaxStyle} />
+    <Parallax className={isDesktop && 'mobile'} bgImage={parallax} strength={-300}>
+      <ParallaxDivInter />
     </Parallax>
   );
 }

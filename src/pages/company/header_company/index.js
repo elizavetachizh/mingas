@@ -1,5 +1,4 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import {
   HeaderCompanyDiv,
   HistoryButton,
@@ -9,11 +8,11 @@ import {
   DocumentsButton,
   DivButton,
 } from './styles';
-import History from '../history';
-import Management from '../managment';
-import Structure from '../structure';
-import Career from '../career';
-import Documentation from '../documentation';
+// import History from '../history';
+// import Management from '../managment';
+// import Structure from '../structure';
+// import Career from '../career';
+// import Documentation from '../documentation';
 import Header from '../../../components/header';
 
 const hr = {
@@ -26,13 +25,13 @@ const hr = {
 export default function HeaderCompany() {
   return (
     <HeaderCompanyDiv>
-      <Routes>
-        <Route path="/company/history" component={<History />} />
-        <Route path="/management" component={<Management />} />
-        <Route path="/structure" component={<Structure />} />
-        <Route path="/career" component={<Career />} />
-        <Route path="/documentation" component={<Documentation />} />
-      </Routes>
+      {/*<Routes>*/}
+      {/*  <Route path="/company/history" component={<History />} />*/}
+      {/*  <Route path="/management" component={<Management />} />*/}
+      {/*  <Route path="/structure" component={<Structure />} />*/}
+      {/*  <Route path="/career" component={<Career />} />*/}
+      {/*  <Route path="/documentation" component={<Documentation />} />*/}
+      {/*</Routes>*/}
       <Header />
       <DivButton>
         <HistoryButton to="/company/history">История предприятия</HistoryButton>

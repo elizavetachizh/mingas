@@ -12,16 +12,6 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 
 export default function Home() {
-  const defaultProps = {
-    name: 'Data',
-    employer: 'United Federation of Planets',
-    kids: [
-      {
-        name: 'Lal',
-        age: '2',
-      },
-    ],
-  };
   return (
     <Container>
       <Header />

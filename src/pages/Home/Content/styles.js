@@ -6,15 +6,15 @@ export const ContainerContent = styled.div`
   }
 `;
 
-export const DivImage = styled.div`
-  display: flex;
-  align-items: end;
-
-  @media (max-width: 1406px) {
-    max-height: 600px;
-    width: 100%;
-  }
-`;
+// export const DivImage = styled.div`
+//   display: flex;
+//   align-items: end;
+//
+//   @media (max-width: 1406px) {
+//     max-height: 600px;
+//     width: 100%;
+//   }
+// `;
 
 export const DivContent = styled.div`
   width: 100%;
@@ -58,6 +58,10 @@ export const DivText = styled.div`
 export const DivInformAbout = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 800px) {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const Text = styled.p`
@@ -69,5 +73,26 @@ export const Text = styled.p`
   text-transform: uppercase;
   @media (max-width: 1200px) {
     font-size: 26px;
+  }
+  @media (max-width: 800px) {
+    font-size: 20px;
+    text-align: center;
+  }
+`;
+
+export const DivPrizes = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Prizes = styled.div`
+  display: flex;
+  padding: 80px 20px 0px;
+
+  flex-direction: column;
+  img {
+    margin: 10px;
+    width: 65px;
+    height: 60px;
   }
 `;
