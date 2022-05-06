@@ -8,11 +8,8 @@ const HeaderBackgroundColor = {
     `,
 
   blue: `
-    background-color: #314D5C;
+    background-color: #0D4475;
     color: #FFF;
-    Menu {
-       background-color: rgba(200, 220, 231, 0%);
-    }
     `,
   border: `
     color: #FFF;
@@ -62,7 +59,7 @@ export const CompanyButton = styled(NavLink)`
     color: #a69b14;
   }
   &:hover {
-    color: #314d5c;
+    color: #a69b14;
   }
 `;
 
@@ -84,7 +81,6 @@ export const Dropdown = styled.div`
   }
 
   &:hover div {
-    display: block;
     display: flex;
     width: auto;
     min-width: 200px;

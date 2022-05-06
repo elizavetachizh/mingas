@@ -16,7 +16,7 @@ export const Title = styled.h2`
   align-items: center;
   justify-content: center;
   letter-spacing: 0.1em;
-  color: #3a5868;
+  color: #0d4475;
   margin: 4% auto;
   text-align: center;
 `;
@@ -41,7 +41,7 @@ export const UsefulInformContainer = styled.div`
 `;
 export const Line = styled.div`
   height: 1px;
-  background: #3a5868;
+  background: #0d4475;
   width: 90rem;
   margin: 2rem auto;
   max-width: 100%;

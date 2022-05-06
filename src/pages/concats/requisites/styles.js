@@ -17,7 +17,6 @@ export const Abbreviated = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  font-family: Montserrat-Regular, Helvetica, Arial, sans-serif;
   color: #383838;
   margin: 1rem auto;
   max-width: 66%;

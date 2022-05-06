@@ -4,7 +4,7 @@ import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import './styles.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
 import ButtonFun from '../../../components/button';
-import phone from '../../../assets/png/Hand_phone.png';
+import phone from '../../../assets/png/phone.png';
 import worker from '../../../assets/png/master.png';
 
 export default function CarouselFun() {

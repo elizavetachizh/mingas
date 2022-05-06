@@ -14,10 +14,9 @@ export const ImageLink = styled.img`
 `;
 
 export const TextLink = styled.p`
-  font-family: Bilbo;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #314d5c;
+  color: #0d4475;
 `;

@@ -13,7 +13,7 @@ export const Png = styled.img`
   height: 20px;
 `;
 export const DescDiv = styled.p`
-  color: #314d5c;
+  color: #0d4475;
   text-align: center;
   font-size: 20px;
 `;

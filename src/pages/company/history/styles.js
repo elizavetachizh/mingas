@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HistoryButton = styled.a`
   text-decoration: none;
-  color: #314d5c;
+  color: #0d4475;
   .active {
     color: #a69b14;
   }
@@ -15,12 +15,11 @@ export const DivTextPhoto = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 50px auto;
-  font-family: 'Bilbo', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #314d5c;
+  color: #0d4475;
 `;
 
 export const DivText = styled.div`
@@ -40,7 +39,7 @@ export const WhatDoingCompany = styled.div`
     font-family: 'Bilbo', sans-serif;
     font-style: normal;
     font-size: 16px;
-    color: #314d5c;
+    color: #0d4475;
     font-weight: 600;
     line-height: 1;
     text-transform: uppercase;

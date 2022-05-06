@@ -23,7 +23,6 @@ export const Table = styled.table`
   width: 100%;
   background-color: transparent;
   margin-bottom: 30px;
-  font-family: Montserrat-Regular, Helvetica, Arial, sans-serif;
 `;
 
 export const Tbody = styled.tbody`

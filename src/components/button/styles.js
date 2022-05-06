@@ -5,7 +5,7 @@ const buttonBackgroundColor = {
     background-color: #E9F1F5;
     color: #314D5C`,
   blue: `
-    background-color: #314D5C;
+    background-color: #0D4475;
     color: #FFF`,
   border: `
     color: #FFF;
@@ -16,7 +16,6 @@ const buttonBackgroundColor = {
 
 export const Button = styled(NavLink)`
   color: white;
-  font-family: Bilbo, sans-serif;
   font-size: 16px;
   font-weight: 500;
   width: 172px;

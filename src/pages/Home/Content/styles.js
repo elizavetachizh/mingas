@@ -19,10 +19,10 @@ export const ContainerContent = styled.div`
 export const DivContent = styled.div`
   width: 100%;
   position: absolute;
-  height: 800px;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-around;
+  bottom: 0;
   @media (max-width: 1200px) {
     max-height: 600px;
   }
@@ -65,7 +65,6 @@ export const DivInformAbout = styled.div`
 `;
 
 export const Text = styled.p`
-  font-family: Bilbo;
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
@@ -83,6 +82,9 @@ export const Text = styled.p`
 export const DivPrizes = styled.div`
   display: flex;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+  height: 900px;
 `;
 
 export const Prizes = styled.div`

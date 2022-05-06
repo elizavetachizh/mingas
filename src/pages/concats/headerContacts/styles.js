@@ -16,7 +16,6 @@ export const DivButton = styled.div`
 
 export const ConcatsButton = styled(NavLink)`
   text-decoration: none;
-  font-family: 'Bilbo', serif;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;

@@ -16,6 +16,7 @@ import {
   IconEye,
   Dropdown,
   DivButtonHeader,
+  PersonalAccButton,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_color.png';
 import eye from '../../assets/png/visibilityEye.png';
@@ -36,6 +37,7 @@ import {
   WorkScheduleButton,
 } from '../../pages/concats/headerContacts/styles';
 import MobileNavigation from './mobileNavigation';
+import Language from './language';
 
 const styleMenu = {
   width: '30px',
@@ -121,7 +123,8 @@ export default function Header({ currentPage, backgroundHeader }) {
             <PressCenterButtons to="/Press-Center">Пресс-центр</PressCenterButtons>
             <ServiceCenterButton to="/Service-Center">Сервисный центр</ServiceCenterButton>
           </LinksContainer>
-          {/*<PersonalAccButton href={'/profile'}>Личный кабинет</PersonalAccButton>*/}
+          <PersonalAccButton to={''}>Личный кабинет</PersonalAccButton>
+          <Language />
           <IconEye src={eye} />
         </ButtonsContainer>
       </Background>

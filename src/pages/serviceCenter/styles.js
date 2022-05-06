@@ -8,7 +8,7 @@ export const AdvantageDiv = styled.div`
 `;
 
 export const AdvantageTitle = styled.h3`
-  font-family: 'Bilbo', sans-serif;
+  font-family: 'Play', sans-serif;
   font-style: normal;
   font-size: 16px;
   color: #314d5c;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #314d5c;
+  background-color: #0d4475;
   display: flex;
   flex-direction: column;
   margin: 0px;

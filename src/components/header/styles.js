@@ -121,7 +121,7 @@ export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const ServiceCenterButton = CompanyButton;
-export const PersonalAccButton = styled.a;
+export const PersonalAccButton = CompanyButton;
 export const IconEye = styled.img`
   margin: 0 10px;
 `;

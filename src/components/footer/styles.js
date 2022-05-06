@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   max-width: 100%;
   height: auto;
-  background-color: #314d5c;
+  background-color: #0d4475;
   display: flex;
   flex-direction: column;
   font-family: 'Fira Sans Condensed', sans-serif;

@@ -49,12 +49,11 @@ export const DivAboutmanagementWhiteFont = styled.div`
 
 export const DivBasicManagement = styled.div`
   max-width: 90%;
-  font-family: 'Bilbo', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #314d5c;
+  color: #0d4475;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

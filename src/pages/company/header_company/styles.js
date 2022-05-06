@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderCompanyDiv = styled.div`
   display: flex;
@@ -9,7 +9,6 @@ export const HeaderCompanyDiv = styled.div`
 
 export const DivButton = styled.div`
   max-width: 1440px;
-  font-family: 'Bilbo',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -18,16 +17,16 @@ export const DivButton = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
- margin: 10px auto;
+  margin: 10px auto;
 `;
 
 export const HistoryButton = styled(NavLink)`
   text-decoration: none;
-  color: #314D5C;
+  color: #0d4475;
   margin: 0 14px;
-  
+
   &.active {
-    color: #A69B14
+    color: #a69b14;
   }
 `;
 
