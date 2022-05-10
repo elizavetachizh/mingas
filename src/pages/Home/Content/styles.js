@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerContent = styled.div`
   @media (max-width: 1200px) {
-    height: 600px;
+    max-height: 600px;
   }
 `;
 
@@ -85,6 +85,9 @@ export const DivPrizes = styled.div`
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(5px);
   height: 900px;
+  @media (max-width: 1200px) {
+    max-height: 600px;
+  }
 `;
 
 export const Prizes = styled.div`

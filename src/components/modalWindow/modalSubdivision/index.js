@@ -6,9 +6,9 @@ import ProductionTechnicalManagement from '../../../pages/company/managment/Subd
 export default function ModalSubdivision({ links }) {
   return (
     <div>
-      <Routes>
-        <Route path="production-technical-management" element={<ProductionTechnicalManagement />} />
-      </Routes>
+      {/*<Routes>*/}
+      {/*  <Route path="production-technical-management" element={<ProductionTechnicalManagement />} />*/}
+      {/*</Routes>*/}
       <Container>
         {links.map((link) => (
           <Name to="production-technical-management">{link}</Name>

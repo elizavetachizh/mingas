@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef, useEffect, useRef, useState } from 'react';
 import imageContent from '../../../assets/company/component.png';
 import { ContainerContent, DivContent, DivPrizes, Prizes } from './styles';
 import CarouselFun from '../slider';
@@ -16,10 +16,17 @@ const fireBackground = {
   bottom: 0,
   marginTop: '6%',
 };
+
 export default function ContentHome() {
+  const [height, setHeight] = useState('900px');
+
+  //   if (window.innerWidth < 1200) {
+  //     setHeight('600px');
+  //   }
+  // };
   return (
     <ContainerContent>
-      <Parallax style={{ height: '900px', width: '100%' }} bgImage={imageContent}>
+      <Parallax style={{ height: `${height}`, width: '100%' }} bgImage={imageContent}>
         <DivPrizes>
           <Prizes>
             <img src={require(`../../../assets/prizes/primary_1.png`)} />
@@ -27,7 +34,6 @@ export default function ContentHome() {
             <img src={require(`../../../assets/prizes/primary_3.png`)} />
             <img src={require(`../../../assets/prizes/primary_4.png`)} />
           </Prizes>
-
           <DivContent>
             <CarouselFun />
           </DivContent>

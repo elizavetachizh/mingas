@@ -15,7 +15,7 @@ export const ModalWindow = styled.div`
 
 export const ModalWindowOpenAndClose = styled.div`
   width: 700px;
-  height: 600px;
+  height: auto;
   background: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   border-radius: 10px;
@@ -27,6 +27,7 @@ export const InformModal = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #314d5c;
 `;
 
 export const Close = styled.div`

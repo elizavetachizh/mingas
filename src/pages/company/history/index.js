@@ -9,7 +9,7 @@ import {
   WhatDoingCompaniInform,
 } from './styles';
 import Footer from '../../../components/footer';
-import photoHistory from '../../../assets/photo_news/1.png';
+import photoHistory from '../../../assets/management/director.jpg';
 import ContentHome from '../../Home/Content';
 import { data } from '../../../assets/whatDoingMinGaz';
 import WhatDoingMinGaz from './whatDoingMinGaz';
@@ -66,7 +66,7 @@ export default function History() {
         </WhatDoingCompaniInform>
       </WhatDoingCompany>
       <ScrollToTop showUnder={160}>
-        <img src={up}  alt={""}/>
+        <img src={up} alt={''} />
       </ScrollToTop>
       <Footer />
     </Container>

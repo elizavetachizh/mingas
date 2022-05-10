@@ -3,11 +3,12 @@ import { ModalWindow, ModalWindowOpenAndClose, InformModal, Close } from './styl
 import close from '../../assets/png/close.png';
 import ModalSubdivision from './modalSubdivision';
 import { data } from '../../assets/Subvisions/FirstDeputy';
+import { ImageLeader } from '../../pages/company/managment/divmagement/styles';
 const closeStyleButton = {
   backgroundImage: `url(${close})`,
 };
 
-export default function Modal({ handleCloseCLick, currentLeader }) {
+export default function Modal({ handleCloseCLick, currentLeader, links }) {
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
   };
@@ -17,9 +18,10 @@ export default function Modal({ handleCloseCLick, currentLeader }) {
       <ModalWindowOpenAndClose onClick={handleInsideClick}>
         <Close style={closeStyleButton} onClick={handleCloseCLick} />
         <InformModal>
+          <ImageLeader src={require(`../../assets/management/${currentLeader.cardImg}.jpg`)} />
           <p>{currentLeader.fullName}</p>
           <p>{currentLeader.position}</p>
-          <img src={currentLeader.cardImg} alt={''} />
+          <p>{links}</p>
           <ModalSubdivision links={currentLeader.links} />
         </InformModal>
       </ModalWindowOpenAndClose>

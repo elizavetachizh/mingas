@@ -59,9 +59,9 @@ export default function Management() {
                 handlerLeaderClick={handlerLeaderClick}
                 leader={element}
                 key={element.fullName}
-                cardImg={element.cardImg}
                 fullName={element.fullName}
                 position={element.position}
+                links={element.links}
               />
             ))}
           </DivLeadersPhotoPosition>

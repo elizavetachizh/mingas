@@ -23,11 +23,11 @@ export const DivTextPhoto = styled.div`
 `;
 
 export const DivText = styled.div`
-  width: 40%;
+  width: 50%;
 `;
 
 export const ImageDiv = styled.img`
-  width: 40%;
+  width: 30%;
 `;
 
 export const WhatDoingCompany = styled.div`

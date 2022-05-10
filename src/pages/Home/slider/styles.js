@@ -4,6 +4,9 @@ export const Main = styled.div`
   width: 90%;
   display: flex;
   align-items: center;
+  @media (max-width: 1200px) {
+    max-height: 600px;
+  }
   @media (max-width: 800px) {
     width: 100%;
   }
@@ -18,12 +21,18 @@ export const WindowDiv = styled.div`
     left: 50%;
     transition: left 1s;
   }
+  @media (max-width: 1200px) {
+    max-height: 600px;
+  }
   @media (max-width: 800px) {
     display: none;
   } ;
 `;
 
 export const WindowDivMaxWidth = styled.div`
+  @media (max-width: 1200px) {
+    max-height: 600px;
+  }
   @media (min-width: 801px) {
     display: none;
   }
