@@ -38,6 +38,7 @@ import {
 } from '../../pages/concats/headerContacts/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
+import { Trans, useTranslation } from "react-i18next";
 
 const styleMenu = {
   width: '30px',
@@ -77,6 +78,8 @@ export default function Header({ currentPage, backgroundHeader }) {
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
+
+  const { t, i18n  } = useTranslation();
   return (
     <Container backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
@@ -86,9 +89,10 @@ export default function Header({ currentPage, backgroundHeader }) {
           <Logo src={HeaderLogo} />
         </LinkLogo>
         <ButtonsContainer>
+
           <LinksContainer>
             <Dropdown>
-              <CompanyButton to="/company/history">О предприятии</CompanyButton>
+              <CompanyButton to="/company/history"><Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans></CompanyButton>
               <DivButtonHeader>
                 <HistoryButton to="/company/history">История предприятия</HistoryButton>
                 <ManagementButton to="/company/management">Руководство</ManagementButton>
@@ -99,7 +103,7 @@ export default function Header({ currentPage, backgroundHeader }) {
             </Dropdown>
 
             <Dropdown>
-              <ServicesButton to="/Services">Услуги</ServicesButton>
+              <ServicesButton to="/Services">{t('header:Services')}</ServicesButton>
               <DivButtonHeader>
                 <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>
                 <ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>
@@ -107,7 +111,7 @@ export default function Header({ currentPage, backgroundHeader }) {
             </Dropdown>
 
             <Dropdown>
-              <ContactButton to="/Contacts">Контакты</ContactButton>
+              <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
               <DivButtonHeader>
                 <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>
                 <WorkScheduleButton to="/contacts/work-schedule">
@@ -120,10 +124,10 @@ export default function Header({ currentPage, backgroundHeader }) {
               </DivButtonHeader>
             </Dropdown>
 
-            <PressCenterButtons to="/Press-Center">Пресс-центр</PressCenterButtons>
-            <ServiceCenterButton to="/Service-Center">Сервисный центр</ServiceCenterButton>
+            <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
+            <ServiceCenterButton to="/Service-Center">{t('header:ServiceСenter')}</ServiceCenterButton>
           </LinksContainer>
-          <PersonalAccButton to={''}>Личный кабинет</PersonalAccButton>
+          <PersonalAccButton to={''}>{t('header:PersonalArea')}</PersonalAccButton>
           <Language />
           <IconEye src={eye} />
         </ButtonsContainer>

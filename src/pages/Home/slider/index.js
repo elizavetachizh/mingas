@@ -6,8 +6,10 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import ButtonFun from '../../../components/button';
 import phone from '../../../assets/png/phone.png';
 import worker from '../../../assets/png/master.png';
+import { Trans, useTranslation } from "react-i18next";
 
 export default function CarouselFun() {
+  const { t, i18n  } = useTranslation();
   return (
     <Main>
       <WindowDiv>
@@ -28,9 +30,7 @@ export default function CarouselFun() {
           <DivText>
             <DivInformAbout>
               <Text>
-                Добро пожаловать на сайт <br />
-                производственного республиканского <br />
-                унитарного предприятия “МИНГАЗ”
+                <Trans i18nKey="description:part1"></Trans>
               </Text>
               <ButtonFun href={'/Services'} backgroundColor={'blue'} infoButton={'Подробнее'} />
             </DivInformAbout>
@@ -40,9 +40,7 @@ export default function CarouselFun() {
           <DivText>
             <DivInformAbout>
               <Text>
-                Актуальные новости
-                <br />
-                унитарного предприятия “МИНГАЗ”
+                {t('description:part2')}
               </Text>
               <ButtonFun href={'/Press-Center'} backgroundColor={'blue'} infoButton={'Подробнее'} />
             </DivInformAbout>

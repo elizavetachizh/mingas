@@ -10,13 +10,15 @@ import {
 } from './styles';
 
 import search from '../../../assets/png/search.svg';
+import { Trans, useTranslation } from "react-i18next";
 const searchStyle = {
   backgroundImage: `url(${search})`,
 };
 export default function Search() {
+  const { t, i18n  } = useTranslation();
   return (
     <SearchFunction>
-      <Title>Поиск по услугам</Title>
+      <Title><Trans i18nKey="search:search"></Trans></Title>
       <PgItemsSearch>
         <Form>
           <Input type={'text'} placeholder={'Введите название услуги'} />

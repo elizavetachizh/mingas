@@ -1,7 +1,18 @@
 {
-  "title": "Internationalizing with i18next",
+  "header": {
+    "ABOUTTHEENTERPRISE": "About the enterprise",
+    "Services": "Services",
+    "Contacts": "Contacts",
+    "PressCenter": "Press сenter",
+    "ServiceСenter": "Service center",
+    "PersonalArea": "Personal area"
+  },
+
   "description": {
-    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
-    "part2": "Switch language between english and russian using buttons above."
+    "part1": "Welcome to the site <br />\n                 industrial republican <br />\n                 unitary enterprise \"MINGAZ\"",
+    "part2": "Actual news\n                 <br />\n                 unitary enterprise \"MINGAZ\""
+  },
+  "search": {
+    "search": "Search by services"
   }
 }

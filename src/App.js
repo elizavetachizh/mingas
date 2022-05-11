@@ -19,6 +19,7 @@ import PhoneLineServices from './pages/concats/DirectTelephoneLine';
 import GeneralInform from './pages/concats/GeneralContactInform';
 
 class App extends Component {
+
   render() {
     return (
       <div>
