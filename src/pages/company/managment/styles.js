@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const DivAboutManagementBackground = styled.div`
   max-width: 1440px;
-  margin: 0px auto 6%;
+  margin: 0 auto 6%;
 
   &::before {
     content: '';
@@ -58,10 +58,19 @@ export const DivBasicManagement = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 50px auto;
+  @media(max-width: 633px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 export const FullName = styled.h2`
   margin: 0;
+  @media(max-width: 633px) {
+    margin: 6%;
+  }
 `;
 
 export const Position = styled.h2`
@@ -73,10 +82,17 @@ export const DivPhotoAndDescription = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
+  @media(max-width: 633px) {
+    width: 80%;
+  }
 `;
 
 export const Photo = styled.img`
   width: 30%;
+  @media(max-width: 633px) {
+  width: 50%;
+  }
 `;
 
 export const Description = styled.p``;

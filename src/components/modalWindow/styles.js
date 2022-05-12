@@ -20,6 +20,10 @@ export const ModalWindowOpenAndClose = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   border-radius: 10px;
   padding: 3%;
+  text-align: center;
+  @media(max-width: 900px) {
+    width: 500px;
+  }
 `;
 
 export const InformModal = styled.div`

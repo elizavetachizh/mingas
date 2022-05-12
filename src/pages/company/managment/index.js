@@ -37,13 +37,13 @@ export default function Management() {
   return (
     <Container>
       <Header backgroundHeader="gray" />
-      <HeaderCompany currentPage={'management'} />
+      <HeaderCompany />
       <DivAboutManagementBackground>
         <DivAboutmanagementWhiteFont>
           <DivBasicManagement>
             <DivPhotoAndDescription>
-              <FullName>ФИО</FullName>
-              <Position>Должность</Position>
+              <FullName>Генеральный директор УП «МИНГАЗ»</FullName>
+              <Position>Шолоник Вадим Евгеньевич</Position>
               <Description>
                 Руководство текущей деятельностью УП "Мингаз" согласно уставу осуществляет
                 генеральный директор, избираемый Общим собранием акционеров сроком на три года.
@@ -71,7 +71,7 @@ export default function Management() {
         </DivAboutmanagementWhiteFont>
       </DivAboutManagementBackground>
       <ScrollToTop showUnder={160}>
-        <img src={up} />
+        <img src={up} alt={""}/>
       </ScrollToTop>
       <Footer />
     </Container>

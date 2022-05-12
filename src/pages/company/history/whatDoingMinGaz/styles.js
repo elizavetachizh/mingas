@@ -16,4 +16,10 @@ export const DescDiv = styled.p`
   color: #0d4475;
   text-align: center;
   font-size: 20px;
+  @media(max-width: 700px) {
+    font-size: 16px;
+  }
+  @media(max-width: 600px) {
+    font-size: 14px;
+  }
 `;

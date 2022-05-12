@@ -6,6 +6,9 @@ export const HeaderCompanyDiv = styled.div`
   max-width: 29%;
   margin: 0 2%;
   height: 300px;
+  @media(max-width: 800px) {
+    height: auto;
+  }
 `;
 
 export const DivButton = styled.div`

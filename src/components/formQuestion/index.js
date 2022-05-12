@@ -23,6 +23,7 @@ import name from '../../assets/formPng/name.png';
 import phone from '../../assets/formPng/tel.png';
 import email from '../../assets/formPng/email.png';
 import address from '../../assets/formPng/map.png';
+import { Trans, useTranslation } from 'react-i18next';
 
 const NameImage = {
   backgroundImage: `url(${name})`,
@@ -49,63 +50,63 @@ const AddressImage = {
 };
 
 export default function FormQuestion() {
+  const { t } = useTranslation();
   return (
     <Container>
       <TwoColumnTextAndForm>
         <OneColumn>
-          <h2>Задать вопрос</h2>
-          <h3>
-            Наши сотрудники всегда готовы <br />
-            ответить на все ваши вопросы
-          </h3>
-          <h2>Часто задаваемые вопросы</h2>
+          <h2>
+            <Trans i18nKey="form:h2"></Trans>
+          </h2>
+          <h3>{t("form:h3")}</h3>
+          <h2>{t("form:h2Question")}</h2>
           <ButtonFun href={'/'} infoButton={'Перейти'} backgroundColor={'blue'} />
         </OneColumn>
         <TwoColumn>
           <Form>
             <DivInputName>
               <Label>
-                Имя
+                {t("form:name")}
                 <Span>*</Span>
               </Label>
               <Input style={NameImage} type="text" name="ФИО" />
             </DivInputName>
             <DivInputEmail>
               <Label>
-                Адрес электронной почты
+                {t("form:email")}
                 <Span>*</Span>
               </Label>
               <Input style={EmailImage} type="text" />
             </DivInputEmail>
             <DivInputPhone>
               <Label>
-                Телефон
+                {t("form:phone")}
                 <Span>*</Span>
               </Label>
               <Input style={PhoneImage} type="text" />
             </DivInputPhone>
             <DivInputAdress>
               <Label>
-                Адрес проживания
+                {t("form:residence")}
                 <Span>*</Span>
               </Label>
               <Input style={AddressImage} type="text" />
             </DivInputAdress>
             <DivInputText>
               <Label>
-                Текст сообщения
+                {t("form:text")}
                 <Span>*</Span>
               </Label>
               <InputTextBox type="text" />
             </DivInputText>
             <DivInputCheckbox>
               <Label>
-                Я согласен с политикой обработки персональных данных
+                {t("form:agree")}
                 <Span>*</Span>
               </Label>
               <InputCheckbox type="checkbox" />
             </DivInputCheckbox>
-            <ButtonFun href={'/'} backgroundColor={'blue'} infoButton={'Отправить'} />
+            <ButtonFun href={'/'} backgroundColor={'blue'} infoButton={t('infoButton:send')} />
           </Form>
         </TwoColumn>
       </TwoColumnTextAndForm>

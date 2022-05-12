@@ -22,6 +22,23 @@
     "CallTheMaster": "Call the master"
   },
   "infoButton": {
-    "more": "More"
+    "more": "More",
+    "gotoSection": "Go to section",
+    "send": "Send"
+
+  },
+  "services": {
+    "title": "SERVICES OF THE REPUBLICAN UNITARY ENTERPRISE \"MINGAZ\""
+  },
+  "form": {
+    "h2": "Ask a Question",
+    "h3": "Our employees are always ready <br />\n             answer all your questions",
+    "h2Question": "Frequently Asked Questions",
+    "name": "name",
+    "email": "email",
+    "phone": "Phone",
+    "residence": "Address of residence",
+    "text": "Message text",
+    "agree": "I agree with the personal data processing policy"
   }
 }

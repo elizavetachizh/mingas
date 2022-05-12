@@ -19,10 +19,14 @@ export const AdvantageTitle = styled.h3`
 `;
 
 export const AdvantageRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-auto-rows: 200px 400px;
+  grid-gap: 0.5em;
+  @media(max-width: 500px) {
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-rows: 200px 200px;
+  }
 `;
 
 export const Realize = AdvantageDiv;
@@ -31,10 +35,12 @@ export const RealizeTitle = AdvantageTitle;
 
 export const RealizeRow = styled.div`
   display: grid;
-
   grid-template-columns: repeat(4, 25%);
   grid-auto-rows: 300px 300px;
   grid-gap: 0.5em;
+  @media(max-width: 650px) {
+    grid-template-columns: repeat(2, 50%);
+  }
 `;
 
 export const Brands = styled.div``;

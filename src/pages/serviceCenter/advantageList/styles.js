@@ -6,7 +6,7 @@ export const AdvantageListDiv = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
-  width: 25%;
+  width: 90%;
   margin: 10px;
   padding: 20px 30px;
   text-decoration: none;

@@ -33,6 +33,7 @@
     "mongoose": "^6.3.1",
     "multer": "^1.4.4",
     "mysql2": "^2.3.3",
+    "netlify-cli": "^10.3.0",
     "node-rocketsms": "^0.1.2",
     "node-rocketsms-api": "^1.1.1",
     "nodemailer": "^6.7.3",

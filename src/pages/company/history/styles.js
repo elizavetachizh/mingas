@@ -20,19 +20,32 @@ export const DivTextPhoto = styled.div`
   font-size: 16px;
   line-height: 20px;
   color: #0d4475;
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    text-align: center;
+  }
 `;
 
 export const DivText = styled.div`
   width: 50%;
+  @media (max-width: 600px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `;
 
 export const ImageDiv = styled.img`
   width: 30%;
+  @media (max-width: 600px) {
+    width: 50%;
+    margin: 0 auto;
+  }
 `;
 
 export const WhatDoingCompany = styled.div`
   max-width: 1440px;
-  margin: 0px 6% 6%;
+  margin: 0 6% 6%;
   display: flex;
   flex-direction: column;
   h2 {

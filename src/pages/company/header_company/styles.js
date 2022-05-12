@@ -18,6 +18,10 @@ export const DivButton = styled.div`
   align-items: center;
   justify-content: space-around;
   margin: 10px auto;
+  @media(max-width: 800px) {
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 
 export const HistoryButton = styled(NavLink)`
