@@ -21,4 +21,7 @@ export const DescLink = styled.p``;
 
 export const ImageLink = styled.img`
   width: 90%;
+  @media(max-width: 640px) {
+    width: 70%;
+  }
 `;

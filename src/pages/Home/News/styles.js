@@ -8,6 +8,9 @@ export const Container = styled.div`
   margin: 0px;
   align-items: center;
   padding: 50px 0;
+  @media (max-width: 640px) {
+    width: 640px;
+  }
 `;
 
 export const DivInform = styled.div`
@@ -16,4 +19,7 @@ export const DivInform = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 30px 5%;
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 `;

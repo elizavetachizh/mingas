@@ -8,8 +8,10 @@ import background from '../../../assets/background/background.png';
 import linesOne from '../../../assets/background/lines.png';
 import { BackgroundStyle } from '../services/styles';
 import Search from '../Serch';
+import { Trans, useTranslation } from "react-i18next";
 
 export default function UsefulInform() {
+  const { t, i18n  } = useTranslation();
   return (
     <Container src={background}>
       <BackgroundStyle src={linesOne} />
@@ -17,7 +19,7 @@ export default function UsefulInform() {
         <Search />
         <Line />
         <UsefulInformContainer>
-          <Title>Полезная информация</Title>
+          <Title><Trans i18nKey="usefulInform:usefulInform"></Trans></Title>
           <DivInform>
             {data.map((element) => (
               <LinkInform
@@ -32,7 +34,7 @@ export default function UsefulInform() {
             href={'/'}
             backgroundColor={'blue'}
             justifyContent={'center'}
-            infoButton={'Подробнее'}
+            infoButton={t('infoButton:more')}
           />
         </UsefulInformContainer>
       </DivUsefulInform>

@@ -44,7 +44,7 @@ export const Button = styled.button`
   position: absolute;
   top: 6px;
   right: 0.75rem;
-  background: #314d5c 50% 50% no-repeat;
+  background: #0D4475 50% 50% no-repeat;
   border-radius: 4px;
   width: 42px;
   height: 28px;

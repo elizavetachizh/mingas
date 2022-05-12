@@ -10,9 +10,18 @@
 
   "description": {
     "part1": "Welcome to the site <br />\n                 industrial republican <br />\n                 unitary enterprise \"MINGAZ\"",
-    "part2": "Actual news\n                 <br />\n                 unitary enterprise \"MINGAZ\""
+    "part2": "Actual news \n  unitary enterprise \"MINGAZ\""
   },
   "search": {
     "search": "Search by services"
+  },
+  "usefulInform": {
+    "usefulInform": "Helpful Information"
+  },
+  "UsefulInformContainer": {
+    "CallTheMaster": "Call the master"
+  },
+  "infoButton": {
+    "more": "More"
   }
 }

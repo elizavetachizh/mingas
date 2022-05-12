@@ -6,6 +6,9 @@ export const DivUsefulInform = styled.div`
   justify-content: center;
   background-color: #e9f1f5;
   align-items: center;
+  @media (max-width: 640px) {
+    width: 640px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -19,6 +22,10 @@ export const Title = styled.h2`
   color: #0d4475;
   margin: 4% auto;
   text-align: center;
+  @media (max-width: 640px) {
+    font-size: 24px;
+
+  }
 `;
 
 export const DivInform = styled.div`
@@ -27,6 +34,9 @@ export const DivInform = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 70%;
+  @media (max-width: 975px) {
+    width: 90%;
+  }
   @media (max-width: 800px) {
     flex-direction: column;
   }

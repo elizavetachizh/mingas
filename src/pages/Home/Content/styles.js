@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 export const ContainerContent = styled.div`
   @media (max-width: 1200px) {
-    max-height: 600px;
+    max-height: 900px;
   }
+  @media (max-width: 640px) {
+    width: 640px;
+  }
+
 `;
 
 // export const DivImage = styled.div`
@@ -24,7 +28,7 @@ export const DivContent = styled.div`
   justify-content: space-around;
   bottom: 0;
   @media (max-width: 1200px) {
-    max-height: 600px;
+    max-height: 900px;
   }
 
   //&:before {
@@ -86,7 +90,7 @@ export const DivPrizes = styled.div`
   backdrop-filter: blur(5px);
   height: 900px;
   @media (max-width: 1200px) {
-    max-height: 600px;
+    max-height: 900px;
   }
 `;
 

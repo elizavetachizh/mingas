@@ -34,9 +34,11 @@ export const Container = styled.div`
     Menu {
       opacity: 0;
     }
+   
     @media (max-width: 800px) {
       background-color: rgba(200, 220, 231, 80%);
     }
+  
   }
 `;
 export const Menu = styled.div`
@@ -75,6 +77,7 @@ export const Background = styled.div`
   .click {
     opacity: 1;
   }
+ 
   @media (max-width: 800px) {
     background-color: rgba(200, 220, 231, 80%);
   }
@@ -101,6 +104,12 @@ export const LinksContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1010px) {
+    font-size: 14px;
+  }
+  @media (max-width: 950px) {
+    font-size: 12px;
+  }
 `;
 
 export const CompanyButton = styled(NavLink)`

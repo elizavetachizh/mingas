@@ -6,10 +6,10 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import ButtonFun from '../../../components/button';
 import phone from '../../../assets/png/phone.png';
 import worker from '../../../assets/png/master.png';
-import { Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from 'react-i18next';
 
 export default function CarouselFun() {
-  const { t, i18n  } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <Main>
       <WindowDiv>
@@ -32,17 +32,23 @@ export default function CarouselFun() {
               <Text>
                 <Trans i18nKey="description:part1"></Trans>
               </Text>
-              <ButtonFun href={'/Services'} backgroundColor={'blue'} infoButton={'Подробнее'} />
+              <ButtonFun
+                href={'/Services'}
+                backgroundColor={'blue'}
+                infoButton={t('infoButton:more')}
+              />
             </DivInformAbout>
             <img src={phone} alt={''} />
           </DivText>
 
           <DivText>
             <DivInformAbout>
-              <Text>
-                {t('description:part2')}
-              </Text>
-              <ButtonFun href={'/Press-Center'} backgroundColor={'blue'} infoButton={'Подробнее'} />
+              <Text>{t('description:part2')}</Text>
+              <ButtonFun
+                href={'/Press-Center'}
+                backgroundColor={'blue'}
+                infoButton={t('infoButton:more')}
+              />
             </DivInformAbout>
             <img src={worker} alt={''} />
           </DivText>

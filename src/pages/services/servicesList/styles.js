@@ -20,6 +20,9 @@ export const DivServicesList = styled.div`
     text-decoration-color: rgba(49, 77, 93, 0.6);
     transform: translateY(-1rem);
   }
+  @media (max-width: 590px) {
+    box-shadow: none;
+  }
 `;
 
 export const Image = styled.img`

@@ -17,6 +17,9 @@ export const TwoColumnTextAndForm = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media(max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 export const OneColumn = styled.div`
@@ -33,10 +36,21 @@ export const OneColumn = styled.div`
     line-height: 1;
     text-transform: uppercase;
   }
+  @media(max-width: 700px) {
+    width: 100%;
+    text-align: center;
+
+  }
 `;
 
 export const TwoColumn = styled.div`
   width: 50%;
+  @media(max-width: 700px) {
+    width: 100%;
+    text-align: center;
+    margin-right: 10%;
+
+  }
 `;
 
 export const DivInputCheckbox = styled.div`

@@ -8,6 +8,10 @@ export const Container = styled.div`
   height: auto;
   color: #fff;
   align-items: center;
+  @media (max-width: 640px) {
+    width: 640px;
+    
+  }
 `;
 
 export const DivInform = styled.div`
@@ -23,6 +27,10 @@ export const Title = styled.h2`
   justify-content: center;
   margin: 4% auto;
   text-align: center;
+  @media (max-width: 640px) {
+    font-size: 20px;
+
+  }
 `;
 
 export const TitleCard = styled.h3``;
