@@ -35,7 +35,7 @@ export const Container = styled.div`
       opacity: 0;
     }
    
-    @media (max-width: 800px) {
+    @media (max-width: 894px) {
       background-color: rgba(200, 220, 231, 80%);
     }
   
@@ -46,7 +46,7 @@ export const Menu = styled.div`
   cursor: pointer;
   background: rgba(0, 0, 0, 0);
   border: rgba(0, 0, 0, 0);
-  @media (max-width: 800px) {
+  @media (max-width: 894px) {
     opacity: 1;
   }
   .opacity {
@@ -78,7 +78,7 @@ export const Background = styled.div`
     opacity: 1;
   }
  
-  @media (max-width: 800px) {
+  @media (max-width: 894px) {
     background-color: rgba(200, 220, 231, 80%);
   }
 `;
@@ -110,6 +110,7 @@ export const LinksContainer = styled.div`
   @media (max-width: 950px) {
     font-size: 12px;
   }
+
 `;
 
 export const CompanyButton = styled(NavLink)`
@@ -121,7 +122,7 @@ export const CompanyButton = styled(NavLink)`
     color: #a69b14;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 894px) {
     display: none;
   }
 `;

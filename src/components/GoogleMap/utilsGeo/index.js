@@ -1,4 +1,4 @@
-const defaultCenter = {
+export const defaultCenter = {
     lat: 53.905812,
     lng: 27.602552
 }

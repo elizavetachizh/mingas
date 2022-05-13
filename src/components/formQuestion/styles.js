@@ -17,8 +17,20 @@ export const TwoColumnTextAndForm = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media(max-width: 700px) {
+  @media (max-width: 700px) {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 4%;
+  }
+  @media (max-width: 450px) {
+    margin-left: 14%;
+    padding-left: 14%;
   }
 `;
 
@@ -36,20 +48,24 @@ export const OneColumn = styled.div`
     line-height: 1;
     text-transform: uppercase;
   }
-  @media(max-width: 700px) {
+  @media (max-width: 700px) {
     width: 100%;
     text-align: center;
-
   }
 `;
 
 export const TwoColumn = styled.div`
   width: 50%;
-  @media(max-width: 700px) {
+  @media (max-width: 700px) {
     width: 100%;
     text-align: center;
     margin-right: 10%;
-
+  }
+  @media (max-width: 550px) {
+    margin: 0 auto;
+  }
+  @media (max-width: 380px) {
+    width: 300px;
   }
 `;
 

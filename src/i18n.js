@@ -3,10 +3,12 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import en from './locales/en/translationEN.json';
 import ru from './locales/ru/translationRU.json'
+import bel from './locales/bel/translationBEL.json'
 
 const resources = {
   en,
-  ru
+  ru,
+  bel
 };
 export const availableLanguages = Object.keys(resources)
 i18n

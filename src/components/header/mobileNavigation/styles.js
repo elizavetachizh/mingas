@@ -71,7 +71,7 @@ export const ServiceCenterButton = CompanyButton;
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
-  margin: 50px;
+  margin: 0 20px;
 `;
 export const Dropdown = styled.div`
   position: relative;
@@ -87,6 +87,7 @@ export const Dropdown = styled.div`
     height: auto;
     align-items: flex-start;
     flex-direction: column;
+    z-index: 5;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     background-color: #f1f1f1;
     padding: 10px;

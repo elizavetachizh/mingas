@@ -59,7 +59,6 @@ export default function Header({ currentPage, backgroundHeader }) {
   const [open, setOpen] = useState(false);
 
   const onClick = () => {
-    console.log('hi');
     setOpen(!open);
   };
   const openMobile = (

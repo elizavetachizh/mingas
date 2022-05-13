@@ -63,7 +63,7 @@ export const DivInformAbout = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 800px) {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
   }
 `;

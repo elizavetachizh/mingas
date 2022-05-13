@@ -24,9 +24,9 @@ export const WindowDiv = styled.div`
   @media (max-width: 1200px) {
     max-height: 600px;
   }
-  @media (max-width: 800px) {
-    display: none;
-  } ;
+  //@media (max-width: 800px) {
+  //  display: none;
+  //} ;
 `;
 
 export const WindowDivMaxWidth = styled.div`

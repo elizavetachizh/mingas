@@ -10,20 +10,15 @@ import Map, { MODES } from '../../../components/GoogleMap';
 import Footer from '../../../components/footer';
 import { Container } from '../../styles';
 import { useJsApiLoader } from '@react-google-maps/api';
-import { GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
+import { defaultCenter, GetBrowserLocation } from "../../../components/GoogleMap/utilsGeo";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const defaultCenter = {
-  lat: 53.905812,
-  lng: 27.602552,
-};
 
 export const styleTd = {
   width: '50%',
   fontWeight: 'bold',
 };
-
 const libraries = ['places'];
 
 export default function GeneralInform() {
