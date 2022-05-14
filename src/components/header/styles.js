@@ -132,7 +132,7 @@ export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const ServiceCenterButton = CompanyButton;
 export const PersonalAccButton = CompanyButton;
-export const IconEye = styled.img`
+export const IconEye = styled.a`
   margin: 0 10px;
 `;
 

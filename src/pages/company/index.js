@@ -1,6 +1,9 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container, DialogTelegram, DialogViber } from "./styles";
 
 export default function Company() {
-  return <Container />;
+  return <Container>
+    <DialogViber></DialogViber>
+    <DialogTelegram></DialogTelegram>
+  </Container>;
 }

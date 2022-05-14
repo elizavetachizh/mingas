@@ -30,6 +30,9 @@ export const DivContent = styled.div`
   @media (max-width: 1200px) {
     max-height: 900px;
   }
+  @media (max-width: 600px) {
+   flex-direction: column;
+  }
 
   //&:before {
   //  position: absolute;
@@ -50,12 +53,18 @@ export const DivText = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
+  @media(max-width: 600px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   img {
     width: 50%;
+    margin: 0 auto;
     @media (max-width: 1200px) {
-      width: 30%;
+      //width: 30%;
     }
+  
   }
 `;
 

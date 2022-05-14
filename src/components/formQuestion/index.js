@@ -58,50 +58,50 @@ export default function FormQuestion() {
           <h2>
             <Trans i18nKey="form:h2"></Trans>
           </h2>
-          <h3>{t("form:h3")}</h3>
-          <h2>{t("form:h2Question")}</h2>
+          <h3>{t('form:h3')}</h3>
+          <h2>{t('form:h2Question')}</h2>
           <ButtonFun href={'/'} infoButton={'Перейти'} backgroundColor={'blue'} />
         </OneColumn>
         <TwoColumn>
           <Form>
             <DivInputName>
               <Label>
-                {t("form:name")}
+                {t('form:name')}
                 <Span>*</Span>
               </Label>
               <Input style={NameImage} type="text" name="ФИО" />
             </DivInputName>
             <DivInputEmail>
               <Label>
-                {t("form:email")}
+                {t('form:email')}
                 <Span>*</Span>
               </Label>
               <Input style={EmailImage} type="text" />
             </DivInputEmail>
             <DivInputPhone>
               <Label>
-                {t("form:phone")}
+                {t('form:phone')}
                 <Span>*</Span>
               </Label>
               <Input style={PhoneImage} type="text" />
             </DivInputPhone>
             <DivInputAdress>
               <Label>
-                {t("form:residence")}
+                {t('form:residence')}
                 <Span>*</Span>
               </Label>
               <Input style={AddressImage} type="text" />
             </DivInputAdress>
             <DivInputText>
               <Label>
-                {t("form:text")}
+                {t('form:text')}
                 <Span>*</Span>
               </Label>
               <InputTextBox type="text" />
             </DivInputText>
             <DivInputCheckbox>
               <Label>
-                {t("form:agree")}
+                {t('form:agree')}
                 <Span>*</Span>
               </Label>
               <InputCheckbox type="checkbox" />

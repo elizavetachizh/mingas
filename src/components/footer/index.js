@@ -53,8 +53,8 @@ export default function Footer() {
       <LinksNetwork>
         <LinksSocialMedia>
           <Instagram src={instagram} />
-          <Telegram src={telegram} />
-          <Viber src={viber} />
+          <Telegram to={'/dialog/:telegram'} src={telegram} />
+          <Viber to={'/dialog/:viber'} src={viber} />
         </LinksSocialMedia>
         <Contacts>
           <Telephons>

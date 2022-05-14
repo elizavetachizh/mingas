@@ -44,6 +44,8 @@ const styleMenu = {
   width: '30px',
   height: '30px',
 };
+
+
 export default function Header({ currentPage, backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
   const changeBackground = () => {
@@ -126,9 +128,11 @@ export default function Header({ currentPage, backgroundHeader }) {
             <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
             <ServiceCenterButton to="/Service-Center">{t('header:ServiceСenter')}</ServiceCenterButton>
           </LinksContainer>
-          <PersonalAccButton to={''}>{t('header:PersonalArea')}</PersonalAccButton>
+          <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
           <Language />
-          <IconEye src={eye} />
+        <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
+          <img  src={eye}/>
+        </IconEye>
         </ButtonsContainer>
       </Background>
     </Container>

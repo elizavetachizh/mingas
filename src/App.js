@@ -17,6 +17,8 @@ import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
 import GeneralInform from './pages/concats/GeneralContactInform';
+import { DialogViber, DialogTelegram } from "./pages/company/styles";
+import Personal from "./pages/PersonalAccount";
 
 class App extends Component {
 
@@ -46,7 +48,9 @@ class App extends Component {
             element={<SchedulePersonalReceptionOfCitizens />}
           />
           <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-          {/*<Route path={'/profile'} element={Profile} />*/}
+          <Route path={'/dialog/:telegram'} element={<DialogViber/>}/>
+          <Route  path={'/dialog/:viber'} element={<DialogTelegram/>}/>
+          <Route path={'/Personal'} element={<Personal/>} />
         </Routes>
       </div>
     );

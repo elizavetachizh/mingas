@@ -5,3 +5,5 @@ export const Container = styled.div`
   margin: 0 auto;
   height: 100%;
 `;
+export const DialogViber = styled.div``;
+export const DialogTelegram=DialogViber;

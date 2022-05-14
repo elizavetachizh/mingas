@@ -4,6 +4,7 @@ export const SearchFunction = styled.div`
   flex: 0 0 auto;
   width: 100%;
   margin: 0 auto;
+
 `;
 
 export const PgItemsSearch = styled.div`
@@ -17,6 +18,9 @@ export const Form = styled.form`
   max-width: 100%;
   margin: 0 auto;
   position: relative;
+  @media(max-width: 600px) {
+    width: 500px;
+  }
 `;
 
 export const AutocompleteSuggestions = styled.div`
