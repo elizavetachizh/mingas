@@ -14,8 +14,8 @@ import {
   DocumentsButton,
   HistoryButton,
   ManagementButton,
-  StructureButton,
-} from '../../../pages/company/header_company/styles';
+  StructureButton, UnionButton
+} from "../../../pages/company/header_company/styles";
 import { ButtonLink } from '../../../pages/services/styles';
 import {
   ConcatsButton,
@@ -23,6 +23,7 @@ import {
   RequisitesButton,
   WorkScheduleButton,
 } from '../../../pages/concats/headerContacts/styles';
+import React from "react";
 
 export default function MobileNavigation() {
   return (
@@ -36,6 +37,7 @@ export default function MobileNavigation() {
             <StructureButton to="/company/structure">Структура предприятия</StructureButton>
             <CareerButton to="/company/career">Карерьера в УП "Мингаз"</CareerButton>
             <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
+            <UnionButton to="/company/union">Профсоюз</UnionButton>
           </DivButtonHeader>
         </Dropdown>
 

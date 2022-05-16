@@ -6,16 +6,10 @@ import {
   StructureButton,
   CareerButton,
   DocumentsButton,
+  UnionButton,
   DivButton,
 } from './styles';
 import Header from '../../../components/header';
-
-const hr = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '60%',
-};
 
 export default function HeaderCompany() {
   return (
@@ -27,8 +21,9 @@ export default function HeaderCompany() {
         <StructureButton to="/company/structure">Структура предприятия</StructureButton>
         <CareerButton to="/company/career">Карерьера в УП "Мингаз"</CareerButton>
         <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
+        <UnionButton to="/company/union">Профсоюз</UnionButton>
       </DivButton>
-      <hr style={hr} />
+      <hr />
     </HeaderCompanyDiv>
   );
 }

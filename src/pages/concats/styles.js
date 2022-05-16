@@ -5,6 +5,9 @@ export const DivMap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media(max-width: 500px) {
+    margin: 0 10%;
+  }
 `;
 
 export const DivButtons = styled.div`
@@ -14,6 +17,9 @@ export const DivButtons = styled.div`
   align-items: center;
   margin: 20px;
   width: 30%;
+  @media(max-width: 500px) {
+    width: 80%;
+  }
 `;
 
 export const ContactsInform = styled.div`
@@ -30,4 +36,8 @@ export const Row = styled.div`
   justify-content: center;
   margin: 6rem auto;
   color: #383838;
+  @media(max-width: 600px) {
+    max-width: 100%;
+    width: 100%;
+  }
 `;

@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
 export const DivMap = styled.div`
-  width: 60vw;
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 4%;
+@media(max-width: 600px) {
+  margin-left: 10%;
+}
+  @media(max-width: 450px) {
+    margin-left: 20%;
+    height: 80vh;
+  }
 `;
 
 export const defaultTheme = [

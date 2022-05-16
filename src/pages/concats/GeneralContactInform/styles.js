@@ -7,6 +7,21 @@ export const AdditionalDiv = styled.div`
   @media (max-width: 1500px) {
     margin: 10% auto;
   } ;
+  @media (max-width: 500px) {
+    max-width:100%;
+    width: 100%;
+    margin: 10%;
+  } ;
+  @media (max-width: 400px) {
+    max-width:100%;
+    width: 100%;
+    margin: 26%;
+  } ;
+  @media (max-width: 350px) {
+    max-width:100%;
+    width: 100%;
+    margin: 32%;
+  } ;
 `;
 
 export const PageSection = styled.div`

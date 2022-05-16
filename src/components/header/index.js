@@ -28,6 +28,7 @@ import {
   HistoryButton,
   ManagementButton,
   StructureButton,
+  UnionButton,
 } from '../../pages/company/header_company/styles';
 import { ButtonLink } from '../../pages/services/styles';
 import {
@@ -38,15 +39,14 @@ import {
 } from '../../pages/concats/headerContacts/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
-import { Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from 'react-i18next';
 
 const styleMenu = {
   width: '30px',
   height: '30px',
 };
 
-
-export default function Header({ currentPage, backgroundHeader }) {
+export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -65,13 +65,13 @@ export default function Header({ currentPage, backgroundHeader }) {
   };
   const openMobile = (
     <Menu className={navbar && 'opacity'} onClick={onClick}>
-      <img style={styleMenu} src={menu} />
+      <img style={styleMenu} src={menu} alt={''} />
     </Menu>
   );
 
   const closeMobile = (
     <MenuClose className={navbar && 'opacity'} onClick={onClick}>
-      <img style={styleMenu} src={close} />
+      <img style={styleMenu} src={close} alt="" />
     </MenuClose>
   );
 
@@ -80,7 +80,7 @@ export default function Header({ currentPage, backgroundHeader }) {
     setModalVisible(false);
   }, []);
 
-  const { t, i18n  } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Container backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
@@ -90,16 +90,18 @@ export default function Header({ currentPage, backgroundHeader }) {
           <Logo src={HeaderLogo} />
         </LinkLogo>
         <ButtonsContainer>
-
           <LinksContainer>
             <Dropdown>
-              <CompanyButton to="/company/history"><Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans></CompanyButton>
+              <CompanyButton to="/company/history">
+                <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
+              </CompanyButton>
               <DivButtonHeader>
                 <HistoryButton to="/company/history">История предприятия</HistoryButton>
                 <ManagementButton to="/company/management">Руководство</ManagementButton>
                 <StructureButton to="/company/structure">Структура предприятия</StructureButton>
                 <CareerButton to="/company/career">Карерьера в УП "Мингаз"</CareerButton>
                 <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
+                <UnionButton to="/company/union">Профсоюз</UnionButton>
               </DivButtonHeader>
             </Dropdown>
 
@@ -126,13 +128,15 @@ export default function Header({ currentPage, backgroundHeader }) {
             </Dropdown>
 
             <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
-            <ServiceCenterButton to="/Service-Center">{t('header:ServiceСenter')}</ServiceCenterButton>
+            <ServiceCenterButton to="/Service-Center">
+              {t('header:ServiceСenter')}
+            </ServiceCenterButton>
           </LinksContainer>
           <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
           <Language />
-        <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-          <img  src={eye}/>
-        </IconEye>
+          <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
+            <img src={eye} alt=''/>
+          </IconEye>
         </ButtonsContainer>
       </Background>
     </Container>

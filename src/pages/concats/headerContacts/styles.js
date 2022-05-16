@@ -27,6 +27,9 @@ export const ConcatsButton = styled(NavLink)`
   &.active {
     color: #a69b14;
   }
+  @media(max-width: 400px) {
+    font-size: 14px;
+  }
 `;
 
 export const WorkScheduleButton = ConcatsButton;

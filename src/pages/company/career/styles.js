@@ -6,7 +6,7 @@ export const TextCareer = styled.p`
 
 export const PhotoCareer = styled.img`
 width: 40%;
-height: auto`;
+`
 
 export const DivVacancies = styled.div`
 display: flex;

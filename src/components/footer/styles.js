@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 100%;
+  //max-width: 100%;
   height: auto;
   background-color: #0d4475;
   display: flex;
@@ -10,6 +10,10 @@ export const Container = styled.div`
   font-size: 16px;
   padding: 50px 0;
   color: #e9e5d6;
+  @media (max-width: 640px) {
+    width: 640px;
+    max-width: 640px;
+  }
 `;
 
 export const Contacts = styled.div`
@@ -18,11 +22,23 @@ export const Contacts = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 20px 0;
+  @media(max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    width: 640px;
+  }
 `;
 
 export const LinksNetwork = styled.div`
   display: flex;
   flex-direction: row;
+  @media(max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export const LinksSocialMedia = styled.div`
@@ -31,6 +47,9 @@ export const LinksSocialMedia = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin: 0 2%;
+  @media(max-width: 900px) {
+    flex-direction: row;
+  }
 `;
 
 export const Telephons = styled.div`

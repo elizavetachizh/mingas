@@ -5,6 +5,29 @@ export const HeaderCompanyDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin: 6% auto;
+  @media(max-width: 1320px) {
+    margin: 8% auto;
+  }
+  @media(max-width: 1320px) {
+    margin-top: 8%;
+  }
+  @media(max-width: 1320px) {
+    margin-top: 12%;
+  }
+  hr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    @media (max-width: 600px) {
+      width: 90%;
+      margin: 0 16%;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+      margin: 0 26%;
+    }
+  }
 `;
 
 export const DivButton = styled.div`
@@ -18,7 +41,7 @@ export const DivButton = styled.div`
   align-items: center;
   justify-content: space-around;
   margin: 10px auto;
-  @media(max-width: 800px) {
+  @media (max-width: 900px) {
     font-size: 14px;
     text-align: center;
   }
@@ -35,7 +58,7 @@ export const HistoryButton = styled(NavLink)`
 `;
 
 export const ManagementButton = HistoryButton;
-
 export const StructureButton = HistoryButton;
 export const CareerButton = HistoryButton;
 export const DocumentsButton = HistoryButton;
+export const UnionButton = HistoryButton;

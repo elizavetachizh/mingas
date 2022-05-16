@@ -9,6 +9,19 @@ export const Container = styled.div`
 export const DivAboutManagementBackground = styled.div`
   max-width: 1440px;
   margin: 0 auto 6%;
+  @media(max-width: 640px) {
+    max-width: 640px;
+    width: 640px;
+    margin: 0 10% 0;
+  }
+  @media(max-width: 550px) {
+    max-width: 450px;
+    width: 550px;
+  }
+  @media(max-width: 450px) {
+    max-width: 450px;
+    width: 450px;
+  }
 
   &::before {
     content: '';
@@ -21,6 +34,9 @@ export const DivAboutManagementBackground = styled.div`
     z-index: -1;
     background: url('https://peterburggaz.ru/local/templates/peterburggaz/images/section-left.png?1')
       left 390px no-repeat;
+    @media (max-width: 640px) {
+      display: none;
+    }
   }
   &:after {
     content: '';
@@ -33,6 +49,10 @@ export const DivAboutManagementBackground = styled.div`
     z-index: -1;
     background: url('https://peterburggaz.ru/local/templates/peterburggaz/images/section-right.png?2')
       right bottom no-repeat;
+
+    @media (max-width: 640px) {
+      display: none;
+    }
   }
 `;
 
@@ -45,6 +65,15 @@ export const DivAboutmanagementWhiteFont = styled.div`
   background: #ffffff;
   border: 1px solid #000000;
   box-sizing: border-box;
+ 
+  @media(max-width: 640px) {
+    max-width: 640px;
+    width: 640px;
+  }
+  @media(max-width: 450px) {
+    max-width: 450px;
+    width: 450px;
+  }
 `;
 
 export const DivBasicManagement = styled.div`
@@ -58,6 +87,12 @@ export const DivBasicManagement = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 50px auto;
+  @media(max-width: 900px) {
+    font-size: 14px;
+  }
+  @media(max-width: 800px) {
+    font-size: 12px;
+  }
   @media(max-width: 633px) {
     flex-direction: column-reverse;
     justify-content: center;
@@ -102,4 +137,7 @@ export const DivLeadersPhotoPosition = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
+  @media(max-width: 400px) {
+  margin: 0;
+}
 `;

@@ -24,7 +24,23 @@ export const DivTextPhoto = styled.div`
     flex-direction: column-reverse;
     margin: 0 auto;
     text-align: center;
+    max-width: 100%;
+    width: 100%;
   }
+  @media (max-width: 550px) {
+margin-left: 10%;
+    max-width: 100%;
+    width: 100%;
+  }
+  @media (max-width: 450px) {
+    width: 450px;
+    margin-left: 20%;
+  }
+  @media (max-width: 400px) {
+    width: 450px;
+    margin-left: 26%;
+  }
+  
 `;
 
 export const DivText = styled.div`

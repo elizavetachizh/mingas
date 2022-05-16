@@ -17,11 +17,11 @@ import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
 import GeneralInform from './pages/concats/GeneralContactInform';
-import { DialogViber, DialogTelegram } from "./pages/company/styles";
-import Personal from "./pages/PersonalAccount";
+import { DialogViber, DialogTelegram } from './pages/company/styles';
+import Personal from './pages/PersonalAccount';
+import Union from './pages/company/union';
 
 class App extends Component {
-
   render() {
     return (
       <div>
@@ -37,6 +37,7 @@ class App extends Component {
           <Route path="/company/structure/" element={<Structure />} />
           <Route path="/company/career/" element={<Career />} />
           <Route path="/company/documentation/" element={<Documentation />} />
+          <Route path="/company/union/" element={<Union />} />
           <Route
             path="/company/management/production-technical-management"
             element={<ProductionTechnicalManagement />}
@@ -48,9 +49,9 @@ class App extends Component {
             element={<SchedulePersonalReceptionOfCitizens />}
           />
           <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-          <Route path={'/dialog/:telegram'} element={<DialogViber/>}/>
-          <Route  path={'/dialog/:viber'} element={<DialogTelegram/>}/>
-          <Route path={'/Personal'} element={<Personal/>} />
+          <Route path={'/dialog/:telegram'} element={<DialogViber />} />
+          <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
+          <Route path={'/Personal'} element={<Personal />} />
         </Routes>
       </div>
     );
