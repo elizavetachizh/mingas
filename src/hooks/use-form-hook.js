@@ -1,18 +1,20 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { FormState, FormValues, UseFormReturnValues } from '../../shared/consts/interfaces';
-import { Card } from '../../components/CardForm';
-import {INITIAL_FORM_STATE} from '../const/consts';
+
+// import { Card } from '../../components/CardForm';
+import { INITIAL_FORM_STATE } from '../const/consts';
+import type { FormValuesConst } from '../const/consts';
 
 export const useForm = () => {
-  const [formValues, setFormValues] = useState<FormValues>(INITIAL_FORM_STATE);
-  const [errors, setErrors] = useState<Record>({});
-  const [cards, setCards] = useState<Card[]>([]);
-  const isButtonDisabled = useMemo<boolean>(() => {
+  const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
+  const re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  const [errors, setErrors] = useState({});
+  // const [cards, setCards] = useState<Card[]>([]);
+  const isButtonDisabled = useMemo(() => {
     return !!(
-      formValues.name?.length ||
-      !formValues.birthday ||
-      !formValues.date ||
-      !formValues.country ||
+      !formValues.name?.length ||
+      !re.test(formValues.email) ||
+       !formValues.date ||
+       !formValues.work ||
       !formValues.isAgree ||
       Object.keys(errors)?.length
     );
@@ -22,13 +24,13 @@ export const useForm = () => {
     setErrors({});
     switch (fieldName) {
       case 'name':
-        if (formValues.name.length) {
-          setErrors({ ...errors, name: 'Username must be 5 characters long!' });
+        if (!formValues.name.length) {
+          setErrors({ ...errors, name: 'Username must be!' });
         }
         break;
-      case 'birthday':
-        if (!formValues.birthday) {
-          setErrors({ ...errors, birthday: 'Date is not valid!' });
+      case 'email':
+        if ( !re.test(formValues.email)) {
+          setErrors({ ...errors, email: 'Email is not valid!' });
         }
         break;
       case 'date':
@@ -56,9 +58,7 @@ export const useForm = () => {
       event.preventDefault();
       console.log(1);
       const { name, value } = event.target;
-      setFormValues(
-        Object.assign(formValues, { [name]: value } as unknown as Pick<FormState, keyof FormState>)
-    );
+      setFormValues(Object.assign(formValues, { [name]: value }));
       validate(name);
     },
     [formValues]
@@ -68,10 +68,7 @@ export const useForm = () => {
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
       const { name, value } = event.target;
-      setFormValues({ ...formValues, country: value } as unknown as Pick<
-      FormState,
-        keyof FormState
-      >);
+      setFormValues({ ...formValues, country: value });
       validate(name);
     },
     [formValues]
@@ -95,26 +92,36 @@ export const useForm = () => {
   );
 
   const clearForm = useCallback(() => {
-    (document.getElementById('file-input') as HTMLInputElement).value = '';
-    setFormValues({ ...INITIAL_FORM_STATE, name: '', date: '', birthday: '' });
+    document.getElementById('file-input').value = '';
+    setFormValues({ ...INITIAL_FORM_STATE, name: '', date: '', email: '' });
   }, []);
 
   const handleSubmit = useCallback(() => {
-    setCards([
-      ...cards,
-      {
-        name: formValues.name,
-        birthday: formValues.birthday,
-        date: formValues.date,
-        country: formValues.country,
-        isAgree: formValues.isAgree,
-        fileName: formValues.fileName,
-        male: formValues.male,
-      },
-    ]);
+    // setCards([
+    //   ...cards,
+    //   {
+    //     name: formValues.name,
+    //     birthday: formValues.birthday,
+    //     date: formValues.date,
+    //     country: formValues.country,
+    //     isAgree: formValues.isAgree,
+    //     fileName: formValues.fileName,
+    //     male: formValues.male,
+    //   },
+    // ]);
     clearForm();
+    console.log({
+      name: formValues.name,
+      email: formValues.email,
+      date: formValues.date,
+      // country: formValues.country,
+      isAgree: formValues.isAgree,
+      fileName: formValues.fileName,
+      // male: formValues.male,
+    });
     alert('Форма успешно заполнена');
-  }, [cards, formValues]);
+    console.log('handle');
+  }, [formValues]);
 
   return {
     handleUserInput,
@@ -126,6 +133,6 @@ export const useForm = () => {
     handleSwitcher,
     isButtonDisabled,
     handleSubmit,
-    cards,
+    // cards,
   };
 };

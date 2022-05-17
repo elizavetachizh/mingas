@@ -37,6 +37,7 @@
     "name": "name",
     "email": "email",
     "phone": "Phone",
+    "date": "Desired completion date",
     "residence": "Address of residence",
     "text": "Message text",
     "agree": "I agree with the personal data processing policy"

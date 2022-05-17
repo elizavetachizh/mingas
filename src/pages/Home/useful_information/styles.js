@@ -39,6 +39,7 @@ export const DivInform = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 70%;
+  margin-bottom: 6%;
   @media (max-width: 975px) {
     width: 90%;
   }

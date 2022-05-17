@@ -1,5 +1,5 @@
 import React from 'react';
-import parallax from '../../../assets/png/parallax2.jpg';
+import parallax from '../../../assets/parallax/car_mingas.jpg';
 import { Parallax } from 'react-parallax';
 
 import { ParallaxDivInter, ParallaxD } from './styles';

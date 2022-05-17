@@ -24,6 +24,9 @@ import phone from '../../assets/formPng/tel.png';
 import email from '../../assets/formPng/email.png';
 import address from '../../assets/formPng/map.png';
 import { Trans, useTranslation } from 'react-i18next';
+import { useForm } from '../../hooks/use-form-hook';
+import InputName from '../input';
+import Select from "../select";
 
 const NameImage = {
   backgroundImage: `url(${name})`,
@@ -50,6 +53,18 @@ const AddressImage = {
 };
 
 export default function FormQuestion() {
+  const {
+    handleUserInput,
+    formValues,
+    errors,
+    handleChangeCountry,
+    handleFileInput,
+    handleCheckBox,
+    handleSwitcher,
+    isButtonDisabled,
+    handleSubmit,
+    cards,
+  } = useForm();
   const { t } = useTranslation();
   return (
     <Container>
@@ -63,50 +78,86 @@ export default function FormQuestion() {
           <ButtonFun href={'/'} infoButton={'Перейти'} backgroundColor={'blue'} />
         </OneColumn>
         <TwoColumn>
-          <Form>
+          <Form onSubmit={handleUserInput}>
             <DivInputName>
               <Label>
                 {t('form:name')}
                 <Span>*</Span>
               </Label>
-              <Input style={NameImage} type="text" name="ФИО" />
+              <InputName
+                inputName={'name'}
+                type={'text'}
+                placeholder={'Введите ФИО полностью'}
+                onChange={handleUserInput}
+                value={formValues.name}
+                error={errors.name}
+              />
             </DivInputName>
-            <DivInputEmail>
+            <DivInputName>
               <Label>
                 {t('form:email')}
                 <Span>*</Span>
               </Label>
-              <Input style={EmailImage} type="text" />
-            </DivInputEmail>
-            <DivInputPhone>
+              <InputName
+                inputName={'email'}
+                type="email"
+                placeholder={'Введите ваш e-mail'}
+                onChange={handleUserInput}
+                value={formValues.email}
+                error={errors.email}
+              />
+            </DivInputName>
+            <DivInputName>
               <Label>
-                {t('form:phone')}
+                {t('form:date')}
                 <Span>*</Span>
+                <InputName
+                  inputName={'date'}
+                  type={'date'}
+                  placeholder={'Выберете дату'}
+                  onChange={handleUserInput}
+                  value={formValues.date}
+                  error={errors.date}
+                />
               </Label>
-              <Input style={PhoneImage} type="text" />
-            </DivInputPhone>
-            <DivInputAdress>
-              <Label>
-                {t('form:residence')}
-                <Span>*</Span>
-              </Label>
-              <Input style={AddressImage} type="text" />
-            </DivInputAdress>
-            <DivInputText>
-              <Label>
-                {t('form:text')}
-                <Span>*</Span>
-              </Label>
-              <InputTextBox type="text" />
-            </DivInputText>
-            <DivInputCheckbox>
-              <Label>
-                {t('form:agree')}
-                <Span>*</Span>
-              </Label>
-              <InputCheckbox type="checkbox" />
-            </DivInputCheckbox>
-            <ButtonFun href={'/'} backgroundColor={'blue'} infoButton={t('infoButton:send')} />
+            </DivInputName>
+<Select label={} span={} onChange={} value={} inputName={} error={} options={}/>
+            {/*<select*/}
+            {/*  label="Country"*/}
+            {/*  span={'*'}*/}
+            {/*  onChange={handleChangeCountry}*/}
+            {/*  value={formValues.country}*/}
+            {/*  inputName="country"*/}
+            {/*  error={errors.country}*/}
+            {/*/>*/}
+            <input name="file" type="file" id="file-input" onChange={handleFileInput} />
+            <input
+              type="checkbox"
+              label="Согласен на обработку данных"
+              span={'*'}
+              onChange={handleCheckBox}
+              checked={formValues.isAgree}
+              inputName='"isAgree"'
+              error={errors.isAgree}
+            />
+            <input
+              label="Не получать/получать уведомления"
+              onChange={handleSwitcher}
+              checked={formValues.male}
+              inputName="male"
+              error={errors.male}
+            />
+            <button
+              disabled={isButtonDisabled}
+              type="submit"
+              onClick={handleSubmit}
+              data-testid="submit-button"
+            >
+              Отправить
+            </button>
+            {isButtonDisabled && (
+              <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+            )}
           </Form>
         </TwoColumn>
       </TwoColumnTextAndForm>

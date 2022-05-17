@@ -10,11 +10,11 @@ export const Container = styled.div`
   align-items: center;
   @media (max-width: 640px) {
     width: 640px;
-    
   }
 `;
 
 export const DivInform = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,6 @@ export const Title = styled.h2`
   text-align: center;
   @media (max-width: 640px) {
     font-size: 20px;
-
   }
 `;
 
@@ -50,13 +49,27 @@ export const DivDown = styled.div`
   display: grid;
   text-align: center;
   justify-content: center;
-  grid-template-columns: 400px 400px;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 300px 300px;
   margin: auto;
-  @media (max-width: 800px) {
-    grid-template-columns: 300px 300px;
+  @media (max-width: 1190px) {
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px;
+  }
+  @media (max-width: 990px) {
+    grid-template-columns: 300px;
+    grid-template-rows: 300px 300px;
+  }
+  @media (max-width: 400px) {
+    grid-template-columns: 250px;
+    grid-template-rows: 250px 250px;
   }
 `;
-
+export const ServicesDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
 export const BackgroundStyle = styled.img`
   position: absolute;
   display: flex;
@@ -67,4 +80,11 @@ export const BackgroundStyle = styled.img`
   @media (max-width: 1200px) {
     display: none;
   }
+`;
+
+export const ButtonServicesHome = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 `;

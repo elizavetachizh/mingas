@@ -1,16 +1,11 @@
 import React, { createRef, useEffect, useRef, useState } from 'react';
-import imageContent from '../../../assets/company/component.png';
+import imageContent from '../../../assets/background/mingas_background(2).jpg';
 import { ContainerContent, DivContent, DivPrizes, Prizes } from './styles';
 import CarouselFun from '../slider';
 import { Parallax } from 'react-parallax';
 
-// const ParallaxStyle = {
-//   height: '800px',
-//   display: 'grid',
-//   // width: '100% !important',
-// };
 const fireBackground = {
- 'display':'none'
+  display: 'none',
 };
 
 export default function ContentHome() {

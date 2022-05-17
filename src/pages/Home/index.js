@@ -10,6 +10,7 @@ import Footer from '../../components/footer';
 import FormQuestion from '../../components/formQuestion';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
+import Appeal from "./appeal";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <HomeServices />
         <ParallaxDiv />
         <FormQuestion />
+        <Appeal/>
         <News />
       </HomeContainer>
       <ScrollToTop showUnder={160}>

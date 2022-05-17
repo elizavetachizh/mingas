@@ -5,9 +5,9 @@ export default function() {
 }
 export const data = [
     {cardImg: 1,
-        cardDesc: "Вызвать мастера"},
+        cardDesc: "Оплатить в ЕРИП за газ"},
     {cardImg: 1,
-        cardDesc: "Отключение от газоснабжения"},
+        cardDesc: "Подключение оборудования купленное за пределами РБ"},
     {cardImg: 1,
         cardDesc: "Как связаться с нами"},
     {cardImg: 1,
