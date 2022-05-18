@@ -20,6 +20,7 @@ import GeneralInform from './pages/concats/GeneralContactInform';
 import { DialogViber, DialogTelegram } from './pages/company/styles';
 import Personal from './pages/PersonalAccount';
 import Union from './pages/company/union';
+import Tasks from './pages/Employees/Tasks';
 
 class App extends Component {
   render() {
@@ -52,6 +53,7 @@ class App extends Component {
           <Route path={'/dialog/:telegram'} element={<DialogViber />} />
           <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
           <Route path={'/Personal'} element={<Personal />} />
+          <Route path={'/Personal/tasks'} element={<Tasks />} />
         </Routes>
       </div>
     );

@@ -11,7 +11,13 @@ export const DivMap = styled.div`
 }
   @media(max-width: 450px) {
     margin-left: 20%;
-    height: 80vh;
+    height: 70vh;
+    width: 100%;
+  }
+  @media(max-width: 400px) {
+    margin-left: 20%;
+    height: 60vh;
+    width: 100%;
   }
 `;
 

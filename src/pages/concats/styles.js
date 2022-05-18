@@ -17,8 +17,15 @@ export const DivButtons = styled.div`
   align-items: center;
   margin: 20px;
   width: 30%;
-  @media(max-width: 500px) {
+  @media(max-width: 600px) {
     width: 80%;
+  }
+  @media(max-width: 500px) {
+   margin-left: 20%;
+    width: 100%;
+  }
+  @media(max-width: 400px) {
+    margin-left: 30%;
   }
 `;
 

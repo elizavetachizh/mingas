@@ -12,4 +12,12 @@ export const InputAutoComplete = styled.input`
   position: relative;
   padding: 10px;
   margin: 20px;
+  @media(max-width: 600px) {
+    width: 400px;
+    margin-left: 20%;
+  }
+  @media(max-width: 400px) {
+    width: 300px;
+    margin-left: 30%;
+  }
 `;

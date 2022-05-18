@@ -121,7 +121,7 @@ export default function FormQuestion() {
                 />
               </Label>
             </DivInputName>
-<Select label={} span={} onChange={} value={} inputName={} error={} options={}/>
+{/*<Select  onChange={} value={} inputName={} error={} options={}/>*/}
             {/*<select*/}
             {/*  label="Country"*/}
             {/*  span={'*'}*/}
