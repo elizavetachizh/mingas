@@ -2,12 +2,12 @@ import React from 'react';
 import {
   DivInputName,
   DivInputEmail,
-  DivInputPhone,
   DivInputAdress,
+  DivInputPhone,
   DivInputText,
   DivInputCheckbox,
+  DivInputFile,
   Form,
-  Input,
   Label,
   Span,
   TwoColumnTextAndForm,
@@ -15,6 +15,7 @@ import {
   TwoColumn,
   InputCheckbox,
   InputTextBox,
+  InputFile,
 } from './styles';
 
 import ButtonFun from '../button';
@@ -26,7 +27,7 @@ import address from '../../assets/formPng/map.png';
 import { Trans, useTranslation } from 'react-i18next';
 import { useForm } from '../../hooks/use-form-hook';
 import InputName from '../input';
-import Select from "../select";
+import Select from '../select';
 
 const NameImage = {
   backgroundImage: `url(${name})`,
@@ -57,13 +58,11 @@ export default function FormQuestion() {
     handleUserInput,
     formValues,
     errors,
-    handleChangeCountry,
     handleFileInput,
     handleCheckBox,
     handleSwitcher,
     isButtonDisabled,
     handleSubmit,
-    cards,
   } = useForm();
   const { t } = useTranslation();
   return (
@@ -86,14 +85,15 @@ export default function FormQuestion() {
               </Label>
               <InputName
                 inputName={'name'}
+                name={'name'}
                 type={'text'}
                 placeholder={'Введите ФИО полностью'}
                 onChange={handleUserInput}
                 value={formValues.name}
-                error={errors.name}
+                error={name && errors.name}
               />
             </DivInputName>
-            <DivInputName>
+            <DivInputEmail>
               <Label>
                 {t('form:email')}
                 <Span>*</Span>
@@ -101,52 +101,78 @@ export default function FormQuestion() {
               <InputName
                 inputName={'email'}
                 type="email"
+                name={'email'}
                 placeholder={'Введите ваш e-mail'}
                 onChange={handleUserInput}
                 value={formValues.email}
-                error={errors.email}
+                error={email && errors.email}
               />
-            </DivInputName>
-            <DivInputName>
+            </DivInputEmail>
+            <DivInputAdress>
               <Label>
-                {t('form:date')}
+                {t('form:address')}
                 <Span>*</Span>
-                <InputName
-                  inputName={'date'}
-                  type={'date'}
-                  placeholder={'Выберете дату'}
-                  onChange={handleUserInput}
-                  value={formValues.date}
-                  error={errors.date}
-                />
               </Label>
-            </DivInputName>
-{/*<Select  onChange={} value={} inputName={} error={} options={}/>*/}
-            {/*<select*/}
-            {/*  label="Country"*/}
-            {/*  span={'*'}*/}
-            {/*  onChange={handleChangeCountry}*/}
-            {/*  value={formValues.country}*/}
-            {/*  inputName="country"*/}
-            {/*  error={errors.country}*/}
-            {/*/>*/}
-            <input name="file" type="file" id="file-input" onChange={handleFileInput} />
-            <input
-              type="checkbox"
-              label="Согласен на обработку данных"
-              span={'*'}
-              onChange={handleCheckBox}
-              checked={formValues.isAgree}
-              inputName='"isAgree"'
-              error={errors.isAgree}
-            />
-            <input
-              label="Не получать/получать уведомления"
-              onChange={handleSwitcher}
-              checked={formValues.male}
-              inputName="male"
-              error={errors.male}
-            />
+              <InputName
+                inputName={'address'}
+                type="text"
+                name={'address'}
+                placeholder={'Введите адрес проживания'}
+                onChange={handleUserInput}
+                value={formValues.address}
+                error={address && errors.address}
+              />
+            </DivInputAdress>
+            <DivInputPhone>
+              <Label>
+                {t('form:phone')}
+
+                <Span>*</Span>
+              </Label>
+              <InputName
+                inputName={'phone'}
+                type="tel"
+                name="phone"
+                placeholder={'+375(ХХ)-ХХХ-ХХ-ХХ'}
+                onChange={handleUserInput}
+                value={formValues.phone}
+                error={phone && errors.phone}
+              />
+            </DivInputPhone>
+            <DivInputText>
+              <Label>
+                {t('form:text')}
+                <Span>*</Span>
+              </Label>
+
+              <InputName
+                inputName={'text'}
+                type="text"
+                name="text"
+                placeholder={'Текст сообщения'}
+                onChange={handleUserInput}
+                value={formValues.text}
+                error={errors.text}
+              />
+            </DivInputText>
+            <DivInputFile>
+              <span>Прекрипите файл</span>
+              <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
+            </DivInputFile>
+            <DivInputCheckbox>
+              <InputCheckbox
+                type="checkbox"
+                span={'*'}
+                onChange={handleCheckBox}
+                checked={formValues.isAgree}
+                inputName="isAgree"
+                error={errors.isAgree}
+              />
+              <Label>
+                Согласен на обработку данных
+                <Span>*</Span>
+              </Label>
+            </DivInputCheckbox>
             <button
               disabled={isButtonDisabled}
               type="submit"

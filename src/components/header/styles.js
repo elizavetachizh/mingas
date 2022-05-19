@@ -34,20 +34,19 @@ export const Container = styled.div`
     Menu {
       opacity: 0;
     }
-   
+
     @media (max-width: 894px) {
       background-color: rgba(200, 220, 231, 80%);
     }
-  
   }
 `;
 export const Menu = styled.div`
-  opacity: 0;
+  display: none;
   cursor: pointer;
   background: rgba(0, 0, 0, 0);
   border: rgba(0, 0, 0, 0);
-  @media (max-width: 894px) {
-    opacity: 1;
+  @media (max-width: 916px) {
+    display: block;
   }
   .opacity {
     background-color: rgba(200, 220, 231, 0%);
@@ -77,8 +76,8 @@ export const Background = styled.div`
   .click {
     opacity: 1;
   }
- 
-  @media (max-width: 894px) {
+
+  @media (max-width: 916px) {
     background-color: rgba(200, 220, 231, 80%);
   }
 `;
@@ -104,13 +103,18 @@ export const LinksContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 1010px) {
+  @media (max-width: 1076px) {
+    font-size: 15px;
+  }
+  @media (max-width: 1049px) {
     font-size: 14px;
   }
-  @media (max-width: 950px) {
+  @media (max-width: 1022px) {
+    font-size: 13px;
+  }
+  @media (max-width: 990px) {
     font-size: 12px;
   }
-
 `;
 
 export const CompanyButton = styled(NavLink)`
@@ -122,7 +126,7 @@ export const CompanyButton = styled(NavLink)`
     color: #a69b14;
   }
 
-  @media (max-width: 894px) {
+  @media (max-width: 916px) {
     display: none;
   }
 `;
@@ -148,14 +152,13 @@ export const Dropdown = styled.div`
   }
 
   &:hover div {
-    display: block;
     display: flex;
     width: auto;
     min-width: 200px;
     height: auto;
     align-items: flex-start;
     flex-direction: column;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     background-color: #f1f1f1;
     padding: 10px;
   }

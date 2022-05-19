@@ -5,7 +5,8 @@
     "Contacts": "Contacts",
     "PressCenter": "Press сenter",
     "ServiceСenter": "Service center",
-    "PersonalArea": "Personal area"
+    "PersonalArea": "Personal area",
+    "feedback" : "Feedback"
   },
 
   "description": {
@@ -34,8 +35,10 @@
     "h2": "Ask a Question",
     "h3": "Our employees are always ready <br />\n             answer all your questions",
     "h2Question": "Frequently Asked Questions",
-    "name": "name",
-    "email": "email",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "The phone",
+    "address": "The address",
     "phone": "Phone",
     "date": "Desired completion date",
     "residence": "Address of residence",

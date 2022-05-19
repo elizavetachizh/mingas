@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 import NoMatch from './pages/noMatch';
 import Home from './pages/Home';
 import PressCenter from './pages/PressCenter';
-import ServiceCenter from './pages/serviceCenter';
 import Services from './pages/services';
 import History from './pages/company/history';
 import Management from './pages/company/managment';
@@ -21,6 +20,8 @@ import { DialogViber, DialogTelegram } from './pages/company/styles';
 import Personal from './pages/PersonalAccount';
 import Union from './pages/company/union';
 import Tasks from './pages/Employees/Tasks';
+import Feedback from './pages/feedback';
+import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 
 class App extends Component {
   render() {
@@ -28,11 +29,13 @@ class App extends Component {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Services" element={<Services />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/company/history" element={<History />} />
           <Route path="/contacts" element={<GeneralInform />} />
-          <Route path="/Press-Center" element={<PressCenter />} />
-          <Route path="/Service-Center" element={<ServiceCenter />} />
+          <Route path="/press-center" element={<PressCenter />} />
+          {/*<Route path="/Service-Center" element={<ServiceCenter />} />*/}
+          <Route path={'/feedback'} element={<Feedback />} />
+          <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
           <Route path="/company/structure/" element={<Structure />} />

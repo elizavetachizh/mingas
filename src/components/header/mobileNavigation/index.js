@@ -6,7 +6,7 @@ import {
   Dropdown,
   LinksContainer,
   PressCenterButtons,
-  ServiceCenterButton,
+  FeedBackButton,
   ServicesButton,
 } from './styles';
 import {
@@ -14,8 +14,9 @@ import {
   DocumentsButton,
   HistoryButton,
   ManagementButton,
-  StructureButton, UnionButton
-} from "../../../pages/company/header_company/styles";
+  StructureButton,
+  UnionButton,
+} from '../../../pages/company/header_company/styles';
 import { ButtonLink } from '../../../pages/services/styles';
 import {
   ConcatsButton,
@@ -23,7 +24,7 @@ import {
   RequisitesButton,
   WorkScheduleButton,
 } from '../../../pages/concats/headerContacts/styles';
-import React from "react";
+import React from 'react';
 
 export default function MobileNavigation() {
   return (
@@ -64,7 +65,7 @@ export default function MobileNavigation() {
         </Dropdown>
 
         <PressCenterButtons to="/Press-Center">Пресс-центр</PressCenterButtons>
-        <ServiceCenterButton to="/Service-Center">Сервисный центр</ServiceCenterButton>
+        <FeedBackButton to="/feedback"></FeedBackButton>
       </LinksContainer>
     </ButtonsContainer>
   );

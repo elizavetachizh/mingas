@@ -7,9 +7,9 @@ export const ContainerLeaders = styled.a`
   align-items: center;
   text-align: center;
   cursor: pointer;
-  margin: 0 auto;
-  width: 220px;
-  height: 260px;
+  margin: 4% auto;
+  width: 70%;
+  height: auto;
   outline: 2px solid #0d4475; /* Чёрная рамка */
   border: 3px solid #fff; /* Белая рамка */
   font-style: normal;
@@ -23,7 +23,7 @@ export const ContainerLeaders = styled.a`
   }
 `;
 export const ImageLeader = styled.img`
-  width: 50%;
+  width: 70%;
 `;
 export const FullNameLeader = styled.p`
   text-align: center;

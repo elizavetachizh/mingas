@@ -3,6 +3,9 @@ export const INITIAL_FORM_STATE = {
   date: '',
   email: '',
   work: '',
+  phone: '',
+  address: '',
+  text: '',
   isAgree: false,
   fileName: '',
   male: false,
@@ -13,7 +16,10 @@ export interface FormValuesConst {
   date: string;
   email: string;
   work: string;
+  phone: string;
+  address: string;
   isAgree: boolean;
+  text: string;
   fileName: string;
   male: boolean;
 }

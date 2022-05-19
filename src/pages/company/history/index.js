@@ -9,7 +9,7 @@ import {
   WhatDoingCompaniInform,
 } from './styles';
 import Footer from '../../../components/footer';
-import photoHistory from '../../../assets/management/director.jpg';
+import photoHistory from '../../../assets/management/0.jpg';
 import ContentHome from '../../Home/Content';
 import { data } from '../../../assets/whatDoingMinGaz';
 import WhatDoingMinGaz from './whatDoingMinGaz';

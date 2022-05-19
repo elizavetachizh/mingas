@@ -8,9 +8,16 @@ export const DivInputName = styled.div`
   margin-top: 1.5rem;
 `;
 export const DivInputEmail = DivInputName;
-export const DivInputPhone = DivInputName;
 export const DivInputAdress = DivInputName;
-export const DivInputText = DivInputName;
+export const DivInputPhone = DivInputName;
+export const DivInputText =  styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  input {
+    height: 100px;
+  }
+`;;
 
 export const TwoColumnTextAndForm = styled.div`
   margin: 6% 10%;
@@ -77,7 +84,6 @@ export const DivInputCheckbox = styled.div`
 export const Label = styled.label`
   color: #2d4c6b;
   opacity: 0.65;
-  margin-left: 1rem;
 `;
 
 export const Span = styled.span`
@@ -106,4 +112,32 @@ export const InputTextBox = styled.input`
   border: 0;
   padding-left: 1rem;
   width: 100%;
+`;
+
+export const DivInputFile = styled.div`
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 1.5rem 0;
+  width: 200px;
+  height: 36px;
+  span {
+    position: relative;
+    background: #f6f6f6;
+    border: 1px solid #c5c5c5;
+    border-radius: 0;
+    box-shadow: 1px 1px 1px #c5c5c5;
+    padding: 10px 21px;
+    font-size: 15px;
+    color: #6c757d;
+  }
+`;
+
+export const InputFile = styled.input`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  opacity: 0;
 `;

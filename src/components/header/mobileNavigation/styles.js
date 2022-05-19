@@ -66,7 +66,7 @@ export const CompanyButton = styled(NavLink)`
 export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
-export const ServiceCenterButton = CompanyButton;
+export const FeedBackButton = CompanyButton;
 
 export const DivButtonHeader = styled.div`
   display: none;

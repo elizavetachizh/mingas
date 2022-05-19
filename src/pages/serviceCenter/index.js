@@ -61,7 +61,6 @@ export default function ServiceCenter() {
       <Brands>
         <BrandsTitle>Обслуживаемые бренды</BrandsTitle>
         <BrandsPagination>
-          {' '}
           {numbersOfImages.map((el) => (
             <img src={require(`../../assets/brands/${el}.png`)} key={el} />
           ))}

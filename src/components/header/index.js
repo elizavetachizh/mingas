@@ -106,12 +106,21 @@ export default function Header({ backgroundHeader }) {
             </Dropdown>
 
             <Dropdown>
-              <ServicesButton to="/Services">{t('header:Services')}</ServicesButton>
+              <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
               <DivButtonHeader>
                 <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>
                 <ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>
               </DivButtonHeader>
             </Dropdown>
+
+            <Dropdown>
+              <ServicesButton to="/feedback">{t('header:feedback')}</ServicesButton>
+              <DivButtonHeader>
+                <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
+              </DivButtonHeader>
+            </Dropdown>
+
+            <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
 
             <Dropdown>
               <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
@@ -126,16 +135,14 @@ export default function Header({ backgroundHeader }) {
                 <RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>
               </DivButtonHeader>
             </Dropdown>
-
-            <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
-            <ServiceCenterButton to="/Service-Center">
-              {t('header:ServiceСenter')}
-            </ServiceCenterButton>
+            {/*<ServiceCenterButton to="/Service-Center">*/}
+            {/*  {t('header:ServiceСenter')}*/}
+            {/*</ServiceCenterButton>*/}
           </LinksContainer>
           <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
           <Language />
           <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-            <img src={eye} alt=''/>
+            <img src={eye} alt="" />
           </IconEye>
         </ButtonsContainer>
       </Background>

@@ -12,7 +12,7 @@ import {
   Description,
   DivLeadersPhotoPosition,
 } from './styles';
-import director from '../../../assets/company/director.jpg';
+// import director from '../../../assets/company/0.jpg';
 import { data } from '../../../assets/data_management';
 import Leaders from './divmagement';
 import Footer from '../../../components/footer';
@@ -24,7 +24,6 @@ import ScrollToTop from 'react-scroll-up';
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
-
   const handlerLeaderClick = useCallback((leader) => {
     setModalVisible(true);
     setCurrentLeader(leader);
@@ -51,12 +50,13 @@ export default function Management() {
                 Общества.
               </Description>
             </DivPhotoAndDescription>
-            <Photo src={director} />
+            {/*<Photo src={director} />*/}
           </DivBasicManagement>
           <DivLeadersPhotoPosition>
             {data.map((element) => (
               <Leaders
                 handlerLeaderClick={handlerLeaderClick}
+                cardImg={element.cardImg}
                 leader={element}
                 key={element.fullName}
                 fullName={element.fullName}
@@ -71,7 +71,7 @@ export default function Management() {
         </DivAboutmanagementWhiteFont>
       </DivAboutManagementBackground>
       <ScrollToTop showUnder={160}>
-        <img src={up} alt={""}/>
+        <img src={up} alt={''} />
       </ScrollToTop>
       <Footer />
     </Container>

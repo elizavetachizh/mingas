@@ -2,20 +2,33 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 // import { Card } from '../../components/CardForm';
 import { INITIAL_FORM_STATE } from '../const/consts';
-import type { FormValuesConst } from '../const/consts';
 
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  const isValidateEmail = (email: string): boolean => {
+    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
+      email
+    );
+  };
+
+  const isValidatePhone = (phone: string): boolean => {
+    return /\+375\(\d{2}\)-\d{3}-\d{2}-\d{2}/g.test(phone);
+  };
+
+  const stringIncludesNumber = (string: string): boolean => {
+    return /\d/.test(string);
+  };
+
   const [errors, setErrors] = useState({});
   // const [cards, setCards] = useState<Card[]>([]);
   const isButtonDisabled = useMemo(() => {
     return !!(
-      !formValues.name?.length ||
-      !re.test(formValues.email) ||
-       !formValues.date ||
-       !formValues.work ||
+      stringIncludesNumber(formValues.name) ||
+      !isValidateEmail(formValues.email) ||
+      !formValues.address ||
       !formValues.isAgree ||
+      !formValues.text ||
+      !isValidatePhone(formValues.phone) ||
       Object.keys(errors)?.length
     );
   }, [formValues, errors]);
@@ -24,28 +37,32 @@ export const useForm = () => {
     setErrors({});
     switch (fieldName) {
       case 'name':
-        if (!formValues.name.length) {
-          setErrors({ ...errors, name: 'Username must be!' });
+        if (stringIncludesNumber(formValues.name)) {
+          setErrors({ ...errors, name: 'ФИО может модержать только буквы!' });
         }
         break;
       case 'email':
-        if ( !re.test(formValues.email)) {
-          setErrors({ ...errors, email: 'Email is not valid!' });
+        if (!isValidateEmail(formValues.email)) {
+          setErrors({ ...errors, email: 'Введите верный адрес почты!' });
         }
         break;
-      case 'date':
-        if (!formValues.date) {
-          setErrors({ ...errors, date: 'Date is not valid!' });
+      case 'phone':
+        if (!isValidatePhone(formValues.phone)) {
+          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
-      case 'country':
-        if (formValues.country.trim().length) {
-          setErrors({ ...errors, country: 'Country should be selected!' });
+      case 'address':
+        if (!formValues.address.length) {
+          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
         }
         break;
+      case 'text':
+        if (!formValues.text.length) {
+          setErrors({ ...errors, text: 'Заполните, пожалуйста, обращение' });
+        }
       case 'isAgree':
         if (!!formValues.isAgree) {
-          setErrors({ ...errors, isAgree: 'You need to apply!' });
+          setErrors({ ...errors, isAgree: 'Заполните поле' });
         }
         break;
       default:
@@ -56,7 +73,6 @@ export const useForm = () => {
   const handleUserInput = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       event.preventDefault();
-      console.log(1);
       const { name, value } = event.target;
       setFormValues(Object.assign(formValues, { [name]: value }));
       validate(name);
@@ -110,15 +126,6 @@ export const useForm = () => {
     //   },
     // ]);
     clearForm();
-    console.log({
-      name: formValues.name,
-      email: formValues.email,
-      date: formValues.date,
-      // country: formValues.country,
-      isAgree: formValues.isAgree,
-      fileName: formValues.fileName,
-      // male: formValues.male,
-    });
     alert('Форма успешно заполнена');
     console.log('handle');
   }, [formValues]);
@@ -133,6 +140,5 @@ export const useForm = () => {
     handleSwitcher,
     isButtonDisabled,
     handleSubmit,
-    // cards,
   };
 };
