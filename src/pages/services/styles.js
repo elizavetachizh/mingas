@@ -7,6 +7,9 @@ export const DivServices = styled.div`
   flex-wrap: wrap;
   margin: 2% auto;
   justify-content: center;
+  @media (max-width: 550px) {
+    width: 600px;
+  }
 `;
 
 export const InformServices = styled.div`
@@ -14,9 +17,10 @@ export const InformServices = styled.div`
   @media (max-width: 1500px) {
     margin: 10% auto;
   }
+  @media (max-width: 550px) {
+    width: 600px;
+  }
 `;
-
-export const Title = styled.h2``;
 
 export const ButtonsServices = styled.div`
   display: flex;

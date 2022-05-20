@@ -5,17 +5,13 @@ export const DivMap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4%;
-@media(max-width: 600px) {
-  margin-left: 10%;
-}
-  @media(max-width: 450px) {
-    margin-left: 20%;
+  margin: 4% auto;
+
+  @media (max-width: 450px) {
     height: 70vh;
     width: 100%;
   }
-  @media(max-width: 400px) {
-    margin-left: 20%;
+  @media (max-width: 400px) {
     height: 60vh;
     width: 100%;
   }

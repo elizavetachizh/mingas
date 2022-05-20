@@ -8,4 +8,7 @@ export const Container = styled.div`
   h1 {
     color: #000;
   }
+  @media(max-width: 640px) {
+    width: 640px;
+  }
 `;

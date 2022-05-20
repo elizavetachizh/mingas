@@ -20,6 +20,10 @@ display: flex;
 flex-direction: column;`;
 
 export const DivAfterAndBefore = styled.div`
+  width: 100%;
+  @media(max-width: 550px) {
+    width: 550px;
+  }
   &::before {
     content: '';
     position: absolute;

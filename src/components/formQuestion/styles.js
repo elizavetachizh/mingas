@@ -29,15 +29,15 @@ export const TwoColumnTextAndForm = styled.div`
     align-items: center;
     text-align: center;
   }
+  @media(max-width: 640px) {
+    width: 640px;
+    margin: 6% auto;
+  }
   @media (max-width: 550px) {
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-right: 4%;
-  }
-  @media (max-width: 450px) {
-    margin-left: 14%;
-    padding-left: 14%;
   }
 `;
 
@@ -59,26 +59,27 @@ export const OneColumn = styled.div`
     width: 100%;
     text-align: center;
   }
+  @media (max-width: 640px) {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
 `;
 
 export const TwoColumn = styled.div`
-  width: 50%;
   @media (max-width: 700px) {
     width: 100%;
     text-align: center;
-    margin-right: 10%;
   }
   @media (max-width: 550px) {
     margin: 0 auto;
-  }
-  @media (max-width: 380px) {
-    width: 300px;
   }
 `;
 
 export const DivInputCheckbox = styled.div`
   display: flex;
   margin: 1.5rem 0;
+  justify-content: center;
 `;
 
 export const Label = styled.label`
@@ -119,7 +120,6 @@ export const DivInputFile = styled.div`
   overflow: hidden;
   text-align: center;
   margin: 1.5rem 0;
-  width: 200px;
   height: 36px;
   span {
     position: relative;

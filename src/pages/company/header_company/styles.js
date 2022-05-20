@@ -5,14 +5,14 @@ export const HeaderCompanyDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin: 6% auto;
-  @media(max-width: 1320px) {
-    margin: 8% auto;
-  }
-  @media(max-width: 1320px) {
-    margin-top: 8%;
-  }
-  @media(max-width: 1320px) {
+  @media (max-width: 1320px) {
     margin-top: 12%;
+  }
+  @media (max-width: 600px) {
+    margin-top: 16%;
+  }
+  @media (max-width: 400px) {
+    margin-top: 24%;
   }
   hr {
     display: flex;

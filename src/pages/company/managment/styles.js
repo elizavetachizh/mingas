@@ -9,18 +9,12 @@ export const Container = styled.div`
 export const DivAboutManagementBackground = styled.div`
   max-width: 1440px;
   margin: 0 auto 6%;
-  @media(max-width: 640px) {
-    max-width: 640px;
+  @media (max-width: 640px) {
     width: 640px;
-    margin: 0 10% 0;
+    margin: 0;
   }
-  @media(max-width: 550px) {
-    max-width: 450px;
+  @media (max-width: 550px) {  ;
     width: 550px;
-  }
-  @media(max-width: 450px) {
-    max-width: 450px;
-    width: 450px;
   }
 
   &::before {
@@ -65,15 +59,13 @@ export const DivAboutmanagementWhiteFont = styled.div`
   background: #ffffff;
   border: 1px solid #000000;
   box-sizing: border-box;
- 
-  @media(max-width: 640px) {
-    max-width: 640px;
+  @media (max-width: 550px) {
     width: 640px;
+    margin: 0 auto;
   }
-  @media(max-width: 450px) {
-    max-width: 450px;
-    width: 450px;
-  }
+  //@media (max-width: 450px) {
+  //  width: 450px;
+  //}
 `;
 
 export const DivBasicManagement = styled.div`
@@ -87,13 +79,13 @@ export const DivBasicManagement = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 50px auto;
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     font-size: 14px;
   }
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     font-size: 12px;
   }
-  @media(max-width: 633px) {
+  @media (max-width: 633px) {
     flex-direction: column-reverse;
     justify-content: center;
     width: 100%;
@@ -103,7 +95,7 @@ export const DivBasicManagement = styled.div`
 
 export const FullName = styled.h2`
   margin: 0;
-  @media(max-width: 633px) {
+  @media (max-width: 633px) {
     margin: 6%;
   }
 `;
@@ -118,15 +110,15 @@ export const DivPhotoAndDescription = styled.div`
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  @media(max-width: 633px) {
+  @media (max-width: 633px) {
     width: 80%;
   }
 `;
 
 export const Photo = styled.img`
   width: 30%;
-  @media(max-width: 633px) {
-  width: 50%;
+  @media (max-width: 633px) {
+    width: 50%;
   }
 `;
 
@@ -137,7 +129,7 @@ export const DivLeadersPhotoPosition = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 20px;
-  @media(max-width: 400px) {
-  margin: 0;
-}
+  @media (max-width: 400px) {
+    margin: 0;
+  }
 `;
