@@ -7,7 +7,7 @@ const HeaderBackgroundColor = {
     color: #314D5C
     `,
   blue: `
-    background-color: #314D5C;
+    background-color: #0D4475;
     color: #FFF;
     `,
   border: `

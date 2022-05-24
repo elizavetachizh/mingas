@@ -5,6 +5,7 @@ export const Body = styled.div`
   padding: 0 4%;
   width: 400px;
   display: flex;
+  text-align: center;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
@@ -13,19 +14,20 @@ export const Body = styled.div`
   div {
     margin: 10px;
   }
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    li{
-      margin: 5%;
-    }
-    p{
+    p {
       margin: 0;
+      text-align: center;
+      padding: 0;
+    }
+    h3, h4 {
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
     div{
       display: flex;
       flex-direction: row;
+      text-align: center;
       align-items: center;
       margin: 0;
     }

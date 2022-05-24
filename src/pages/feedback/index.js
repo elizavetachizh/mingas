@@ -8,7 +8,7 @@ import ReceptionOfCitizens from './receptionOfCitizens';
 export default function Feedback() {
   return (
     <Container>
-      <Header backgroundHeader={'blue'} />
+
       <HeaderFeedBack></HeaderFeedBack>
       <ReceptionOfCitizens/>
     </Container>

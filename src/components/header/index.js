@@ -40,6 +40,9 @@ import {
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
+import { Route } from "react-router-dom";
+import ElectronicAppeal from "../../pages/feedback/electronicСirculation";
+import Application from "../../pages/feedback/Application";
 
 const styleMenu = {
   width: '30px',
@@ -108,8 +111,8 @@ export default function Header({ backgroundHeader }) {
             <Dropdown>
               <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
               <DivButtonHeader>
-                <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>
-                <ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>
+                <ButtonLink to="/services/legal-entities">Для физических лиц</ButtonLink>
+                <ButtonLink to="/services/legal-entities">Для юридических лиц</ButtonLink>
               </DivButtonHeader>
             </Dropdown>
 
@@ -117,6 +120,9 @@ export default function Header({ backgroundHeader }) {
               <ServicesButton to="/feedback">{t('header:feedback')}</ServicesButton>
               <DivButtonHeader>
                 <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
+                <ButtonLink to={"/feedback/question-answer"}>Вопрос-ответ</ButtonLink>
+                <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
+                <ButtonLink to={'/feedback/application'}>Онлайн заявка</ButtonLink>
               </DivButtonHeader>
             </Dropdown>
 
@@ -135,9 +141,6 @@ export default function Header({ backgroundHeader }) {
                 <RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>
               </DivButtonHeader>
             </Dropdown>
-            {/*<ServiceCenterButton to="/Service-Center">*/}
-            {/*  {t('header:ServiceСenter')}*/}
-            {/*</ServiceCenterButton>*/}
           </LinksContainer>
           <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
           <Language />

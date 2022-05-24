@@ -65,7 +65,7 @@ export default function MobileNavigation() {
         </Dropdown>
 
         <PressCenterButtons to="/Press-Center">Пресс-центр</PressCenterButtons>
-        <FeedBackButton to="/feedback"></FeedBackButton>
+        <FeedBackButton to="/feedback">Обратная связь</FeedBackButton>
       </LinksContainer>
     </ButtonsContainer>
   );

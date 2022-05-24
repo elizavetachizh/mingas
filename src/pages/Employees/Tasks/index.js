@@ -4,13 +4,15 @@ import Header from '../../../components/header';
 import { Body } from './styles';
 import { Title } from '../../Home/useful_information/styles';
 import ButtonFun from '../../../components/button';
-import HeaderConcats from "../../concats/headerContacts";
-import { ContactsInform, Row } from "../../concats/styles";
-import { PageSection, Table, Tbody, Td, Tr } from "../../concats/GeneralContactInform/styles";
-import { styleTd } from "../../concats/GeneralContactInform";
+import HeaderConcats from '../../concats/headerContacts';
+import { ContactsInform, Row } from '../../concats/styles';
+import { PageSection, Table, Tbody, Td, Tr } from '../../concats/GeneralContactInform/styles';
+import { styleTd } from '../../concats/GeneralContactInform';
+import home from '../../../assets/icons/home.png';
+import job from '../../../assets/icons/job-description.png';
 const red = {
-  color: 'red'
-}
+  color: 'red',
+};
 export default function Tasks() {
   return (
     <Container>
@@ -93,7 +95,6 @@ export default function Tasks() {
                     <Td style={styleTd}>Вид работы</Td>
                     <Td style={styleTd}>Адрес</Td>
                     <Td style={styleTd}>Статус</Td>
-
                   </Tr>
                   <Tr>
                     <Td>Выезд без выполнения работ</Td>
@@ -115,6 +116,52 @@ export default function Tasks() {
             </PageSection>
           </ContactsInform>
         </Row>
+      </Body>
+      <Body>
+        <Title>Заявка</Title>
+        <Table>
+          <Tbody>
+            <Tr>
+              <Td>
+                <img src={job} />
+              </Td>
+              <Td>
+                <img src={home} />
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <h3>Замена счётчика</h3>
+              </Td>
+              <Td>
+                <h4>Дата: 18.05.2022</h4>
+              </Td>
+              <Td>
+                <p>Время: 09:00-17:00</p>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                <p>г. Минск Проспект Победителей 124, кв. 12</p>
+              </Td>
+              <Td>
+                <p>Василькова Любовь Владимировна</p>
+              </Td>
+              <Td>
+                <p>Контактный телефон клиента: 80444568974</p>
+              </Td>
+            </Tr>
+            <Tr>
+              <Td></Td>
+              <Td>
+                <p>Вид работы: Замена счётчика</p>
+              </Td>
+              <Td></Td>
+            </Tr>
+          </Tbody>
+        </Table>
+
+        <ButtonFun infoButton={'Выполнить'} backgroundColor={'blue'} href={'/'} />
       </Body>
     </Container>
   );

@@ -23,7 +23,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 20px;
   position: fixed;
   margin-bottom: 3%;
   top: 0;
@@ -43,16 +43,18 @@ export const ButtonsContainer = styled.div`
 export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 80px;
   left: 0;
-  width: 100%;
+  height: 100%;
+  width: 300px;
   background-color: rgba(200, 220, 231, 80%);
-  border-top: 2px solid white;
+
 `;
 
 export const CompanyButton = styled(NavLink)`
   text-decoration: none;
+  font-size: 20px;
   padding: 0 20px;
   color: #fff;
   &.active {

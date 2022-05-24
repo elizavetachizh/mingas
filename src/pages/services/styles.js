@@ -32,11 +32,14 @@ export const ButtonLink = styled(NavLink)`
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  color: white;
   z-index: 2;
+  color: #0d4475;
+  margin: 0 14px;
+  &.active {
+    color: #a69b14;
+  }
 `;

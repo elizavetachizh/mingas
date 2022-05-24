@@ -2,10 +2,12 @@ import React from 'react';
 import { Container } from '../../Home/styles';
 import { Title } from '../../Home/useful_information/styles';
 import { Table, Thead, Tbody } from './styles';
+import Header from "../../../components/header";
 
 export default function ReceptionOfCitizens() {
   return (
     <Container>
+      <Header backgroundHeader={'blue'} />
       <Title>График приёма граждан</Title>
       <section>
         <Table>
