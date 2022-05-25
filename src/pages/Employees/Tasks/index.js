@@ -10,8 +10,12 @@ import { PageSection, Table, Tbody, Td, Tr } from '../../concats/GeneralContactI
 import { styleTd } from '../../concats/GeneralContactInform';
 import home from '../../../assets/icons/home.png';
 import job from '../../../assets/icons/job-description.png';
+import CLOCK from '../../../assets/icons/clock.png';
 const red = {
   color: 'red',
+};
+const imgStyle = {
+  width: '30px',
 };
 export default function Tasks() {
   return (
@@ -123,11 +127,12 @@ export default function Tasks() {
           <Tbody>
             <Tr>
               <Td>
-                <img src={job} />
+                <img style={imgStyle} src={job} />
               </Td>
               <Td>
-                <img src={home} />
+                <img style={imgStyle} src={home} />
               </Td>
+              <Td><img style={imgStyle} src={CLOCK}/></Td>
             </Tr>
             <Tr>
               <Td>

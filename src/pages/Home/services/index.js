@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonFun from '../../../components/button';
-import { data } from '../../../assets/data_service';
+import { data } from '../../../assets/data_service_individuals';
+import { dataLegalEntities } from '../../../assets/data_service_legalEntities';
 import {
   Container,
   DivInform,
@@ -23,10 +24,6 @@ export default function HomeServices() {
         <Title>
           <Trans i18nKey="services:title"></Trans>
         </Title>
-        {/*<DivUp>*/}
-        {/*  <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>*/}
-        {/*  <ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>*/}
-        {/*</DivUp>*/}
         <ServicesDiv>
           <DivDown>
             {data.map((element) => (
@@ -34,7 +31,7 @@ export default function HomeServices() {
             ))}
           </DivDown>
           <DivDown>
-            {data.map((element) => (
+            {dataLegalEntities.map((element) => (
               <LinkServices key={element.cardDesc} img={element.cardImg} text={element.cardDesc} />
             ))}
           </DivDown>

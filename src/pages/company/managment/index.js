@@ -8,11 +8,9 @@ import {
   DivPhotoAndDescription,
   FullName,
   Position,
-  Photo,
   Description,
   DivLeadersPhotoPosition,
 } from './styles';
-// import director from '../../../assets/company/0.jpg';
 import { data } from '../../../assets/data_management';
 import Leaders from './divmagement';
 import Footer from '../../../components/footer';
@@ -50,7 +48,6 @@ export default function Management() {
                 Общества.
               </Description>
             </DivPhotoAndDescription>
-            {/*<Photo src={director} />*/}
           </DivBasicManagement>
           <DivLeadersPhotoPosition>
             {data.map((element) => (

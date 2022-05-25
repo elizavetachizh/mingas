@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Container, Name } from './styles';
-import { Route, Routes } from 'react-router';
+import { useNavigate } from 'react-router';
 import ProductionTechnicalManagement from '../../../pages/company/managment/Subdivisions/ProductionTechnicalManagement';
 
 export default function ModalSubdivision({ links }) {
+  const navigate = useNavigate();
+  const onMainPageBtnClick = useCallback(() => {
+    {
+      links.map((link) => {
+        {
+          navigate(`/${link}`);
+          console.log('ODIC');
+        }
+      });
+    }
+  }, []);
   return (
     <div>
-      {/*<Routes>*/}
-      {/*  <Route path="production-technical-management" element={<ProductionTechnicalManagement />} />*/}
-      {/*</Routes>*/}
       <Container>
         {links.map((link) => (
-          <Name to="production-technical-management">{link}</Name>
+          <Name onClick={onMainPageBtnClick}>{link}</Name>
         ))}
+        <ProductionTechnicalManagement titleDepartment={links.titleDepartment} />
       </Container>
     </div>
   );

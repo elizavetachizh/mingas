@@ -6,7 +6,7 @@
     "PressCenter": "Press сenter",
     "ServiceСenter": "Service center",
     "PersonalArea": "Personal area",
-    "feedback" : "Feedback"
+    "feedback": "Feedback"
   },
 
   "description": {
@@ -26,7 +26,6 @@
     "more": "More",
     "gotoSection": "Go to section",
     "send": "Send"
-
   },
   "services": {
     "title": "SERVICES OF THE REPUBLICAN UNITARY ENTERPRISE \"MINGAZ\""
@@ -44,5 +43,19 @@
     "residence": "Address of residence",
     "text": "Message text",
     "agree": "I agree with the personal data processing policy"
+  },
+  "headerCompany": {
+    "companyHistory": "Company history",
+    "management": "Management",
+    "enterpriseStructure": "Enterprise structure",
+    "careerMingaz": "Career in UE \"Mingaz\"",
+    "documentation": "Documentation",
+    "union": "Union"
+  },
+  "history": {
+    "text1": "Welcome to the corporate website of the production republican unitary\n             enterprises \"MINGAZ\". The main task of the enterprise is to ensure safe and\n             uninterrupted supply of natural and liquefied gas to consumers",
+    "text2": "The team of the organization is faced with the task, along with ensuring security, in\n             in the next few years to expand gasification of regions with natural gas\n             individual buildings, villages, settlements of the Minsk region.",
+    "text3": "UE \"MINGAS\" constantly changes aging equipment, introduces modern systems\n             control over gas distribution modes for all categories of consumers, applies\n             Energy Saving Technologies",
+    "text4": "UE MINGAZ looks to the future with optimism. Relations with consumers and partners\n             built on the basis of respect and decency, mutual support. Young and energetic\n             the staff of the enterprise adequately carries the experience of the older generation, improves the system\n             providing gas to our capital, thereby contributing to prosperity and progress\n             The Republic of Belarus"
   }
 }

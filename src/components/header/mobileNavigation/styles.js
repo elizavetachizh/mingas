@@ -32,14 +32,6 @@ export const Container = styled.div`
   }
 `;
 
-export const ButtonsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: rgba(200, 220, 231, 80%);
-`;
-
 export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,7 +40,7 @@ export const LinksContainer = styled.div`
   left: 0;
   height: 100%;
   width: 300px;
-  background-color: rgba(200, 220, 231, 80%);
+  background-color: rgba(200, 220, 231, 100%);
 
 `;
 
@@ -56,7 +48,8 @@ export const CompanyButton = styled(NavLink)`
   text-decoration: none;
   font-size: 20px;
   padding: 0 20px;
-  color: #fff;
+  margin: 10px 0;
+  color: #0D4475;
   &.active {
     color: #a69b14;
   }
@@ -69,6 +62,7 @@ export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const FeedBackButton = CompanyButton;
+export const PersonalAccButton = CompanyButton;
 
 export const DivButtonHeader = styled.div`
   display: none;
@@ -78,6 +72,7 @@ export const DivButtonHeader = styled.div`
 export const Dropdown = styled.div`
   position: relative;
   display: inline-block;
+  margin: 10px 0;
   &:hover button {
     background-color: #000;
   }

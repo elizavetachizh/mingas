@@ -12,6 +12,7 @@ export default function Leaders({
   const numbersOfImages = Array.from({ length: 8 }, (v, k) => k + 1);
   const onClick = useCallback(() => {
     handlerLeaderClick(leader);
+    console.log("dfhgfgh");
   }, [handlerLeaderClick, leader]);
   return (
     <ContainerLeaders onClick={onClick}>

@@ -14,7 +14,7 @@ export const ModalWindow = styled.div`
 `;
 
 export const ModalWindowOpenAndClose = styled.div`
-  width: 700px;
+  width: 500px;
   height: auto;
   background: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;

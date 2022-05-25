@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerServices = styled.a`
   box-shadow: 0 6px 30px rgb(0 0 0 / 50%);
+  height: 150px;
   cursor: pointer;
   padding: 4rem 4rem 2.5rem;
   margin: 1rem;
