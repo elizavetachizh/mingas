@@ -37,6 +37,7 @@ export default function FormQuestion() {
     handleSwitcher,
     isButtonDisabled,
     handleSubmit,
+    form,
   } = useForm();
   const { t } = useTranslation();
   return (
@@ -50,7 +51,7 @@ export default function FormQuestion() {
         <ButtonFun href={'/'} infoButton={'Перейти'} backgroundColor={'blue'} />
       </OneColumn>
       <TwoColumn>
-        <Form onSubmit={handleUserInput}>
+        <Form onSubmit={handleSubmit} ref={form}>
           <DivInputName>
             <Label>
               {t('form:name')}
@@ -74,7 +75,7 @@ export default function FormQuestion() {
             <InputName
               inputName={'email'}
               type="email"
-              name={'email'}
+              name="email"
               placeholder={'Введите ваш e-mail'}
               onChange={handleUserInput}
               value={formValues.email}
@@ -87,13 +88,13 @@ export default function FormQuestion() {
               <Span>*</Span>
             </Label>
             <InputName
-              inputName={'address'}
+              inputName={'text'}
               type="text"
-              name={'address'}
+              name={'text'}
               placeholder={'Введите адрес проживания'}
               onChange={handleUserInput}
-              value={formValues.address}
-              error={address && errors.address}
+              value={formValues.text}
+              error={address && errors.text}
             />
           </DivInputAdress>
           <DivInputPhone>
@@ -119,13 +120,13 @@ export default function FormQuestion() {
             </Label>
 
             <InputName
-              inputName={'text'}
-              type="text"
-              name="text"
+              inputName={'message'}
+              type="message"
+              name="message"
               placeholder={'Текст сообщения'}
               onChange={handleUserInput}
-              value={formValues.text}
-              error={errors.text}
+              value={formValues.message}
+              error={errors.message}
             />
           </DivInputText>
           <DivInputFile>

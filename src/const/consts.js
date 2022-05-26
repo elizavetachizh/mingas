@@ -7,6 +7,7 @@ export const INITIAL_FORM_STATE = {
   address: '',
   text: '',
   isAgree: false,
+  message: '',
   fileName: '',
   male: false,
 };
@@ -18,6 +19,7 @@ export interface FormValuesConst {
   work: string;
   phone: string;
   address: string;
+  message: string,
   isAgree: boolean;
   text: string;
   fileName: string;

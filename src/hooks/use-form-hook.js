@@ -1,7 +1,6 @@
-import React, { useCallback, useMemo, useState } from 'react';
-
-// import { Card } from '../../components/CardForm';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_FORM_STATE } from '../const/consts';
+import * as emailjs from '@emailjs/browser';
 
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
@@ -10,7 +9,7 @@ export const useForm = () => {
       email
     );
   };
-
+  const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
     return /\+375\(\d{2}\)-\d{3}-\d{2}-\d{2}/g.test(phone);
   };
@@ -25,9 +24,9 @@ export const useForm = () => {
     return !!(
       stringIncludesNumber(formValues.name) ||
       !isValidateEmail(formValues.email) ||
-      !formValues.address ||
       !formValues.isAgree ||
       !formValues.text ||
+      !formValues.message ||
       !isValidatePhone(formValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -51,10 +50,10 @@ export const useForm = () => {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
-      case 'address':
-        if (!formValues.address.length) {
-          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
-        }
+      // case 'address':
+      //   if (!formValues.address.length) {
+      //     setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
+      //   }
         break;
       case 'text':
         if (!formValues.text.length) {
@@ -63,6 +62,10 @@ export const useForm = () => {
       case 'isAgree':
         if (!!formValues.isAgree) {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
+        }
+      case 'message':
+        if (!formValues.message.length) {
+          setErrors({ ...errors, message: 'Заполните, пожалуйста, обращение' });
         }
         break;
       default:
@@ -112,23 +115,38 @@ export const useForm = () => {
     setFormValues({ ...INITIAL_FORM_STATE, name: '', date: '', email: '' });
   }, []);
 
-  const handleSubmit = useCallback(() => {
-    // setCards([
-    //   ...cards,
-    //   {
-    //     name: formValues.name,
-    //     birthday: formValues.birthday,
-    //     date: formValues.date,
-    //     country: formValues.country,
-    //     isAgree: formValues.isAgree,
-    //     fileName: formValues.fileName,
-    //     male: formValues.male,
-    //   },
-    // ]);
-    clearForm();
-    alert('Форма успешно заполнена');
-    console.log('handle');
-  }, [formValues]);
+  const handleSubmit = useCallback(
+    (event) => {
+      // setCards([
+      //   ...cards,
+      //   {
+      //     name: formValues.name,
+      //     birthday: formValues.birthday,
+      //     date: formValues.date,
+      //     country: formValues.country,
+      //     isAgree: formValues.isAgree,
+      //     fileName: formValues.fileName,
+      //     male: formValues.male,
+      //   },
+      // ]);
+      event.preventDefault();
+
+      console.log(form.current);
+      emailjs
+        .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      clearForm();
+      alert('Форма успешно заполнена');
+    },
+    [formValues]
+  );
 
   return {
     handleUserInput,
@@ -140,5 +158,6 @@ export const useForm = () => {
     handleSwitcher,
     isButtonDisabled,
     handleSubmit,
+    form,
   };
 };
