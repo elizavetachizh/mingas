@@ -7,7 +7,6 @@ import Header from "../../../components/header";
 export default function ReceptionOfCitizens() {
   return (
     <Container>
-      <Header backgroundHeader={'blue'} />
       <Title>График приёма граждан</Title>
       <section>
         <Table>

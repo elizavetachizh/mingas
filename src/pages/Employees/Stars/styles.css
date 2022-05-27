@@ -1,0 +1,12 @@
+label {
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+
+}
+.star {
+    cursor: pointer;
+    transition: color 200ms;
+}

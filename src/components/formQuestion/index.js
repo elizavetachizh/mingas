@@ -16,6 +16,7 @@ import {
   InputCheckbox,
   InputTextBox,
   InputFile,
+  Button
 } from './styles';
 
 import ButtonFun from '../button';
@@ -41,16 +42,6 @@ export default function FormQuestion() {
   } = useForm();
   const { t } = useTranslation();
   return (
-    <TwoColumnTextAndForm>
-      <OneColumn>
-        <h2>
-          <Trans i18nKey="form:h2"></Trans>
-        </h2>
-        <h3>{t('form:h3')}</h3>
-        <h2>{t('form:h2Question')}</h2>
-        <ButtonFun href={'/'} infoButton={'Перейти'} backgroundColor={'blue'} />
-      </OneColumn>
-      <TwoColumn>
         <Form onSubmit={handleSubmit} ref={form}>
           <DivInputName>
             <Label>
@@ -147,19 +138,17 @@ export default function FormQuestion() {
               <Span>*</Span>
             </Label>
           </DivInputCheckbox>
-          <button
+          <Button
             disabled={isButtonDisabled}
             type="submit"
             onClick={handleSubmit}
             data-testid="submit-button"
           >
             Отправить
-          </button>
+          </Button>
           {isButtonDisabled && (
             <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
           )}
         </Form>
-      </TwoColumn>
-    </TwoColumnTextAndForm>
   );
 }

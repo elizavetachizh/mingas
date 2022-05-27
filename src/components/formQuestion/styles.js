@@ -10,14 +10,14 @@ export const DivInputName = styled.div`
 export const DivInputEmail = DivInputName;
 export const DivInputAdress = DivInputName;
 export const DivInputPhone = DivInputName;
-export const DivInputText =  styled.div`
+export const DivInputText = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
   input {
     height: 100px;
   }
-`;;
+`;
 
 export const TwoColumnTextAndForm = styled.div`
   margin: 6% 10%;
@@ -29,7 +29,7 @@ export const TwoColumnTextAndForm = styled.div`
     align-items: center;
     text-align: center;
   }
-  @media(max-width: 640px) {
+  @media (max-width: 640px) {
     width: 640px;
     margin: 6% auto;
   }
@@ -140,4 +140,21 @@ export const InputFile = styled.input`
   width: 180px;
   height: 100%;
   opacity: 0;
+`;
+
+export const Button = styled.button`
+  color: white;
+  background-color: #0D4475;
+  font-size: 16px;
+  font-weight: 500;
+  width: 172px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  left: 1135px;
+  margin: 4% auto;
+  cursor: pointer;
 `;

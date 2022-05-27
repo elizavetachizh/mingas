@@ -1,13 +1,6 @@
 import React from 'react';
-import { Container } from '../../styles';
-import Header from '../../../components/header';
-import FormQuestion from "../../../components/formQuestion";
+import ChangeFormQuestion from '../../../components/formQuestion/changeFormQuestion';
 
 export default function ElectronicAppeal() {
-  return (
-    <Container>
-      <Header backgroundHeader={'blue'}></Header>
-      <FormQuestion />
-    </Container>
-  );
+  return <ChangeFormQuestion />;
 }

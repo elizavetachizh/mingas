@@ -24,7 +24,8 @@ import Feedback from './pages/feedback';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import QuestionAnswer from './pages/feedback/QuestionAnswer';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
-import Application from "./pages/feedback/Application";
+import Application from './pages/feedback/Application';
+import UsefulInformation from './pages/feedback/uaefulIndormation';
 
 class App extends Component {
   render() {
@@ -38,10 +39,6 @@ class App extends Component {
           <Route path="/press-center" element={<PressCenter />} />
           {/*<Route path="/Service-Center" element={<ServiceCenter />} />*/}
           <Route path={'/feedback'} element={<Feedback />} />
-          <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
-          <Route path={'/feedback/question-answer'} element={<QuestionAnswer />} />
-          <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
-          <Route path={'/feedback/application'} element={<Application />} />
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
           <Route path="/company/structure/" element={<Structure />} />

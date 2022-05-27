@@ -11,6 +11,7 @@ import { styleTd } from '../../concats/GeneralContactInform';
 import home from '../../../assets/icons/home.png';
 import job from '../../../assets/icons/job-description.png';
 import CLOCK from '../../../assets/icons/clock.png';
+import Stars from '../Stars';
 const red = {
   color: 'red',
 };
@@ -132,7 +133,9 @@ export default function Tasks() {
               <Td>
                 <img style={imgStyle} src={home} />
               </Td>
-              <Td><img style={imgStyle} src={CLOCK}/></Td>
+              <Td>
+                <img style={imgStyle} src={CLOCK} />
+              </Td>
             </Tr>
             <Tr>
               <Td>
@@ -168,6 +171,139 @@ export default function Tasks() {
 
         <ButtonFun infoButton={'Выполнить'} backgroundColor={'blue'} href={'/'} />
       </Body>
+
+      <Body>
+        <Title>Оказываемые услуги</Title>
+        <Row>
+          <ContactsInform>
+            <PageSection>
+              <Table>
+                <Tbody>
+                  <Tr>
+                    <Td style={styleTd}>Дата выезда</Td>
+                    <Td style={styleTd}>Вид работы</Td>
+                    <Td style={styleTd}>Испольнитель</Td>
+                    <Td style={styleTd}>Статус</Td>
+                    <Td style={styleTd}>Оценка работы</Td>
+                  </Tr>
+                  <Tr>
+                    <Td>26.02.2020</Td>
+                    <Td>Выезд без выполнения работ</Td>
+                    <Td>Макаенок Андрей Александрович</Td>
+                    <Td>Выполнено</Td>
+                    <Td>
+                      <Stars />
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>02.05.2021</Td>
+                    <Td>Замена газовой плиты</Td>
+                    <Td>Филимонов Денис Васильевич</Td>
+                    <Td>Выполнено</Td>
+                    <Td>
+                      <Stars />
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>15.08.2021</Td>
+                    <Td>Установка счётчика</Td>
+                    <Td>Морозов Василий Николавевич</Td>
+                    <Td>Выполнено</Td>
+                    <Td>
+                      <Stars />
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>26.11.2021</Td>
+                    <Td>Выезд без выполнения работ</Td>
+                    <Td>Макаенок Андрей Александрович</Td>
+                    <Td>Не выполнено</Td>
+                    <Td>
+                      <Stars />
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>09.02.2022</Td>
+                    <Td>Полное техническое обслуживание</Td>
+                    <Td>Черняк Юрий Владимирович</Td>
+                    <Td>Выполнено</Td>
+                    <Td>
+                      <Stars />
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </PageSection>
+          </ContactsInform>
+        </Row>
+      </Body>
+
+      <Row>
+        <ContactsInform>
+          <PageSection>
+            <Table>
+              <Tbody>
+                <Tr>
+                  <Td style={styleTd}>Сотрудник</Td>
+                  <Td style={styleTd}>Средняя оценка по результатам работы</Td>
+                </Tr>
+                <Tr>
+                  <Td>Макаенок Андрей Александрович</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Филимонов Денис Васильевич</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Морозов Василий Николавевич</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Макаенок Андрей Александрович</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>януль Юрий Васильеввич</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Трифновов Артём Николаевич</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Нестирович Василий Андреевич</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Черняк Юрий Владимирович</Td>
+                  <Td>
+                    <Stars />
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </PageSection>
+        </ContactsInform>
+      </Row>
+   <div>
+     <label>Начало пероида: <input type="date"/></label>
+     <label>Окончание пероида: <input type="date"/></label>
+   </div>
     </Container>
   );
 }

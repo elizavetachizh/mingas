@@ -50,10 +50,10 @@ export const useForm = () => {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
-      // case 'address':
-      //   if (!formValues.address.length) {
-      //     setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
-      //   }
+        // case 'address':
+        //   if (!formValues.address.length) {
+        //     setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
+        //   }
         break;
       case 'text':
         if (!formValues.text.length) {
@@ -130,7 +130,6 @@ export const useForm = () => {
       //   },
       // ]);
       event.preventDefault();
-
       console.log(form.current);
       emailjs
         .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
