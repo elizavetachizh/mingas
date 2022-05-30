@@ -4,7 +4,7 @@ import Header from '../../components/header';
 import ReceptionOfCitizens from './receptionOfCitizens';
 import QuestionAnswer from './QuestionAnswer';
 import ElectronicAppeal from './electronicСirculation';
-import Application from './Application';
+import Application from './Requests';
 import UsefulInformation from './uaefulIndormation';
 import { HeaderBtnFeedback, Button, DivButton } from './styles';
 export default function Feedback() {

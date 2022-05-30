@@ -1,7 +1,12 @@
 import { Container } from '../footer/styles';
-import type { SelectProps } from "../../const/consts";
-
+import type { SelectProps } from '../../const/consts';
+import { Label } from '../formQuestion/styles';
+const styleDiv = {
+  padding:'1rem'
+}
 export default function Select({
+  label,
+  span,
   error,
   inputName,
   onChange,
@@ -9,7 +14,11 @@ export default function Select({
   options,
 }: SelectProps): JSX.Element {
   return (
-    <Container>
+    <div style={styleDiv}>
+      <Label>
+        {label}
+        <span>{span}</span>
+      </Label>
       <select
         name={inputName}
         onChange={onChange}
@@ -23,6 +32,6 @@ export default function Select({
         ))}
       </select>
       {error && <p>{error}</p>}
-    </Container>
+    </div>
   );
 }

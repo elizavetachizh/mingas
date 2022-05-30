@@ -24,7 +24,7 @@ import Feedback from './pages/feedback';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import QuestionAnswer from './pages/feedback/QuestionAnswer';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
-import Application from './pages/feedback/Application';
+import Application from './pages/feedback/Requests';
 import UsefulInformation from './pages/feedback/uaefulIndormation';
 
 class App extends Component {

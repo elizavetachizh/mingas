@@ -19,7 +19,7 @@ export interface FormValuesConst {
   work: string;
   phone: string;
   address: string;
-  message: string,
+  message: string;
   isAgree: boolean;
   text: string;
   fileName: string;
@@ -43,5 +43,100 @@ export interface SelectProps {
   value: string;
   inputName: string;
   error: string;
-  options: Option[];
+  options: Option;
+}
+export const INITIAL_REQUEST_STATE = {
+  name: '',
+  email: '',
+  phone: '',
+  address: '',
+  date: '',
+  time: '',
+  work: '',
+  // text: '',
+  isAgree: false,
+  // fileName: '',
+};
+
+export interface requestValues {
+  name?: string;
+  email?: string;
+  phone?: string;
+  address?: string;
+  date?: string;
+  time?: string;
+  work?: string;
+  isAgree?: boolean;
+  text?: string;
+  fileName?: string;
+}
+
+export const OPTIONS = [
+  {
+    value: '',
+    label: 'Выберете вид работы',
+  },
+  {
+    value: 'Ремонт газового оборудования',
+    label: 'Ремонт газового оборудования',
+  },
+  {
+    value: 'Подключение газового оборудования',
+    label: 'Подключение газового оборудования',
+  },
+  {
+    value: 'Отключение газового оборудования',
+    label: 'Отключение газового оборудования',
+  },
+  {
+    value: 'Монтаж, перенос газового оборудования',
+    label: 'Монтаж, перенос газового оборудования',
+  },
+  {
+    value: 'Установка прибора учета расхода газа',
+    label: 'Установка прибора учета расхода газа',
+  },
+  {
+    value: 'Монтаж, ремонт индвидуальных оборудования',
+    label: 'Монтаж, ремонт индвидуальных оборудования',
+  },
+  {
+    value: 'Тех. обслуживание газового оборудования',
+    label: 'Тех. обслуживание газового оборудования',
+  },
+];
+
+export const OPTIONS_TIME = [
+  {
+    value: '',
+    label: 'Выберете желаемое время для связи',
+  },
+  {
+    value: '08:00-11:00',
+    label: '08:00-11:00',
+  },
+  {
+    value: '11:00-14:00',
+    label: '11:00-14:00',
+  },
+  {
+    value: '14:00-17:00',
+    label: '14:00-17:00',
+  },
+  {
+    value: '17:00-20:00',
+    label: '17:00-20:00',
+  },
+];
+
+export interface UseFormReturnValues {
+  handleUserInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  formValues: RequestValuesConst;
+  errors: Record<string, string>;
+  handleChangeCountry: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleFileInput: (event: { target: { files: FileList } }) => void;
+  handleCheckBox: VoidFunction;
+  handleSwitcher: VoidFunction;
+  isButtonDisabled: boolean;
+  handleSubmit: VoidFunction;
 }

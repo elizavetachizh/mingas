@@ -11,7 +11,7 @@ export const useForm = () => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\(\d{2}\)-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
   };
 
   const stringIncludesNumber = (string: string): boolean => {
@@ -19,7 +19,6 @@ export const useForm = () => {
   };
 
   const [errors, setErrors] = useState({});
-  // const [cards, setCards] = useState<Card[]>([]);
   const isButtonDisabled = useMemo(() => {
     return !!(
       stringIncludesNumber(formValues.name) ||
@@ -50,19 +49,16 @@ export const useForm = () => {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
-        // case 'address':
-        //   if (!formValues.address.length) {
-        //     setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
-        //   }
-        break;
       case 'text':
         if (!formValues.text.length) {
           setErrors({ ...errors, text: 'Заполните, пожалуйста, обращение' });
         }
+        break;
       case 'isAgree':
         if (!!formValues.isAgree) {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
         }
+        break;
       case 'message':
         if (!formValues.message.length) {
           setErrors({ ...errors, message: 'Заполните, пожалуйста, обращение' });
@@ -117,18 +113,6 @@ export const useForm = () => {
 
   const handleSubmit = useCallback(
     (event) => {
-      // setCards([
-      //   ...cards,
-      //   {
-      //     name: formValues.name,
-      //     birthday: formValues.birthday,
-      //     date: formValues.date,
-      //     country: formValues.country,
-      //     isAgree: formValues.isAgree,
-      //     fileName: formValues.fileName,
-      //     male: formValues.male,
-      //   },
-      // ]);
       event.preventDefault();
       console.log(form.current);
       emailjs
