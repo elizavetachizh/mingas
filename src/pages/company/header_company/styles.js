@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const HeaderCompanyDiv = styled.div`
   display: flex;
   flex-direction: column;
+
   margin: 6% auto;
   @media (max-width: 1320px) {
     margin-top: 12%;

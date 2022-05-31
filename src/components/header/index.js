@@ -113,7 +113,7 @@ export default function Header({ backgroundHeader }) {
             </Dropdown>
 
             <Dropdown>
-              <ServicesButton to="/feedback">{t('header:feedback')}</ServicesButton>
+              <ServicesButton to="/feedback/online-application">{t('header:feedback')}</ServicesButton>
               <DivButtonHeader>
                 <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
                 <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>

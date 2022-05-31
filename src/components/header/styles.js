@@ -26,7 +26,7 @@ export const Container = styled.div`
   position: fixed;
   margin-bottom: 3%;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
     color: #314d5c;

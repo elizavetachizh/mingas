@@ -22,10 +22,10 @@ import Union from './pages/company/union';
 import Tasks from './pages/Employees/Tasks';
 import Feedback from './pages/feedback';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
-import QuestionAnswer from './pages/feedback/QuestionAnswer';
-import ElectronicAppeal from './pages/feedback/electronicСirculation';
-import Application from './pages/feedback/Requests';
 import UsefulInformation from './pages/feedback/uaefulIndormation';
+import ElectronicAppeal from './pages/feedback/electronicСirculation';
+import Requests from './pages/feedback/Requests';
+import QuestionAnswer from './pages/feedback/QuestionAnswer';
 
 class App extends Component {
   render() {
@@ -38,7 +38,11 @@ class App extends Component {
           <Route path="/contacts" element={<GeneralInform />} />
           <Route path="/press-center" element={<PressCenter />} />
           {/*<Route path="/Service-Center" element={<ServiceCenter />} />*/}
-          <Route path={'/feedback'} element={<Feedback />} />
+          <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
+          <Route path={'/feedback/online-application'} element={<Requests />} />
+          <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
+          <Route path={'/feedback/usefull-information'} element={<UsefulInformation />} />
+          <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
           <Route path="/company/structure/" element={<Structure />} />

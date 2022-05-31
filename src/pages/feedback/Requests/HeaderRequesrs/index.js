@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Button, DivButton, HeaderBtnFeedback } from '../../styles';
-import ReceptionOfCitizens from '../../receptionOfCitizens';
-import UsefulInformation from '../../uaefulIndormation';
-import QuestionAnswer from '../../QuestionAnswer';
-import ElectronicAppeal from '../../electronicСirculation';
-import Application from '../index';
 import ApplicationForVerificationOfGasMeters from '../ApplicationForVerificationOfGasMeters';
 import ApplicationForOrderingCylinders from '../ApplicationForOrderingCylinders';
 import ApplicationForRepairOfGasUsingEquipment from '../ApplicationForRepairOfGas-usingEquipment';
+import ApplicationForTheIssuanceOfTechnicalSpecifications from '../ProvidingGasMeterReadings';
+import ApplicationForGasificationOfResidentialGardenHouse from '../ApplicationForGasificationOfResidentialGarden)House';
+import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../ApplicationToCallRepresentativeOfGasSupplyOrganization';
+import ProvidingGasMeterReadings from '../ProvidingGasMeterReadings';
 
 export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForVerificationOfGasMeters');
@@ -36,20 +35,34 @@ export default function HeaderRequests() {
           >
             Заявка на ремонт газоиспользующего оборудования
           </Button>
-          {/*<Button*/}
-          {/*  onClick={() => {*/}
-          {/*    setActive('ElectronicAppeal');*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*  Электронное обращение*/}
-          {/*</Button>*/}
-          {/*<Button*/}
-          {/*  onClick={() => {*/}
-          {/*    setActive('Application');*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*  Заявка*/}
-          {/*</Button>*/}
+          <Button
+            onClick={() => {
+              setActive('ApplicationForTheIssuanceOfTechnicalSpecifications');
+            }}
+          >
+            Заявка на выдачу ТУ
+          </Button>
+          <Button
+            onClick={() => {
+              setActive('ApplicationForGasificationOfResidentialGardenHouse');
+            }}
+          >
+            Заявка на газификацию жилого (садового) дома
+          </Button>
+          <Button
+            onClick={() => {
+              setActive('ApplicationToCallRepresentativeOfGasSupplyOrganization');
+            }}
+          >
+            Заявка на вызов представителя газоснабжающей организации
+          </Button>
+          <Button
+            onClick={() => {
+              setActive('ProvidingGasMeterReadings');
+            }}
+          >
+            Предоставление показаний счётчика газа
+          </Button>
         </HeaderBtnFeedback>
         <hr />
       </DivButton>
@@ -60,8 +73,16 @@ export default function HeaderRequests() {
       {active === 'ApplicationForRepairOfGasUsingEquipment' && (
         <ApplicationForRepairOfGasUsingEquipment />
       )}
-      {/*{active === 'ElectronicAppeal' && <ElectronicAppeal />}*/}
-      {/*{active === 'Application' && <Application />}*/}
+      {active === 'ApplicationForTheIssuanceOfTechnicalSpecifications' && (
+        <ApplicationForTheIssuanceOfTechnicalSpecifications />
+      )}
+      {active === 'ApplicationForGasificationOfResidentialGardenHouse' && (
+        <ApplicationForGasificationOfResidentialGardenHouse />
+      )}
+      {active === 'ApplicationToCallRepresentativeOfGasSupplyOrganization' && (
+        <ApplicationToCallRepresentativeOfGasSupplyOrganization />
+      )}
+      {active === 'ProvidingGasMeterReadings' && <ProvidingGasMeterReadings />}
     </>
   );
 }
