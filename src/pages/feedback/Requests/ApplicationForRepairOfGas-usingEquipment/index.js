@@ -87,14 +87,14 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         </DivInputPhone>
         <DivInputAdress>
           <Label>
-            {t('form:address')}
+            Адрес объекта:
             <Span>*</Span>
           </Label>
           <InputName
             inputName={'address'}
             type="text"
             name={'address'}
-            placeholder={'Введите адрес проживания'}
+            placeholder={'Введите адрес объекта'}
             onChange={handleUserInput}
             value={requestValues.address}
             error={address && errors.address}
@@ -118,7 +118,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         </DivInputAdress>
 
         <Select
-          label={' Желаемое время для связи:'}
+          label={' Желаемое время выполнения работы:'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}

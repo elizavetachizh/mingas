@@ -1,38 +1,43 @@
 import styled from 'styled-components';
 
 export const HeaderBtnFeedback = styled.div`
-  margin-top: 6%;
-
-  width: 100%;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+  margin-top: 6%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
 `;
 export const Button = styled.button`
   color: #0d4475;
   font-size: 16px;
-  font-weight: 500;
-  text-align: center;
+  text-align: left;
   background: none;
   border: none;
+  margin: 2% 0;
   text-decoration: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 4% 0 auto;
   cursor: pointer;
+  &.active {
+    color: #a69b14;
+    text-decoration-color: #a69b14;
+  }
+  &:checked {
+    color: #a69b14;
+
+  }
 `;
 
 export const DivButton = styled.div`
   text-align: center;
-  //max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+`;
+
+export const ButtonForms = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 1140px;
+  margin: 2% auto;
 `;
 
 export const Divbackground = styled.div`

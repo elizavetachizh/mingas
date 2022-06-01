@@ -8,6 +8,7 @@ import {
   DivInputEmail,
   DivInputName,
   DivInputPhone,
+  DivInputText,
   InputCheckbox,
   Label,
   Span,
@@ -118,7 +119,7 @@ export default function ApplicationForVerificationOfGasMeters() {
         </DivInputAdress>
 
         <Select
-          label={'Желаемое время для связи:'}
+          label={'Желаемое время для выполнения работы:'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}
@@ -135,6 +136,51 @@ export default function ApplicationForVerificationOfGasMeters() {
           error={errors.work}
           options={OPTIONS}
         ></Select>
+        <DivInputName>
+          <Label>
+            Марка индивидуального прибора учета расхода газа: <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'text'}
+            name={'text'}
+            type={'text'}
+            placeholder={'Введите марку индивидуального прибора учета расхода газа'}
+            onChange={handleUserInput}
+            value={requestValues.text}
+            error={errors.text}
+          />
+        </DivInputName>
+        <DivInputName>
+          <Label>
+            Номер индивидуального прибора учета расхода газа: <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'text'}
+            name={'text'}
+            type={'text'}
+            placeholder={'Введите номер индивидуального прибора учета расхода газа'}
+            onChange={handleUserInput}
+            value={requestValues.text}
+            error={errors.text}
+          />
+        </DivInputName>
+        <DivInputText>
+          <Label>
+            {t('form:text')}
+            <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'message'}
+            type="message"
+            name="message"
+            placeholder={'Текст сообщения'}
+            onChange={handleUserInput}
+            value={requestValues.message}
+            error={errors.message}
+            label={t('form:text')}
+            span={'*'}
+          />
+        </DivInputText>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

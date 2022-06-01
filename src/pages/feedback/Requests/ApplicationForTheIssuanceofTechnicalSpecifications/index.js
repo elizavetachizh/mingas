@@ -1,5 +1,6 @@
 import React from 'react';
 import { DivApplication, Form } from '../styles';
+import { useRequest } from '../../../../hooks/use-request-hook';
 import {
   Button,
   DivInputAdress,
@@ -17,11 +18,10 @@ import { t } from 'i18next';
 import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
-import { useRequest } from '../../../../hooks/use-request-hook';
 import Select from '../../../../components/select';
 import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
 
-export default function ApplicationToCallRepresentativeOfGasSupplyOrganization() {
+export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   const {
     handleUserInput,
     requestValues,
@@ -32,10 +32,9 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
     isButtonDisabled,
     handleSubmit,
   } = useRequest();
-
   return (
     <DivApplication>
-      <p>Заявка на вызов представителя газоснабжающей организации</p>
+      <p>Заявка на выдачу ТУ</p>
       <Form onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
@@ -87,40 +86,9 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
             span={'*'}
           />
         </DivInputPhone>
-        <DivInputAdress>
-          <Label>
-            {t('form:address')}
-            <Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'address'}
-            type="text"
-            name={'address'}
-            placeholder={'Введите адрес проживания'}
-            onChange={handleUserInput}
-            value={requestValues.address}
-            error={address && errors.address}
-            label={t('form:address')}
-            span={'*'}
-          />
-        </DivInputAdress>
-        <DivInputAdress>
-          <Label>
-            Желаемая дата выполнения работы <Span>*</Span>
-          </Label>
-          <InputName
-            error={errors.date}
-            inputName={'date'}
-            onChange={handleUserInput}
-            type={'date'}
-            name={'date'}
-            value={requestValues.date}
-            placeholder={'Введите желаемую дату выполнения работы'}
-          />
-        </DivInputAdress>
 
         <Select
-          label={' Желаемое время для связи:'}
+          label={'Желаемое время для связи:'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}
@@ -128,15 +96,7 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
-        <Select
-          label={'Выбрать вид работы:'}
-          span={'*'}
-          onChange={handleChangeWork}
-          value={requestValues.work}
-          inputName={'work'}
-          error={errors.work}
-          options={OPTIONS}
-        ></Select>
+
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

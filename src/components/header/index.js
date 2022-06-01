@@ -113,12 +113,14 @@ export default function Header({ backgroundHeader }) {
             </Dropdown>
 
             <Dropdown>
-              <ServicesButton to="/feedback/online-application">{t('header:feedback')}</ServicesButton>
+              <ServicesButton to="/feedback/online-application">
+                {t('header:feedback')}
+              </ServicesButton>
               <DivButtonHeader>
                 <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
                 <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>
                 <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
-                <ButtonLink to={'/feedback/application'}>Онлайн заявка</ButtonLink>
+                <ButtonLink to={'/feedback/online-application'}>Онлайн заявка</ButtonLink>
               </DivButtonHeader>
             </Dropdown>
 

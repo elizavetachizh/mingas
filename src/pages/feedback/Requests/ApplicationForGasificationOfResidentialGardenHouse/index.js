@@ -5,9 +5,11 @@ import {
   DivInputAdress,
   DivInputCheckbox,
   DivInputEmail,
+  DivInputFile,
   DivInputName,
   DivInputPhone,
   InputCheckbox,
+  InputFile,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
@@ -17,25 +19,25 @@ import { t } from 'i18next';
 import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
-import { useRequest } from '../../../../hooks/use-request-hook';
 import Select from '../../../../components/select';
 import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
+import { useRequest } from '../../../../hooks/use-request-hook';
 
-export default function ApplicationToCallRepresentativeOfGasSupplyOrganization() {
+export default function ApplicationForGasificationOfResidentialGardenHouse() {
   const {
     handleUserInput,
     requestValues,
     errors,
     handleChangeWork,
+    handleFileInput,
     handleChangeTime,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
   } = useRequest();
-
   return (
     <DivApplication>
-      <p>Заявка на вызов представителя газоснабжающей организации</p>
+      <p>Заявка на газификацию жилого (садового) дома</p>
       <Form onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
@@ -89,14 +91,14 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
         </DivInputPhone>
         <DivInputAdress>
           <Label>
-            {t('form:address')}
+           Адрес объекта
             <Span>*</Span>
           </Label>
           <InputName
             inputName={'address'}
             type="text"
             name={'address'}
-            placeholder={'Введите адрес проживания'}
+            placeholder={'Введите адрес объекта'}
             onChange={handleUserInput}
             value={requestValues.address}
             error={address && errors.address}
@@ -104,21 +106,6 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
             span={'*'}
           />
         </DivInputAdress>
-        <DivInputAdress>
-          <Label>
-            Желаемая дата выполнения работы <Span>*</Span>
-          </Label>
-          <InputName
-            error={errors.date}
-            inputName={'date'}
-            onChange={handleUserInput}
-            type={'date'}
-            name={'date'}
-            value={requestValues.date}
-            placeholder={'Введите желаемую дату выполнения работы'}
-          />
-        </DivInputAdress>
-
         <Select
           label={' Желаемое время для связи:'}
           span={'*'}
@@ -128,15 +115,41 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
-        <Select
-          label={'Выбрать вид работы:'}
-          span={'*'}
-          onChange={handleChangeWork}
-          value={requestValues.work}
-          inputName={'work'}
-          error={errors.work}
-          options={OPTIONS}
-        ></Select>
+        <DivInputName>
+          <Label>
+            Лицевой счёт: <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'text'}
+            name={'text'}
+            type={'text'}
+            placeholder={'Введите Лицевой счёт'}
+            onChange={handleUserInput}
+            value={requestValues.text}
+            error={errors.text}
+            label={'Лицевой счёт'}
+            span={'*'}
+          />
+        </DivInputName>
+        <DivInputName>
+          <Label>
+            Показания счётчика:<Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'text'}
+            name={'text'}
+            type={'text'}
+            placeholder={'Введите ваши показания счётчика'}
+            onChange={handleUserInput}
+            value={requestValues.text}
+            error={errors.text}
+            span={'*'}
+          />
+        </DivInputName>
+        <DivInputFile>
+          <span>Прекрипите файл</span>
+          <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
+        </DivInputFile>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
