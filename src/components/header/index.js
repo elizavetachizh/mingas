@@ -39,6 +39,8 @@ import {
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
+import { Button } from '../button/styles';
+import { useNavigate } from 'react-router';
 
 const styleMenu = {
   width: '30px',
@@ -47,6 +49,9 @@ const styleMenu = {
 
 export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(true);
+  const navigate = useNavigate();
   const changeBackground = () => {
     if (window.scrollY >= 80) {
       setNavbar(true);
@@ -54,10 +59,7 @@ export default function Header({ backgroundHeader }) {
       setNavbar(false);
     }
   };
-
   window.addEventListener('scroll', changeBackground);
-
-  const [open, setOpen] = useState(false);
 
   const onClick = () => {
     setOpen(!open);
@@ -74,7 +76,6 @@ export default function Header({ backgroundHeader }) {
     </MenuClose>
   );
 
-  const [isModalVisible, setModalVisible] = useState(true);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
@@ -88,12 +89,14 @@ export default function Header({ backgroundHeader }) {
         <LinkLogo to="/">
           <Logo src={HeaderLogo} />
         </LinkLogo>
+        <button onClick={() => navigate(-1)}>Назад</button>
         <ButtonsContainer>
           <LinksContainer>
             <Dropdown>
               <CompanyButton to="/company/history">
                 <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
               </CompanyButton>
+
               <DivButtonHeader>
                 <HistoryButton to="/company/history">История предприятия</HistoryButton>
                 <ManagementButton to="/company/management">Руководство</ManagementButton>

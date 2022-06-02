@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import Header from '../../components/header';
 import { InformServices, DivServices, ButtonsServices, ButtonLink } from './styles';
 import { data } from '../../assets/data_services';
@@ -10,29 +10,48 @@ import ServicesForLegalEntities from './servicesForLegalEntities';
 import { Route, Routes } from 'react-router-dom';
 import up from '../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
+import { Button } from "../feedback/styles";
+import ApplicationForVerificationOfGasMeters from "../feedback/Requests/ApplicationForVerificationOfGasMeters";
+import ApplicationForOrderingCylinders from "../feedback/Requests/ApplicationForOrderingCylinders";
 export default function Services() {
+  const [active, setActive] = useState('FoIndividuals');
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <InformServices>
         <Title>УСЛУГИ РЕСПУБЛИКАНСКОГО УНИТАРНОГО ПРЕДПРИЯТИЯ “МИНГАЗ”</Title>
         <ButtonsServices>
-          <Routes>
-            <Route path="/legal-entities" component={<ServicesForLegalEntities />} />
-          </Routes>
-          <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>
-          <ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>
+          <Button
+            onClick={() => {
+              setActive('FoIndividuals');
+            }}
+          >
+            Для физических лиц
+          </Button>
+          <Button
+            onClick={() => {
+              setActive('ApplicationForVerificationOfGasMeters');
+            }}
+          >
+            Для юридических лиц
+          </Button>
+          {/*<ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>*/}
+          {/*<ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>*/}
         </ButtonsServices>
-        <DivServices>
-          {data.map((element) => (
-            <ServicesList
-              imgCard={element.cardImg}
-              nameCard={element.nameCard}
-              descName={element.cardDesc}
-              button={element.buttonCard}
-            />
-          ))}
-        </DivServices>
+        {active === 'FoIndividuals' && (
+          <DivServices>
+            {data.map((element) => (
+              <ServicesList
+                imgCard={element.cardImg}
+                nameCard={element.nameCard}
+                descName={element.cardDesc}
+                button={element.buttonCard}
+              />
+            ))}
+          </DivServices>
+        )}
+        {active === 'ApplicationForOrderingCylinders' && <ApplicationForOrderingCylinders />}
+
       </InformServices>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
