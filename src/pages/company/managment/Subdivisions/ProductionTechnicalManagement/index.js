@@ -2,13 +2,16 @@ import React from 'react';
 import { Subdivision, Title, Text } from '../styles';
 import { Container } from '../../styles';
 import Header from '../../../../../components/header';
-import { TitleDepartment } from "./styles";
+import { TitleDepartment } from './styles';
 export { data } from '../../../../../assets/data_management';
 
-export default function ProductionTechnicalManagement({ titleDepartment}) {
+export default function ProductionTechnicalManagement({ titleDepartment }) {
+  console.log(titleDepartment);
   return (
     <Container titleDepartment={titleDepartment}>
-      {/*<Header backgroundHeader={'blue'} />*/}
+      <Header backgroundHeader={'blue'} />
+      <p>{titleDepartment}</p>
+
       {/*<Subdivision>*/}
       {/*  <TitleDepartment></TitleDepartment>*/}
       {/*  <Text>*/}

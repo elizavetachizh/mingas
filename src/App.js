@@ -64,6 +64,7 @@ class App extends Component {
           <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
           <Route path={'/Personal'} element={<Personal />} />
           <Route path={'/Personal/tasks'} element={<Tasks />} />
+
         </Routes>
       </div>
     );

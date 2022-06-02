@@ -20,9 +20,9 @@ export const DivInputText = styled.div`
 `;
 
 export const TwoColumnTextAndForm = styled.div`
-  margin: 6% 10%;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   @media (max-width: 700px) {
     flex-direction: column;
@@ -42,7 +42,9 @@ export const TwoColumnTextAndForm = styled.div`
 `;
 
 export const OneColumn = styled.div`
-  width: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   h2 {
     font-weight: bold;
     text-transform: uppercase;
@@ -67,6 +69,7 @@ export const OneColumn = styled.div`
 `;
 
 export const TwoColumn = styled.div`
+  width: 100%;
   @media (max-width: 700px) {
     width: 100%;
     text-align: center;
@@ -144,7 +147,7 @@ export const InputFile = styled.input`
 
 export const Button = styled.button`
   color: white;
-  background-color: #0D4475;
+  background-color: #0d4475;
   font-size: 16px;
   font-weight: 500;
   width: 172px;

@@ -2,11 +2,22 @@ import React from 'react';
 import { Container } from '../../Home/styles';
 import { Title } from '../../Home/useful_information/styles';
 import { Table, Thead, Tbody } from './styles';
-import Header from "../../../components/header";
-
+import Header from '../../../components/header';
+import { Divbackground, DivImage } from '../styles';
+import minsk from '../../../assets/background/minsk.jpg';
+import HeaderFeedBack from "../HeaderFeedBack";
+const styled = {
+  background: `url(${minsk})  no-repeat`,
+  backgroundSize: 'cover',
+};
 export default function ReceptionOfCitizens() {
   return (
     <Container>
+      <Header></Header>
+      <HeaderFeedBack />
+      <Divbackground>
+        <DivImage style={styled}></DivImage>
+      </Divbackground>
       <Title>График приёма граждан</Title>
       <section>
         <Table>

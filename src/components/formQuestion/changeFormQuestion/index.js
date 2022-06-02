@@ -9,10 +9,8 @@ export default function ChangeFormQuestion() {
     <Container>
       <TwoColumnTextAndForm>
         <OneColumn>
-          <nav>
-            <Button onClick={() => setActive('Individual')}>Обращение физических лиц</Button>
-            <Button onClick={() => setActive('Entity')}>Обращение юридических лиц</Button>
-          </nav>
+          <Button onClick={() => setActive('Individual')}>Обращение физических лиц</Button>
+          <Button onClick={() => setActive('Entity')}>Обращение юридических лиц</Button>
         </OneColumn>
         <TwoColumn>
           {active === 'Individual' && <FormQuestion />}
