@@ -16,6 +16,7 @@ import {
   Dropdown,
   DivButtonHeader,
   PersonalAccButton,
+  GoBack,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_color.png';
 import eye from '../../assets/png/visibilityEye.png';
@@ -39,7 +40,6 @@ import {
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
-import { Button } from '../button/styles';
 import { useNavigate } from 'react-router';
 
 const styleMenu = {
@@ -89,7 +89,7 @@ export default function Header({ backgroundHeader }) {
         <LinkLogo to="/">
           <Logo src={HeaderLogo} />
         </LinkLogo>
-        <button onClick={() => navigate(-1)}>Назад</button>
+        <GoBack onClick={() => navigate(-1)}>Назад</GoBack>
         <ButtonsContainer>
           <LinksContainer>
             <Dropdown>

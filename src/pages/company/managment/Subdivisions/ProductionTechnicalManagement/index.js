@@ -1,17 +1,23 @@
 import React from 'react';
 import { Subdivision, Title, Text } from '../styles';
-import { Container } from '../../styles';
+import { Container, DivAboutmanagementWhiteFont, DivLeadersPhotoPosition } from '../../styles';
 import Header from '../../../../../components/header';
-import { TitleDepartment } from './styles';
+import DopFunctional from '../DopFunctional';
+import { data } from '../../../../../assets/data_management';
+import Leaders from '../../divmagement';
 export { data } from '../../../../../assets/data_management';
 
-export default function ProductionTechnicalManagement({ titleDepartment }) {
-  console.log(titleDepartment);
+export default function ProductionTechnicalManagement({ currentLink }) {
+  console.log(currentLink);
   return (
-    <Container titleDepartment={titleDepartment}>
+    <Container titleDepartment={currentLink}>
       <Header backgroundHeader={'blue'} />
-      <p>{titleDepartment}</p>
-
+      <p>{currentLink}</p>
+      <div>
+        {data.map((element) => (
+          <DopFunctional fullName={element.fullName} position={element.position} />
+        ))}
+      </div>
       {/*<Subdivision>*/}
       {/*  <TitleDepartment></TitleDepartment>*/}
       {/*  <Text>*/}

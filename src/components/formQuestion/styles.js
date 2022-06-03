@@ -21,6 +21,8 @@ export const DivInputText = styled.div`
 
 export const TwoColumnTextAndForm = styled.div`
   display: flex;
+  width: 100%;
+  max-width: 1100px;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
@@ -45,6 +47,7 @@ export const OneColumn = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   h2 {
     font-weight: bold;
     text-transform: uppercase;
@@ -150,14 +153,14 @@ export const Button = styled.button`
   background-color: #0d4475;
   font-size: 16px;
   font-weight: 500;
-  width: 172px;
+  width: 200px;
   text-align: center;
   text-decoration: none;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  left: 1135px;
+  height: 50px;
   margin: 4% auto;
   cursor: pointer;
 `;

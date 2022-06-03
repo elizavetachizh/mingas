@@ -15,15 +15,21 @@ export const Button = styled.button`
   background: none;
   border: none;
   margin: 2% 0;
+  padding: 2% 0;
   text-decoration: none;
   cursor: pointer;
-  &.active {
-    color: #a69b14;
-    text-decoration-color: #a69b14;
+  transition: 0.8s linear;
+  &:hover {
+    border: solid black;
+    color: #fff; /* Цвет текста */
+    background: #0d4475; /* Цвет фона */
+    padding: 10px;
   }
-  &:checked {
-    color: #a69b14;
-
+  &:focus {
+    border: solid black;
+    color: #fff; /* Цвет текста */
+    background: #0d4475; /* Цвет фона */
+    padding: 10px;
   }
 `;
 

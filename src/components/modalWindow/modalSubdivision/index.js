@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Container, Name } from './styles';
 import { useNavigate } from 'react-router';
 import ProductionTechnicalManagement from '../../../pages/company/managment/Subdivisions/ProductionTechnicalManagement';
@@ -7,12 +7,15 @@ import { log } from 'util';
 
 export default function ModalSubdivision({ links }) {
   const navigate = useNavigate();
-
+  const [currentLink, setCurrentLink] = useState({});
+  const handlerLinkClick = useCallback((link) => {
+    setCurrentLink(link);
+  }, []);
   const onMainPageBtnClick = useCallback((e) => {
     {
       links.map((link) => {
         {
-          navigate(`/company/management/production-technical-management`);
+          navigate(`/company/management/${link}`);
           // console.log('ODIC');
           // console.log(links);
           alert(link);
@@ -30,7 +33,7 @@ export default function ModalSubdivision({ links }) {
         {links.map((link) => (
           <Name onClick={onMainPageBtnClick}>{link}</Name>
         ))}
-        <ProductionTechnicalManagement titleDepartment={links.titleDepartment} />
+        <ProductionTechnicalManagement currentLink={links.currentLink} />
       </Container>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { ModalWindow, ModalWindowOpenAndClose, InformModal, Close } from './styles';
 import close from '../../assets/png/close.png';
 import ModalSubdivision from './modalSubdivision';
@@ -11,6 +11,7 @@ export default function Modal({ handleCloseCLick, currentLeader }) {
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
   };
+
   return (
     <ModalWindow onClick={handleCloseCLick}>
       <ModalWindowOpenAndClose onClick={handleInsideClick}>

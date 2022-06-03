@@ -166,3 +166,11 @@ export const Dropdown = styled.div`
     margin: 5%;
   }
 `;
+
+export const GoBack = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+`;
