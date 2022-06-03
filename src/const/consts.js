@@ -26,8 +26,6 @@ export interface FormValuesConst {
   male: boolean;
 }
 export interface InputProps {
-  label: string;
-  span: string;
   type: 'date' | 'text';
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
@@ -35,7 +33,38 @@ export interface InputProps {
   error: string;
   placeholder?: string;
 }
-
+export interface InputPropsAddress {
+  type: 'date' | 'text';
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  inputAddress: string;
+  error: string;
+  placeholder?: string;
+}
+export interface InputPropsPhone {
+  type: 'date' | 'text';
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  inputPhone: string;
+  error: string;
+  placeholder?: string;
+}
+export interface InputPropsText {
+  type: 'date' | 'text';
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  inputText: string;
+  error: string;
+  placeholder?: string;
+}
+export interface InputPropsDate {
+  type: 'date' | 'text';
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  inputDate: string;
+  error: string;
+  placeholder?: string;
+}
 export interface SelectProps {
   label: string;
   span: string;
@@ -43,6 +72,7 @@ export interface SelectProps {
   value: string;
   inputName: string;
   error: string;
+
   options: Option;
 }
 export const INITIAL_REQUEST_STATE = {
@@ -53,9 +83,10 @@ export const INITIAL_REQUEST_STATE = {
   date: '',
   time: '',
   work: '',
-  // text: '',
+  text: '',
   isAgree: false,
-  // fileName: '',
+  message: '',
+  fileName: '',
 };
 
 export interface requestValues {
@@ -69,6 +100,7 @@ export interface requestValues {
   isAgree?: boolean;
   text?: string;
   fileName?: string;
+  message: string;
 }
 
 export const OPTIONS = [

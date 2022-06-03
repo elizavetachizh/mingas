@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { INITIAL_REQUEST_STATE, UseFormReturnValues } from '../const/consts';
 import * as emailjs from '@emailjs/browser';
+import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
+import type { UseFormReturnValues } from '../../../../const/consts';
 
-export const useRequest = (): UseFormReturnValues => {
+export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -21,12 +22,12 @@ export const useRequest = (): UseFormReturnValues => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
       !isValidateEmail(requestValues.email) ||
-       !requestValues.isAgree ||
-        !requestValues.text ||
-      // !requestValues.address ||
-      // !requestValues.date ||
-      // !requestValues.time ||
-      // !requestValues.work ||
+      !requestValues.isAgree ||
+      // !requestValues.text ||
+      !requestValues.address ||
+      !requestValues.date ||
+      !requestValues.time ||
+      !requestValues.work ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -111,7 +112,6 @@ export const useRequest = (): UseFormReturnValues => {
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
-      console.log(2);
       const { name, value } = event.target;
       setRequestValues({ ...requestValues, time: value });
       validate(name);
@@ -125,6 +125,14 @@ export const useRequest = (): UseFormReturnValues => {
     console.log(errors);
     console.log(requestValues);
   }, [requestValues]);
+
+  // const handleFileInput = useCallback(
+  //   (event: { target: { files: FileList } }) => {
+  //     const file = event.target.files[0];
+  //     setRequestValues({ ...requestValues, fileName: file.name });
+  //   },
+  //   [requestValues]
+  // );
 
   const clearForm = useCallback(() => {
     setRequestValues({

@@ -20,25 +20,28 @@ import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
 import Select from '../../../../components/select';
-import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
-import { useRequest } from '../../../../hooks/use-request-hook';
+import { OPTIONS_TIME } from '../../../../const/consts';
+import { useGardenHouse } from './GardenHouse-hook';
+import InputAddress from '../../../../components/input/inputAddress';
+import InputPhone from '../../../../components/input/inputPhone';
+import InputText from '../../../../components/input/inputText';
 
 export default function ApplicationForGasificationOfResidentialGardenHouse() {
   const {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeWork,
     handleFileInput,
     handleChangeTime,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
-  } = useRequest();
+    form,
+  } = useGardenHouse();
   return (
     <DivApplication>
       <p>Заявка на газификацию жилого (садового) дома</p>
-      <Form onSubmit={handleSubmit}>
+      <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
@@ -51,8 +54,6 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             onChange={handleUserInput}
             value={requestValues.name}
             error={name && errors.name}
-            label={t('form:name')}
-            span={'*'}
           />
         </DivInputName>
         <DivInputEmail>
@@ -60,16 +61,14 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             {t('form:email')}
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'email'}
+          <InputAddress
+            inputAddress={'email'}
             type="email"
             name="email"
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
             error={email && errors.email}
-            label={t('form:email')}
-            span={'*'}
           />
         </DivInputEmail>
         <DivInputPhone>
@@ -77,33 +76,29 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             {t('form:phone')}
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'phone'}
+          <InputPhone
+            inputPhone={'phone'}
             type="tel"
             name="phone"
             placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
             error={phone && errors.phone}
-            label={t('form:phone')}
-            span={'*'}
           />
         </DivInputPhone>
         <DivInputAdress>
           <Label>
-           Адрес объекта
+            Адрес объекта
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'address'}
+          <InputAddress
+            inputAddress={'address'}
             type="text"
             name={'address'}
             placeholder={'Введите адрес объекта'}
             onChange={handleUserInput}
             value={requestValues.address}
             error={address && errors.address}
-            label={t('form:address')}
-            span={'*'}
           />
         </DivInputAdress>
         <Select
@@ -111,7 +106,7 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}
-          inputName={'time'}
+          name={'time'}
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
@@ -119,31 +114,28 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
           <Label>
             Лицевой счёт: <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'text'}
+          <InputText
+            inputText={'text'}
             name={'text'}
             type={'text'}
             placeholder={'Введите Лицевой счёт'}
             onChange={handleUserInput}
             value={requestValues.text}
             error={errors.text}
-            label={'Лицевой счёт'}
-            span={'*'}
           />
         </DivInputName>
         <DivInputName>
           <Label>
             Показания счётчика:<Span>*</Span>
           </Label>
-          <InputName
-            inputName={'text'}
+          <InputText
+            inputText={'text'}
             name={'text'}
             type={'text'}
             placeholder={'Введите ваши показания счётчика'}
             onChange={handleUserInput}
             value={requestValues.text}
             error={errors.text}
-            span={'*'}
           />
         </DivInputName>
         <DivInputFile>

@@ -1,9 +1,7 @@
 import React from 'react';
 import { DivApplication, Form } from '../styles';
-import { useRequest } from '../../../../hooks/use-request-hook';
 import {
   Button,
-  DivInputAdress,
   DivInputCheckbox,
   DivInputEmail,
   DivInputName,
@@ -17,25 +15,27 @@ import name from '../../../../assets/formPng/name.png';
 import { t } from 'i18next';
 import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
-import address from '../../../../assets/formPng/map.png';
 import Select from '../../../../components/select';
-import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
+import { OPTIONS_TIME } from '../../../../const/consts';
+import InputAddress from '../../../../components/input/inputAddress';
+import InputPhone from '../../../../components/input/inputPhone';
+import { useRequestForIssuance } from './IssuanceOfTS-hook';
 
 export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   const {
     handleUserInput,
-    requestValues,
+    requestIssuanceValues,
     errors,
-    handleChangeWork,
     handleChangeTime,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
-  } = useRequest();
+    form
+  } = useRequestForIssuance();
   return (
     <DivApplication>
       <p>Заявка на выдачу ТУ</p>
-      <Form onSubmit={handleSubmit}>
+      <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
@@ -46,10 +46,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             type={'text'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
-            value={requestValues.name}
+            value={requestIssuanceValues.name}
             error={name && errors.name}
-            label={t('form:name')}
-            span={'*'}
           />
         </DivInputName>
         <DivInputEmail>
@@ -57,16 +55,14 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             {t('form:email')}
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'email'}
+          <InputAddress
+            inputAddress={'email'}
             type="email"
             name="email"
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
-            value={requestValues.email}
+            value={requestIssuanceValues.email}
             error={email && errors.email}
-            label={t('form:email')}
-            span={'*'}
           />
         </DivInputEmail>
         <DivInputPhone>
@@ -74,35 +70,31 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             {t('form:phone')}
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'phone'}
+          <InputPhone
+            inputPhone={'phone'}
             type="tel"
             name="phone"
             placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
             onChange={handleUserInput}
-            value={requestValues.phone}
+            value={requestIssuanceValues.phone}
             error={phone && errors.phone}
-            label={t('form:phone')}
-            span={'*'}
           />
         </DivInputPhone>
-
         <Select
           label={'Желаемое время для связи:'}
           span={'*'}
           onChange={handleChangeTime}
-          value={requestValues.time}
+          value={requestIssuanceValues.time}
           inputName={'time'}
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
-
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
             span={'*'}
             onChange={handleCheckBox}
-            checked={requestValues.isAgree}
+            checked={requestIssuanceValues.isAgree}
             inputName="isAgree"
             error={errors.isAgree}
           />

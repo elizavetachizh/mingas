@@ -7,12 +7,9 @@ import HomeServices from './services';
 import ParallaxDiv from './parallax';
 import News from './News';
 import Footer from '../../components/footer';
-import FormQuestion from '../../components/formQuestion';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
-import Appeal from './appeal';
-import ChangeFormQuestion from '../../components/formQuestion/changeFormQuestion';
-import HeaderRequests from "../feedback/Requests/HeaderRequesrs";
+import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
 
 export default function Home() {
   return (
@@ -24,7 +21,7 @@ export default function Home() {
         <HomeServices />
         <ParallaxDiv />
         {/*<ChangeFormQuestion />*/}
-        <HeaderRequests/>
+        <HeaderRequests />
         {/*<Appeal />*/}
         <News />
       </HomeContainer>

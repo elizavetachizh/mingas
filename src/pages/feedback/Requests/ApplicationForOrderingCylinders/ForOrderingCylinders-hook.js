@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { INITIAL_REQUEST_STATE, UseFormReturnValues } from '../const/consts';
 import * as emailjs from '@emailjs/browser';
+import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
+import type { UseFormReturnValues } from '../../../../const/consts';
 
-export const useRequest = (): UseFormReturnValues => {
+export const useForOrderingCylinders = (): UseFormReturnValues => {
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -21,12 +22,9 @@ export const useRequest = (): UseFormReturnValues => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
       !isValidateEmail(requestValues.email) ||
-       !requestValues.isAgree ||
-        !requestValues.text ||
-      // !requestValues.address ||
-      // !requestValues.date ||
-      // !requestValues.time ||
-      // !requestValues.work ||
+      !requestValues.isAgree ||
+      !requestValues.text ||
+      !requestValues.time ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -50,19 +48,9 @@ export const useRequest = (): UseFormReturnValues => {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
-      case 'address':
-        if (!requestValues.address.length) {
-          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
-        }
-        break;
       case 'isAgree':
         if (!!requestValues.isAgree) {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
-        }
-        break;
-      case 'date':
-        if (!requestValues.date) {
-          setErrors({ ...errors, date: 'Заполните, пожалуйста,  желаемую дату выполнения работы' });
         }
         break;
       case 'time':
@@ -71,15 +59,6 @@ export const useRequest = (): UseFormReturnValues => {
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
-          });
-        }
-        break;
-      case 'work':
-        if (requestValues.work.trim().length) {
-          console.log(requestValues.work);
-          setErrors({
-            ...errors,
-            work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
           });
         }
         break;
@@ -98,20 +77,9 @@ export const useRequest = (): UseFormReturnValues => {
     [requestValues]
   );
 
-  const handleChangeWork = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      console.log(1);
-      const { name, value } = event.target;
-      setRequestValues({ ...requestValues, work: value });
-      validate(name);
-    },
-    [requestValues]
-  );
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
-      console.log(2);
       const { name, value } = event.target;
       setRequestValues({ ...requestValues, time: value });
       validate(name);
@@ -133,7 +101,6 @@ export const useRequest = (): UseFormReturnValues => {
       date: '',
       email: '',
       phone: '',
-      address: '',
       text: '',
     });
   }, []);
@@ -163,9 +130,7 @@ export const useRequest = (): UseFormReturnValues => {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeWork,
     handleChangeTime,
-    // handleFileInput,
     handleCheckBox,
     clearForm,
     isButtonDisabled,

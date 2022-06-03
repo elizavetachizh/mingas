@@ -1,23 +1,24 @@
-import type { InputProps } from '../../const/consts';
-import { Input } from './styles';
+import { InputPropsDate } from "../../../const/consts";
+import { Input } from "../styles";
+
 
 const divStyle = {
   margin: '0',
   width: '100%',
 };
-export default function InputName({
+export default function InputDate({
   error,
-  inputName,
+  inputDate,
   onChange,
   type,
   value,
   placeholder,
-}: InputProps): JSX.Element {
+}: InputPropsDate): JSX.Element {
   return (
     <div style={divStyle}>
       <Input
         type={type}
-        name={inputName}
+        name={inputDate}
         placeholder={placeholder}
         value={value}
         onChange={onChange}

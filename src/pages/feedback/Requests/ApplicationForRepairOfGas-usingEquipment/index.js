@@ -17,9 +17,9 @@ import { t } from 'i18next';
 import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
-import { useRequest } from '../../../../hooks/use-request-hook';
 import Select from '../../../../components/select';
 import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
+import { UseForRepairOfGasUsingEquipment } from "./useHookForRepair";
 
 export default function ApplicationForRepairOfGasUsingEquipment() {
   const {
@@ -31,10 +31,11 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
-  } = useRequest();
+    form,
+  } = UseForRepairOfGasUsingEquipment();
   return (
     <DivApplication>
-      <Form onSubmit={handleSubmit}>
+      <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
@@ -116,7 +117,6 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             placeholder={'Введите желаемую дату выполнения работы'}
           />
         </DivInputAdress>
-
         <Select
           label={' Желаемое время выполнения работы:'}
           span={'*'}

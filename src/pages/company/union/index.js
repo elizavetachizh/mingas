@@ -1,131 +1,96 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from '../managment/styles';
 import Header from '../../../components/header';
 import './styles.css';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import napravlenie from '../../../assets/union/napravlenie.jpg';
+
+import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
+import { Title } from '../../Home/useful_information/styles';
+import Footer from '../../../components/footer';
+
 export default function Union() {
-  let isScrolling = false;
-
-  window.addEventListener('scroll', throttleScroll, false);
-
-  function throttleScroll(e) {
-    if (isScrolling == false) {
-      window.requestAnimationFrame(function () {
-        scrolling(e);
-        isScrolling = false;
-      });
-    }
-    isScrolling = true;
-  }
-
-  document.addEventListener('DOMContentLoaded', scrolling, false);
-
-  const listItems = document.querySelectorAll('#mainContent ol li');
-  const firstBox = document.querySelector('#firstBox');
-  const secondBox = document.querySelector('#secondBox');
-
-  function scrolling(e) {
-    if (isPartiallyVisible(firstBox)) {
-      firstBox.classList.add('active');
-
-      document.body.classList.add('colorOne');
-      document.body.classList.remove('colorTwo');
-    } else {
-      document.body.classList.remove('colorOne');
-      document.body.classList.remove('colorTwo');
-    }
-
-    if (isFullyVisible(secondBox)) {
-      secondBox.classList.add('active');
-
-      document.body.classList.add('colorTwo');
-      document.body.classList.remove('colorOne');
-    }
-
-    for (const i = 0; i < listItems.length; i++) {
-      const listItem = listItems[i];
-
-      if (isPartiallyVisible(listItem)) {
-        listItem.classList.add('active');
-      } else {
-        listItem.classList.remove('active');
-      }
-    }
-  }
-
-  function isPartiallyVisible(el) {
-    const elementBoundary = el.getBoundingClientRect();
-
-    const top = elementBoundary.top;
-    const bottom = elementBoundary.bottom;
-    const height = elementBoundary.height;
-
-    return top + height >= 0 && height + window.innerHeight >= bottom;
-  }
-
-  function isFullyVisible(el) {
-    const elementBoundary = el.getBoundingClientRect();
-
-    const top = elementBoundary.top;
-    const bottom = elementBoundary.bottom;
-
-    return top >= 0 && bottom <= window.innerHeight;
-  }
-
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      <div className={'body--div'}>
-        <div id="mainContent">
-          <h1>Scroll Down</h1>
-          <p>
-            Первичная профсоюзная организация УП «МИНГАЗ» входит в состав Белорусского
-            профессионального союза работников энергетики, газовой и топливной промышленности.
-            Сегодня в состав Первичной профсоюзной организации УП «МИНГАЗ» входят 15 цеховых
-            профсоюзных организаций, объединяя около 2000 членов профсоюза. Все работники являются
-            членами профсоюза.
-          </p>
-          <ol id="myList">
-            <li>
-              {' '}
+      <AdditionalDiv>
+        <Title>Первичная профсоюзная организация УП «МИНГАЗ»</Title>
+        <div className={'grids'}>
+          <div className={'text--div'}>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              Первичная профсоюзная организация УП «МИНГАЗ» входит в состав Белорусского
+              профессионального союза работников энергетики, газовой и топливной промышленности.
+              Сегодня в состав Первичной профсоюзной организации УП «МИНГАЗ» входят 15 цеховых
+              профсоюзных организаций, объединяя около 2000 членов профсоюза. Все работники являются
+              членами профсоюза.
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
               Первичная профсоюзная организация УП «МИНГАЗ» ведет свой отсчет с 1957 года. Первым
               председателем профсоюза был Матченко Л., затем возглавляли профсоюз Мельник Н.Ф.,
               Климович Е.Т., Гарминович В., Барейко Т.М., Корженевский А.В., Каменко Н.И., Рабеко
               И.И., а с 2010 года председателем избрана Доморацкая М.А.
-            </li>
-            <li>
-              {' '}
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
               Профсоюзный комитет состоит из неравнодушных работников, энтузиастов своего дела,
               которые умеют работать с коллективом и могут организовать любые мероприятия.
-            </li>
-            <li>
-              Aenean feugiat risus eget sagittis volutpat. Proin quis orci a metus lacinia auctor
-              eget id nisi.
-            </li>
-            <li>Donec pulvinar nunc feugiat semper consequat.</li>
-            <li>Etiam cursus justo eget libero gravida, nec faucibus mauris posuere.</li>
-            <li>In nec sem id libero egestas cursus vel a urna.</li>
-            <li>
-              Fusce pulvinar arcu eu lobortis egestas. Maecenas eleifend felis ut urna consectetur,
-              et pellentesque mi molestie.
-            </li>
-            <li>Aliquam ut felis venenatis, dapibus ante non, gravida nulla.</li>
-            <li>Donec consectetur quam in urna commodo, sed aliquet metus vehicula.</li>
-            <li>Mauris eget est sit amet felis eleifend sagittis non id nulla.</li>
-          </ol>
-          <p id="firstBox">
-            Phasellus tortor nisl, dapibus at posuere sed, tempor in massa. Pellentesque eu sodales
-            orci, finibus congue libero. Mauris molestie bibendum posuere.
-          </p>
-          <p>
-            Nunc blandit varius sapien quis ultrices. Vestibulum et consequat augue. Pellentesque et
-            maximus nisl, sit amet dictum ante.
-          </p>
-          <p id="secondBox">
-            Nullam magna augue, consequat eu augue ut, volutpat fringilla est. Ut commodo ac magna
-            vulputate dictum.
-          </p>
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              Самое главное достижение нашего профсоюза – это коллективный договор, который
+              гарантирует работникам высокий уровень социальной защищенности. На сегодняшний день в
+              Минске найдется немного организаций, которые предоставляют своим работникам такие
+              гарантии в области повышения квалификации, оплаты и охраны труда, социальных выплат,
+              создания условий для развития культурных и спортивных интересов, как наш МИНГАЗ.
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              Руководство УП «МИНГАЗ» в полной мере использует такой стимул, как материальное
+              поощрение для повышения заинтересованности работников в результатах своего труда.
+              Премии и дополнительные выплаты рабочие и служащие получают к отпуску,
+              профессиональным праздникам, юбилеям, а также при непрерывном стаже работы, рождении
+              детей, в связи с трудными жизненными обстоятельствами. Более того, ветераны труда,
+              проработавшие на предприятии более 15 лет, ежемесячно получают материальную помощь.
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              Однако, не хлебом единым жив человек. Ежегодно проводятся чествование ветеранов
+              Великой Отечественной войны, ветеранов труда, воинов–интернационалистов, защитников
+              Отечества и женщин к 8 Марта. Праздники проходят торжественно, с концертными номерами,
+              вручением цветов и подарков, искренними словами поздравлений и теплыми пожеланиями.
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              Администрацией совместно с профсоюзным комитетом ведется большая работа по созданию
+              здоровых и безопасных условий труда работников. Важную роль играет общественный
+              контроль за соблюдением законодательства о труде.
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              В 2005 году был организован коллектив художественной самодеятельности. Участники
+              коллектива художественной самодеятельности выступают на городских мероприятиях,
+              принимают участие в конкурсах областного и республиканского масштаба.
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              Не менее насыщенной и активной является работа профсоюзной организации в области
+              физкультурно-оздоровительной деятельности. Ежегодно арендуются для проведения
+              тренировок и соревнований помещения городских спортивных комплексов и бассейнов. Среди
+              работников Организации регулярно проводятся смотры различной направленности, рабочие
+              спартакиады.
+            </div>
+            <div className={'boxes'} data-aos={'fade-up'}>
+              Интересным и популярным направлением деятельности профкома является организация
+              туристических поездок. Практикуются также организованные культурные акции, посещения
+              театров. С 2010 года ежеквартально выпускается газета «Столичный газовик», в которой
+              освещается жизнь коллектива УП «МИНГАЗ». Совместно с администрацией Организации члены
+              профсоюзного комитета делают все возможное, чтобы каждый работник мог с гордостью
+              сказать: «Я работаю в МИНГАЗе»!
+            </div>
+          </div>
+          <div className={'img--div'} data-aos={'fade-up'}>
+            <img src={napravlenie}></img>
+          </div>
         </div>
-      </div>
+      </AdditionalDiv>
+      <Footer />
     </Container>
   );
 }

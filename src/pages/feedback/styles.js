@@ -31,6 +31,9 @@ export const Button = styled.button`
     background: #0d4475; /* Цвет фона */
     padding: 10px;
   }
+  @media(max-width: 640px) {
+    text-align: center;
+  }
 `;
 
 export const DivButton = styled.div`
@@ -44,6 +47,9 @@ export const ButtonForms = styled.div`
   flex-direction: row;
   max-width: 1140px;
   margin: 2% auto;
+  @media(max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
 export const Divbackground = styled.div`

@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { INITIAL_REQUEST_STATE, UseFormReturnValues } from '../const/consts';
 import * as emailjs from '@emailjs/browser';
+import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
+import type { UseFormReturnValues } from '../../../../const/consts';
 
-export const useRequest = (): UseFormReturnValues => {
+export const useGardenHouse = (): UseFormReturnValues => {
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -21,12 +22,11 @@ export const useRequest = (): UseFormReturnValues => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
       !isValidateEmail(requestValues.email) ||
-       !requestValues.isAgree ||
-        !requestValues.text ||
-      // !requestValues.address ||
-      // !requestValues.date ||
-      // !requestValues.time ||
-      // !requestValues.work ||
+      !requestValues.isAgree ||
+      !requestValues.text ||
+      !requestValues.address ||
+      !requestValues.time ||
+      // !requestValues.message ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -74,15 +74,6 @@ export const useRequest = (): UseFormReturnValues => {
           });
         }
         break;
-      case 'work':
-        if (requestValues.work.trim().length) {
-          console.log(requestValues.work);
-          setErrors({
-            ...errors,
-            work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
-          });
-        }
-        break;
       default:
         break;
     }
@@ -93,17 +84,6 @@ export const useRequest = (): UseFormReturnValues => {
       event.preventDefault();
       const { name, value } = event.target;
       setRequestValues(Object.assign(requestValues, { [name]: value }));
-      validate(name);
-    },
-    [requestValues]
-  );
-
-  const handleChangeWork = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      console.log(1);
-      const { name, value } = event.target;
-      setRequestValues({ ...requestValues, work: value });
       validate(name);
     },
     [requestValues]
@@ -125,6 +105,14 @@ export const useRequest = (): UseFormReturnValues => {
     console.log(errors);
     console.log(requestValues);
   }, [requestValues]);
+
+  const handleFileInput = useCallback(
+    (event: { target: { files: FileList } }) => {
+      const file = event.target.files[0];
+      setRequestValues({ ...requestValues, fileName: file.name });
+    },
+    [requestValues]
+  );
 
   const clearForm = useCallback(() => {
     setRequestValues({
@@ -163,9 +151,8 @@ export const useRequest = (): UseFormReturnValues => {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeWork,
     handleChangeTime,
-    // handleFileInput,
+    handleFileInput,
     handleCheckBox,
     clearForm,
     isButtonDisabled,

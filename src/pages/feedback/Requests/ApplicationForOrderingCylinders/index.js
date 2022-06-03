@@ -1,9 +1,7 @@
 import React from 'react';
-import { useRequest } from '../../../../hooks/use-request-hook';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
-  DivInputAdress,
   DivInputCheckbox,
   DivInputEmail,
   DivInputName,
@@ -19,6 +17,7 @@ import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import Select from '../../../../components/select';
 import { OPTIONS_TIME } from '../../../../const/consts';
+import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
 
 export default function ApplicationForOrderingCylinders() {
   const {
@@ -30,10 +29,11 @@ export default function ApplicationForOrderingCylinders() {
     clearForm,
     isButtonDisabled,
     handleSubmit,
-  } = useRequest();
+    form,
+  } = useForOrderingCylinders();
   return (
     <DivApplication>
-      <Form onSubmit={handleSubmit}>
+      <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
@@ -52,7 +52,7 @@ export default function ApplicationForOrderingCylinders() {
         </DivInputName>
         <DivInputName>
           <Label>
-           Ваш абонентский номер: <Span>*</Span>
+            Ваш абонентский номер: <Span>*</Span>
           </Label>
           <InputName
             inputName={'text'}
@@ -98,29 +98,11 @@ export default function ApplicationForOrderingCylinders() {
             span={'*'}
           />
         </DivInputPhone>
-        <DivInputAdress>
-          <Label>
-            Введите абонентский номер
-            <Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'text'}
-            type="text"
-            name={'text'}
-            placeholder={'Введите абонентский номер'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-            label={t('form:text')}
-            span={'*'}
-          />
-        </DivInputAdress>
         <Select
           label={'Желаемое время для связи:'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}
-          inputName={'time'}
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>

@@ -1,9 +1,10 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { INITIAL_REQUEST_STATE, UseFormReturnValues } from '../const/consts';
 import * as emailjs from '@emailjs/browser';
+import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
+import type { UseFormReturnValues } from '../../../../const/consts';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
-export const useRequest = (): UseFormReturnValues => {
-  const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
+export const useRequestForIssuance = (): UseFormReturnValues => {
+  const [requestIssuanceValues, setRequestIssuanceValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
@@ -19,67 +20,44 @@ export const useRequest = (): UseFormReturnValues => {
   };
   const isButtonDisabled = useMemo(() => {
     return !!(
-      stringIncludesNumber(requestValues.name) ||
-      !isValidateEmail(requestValues.email) ||
-       !requestValues.isAgree ||
-        !requestValues.text ||
-      // !requestValues.address ||
-      // !requestValues.date ||
-      // !requestValues.time ||
-      // !requestValues.work ||
-      !isValidatePhone(requestValues.phone) ||
+      stringIncludesNumber(requestIssuanceValues.name) ||
+      !isValidateEmail(requestIssuanceValues.email) ||
+      !requestIssuanceValues.isAgree ||
+      !requestIssuanceValues.time ||
+      !isValidatePhone(requestIssuanceValues.phone) ||
       Object.keys(errors)?.length
     );
-  }, [requestValues, errors]);
+  }, [requestIssuanceValues, errors]);
 
   const validate = (fieldName: string): void => {
     setErrors({});
     switch (fieldName) {
       case 'name':
-        if (stringIncludesNumber(requestValues.name)) {
+        if (stringIncludesNumber(requestIssuanceValues.name)) {
           setErrors({ ...errors, name: 'ФИО может содержать только буквы!' });
         }
         break;
       case 'email':
-        if (!isValidateEmail(requestValues.email)) {
+        if (!isValidateEmail(requestIssuanceValues.email)) {
           setErrors({ ...errors, email: 'Введите верный адрес почты!' });
         }
         break;
       case 'phone':
-        if (!isValidatePhone(requestValues.phone)) {
+        if (!isValidatePhone(requestIssuanceValues.phone)) {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
-      case 'address':
-        if (!requestValues.address.length) {
-          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
-        }
-        break;
       case 'isAgree':
-        if (!!requestValues.isAgree) {
+        if (!!requestIssuanceValues.isAgree) {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
         }
         break;
-      case 'date':
-        if (!requestValues.date) {
-          setErrors({ ...errors, date: 'Заполните, пожалуйста,  желаемую дату выполнения работы' });
-        }
-        break;
       case 'time':
-        if (requestValues.time.trim().length) {
-          console.log(requestValues.time);
+        if (requestIssuanceValues.time.trim().length) {
+          console.log(requestIssuanceValues.time);
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
-          });
-        }
-        break;
-      case 'work':
-        if (requestValues.work.trim().length) {
-          console.log(requestValues.work);
-          setErrors({
-            ...errors,
-            work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
           });
         }
         break;
@@ -92,49 +70,32 @@ export const useRequest = (): UseFormReturnValues => {
     (event: React.ChangeEvent<HTMLInputElement>) => {
       event.preventDefault();
       const { name, value } = event.target;
-      setRequestValues(Object.assign(requestValues, { [name]: value }));
+      setRequestIssuanceValues(Object.assign(requestIssuanceValues, { [name]: value }));
       validate(name);
     },
-    [requestValues]
-  );
-
-  const handleChangeWork = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      console.log(1);
-      const { name, value } = event.target;
-      setRequestValues({ ...requestValues, work: value });
-      validate(name);
-    },
-    [requestValues]
+    [requestIssuanceValues]
   );
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
-      console.log(2);
       const { name, value } = event.target;
-      setRequestValues({ ...requestValues, time: value });
+      setRequestIssuanceValues({ ...requestIssuanceValues, time: value });
       validate(name);
     },
-    [requestValues]
+    [requestIssuanceValues]
   );
 
   const handleCheckBox = useCallback(() => {
-    setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
+    setRequestIssuanceValues({ ...requestIssuanceValues, isAgree: !requestIssuanceValues.isAgree });
     validate('isAgree');
-    console.log(errors);
-    console.log(requestValues);
-  }, [requestValues]);
+  }, [requestIssuanceValues]);
 
   const clearForm = useCallback(() => {
-    setRequestValues({
+    setRequestIssuanceValues({
       ...INITIAL_REQUEST_STATE,
       name: '',
-      date: '',
       email: '',
       phone: '',
-      address: '',
-      text: '',
     });
   }, []);
 
@@ -156,16 +117,14 @@ export const useRequest = (): UseFormReturnValues => {
       clearForm();
       alert('Форма успешно заполнена');
     },
-    [requestValues]
+    [requestIssuanceValues]
   );
 
   return {
     handleUserInput,
-    requestValues,
+    requestIssuanceValues,
     errors,
-    handleChangeWork,
     handleChangeTime,
-    // handleFileInput,
     handleCheckBox,
     clearForm,
     isButtonDisabled,

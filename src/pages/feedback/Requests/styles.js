@@ -3,6 +3,13 @@ import styled from 'styled-components';
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  @media(max-width: 880px){
+    width: 70%;
+  }
+  @media(max-width: 640px) {
+    width: 100%;
+    max-width: 100%;
+  }
 `;
 
 export const DivApplication = styled.div`
@@ -13,4 +20,9 @@ export const DivApplication = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  @media(max-width: 640px) {
+    width: 100%;
+    max-width: 100%;
+  }
 `;
+
