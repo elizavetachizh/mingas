@@ -45,6 +45,7 @@ class App extends Component {
           <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
+          <Route path="/company/management/:linkId" element={<ProductionTechnicalManagement />} />
           <Route path="/company/structure/" element={<Structure />} />
           <Route path="/company/career/" element={<Career />} />
           <Route path="/company/documentation/" element={<Documentation />} />
@@ -64,7 +65,6 @@ class App extends Component {
           <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
           <Route path={'/Personal'} element={<Personal />} />
           <Route path={'/Personal/tasks'} element={<Tasks />} />
-
         </Routes>
       </div>
     );

@@ -1,44 +1,26 @@
-import React from 'react';
-import { Subdivision, Title, Text } from '../styles';
-import { Container, DivAboutmanagementWhiteFont, DivLeadersPhotoPosition } from '../../styles';
+import React, { useMemo } from 'react';
+import { Container } from '../../styles';
 import Header from '../../../../../components/header';
+import { data } from '../../../../../assets/data_department';
 import DopFunctional from '../DopFunctional';
-import { data } from '../../../../../assets/data_management';
-import Leaders from '../../divmagement';
-export { data } from '../../../../../assets/data_management';
+import { useParams } from 'react-router-dom';
 
 export default function ProductionTechnicalManagement({ currentLink }) {
-  console.log(currentLink);
+  const { linkId } = useParams();
+  const currentDepartment = useMemo(
+    () => data.find((department) => department.id === +linkId),
+    [data]
+  );
+  console.log(currentDepartment);
+
   return (
     <Container titleDepartment={currentLink}>
       <Header backgroundHeader={'blue'} />
-      <p>{currentLink}</p>
-      <div>
-        {data.map((element) => (
-          <DopFunctional fullName={element.fullName} position={element.position} />
-        ))}
-      </div>
-      {/*<Subdivision>*/}
-      {/*  <TitleDepartment></TitleDepartment>*/}
-      {/*  <Text>*/}
-      {/*    Производственно-техническое управление (ПТУ) создано 01.09.2015 в результате реорганизации*/}
-      {/*    штатно-организационной структуры предприятия. Основными задачами управления являются:*/}
-      {/*    организация всех производственных процессов Организации, начиная от подготовки и выдачи*/}
-      {/*    технических условий на проектирование объектов газораспределительной системы и*/}
-      {/*    газопотребления (жилых домов, коммунально-бытовых и промышленных объектов) с учетом*/}
-      {/*    перспективного развития газификации г. Минска и Минского района, осуществления врезки и*/}
-      {/*    пуска газа и дальнейшей их эксплуатации; контроль и координация деятельности технических*/}
-      {/*    служб Организации. Выполнение этой работы требует от руководства ПТУ и специалистов*/}
-      {/*    высокой координации действий по выполнению принципа PDСА управления качеством: это*/}
-      {/*    грамотное планирование, ответственное выполнение, своевременный контроль и последующий*/}
-      {/*    анализ всей производственной деятельности Организации. В состав ПТУ входят: сектор*/}
-      {/*    перспективного развития, технический сектор, группа менеджмента качества. Вся работа*/}
-      {/*    коллектива направлена на достижение эффективной организации труда, повышение*/}
-      {/*    производительности труда и качества продукции, услуг, которые являются главными элементами*/}
-      {/*    формирования конкурентных преимуществ всей Организации. Руководит*/}
-      {/*    производственно-техническим управлением начальник ПТУ Яскевич Виталий Владимирович*/}
-      {/*  </Text>*/}
-      {/*</Subdivision>*/}
+      <DopFunctional
+        id={currentDepartment.id}
+        description={currentDepartment.description}
+        name={currentDepartment.name}
+      />
     </Container>
   );
 }
