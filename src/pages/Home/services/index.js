@@ -24,6 +24,18 @@ export default function HomeServices() {
         <Title>
           <Trans i18nKey="services:title"></Trans>
         </Title>
+        <ButtonServicesHome>
+          <ButtonFun
+            href={'/services/legal-entities'}
+            backgroundColor={'gray'}
+            infoButton={'Для физических лиц'}
+          />
+          <ButtonFun
+            href={'/services/legal-entities'}
+            backgroundColor={'gray'}
+            infoButton={'Для юридических лиц'}
+          />
+        </ButtonServicesHome>
         <ServicesDiv>
           <DivDown>
             {data.map((element) => (
@@ -37,18 +49,7 @@ export default function HomeServices() {
           </DivDown>
         </ServicesDiv>
       </DivInform>
-      <ButtonServicesHome>
-        <ButtonFun
-          href={'/services/legal-entities'}
-          backgroundColor={'gray'}
-          infoButton={'Для физических лиц'}
-        />
-        <ButtonFun
-          href={'/services/legal-entities'}
-          backgroundColor={'gray'}
-          infoButton={'Для юридических лиц'}
-        />
-      </ButtonServicesHome>
+
     </Container>
   );
 }

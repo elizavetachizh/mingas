@@ -9,8 +9,8 @@ export const ContentLink = styled.div`
 `;
 
 export const ImageLink = styled.img`
-  width: 36px;
-  height: 36px;
+  //width: 36px;
+  //height: 36px;
 `;
 
 export const TextLink = styled.p`

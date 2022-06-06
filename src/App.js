@@ -10,7 +10,7 @@ import Management from './pages/company/managment';
 import Structure from './pages/company/structure';
 import Career from './pages/company/career';
 import Documentation from './pages/company/documentation';
-import ProductionTechnicalManagement from './pages/company/managment/Subdivisions/ProductionTechnicalManagement';
+import ProductionTechnicalManagement from './pages/company/managment/Subdivisions/departmentInformation';
 import ServicesForLegalEntities from './pages/services/servicesForLegalEntities';
 import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';

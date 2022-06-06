@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '../../Home/styles';
 import { Title } from '../../Home/useful_information/styles';
-import { Table, Thead, Tbody } from './styles';
+import { Table, Thead, Tbody, SectionTable } from "./styles";
 import Header from '../../../components/header';
 import { Divbackground, DivImage } from '../styles';
 import minsk from '../../../assets/background/minsk.jpg';
@@ -19,7 +19,7 @@ export default function ReceptionOfCitizens() {
         <DivImage style={styled}></DivImage>
       </Divbackground>
       <Title>График приёма граждан</Title>
-      <section>
+      <SectionTable>
         <Table>
           <Thead>
             <tr>
@@ -209,7 +209,7 @@ export default function ReceptionOfCitizens() {
             </tr>
           </Tbody>
         </Table>
-      </section>
+      </SectionTable>
     </Container>
   );
 }

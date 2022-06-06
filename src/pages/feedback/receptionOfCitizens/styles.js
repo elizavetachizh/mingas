@@ -23,3 +23,4 @@ export const Tbody = styled.tbody`
     background-color: rgba(200, 220, 231, 80%);
   }
 `;
+export const SectionTable = styled.section``;
