@@ -6,6 +6,7 @@ import HeaderFeedBack from "../HeaderFeedBack";
 import { Divbackground, DivImage } from "../styles";
 import minsk from "../../../assets/background/minsk.jpg";
 import gas from "../../../assets/background/mingas_background(1).jpg";
+import Footer from "../../../components/footer";
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
@@ -22,6 +23,7 @@ export default function Requests() {
         <DivImage style={styled}></DivImage>
       </Divbackground>
       <HeaderRequests></HeaderRequests>
+      <Footer></Footer>
     </Container>
   );
 }

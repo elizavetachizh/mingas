@@ -11,11 +11,10 @@ import {
   ServicesButton,
 } from '../header/styles';
 import '../chat-bot/static/css/main.bbd16e91.css'
-import HeaderLogo from '../../assets/png/mingaz_logo_color.png';
+import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import telegram from '../../assets/icons/telegram.png';
 import instagram from '../../assets/icons/instagram.png';
 import viber from '../../assets/icons/viber.png';
-import * as chat from '../chat-bot/config'
 import {
   Container,
   Contacts,
@@ -30,13 +29,9 @@ import {
 } from './styles';
 import eye from '../../assets/png/visibilityEye.png';
 import ButtonFun from '../button';
-// import * as config from '../chat-bot/config'
 const line = {
   width: '70%',
 };
-// console.log(chat);
-// const __html = require('../chat-bot/index.html');
-// const template = { __html: __html };
 export default function Footer() {
   return (
     <Container>
@@ -77,14 +72,6 @@ export default function Footer() {
             <p>Обед с 12:00 до 12:45</p>
           </WorkTime>
         </Contacts>
-
-        {/*<div id="webChat"></div>*/}
-        {/*<span id="chatLanguage" data-language="ua"></span>*/}
-        {/*<span id="chatFontSize" data-size="medium"></span>*/}
-        {/*<span id="open_webchat" data-open="false"></span>*/}
-        {/*<ScriptTag src={config} />*/}
-        {/*<ScriptTag src="../chat-bot/static/js/main.28df611b" />*/}
-
       </LinksNetwork>
     </Container>
   );

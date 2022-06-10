@@ -19,4 +19,7 @@ export const DivParagraph = styled.div`
   width: 890px;
   text-align: justify;
   margin: 0 auto;
+  p {
+    text-indent: 25px;
+  }
 `;

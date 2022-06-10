@@ -16,34 +16,6 @@ export const DivAboutManagementBackground = styled.div`
   @media (max-width: 550px) {  ;
     width: 550px;
   }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    background: url('https://peterburggaz.ru/local/templates/peterburggaz/images/section-left.png?1')
-      left 390px no-repeat;
-    @media (max-width: 640px) {
-      display: none;
-    }
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    background: url('https://peterburggaz.ru/local/templates/peterburggaz/images/section-right.png?2')
-      right bottom no-repeat;
-
     @media (max-width: 640px) {
       display: none;
     }

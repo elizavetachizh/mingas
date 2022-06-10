@@ -17,8 +17,9 @@ import {
   DivButtonHeader,
   PersonalAccButton,
   GoBack,
+  MingasShopBtn,
 } from './styles';
-import HeaderLogo from '../../assets/png/mingaz_logo_color.png';
+import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import eye from '../../assets/png/visibilityEye.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
@@ -101,7 +102,8 @@ export default function Header({ backgroundHeader }) {
                 <HistoryButton to="/company/history">История предприятия</HistoryButton>
                 <ManagementButton to="/company/management">Руководство</ManagementButton>
                 <StructureButton to="/company/structure">Структура предприятия</StructureButton>
-                <CareerButton to="/company/career">Карерьера в УП "Мингаз"</CareerButton>
+                <CareerButton to="/company/career">Карьера в УП "Мингаз"</CareerButton>
+                <CareerButton to='/company/branches'>Филиалы УП "Мингаз"</CareerButton>
                 <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
                 <UnionButton to="/company/union">Профсоюз</UnionButton>
               </DivButtonHeader>
@@ -142,6 +144,7 @@ export default function Header({ backgroundHeader }) {
                 <RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>
               </DivButtonHeader>
             </Dropdown>
+            <MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>
           </LinksContainer>
           <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
           <Language />

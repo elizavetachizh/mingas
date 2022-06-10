@@ -1,14 +1,15 @@
 .grids {
   width: 100%;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
 }
 .boxes {
   margin: 40px;
   overflow: hidden;
-
+  text-align: justify;
   height: auto;
   color: #0d4475;
+  text-indent: 25px;
   /*box-shadow: 8px 12px 18px -6px rgba(0,0,0,0.3);*/
   /*background-color: rgb(198,177,198);*/
 }

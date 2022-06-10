@@ -2,28 +2,21 @@ import React from 'react';
 import ButtonFun from '../../../components/button';
 import { data } from '../../../assets/data_service_individuals';
 import { dataLegalEntities } from '../../../assets/data_service_legalEntities';
-import {
-  Container,
-  DivInform,
-  DivUp,
-  Title,
-  TitleCard,
-  DivDown,
-  ButtonServicesHome,
-  ServicesDiv,
-} from './styles';
+import { Container, DivInform, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
 import { Trans, useTranslation } from 'react-i18next';
-import { ButtonLink } from '../../services/styles';
+import { Title } from '../useful_information/styles';
+import TitleFun from '../../../components/title';
 
 export default function HomeServices() {
   const { t } = useTranslation();
   return (
     <Container>
       <DivInform>
-        <Title>
-          <Trans i18nKey="services:title"></Trans>
-        </Title>
+        {/*<Title>*/}
+        {/*  <Trans i18nKey="services:title"></Trans>*/}
+        {/*</Title>*/}
+        <TitleFun color={'white'} infoTitle={<Trans i18nKey="services:title"></Trans>}></TitleFun>
         <ButtonServicesHome>
           <ButtonFun
             href={'/services/legal-entities'}
@@ -49,7 +42,6 @@ export default function HomeServices() {
           </DivDown>
         </ServicesDiv>
       </DivInform>
-
     </Container>
   );
 }

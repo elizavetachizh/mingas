@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from '../../Home/styles';
 import { Title } from '../../Home/useful_information/styles';
-import { Table, Thead, Tbody, SectionTable } from "./styles";
+import { Table, Thead, Tbody, SectionTable } from './styles';
 import Header from '../../../components/header';
 import { Divbackground, DivImage } from '../styles';
 import minsk from '../../../assets/background/minsk.jpg';
-import HeaderFeedBack from "../HeaderFeedBack";
+import HeaderFeedBack from '../HeaderFeedBack';
+import Footer from '../../../components/footer';
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
@@ -210,6 +211,7 @@ export default function ReceptionOfCitizens() {
           </Tbody>
         </Table>
       </SectionTable>
+      <Footer></Footer>
     </Container>
   );
 }

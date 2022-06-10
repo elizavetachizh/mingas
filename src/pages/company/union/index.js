@@ -5,10 +5,10 @@ import './styles.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import napravlenie from '../../../assets/union/napravlenie.jpg';
-
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { Title } from '../../Home/useful_information/styles';
 import Footer from '../../../components/footer';
+import HeaderCompany from '../header_company';
 
 export default function Union() {
   useEffect(() => {
@@ -17,6 +17,7 @@ export default function Union() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <HeaderCompany></HeaderCompany>
       <AdditionalDiv>
         <Title>Первичная профсоюзная организация УП «МИНГАЗ»</Title>
         <div className={'grids'}>

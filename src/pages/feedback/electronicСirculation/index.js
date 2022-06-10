@@ -5,6 +5,7 @@ import Header from '../../../components/header';
 import HeaderFeedBack from '../HeaderFeedBack';
 import { Divbackground, DivImage } from '../styles';
 import { Container } from '../../Home/styles';
+import Footer from '../../../components/footer';
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
@@ -18,6 +19,7 @@ export default function ElectronicAppeal() {
         <DivImage style={styled}></DivImage>
       </Divbackground>
       <ChangeFormQuestion />
+      <Footer></Footer>
     </Container>
   );
 }

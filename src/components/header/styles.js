@@ -85,9 +85,8 @@ export const Background = styled.div`
 export const LinkLogo = styled(NavLink)``;
 
 export const Logo = styled.img`
-  width: 60px;
-  height: 60px;
-  transform: rotate(90deg);
+  width: 80px;
+  height: 80px;
 `;
 
 export const Title = styled.h3``;
@@ -136,6 +135,19 @@ export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const ServiceCenterButton = CompanyButton;
 export const PersonalAccButton = CompanyButton;
+export const MingasShopBtn = styled.a`
+  text-decoration: none;
+  padding: 0 20px;
+  color: #fff;
+
+  &.active {
+    color: #a69b14;
+  }
+
+  @media (max-width: 916px) {
+    display: none;
+  }
+`;
 export const IconEye = styled.a`
   margin: 0 10px;
 `;

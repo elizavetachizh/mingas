@@ -5,7 +5,7 @@ export const AdditionalDiv = styled.div`
   max-width: 1440px;
   text-align: center;
   @media (max-width: 1500px) {
-    margin: 10% auto;
+    margin: 10% auto 4% auto;
   } ;
   @media (max-width: 500px) {
     width: 500px;
@@ -18,7 +18,6 @@ export const PageSection = styled.div`
   align-items: center;
   max-width: 70%;
   margin: 0 2%;
-  color: #383838;
 `;
 
 export const Table = styled.table`

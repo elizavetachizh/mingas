@@ -25,6 +25,7 @@ export const Title = styled.h2`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
   margin: 4% auto;
   text-align: center;
   @media (max-width: 640px) {

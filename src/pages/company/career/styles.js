@@ -1,50 +1,33 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const TitleCareer = styled.h3``;
 
-export const TextCareer = styled.p`
+export const TextCareer = styled.div`
+  p {
+    text-indent: 25px;
+  }
 `;
 
 export const PhotoCareer = styled.img`
-width: 40%;
-`
+  width: 40%;
+`;
 
 export const DivVacancies = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
 `;
 
-export const DivForm = styled.div``;
+export const DivForm = styled.div`
+  text-decoration: none;
+`;
 
 export const DivDescriptionCareer = styled.div`
-display: flex;
-flex-direction: column;`;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const DivAfterAndBefore = styled.div`
   width: 100%;
-  @media(max-width: 550px) {
+  @media (max-width: 550px) {
     width: 550px;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-background: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-left.png?1") left 390px no-repeat;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    background: url("https://peterburggaz.ru/local/templates/peterburggaz/images/section-right.png?2") right bottom no-repeat
   }
 `;

@@ -44,7 +44,7 @@ export const Row = styled.div`
   flex-direction: row;
   justify-content: center;
   margin: 6rem auto;
-  color: #383838;
+  color: #0D4475;
   @media (max-width: 600px) {
     width: 600px;
   }

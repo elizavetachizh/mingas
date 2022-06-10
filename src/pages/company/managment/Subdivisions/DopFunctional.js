@@ -1,17 +1,13 @@
 import React from 'react';
-import { Container } from '../../styles';
-import { Title } from '../../../Home/useful_information/styles';
-import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
-import { Pre, Contacts } from './departmentInformation/styles';
+import { Pre, Contacts, AdditionalDivFunctional } from './departmentInformation/styles';
+import TitleFun from '../../../../components/title';
 
 export default function DopFunctional({ name, description, contacts }) {
   return (
-    <Container>
-      <AdditionalDiv>
-        <Title>{name}</Title>
-        <Pre>{description}</Pre>
-        <Contacts>{contacts}</Contacts>
-      </AdditionalDiv>
-    </Container>
+    <AdditionalDivFunctional>
+      <TitleFun color={'blue'} infoTitle={name}></TitleFun>
+      <Pre>{description}</Pre>
+      <Contacts>{contacts}</Contacts>
+    </AdditionalDivFunctional>
   );
 }

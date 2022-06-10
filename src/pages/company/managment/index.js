@@ -1,72 +1,50 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
+
+import { t } from 'i18next';
+import photoHistory from '../../../assets/management/0.jpg';
+import WhatDoingMinGaz from '../history/whatDoingMinGaz';
+import { Container } from './styles';
+import Header from '../../../components/header';
+import ContentHome from '../../Home/Content';
 import HeaderCompany from '../header_company';
 import {
-  Container,
-  DivAboutManagementBackground,
-  DivAboutmanagementWhiteFont,
-  DivBasicManagement,
-  DivPhotoAndDescription,
-  FullName,
-  Position,
-  Description,
-  DivLeadersPhotoPosition,
-} from './styles';
-import { data } from '../../../assets/data_management';
-import Leaders from './divmagement';
-import Footer from '../../../components/footer';
-import Header from '../../../components/header';
-import Modal from '../../../components/modalWindow';
-import up from '../../../assets/png/up_arrow_round.png';
+  DivText,
+  DivTextPhoto,
+  ImageDiv,
+  WhatDoingCompaniInform,
+  WhatDoingCompany,
+} from '../history/styles';
+import { data } from '../../../assets/whatDoingMinGaz';
 import ScrollToTop from 'react-scroll-up';
-
+import Footer from '../../../components/footer';
+import up from '../../../assets/png/up_arrow_round.png';
 export default function Management() {
-  const [isModalVisible, setModalVisible] = useState(false);
-  const [currentLeader, setCurrentLeader] = useState({});
-  const handlerLeaderClick = useCallback((leader) => {
-    setModalVisible(true);
-    setCurrentLeader(leader);
-  }, []);
-
-  const handleCloseCLick = useCallback(() => {
-    setModalVisible(false);
-  }, []);
-
   return (
     <Container>
-      <Header backgroundHeader="gray" />
+      <Header />
+      <ContentHome />
       <HeaderCompany />
-      <DivAboutManagementBackground>
-        <DivAboutmanagementWhiteFont>
-          <DivBasicManagement>
-            <DivPhotoAndDescription>
-              <FullName>Генеральный директор УП «МИНГАЗ»</FullName>
-              <Position>Шолоник Вадим Евгеньевич</Position>
-              <Description>
-                Руководство текущей деятельностью УП "Мингаз" согласно уставу осуществляет
-                генеральный директор, избираемый Общим собранием акционеров сроком на три года.
-                Генеральный директор подотчетен Общему собранию акционеров и Совету директоров
-                Общества.
-              </Description>
-            </DivPhotoAndDescription>
-          </DivBasicManagement>
-          <DivLeadersPhotoPosition>
-            {data.map((element) => (
-              <Leaders
-                handlerLeaderClick={handlerLeaderClick}
-                cardImg={element.cardImg}
-                leader={element}
-                key={element.fullName}
-                fullName={element.fullName}
-                position={element.position}
-                links={element.links}
-              />
-            ))}
-          </DivLeadersPhotoPosition>
-          {isModalVisible && (
-            <Modal handleCloseCLick={handleCloseCLick} currentLeader={currentLeader} />
-          )}
-        </DivAboutmanagementWhiteFont>
-      </DivAboutManagementBackground>
+      <DivTextPhoto>
+        <DivText>
+          <p>{t('history:text1')}</p>
+          <p>{t('history:text2')}</p>
+          <p>{t('history:text3')}</p>
+          <p>{t('history:text4')}</p>
+        </DivText>
+        <ImageDiv src={photoHistory} />
+      </DivTextPhoto>
+      <WhatDoingCompany>
+        <h2>ЧТО ДЕЛАЕТ РУП "МИНГАЗ"</h2>
+        <WhatDoingCompaniInform>
+          {data.map((element) => (
+            <WhatDoingMinGaz
+              key={element.desc}
+              cardImg={element.cardImg}
+              cardDesc={element.cardDesc}
+            />
+          ))}
+        </WhatDoingCompaniInform>
+      </WhatDoingCompany>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>

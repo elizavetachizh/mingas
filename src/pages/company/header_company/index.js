@@ -24,7 +24,9 @@ export default function HeaderCompany() {
         <StructureButton to="/company/structure">
           {t('headerCompany:enterpriseStructure')}
         </StructureButton>
+
         <CareerButton to="/company/career">{t('headerCompany:careerMingaz')}</CareerButton>
+        <CareerButton to="/company/branches">Филиалы УП "Мингаз"</CareerButton>
         <DocumentsButton to="/company/documentation">
           {t('headerCompany:documentation')}
         </DocumentsButton>

@@ -7,6 +7,10 @@ export const HeaderBtnFeedback = styled.div`
   margin-top: 6%;
   display: flex;
   flex-direction: column;
+  background: #e8f3ff;
+  max-width: 29%;
+  //margin: 0 2%;
+  height: 300px;
 `;
 export const Button = styled.button`
   color: #0d4475;
@@ -31,7 +35,7 @@ export const Button = styled.button`
     background: #0d4475; /* Цвет фона */
     padding: 10px;
   }
-  @media(max-width: 640px) {
+  @media (max-width: 640px) {
     text-align: center;
   }
 `;
@@ -47,7 +51,7 @@ export const ButtonForms = styled.div`
   flex-direction: row;
   max-width: 1140px;
   margin: 2% auto;
-  @media(max-width: 640px) {
+  @media (max-width: 640px) {
     flex-direction: column;
   }
 `;

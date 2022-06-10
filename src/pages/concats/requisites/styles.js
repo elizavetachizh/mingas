@@ -7,7 +7,6 @@ export const PageSection = styled.div`
   padding: 2rem 0;
   h4 {
     font-size: 1.5rem;
-    line-height: 1.4;
     margin: 3rem auto;
     text-align: center;
   }

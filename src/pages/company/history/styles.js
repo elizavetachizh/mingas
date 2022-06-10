@@ -28,7 +28,7 @@ export const DivTextPhoto = styled.div`
     width: 100%;
   }
   @media (max-width: 550px) {
-margin-left: 10%;
+    margin-left: 10%;
     max-width: 100%;
     width: 100%;
   }
@@ -40,7 +40,6 @@ margin-left: 10%;
     width: 450px;
     margin-left: 26%;
   }
-  
 `;
 
 export const DivText = styled.div`
@@ -48,6 +47,9 @@ export const DivText = styled.div`
   @media (max-width: 600px) {
     width: 100%;
     margin: 0 auto;
+  }
+  p{
+    text-indent: 25px;
   }
 `;
 
@@ -65,7 +67,6 @@ export const WhatDoingCompany = styled.div`
   display: flex;
   flex-direction: column;
   h2 {
-    font-family: 'Bilbo', sans-serif;
     font-style: normal;
     font-size: 16px;
     color: #0d4475;

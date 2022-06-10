@@ -17,6 +17,7 @@ export const Title = styled.h2`
   line-height: 37px;
   display: flex;
   align-items: center;
+  text-transform: uppercase;
   justify-content: center;
   letter-spacing: 0.1em;
   color: #0d4475;
