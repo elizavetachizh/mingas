@@ -54,7 +54,6 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
         break;
       case 'time':
         if (requestIssuanceValues.time.trim().length) {
-          console.log(requestIssuanceValues.time);
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
@@ -113,7 +112,6 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
             console.log(error.text);
           }
         );
-      console.log(form.current);
       clearForm();
       alert('Форма успешно заполнена');
     },

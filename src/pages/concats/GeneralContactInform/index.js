@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { PageSection, Table, Tbody, Tr, Td, AdditionalDiv } from './styles';
 import Header from '../../../components/header';
 import { ContactsInform, DivButtons, DivMap, Row } from '../styles';
 import HeaderConcats from '../headerContacts';
 import { Title } from '../../Home/useful_information/styles';
 import AutoComplete from '../../../components/GoogleMap/AutoComplete';
-import ButtonFun from '../../../components/button';
 import Map, { MODES } from '../../../components/GoogleMap';
 import Footer from '../../../components/footer';
 import { Container } from '../../styles';
 import { useJsApiLoader } from '@react-google-maps/api';
-import { defaultCenter, GetBrowserLocation } from "../../../components/GoogleMap/utilsGeo";
+import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-
 
 export const styleTd = {
   width: '50%',
@@ -22,20 +20,20 @@ export const styleTd = {
 const libraries = ['places'];
 
 export default function GeneralInform() {
-  const [center, setCenter] = React.useState(defaultCenter);
-  const [mode, setMode] = React.useState(MODES.MOVE);
-  const [markers, setMarkers] = React.useState([]);
+  const [center, setCenter] = useState(defaultCenter);
+  const [mode, setMode] = useState(MODES.MOVE);
+  const [markers, setMarkers] = useState([]);
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script-1',
     googleMapsApiKey: API_KEY,
     libraries,
   });
 
-  const onPlaceSelect = React.useCallback((coordinates) => {
+  const onPlaceSelect = useCallback((coordinates) => {
     setCenter(coordinates);
   }, []);
 
-  const toggleMode = React.useCallback(() => {
+  const toggleMode = useCallback(() => {
     switch (mode) {
       case MODES.MOVE:
         setMode(MODES.SET_MARKER);
@@ -48,18 +46,18 @@ export default function GeneralInform() {
     }
   }, [mode]);
 
-  const onMarkerAdd = React.useCallback(
+  const onMarkerAdd = useCallback(
     (coordinates) => {
       setMarkers([...markers, coordinates]);
     },
     [markers]
   );
 
-  const clear = React.useCallback(() => {
+  const clear = useCallback(() => {
     setMarkers([]);
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     GetBrowserLocation()
       .then((curLoc) => {
         setCenter(curLoc);
@@ -105,18 +103,22 @@ export default function GeneralInform() {
       <DivMap>
         <AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
         <DivButtons>
-          <ButtonFun
-            href={'/'}
-            backgroundColor={'blue'}
-            infoButton={'Установить маркер'}
+          <button
+            // href={'/'}
+            // backgroundColor={'blue'}
+            // infoButton={'Установить маркер'}
             onClick={toggleMode}
-          />
-          <ButtonFun
-            href={'/'}
-            backgroundColor={'blue'}
-            infoButton={'Очистить маркер'}
+          >
+            Установить маркер
+          </button>
+          <button
+            // href={'/'}
+            // backgroundColor={'blue'}
+            // infoButton={'Очистить маркер'}
             onClick={clear}
-          />
+          >
+            Очистить маркер
+          </button>
         </DivButtons>
         {isLoaded ? (
           <Map center={center} mode={mode} markers={markers} onMarkerAdd={onMarkerAdd} />

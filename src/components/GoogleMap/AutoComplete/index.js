@@ -7,7 +7,6 @@ import usePlacesAutocomplete, {
 import useOnclickOutside from "react-cool-onclickoutside";
 
 export default function AutoComplete({isLoaded, onSelect}) {
-
     const {
         ready,
         value,
@@ -41,7 +40,6 @@ export default function AutoComplete({isLoaded, onSelect}) {
                 getGeocode({ address: description })
                     .then((results) => getLatLng(results[0]))
                     .then(({ lat, lng }) => {
-                        console.log("📍 Coordinates: ", { lat, lng });
                         onSelect({ lat, lng })
                     })
                     .catch((error) => {

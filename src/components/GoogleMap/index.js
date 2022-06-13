@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { GoogleMap } from '@react-google-maps/api';
 import { DivMap } from './styles';
 import { defaultTheme } from './styles';
@@ -30,18 +30,18 @@ export const MODES = {
 };
 
 export default function Map({ center, mode, markers, onMarkerAdd }) {
-  const mapRef = React.useRef(undefined);
-  const onLoad = React.useCallback(function callback(map) {
+  const mapRef = useRef(undefined);
+  const onLoad = useCallback(function callback(map) {
     mapRef.current = map;
   }, []);
 
-  const onUnmount = React.useCallback(function callback(map) {
+  const onUnmount = useCallback(function callback(map) {
     mapRef.current = undefined;
   }, []);
 
-  const onClickFun = React.useCallback(
+  const onClickFun = useCallback(
     (loc) => {
-      if (mode === MODES.MOVE) {
+      if (mode === MODES.SET_MARKER) {
         const lat = loc.latLng.lat();
         const lng = loc.latLng.lng();
         onMarkerAdd({ lat, lng });

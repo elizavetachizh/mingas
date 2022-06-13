@@ -68,7 +68,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
         break;
       case 'time':
         if (requestValues.time.trim().length) {
-          console.log(requestValues.time);
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
@@ -77,7 +76,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
         break;
       case 'work':
         if (requestValues.work.trim().length) {
-          console.log(requestValues.work);
           setErrors({
             ...errors,
             work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
@@ -102,7 +100,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
   const handleChangeWork = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
-      console.log(1);
       const { name, value } = event.target;
       setRequestValues({ ...requestValues, work: value });
       validate(name);
@@ -122,8 +119,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
-    console.log(errors);
-    console.log(requestValues);
   }, [requestValues]);
 
   // const handleFileInput = useCallback(
@@ -160,7 +155,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
             console.log(error.text);
           }
         );
-      console.log(form.current);
       clearForm();
       alert('Форма успешно заполнена');
     },

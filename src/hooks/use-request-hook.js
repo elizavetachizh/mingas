@@ -67,7 +67,6 @@ export const useRequest = (): UseFormReturnValues => {
         break;
       case 'time':
         if (requestValues.time.trim().length) {
-          console.log(requestValues.time);
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
@@ -76,7 +75,6 @@ export const useRequest = (): UseFormReturnValues => {
         break;
       case 'work':
         if (requestValues.work.trim().length) {
-          console.log(requestValues.work);
           setErrors({
             ...errors,
             work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
@@ -101,7 +99,6 @@ export const useRequest = (): UseFormReturnValues => {
   const handleChangeWork = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
-      console.log(1);
       const { name, value } = event.target;
       setRequestValues({ ...requestValues, work: value });
       validate(name);
@@ -111,7 +108,6 @@ export const useRequest = (): UseFormReturnValues => {
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
-      console.log(2);
       const { name, value } = event.target;
       setRequestValues({ ...requestValues, time: value });
       validate(name);
@@ -122,8 +118,6 @@ export const useRequest = (): UseFormReturnValues => {
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
-    console.log(errors);
-    console.log(requestValues);
   }, [requestValues]);
 
   const clearForm = useCallback(() => {
@@ -152,7 +146,6 @@ export const useRequest = (): UseFormReturnValues => {
             console.log(error.text);
           }
         );
-      console.log(form.current);
       clearForm();
       alert('Форма успешно заполнена');
     },

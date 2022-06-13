@@ -2,17 +2,18 @@ import styled from 'styled-components';
 
 export const TitleDepartment = styled.h2``;
 
-export const Pre = styled.pre`
+export const Pre = styled.div`
   text-align: justify;
-  font-family: Play;
+  text-indent: 25px;
+  font-family: Play,serif;
   font-style: normal;
   font-size: 16px;
   line-height: 30px;
   color: #0d4475;
 `;
-export const Contacts = styled.pre`
+export const Contacts = styled.div`
   text-align: justify;
-  font-family: Play;
+  font-family: Play,serif;
   font-style: normal;
   font-size: 16px;
   line-height: 30px;

@@ -55,7 +55,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
         break;
       case 'time':
         if (requestValues.time.trim().length) {
-          console.log(requestValues.time);
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
@@ -90,8 +89,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
-    console.log(errors);
-    console.log(requestValues);
   }, [requestValues]);
 
   const clearForm = useCallback(() => {
@@ -119,7 +116,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
             console.log(error.text);
           }
         );
-      console.log(form.current);
       clearForm();
       alert('Форма успешно заполнена');
     },

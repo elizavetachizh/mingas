@@ -80,3 +80,14 @@ export const WhatDoingCompaniInform = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const PWithImg = styled.div`
+  display: flex;
+  flex-direction: row;
+  div{
+    padding: 10px 20px;
+  }
+  img{
+    width: 30%;
+  }
+`

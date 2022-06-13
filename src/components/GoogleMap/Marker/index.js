@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import {Marker as GoogleMapMarker} from "@react-google-maps/api";
+import { Marker as GoogleMapMarker } from '@react-google-maps/api';
 
-export default function Marker({position}) {
-    return(
-        <GoogleMapMarker
-            position={position}
-           ></GoogleMapMarker>
-    )
+export default function Marker({ position }) {
+  return <GoogleMapMarker position={position} />;
 }

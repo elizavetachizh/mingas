@@ -114,7 +114,6 @@ export const useForm = () => {
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
-      console.log(form.current);
       emailjs
         .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
         .then(

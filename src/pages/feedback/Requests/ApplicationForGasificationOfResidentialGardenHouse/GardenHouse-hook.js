@@ -67,7 +67,6 @@ export const useGardenHouse = (): UseFormReturnValues => {
         break;
       case 'time':
         if (requestValues.time.trim().length) {
-          console.log(requestValues.time);
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
@@ -91,7 +90,6 @@ export const useGardenHouse = (): UseFormReturnValues => {
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
-      console.log(2);
       const { name, value } = event.target;
       setRequestValues({ ...requestValues, time: value });
       validate(name);
@@ -102,8 +100,6 @@ export const useGardenHouse = (): UseFormReturnValues => {
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
-    console.log(errors);
-    console.log(requestValues);
   }, [requestValues]);
 
   const handleFileInput = useCallback(
@@ -140,7 +136,6 @@ export const useGardenHouse = (): UseFormReturnValues => {
             console.log(error.text);
           }
         );
-      console.log(form.current);
       clearForm();
       alert('Форма успешно заполнена');
     },

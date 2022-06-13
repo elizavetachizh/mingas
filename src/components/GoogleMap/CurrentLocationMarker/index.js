@@ -8,6 +8,6 @@ export default function CurrentLocationMarker({ position }) {
       icon={{ url: marker }}
       position={position}
       label={{ text: 'Вы находитесь здесь', fontFamily: 'Play', fontSize: '20px', color: 'black' }}
-    ></Marker>
+    />
   );
 }

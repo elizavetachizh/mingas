@@ -6,6 +6,7 @@ import { AdditionalDiv } from '../GeneralContactInform/styles';
 import TitleFun from '../../../components/title';
 import { Row } from '../styles';
 import HeaderConcats from '../headerContacts';
+import Footer from "../../../components/footer";
 const styledSection = {
   width: '100%',
 };
@@ -213,6 +214,7 @@ export default function SchedulePersonalReceptionOfCitizens() {
           </SectionTable>
         </Row>
       </AdditionalDiv>
+      <Footer/>
     </Container>
   );
 }

@@ -16,9 +16,9 @@ export const DivAboutManagementBackground = styled.div`
   @media (max-width: 550px) {  ;
     width: 550px;
   }
-    @media (max-width: 640px) {
-      display: none;
-    }
+    //@media (max-width: 640px) {
+    //  display: none;
+    //}
   }
 `;
 
