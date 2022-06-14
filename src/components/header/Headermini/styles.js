@@ -39,29 +39,12 @@ export const Container = styled.div`
     }
   }
 `;
-export const Menu = styled.div`
-  display: none;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0);
-  border: rgba(0, 0, 0, 0);
-  @media (max-width: 900px) {
-    display: block;
-  }
-  .opacity {
-    background-color: rgba(200, 220, 231, 0%);
-    color: #314d5c;
-  }
-  img {
-    margin: 10px;
-  }
-`;
 
-export const MenuClose = styled.div``;
 export const Background = styled.div`
   width: 100%;
-  height: 80px;
+  height: 120px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   position: fixed;
@@ -74,10 +57,6 @@ export const Background = styled.div`
   }
   .click {
     opacity: 1;
-  }
-
-  @media (max-width: 900px) {
-    background-color: rgba(200, 220, 231, 80%);
   }
 `;
 
@@ -104,15 +83,13 @@ export const LinksContainer = styled.div`
   @media (max-width: 1076px) {
     font-size: 15px;
   }
-  @media (max-width: 1049px) {
+  @media (max-width: 900px) {
     font-size: 14px;
   }
-  @media (max-width: 1022px) {
+  @media (max-width: 950px) {
     font-size: 13px;
   }
-  @media (max-width: 990px) {
-    font-size: 12px;
-  }
+ 
 `;
 
 export const CompanyButton = styled(NavLink)`
@@ -123,20 +100,14 @@ export const CompanyButton = styled(NavLink)`
   &.active {
     color: #a69b14;
   }
-
-  @media (max-width: 900px) {
-    display: none;
-  }
-
   @media (max-width: 1285px) {
-    display: none;
+    display: block;
   }
 `;
 
 export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
-export const ServiceCenterButton = CompanyButton;
 export const PersonalAccButton = CompanyButton;
 export const MingasShopBtn = styled.a`
   text-decoration: none;
@@ -146,11 +117,18 @@ export const MingasShopBtn = styled.a`
   &.active {
     color: #a69b14;
   }
-  @media (max-width: 900px) {
-    display: none;
-  }
+
   @media (max-width: 1285px) {
-    display: none;
+    display: block;
+  }
+  @media (max-width: 1076px) {
+    font-size: 15px;
+  }
+  @media (max-width: 900px) {
+    font-size: 14px;
+  }
+  @media (max-width: 950px) {
+    font-size: 13px;
   }
 `;
 export const IconEye = styled.a`
@@ -190,4 +168,12 @@ export const GoBack = styled.button`
   color: white;
   cursor: pointer;
   font-size: 16px;
+`;
+
+export const FirstDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 `;

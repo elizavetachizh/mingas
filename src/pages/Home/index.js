@@ -10,11 +10,15 @@ import Footer from '../../components/footer';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
+import useMediaQuery from './parallax/useMediaQuery';
+import Headermini from '../../components/header/Headermini';
 // import htmlContent from '../../index.html';
 export default function Home() {
+  const isDesktop = useMediaQuery('(max-width: 1285px)');
+  const isPhone = useMediaQuery('(min-width: 900px)');
   return (
     <Container>
-      <Header />
+      {isDesktop && isPhone ? <Headermini /> : <Header />}
       <HomeContainer>
         <ContentHome />
         <UsefulInform />

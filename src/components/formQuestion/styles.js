@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  width: 100%;
+  max-width: 1200px;
+`;
 
 export const DivInputName = styled.div`
   display: flex;

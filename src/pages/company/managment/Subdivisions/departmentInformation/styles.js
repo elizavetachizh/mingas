@@ -9,7 +9,7 @@ export const Pre = styled.div`
   font-style: normal;
   font-size: 16px;
   line-height: 30px;
-  color: #0d4475;
+  color: black;
 `;
 export const Contacts = styled.div`
   text-align: justify;

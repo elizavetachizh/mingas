@@ -10,22 +10,26 @@ import Aos from 'aos';
 import history from '../../../assets/history/3.jpg';
 import history_2 from '../../../assets/history/2.jpg';
 import history_3 from '../../../assets/history/1.jpg';
-import { PWithImg } from './styles';
+import { DivParagraphHistory, PWithImg } from "./styles";
+import useMediaQuery from "../../Home/parallax/useMediaQuery";
+import Headermini from "../../../components/header/Headermini";
 
 export default function History() {
+  const isDesktop = useMediaQuery('(max-width: 1285px)');
+  const isPhone = useMediaQuery('(min-width: 900px)');
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
     <Container>
-      <Header backgroundHeader="blue" />
+      {isDesktop && isPhone ? <Headermini /> : <Header  backgroundHeader="blue"/>}
       <HeaderCompany />
       <AdditionalDiv>
         <TitleFun
           color={'blue'}
           infoTitle={'Из истории газификации г. Минска и Минского района'}
         ></TitleFun>
-        <DivParagraph>
+        <DivParagraphHistory>
           <div data-aos={'fade-up'}>
             <PWithImg>
               <img src={history} />
@@ -124,9 +128,9 @@ export default function History() {
               </div>
             </PWithImg>
           </div>
-        </DivParagraph>
+        </DivParagraphHistory>
         <TitleFun color={'blue'} infoTitle={'История предприятия'} data-aos={'fade-up'}></TitleFun>
-        <DivParagraph>
+        <DivParagraphHistory>
           <div data-aos={'fade-up'}>
             16 апреля 1957 года Постановлением Совета Министров БССР и ЦК КПБ за №206 «О проектных и
             подготовительных работах по газификации г.Минска» и решением Минского городского Совета
@@ -187,7 +191,7 @@ export default function History() {
             В настоящее время предприятие «МИНГАЗ» возглавляет генеральный директор Шолоник Вадим
             Евгеньевич.
           </div>
-        </DivParagraph>
+        </DivParagraphHistory>
       </AdditionalDiv>
       <Footer />
     </Container>

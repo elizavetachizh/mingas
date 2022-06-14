@@ -4,7 +4,8 @@ export const Container = styled.div`
   background-color: #0d4475;
   display: flex;
   flex-direction: column;
-  margin: 0px;
+  margin: 0;
+  padding-bottom: 40px;
   height: auto;
   color: #fff;
   align-items: center;
@@ -18,6 +19,7 @@ export const DivInform = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
   flex-direction: column;
 `;
 
@@ -69,6 +71,7 @@ export const DivDown = styled.div`
 export const ServicesDiv = styled.div`
   width: 100%;
   display: flex;
+  padding-bottom: 20px;
   justify-content: space-between;
 `;
 export const BackgroundStyle = styled.img`

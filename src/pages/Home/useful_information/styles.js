@@ -39,12 +39,15 @@ export const DivInform = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 70%;
+  width: 90%;
   margin-bottom: 6%;
-  @media (max-width: 975px) {
-    width: 90%;
+  @media (max-width: 1100px) {
+    width: 100%;
   }
-  @media (max-width: 800px) {
+  //@media (max-width: 975px) {
+  //  width: 90%;
+  //}
+  @media (max-width: 950px) {
     flex-direction: column;
   }
 `;

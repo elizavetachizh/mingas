@@ -18,7 +18,7 @@ import Leaders from '../managment/divmagement';
 import Modal from '../../../components/modalWindow';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-
+import background from '../../../assets/background/background_company.jpg';
 export default function Structure() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -26,7 +26,10 @@ export default function Structure() {
     setModalVisible(true);
     setCurrentLeader(leader);
   }, []);
-
+  // const style = {
+  //   background: `url(${background}) no-repeat`,
+  //   backgroundSize: 'cover',
+  // };
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);

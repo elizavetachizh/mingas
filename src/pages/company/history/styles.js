@@ -19,7 +19,7 @@ export const DivTextPhoto = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #0d4475;
+  color: black;
   @media (max-width: 600px) {
     flex-direction: column-reverse;
     margin: 0 auto;
@@ -48,8 +48,9 @@ export const DivText = styled.div`
     width: 100%;
     margin: 0 auto;
   }
-  p{
+  p {
     text-indent: 25px;
+    text-align: justify;
   }
 `;
 
@@ -84,10 +85,26 @@ export const WhatDoingCompaniInform = styled.div`
 export const PWithImg = styled.div`
   display: flex;
   flex-direction: row;
-  div{
+  div {
     padding: 10px 20px;
   }
-  img{
+  img {
     width: 30%;
   }
-`
+`;
+
+export const DivParagraphHistory = styled.div`
+  max-width: 850px;
+  text-align: justify;
+  margin: 0 auto;
+  div {
+    text-indent: 25px;
+    margin: 20px auto;
+  }
+  @media (max-width: 850px) {
+    max-width: 750px;
+  }
+  @media (max-width: 750px) {
+    max-width: 650px;
+  }
+`;

@@ -1,58 +1,41 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
+import HeaderLogo from '../../../assets/png/mingaz_logo_white.png';
+import eye from '../../../assets/png/visibilityEye.png';
 import {
-  Container,
+  CareerButton,
+  DocumentsButton,
+  ManagementButton,
+  StructureButton,
+  UnionButton,
+} from '../../../pages/company/header_company/styles';
+import Language from '../language';
+import { Trans, useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router';
+import {
   Background,
-  Menu,
-  MenuClose,
-  LinkLogo,
-  Logo,
   ButtonsContainer,
-  LinksContainer,
   CompanyButton,
+  Container,
+  DivButtonHeader,
+  Dropdown,
+  LinkLogo,
   ServicesButton,
   ContactButton,
   PressCenterButtons,
   IconEye,
-  Dropdown,
-  DivButtonHeader,
+  LinksContainer,
+  Logo,
+  FirstDiv,
   PersonalAccButton,
   GoBack,
   MingasShopBtn,
 } from './styles';
-import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
-import eye from '../../assets/png/visibilityEye.png';
-import menu from '../../assets/icons/menu.png';
-import close from '../../assets/png/close.png';
-import {
-  CareerButton,
-  DocumentsButton,
-  HistoryButton,
-  ManagementButton,
-  StructureButton,
-  UnionButton,
-} from '../../pages/company/header_company/styles';
-import { ButtonLink } from '../../pages/services/styles';
-import {
-  ConcatsButton,
-  PhoneServicesButton,
-  RequisitesButton,
-  WorkScheduleButton,
-} from '../../pages/concats/headerContacts/styles';
-import MobileNavigation from './mobileNavigation';
-import Language from './language';
-import { Trans, useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router';
+import { HistoryButton } from '../../../pages/company/history/styles';
+import { ButtonLink } from '../../../pages/services/styles';
+import { ConcatsButton } from '../../../pages/concats/headerContacts/styles';
 
-const styleMenu = {
-  width: '30px',
-  height: '30px',
-};
-
-export default function Header({ backgroundHeader }) {
+export default function Headermini({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [headerMini, setheaderMini] = useState(false);
-  const [isModalVisible, setModalVisible] = useState(true);
   const navigate = useNavigate();
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -63,35 +46,20 @@ export default function Header({ backgroundHeader }) {
   };
   window.addEventListener('scroll', changeBackground);
 
-  const onClick = () => {
-    setOpen(!open);
-  };
-  const openMobile = (
-    <Menu className={navbar && 'opacity'} onClick={onClick}>
-      <img style={styleMenu} src={menu} alt={''} />
-    </Menu>
-  );
-
-  const closeMobile = (
-    <MenuClose className={navbar && 'opacity'} onClick={onClick}>
-      <img style={styleMenu} src={close} alt="" />
-    </MenuClose>
-  );
-
-  const handleCloseCLick = useCallback(() => {
-    setModalVisible(false);
-  }, []);
-
   const { t } = useTranslation();
   return (
     <Container backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
-        {open ? closeMobile : openMobile}
-        {open && <MobileNavigation isModalVisible={true} handleCloseCLick={handleCloseCLick} />}
-        <LinkLogo to="/">
-          <Logo src={HeaderLogo} />
-        </LinkLogo>
-        <GoBack onClick={() => navigate(-1)}>Назад</GoBack>
+        <FirstDiv>
+          <LinkLogo to="/">
+            <Logo src={HeaderLogo} />
+          </LinkLogo>
+          <GoBack onClick={() => navigate(-1)}>Назад</GoBack>
+          <Language />
+          <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
+            <img src={eye} alt="" />
+          </IconEye>
+        </FirstDiv>
         <ButtonsContainer>
           <LinksContainer>
             <Dropdown>
@@ -136,24 +104,19 @@ export default function Header({ backgroundHeader }) {
               <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
               <DivButtonHeader>
                 <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>
-                <WorkScheduleButton to="/contacts/work-schedule">
-                  График личного приёма граждан
-                </WorkScheduleButton>
-                <PhoneServicesButton to="/contacts/phone-services">
-                  Телефоны служб по работе с клиентами
-                </PhoneServicesButton>
-                <RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>
+                {/*<WorkScheduleButton to="/contacts/work-schedule">*/}
+                {/*  График личного приёма граждан*/}
+                {/*</WorkScheduleButton>*/}
+                {/*<PhoneServicesButton to="/contacts/phone-services">*/}
+                {/*  Телефоны служб по работе с клиентами*/}
+                {/*</PhoneServicesButton>*/}
+                {/*<RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>*/}
               </DivButtonHeader>
             </Dropdown>
             <MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>
           </LinksContainer>
           <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
-
         </ButtonsContainer>
-        <Language />
-        <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-          <img src={eye} alt="" />
-        </IconEye>
       </Background>
     </Container>
   );

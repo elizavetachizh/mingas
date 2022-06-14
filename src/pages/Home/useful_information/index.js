@@ -11,7 +11,6 @@ import { Trans, useTranslation } from 'react-i18next';
 import TitleFun from '../../../components/title';
 
 export default function UsefulInform() {
-  const { t, i18n } = useTranslation();
   return (
     <Container src={background}>
       <BackgroundStyle src={linesOne} />

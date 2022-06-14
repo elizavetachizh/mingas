@@ -77,11 +77,13 @@ export const Position = styled.h2`
 `;
 export const DivPhotoAndDescription = styled.div`
   display: flex;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   text-align: center;
+  font-size: 20px;
+  line-height: 32px;
   @media (max-width: 633px) {
     width: 80%;
   }

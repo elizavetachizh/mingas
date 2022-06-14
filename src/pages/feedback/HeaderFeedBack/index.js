@@ -1,8 +1,5 @@
 import React from 'react';
-import { t } from 'i18next';
 import { DivButton } from '../styles';
-import { HeaderCompanyDiv } from '../../company/header_company/styles';
-import ReceptionOfCitizens from '../receptionOfCitizens';
 import {
   UsefullInformBtn,
   QuestionAnswerBtn,
@@ -10,11 +7,13 @@ import {
   AppealBtn,
   ReceptionOfCitizensBtn,
   HeaderFeedbackDiv,
+  DivBtnHeader
 } from './styles';
 
 export default function HeaderFeedBack() {
   return (
     <HeaderFeedbackDiv>
+    <DivBtnHeader>
       <DivButton>
         <QuestionAnswerBtn to="/feedback/question-answer">Вопрос-ответ</QuestionAnswerBtn>
         <OnlineApplicationBtn to="/feedback/online-application">Онлайн заявка</OnlineApplicationBtn>
@@ -25,6 +24,7 @@ export default function HeaderFeedBack() {
         <UsefullInformBtn to="/feedback/usefull-information">Полезная информация</UsefullInformBtn>
       </DivButton>
       <hr />
+    </DivBtnHeader>
     </HeaderFeedbackDiv>
   );
 }

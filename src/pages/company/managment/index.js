@@ -25,16 +25,16 @@ export default function Management() {
       <ContentHome />
       <HeaderCompany />
       <DivTextPhoto>
-        <DivText>
+        <DivText data-aos={'fade-up'}>
           <p>{t('history:text1')}</p>
           <p>{t('history:text2')}</p>
           <p>{t('history:text3')}</p>
           <p>{t('history:text4')}</p>
         </DivText>
-        <ImageDiv src={photoHistory} />
+        <ImageDiv data-aos={'fade-up'} src={photoHistory} />
       </DivTextPhoto>
-      <WhatDoingCompany>
-        <h2>ЧТО ДЕЛАЕТ РУП "МИНГАЗ"</h2>
+      <WhatDoingCompany >
+        <h2 data-aos={'fade-up'}>ЧТО ДЕЛАЕТ РУП "МИНГАЗ"</h2>
         <WhatDoingCompaniInform>
           {data.map((element) => (
             <WhatDoingMinGaz

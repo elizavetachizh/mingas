@@ -4,6 +4,7 @@ import { Input } from './styles';
 const divStyle = {
   margin: '0',
   width: '100%',
+  textAlign: 'center',
 };
 export default function InputName({
   error,

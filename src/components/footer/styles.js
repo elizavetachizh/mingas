@@ -24,7 +24,7 @@ export const Contacts = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 20px 0;
-  @media(max-width: 900px) {
+  @media(max-width: 990px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ export const Contacts = styled.div`
 export const LinksNetwork = styled.div`
   display: flex;
   flex-direction: row;
-  @media(max-width: 900px) {
+  @media(max-width: 990px) {
     flex-direction: column;
   }
 `;
@@ -49,7 +49,7 @@ export const LinksSocialMedia = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin: 0 2%;
-  @media(max-width: 900px) {
+  @media(max-width: 990px) {
     flex-direction: row;
   }
 `;
