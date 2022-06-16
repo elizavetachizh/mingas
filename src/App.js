@@ -27,6 +27,9 @@ import ElectronicAppeal from './pages/feedback/electronicСirculation';
 import Requests from './pages/feedback/Requests';
 import QuestionAnswer from './pages/feedback/QuestionAnswer';
 import Branches from './pages/company/Branches';
+import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
+import ServicesList from './pages/services/servicesList';
+import NaturalGas from './pages/services/NaturalGas';
 
 class App extends Component {
   render() {
@@ -46,7 +49,8 @@ class App extends Component {
           <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
-          <Route path="/company/management/:linkId" element={<ProductionTechnicalManagement />} />
+          <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
+          <Route path="/services/:nameCard" element={<NaturalGas />} />
           <Route path="/company/structure/" element={<Structure />} />
           <Route path="/company/career/" element={<Career />} />
           <Route path="/company/branches" element={<Branches />}></Route>

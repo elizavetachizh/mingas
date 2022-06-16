@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { CompanyButton } from "../../../components/header/styles";
 
 export const HeaderCompanyDiv = styled.div`
   display: flex;
@@ -62,4 +63,4 @@ export const ManagementButton = HistoryButton;
 export const StructureButton = HistoryButton;
 export const CareerButton = HistoryButton;
 export const DocumentsButton = HistoryButton;
-export const UnionButton = HistoryButton;
+export const UnionButton = CompanyButton;

@@ -19,6 +19,17 @@ import Modal from '../../../components/modalWindow';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import background from '../../../assets/background/background_company.jpg';
+import {
+  DivText,
+  DivTextPhoto,
+  ImageDiv,
+  WhatDoingCompaniInform,
+  WhatDoingCompany,
+} from '../history/styles';
+import { t } from 'i18next';
+import photoHistory from '../../../assets/management/0.jpg';
+import WhatDoingMinGaz from '../history/whatDoingMinGaz';
+
 export default function Structure() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -50,6 +61,15 @@ export default function Structure() {
                 Общества.
               </Description>
             </DivPhotoAndDescription>
+            <DivTextPhoto>
+              <DivText data-aos={'fade-up'}>
+                <p>{t('history:text1')}</p>
+                <p>{t('history:text2')}</p>
+                <p>{t('history:text3')}</p>
+                <p>{t('history:text4')}</p>
+              </DivText>
+              <ImageDiv data-aos={'fade-up'} src={photoHistory} />
+            </DivTextPhoto>
           </DivBasicManagement>
           <DivLeadersPhotoPosition>
             {data.map((element) => (
@@ -69,6 +89,18 @@ export default function Structure() {
           )}
         </DivAboutmanagementWhiteFont>
       </DivAboutManagementBackground>
+      {/*<WhatDoingCompany>*/}
+      {/*  <h2 data-aos={'fade-up'}>ЧТО ДЕЛАЕТ РУП "МИНГАЗ"</h2>*/}
+      {/*  <WhatDoingCompaniInform>*/}
+      {/*    {datado.map((element) => (*/}
+      {/*      <WhatDoingMinGaz*/}
+      {/*        key={element.desc}*/}
+      {/*        cardImg={element.cardImg}*/}
+      {/*        cardDesc={element.cardDesc}*/}
+      {/*      />*/}
+      {/*    ))}*/}
+      {/*  </WhatDoingCompaniInform>*/}
+      {/*</WhatDoingCompany>*/}
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>

@@ -32,9 +32,11 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
     handleSubmit,
     form
   } = useRequestForIssuance();
+
+
   return (
     <DivApplication>
-      <p>Заявка на выдачу ТУ</p>
+      <p name={'type_application'}>Заявка на выдачу ТУ</p>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
@@ -81,7 +83,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
           />
         </DivInputPhone>
         <Select
-          label={'Желаемое время для связи:'}
+          label={'Желаемое время для связи'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestIssuanceValues.time}

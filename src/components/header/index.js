@@ -17,12 +17,17 @@ import {
   DivButtonHeader,
   PersonalAccButton,
   GoBack,
+  DivColumn,
   MingasShopBtn,
+  BackgroundText,
+  DivFirstHeader,
+  Div104,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
-import eye from '../../assets/png/visibilityEye.png';
+import eye from '../../assets/png/view.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
+import search from '../../assets/png/search.svg'
 import {
   CareerButton,
   DocumentsButton,
@@ -42,7 +47,7 @@ import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
-
+import personal from '../../assets/icons/user.png';
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -88,72 +93,109 @@ export default function Header({ backgroundHeader }) {
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
         {open ? closeMobile : openMobile}
         {open && <MobileNavigation isModalVisible={true} handleCloseCLick={handleCloseCLick} />}
-        <LinkLogo to="/">
-          <Logo src={HeaderLogo} />
-        </LinkLogo>
-        <GoBack onClick={() => navigate(-1)}>Назад</GoBack>
-        <ButtonsContainer>
-          <LinksContainer>
-            <Dropdown>
-              <CompanyButton to="/company/history">
-                <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
-              </CompanyButton>
+        <BackgroundText>
+          <LinkLogo to="/">
+            <Logo src={HeaderLogo} />
+          </LinkLogo>
+          <DivColumn>
+            <DivFirstHeader>
+              <GoBack onClick={() => navigate(-1)}>Назад</GoBack>
+              <Div104>
+                <p>
+                  Аварийная <br /> служба
+                </p>
+                <a href={'tel:104'}>104</a>
+              </Div104>
+              <div>
+                <img src={personal} />
+                <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
+              </div>
+              <Language />
+              <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
+                <img src={eye} alt="" />
+              </IconEye>
+              <img src={search}/>
+              {/*<Searchicon></Searchicon>*/}
+            </DivFirstHeader>
+            <ButtonsContainer>
+              <Dropdown>
+                <CompanyButton to="/company/history">
+                  <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
+                </CompanyButton>
 
-              <DivButtonHeader>
-                <HistoryButton to="/company/history">История предприятия</HistoryButton>
-                <ManagementButton to="/company/management">Руководство</ManagementButton>
-                <StructureButton to="/company/structure">Структура предприятия</StructureButton>
-                <CareerButton to="/company/career">Карьера в УП "Мингаз"</CareerButton>
-                <CareerButton to="/company/branches">Филиалы УП "Мингаз"</CareerButton>
-                <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
-                <UnionButton to="/company/union">Профсоюз</UnionButton>
-              </DivButtonHeader>
-            </Dropdown>
+                <DivButtonHeader>
+                  <HistoryButton to="/company/history">История предприятия</HistoryButton>
+                  {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
+                  <StructureButton to="/company/structure">Руководство предприятия</StructureButton>
+                  <CareerButton to="/company/career">Карьера в УП "Мингаз"</CareerButton>
+                  <CareerButton to="/company/branches">Филиалы УП "Мингаз"</CareerButton>
+                  <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
+                  {/*<UnionButton to="/company/union">Профсоюз</UnionButton>*/}
+                </DivButtonHeader>
+              </Dropdown>
 
-            <Dropdown>
-              <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
-              <DivButtonHeader>
-                <ButtonLink to="/services/legal-entities">Для физических лиц</ButtonLink>
-                <ButtonLink to="/services/legal-entities">Для юридических лиц</ButtonLink>
-              </DivButtonHeader>
-            </Dropdown>
+              <Dropdown>
+                <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
+                <DivButtonHeader>
+                  <ButtonLink to="/services">Услуги</ButtonLink>
+                  <ButtonLink to="/services/legal-entities">Тарифы</ButtonLink>
+                  <ButtonLink to="/">Графики</ButtonLink>
+                  <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
+                  <ButtonLink to="/">Обратная связь</ButtonLink>
+                  <ButtonLink to="/">Регламентирующие документы</ButtonLink>
+                  <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
+                  <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
+                  <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
+                  <ButtonLink to="/">Административные процедуры</ButtonLink>
+                  <ButtonLink to="/">Прейскурант цен</ButtonLink>
+                </DivButtonHeader>
+              </Dropdown>
 
-            <Dropdown>
-              <ServicesButton to="/feedback/online-application">
-                {t('header:feedback')}
-              </ServicesButton>
-              <DivButtonHeader>
-                <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
-                <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>
-                <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
-                <ButtonLink to={'/feedback/online-application'}>Онлайн заявка</ButtonLink>
-              </DivButtonHeader>
-            </Dropdown>
+              <Dropdown>
+                <ServicesButton to="/services">Для бизнеса</ServicesButton>
+                <DivButtonHeader>
+                  <ButtonLink to="/services/legal-entities">Услуги</ButtonLink>
+                  <ButtonLink to="/">Обратная связь</ButtonLink>
+                  <ButtonLink to="/">Тендеры</ButtonLink>
+                  <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
+                  <ButtonLink to="/">Административные процедуры</ButtonLink>
+                  <ButtonLink to="/">Регламинтирующие документы</ButtonLink>
+                </DivButtonHeader>
+              </Dropdown>
 
-            <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
+              {/*<Dropdown>*/}
+              {/*  <ServicesButton to="/feedback/online-application">*/}
+              {/*    {t('header:feedback')}*/}
+              {/*  </ServicesButton>*/}
+              {/*  <DivButtonHeader>*/}
+              {/*    <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>*/}
+              {/*    <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>*/}
+              {/*    <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>*/}
+              {/*    <ButtonLink to={'/feedback/online-application'}>Онлайн заявка</ButtonLink>*/}
+              {/*  </DivButtonHeader>*/}
+              {/*</Dropdown>*/}
 
-            <Dropdown>
-              <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
-              <DivButtonHeader>
-                <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>
-                <WorkScheduleButton to="/contacts/work-schedule">
-                  График личного приёма граждан
-                </WorkScheduleButton>
-                <PhoneServicesButton to="/contacts/phone-services">
-                  Телефоны служб по работе с клиентами
-                </PhoneServicesButton>
-                <RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>
-              </DivButtonHeader>
-            </Dropdown>
-            <MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>
-          </LinksContainer>
-          <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
-
-        </ButtonsContainer>
-        <Language />
-        <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-          <img src={eye} alt="" />
-        </IconEye>
+              <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
+              <Dropdown>
+                <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
+                <DivButtonHeader>
+                  <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>
+                  <WorkScheduleButton to="/contacts/work-schedule">
+                    График личного приёма граждан
+                  </WorkScheduleButton>
+                  <PhoneServicesButton to="/contacts/phone-services">
+                    Телефоны служб по работе с клиентами
+                  </PhoneServicesButton>
+                  <RequisitesButton to="/contacts/requisites">
+                    Реквизиты предприятия
+                  </RequisitesButton>
+                </DivButtonHeader>
+              </Dropdown>
+              <UnionButton to="/company/union">Профсоюз</UnionButton>
+              {/*<MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>*/}
+            </ButtonsContainer>
+          </DivColumn>
+        </BackgroundText>
       </Background>
     </Container>
   );

@@ -30,7 +30,7 @@ export default function HeaderCompany() {
         <DocumentsButton to="/company/documentation">
           {t('headerCompany:documentation')}
         </DocumentsButton>
-        <UnionButton to="/company/union">{t('headerCompany:union')}</UnionButton>
+        {/*<UnionButton to="/company/union">{t('headerCompany:union')}</UnionButton>*/}
       </DivButton>
       <hr />
     </HeaderCompanyDiv>

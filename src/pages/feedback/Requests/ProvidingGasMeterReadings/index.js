@@ -37,7 +37,6 @@ export default function ProvidingGasMeterReadings() {
   } = useRequest();
   return (
     <DivApplication>
-
       <Form onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
@@ -133,7 +132,7 @@ export default function ProvidingGasMeterReadings() {
         </DivInputName>
         <DivInputName>
           <Label>
-            Показания счётчика:<Span>*</Span>
+            Показания счётчика<Span>*</Span>
           </Label>
           <InputName
             inputName={'text'}
@@ -147,7 +146,9 @@ export default function ProvidingGasMeterReadings() {
           />
         </DivInputName>
         <DivInputFile>
-          <span>Прекрипите файл</span>
+          {/*<Label>*/}
+          {/*  Фото счётчика<Span>*</Span>*/}
+          {/*</Label>*/}
           <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
         </DivInputFile>
         <DivInputCheckbox>

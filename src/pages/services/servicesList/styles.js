@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const DivServicesList = styled.div`
+export const DivServicesList = styled.button`
   display: flex;
   flex: 0 0 30%;
   max-width: 25%;

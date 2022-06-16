@@ -94,6 +94,9 @@ export const DivInputCheckbox = styled.div`
 export const Label = styled.label`
   color: #2d4c6b;
   opacity: 0.65;
+  span {
+    color: red;
+  }
 `;
 
 export const Span = styled.span`
@@ -130,25 +133,26 @@ export const DivInputFile = styled.div`
   text-align: center;
   margin: 1.5rem 0;
   height: 36px;
-  span {
-    position: relative;
-    background: #f6f6f6;
-    border: 1px solid #c5c5c5;
-    border-radius: 0;
-    box-shadow: 1px 1px 1px #c5c5c5;
-    padding: 10px 21px;
-    font-size: 15px;
-    color: #6c757d;
-  }
+  //span {
+  //  position: relative;
+  //  background: #f6f6f6;
+  //  border: 1px solid #c5c5c5;
+  //  border-radius: 0;
+  //  box-shadow: 1px 1px 1px #c5c5c5;
+  //  padding: 10px 21px;
+  //  font-size: 15px;
+  //  color: #6c757d;
+  //}
 `;
 
 export const InputFile = styled.input`
   position: absolute;
   top: 0;
   left: 0;
-  width: 180px;
+  width: 100%;
   height: 100%;
-  opacity: 0;
+  text-align: center;
+  //opacity: 0;
 `;
 
 export const Button = styled.button`

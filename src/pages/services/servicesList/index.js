@@ -1,15 +1,17 @@
-import React from 'react';
-import { Description, DivServicesList, DivInformService, Image, Name } from './styles';
-import ButtonFun from '../../../components/button';
+import React, { useCallback } from "react";
+import { DivServicesList, DivInformService, Image, Name } from './styles';
+import { useNavigate } from "react-router";
 
-export default function ServicesList({ imgCard, nameCard, descName, button }) {
+export default function ServicesList({ imgCard, nameCard, serviceId, description }) {
+  const navigate = useNavigate();
+  const handlerLinkClick = useCallback((nameCard) => {
+    navigate(`/services/${nameCard}`);
+  }, []);
   return (
-    <DivServicesList>
-      <Image src={require(`../../../assets/photo_news/${imgCard}.png`)} />
+    <DivServicesList onClick={() => handlerLinkClick(nameCard)}>
+      <Image src={require(`../../../assets/icons_services/${imgCard}.png`)} />
       <DivInformService>
         <Name>{nameCard}</Name>
-        <Description>{descName}</Description>
-        <ButtonFun href={'/'} backgroundColor={'blue'} infoButton={button} />
       </DivInformService>
     </DivServicesList>
   );

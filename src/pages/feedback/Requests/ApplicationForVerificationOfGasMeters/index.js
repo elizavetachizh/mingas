@@ -117,7 +117,7 @@ export default function ApplicationForVerificationOfGasMeters() {
         </DivInputAdress>
 
         <Select
-          label={'Желаемое время для выполнения работы:'}
+          label={'Желаемое время для выполнения работы'}
           span={'*'}
           name={'time'}
           onChange={handleChangeTime}

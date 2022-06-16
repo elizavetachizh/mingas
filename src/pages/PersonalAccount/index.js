@@ -14,7 +14,7 @@ export default function Personal() {
       <Body>
 
         <Ul>
-          <A>Клиент УП "Мингаз"</A>
+          <A href={'https://service.mingas.by:5200/'}>Клиент УП "Мингаз"</A>
           <A href="/Personal/tasks">Сотрудник УП "Мингаз"</A>
         </Ul>
       </Body>

@@ -118,7 +118,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           />
         </DivInputAdress>
         <Select
-          label={' Желаемое время выполнения работы:'}
+          label={' Желаемое время выполнения работы'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}

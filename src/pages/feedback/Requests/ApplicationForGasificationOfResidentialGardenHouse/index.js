@@ -40,7 +40,7 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
   } = useGardenHouse();
   return (
     <DivApplication>
-      <p>Заявка на газификацию жилого (садового) дома</p>
+      <p>Предоставление показаний счётчика газа</p>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
@@ -102,7 +102,7 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
           />
         </DivInputAdress>
         <Select
-          label={' Желаемое время для связи:'}
+          label={' Желаемое время для связи'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}
@@ -110,38 +110,38 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
-        <DivInputName>
-          <Label>
-            Лицевой счёт: <Span>*</Span>
-          </Label>
-          <InputText
-            inputText={'text'}
-            name={'text'}
-            type={'text'}
-            placeholder={'Введите Лицевой счёт'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-          />
-        </DivInputName>
-        <DivInputName>
-          <Label>
-            Показания счётчика:<Span>*</Span>
-          </Label>
-          <InputText
-            inputText={'text'}
-            name={'text'}
-            type={'text'}
-            placeholder={'Введите ваши показания счётчика'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-          />
-        </DivInputName>
-        <DivInputFile>
-          <span>Прекрипите файл</span>
-          <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
-        </DivInputFile>
+        {/*<DivInputName>*/}
+        {/*  <Label>*/}
+        {/*    Лицевой счёт: <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputText*/}
+        {/*    inputText={'text'}*/}
+        {/*    name={'text'}*/}
+        {/*    type={'text'}*/}
+        {/*    placeholder={'Введите Лицевой счёт'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.text}*/}
+        {/*    error={errors.text}*/}
+        {/*  />*/}
+        {/*</DivInputName>*/}
+        {/*<DivInputName>*/}
+        {/*  <Label>*/}
+        {/*    Показания счётчика:<Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputText*/}
+        {/*    inputText={'text'}*/}
+        {/*    name={'text'}*/}
+        {/*    type={'text'}*/}
+        {/*    placeholder={'Введите ваши показания счётчика'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.text}*/}
+        {/*    error={errors.text}*/}
+        {/*  />*/}
+        {/*</DivInputName>*/}
+        {/*<DivInputFile>*/}
+        {/*  <span>Прекрипите файл</span>*/}
+        {/*  <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />*/}
+        {/*</DivInputFile>*/}
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
