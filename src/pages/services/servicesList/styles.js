@@ -11,6 +11,7 @@ export const DivServicesList = styled.button`
   width: 100%;
   background: #fff;
   box-shadow: 0 6px 30px rgb(0 0 0 / 10%);
+  border: white;
   color: #314d5c;
   text-decoration: none;
   text-decoration-color: transparent;
@@ -31,8 +32,13 @@ export const Image = styled.img`
   max-width: 100%;
 `;
 
-export const DivInformService = styled.div``;
+export const DivInformService = styled.div`
+  width: 100%;
+  text-align: center;
+`;
 
-export const Name = styled.h3``;
+export const Name = styled.h3`
+  text-align: center;
+`;
 
 export const Description = styled.p``;

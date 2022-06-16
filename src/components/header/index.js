@@ -7,7 +7,6 @@ import {
   LinkLogo,
   Logo,
   ButtonsContainer,
-  LinksContainer,
   CompanyButton,
   ServicesButton,
   ContactButton,
@@ -18,7 +17,6 @@ import {
   PersonalAccButton,
   GoBack,
   DivColumn,
-  MingasShopBtn,
   BackgroundText,
   DivFirstHeader,
   Div104,
@@ -27,15 +25,7 @@ import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import eye from '../../assets/png/view.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
-import search from '../../assets/png/search.svg'
-import {
-  CareerButton,
-  DocumentsButton,
-  HistoryButton,
-  ManagementButton,
-  StructureButton,
-  UnionButton,
-} from '../../pages/company/header_company/styles';
+import search from '../../assets/png/search.svg';
 import { ButtonLink } from '../../pages/services/styles';
 import {
   ConcatsButton,
@@ -114,7 +104,7 @@ export default function Header({ backgroundHeader }) {
               <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
                 <img src={eye} alt="" />
               </IconEye>
-              <img src={search}/>
+              <img src={search} />
               {/*<Searchicon></Searchicon>*/}
             </DivFirstHeader>
             <ButtonsContainer>
@@ -122,14 +112,13 @@ export default function Header({ backgroundHeader }) {
                 <CompanyButton to="/company/history">
                   <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
                 </CompanyButton>
-
                 <DivButtonHeader>
-                  <HistoryButton to="/company/history">История предприятия</HistoryButton>
+                  <ButtonLink to="/company/history">История предприятия</ButtonLink>
                   {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
-                  <StructureButton to="/company/structure">Руководство предприятия</StructureButton>
-                  <CareerButton to="/company/career">Карьера в УП "Мингаз"</CareerButton>
-                  <CareerButton to="/company/branches">Филиалы УП "Мингаз"</CareerButton>
-                  <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
+                  <ButtonLink to="/company/structure">Руководство предприятия</ButtonLink>
+                  <ButtonLink to="/company/career">Карьера в УП "Мингаз"</ButtonLink>
+                  <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
+                  <ButtonLink to="/company/documentation">Документы</ButtonLink>
                   {/*<UnionButton to="/company/union">Профсоюз</UnionButton>*/}
                 </DivButtonHeader>
               </Dropdown>
@@ -191,7 +180,7 @@ export default function Header({ backgroundHeader }) {
                   </RequisitesButton>
                 </DivButtonHeader>
               </Dropdown>
-              <UnionButton to="/company/union">Профсоюз</UnionButton>
+              <ServicesButton to="/company/union">Профсоюз</ServicesButton>
               {/*<MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>*/}
             </ButtonsContainer>
           </DivColumn>

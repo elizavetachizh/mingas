@@ -91,7 +91,7 @@ export const BackgroundText = styled.div`
   z-index: 5;
   align-items: center;
   margin: 0 auto;
-`
+`;
 export const LinkLogo = styled(NavLink)``;
 
 export const Logo = styled.img`
@@ -102,8 +102,10 @@ export const Logo = styled.img`
 export const Title = styled.h3``;
 
 export const ButtonsContainer = styled.div`
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: row;
+  padding-top: 10px;
   align-items: center;
   justify-content: space-around;
   width: 100%;
@@ -155,7 +157,6 @@ export const IconEye = styled.a`
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
-  text-align: justify;
 `;
 export const Dropdown = styled.div`
   position: relative;
@@ -204,7 +205,7 @@ export const DivFirstHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: 70%;
   justify-content: space-around;
   text-decoration: none;
   color: #fff;
@@ -233,10 +234,10 @@ export const DivColumn = styled.div`
 export const Div104 = styled.div`
   display: flex;
   align-items: center;
-  p{
+  p {
     font-size: 16px;
   }
-  a{
+  a {
     font-size: 24px;
   }
 `;

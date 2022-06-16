@@ -29,7 +29,6 @@ export const ButtonsServices = styled.div`
 `;
 
 export const ButtonLink = styled(NavLink)`
-  font-size: 16px;
   text-align: justify;
   text-decoration: none;
   display: flex;
