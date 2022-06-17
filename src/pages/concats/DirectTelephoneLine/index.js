@@ -7,13 +7,14 @@ import HeaderConcats from '../headerContacts';
 import Footer from '../../../components/footer';
 import { Title } from '../../Home/useful_information/styles';
 import { styleTd } from '../GeneralContactInform';
+import TitleFun from '../../../components/title';
 
 export default function PhoneLineServices() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <Title>Телефоны служб по работе с клиентами</Title>
+        <TitleFun color={'blue'} infoTitle={'Телефоны служб по работе с клиентами'} />
         <Row>
           <HeaderConcats />
           <PageSection>

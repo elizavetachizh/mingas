@@ -13,22 +13,14 @@ import {
   FullName,
   Position,
 } from '../managment/styles';
-import { data } from '../../../assets/data_management';
+import { management } from '../../../assets/data_management';
 import Leaders from '../managment/divmagement';
 import Modal from '../../../components/modalWindow';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-import background from '../../../assets/background/background_company.jpg';
-import {
-  DivText,
-  DivTextPhoto,
-  ImageDiv,
-  WhatDoingCompaniInform,
-  WhatDoingCompany,
-} from '../history/styles';
+import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
 import { t } from 'i18next';
 import photoHistory from '../../../assets/management/0.jpg';
-import WhatDoingMinGaz from '../history/whatDoingMinGaz';
 
 export default function Structure() {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -37,10 +29,6 @@ export default function Structure() {
     setModalVisible(true);
     setCurrentLeader(leader);
   }, []);
-  // const style = {
-  //   background: `url(${background}) no-repeat`,
-  //   backgroundSize: 'cover',
-  // };
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
@@ -72,7 +60,7 @@ export default function Structure() {
             </DivTextPhoto>
           </DivBasicManagement>
           <DivLeadersPhotoPosition>
-            {data.map((element) => (
+            {management.map((element) => (
               <Leaders
                 handlerLeaderClick={handlerLeaderClick}
                 cardImg={element.cardImg}
@@ -89,18 +77,6 @@ export default function Structure() {
           )}
         </DivAboutmanagementWhiteFont>
       </DivAboutManagementBackground>
-      {/*<WhatDoingCompany>*/}
-      {/*  <h2 data-aos={'fade-up'}>ЧТО ДЕЛАЕТ РУП "МИНГАЗ"</h2>*/}
-      {/*  <WhatDoingCompaniInform>*/}
-      {/*    {datado.map((element) => (*/}
-      {/*      <WhatDoingMinGaz*/}
-      {/*        key={element.desc}*/}
-      {/*        cardImg={element.cardImg}*/}
-      {/*        cardDesc={element.cardDesc}*/}
-      {/*      />*/}
-      {/*    ))}*/}
-      {/*  </WhatDoingCompaniInform>*/}
-      {/*</WhatDoingCompany>*/}
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>

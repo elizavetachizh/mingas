@@ -33,15 +33,26 @@ export const Container = styled.div`
 `;
 
 export const LinksContainer = styled.div`
-  display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 80px;
-  left: 0;
+  top: 100px;
+  left: 0px;
   height: 100%;
   width: 300px;
   background-color: rgba(200, 220, 231, 100%);
-
+  display: flex;
+  position: fixed;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #eee;
+  transition: left 0.2s;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  &.opacity {
+    left: 0;
+  }
 `;
 
 export const CompanyButton = styled(NavLink)`
@@ -49,7 +60,7 @@ export const CompanyButton = styled(NavLink)`
   font-size: 20px;
   padding: 0 20px;
   margin: 10px 0;
-  color: #0D4475;
+  color: #0d4475;
   &.active {
     color: #a69b14;
   }
@@ -91,5 +102,12 @@ export const Dropdown = styled.div`
   }
   &:hover div a {
     margin: 5%;
+  }
+`;
+
+export const HiddenMenuTicker = styled.input`
+  display: none;
+  &:checked {
+    left: 0;
   }
 `;

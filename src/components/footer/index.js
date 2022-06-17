@@ -2,15 +2,14 @@ import React from 'react';
 import {
   CompanyButton,
   ContactButton,
-  IconEye,
   LinkLogo,
   LinksContainer,
   Logo,
+  PersonalAccButton,
   PressCenterButtons,
-  ServiceCenterButton,
   ServicesButton,
 } from '../header/styles';
-import '../chat-bot/static/css/main.bbd16e91.css'
+import '../chat-bot/static/css/main.bbd16e91.css';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import telegram from '../../assets/icons/telegram.png';
 import instagram from '../../assets/icons/instagram.png';
@@ -27,8 +26,9 @@ import {
   LinksNetwork,
   LinksSocialMedia,
 } from './styles';
-import eye from '../../assets/png/visibilityEye.png';
 import ButtonFun from '../button';
+import { Trans } from 'react-i18next';
+import { t } from 'i18next';
 const line = {
   width: '70%',
 };
@@ -39,13 +39,14 @@ export default function Footer() {
         <LinkLogo to="/">
           <Logo src={HeaderLogo} />
         </LinkLogo>
-        <CompanyButton to="/company/history">О предприятии</CompanyButton>
-        <ServicesButton to="/Services">Услуги</ServicesButton>
+        <CompanyButton to="/company/history">
+          <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
+        </CompanyButton>
+        <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
+        <ServicesButton to="/services">Для бизнеса</ServicesButton>
         <ContactButton to="/Contacts">Контакты</ContactButton>
         <PressCenterButtons to="/Press-Center">Пресс-центр</PressCenterButtons>
-        <ServiceCenterButton to="/Service-Center">Сервисный центр</ServiceCenterButton>
-        {/*  <PersonalAccButton to={'/personal-account'}>Личный кабинет</PersonalAccButton>*/}
-        <IconEye src={eye} />
+        <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
       </LinksContainer>
       <hr style={line} />
       <LinksNetwork>

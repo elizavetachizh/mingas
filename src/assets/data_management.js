@@ -1,4 +1,4 @@
-export const data = [
+export const management = [
   {
     id: 0,
     cardImg: 0,

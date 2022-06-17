@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   font-size: 16px;
   padding: 10px 0;
-  color: #e9e5d6;
+  color: white;
   @media (max-width: 640px) {
     width: 640px;
     max-width: 640px;

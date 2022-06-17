@@ -4,25 +4,20 @@ import Header from '../../../components/header';
 import HeaderCompany from '../header_company';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import TitleFun from '../../../components/title';
-import { DivParagraph } from '../structure/styles';
 import Footer from '../../../components/footer';
 import Aos from 'aos';
 import history from '../../../assets/history/3.jpg';
 import history_2 from '../../../assets/history/2.jpg';
 import history_3 from '../../../assets/history/1.jpg';
 import { DivParagraphHistory, PWithImg } from "./styles";
-import useMediaQuery from "../../Home/parallax/useMediaQuery";
-import Headermini from "../../../components/header/Headermini";
 
 export default function History() {
-  const isDesktop = useMediaQuery('(max-width: 1285px)');
-  const isPhone = useMediaQuery('(min-width: 900px)');
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
     <Container>
-      {isDesktop && isPhone ? <Headermini /> : <Header  backgroundHeader="blue"/>}
+      <Header  backgroundHeader="blue"/>
       <HeaderCompany />
       <AdditionalDiv>
         <TitleFun

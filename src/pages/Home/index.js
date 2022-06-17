@@ -18,7 +18,7 @@ export default function Home() {
   const isPhone = useMediaQuery('(min-width: 900px)');
   return (
     <Container>
-      {isDesktop && isPhone ? <Headermini /> : <Header />}
+     <Header />
       <HomeContainer>
         <ContentHome />
         <UsefulInform />

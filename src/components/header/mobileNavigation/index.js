@@ -7,7 +7,8 @@ import {
   PressCenterButtons,
   FeedBackButton,
   ServicesButton,
-  PersonalAccButton
+  PersonalAccButton,
+  HiddenMenuTicker,
 } from './styles';
 import {
   CareerButton,
@@ -24,8 +25,7 @@ import {
   RequisitesButton,
   WorkScheduleButton,
 } from '../../../pages/concats/headerContacts/styles';
-import React from 'react';
-
+import React, { useState } from 'react';
 
 export default function MobileNavigation() {
   return (

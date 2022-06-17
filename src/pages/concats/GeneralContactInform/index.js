@@ -10,6 +10,7 @@ import Footer from '../../../components/footer';
 import { Container } from '../../styles';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
+import TitleFun from '../../../components/title';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -70,7 +71,7 @@ export default function GeneralInform() {
     <Container>
       <Header backgroundHeader="blue" />
       <AdditionalDiv>
-        <Title>АППАРАТ УПРАВЛЕНИЯ УП "МИНГАЗ"</Title>
+        <TitleFun color={'blue'} infoTitle={'АППАРАТ УПРАВЛЕНИЯ УП "МИНГАЗ"'} />
         <Row>
           <HeaderConcats />
           <ContactsInform>

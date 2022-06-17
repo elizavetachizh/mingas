@@ -22,7 +22,7 @@ export const ConcatsButton = styled(NavLink)`
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
-  color: #0D4475;
+  color: #0D4475 !important;
   padding: 1rem;
   &.active {
     color: #a69b14;

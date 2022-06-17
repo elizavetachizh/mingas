@@ -36,7 +36,7 @@ export const ButtonLink = styled(NavLink)`
   align-items: center;
   cursor: pointer;
   z-index: 2;
-  color: #0d4475;
+  color: #0d4475 !important;
   margin: 0 14px;
   &.active {
     color: #a69b14;

@@ -20,9 +20,10 @@ import {
   BackgroundText,
   DivFirstHeader,
   Div104,
+  DivPersonalAcc
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
-import eye from '../../assets/png/view.png';
+import eye from '../../assets/png/visibilitys.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
 import search from '../../assets/png/search.svg';
@@ -38,23 +39,36 @@ import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import personal from '../../assets/icons/user.png';
+import { AutocompleteSuggestions, Button, Form, Input } from "../../pages/Home/Serch/styles";
+import useMediaQuery from "../../pages/Home/parallax/useMediaQuery";
+import { HiddenMenuTicker } from "./mobileNavigation/styles";
 const styleMenu = {
   width: '30px',
   height: '30px',
 };
-
+const searchStyle = {
+  backgroundImage: `url(${search})`,
+};
+const styleEye = {
+  width:'32px'
+}
 export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
   const [open, setOpen] = useState(false);
-  const [headerMini, setheaderMini] = useState(false);
   const [isModalVisible, setModalVisible] = useState(true);
+  const isPhone = useMediaQuery('(max-width: 900px)');
   const navigate = useNavigate();
   const changeBackground = () => {
-    if (window.scrollY >= 80) {
-      setNavbar(true);
+    if(!isPhone) {
+      if (window.scrollY >= 80) {
+        setNavbar(true);
+      } else {
+        setNavbar(false);
+      }
     } else {
       setNavbar(false);
     }
+
   };
   window.addEventListener('scroll', changeBackground);
 
@@ -62,9 +76,11 @@ export default function Header({ backgroundHeader }) {
     setOpen(!open);
   };
   const openMobile = (
-    <Menu className={navbar && 'opacity'} onClick={onClick}>
-      <img style={styleMenu} src={menu} alt={''} />
-    </Menu>
+   <>
+     <HiddenMenuTicker type={'checkbox'}></HiddenMenuTicker>
+     <Menu className={navbar && 'opacity'} onClick={onClick}>
+       <img style={styleMenu} src={menu} alt={''} />
+     </Menu></>
   );
 
   const closeMobile = (
@@ -82,7 +98,7 @@ export default function Header({ backgroundHeader }) {
     <Container backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
         {open ? closeMobile : openMobile}
-        {open && <MobileNavigation isModalVisible={true} handleCloseCLick={handleCloseCLick} />}
+        {open && <MobileNavigation handleCloseCLick={handleCloseCLick} />}
         <BackgroundText>
           <LinkLogo to="/">
             <Logo src={HeaderLogo} />
@@ -91,21 +107,34 @@ export default function Header({ backgroundHeader }) {
             <DivFirstHeader>
               <GoBack onClick={() => navigate(-1)}>Назад</GoBack>
               <Div104>
-                <p>
-                  Аварийная <br /> служба
-                </p>
+                <p>Аварийная служба</p>
                 <a href={'tel:104'}>104</a>
               </Div104>
-              <div>
+
+              <Language />
+              <IconEye  href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
+                <img style={styleEye} src={eye} alt="" />
+              </IconEye>
+              {/*<form action={'/search/'} method="get">*/}
+              {/*  <fieldset>*/}
+              {/*    <input type={'search'} placeholder={'поиск по сайту'} />*/}
+              {/*    <span>*/}
+              {/*      {' '}*/}
+              {/*      <img src={search} />*/}
+              {/*    </span>*/}
+              {/*  </fieldset>*/}
+              {/*</form>*/}
+              <Form>
+                <Input type={'text'} placeholder={'Поиск по сайту'} />
+                <AutocompleteSuggestions />
+                <Button style={searchStyle} type={'submit'} />
+
+              </Form>
+              {/*<Searchicon></Searchicon>*/}
+              <DivPersonalAcc>
                 <img src={personal} />
                 <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
-              </div>
-              <Language />
-              <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-                <img src={eye} alt="" />
-              </IconEye>
-              <img src={search} />
-              {/*<Searchicon></Searchicon>*/}
+              </DivPersonalAcc>
             </DivFirstHeader>
             <ButtonsContainer>
               <Dropdown>

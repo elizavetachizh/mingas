@@ -24,51 +24,65 @@ export const Container = styled.div`
   align-items: center;
   text-align: justify;
   justify-content: center;
-  //justify-content: space-between;
   font-size: 19px;
-  //position: fixed;
-  //margin-bottom: 3%;
   top: 0;
   z-index: 5;
-  //position: relative;
-
   margin: 0 auto;
+  a,
+  p,
+  select,
+  img,
+  button {
+    color: white;
+  }
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
     color: #314d5c;
-    background-color: rgba(200, 220, 231, 80%);
-    Menu {
-      opacity: 0;
+    a,
+    p,
+    select,
+    img,
+    button {
+      color: #314d5c;
     }
+    background-color: rgba(200, 220, 231, 80%);
     @media (max-width: 894px) {
       background-color: rgba(200, 220, 231, 80%);
+    }
+    @media (max-width: 650px) {
+      width: 650px;
     }
   }
 `;
 export const Menu = styled.div`
+  margin-top: 25px;
   display: none;
   cursor: pointer;
   background: rgba(0, 0, 0, 0);
   border: rgba(0, 0, 0, 0);
+  float: left;
   @media (max-width: 900px) {
     display: block;
   }
   .opacity {
     background-color: rgba(200, 220, 231, 0%);
     color: #314d5c;
+    margin-top: 0;
   }
   img {
     margin: 10px;
   }
 `;
 
-export const MenuClose = styled.div``;
+export const MenuClose = styled.div`
+  margin-top: 25px;
+`;
 export const Background = styled.div`
   width: 100%;
   z-index: 5;
   padding: 0 24px;
   margin: 0 auto;
-  height: 104px;
+  height: 130px;
   position: fixed;
   top: 0;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
@@ -79,9 +93,36 @@ export const Background = styled.div`
   .click {
     opacity: 1;
   }
-
   @media (max-width: 900px) {
     background-color: rgba(200, 220, 231, 80%);
+    height: 100px;
+    @media (max-width: 630px) {
+      margin-left: 50px;
+    }
+    @media (max-width: 580px) {
+      margin-left: 70px;
+    }
+    @media (max-width: 550px) {
+      margin-left: 100px;
+    }
+    @media (max-width: 520px) {
+      margin-left: 130px;
+    }
+    @media (max-width: 490px) {
+      margin-left: 160px;
+    }
+    @media (max-width: 460px) {
+      margin-left: 200px;
+    }
+    @media (max-width: 420px) {
+      margin-left: 240px;
+    }
+    @media (max-width: 380px) {
+      margin-left: 280px;
+    }
+    @media (max-width: 340px) {
+      margin-left: 320px;
+    }
   }
 `;
 export const BackgroundText = styled.div`
@@ -105,10 +146,26 @@ export const ButtonsContainer = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: row;
-  padding-top: 10px;
+  padding: 20px 0;
+  height: 50%;
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  @media (max-width: 1140px) {
+    font-size: 17px;
+  }
+  @media (max-width: 1063px) {
+    font-size: 16px;
+  }
+  @media (max-width: 1017px) {
+    font-size: 15px;
+  }
+  @media (max-width: 975px) {
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const LinksContainer = styled.div`
@@ -116,7 +173,8 @@ export const LinksContainer = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 19px;
-  @media (max-width: 1049px) {
+  color: white !important;
+  @media (max-width: 1140px) {
     font-size: 14px;
   }
   @media (max-width: 1022px) {
@@ -131,16 +189,10 @@ export const CompanyButton = styled(NavLink)`
   text-decoration: none;
   padding: 0 20px;
   color: #fff;
-
   &.active {
     color: #a69b14;
   }
-
   @media (max-width: 900px) {
-    display: none;
-  }
-
-  @media (max-width: 1285px) {
     display: none;
   }
 `;
@@ -148,8 +200,30 @@ export const CompanyButton = styled(NavLink)`
 export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
-export const ServiceCenterButton = CompanyButton;
-export const PersonalAccButton = CompanyButton;
+export const PersonalAccButton = styled(NavLink)`
+  text-decoration: none;
+  padding: 0 20px;
+  color: white;
+  &.active {
+    color: #a69b14;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
+  @media (max-width: 1140px) {
+    font-size: 17px;
+  }
+  @media (max-width: 1063px) {
+    font-size: 16px;
+  }
+  @media (max-width: 1017px) {
+    font-size: 15px;
+  }
+  @media (max-width: 975px) {
+    font-size: 13px;
+  }
+`;
+
 export const IconEye = styled.a`
   margin: 0 10px;
 `;
@@ -157,12 +231,14 @@ export const IconEye = styled.a`
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
+  color: #314d5c !important;
 `;
 export const Dropdown = styled.div`
   position: relative;
   display: inline-block;
   &:hover button {
     background-color: #000;
+    color: #314d5c !important;
   }
 
   &:hover div {
@@ -191,11 +267,9 @@ export const GoBack = styled.button`
   &.active {
     color: #a69b14;
   }
-
   @media (max-width: 900px) {
     display: none;
   }
-
   @media (max-width: 1285px) {
     display: none;
   }
@@ -205,24 +279,16 @@ export const DivFirstHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 70%;
+  width: 100%;
   justify-content: space-around;
   text-decoration: none;
   color: #fff;
   padding: 12px 0 0;
   margin: 0 0 12px;
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
-  p {
-    display: inline-block;
-    vertical-align: top;
-    text-align: right;
-    opacity: 0.6;
-    color: #fefefe;
-    margin: 2px 6px 0 0;
-  }
+  //@media(max-width: 900px) {
+  //  position: absolute;
+  //  top: 0;
+  //}
 `;
 
 export const DivColumn = styled.div`
@@ -234,10 +300,40 @@ export const DivColumn = styled.div`
 export const Div104 = styled.div`
   display: flex;
   align-items: center;
+  padding: 0 0.6rem;
+  background: #df1e17;
+  color: #fff;
+  text-decoration: none;
   p {
-    font-size: 16px;
+    font-size: 1.1rem;
+    line-height: 1.2;
   }
   a {
-    font-size: 24px;
+    margin-right: 1.5rem;
+    font-family: Montserrat-Bold, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1.25;
+    text-decoration: none;
+    -webkit-text-decoration-color: rgba(255, 255, 255, 0);
+    text-decoration-color: rgba(255, 255, 255, 0);
+    transition: all 0.3s ease;
+  }
+  @media (max-width: 650px) {
+    //padding: 0;
+    p,
+    a {
+      margin: 0;
+    }
+  }
+`;
+
+export const DivPersonalAcc = styled.div`
+  img {
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 `;

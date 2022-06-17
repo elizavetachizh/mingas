@@ -89,7 +89,11 @@ export const PWithImg = styled.div`
     padding: 10px 20px;
   }
   img {
-    width: 30%;
+    width: 300px;
+    @media(max-width: 740px) {
+      width: 300px;
+      height: 600px;
+    }
   }
 `;
 

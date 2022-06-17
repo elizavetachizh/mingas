@@ -9,6 +9,7 @@ import { Title } from '../Home/useful_information/styles';
 import up from '../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
 import ApplicationForOrderingCylinders from '../feedback/Requests/ApplicationForOrderingCylinders';
+import TitleFun from "../../components/title";
 export default function Services() {
   const [active, setActive] = useState('FoIndividuals');
 
@@ -16,7 +17,8 @@ export default function Services() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <InformServices>
-        <Title>Услуги жителям столичного региона</Title>
+        {/*<Title>Услуги жителям столичного региона</Title>*/}
+        <TitleFun color={'blue'} infoTitle={'Услуги жителям столичного региона'}/>
         {/*<ButtonsServices>*/}
         {/*  <Button*/}
         {/*    onClick={() => {*/}

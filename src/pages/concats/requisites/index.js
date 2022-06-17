@@ -7,13 +7,14 @@ import HeaderConcats from '../headerContacts';
 import { Row } from '../styles';
 import { AdditionalDiv } from '../GeneralContactInform/styles';
 import Footer from '../../../components/footer';
+import TitleFun from '../../../components/title';
 
 export default function Requisites() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <Title>Юридическая информация</Title>
+        <TitleFun infoTitle={'Юридическая информация'} color={'blue'} />
         <Row>
           <HeaderConcats />
           <PageSection>
