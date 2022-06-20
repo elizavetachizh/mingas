@@ -76,6 +76,9 @@ export const Menu = styled.div`
 
 export const MenuClose = styled.div`
   margin-top: 25px;
+  img {
+    margin: 10px;
+  }
 `;
 export const Background = styled.div`
   width: 100%;
@@ -93,9 +96,12 @@ export const Background = styled.div`
   .click {
     opacity: 1;
   }
+
   @media (max-width: 900px) {
     background-color: rgba(200, 220, 231, 80%);
     height: 100px;
+    display: flex;
+    flex-direction: row;
     @media (max-width: 630px) {
       margin-left: 50px;
     }
@@ -132,6 +138,10 @@ export const BackgroundText = styled.div`
   z-index: 5;
   align-items: center;
   margin: 0 auto;
+  @media (max-width: 900px) {
+    max-width: 100%;
+    width: 100%;
+  }
 `;
 export const LinkLogo = styled(NavLink)``;
 
@@ -202,14 +212,14 @@ export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const PersonalAccButton = styled(NavLink)`
   text-decoration: none;
+  justify-content: space-around;
+  display: flex;
   padding: 0 20px;
   color: white;
   &.active {
     color: #a69b14;
   }
-  @media (max-width: 900px) {
-    display: none;
-  }
+
   @media (max-width: 1140px) {
     font-size: 17px;
   }
@@ -331,9 +341,7 @@ export const Div104 = styled.div`
 `;
 
 export const DivPersonalAcc = styled.div`
-  img {
-    @media (max-width: 900px) {
-      display: none;
-    }
+  @media (max-width: 900px) {
+    display: none;
   }
 `;

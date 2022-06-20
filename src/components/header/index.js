@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Background,
@@ -20,7 +20,7 @@ import {
   BackgroundText,
   DivFirstHeader,
   Div104,
-  DivPersonalAcc
+  DivPersonalAcc,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import eye from '../../assets/png/visibilitys.png';
@@ -39,9 +39,8 @@ import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import personal from '../../assets/icons/user.png';
-import { AutocompleteSuggestions, Button, Form, Input } from "../../pages/Home/Serch/styles";
-import useMediaQuery from "../../pages/Home/parallax/useMediaQuery";
-import { HiddenMenuTicker } from "./mobileNavigation/styles";
+import { AutocompleteSuggestions, Button, Form, Input } from '../../pages/Home/Serch/styles';
+import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -50,16 +49,15 @@ const searchStyle = {
   backgroundImage: `url(${search})`,
 };
 const styleEye = {
-  width:'32px'
-}
+  width: '32px',
+};
 export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
   const [open, setOpen] = useState(false);
-  const [isModalVisible, setModalVisible] = useState(true);
   const isPhone = useMediaQuery('(max-width: 900px)');
   const navigate = useNavigate();
   const changeBackground = () => {
-    if(!isPhone) {
+    if (!isPhone) {
       if (window.scrollY >= 80) {
         setNavbar(true);
       } else {
@@ -68,7 +66,6 @@ export default function Header({ backgroundHeader }) {
     } else {
       setNavbar(false);
     }
-
   };
   window.addEventListener('scroll', changeBackground);
 
@@ -76,29 +73,23 @@ export default function Header({ backgroundHeader }) {
     setOpen(!open);
   };
   const openMobile = (
-   <>
-     <HiddenMenuTicker type={'checkbox'}></HiddenMenuTicker>
-     <Menu className={navbar && 'opacity'} onClick={onClick}>
-       <img style={styleMenu} src={menu} alt={''} />
-     </Menu></>
+    <Menu onClick={onClick}>
+      <img style={styleMenu} src={menu} alt={''} />
+    </Menu>
   );
 
   const closeMobile = (
-    <MenuClose className={navbar && 'opacity'} onClick={onClick}>
+    <MenuClose onClick={onClick}>
       <img style={styleMenu} src={close} alt="" />
     </MenuClose>
   );
-
-  const handleCloseCLick = useCallback(() => {
-    setModalVisible(false);
-  }, []);
 
   const { t } = useTranslation();
   return (
     <Container backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
         {open ? closeMobile : openMobile}
-        {open && <MobileNavigation handleCloseCLick={handleCloseCLick} />}
+        {open && <MobileNavigation />}
         <BackgroundText>
           <LinkLogo to="/">
             <Logo src={HeaderLogo} />
@@ -110,9 +101,8 @@ export default function Header({ backgroundHeader }) {
                 <p>Аварийная служба</p>
                 <a href={'tel:104'}>104</a>
               </Div104>
-
               <Language />
-              <IconEye  href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
+              <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
                 <img style={styleEye} src={eye} alt="" />
               </IconEye>
               {/*<form action={'/search/'} method="get">*/}
@@ -128,13 +118,12 @@ export default function Header({ backgroundHeader }) {
                 <Input type={'text'} placeholder={'Поиск по сайту'} />
                 <AutocompleteSuggestions />
                 <Button style={searchStyle} type={'submit'} />
-
               </Form>
               {/*<Searchicon></Searchicon>*/}
-              <DivPersonalAcc>
-                <img src={personal} />
-                <PersonalAccButton to={'/Personal'}>{t('header:PersonalArea')}</PersonalAccButton>
-              </DivPersonalAcc>
+              <PersonalAccButton to={'/Personal'}>
+                <img src={personal} alt={''} />{' '}
+                <DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>
+              </PersonalAccButton>
             </DivFirstHeader>
             <ButtonsContainer>
               <Dropdown>

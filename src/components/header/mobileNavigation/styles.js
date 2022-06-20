@@ -34,10 +34,10 @@ export const Container = styled.div`
 
 export const LinksContainer = styled.div`
   flex-direction: column;
-  top: 100px;
-  left: 0px;
+  top: 99px;
+  left: 0;
   height: 100%;
-  width: 300px;
+  width: auto;
   background-color: rgba(200, 220, 231, 100%);
   display: flex;
   position: fixed;
@@ -47,8 +47,10 @@ export const LinksContainer = styled.div`
   box-sizing: border-box;
   background-color: #eee;
   transition: left 0.2s;
+  color: #0d4475 !important;
   z-index: 2;
   -webkit-transform: translateZ(0);
+  background-color: rgba(200, 220, 231, 80%);
   -webkit-backface-visibility: hidden;
   &.opacity {
     left: 0;

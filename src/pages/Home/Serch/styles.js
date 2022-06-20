@@ -22,6 +22,9 @@ export const Form = styled.form`
   @media (max-width: 1000px) {
     width: 130px;
   }
+  @media(max-width: 800px) {
+    width: auto;
+  }
 `;
 
 export const AutocompleteSuggestions = styled.div`

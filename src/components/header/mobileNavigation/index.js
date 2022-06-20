@@ -26,32 +26,59 @@ import {
   WorkScheduleButton,
 } from '../../../pages/concats/headerContacts/styles';
 import React, { useState } from 'react';
+import { Trans } from 'react-i18next';
+import { t } from 'i18next';
 
 export default function MobileNavigation() {
   return (
     <LinksContainer>
       <Dropdown>
-        <CompanyButton to="/company/history">О предприятии</CompanyButton>
+        <CompanyButton to="/company/history">
+          <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
+        </CompanyButton>
         <DivButtonHeader>
-          <HistoryButton to="/company/history">История предприятия</HistoryButton>
-          <ManagementButton to="/company/management">Руководство</ManagementButton>
-          <StructureButton to="/company/structure">Структура предприятия</StructureButton>
-          <CareerButton to="/company/career">Карерьера в УП "Мингаз"</CareerButton>
-          <DocumentsButton to="/company/documentation">Документы</DocumentsButton>
-          <UnionButton to="/company/union">Профсоюз</UnionButton>
+          <ButtonLink to="/company/history">История предприятия</ButtonLink>
+          {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
+          <ButtonLink to="/company/structure">Руководство предприятия</ButtonLink>
+          <ButtonLink to="/company/career">Карьера в УП "Мингаз"</ButtonLink>
+          <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
+          <ButtonLink to="/company/documentation">Документы</ButtonLink>
+          {/*<UnionButton to="/company/union">Профсоюз</UnionButton>*/}
         </DivButtonHeader>
       </Dropdown>
 
       <Dropdown>
-        <ServicesButton to="/Services">Услуги</ServicesButton>
+        <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
         <DivButtonHeader>
-          <ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>
-          <ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>
+          <ButtonLink to="/services">Услуги</ButtonLink>
+          <ButtonLink to="/services/legal-entities">Тарифы</ButtonLink>
+          <ButtonLink to="/">Графики</ButtonLink>
+          <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
+          <ButtonLink to="/">Обратная связь</ButtonLink>
+          <ButtonLink to="/">Регламентирующие документы</ButtonLink>
+          <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
+          <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
+          <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
+          <ButtonLink to="/">Административные процедуры</ButtonLink>
+          <ButtonLink to="/">Прейскурант цен</ButtonLink>
         </DivButtonHeader>
       </Dropdown>
 
       <Dropdown>
-        <ContactButton to="/Contacts">Контакты</ContactButton>
+        <ServicesButton to="/services">Для бизнеса</ServicesButton>
+        <DivButtonHeader>
+          <ButtonLink to="/services/legal-entities">Услуги</ButtonLink>
+          <ButtonLink to="/">Обратная связь</ButtonLink>
+          <ButtonLink to="/">Тендеры</ButtonLink>
+          <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
+          <ButtonLink to="/">Административные процедуры</ButtonLink>
+          <ButtonLink to="/">Регламинтирующие документы</ButtonLink>
+        </DivButtonHeader>
+      </Dropdown>
+
+      <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
+      <Dropdown>
+        <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
         <DivButtonHeader>
           <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>
           <WorkScheduleButton to="/contacts/work-schedule">
@@ -63,10 +90,7 @@ export default function MobileNavigation() {
           <RequisitesButton to="/contacts/requisites">Реквизиты предприятия</RequisitesButton>
         </DivButtonHeader>
       </Dropdown>
-
-      <PressCenterButtons to="/Press-Center">Пресс-центр</PressCenterButtons>
-      <FeedBackButton to="/feedback">Обратная связь</FeedBackButton>
-      <PersonalAccButton to={'/Personal'}>Личный кабинет</PersonalAccButton>
+      <ServicesButton to="/company/union">Профсоюз</ServicesButton>
     </LinksContainer>
   );
 }
