@@ -8,24 +8,8 @@ export const DivServices = styled.div`
   margin: 2% auto;
   justify-content: center;
   @media (max-width: 550px) {
-    width: 600px;
+    width: 550px;
   }
-`;
-
-export const InformServices = styled.div`
-  margin: 6% auto;
-  @media (max-width: 1500px) {
-    margin: 10% auto;
-  }
-  @media (max-width: 550px) {
-    width: 600px;
-  }
-`;
-
-export const ButtonsServices = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 `;
 
 export const ButtonLink = styled(NavLink)`

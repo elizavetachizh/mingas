@@ -10,7 +10,7 @@ export const ModalWindow = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 5;
 `;
 
 export const ModalWindowOpenAndClose = styled.div`
@@ -34,7 +34,7 @@ export const InformModal = styled.div`
   color: #314d5c;
 `;
 
-export const Close = styled.div`
+export const Close = styled.img`
   cursor: pointer;
   width: 16px;
   height: 16px;

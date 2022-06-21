@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 
 export const AdditionalDiv = styled.div`
-  margin: 6% auto;
+  margin: 8% auto;
   max-width: 1440px;
   text-align: center;
   @media (max-width: 1500px) {
-    margin: 10% auto 4% auto;
+    margin: 14% auto 4% auto;
+  } ;
+  @media (max-width: 670px) {
+    margin: 20% auto 4% auto;
   } ;
   @media (max-width: 500px) {
     width: 500px;
+    margin: 0 65px;
   } ;
 `;
 

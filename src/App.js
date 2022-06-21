@@ -53,7 +53,7 @@ class App extends Component {
           <Route path="/services/:nameCard" element={<NaturalGas />} />
           <Route path="/company/structure/" element={<Structure />} />
           <Route path="/company/career/" element={<Career />} />
-          <Route path="/company/branches" element={<Branches />}></Route>
+          <Route path="/company/branches" element={<Branches />} />
           <Route path="/company/documentation/" element={<Documentation />} />
           <Route path="/company/union/" element={<Union />} />
           <Route
@@ -72,6 +72,14 @@ class App extends Component {
           <Route path={'/Personal'} element={<Personal />} />
           <Route path={'/Personal/tasks'} element={<Tasks />} />
         </Routes>
+        <link rel="stylesheet" href="./web_chat/web_chat/static/css/main.bbd16e91.css" />
+        <div id="webChat"></div>
+        <span id="chatLanguage" data-language="ru"></span>
+        <span id="chatFontSize" data-size="medium"></span>
+        <span id="open_webchat" data-open="false"></span>
+
+        <script src="../web_chat/web_chat/config.js"></script>
+        <script type="text/javascript" src="../web_chat/static/js/main.28df611b.js.map"></script>
       </div>
     );
   }
