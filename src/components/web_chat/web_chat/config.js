@@ -1,16 +1,16 @@
-var DOMAIN_NAME = '';
-var ACCOUNT_ID = '';
+var DOMAIN_NAME = 'https://smiddle.mingas.by';
+var ACCOUNT_ID = '52974d21-85a6-41ca-9c49-f5a835bdf17b';
 
 //  ***** configuration first icon (chat-icon)
 var VISIBLE_CHAT_ICON = true;
 var CHAT_ICON_WITH_NOTIFICATION = true;
 
 //  ***** social network link's
-var LINK_FACEBOOK = 'test';
-var LINK_TELEGRAM = 'test';
-var LINK_SKYPE = 'test';
-var LINK_VIBER = 'test';
-var LINK_INSTAGRAM = '';
+//var LINK_FACEBOOK = 'test';
+var LINK_TELEGRAM = 'MinGas_bot';
+//var LINK_SKYPE = 'test';
+var LINK_VIBER = 'Mingas';
+//var LINK_INSTAGRAM = '';
 
 // ***** visible sender button
 var FILE_SENDER_BUTTON = true;

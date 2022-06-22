@@ -9,7 +9,6 @@ import {
   PressCenterButtons,
   ServicesButton,
 } from '../header/styles';
-import '../chat-bot/static/css/main.bbd16e91.css';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import telegram from '../../assets/icons/telegram.png';
 import instagram from '../../assets/icons/instagram.png';
