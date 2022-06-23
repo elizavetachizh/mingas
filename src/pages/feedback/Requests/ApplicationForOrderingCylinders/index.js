@@ -18,6 +18,7 @@ import phone from '../../../../assets/formPng/tel.png';
 import Select from '../../../../components/select';
 import { OPTIONS_TIME } from '../../../../const/consts';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
+import TitleFun from '../../../../components/title';
 
 export default function ApplicationForOrderingCylinders() {
   const {
@@ -33,6 +34,7 @@ export default function ApplicationForOrderingCylinders() {
   } = useForOrderingCylinders();
   return (
     <DivApplication>
+      <TitleFun color={'blue'} infoTitle={'Заявка на заказ баллонов'}></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>

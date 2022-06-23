@@ -145,7 +145,7 @@ export default function Header({ backgroundHeader }) {
                 <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services">Услуги</ButtonLink>
-                  <ButtonLink to="/services/legal-entities">Тарифы</ButtonLink>
+                  <ButtonLink to="/">Тарифы</ButtonLink>
                   <ButtonLink to="/">Графики</ButtonLink>
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
                   <ButtonLink to="/">Обратная связь</ButtonLink>
@@ -154,7 +154,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
                   <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
                   <ButtonLink to="/">Административные процедуры</ButtonLink>
-                  <ButtonLink to="/">Прейскурант цен</ButtonLink>
+                  <ButtonLink to="/residents/price">Прейскурант цен</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
 

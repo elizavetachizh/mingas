@@ -15,8 +15,8 @@ export default function UsefulInform() {
     <Container src={background}>
       <BackgroundStyle src={linesOne} />
       <DivUsefulInform>
-        <Search />
-        <Line />
+        {/*<Search />*/}
+        {/*<Line />*/}
         <UsefulInformContainer>
           <TitleFun
             color={'blue'}

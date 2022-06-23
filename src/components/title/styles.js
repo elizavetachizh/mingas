@@ -14,6 +14,7 @@ const titleFontSize = {
 };
 export const Title = styled.h2`
   font-style: normal;
+
   line-height: 37px;
   display: flex;
   align-items: center;

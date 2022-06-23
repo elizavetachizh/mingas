@@ -76,9 +76,9 @@ export default function HeaderRequests() {
         {active === 'ApplicationForGasificationOfResidentialGardenHouse' && (
           <ApplicationForGasificationOfResidentialGardenHouse />
         )}
-        {/*{active === 'ApplicationToCallRepresentativeOfGasSupplyOrganization' && (*/}
-        {/*  <ApplicationToCallRepresentativeOfGasSupplyOrganization />*/}
-        {/*)}*/}
+        {active === 'ApplicationToCallRepresentativeOfGasSupplyOrganization' && (
+          <ApplicationToCallRepresentativeOfGasSupplyOrganization />
+        )}
         {active === 'ApplicationForTheIssuanceOfTechnicalSpecifications' && (
           <ApplicationForTheIssuanceOfTechnicalSpecifications />
         )}

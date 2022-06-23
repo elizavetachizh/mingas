@@ -22,6 +22,7 @@ import address from '../../../../assets/formPng/map.png';
 import Select from '../../../../components/select';
 import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
 import { useRequest } from '../../../../hooks/use-request-hook';
+import TitleFun from '../../../../components/title';
 
 export default function ProvidingGasMeterReadings() {
   const {
@@ -37,6 +38,7 @@ export default function ProvidingGasMeterReadings() {
   } = useRequest();
   return (
     <DivApplication>
+      <TitleFun color={'blue'} infoTitle={'предоставлений показаний счётчика газа'} />
       <Form onSubmit={handleSubmit}>
         <DivInputName>
           <Label>

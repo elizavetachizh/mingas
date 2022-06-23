@@ -20,6 +20,7 @@ import { OPTIONS_TIME } from '../../../../const/consts';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import { useRequestForIssuance } from './IssuanceOfTS-hook';
+import TitleFun from '../../../../components/title';
 
 export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   const {
@@ -30,13 +31,12 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
-    form
+    form,
   } = useRequestForIssuance();
-
 
   return (
     <DivApplication>
-      <p name={'type_application'}>Заявка на выдачу ТУ</p>
+      <TitleFun color={'blue'} infoTitle={'Заявка на выдачу ТУ'}></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>

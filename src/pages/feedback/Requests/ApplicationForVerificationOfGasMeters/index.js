@@ -25,6 +25,7 @@ import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import InputText from '../../../../components/input/inputText';
 import InputDate from '../../../../components/input/InputDate';
+import TitleFun from '../../../../components/title';
 
 export default function ApplicationForVerificationOfGasMeters() {
   const {
@@ -40,7 +41,7 @@ export default function ApplicationForVerificationOfGasMeters() {
   } = useRequest();
   return (
     <DivApplication>
-      Заявка на поверку счетчиков газа
+      <TitleFun infoTitle={'Заявка на поверку счетчиков газа'} color={'blue'}></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
@@ -129,7 +130,7 @@ export default function ApplicationForVerificationOfGasMeters() {
         <Select
           label={'Вид работы'}
           span={'*'}
-          name={"work"}
+          name={'work'}
           onChange={handleChangeWork}
           value={requestValues.work}
           inputName={'work'}

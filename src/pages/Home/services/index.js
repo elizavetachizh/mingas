@@ -19,7 +19,7 @@ export default function HomeServices() {
         <TitleFun color={'white'} infoTitle={<Trans i18nKey="services:title"></Trans>}></TitleFun>
         <ButtonServicesHome>
           <ButtonFun
-            href={'/services/legal-entities'}
+            href={'/services'}
             backgroundColor={'gray'}
             infoButton={'Для физических лиц'}
           />

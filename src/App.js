@@ -28,6 +28,8 @@ import Branches from './pages/company/Branches';
 import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
 import NaturalGas from './pages/services/NaturalGas';
 import './App.css';
+import '../src/web_chat/static/css/main.bbd16e91.css';
+import ResidentsOfCapitalRegion from './pages/ResidentsOfCapital Region';
 function App() {
   const makeAPICall = async () => {
     try {
@@ -70,6 +72,7 @@ function App() {
         />
         <Route path={'/services/legal-entities'} element={<ServicesForLegalEntities />} />
         <Route path={'/contacts/requisites'} element={<Requisites />} />
+        <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
         <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
         <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
         <Route path={'/dialog/:telegram'} element={<DialogViber />} />
@@ -78,16 +81,16 @@ function App() {
         <Route path={'/Personal/tasks'} element={<Tasks />} />
       </Routes>
 
-        <link rel="stylesheet" href="../../src/web_chat/static/css/main.bbd16e91.css" />
-        <link rel="icon" type="image/x-icon" href="./web_chat/static/media/logo.fe536c0e.png" />
-        <div id="webChat"></div>
-        <span id="chatLanguage" data-language="ru"></span>
-        <span id="chatFontSize" data-size="medium"></span>
-        <span id="open_webchat" data-open="false"></span>
+      {/*<link rel="stylesheet" href="../../src/web_chat/static/css/main.bbd16e91.css" />*/}
+      {/*<link rel="icon" type="image/x-icon" href="./web_chat/static/media/logo.fe536c0e.png" />*/}
+      {/*<div id="webChat"></div>*/}
+      {/*<span id="chatLanguage" data-language="ru"></span>*/}
+      {/*<span id="chatFontSize" data-size="medium"></span>*/}
+      {/*<span id="open_webchat" data-open="false"></span>*/}
 
-        <script src="./web_chat/web_chat/config.js"></script>
-        <script type="text/javascript" src="./web_chat/static/js/main.28df611b.js"></script></div>
-
+      {/*<script src="./web_chat/web_chat/config.js"></script>*/}
+      {/*<script type="text/javascript" src="./web_chat/static/js/main.28df611b.js"></script>*/}
+    </div>
   );
 }
 export default App;

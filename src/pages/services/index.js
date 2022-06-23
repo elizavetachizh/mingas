@@ -11,6 +11,7 @@ import ApplicationForOrderingCylinders from '../feedback/Requests/ApplicationFor
 import TitleFun from '../../components/title';
 import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import axios from 'axios';
+
 const API = 'https://smiddle.mingas.by/';
 export default function Services() {
   const [active, setActive] = useState('FoIndividuals');
@@ -65,7 +66,6 @@ export default function Services() {
         )}
         {active === 'ApplicationForOrderingCylinders' && <ApplicationForOrderingCylinders />}
       </AdditionalDiv>
-
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>

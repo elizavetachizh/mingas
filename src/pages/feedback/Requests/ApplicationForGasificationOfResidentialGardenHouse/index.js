@@ -25,6 +25,7 @@ import { useGardenHouse } from './GardenHouse-hook';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import InputText from '../../../../components/input/inputText';
+import TitleFun from '../../../../components/title';
 
 export default function ApplicationForGasificationOfResidentialGardenHouse() {
   const {
@@ -40,7 +41,10 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
   } = useGardenHouse();
   return (
     <DivApplication>
-      <p>Предоставление показаний счётчика газа</p>
+      <TitleFun
+        color={'blue'}
+        infoTitle={'заявка на газификацию жилого (садового) дома'}
+      ></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>

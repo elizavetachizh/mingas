@@ -19,7 +19,8 @@ import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
 import Select from '../../../../components/select';
 import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
-import { UseForRepairOfGasUsingEquipment } from "./useHookForRepair";
+import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';
+import TitleFun from '../../../../components/title';
 
 export default function ApplicationForRepairOfGasUsingEquipment() {
   const {
@@ -35,6 +36,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
   } = UseForRepairOfGasUsingEquipment();
   return (
     <DivApplication>
+      <TitleFun color={'blue'} infoTitle={'Заявка на ремонт газоиспользующего оборудования'} />
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInputName>
           <Label>
