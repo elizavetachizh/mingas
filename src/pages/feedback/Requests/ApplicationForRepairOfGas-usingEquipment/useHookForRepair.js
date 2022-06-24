@@ -146,7 +146,7 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
       event.preventDefault();
 
       emailjs
-        .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
+        .sendForm('service_arrn6nn', 'template_r58vk64', form.current, 'H62p0yKXfn6OGm_oM')
         .then(
           (result) => {
             console.log(result.text);

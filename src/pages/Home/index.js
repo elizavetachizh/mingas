@@ -12,6 +12,7 @@ import up from '../../assets/png/up_arrow_round.png';
 import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
 import useMediaQuery from './parallax/useMediaQuery';
 import '../../web_chat/static/css/main.bbd16e91.css';
+import TitleFun from '../../components/title';
 export default function Home() {
   return (
     <Container>
@@ -21,9 +22,8 @@ export default function Home() {
         <UsefulInform />
         <HomeServices />
         <ParallaxDiv />
-        {/*<ChangeFormQuestion />*/}
+
         <HeaderRequests />
-        {/*<Appeal />*/}
         <News />
       </HomeContainer>
       <ScrollToTop showUnder={160}>

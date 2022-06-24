@@ -3,7 +3,7 @@ import * as emailjs from '@emailjs/browser';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 
-export const useGardenHouse = (): UseFormReturnValues => {
+export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -26,7 +26,7 @@ export const useGardenHouse = (): UseFormReturnValues => {
       !requestValues.text ||
       !requestValues.address ||
       !requestValues.time ||
-      // !requestValues.message ||
+      !requestValues.reading ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -60,16 +60,27 @@ export const useGardenHouse = (): UseFormReturnValues => {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
         }
         break;
-      case 'date':
-        if (!requestValues.date) {
-          setErrors({ ...errors, date: 'Заполните, пожалуйста,  желаемую дату выполнения работы' });
-        }
-        break;
       case 'time':
         if (requestValues.time.trim().length) {
           setErrors({
             ...errors,
             time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
+          });
+        }
+        break;
+      case 'reading':
+        if (!requestValues.reading) {
+          setErrors({
+            ...errors,
+            reading: 'Укажите ваши показания счётчика',
+          });
+        }
+        break;
+      case 'fileName':
+        if (!requestValues.fileName) {
+          setErrors({
+            ...errors,
+            fieldName: 'Отправтьте фото счётчика',
           });
         }
         break;
@@ -83,6 +94,22 @@ export const useGardenHouse = (): UseFormReturnValues => {
       event.preventDefault();
       const { name, value } = event.target;
       setRequestValues(Object.assign(requestValues, { [name]: value }));
+      validate(name);
+    },
+    [requestValues]
+  );
+  const handleFileInput = useCallback(
+    (event: { target: { files: FileList } }) => {
+      const file = event.target.files[0];
+      setRequestValues({ ...setRequestValues, fileName: file.name });
+    },
+    [setRequestValues]
+  );
+  const handleChangeWork = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      event.preventDefault();
+      const { name, value } = event.target;
+      setRequestValues({ ...requestValues, work: value });
       validate(name);
     },
     [requestValues]
@@ -102,14 +129,6 @@ export const useGardenHouse = (): UseFormReturnValues => {
     validate('isAgree');
   }, [requestValues]);
 
-  const handleFileInput = useCallback(
-    (event: { target: { files: FileList } }) => {
-      const file = event.target.files[0];
-      setRequestValues({ ...requestValues, fileName: file.name });
-    },
-    [requestValues]
-  );
-
   const clearForm = useCallback(() => {
     setRequestValues({
       ...INITIAL_REQUEST_STATE,
@@ -119,15 +138,16 @@ export const useGardenHouse = (): UseFormReturnValues => {
       phone: '',
       address: '',
       text: '',
+      reading: '',
     });
   }, []);
 
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
-      clearForm();
+
       emailjs
-        .sendForm('service_9ojlulb', 'template_irtan2b', form.current, 'Cr7j1nqgFLXsPcHIL')
+        .sendForm('service_9ojlulb', 'template_ksnwzap', form.current, 'Cr7j1nqgFLXsPcHIL')
         .then(
           (result) => {
             console.log(result.text);
@@ -136,6 +156,7 @@ export const useGardenHouse = (): UseFormReturnValues => {
             console.log(error.text);
           }
         );
+      clearForm();
       alert('Форма успешно заполнена');
     },
     [requestValues]
@@ -145,6 +166,7 @@ export const useGardenHouse = (): UseFormReturnValues => {
     handleUserInput,
     requestValues,
     errors,
+    handleChangeWork,
     handleChangeTime,
     handleFileInput,
     handleCheckBox,

@@ -105,9 +105,9 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
-
+      clearForm();
       emailjs
-        .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
+        .sendForm('service_arrn6nn', 'template_t6lcwkw', form.current, 'H62p0yKXfn6OGm_oM')
         .then(
           (result) => {
             console.log(result.text);

@@ -3,22 +3,18 @@ import name from '../../assets/formPng/name.png';
 import phone from '../../assets/formPng/tel.png';
 import email from '../../assets/formPng/email.png';
 import address from '../../assets/formPng/map.png';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import InputName from '../input';
 import {
-  DivInputName,
   Form,
   Label,
   Span,
-  DivInputAdress,
-  DivInputEmail,
-  DivInputPhone,
-  DivInputText,
   DivInputFile,
   DivInputCheckbox,
   InputCheckbox,
   InputFile,
   Button,
+  DivInput,
 } from '../formQuestion/styles';
 
 import { useForm } from '../../hooks/use-form-hook';
@@ -30,7 +26,6 @@ export default function FormQuestionForEntity() {
     errors,
     handleFileInput,
     handleCheckBox,
-    handleSwitcher,
     isButtonDisabled,
     handleSubmit,
     form,
@@ -38,7 +33,7 @@ export default function FormQuestionForEntity() {
   const { t } = useTranslation();
   return (
     <Form onSubmit={handleSubmit} ref={form}>
-      <DivInputName>
+      <DivInput>
         <Label>
           {t('form:name')}
           <Span>*</Span>
@@ -52,8 +47,8 @@ export default function FormQuestionForEntity() {
           value={formValues.name}
           error={name && errors.name}
         />
-      </DivInputName>
-      <DivInputEmail>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:email')}
           <Span>*</Span>
@@ -67,8 +62,8 @@ export default function FormQuestionForEntity() {
           value={formValues.email}
           error={email && errors.email}
         />
-      </DivInputEmail>
-      <DivInputAdress>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:address')}
           <Span>*</Span>
@@ -82,8 +77,8 @@ export default function FormQuestionForEntity() {
           value={formValues.text}
           error={address && errors.text}
         />
-      </DivInputAdress>
-      <DivInputPhone>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:phone')}
           <Span>*</Span>
@@ -97,8 +92,8 @@ export default function FormQuestionForEntity() {
           value={formValues.phone}
           error={phone && errors.phone}
         />
-      </DivInputPhone>
-      <DivInputName>
+      </DivInput>
+      <DivInput>
         <Label>
           Название организации (полностью)
           <Span>*</Span>
@@ -112,8 +107,8 @@ export default function FormQuestionForEntity() {
           value={formValues.name}
           error={name && errors.name}
         />
-      </DivInputName>
-      <DivInputName>
+      </DivInput>
+      <DivInput>
         <Label>
           ФИО руководителя (полностью)
           <Span>*</Span>
@@ -127,8 +122,8 @@ export default function FormQuestionForEntity() {
           value={formValues.name}
           error={name && errors.name}
         />
-      </DivInputName>
-      <DivInputText>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:text')}
           <Span>*</Span>
@@ -143,7 +138,7 @@ export default function FormQuestionForEntity() {
           value={formValues.message}
           error={errors.message}
         />
-      </DivInputText>
+      </DivInput>
       <DivInputFile>
         <span>Прекрипите файл</span>
         <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />

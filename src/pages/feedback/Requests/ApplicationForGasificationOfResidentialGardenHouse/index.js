@@ -2,14 +2,9 @@ import React from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
-  DivInputAdress,
+  DivInput,
   DivInputCheckbox,
-  DivInputEmail,
-  DivInputFile,
-  DivInputName,
-  DivInputPhone,
   InputCheckbox,
-  InputFile,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
@@ -24,7 +19,6 @@ import { OPTIONS_TIME } from '../../../../const/consts';
 import { useGardenHouse } from './GardenHouse-hook';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
-import InputText from '../../../../components/input/inputText';
 import TitleFun from '../../../../components/title';
 
 export default function ApplicationForGasificationOfResidentialGardenHouse() {
@@ -32,7 +26,6 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
     handleUserInput,
     requestValues,
     errors,
-    handleFileInput,
     handleChangeTime,
     handleCheckBox,
     isButtonDisabled,
@@ -46,7 +39,7 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
         infoTitle={'заявка на газификацию жилого (садового) дома'}
       ></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
-        <DivInputName>
+        <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
@@ -59,8 +52,8 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             value={requestValues.name}
             error={name && errors.name}
           />
-        </DivInputName>
-        <DivInputEmail>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:email')}
             <Span>*</Span>
@@ -74,8 +67,8 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             value={requestValues.email}
             error={email && errors.email}
           />
-        </DivInputEmail>
-        <DivInputPhone>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:phone')}
             <Span>*</Span>
@@ -89,8 +82,8 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             value={requestValues.phone}
             error={phone && errors.phone}
           />
-        </DivInputPhone>
-        <DivInputAdress>
+        </DivInput>
+        <DivInput>
           <Label>
             Адрес объекта
             <Span>*</Span>
@@ -104,7 +97,7 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             value={requestValues.address}
             error={address && errors.address}
           />
-        </DivInputAdress>
+        </DivInput>
         <Select
           label={' Желаемое время для связи'}
           span={'*'}
@@ -114,38 +107,52 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
-        {/*<DivInputName>*/}
-        {/*  <Label>*/}
-        {/*    Лицевой счёт: <Span>*</Span>*/}
-        {/*  </Label>*/}
-        {/*  <InputText*/}
-        {/*    inputText={'text'}*/}
-        {/*    name={'text'}*/}
-        {/*    type={'text'}*/}
-        {/*    placeholder={'Введите Лицевой счёт'}*/}
-        {/*    onChange={handleUserInput}*/}
-        {/*    value={requestValues.text}*/}
-        {/*    error={errors.text}*/}
-        {/*  />*/}
-        {/*</DivInputName>*/}
-        {/*<DivInputName>*/}
-        {/*  <Label>*/}
-        {/*    Показания счётчика:<Span>*</Span>*/}
-        {/*  </Label>*/}
-        {/*  <InputText*/}
-        {/*    inputText={'text'}*/}
-        {/*    name={'text'}*/}
-        {/*    type={'text'}*/}
-        {/*    placeholder={'Введите ваши показания счётчика'}*/}
-        {/*    onChange={handleUserInput}*/}
-        {/*    value={requestValues.text}*/}
-        {/*    error={errors.text}*/}
-        {/*  />*/}
-        {/*</DivInputName>*/}
-        {/*<DivInputFile>*/}
-        {/*  <span>Прекрипите файл</span>*/}
-        {/*  <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />*/}
-        {/*</DivInputFile>*/}
+        <DivInput>
+          <Label>
+            Производство проектно-изыскательских работ по устройству:<Span>*</Span>
+          </Label>
+          <span>
+            <label>
+              <InputCheckbox inputName="production" type={'checkbox'} value={'газопровода-ввода'} />
+              <span>газопровода-ввода</span>
+            </label>
+          </span>
+          <span>
+            <label>
+              <InputCheckbox
+                inputName="production"
+                type={'checkbox'}
+                value={'внутридомовой системы газоснабжения'}
+              />
+              <span>внутридомовой системы газоснабжения</span>
+            </label>
+          </span>
+        </DivInput>
+        <DivInput>
+          <Label>
+            Выполнение строительно-монтажных работ по устройству:<Span>*</Span>
+          </Label>
+          <span>
+            <label>
+              <InputCheckbox
+                inputName="performance"
+                type={'checkbox'}
+                value={'газопровода-ввода'}
+              />
+              <span>газопровода-ввода</span>
+            </label>
+          </span>
+          <span>
+            <label>
+              <InputCheckbox
+                inputName="performance"
+                type={'checkbox'}
+                value={'внутридомовой системы газоснабжения'}
+              />
+              <span>внутридомовой системы газоснабжения</span>
+            </label>
+          </span>
+        </DivInput>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

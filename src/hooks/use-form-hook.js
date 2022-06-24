@@ -114,6 +114,7 @@ export const useForm = () => {
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
+      clearForm();
       emailjs
         .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
         .then(
@@ -124,7 +125,7 @@ export const useForm = () => {
             console.log(error.text);
           }
         );
-      clearForm();
+
       alert('Форма успешно заполнена');
     },
     [formValues]

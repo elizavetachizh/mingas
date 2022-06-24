@@ -2,10 +2,8 @@ import React from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
+  DivInput,
   DivInputCheckbox,
-  DivInputEmail,
-  DivInputName,
-  DivInputPhone,
   InputCheckbox,
   Label,
   Span,
@@ -27,7 +25,6 @@ export default function ApplicationForOrderingCylinders() {
     errors,
     handleCheckBox,
     handleChangeTime,
-    clearForm,
     isButtonDisabled,
     handleSubmit,
     form,
@@ -36,7 +33,7 @@ export default function ApplicationForOrderingCylinders() {
     <DivApplication>
       <TitleFun color={'blue'} infoTitle={'Заявка на заказ баллонов'}></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
-        <DivInputName>
+        <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
@@ -51,8 +48,8 @@ export default function ApplicationForOrderingCylinders() {
             label={t('form:name')}
             span={'*'}
           />
-        </DivInputName>
-        <DivInputName>
+        </DivInput>
+        <DivInput>
           <Label>
             Ваш абонентский номер: <Span>*</Span>
           </Label>
@@ -65,8 +62,8 @@ export default function ApplicationForOrderingCylinders() {
             value={requestValues.text}
             error={errors.text}
           />
-        </DivInputName>
-        <DivInputEmail>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:email')}
             <Span>*</Span>
@@ -82,8 +79,8 @@ export default function ApplicationForOrderingCylinders() {
             label={t('form:email')}
             span={'*'}
           />
-        </DivInputEmail>
-        <DivInputPhone>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:phone')}
             <Span>*</Span>
@@ -99,12 +96,13 @@ export default function ApplicationForOrderingCylinders() {
             label={t('form:phone')}
             span={'*'}
           />
-        </DivInputPhone>
+        </DivInput>
         <Select
           label={'Желаемое время для связи:'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}
+          inputName={'time'}
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
@@ -122,7 +120,6 @@ export default function ApplicationForOrderingCylinders() {
             <Span>*</Span>
           </Label>
         </DivInputCheckbox>
-        <Button onClick={clearForm}>очистить форму</Button>
         <Button
           disabled={isButtonDisabled}
           type="submit"

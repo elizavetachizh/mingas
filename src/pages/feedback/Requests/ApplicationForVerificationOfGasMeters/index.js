@@ -1,14 +1,9 @@
 import React from 'react';
 import { DivApplication, Form } from '../styles';
-import { useRequest } from '../../../../hooks/use-request-hook';
 import {
   Button,
-  DivInputAdress,
+  DivInput,
   DivInputCheckbox,
-  DivInputEmail,
-  DivInputName,
-  DivInputPhone,
-  DivInputText,
   InputCheckbox,
   Label,
   Span,
@@ -26,6 +21,7 @@ import InputPhone from '../../../../components/input/inputPhone';
 import InputText from '../../../../components/input/inputText';
 import InputDate from '../../../../components/input/InputDate';
 import TitleFun from '../../../../components/title';
+import { useRequestForVerificationOfGasMeters } from './verificationOfGasMeters-hook';
 
 export default function ApplicationForVerificationOfGasMeters() {
   const {
@@ -38,12 +34,12 @@ export default function ApplicationForVerificationOfGasMeters() {
     isButtonDisabled,
     handleSubmit,
     form,
-  } = useRequest();
+  } = useRequestForVerificationOfGasMeters();
   return (
     <DivApplication>
       <TitleFun infoTitle={'Заявка на поверку счетчиков газа'} color={'blue'}></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
-        <DivInputName>
+        <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
@@ -56,8 +52,8 @@ export default function ApplicationForVerificationOfGasMeters() {
             value={requestValues.name}
             error={name && errors.name}
           />
-        </DivInputName>
-        <DivInputEmail>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:email')}
             <Span>*</Span>
@@ -71,8 +67,8 @@ export default function ApplicationForVerificationOfGasMeters() {
             value={requestValues.email}
             error={email && errors.email}
           />
-        </DivInputEmail>
-        <DivInputPhone>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:phone')}
             <Span>*</Span>
@@ -86,8 +82,8 @@ export default function ApplicationForVerificationOfGasMeters() {
             value={requestValues.phone}
             error={phone && errors.phone}
           />
-        </DivInputPhone>
-        <DivInputAdress>
+        </DivInput>
+        <DivInput>
           <Label>
             Адрес объекта
             <Span>*</Span>
@@ -101,8 +97,8 @@ export default function ApplicationForVerificationOfGasMeters() {
             value={requestValues.address}
             error={address && errors.address}
           />
-        </DivInputAdress>
-        <DivInputAdress>
+        </DivInput>
+        <DivInput>
           <Label>
             Желаемая дата выполнения работы <Span>*</Span>
           </Label>
@@ -115,7 +111,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             value={requestValues.date}
             placeholder={'Введите желаемую дату выполнения работы'}
           />
-        </DivInputAdress>
+        </DivInput>
 
         <Select
           label={'Желаемое время для выполнения работы'}
@@ -137,35 +133,35 @@ export default function ApplicationForVerificationOfGasMeters() {
           error={errors.work}
           options={OPTIONS}
         ></Select>
-        <DivInputName>
+        <DivInput>
           <Label>
             Марка индивидуального прибора учета расхода газа: <Span>*</Span>
           </Label>
           <InputText
             inputText={'text'}
-            name={'text'}
+            name={'marka'}
             type={'text'}
             placeholder={'Введите марку индивидуального прибора учета расхода газа'}
             onChange={handleUserInput}
             value={requestValues.text}
             error={errors.text}
           />
-        </DivInputName>
-        <DivInputName>
+        </DivInput>
+        <DivInput>
           <Label>
             Номер индивидуального прибора учета расхода газа: <Span>*</Span>
           </Label>
           <InputName
-            inputName={'text'}
-            name={'text'}
+            inputName={'number'}
+            name={'number'}
             type={'text'}
             placeholder={'Введите номер индивидуального прибора учета расхода газа'}
             onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
+            value={requestValues.number}
+            error={errors.number}
           />
-        </DivInputName>
-        <DivInputText>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:text')}
             <Span>*</Span>
@@ -181,7 +177,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             label={t('form:text')}
             span={'*'}
           />
-        </DivInputText>
+        </DivInput>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

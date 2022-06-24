@@ -2,12 +2,9 @@ import React from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
-  DivInputAdress,
+  DivInput,
   DivInputCheckbox,
-  DivInputEmail,
   DivInputFile,
-  DivInputName,
-  DivInputPhone,
   InputCheckbox,
   InputFile,
   Label,
@@ -20,27 +17,26 @@ import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
 import Select from '../../../../components/select';
-import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
-import { useRequest } from '../../../../hooks/use-request-hook';
+import { OPTIONS_TIME } from '../../../../const/consts';
 import TitleFun from '../../../../components/title';
+import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 
 export default function ProvidingGasMeterReadings() {
   const {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeWork,
     handleFileInput,
     handleChangeTime,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
-  } = useRequest();
+  } = useProvidingGasMasterReadings();
   return (
     <DivApplication>
       <TitleFun color={'blue'} infoTitle={'предоставлений показаний счётчика газа'} />
       <Form onSubmit={handleSubmit}>
-        <DivInputName>
+        <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
@@ -55,8 +51,8 @@ export default function ProvidingGasMeterReadings() {
             label={t('form:name')}
             span={'*'}
           />
-        </DivInputName>
-        <DivInputEmail>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:email')}
             <Span>*</Span>
@@ -72,8 +68,8 @@ export default function ProvidingGasMeterReadings() {
             label={t('form:email')}
             span={'*'}
           />
-        </DivInputEmail>
-        <DivInputPhone>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:phone')}
             <Span>*</Span>
@@ -89,8 +85,8 @@ export default function ProvidingGasMeterReadings() {
             label={t('form:phone')}
             span={'*'}
           />
-        </DivInputPhone>
-        <DivInputAdress>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:address')}
             <Span>*</Span>
@@ -106,7 +102,7 @@ export default function ProvidingGasMeterReadings() {
             label={t('form:address')}
             span={'*'}
           />
-        </DivInputAdress>
+        </DivInput>
         <Select
           label={' Желаемое время для связи:'}
           span={'*'}
@@ -116,7 +112,7 @@ export default function ProvidingGasMeterReadings() {
           error={errors.time}
           options={OPTIONS_TIME}
         ></Select>
-        <DivInputName>
+        <DivInput>
           <Label>
             Лицевой счёт: <Span>*</Span>
           </Label>
@@ -131,26 +127,26 @@ export default function ProvidingGasMeterReadings() {
             label={'Лицевой счёт'}
             span={'*'}
           />
-        </DivInputName>
-        <DivInputName>
+        </DivInput>
+        <DivInput>
           <Label>
             Показания счётчика<Span>*</Span>
           </Label>
           <InputName
-            inputName={'text'}
+            inputName={'reading'}
             name={'text'}
             type={'text'}
             placeholder={'Введите ваши показания счётчика'}
             onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
+            value={requestValues.reading}
+            error={errors.reading}
             span={'*'}
           />
-        </DivInputName>
+        </DivInput>
         <DivInputFile>
-          {/*<Label>*/}
-          {/*  Фото счётчика<Span>*</Span>*/}
-          {/*</Label>*/}
+          <Label>
+            Фото счётчика<Span>*</Span>
+          </Label>
           <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
         </DivInputFile>
         <DivInputCheckbox>

@@ -6,9 +6,8 @@ import { data } from '../../../assets/data';
 import background from '../../../assets/background/background.png';
 import linesOne from '../../../assets/background/lines.png';
 import { BackgroundStyle } from '../services/styles';
-import Search from '../Serch';
-import { Trans, useTranslation } from 'react-i18next';
-import TitleFun from '../../../components/title';
+import { Trans } from 'react-i18next';
+import TitleForHome from '../../../components/TitleForHome';
 
 export default function UsefulInform() {
   return (
@@ -18,11 +17,11 @@ export default function UsefulInform() {
         {/*<Search />*/}
         {/*<Line />*/}
         <UsefulInformContainer>
-          <TitleFun
+          <TitleForHome
             color={'blue'}
             fontSize={'s'}
             infoTitle={<Trans i18nKey="usefulInform:usefulInform"></Trans>}
-          ></TitleFun>
+          ></TitleForHome>
           <DivInform>
             {data.map((element) => (
               <LinkInform

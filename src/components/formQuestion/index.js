@@ -1,10 +1,6 @@
 import React from 'react';
 import {
-  DivInputName,
-  DivInputEmail,
-  DivInputAdress,
-  DivInputPhone,
-  DivInputText,
+  DivInput,
   DivInputCheckbox,
   DivInputFile,
   Form,
@@ -37,7 +33,7 @@ export default function FormQuestion() {
   const { t } = useTranslation();
   return (
     <Form onSubmit={handleSubmit} ref={form}>
-      <DivInputName>
+      <DivInput>
         <Label>
           {t('form:name')}
           <Span>*</Span>
@@ -53,8 +49,8 @@ export default function FormQuestion() {
           label={t('form:name')}
           span={'*'}
         />
-      </DivInputName>
-      <DivInputEmail>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:email')}
           <Span>*</Span>
@@ -70,8 +66,8 @@ export default function FormQuestion() {
           label={t('form:email')}
           span={'*'}
         />
-      </DivInputEmail>
-      <DivInputAdress>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:address')}
           <Span>*</Span>
@@ -87,8 +83,8 @@ export default function FormQuestion() {
           label={t('form:address')}
           span={'*'}
         />
-      </DivInputAdress>
-      <DivInputPhone>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:phone')}
           <Span>*</Span>
@@ -104,8 +100,8 @@ export default function FormQuestion() {
           label={t('form:phone')}
           span={'*'}
         />
-      </DivInputPhone>
-      <DivInputText>
+      </DivInput>
+      <DivInput>
         <Label>
           {t('form:text')}
           <Span>*</Span>
@@ -121,7 +117,7 @@ export default function FormQuestion() {
           label={t('form:text')}
           span={'*'}
         />
-      </DivInputText>
+      </DivInput>
       <DivInputFile>
         <span>Прекрипите файл</span>
         <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />

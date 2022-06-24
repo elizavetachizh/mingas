@@ -8,11 +8,16 @@ import ApplicationForGasificationOfResidentialGardenHouse from '../ApplicationFo
 import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../ApplicationToCallRepresentativeOfGasSupplyOrganization';
 import ProvidingGasMeterReadings from '../ProvidingGasMeterReadings';
 import { Container } from '../../../Home/News/styles';
-
+import TitleFun from '../../../../components/title';
+import TitleForHome from '../../../../components/TitleForHome';
+const styledTitle = {
+  margin: '0',
+};
 export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForTheIssuanceOfTechnicalSpecifications');
   return (
     <Container backgroundColor={'gray'}>
+      <TitleForHome style={styledTitle} color={'blue'} infoTitle={'Оставить онлайн-заявку'} />
       <ButtonForms>
         <HeaderBtnFeedback>
           <Button

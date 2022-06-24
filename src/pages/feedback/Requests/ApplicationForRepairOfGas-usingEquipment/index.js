@@ -2,11 +2,8 @@ import React from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
-  DivInputAdress,
+  DivInput,
   DivInputCheckbox,
-  DivInputEmail,
-  DivInputName,
-  DivInputPhone,
   InputCheckbox,
   Label,
   Span,
@@ -38,7 +35,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
     <DivApplication>
       <TitleFun color={'blue'} infoTitle={'Заявка на ремонт газоиспользующего оборудования'} />
       <Form ref={form} onSubmit={handleSubmit}>
-        <DivInputName>
+        <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
@@ -53,8 +50,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             label={t('form:name')}
             span={'*'}
           />
-        </DivInputName>
-        <DivInputEmail>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:email')}
             <Span>*</Span>
@@ -70,8 +67,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             label={t('form:email')}
             span={'*'}
           />
-        </DivInputEmail>
-        <DivInputPhone>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:phone')}
             <Span>*</Span>
@@ -87,8 +84,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             label={t('form:phone')}
             span={'*'}
           />
-        </DivInputPhone>
-        <DivInputAdress>
+        </DivInput>
+        <DivInput>
           <Label>
             Адрес объекта:
             <Span>*</Span>
@@ -104,8 +101,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             label={t('form:address')}
             span={'*'}
           />
-        </DivInputAdress>
-        <DivInputAdress>
+        </DivInput>
+        <DivInput>
           <Label>
             Желаемая дата выполнения работы <Span>*</Span>
           </Label>
@@ -118,7 +115,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             value={requestValues.date}
             placeholder={'Введите желаемую дату выполнения работы'}
           />
-        </DivInputAdress>
+        </DivInput>
         <Select
           label={' Желаемое время выполнения работы'}
           span={'*'}

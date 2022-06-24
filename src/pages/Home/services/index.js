@@ -4,19 +4,15 @@ import { data } from '../../../assets/data_service_individuals';
 import { dataLegalEntities } from '../../../assets/data_service_legalEntities';
 import { Container, DivInform, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
-import { Trans, useTranslation } from 'react-i18next';
-import { Title } from '../useful_information/styles';
-import TitleFun from '../../../components/title';
+import { useTranslation } from 'react-i18next';
+import TitleForHome from '../../../components/TitleForHome';
 
 export default function HomeServices() {
   const { t } = useTranslation();
   return (
     <Container>
       <DivInform>
-        {/*<Title>*/}
-        {/*  <Trans i18nKey="services:title"></Trans>*/}
-        {/*</Title>*/}
-        <TitleFun color={'white'} infoTitle={<Trans i18nKey="services:title"></Trans>}></TitleFun>
+        <TitleForHome infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'} />
         <ButtonServicesHome>
           <ButtonFun
             href={'/services'}

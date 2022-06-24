@@ -18,16 +18,12 @@ import {
 import career from '../../../assets/png/oszczedzanie-gazu.jpg';
 import up from '../../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
-import anketa from '../../../assets/ANKETA.doc';
+import anketa from '../../../assets/wordFile/ANKETA.doc';
 import TitleFun from '../../../components/title';
-import useMediaQuery from "../../Home/parallax/useMediaQuery";
-import Headermini from "../../../components/header/Headermini";
 export default function Career() {
-  const isDesktop = useMediaQuery('(max-width: 1285px)');
-  const isPhone = useMediaQuery('(min-width: 900px)');
   return (
     <Container>
-      {isDesktop && isPhone ? <Headermini /> : <Header  backgroundHeader="blue"/>}
+      <Header backgroundHeader="blue" />
 
       <HeaderCompany currentPage={'career'} />
       <TitleFun color={'blue'} infoTitle={'Работа в РУП “Мингаз”'}></TitleFun>

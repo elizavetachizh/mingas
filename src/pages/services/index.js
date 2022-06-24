@@ -7,7 +7,6 @@ import Footer from '../../components/footer';
 import { Container } from '../company/styles';
 import up from '../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
-import ApplicationForOrderingCylinders from '../feedback/Requests/ApplicationForOrderingCylinders';
 import TitleFun from '../../components/title';
 import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import axios from 'axios';
@@ -64,7 +63,6 @@ export default function Services() {
             ))}
           </DivServices>
         )}
-        {active === 'ApplicationForOrderingCylinders' && <ApplicationForOrderingCylinders />}
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />

@@ -2,10 +2,8 @@ import React from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
+  DivInput,
   DivInputCheckbox,
-  DivInputEmail,
-  DivInputName,
-  DivInputPhone,
   InputCheckbox,
   Label,
   Span,
@@ -38,7 +36,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
     <DivApplication>
       <TitleFun color={'blue'} infoTitle={'Заявка на выдачу ТУ'}></TitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
-        <DivInputName>
+        <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
@@ -51,8 +49,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             value={requestIssuanceValues.name}
             error={name && errors.name}
           />
-        </DivInputName>
-        <DivInputEmail>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:email')}
             <Span>*</Span>
@@ -66,8 +64,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             value={requestIssuanceValues.email}
             error={email && errors.email}
           />
-        </DivInputEmail>
-        <DivInputPhone>
+        </DivInput>
+        <DivInput>
           <Label>
             {t('form:phone')}
             <Span>*</Span>
@@ -81,7 +79,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             value={requestIssuanceValues.phone}
             error={phone && errors.phone}
           />
-        </DivInputPhone>
+        </DivInput>
         <Select
           label={'Желаемое время для связи'}
           span={'*'}

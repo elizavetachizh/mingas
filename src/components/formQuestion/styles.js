@@ -5,21 +5,13 @@ export const Form = styled.form`
   max-width: 1200px;
 `;
 
-export const DivInputName = styled.div`
+export const DivInput = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
-`;
-export const DivInputEmail = DivInputName;
-export const DivInputAdress = DivInputName;
-export const DivInputPhone = DivInputName;
-export const DivInputText = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.5rem;
-  input {
-    height: 100px;
-  }
+  //input {
+  //  height: 100px;
+  //}
 `;
 
 export const TwoColumnTextAndForm = styled.div`
@@ -103,29 +95,7 @@ export const Span = styled.span`
   color: red;
 `;
 
-export const Input = styled.input`
-  padding-right: 3rem;
-  background-size: 22px;
-  background-color: #eaeff1;
-  border-radius: 4px;
-  border: 0;
-  padding-left: 1rem;
-  width: 100%;
-  height: 40px;
-`;
-
 export const InputCheckbox = styled.input``;
-
-export const InputTextBox = styled.input`
-  height: 80px;
-  padding-right: 3rem;
-  background-size: 22px;
-  background-color: #eaeff1;
-  border-radius: 4px;
-  border: 0;
-  padding-left: 1rem;
-  width: 100%;
-`;
 
 export const DivInputFile = styled.div`
   position: relative;
@@ -133,16 +103,6 @@ export const DivInputFile = styled.div`
   text-align: center;
   margin: 1.5rem 0;
   height: 36px;
-  //span {
-  //  position: relative;
-  //  background: #f6f6f6;
-  //  border: 1px solid #c5c5c5;
-  //  border-radius: 0;
-  //  box-shadow: 1px 1px 1px #c5c5c5;
-  //  padding: 10px 21px;
-  //  font-size: 15px;
-  //  color: #6c757d;
-  //}
 `;
 
 export const InputFile = styled.input`
@@ -152,7 +112,6 @@ export const InputFile = styled.input`
   width: 100%;
   height: 100%;
   text-align: center;
-  //opacity: 0;
 `;
 
 export const Button = styled.button`

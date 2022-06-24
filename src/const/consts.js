@@ -72,8 +72,9 @@ export interface SelectProps {
   value: string;
   inputName: string;
   error: string;
-
+  number: string;
   options: Option;
+  reading: string;
 }
 export const INITIAL_REQUEST_STATE = {
   name: '',
@@ -87,6 +88,8 @@ export const INITIAL_REQUEST_STATE = {
   isAgree: false,
   message: '',
   fileName: '',
+  number: '',
+  reading: '',
 };
 
 export interface requestValues {

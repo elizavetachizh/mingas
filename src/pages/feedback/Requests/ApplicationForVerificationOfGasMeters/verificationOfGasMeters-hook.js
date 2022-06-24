@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import * as emailjs from '@emailjs/browser';
-import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
+import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 
-export const useGardenHouse = (): UseFormReturnValues => {
+export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -25,8 +25,10 @@ export const useGardenHouse = (): UseFormReturnValues => {
       !requestValues.isAgree ||
       !requestValues.text ||
       !requestValues.address ||
+      !requestValues.date ||
       !requestValues.time ||
-      // !requestValues.message ||
+      !requestValues.work ||
+      !requestValues.number ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -73,6 +75,22 @@ export const useGardenHouse = (): UseFormReturnValues => {
           });
         }
         break;
+      case 'work':
+        if (requestValues.work.trim().length) {
+          setErrors({
+            ...errors,
+            work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
+          });
+        }
+        break;
+      case 'number':
+        if (!requestValues.number) {
+          setErrors({
+            ...errors,
+            number: 'Укажите ваш номер индивидуального прибора учета расхода газа',
+          });
+        }
+        break;
       default:
         break;
     }
@@ -83,6 +101,16 @@ export const useGardenHouse = (): UseFormReturnValues => {
       event.preventDefault();
       const { name, value } = event.target;
       setRequestValues(Object.assign(requestValues, { [name]: value }));
+      validate(name);
+    },
+    [requestValues]
+  );
+
+  const handleChangeWork = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      event.preventDefault();
+      const { name, value } = event.target;
+      setRequestValues({ ...requestValues, work: value });
       validate(name);
     },
     [requestValues]
@@ -102,14 +130,6 @@ export const useGardenHouse = (): UseFormReturnValues => {
     validate('isAgree');
   }, [requestValues]);
 
-  const handleFileInput = useCallback(
-    (event: { target: { files: FileList } }) => {
-      const file = event.target.files[0];
-      setRequestValues({ ...requestValues, fileName: file.name });
-    },
-    [requestValues]
-  );
-
   const clearForm = useCallback(() => {
     setRequestValues({
       ...INITIAL_REQUEST_STATE,
@@ -119,15 +139,16 @@ export const useGardenHouse = (): UseFormReturnValues => {
       phone: '',
       address: '',
       text: '',
+      number: '',
     });
   }, []);
 
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
-      clearForm();
+
       emailjs
-        .sendForm('service_9ojlulb', 'template_irtan2b', form.current, 'Cr7j1nqgFLXsPcHIL')
+        .sendForm('service_xcj1sfw', 'template_e0kvkpl', form.current, 'vZiB8zRYvfVKnIOk7')
         .then(
           (result) => {
             console.log(result.text);
@@ -136,6 +157,7 @@ export const useGardenHouse = (): UseFormReturnValues => {
             console.log(error.text);
           }
         );
+      clearForm();
       alert('Форма успешно заполнена');
     },
     [requestValues]
@@ -145,8 +167,9 @@ export const useGardenHouse = (): UseFormReturnValues => {
     handleUserInput,
     requestValues,
     errors,
+    handleChangeWork,
     handleChangeTime,
-    handleFileInput,
+    // handleFileInput,
     handleCheckBox,
     clearForm,
     isButtonDisabled,
