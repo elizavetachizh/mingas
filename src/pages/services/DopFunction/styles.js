@@ -6,6 +6,9 @@ export const DescriptionService = styled.div`
   p {
     text-indent: 25px;
   }
+  a {
+    color: #0170b9;
+  }
   @media (max-width: 1100px) {
     max-width: 800px;
   }

@@ -30,6 +30,9 @@ import NaturalGas from './pages/services/NaturalGas';
 import './App.css';
 import '../src/web_chat/static/css/main.bbd16e91.css';
 import ResidentsOfCapitalRegion from './pages/ResidentsOfCapital Region';
+import SearchPage from './pages/SearchPage';
+import DopFunctional from './pages/services/servicesForLegalEntities/CardOfService';
+import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
 function App() {
   const makeAPICall = async () => {
     try {
@@ -70,7 +73,8 @@ function App() {
           path="/company/management/production-technical-management"
           element={<ProductionTechnicalManagement />}
         />
-        <Route path={'/services/legal-entities'} element={<ServicesForLegalEntities />} />
+        <Route path={'/services/legal-entities/'} element={<ServicesForLegalEntities />} />
+        <Route path={'/services/legal-entities/:nameCard'} element={<CardOfServive />} />
         <Route path={'/contacts/requisites'} element={<Requisites />} />
         <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
         <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
@@ -79,6 +83,7 @@ function App() {
         <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
         <Route path={'/Personal'} element={<Personal />} />
         <Route path={'/Personal/tasks'} element={<Tasks />} />
+        <Route path={'/SearchPage'} element={<SearchPage />} />
       </Routes>
 
       {/*<link rel="stylesheet" href="../../src/web_chat/static/css/main.bbd16e91.css" />*/}

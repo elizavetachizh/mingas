@@ -1,7 +1,7 @@
 {
   "name": "react-tutorial",
   "version": "0.1.0",
-  "proxy":"http://localhost:8080/",
+  "proxy": "http://localhost:8080/",
   "private": true,
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",
@@ -108,6 +108,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react-app": "^10.0.1",
     "concurrently": "^7.1.0",
+    "gulp": "^4.0.2",
     "nodemon": "^2.0.15"
   }
 }

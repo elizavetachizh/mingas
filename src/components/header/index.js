@@ -41,6 +41,8 @@ import { useNavigate } from 'react-router';
 import personal from '../../assets/icons/user.png';
 import { AutocompleteSuggestions, Button, Form, Input } from '../../pages/Home/Serch/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
+import { data } from '../../assets/data_services';
+// const myRequest = new Request('../../assets/data_services');
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -83,8 +85,46 @@ export default function Header({ backgroundHeader }) {
       <img style={styleMenu} src={close} alt="" />
     </MenuClose>
   );
-
+  const [input, setInput] = useState('');
   const { t } = useTranslation();
+
+  // fetch(myRequest)
+  //   .then(function (resp) {
+  //     return resp.json();
+  //   })
+  //   .then(function (data) {
+  //     console.log(data);
+  //   });
+  function onInputFun(event) {
+    // console.log(this.value);
+    const value = event.target.value.trim();
+    if (value !== '') {
+      data.forEach((element) => {
+        console.log(element);
+
+        if (element.nameCard.search(value) === -1) {
+          console.log(element.nameCard);
+          return (
+            <div>
+              {data.map((element) => (
+                <div>
+                  serviceId={element.serviceId}
+                  imgCard={element.cardImg}
+                  nameCard={element.nameCard}
+                  description={element.description}
+                </div>
+              ))}
+            </div>
+          );
+        }
+        if (element.nameCard.search(value) === element.nameCard) {
+          console.log(element);
+        }
+      });
+    }
+    setInput(event.target.value);
+    console.log(event.target.value);
+  }
   return (
     <Container backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
@@ -115,7 +155,7 @@ export default function Header({ backgroundHeader }) {
               {/*  </fieldset>*/}
               {/*</form>*/}
               <Form>
-                <Input type={'text'} placeholder={'Поиск по сайту'} />
+                <Input onChange={onInputFun} type={'text'} placeholder={'Поиск по сайту'} />
                 <AutocompleteSuggestions />
                 <Button style={searchStyle} type={'submit'} />
               </Form>
@@ -159,7 +199,7 @@ export default function Header({ backgroundHeader }) {
               </Dropdown>
 
               <Dropdown>
-                <ServicesButton to="/services">Для бизнеса</ServicesButton>
+                <ServicesButton to="/services/legal-entities">Для бизнеса</ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services/legal-entities">Услуги</ButtonLink>
                   <ButtonLink to="/">Обратная связь</ButtonLink>

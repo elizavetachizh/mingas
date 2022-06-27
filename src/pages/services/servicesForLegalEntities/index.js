@@ -8,7 +8,8 @@ import { DivServices } from '../styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { data } from '../../../assets/data_service_legalEntities_general';
-import ServicesList from '../servicesList';
+import ServicesList from './serviceList';
+
 export default function ServicesForLegalEntities() {
   return (
     <Container>
