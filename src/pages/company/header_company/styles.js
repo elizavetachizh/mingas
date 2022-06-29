@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { CompanyButton } from "../../../components/header/styles";
+import { CompanyButton } from '../../../components/header/styles';
 
 export const HeaderCompanyDiv = styled.div`
   display: flex;
@@ -52,7 +52,7 @@ export const DivButton = styled.div`
   }
 `;
 
-export const HistoryButton = styled(NavLink)`
+export const HeaderCompanyBtn = styled(NavLink)`
   text-decoration: none;
   color: #0d4475;
   margin: 0 14px;
@@ -61,9 +61,3 @@ export const HistoryButton = styled(NavLink)`
     color: #a69b14;
   }
 `;
-
-export const ManagementButton = HistoryButton;
-export const StructureButton = HistoryButton;
-export const CareerButton = HistoryButton;
-export const DocumentsButton = HistoryButton;
-export const UnionButton = CompanyButton;

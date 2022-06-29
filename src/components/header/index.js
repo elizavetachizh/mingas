@@ -174,9 +174,12 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
                   {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
                   <ButtonLink to="/company/structure">Руководство предприятия</ButtonLink>
-                  <ButtonLink to="/company/career">Карьера в УП "Мингаз"</ButtonLink>
+                  <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
-                  <ButtonLink to="/company/documentation">Документы</ButtonLink>
+                  <ButtonLink to="/company/documentation">
+                    Сертификаты, лицензии, свидетельства
+                  </ButtonLink>
+                  <ButtonLink to="/company/gratitude">Благодарности и награды</ButtonLink>
                   {/*<UnionButton to="/company/union">Профсоюз</UnionButton>*/}
                 </DivButtonHeader>
               </Dropdown>

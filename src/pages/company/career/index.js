@@ -50,12 +50,18 @@ export default function Career() {
             {/*</DivVacancies>*/}
             <DivForm className="form-div">
               <p>
-                При приеме на работу предлагаем заполнить{' '}
+                При приеме на работу предлагаем заполнить
                 <a download href={anketa}>
                   анкету
-                </a>{' '}
+                </a>
               </p>
             </DivForm>
+            <p>Телефон отдела кадров УП «МИНГАЗ»: 80172992830, 80172992936</p>
+            <p>e-mail: ok@mingas.by</p>
+            <p>
+              По вопросам трудоустройства обращаться по адресу: г. Минск, ул. Ботаническая, д. 11/1
+              каб. 103.
+            </p>
           </DivAboutmanagementWhiteFont>
         </DivAboutManagementBackground>
       </DivAfterAndBefore>

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import inform from './pdf/O-prodazhe-tovarov-i-ili-predostavlenii-uslug-v-rassrochku_2.pdf';
 import sample from '../assets/wordFile/sample.docx';
 const styleOl = {
   fontWeight: 'bold',
 };
+
 export const data = [
   {
     serviceId: 1,
@@ -12,7 +13,9 @@ export const data = [
     description: (
       <div>
         <ol>
-          <li style={styleOl}>Заключение договоров с населением</li>
+          <button>
+            <li style={styleOl}>Заключение договоров с населением</li>
+          </button>
           <ul>
             <p>
               В связи с изменениями и дополнениями, внесенными в постановление Совета Министров
@@ -443,7 +446,7 @@ export const data = [
   },
   {
     serviceId: 3,
-    cardImg: 7,
+    cardImg: 3,
     nameCard:
       'Техническое обслуживание, ремонт, комплекс работ по определению технического состояния газоиспользующего оборудования, установка и замена приборов учёта расхода газа',
     description: (
@@ -684,7 +687,7 @@ export const data = [
   },
   {
     serviceId: 4,
-    cardImg: 1,
+    cardImg: 8,
     nameCard:
       'Техническое обслуживание газопроводов принадлежащих гражданину на правах частной собственности (по договору)',
     description: (
@@ -1010,7 +1013,7 @@ export const data = [
   },
   {
     serviceId: 5,
-    cardImg: 1,
+    cardImg: 9,
     nameCard:
       'Согласование ведомостей технических характеристик, архитектурных проектов перепланировок жилых помещений и реконструкций индивидуальных жилых домов',
     description: (
@@ -1035,7 +1038,7 @@ export const data = [
   },
   {
     serviceId: 6,
-    cardImg: 1,
+    cardImg: 10,
     nameCard:
       'Оказание комплексной услуги по газификации одноквартирного жилого дома природным газом',
     description: (
@@ -1045,7 +1048,6 @@ export const data = [
           height="315"
           src="https://www.youtube.com/embed/Ep9aRGth00Q"
           title="YouTube video player"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
@@ -1106,7 +1108,7 @@ export const data = [
   },
   {
     serviceId: 7,
-    cardImg: 1,
+    cardImg: 11,
     nameCard: 'Порядок выдачи технических условий (выдается без оплаты)',
     description: (
       <div>
@@ -1284,7 +1286,7 @@ export const data = [
   },
   {
     serviceId: 8,
-    cardImg: 1,
+    cardImg: 2,
     nameCard: 'Выдача разрешения на право производства строительных и земляных работ',
     description: (
       <div>
@@ -1299,7 +1301,7 @@ export const data = [
   },
   {
     serviceId: 9,
-    cardImg: 1,
+    cardImg: 4,
     nameCard: 'Передача газопроводов на баланс УП "МИНГАЗ"',
     description: (
       <div>

@@ -6,18 +6,14 @@ import HeaderFeedBack from '../HeaderFeedBack';
 import { Divbackground, DivImage } from '../styles';
 import { Container } from '../../Home/styles';
 import Footer from '../../../components/footer';
-import Headermini from "../../../components/header/Headermini";
-import useMediaQuery from "../../Home/parallax/useMediaQuery";
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
 };
 export default function ElectronicAppeal() {
-  const isDesktop = useMediaQuery('(max-width: 1285px)');
-  const isPhone = useMediaQuery('(min-width: 900px)');
   return (
     <Container>
-      {isDesktop && isPhone ? <Headermini /> : <Header  backgroundHeader="blue"/>}
+      <Header backgroundHeader="blue" />
       <HeaderFeedBack />
       <Divbackground>
         <DivImage style={styled}></DivImage>

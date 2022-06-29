@@ -33,6 +33,7 @@ import ResidentsOfCapitalRegion from './pages/ResidentsOfCapital Region';
 import SearchPage from './pages/SearchPage';
 import DopFunctional from './pages/services/servicesForLegalEntities/CardOfService';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
+import Gratitude from './pages/company/Gratitude';
 function App() {
   const makeAPICall = async () => {
     try {
@@ -68,6 +69,7 @@ function App() {
         <Route path="/company/career/" element={<Career />} />
         <Route path="/company/branches" element={<Branches />} />
         <Route path="/company/documentation/" element={<Documentation />} />
+        <Route path={'company/gratitude'} element={<Gratitude />} />
         <Route path="/company/union/" element={<Union />} />
         <Route
           path="/company/management/production-technical-management"

@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  HeaderCompanyDiv,
-  HistoryButton,
-  ManagementButton,
-  StructureButton,
-  CareerButton,
-  DocumentsButton,
-  UnionButton,
-  DivButton,
-} from './styles';
+import { HeaderCompanyDiv, DivButton, HeaderCompanyBtn } from './styles';
 import Header from '../../../components/header';
 import { t } from 'i18next';
 
@@ -17,20 +8,18 @@ export default function HeaderCompany() {
     <HeaderCompanyDiv>
       <Header />
       <DivButton>
-        <HistoryButton to="/company/history">{t('headerCompany:companyHistory')}</HistoryButton>
-        <ManagementButton to="/company/management">
+        <HeaderCompanyBtn to="/company/history">
+          {t('headerCompany:companyHistory')}
+        </HeaderCompanyBtn>
+        <HeaderCompanyBtn to="/company/management">
           {t('headerCompany:management')}
-        </ManagementButton>
-        {/*<StructureButton to="/company/structure">*/}
-        {/*  {t('headerCompany:enterpriseStructure')}*/}
-        {/*</StructureButton>*/}
-
-        <CareerButton to="/company/career">{t('headerCompany:careerMingaz')}</CareerButton>
-        <CareerButton to="/company/branches">Филиалы УП "Мингаз"</CareerButton>
-        <DocumentsButton to="/company/documentation">
+        </HeaderCompanyBtn>
+        <HeaderCompanyBtn to="/company/career">{t('headerCompany:careerMingaz')}</HeaderCompanyBtn>
+        <HeaderCompanyBtn to="/company/branches">Филиалы УП "Мингаз"</HeaderCompanyBtn>
+        <HeaderCompanyBtn to="/company/documentation">
           {t('headerCompany:documentation')}
-        </DocumentsButton>
-        {/*<UnionButton to="/company/union">{t('headerCompany:union')}</UnionButton>*/}
+        </HeaderCompanyBtn>
+        <HeaderCompanyBtn to="/company/gratitude">Благодарности и награды</HeaderCompanyBtn>
       </DivButton>
       <hr />
     </HeaderCompanyDiv>

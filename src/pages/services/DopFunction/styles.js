@@ -3,17 +3,20 @@ export const DescriptionService = styled.div`
   text-align: justify;
   max-width: 1100px;
   margin: 0 auto;
+  font-size: 18px;
   p {
     text-indent: 25px;
   }
   a {
     color: #0170b9;
+    text-decoration: none;
   }
   @media (max-width: 1100px) {
     max-width: 800px;
   }
   @media (max-width: 800px) {
     max-width: 600px;
+    font-size: 14px;
   }
   @media (max-width: 600px) {
     max-width: 400px;
@@ -22,7 +25,6 @@ export const DescriptionService = styled.div`
     width: 100%;
     margin: 0;
     text-align: center;
-
     border-collapse: collapse;
     font-size: 1em;
     border: 1px solid #ccc;
