@@ -138,13 +138,13 @@ export default function ApplicationForVerificationOfGasMeters() {
             Марка индивидуального прибора учета расхода газа: <Span>*</Span>
           </Label>
           <InputText
-            inputText={'text'}
+            inputText={'marka'}
             name={'marka'}
             type={'text'}
             placeholder={'Введите марку индивидуального прибора учета расхода газа'}
             onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
+            value={requestValues.marka}
+            error={errors.marka}
           />
         </DivInput>
         <DivInput>

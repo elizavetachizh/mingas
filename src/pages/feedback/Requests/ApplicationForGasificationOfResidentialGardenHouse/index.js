@@ -20,6 +20,7 @@ import { useGardenHouse } from './GardenHouse-hook';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import TitleFun from '../../../../components/title';
+import InputInform from '../../../../components/input/InputInform';
 
 export default function ApplicationForGasificationOfResidentialGardenHouse() {
   const {
@@ -112,20 +113,28 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             Производство проектно-изыскательских работ по устройству:<Span>*</Span>
           </Label>
           <span>
-            <label>
-              <InputCheckbox inputName="production" type={'checkbox'} value={'газопровода-ввода'} />
-              <span>газопровода-ввода</span>
-            </label>
+            <Label>
+              <InputCheckbox
+                name="production"
+                type={'checkbox'}
+                inputInform="production"
+                value={'газопровода-ввода'}
+                error={errors.isAgree}
+              />
+              газопровода-ввода
+            </Label>
           </span>
           <span>
-            <label>
-              <InputCheckbox
-                inputName="production"
+            <Label>
+              <InputInform
+                name="production"
+                inputInform="production"
                 type={'checkbox'}
                 value={'внутридомовой системы газоснабжения'}
+                error={errors.isAgree}
               />
-              <span>внутридомовой системы газоснабжения</span>
-            </label>
+              внутридомовой системы газоснабжения
+            </Label>
           </span>
         </DivInput>
         <DivInput>
@@ -133,28 +142,32 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
             Выполнение строительно-монтажных работ по устройству:<Span>*</Span>
           </Label>
           <span>
-            <label>
-              <InputCheckbox
-                inputName="performance"
+            <Label>
+              <InputInform
+                name="performance"
+                inputInform="performance"
                 type={'checkbox'}
                 value={'газопровода-ввода'}
+                error={errors.isAgree}
               />
-              <span>газопровода-ввода</span>
-            </label>
+              газопровода-ввода
+            </Label>
           </span>
           <span>
-            <label>
-              <InputCheckbox
-                inputName="performance"
+            <Label>
+              <InputInform
+                name="performance"
+                inputInform="performance"
                 type={'checkbox'}
                 value={'внутридомовой системы газоснабжения'}
+                error={errors.isAgree}
               />
-              <span>внутридомовой системы газоснабжения</span>
-            </label>
+              внутридомовой системы газоснабжения
+            </Label>
           </span>
         </DivInput>
         <DivInputCheckbox>
-          <InputCheckbox
+          <InputInform
             type="checkbox"
             span={'*'}
             onChange={handleCheckBox}

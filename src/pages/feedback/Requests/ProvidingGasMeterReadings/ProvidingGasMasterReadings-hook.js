@@ -145,9 +145,8 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
-
       emailjs
-        .sendForm('service_9ojlulb', 'template_ksnwzap', form.current, 'Cr7j1nqgFLXsPcHIL')
+        .sendForm('service_9ojlulb', 'template_twbp1hs', form.current,'Cr7j1nqgFLXsPcHIL')
         .then(
           (result) => {
             console.log(result.text);
@@ -161,7 +160,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     },
     [requestValues]
   );
-
   return {
     handleUserInput,
     requestValues,

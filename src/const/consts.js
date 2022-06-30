@@ -65,6 +65,14 @@ export interface InputPropsDate {
   error: string;
   placeholder?: string;
 }
+export interface InputPropsInform {
+  type: 'date' | 'text';
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  inputInform: string;
+  error: string;
+  placeholder?: string;
+}
 export interface SelectProps {
   label: string;
   span: string;
@@ -90,6 +98,7 @@ export const INITIAL_REQUEST_STATE = {
   fileName: '',
   number: '',
   reading: '',
+  marka: '',
 };
 
 export interface requestValues {
@@ -104,6 +113,9 @@ export interface requestValues {
   text?: string;
   fileName?: string;
   message: string;
+  number: string,
+  reading: string,
+  marka: string,
 }
 
 export const OPTIONS = [

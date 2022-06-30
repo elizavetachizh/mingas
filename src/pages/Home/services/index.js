@@ -6,6 +6,7 @@ import { Container, DivInform, DivDown, ButtonServicesHome, ServicesDiv } from '
 import LinkServices from './dataComponents';
 import { useTranslation } from 'react-i18next';
 import TitleForHome from '../../../components/TitleForHome';
+import LinkServicesForLegalEntities from "./dataComponentsForLEgalEntities";
 
 export default function HomeServices() {
   const { t } = useTranslation();
@@ -28,12 +29,12 @@ export default function HomeServices() {
         <ServicesDiv>
           <DivDown>
             {data.map((element) => (
-              <LinkServices key={element.cardDesc} img={element.cardImg} text={element.cardDesc} />
+              <LinkServices key={element.cardDesc} img={element.cardImg} nameCard={element.nameCard} />
             ))}
           </DivDown>
           <DivDown>
             {dataLegalEntities.map((element) => (
-              <LinkServices key={element.cardDesc} img={element.cardImg} text={element.cardDesc} />
+              <LinkServicesForLegalEntities key={element.cardDesc} img={element.cardImg} nameCard={element.nameCard} />
             ))}
           </DivDown>
         </ServicesDiv>

@@ -2,7 +2,8 @@ import React, { useCallback } from "react";
 import { DivServicesList, DivInformService, Image, Name } from './styles';
 import { useNavigate } from "react-router";
 
-export default function ServicesList({ imgCard, nameCard, serviceId, description }) {
+export default function ServicesList({ imgCard, nameCard}) {
+
   const navigate = useNavigate();
   const handlerLinkClick = useCallback((nameCard) => {
     navigate(`/services/${nameCard}`);

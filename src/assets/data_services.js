@@ -1,4 +1,3 @@
-import React, { useCallback, useState } from 'react';
 import inform from './pdf/O-prodazhe-tovarov-i-ili-predostavlenii-uslug-v-rassrochku_2.pdf';
 import sample from '../assets/wordFile/sample.docx';
 const styleOl = {
@@ -1375,3 +1374,4 @@ export const data = [
     ),
   },
 ];
+

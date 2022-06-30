@@ -23,12 +23,12 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
       stringIncludesNumber(requestValues.name) ||
       !isValidateEmail(requestValues.email) ||
       !requestValues.isAgree ||
-      !requestValues.text ||
       !requestValues.address ||
       !requestValues.date ||
       !requestValues.time ||
       !requestValues.work ||
       !requestValues.number ||
+        !requestValues.marka ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -91,6 +91,14 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
           });
         }
         break;
+      case 'marka':
+        if (!requestValues.marka) {
+          setErrors({
+            ...errors,
+            marka: 'Укажите ваш номер индивидуального прибора учета расхода газа',
+          });
+        }
+        break;
       default:
         break;
     }
@@ -138,8 +146,8 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
       email: '',
       phone: '',
       address: '',
-      text: '',
       number: '',
+      marka: '',
     });
   }, []);
 

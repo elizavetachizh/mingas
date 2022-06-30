@@ -31,11 +31,12 @@ export default function ProvidingGasMeterReadings() {
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
+    form
   } = useProvidingGasMasterReadings();
   return (
     <DivApplication>
-      <TitleFun color={'blue'} infoTitle={'предоставлений показаний счётчика газа'} />
-      <Form onSubmit={handleSubmit}>
+      <TitleFun color={'blue'} infoTitle={'предоставление показаний счётчика газа'} />
+      <Form onSubmit={handleSubmit} ref={form}>
         <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
@@ -134,7 +135,7 @@ export default function ProvidingGasMeterReadings() {
           </Label>
           <InputName
             inputName={'reading'}
-            name={'text'}
+            name={'reading'}
             type={'text'}
             placeholder={'Введите ваши показания счётчика'}
             onChange={handleUserInput}
@@ -144,9 +145,9 @@ export default function ProvidingGasMeterReadings() {
           />
         </DivInput>
         <DivInputFile>
-          <Label>
-            Фото счётчика<Span>*</Span>
-          </Label>
+          {/*<Label>*/}
+          {/*  Фото счётчика<Span>*</Span>*/}
+          {/*</Label>*/}
           <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
         </DivInputFile>
         <DivInputCheckbox>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import form from './wordFile/forma-zaprosa-TV.docx';
 import prilozhenie from './wordFile/Prilozhenie-A-1-2-2.docx';
 import svedenia from './excel/Svedeniya-ob-osushhestvlyaemyh-vidah-deyatelnosti.xlsx';
@@ -31,7 +31,7 @@ export const data = [
     serviceId: 1,
     cardImg: 1,
     nameCard:
-      'ВЫДАЧА ТЕХНИЧЕСКИХ УСЛОВИЙ НА ПРОЕКТИРОВАНИЕ И ТЕХНИЧЕСКИХ ВОЗМОЖНОСТЕЙ ГАЗОСНАБЖЕНИЯ ОБЪЕКТОВ',
+      'Выдача технических условий на проектирование и технических возможностей газоснабжения объектов',
     description: (
       <div>
         <h3>Выдача технических условий.</h3>
@@ -115,7 +115,6 @@ export const data = [
             </li>
           </ul>
         </p>
-        <h3></h3>
         <p>
           Для определения технической возможности газоснабжения объекта в адрес УП «МИНГАЗ»
           необходимо направлять запрос по следующей
@@ -129,7 +128,7 @@ export const data = [
   {
     serviceId: 2,
     cardImg: 2,
-    nameCard: 'ПРИРОДНЫЙ ГАЗ ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ',
+    nameCard: 'Природный газ для юридических лиц',
     description: (
       <div>
         <p>
@@ -198,7 +197,7 @@ export const data = [
               Характеристика объекта
             </a>
             (
-            <a href={GMK} target="_blank" rel="noopener">
+            <a href={GMK} target="_blank" rel="noopener noreferrer">
               Образец заполнения
             </a>
             )
@@ -221,10 +220,10 @@ export const data = [
           приемки-передачи природного газа с 1-го по 10-ое число месяца, следующего за отчетным в
           каб. 118, ул.Ботаническая, подъезд 2.
         </p>
-        <a target="_blank" rel="noopener" href={obrazets_acta}>
+        <a target="_blank" rel="noopener noreferrer" href={obrazets_acta}>
           Образец акта приемки – передачи природного газа
         </a>
-        <a target="_blank" rel="noopener" href={obrazets_acta}>
+        <a target="_blank" rel="noopener noreferrer" href={obrazets_acta}>
           Доступ к информации о параметрах расхода газа
         </a>
         <div>
@@ -265,7 +264,7 @@ export const data = [
   {
     serviceId: 3,
     cardImg: 3,
-    nameCard: 'РЕГИСТРАЦИЯ ОБЪЕКТОВ СТРОИТЕЛЬСТВА',
+    nameCard: 'Регистрация объектов строительства',
     description: (
       <div>
         <p>
@@ -370,7 +369,7 @@ export const data = [
   {
     serviceId: 4,
     cardImg: 4,
-    nameCard: 'СЖИЖЕННЫЙ УГЛЕВОДОРОДНЫЙ ГАЗ ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ',
+    nameCard: 'Сжиженный углеводородный газ для юридических лиц',
     description: (
       <div>
         <h3>ОТПУСК СЖИЖЕННОГО ГАЗА В 50-ТИ ЛИТРОВЫХ БАЛЛОНАХ</h3>
@@ -433,7 +432,6 @@ export const data = [
         <h3>ДОСТАВКА И РЕАЛИЗАЦИЯ СЖИЖЕННОГО ГАЗА В 50-ТИ ЛИТРОВЫХ БАЛЛОНАХ</h3>
         <div>
           <p>
-            {' '}
             УП «МИНГАЗ» на договорной основе оказывает услуги по доставке и реализации сжиженного
             углеводородного газа (СУГ) марки СПБТ (СТБ 2262-2012) в 50-ти литровых баллонах на
             склады хранения баллонов садовых товариществ г.Минска и Минского района.
@@ -460,7 +458,6 @@ export const data = [
             </li>
           </ul>
           <p>
-            {' '}
             Телефон бухгалтерии по вопросам оплаты и сверки денежных средств по заключенным
             договорам: +375 (17)299-28-35.
           </p>
@@ -476,7 +473,7 @@ export const data = [
   {
     serviceId: 5,
     cardImg: 5,
-    nameCard: 'ПОВЕРКА СРЕДСТВ ИЗМЕРЕНИЙ',
+    nameCard: 'Поверка средств измерений',
     description: (
       <div>
         <ul>
@@ -530,7 +527,7 @@ export const data = [
   {
     serviceId: 6,
     cardImg: 6,
-    nameCard: 'ТАРИФЫ НА СЖИЖЕННЫЙ ГАЗ ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ',
+    nameCard: 'Тарифы на сжиженный газ для юридических лиц',
     description: (
       <div>
         <p>
@@ -545,7 +542,7 @@ export const data = [
     serviceId: 7,
     cardImg: 7,
     nameCard:
-      'ПОРЯДОК ПОДКЛЮЧЕНИЯ К ГАЗОРАСПРЕДЕЛИТЕЛЬНОЙ СИСТЕМЕ ВНОВЬ ВВОДИМОГО В ЭКСПЛУАТАЦИЮ МНОГОКВАРТИРНОГО ЖИЛОГО ФОНДА',
+      'Порядок подключения к газораспределительной системе вновь вводимого в эксплуатацию многоквартирного жилого фонда',
     description: (
       <div>
         <ul>
@@ -566,7 +563,7 @@ export const data = [
   {
     serviceId: 8,
     cardImg: 8,
-    nameCard: 'ПРОВЕДЕНИЕ ЭЛЕКТРОФИЗИЧЕСКИХ ИЗМЕРЕНИЙ',
+    nameCard: 'Проведение электрофизических измерений',
     description: (
       <div>
         <ul>
@@ -598,7 +595,7 @@ export const data = [
   {
     serviceId: 9,
     cardImg: 9,
-    nameCard: 'ПРОВЕДЕНИЕ НЕРАЗРУШАЮЩЕГО КОНТРОЛЯ И ТЕХНИЧЕСКОЙ ДИАГНОСТИКИ',
+    nameCard: 'Проведение неразрушающего контроля и технической диагностики',
     description: (
       <div>
         <ul>
@@ -630,7 +627,7 @@ export const data = [
   {
     serviceId: 10,
     cardImg: 10,
-    nameCard: 'ПЕРЕДАЧА НА БАЛАНС УП «МИНГАЗ» ОБЪЕКТОВ ГАЗОРАСПРЕДЕЛИТЕЛЬНОЙ СИСТЕМЫ',
+    nameCard: 'Передача на баланс УП «МИНГАЗ» объектов газораспределительной системы',
     description: (
       <div>
         <p>
@@ -710,7 +707,7 @@ export const data = [
   {
     serviceId: 10,
     cardImg: 10,
-    nameCard: 'ВЫДАЧА РАЗРЕШЕНИЯ НА ПРАВО ПРОИЗВОДСТВА СТРОИТЕЛЬНЫХ И ЗЕМЛЯНЫХ РАБОТ',
+    nameCard: 'Выдача разрешения на право производства строительных и земляных работ',
     description: (
       <div>
         <p>
@@ -723,7 +720,7 @@ export const data = [
         </a>
         <p>
           На едином портале электронных услуг (
-          <a rel={'noopener'} target={'_blank'} href={'https://portal.gov.by/'}>
+          <a rel={"noopener noreferrer"} target={'_blank'} href={'https://portal.gov.by/'}>
             portal.gov.by
           </a>
           ) доступна административная процедура (далее – АП) «Выдача разрешения на право
@@ -767,7 +764,7 @@ export const data = [
     serviceId: 11,
     cardImg: 11,
     nameCard:
-      'ПЕРЕЧЕНЬ ДОКУМЕНТОВ НЕОБХОДИМЫХ ДЛЯ ВОЗОБНОВЛЕНИЯ ГАЗОСНАБЖЕНИЯ, В ТОМ ЧИСЛЕ К НАЧАЛУ ОТОПИТЕЛЬНОГО СЕЗОНА',
+      'Перечень документов необходимых для возобновления газоснабжения, в том числе к началу отопительного сезона',
     description: (
       <div>
         <p>
@@ -791,7 +788,7 @@ export const data = [
                   Характеристика объекта
                 </a>
                 (
-                <a href={GMK} target="_blank" rel="noopener">
+                <a href={GMK} target="_blank" rel="noopener noreferrer">
                   Образец заполнения
                 </a>
                 )
@@ -819,7 +816,6 @@ export const data = [
             Для организаций, объекты газопотребления которых находятся на техническом обслуживании
             сторонней организации (факс +37517 272-75-12, e-mail: seug@mingas.by ):
             <p>
-              {' '}
               Образец письма в <a href={prilozanie_plombi}>Приложение№2</a>.
             </p>
           </li>
@@ -836,7 +832,7 @@ export const data = [
   {
     serviceId: 12,
     cardImg: 12,
-    nameCard: 'ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ И РЕМОНТ ГАЗОВОГО И ГАЗОИСПОЛЬЗУЮЩЕГО ОБОРУДОВАНИЯ',
+    nameCard: 'Техническое обслуживание и ремонт газового и газоиспользующего оборудования',
     description: (
       <div>
         <ul>
@@ -872,7 +868,7 @@ export const data = [
   {
     serviceId: 13,
     cardImg: 11,
-    nameCard: 'УСЛУГИ, ОТНОСЯЩИЕСЯ К СФЕРАМ ДЕЯТЕЛЬНОСТИ СУБЪЕКТОВ ЕСТЕСТВЕННЫХ МОНОПОЛИЙ',
+    nameCard: 'Услуги, относящиеся к сферам деятельности субъектов естественных монополий',
     description: (
       <div>
         <h4>
