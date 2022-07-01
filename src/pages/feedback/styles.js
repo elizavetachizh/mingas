@@ -24,13 +24,19 @@ export const Button = styled.button`
   cursor: pointer;
   transition: 0.8s linear;
   &:hover {
-    border: solid black;
+    border: solid  #0d4475;
     color: #fff; /* Цвет текста */
     background: #0d4475; /* Цвет фона */
     padding: 10px;
   }
   &:focus {
-    border: solid black;
+    border: solid  #0d4475;
+    color: #fff; /* Цвет текста */
+    background: #0d4475; /* Цвет фона */
+    padding: 10px;
+  }
+  &:active {
+    border: solid  #0d4475;
     color: #fff; /* Цвет текста */
     background: #0d4475; /* Цвет фона */
     padding: 10px;

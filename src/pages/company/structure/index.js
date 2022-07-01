@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from "react";
 import { Container } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
@@ -21,6 +21,7 @@ import up from '../../../assets/png/up_arrow_round.png';
 import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
 import { t } from 'i18next';
 import photoHistory from '../../../assets/management/0.jpg';
+import Aos from "aos";
 
 export default function Structure() {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -31,6 +32,9 @@ export default function Structure() {
   }, []);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
+  }, []);
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
   }, []);
   return (
     <Container>

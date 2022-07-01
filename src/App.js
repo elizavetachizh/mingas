@@ -34,6 +34,7 @@ import SearchPage from './pages/SearchPage';
 import DopFunctional from './pages/services/servicesForLegalEntities/CardOfService';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
 import Gratitude from './pages/company/Gratitude';
+import MethodPayment from './components/MethodPayment';
 function App() {
   const makeAPICall = async () => {
     try {
@@ -65,6 +66,7 @@ function App() {
         <Route path="/company/management" element={<Management />} />
         <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
         <Route path="/services/:nameCard" element={<NaturalGas />} />
+        <Route path="/services/method-payment" element={<MethodPayment />} />
         <Route path="/company/structure/" element={<Structure />} />
         <Route path="/company/career/" element={<Career />} />
         <Route path="/company/branches" element={<Branches />} />

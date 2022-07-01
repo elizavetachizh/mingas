@@ -42,7 +42,6 @@ import personal from '../../assets/icons/user.png';
 import { AutocompleteSuggestions, Button, Form, Input } from '../../pages/Home/Serch/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { data } from '../../assets/data_services';
-// const myRequest = new Request('../../assets/data_services');
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -87,14 +86,6 @@ export default function Header({ backgroundHeader }) {
   );
   const [input, setInput] = useState('');
   const { t } = useTranslation();
-
-  // fetch(myRequest)
-  //   .then(function (resp) {
-  //     return resp.json();
-  //   })
-  //   .then(function (data) {
-  //     console.log(data);
-  //   });
   function onInputFun(event) {
     // console.log(this.value);
     const value = event.target.value.trim();
@@ -173,7 +164,7 @@ export default function Header({ backgroundHeader }) {
                 <DivButtonHeader>
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
                   {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
-                  <ButtonLink to="/company/structure">Руководство предприятия</ButtonLink>
+                  <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
                   <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/documentation">

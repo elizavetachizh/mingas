@@ -1,11 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from "react";
 
 import { t } from 'i18next';
 import photoHistory from '../../../assets/management/0.jpg';
 import WhatDoingMinGaz from '../history/whatDoingMinGaz';
 import { Container, Description, DivLeadersPhotoPosition } from './styles';
 import Header from '../../../components/header';
-import ContentHome from '../../Home/Content';
 import HeaderCompany from '../header_company';
 import {
   DivText,
@@ -21,6 +20,7 @@ import Footer from '../../../components/footer';
 import up from '../../../assets/png/up_arrow_round.png';
 import Leaders from './divmagement';
 import Modal from "../../../components/modalWindow";
+import Aos from "aos";
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -30,6 +30,9 @@ export default function Management() {
   }, []);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
+  }, []);
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
   }, []);
   return (
     <Container>

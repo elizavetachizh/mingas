@@ -187,6 +187,7 @@ export default function History() {
             Евгеньевич.
           </div>
         </DivParagraphHistory>
+
       </AdditionalDiv>
       <Footer />
     </Container>

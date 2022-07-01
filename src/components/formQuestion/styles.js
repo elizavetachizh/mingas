@@ -115,18 +115,30 @@ export const InputFile = styled.input`
 `;
 
 export const Button = styled.button`
-  color: white;
-  background-color: #0d4475;
+  color: #0d4475;
+  background: none;
   font-size: 16px;
   font-weight: 500;
-  width: 200px;
+  width: 240px;
   text-align: center;
   text-decoration: none;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 60px;
   margin: 4% auto;
   cursor: pointer;
+  transition: 0.8s linear;
+  &:hover {
+    border: solid #0d4475;
+    color: #fff; /* Цвет текста */
+    background: #0d4475; /* Цвет фона */
+    padding: 10px;}
+  &:focus {
+    border: solid #0d4475;
+    color: #fff; /* Цвет текста */
+    background: #0d4475; /* Цвет фона */
+    padding: 10px;
+  }
 `;

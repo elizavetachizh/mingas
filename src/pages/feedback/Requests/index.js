@@ -11,9 +11,6 @@ const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
 };
-const styledGas = {
-  background: `url(${gas})  no-repeat`,
-};
 export default function Requests() {
   return (
     <Container>

@@ -1,5 +1,6 @@
 import inform from './pdf/O-prodazhe-tovarov-i-ili-predostavlenii-uslug-v-rassrochku_2.pdf';
 import sample from '../assets/wordFile/sample.docx';
+import { NavLink } from "react-router-dom";
 const styleOl = {
   fontWeight: 'bold',
 };
@@ -456,7 +457,7 @@ export const data = [
         </p>
         <p>
           Оплата может быть произведена в системе «Расчёт» ЕРИП не позднее 25-го числа месяца,
-          следующего за месяцем выполнения работ: <a>способы оплаты</a>
+          следующего за месяцем выполнения работ: <NavLink to={'/services/method-payment'}>способы оплаты</NavLink>
         </p>
         <p>
           Оплата за выполненные работы и использованные материалы взимается, согласна Прейскуранта,
