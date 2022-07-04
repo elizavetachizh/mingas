@@ -11,6 +11,13 @@ export const HeaderBtnFeedback = styled.div`
   max-width: 29%;
   //margin: 0 2%;
   height: 300px;
+  @media(max-width: 700px) {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+  }
 `;
 export const Button = styled.button`
   color: #0d4475;
@@ -41,7 +48,7 @@ export const Button = styled.button`
     background: #0d4475; /* Цвет фона */
     padding: 10px;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 700px) {
     text-align: center;
   }
 `;
@@ -57,7 +64,7 @@ export const ButtonForms = styled.div`
   flex-direction: row;
   max-width: 1140px;
   margin: 2% auto;
-  @media (max-width: 640px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
 `;
@@ -78,6 +85,10 @@ export const Divbackground = styled.div`
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
   }
+  @media(max-width: 640px) {
+    width: 640px;
+  }
+  
 `;
 export const DivImage = styled.div`
   height: 470px;

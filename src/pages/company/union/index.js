@@ -6,9 +6,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import napravlenie from '../../../assets/union/napravlenie.jpg';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import { Title } from '../../Home/useful_information/styles';
 import Footer from '../../../components/footer';
-import HeaderCompany from '../header_company';
+import TitleFun from '../../../components/title';
 
 export default function Union() {
   useEffect(() => {
@@ -17,9 +16,8 @@ export default function Union() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      <HeaderCompany></HeaderCompany>
       <AdditionalDiv>
-        <Title>Первичная профсоюзная организация УП «МИНГАЗ»</Title>
+        <TitleFun color={'blue'} infoTitle={'Первичная профсоюзная организация УП «МИНГАЗ»'} />
         <div className={'grids'}>
           <div className={'text--div'}>
             <div className={'boxes'} data-aos={'fade-up'}>
@@ -87,7 +85,7 @@ export default function Union() {
             </div>
           </div>
           <div className={'img--div'} data-aos={'fade-up'}>
-            <img src={napravlenie}></img>
+            <img src={napravlenie} alt={''} />
           </div>
         </div>
       </AdditionalDiv>

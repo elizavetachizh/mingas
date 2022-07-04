@@ -6,10 +6,14 @@ import { LinkToCallRepresentative } from './styles';
 export default function ApplicationToCallRepresentativeOfGasSupplyOrganization() {
   return (
     <DivApplication>
+      <TitleFun
+        color={'blue'}
+        infoTitle={'  Заявка на вызов представителя газоснабжающей организации'}
+      />
       <LinkToCallRepresentative href={'https://gasification.mingas.by:5003/'}>
-        Заявка на вызов представителя газоснабжающей организации
+        <img src={control} alt={''}/>
+        Оставить заявку
       </LinkToCallRepresentative>
-      <img src={control} />
     </DivApplication>
   );
 }

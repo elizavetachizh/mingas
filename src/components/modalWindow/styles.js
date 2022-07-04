@@ -35,6 +35,7 @@ export const InformModal = styled.div`
 `;
 
 export const Close = styled.img`
+  display: flex;
   cursor: pointer;
   width: 16px;
   height: 16px;

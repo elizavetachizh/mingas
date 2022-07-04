@@ -8,7 +8,7 @@ export default function ServicesList({ imgCard, nameCard, serviceId, description
     navigate(`/services/legal-entities/${nameCard}`);
   }, []);
   return (
-    <DivServicesList onClick={() => handlerLinkClick(nameCard)}>
+    <DivServicesList to={`/services/legal-entities/${nameCard}`}>
       <Image src={require(`../../../../assets/icons_services/${imgCard}.png`)} />
       <DivInformService>
         <Name>{nameCard}</Name>

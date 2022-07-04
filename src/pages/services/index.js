@@ -13,6 +13,7 @@ import axios from 'axios';
 
 const API = 'https://smiddle.mingas.by/';
 export default function Services() {
+
   const [active, setActive] = useState('FoIndividuals');
   useEffect(() => {
     // set our variable to true

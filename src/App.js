@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NoMatch from './pages/noMatch';
 import Home from './pages/Home';
@@ -31,7 +31,6 @@ import './App.css';
 import '../src/web_chat/static/css/main.bbd16e91.css';
 import ResidentsOfCapitalRegion from './pages/ResidentsOfCapital Region';
 import SearchPage from './pages/SearchPage';
-import DopFunctional from './pages/services/servicesForLegalEntities/CardOfService';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
 import Gratitude from './pages/company/Gratitude';
 import MethodPayment from './components/MethodPayment';
@@ -56,7 +55,6 @@ function App() {
         <Route path="/company/history" element={<History />} />
         <Route path="/contacts" element={<GeneralInform />} />
         <Route path="/press-center" element={<PressCenter />} />
-        {/*<Route path="/Service-Center" element={<ServiceCenter />} />*/}
         <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
         <Route path={'/feedback/online-application'} element={<Requests />} />
         <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />

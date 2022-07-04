@@ -6,31 +6,38 @@ export const HeaderFeedbackDiv = styled.div`
   z-index: 4;
   display: flex;
   flex-direction: column;
-color:#0d4475;
-  margin: 8% auto;
+  color: #0d4475;
+  margin: 12% auto;
+  font-size: 20px;
   width: 100%;
-  @media (max-width: 1320px) {
-    margin-top: 12%;
+  font-weight: bold;
+  @media (max-width: 1100px) {
+    margin-top: 14%;
+  }
+  @media (max-width: 900px) {
+    margin-top: 16%;
+    font-size: 18px;
   }
   @media (max-width: 600px) {
-    margin-top: 16%;
+    margin-top: 24%;
+    width: 620px;
+  }
+  @media (max-width: 500px) {
+    margin-top: 24%;
+    width: 600px;
   }
   @media (max-width: 400px) {
-    margin-top: 24%;
+    margin-top: 30%;
+    width: 620px;
+  }
+  @media (max-width: 330px) {
+    margin-top: 34%;
   }
   hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    @media (max-width: 600px) {
-      width: 90%;
-      margin: 0 16%;
-    }
-    @media (max-width: 400px) {
-      width: 100%;
-      margin: 0 26%;
-    }
+    width: 70%;
   }
 `;
 export const UsefullInformBtn = styled(NavLink)`
@@ -54,5 +61,4 @@ export const DivBtnHeader = styled.div`
   //background-color: white;
   //text-align: center;
   //align-items: center;
-  
-`
+`;

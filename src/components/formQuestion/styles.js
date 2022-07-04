@@ -18,6 +18,7 @@ export const TwoColumnTextAndForm = styled.div`
   display: flex;
   width: 100%;
   max-width: 1100px;
+  margin: 0 auto;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;

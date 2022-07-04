@@ -200,7 +200,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/">Тендеры</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
                   <ButtonLink to="/">Административные процедуры</ButtonLink>
-                  <ButtonLink to="/">Регламинтирующие документы</ButtonLink>
+                  <ButtonLink to="/">Регламентирующие документы</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
 

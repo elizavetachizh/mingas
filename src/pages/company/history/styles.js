@@ -89,7 +89,8 @@ export const PWithImg = styled.div`
     padding: 10px 20px;
   }
   img {
-    width: 300px;
+    width: 400px;
+    height: 500px;
     @media(max-width: 740px) {
       width: 300px;
       height: 600px;
@@ -98,7 +99,7 @@ export const PWithImg = styled.div`
 `;
 
 export const DivParagraphHistory = styled.div`
-  max-width: 850px;
+  max-width: 1100px;
   text-align: justify;
   margin: 0 auto;
   div {
@@ -111,4 +112,14 @@ export const DivParagraphHistory = styled.div`
   @media (max-width: 750px) {
     max-width: 650px;
   }
+`;
+export const ImgBackground = styled.img`
+  position: relative;
+ bottom: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  
 `;

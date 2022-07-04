@@ -8,6 +8,18 @@ export const Table = styled.table`
   @media (max-width: 900px) {
     font-size: 14px;
   }
+  @media(max-width: 610px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media(max-width: 600px) {
+    width: 100%;
+    margin: 0 4%;
+  }
+  @media(max-width: 550px) {
+    width: 100%;
+    margin: 0 8%;
+  }
 `;
 
 export const Thead = styled.thead`
@@ -26,4 +38,5 @@ export const Tbody = styled.tbody`
 `;
 export const SectionTable = styled.section`
   margin-bottom: 6%;
+ 
 `;

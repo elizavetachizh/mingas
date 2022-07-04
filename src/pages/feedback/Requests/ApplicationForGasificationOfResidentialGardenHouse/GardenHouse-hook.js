@@ -22,8 +22,8 @@ export const useGardenHouse = (): UseFormReturnValues => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
       !isValidateEmail(requestValues.email) ||
-      !requestValues.isAgree ||
-      !requestValues.text ||
+       !requestValues.isAgree ||
+      // !requestValues.text ||
       !requestValues.address ||
       !requestValues.time ||
       // !requestValues.message ||

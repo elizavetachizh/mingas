@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 
-export const DivServicesList = styled.button`
+export const DivServicesList = styled(NavLink)`
   display: flex;
   flex: 0 0 30%;
-  max-width: 25%;
+  max-width: 28%;
   padding: 1rem;
-  height: 250px;
+  height: 270px;
   margin: 1rem;
   flex-direction: column;
   position: relative;
@@ -25,8 +26,19 @@ export const DivServicesList = styled.button`
     text-decoration-color: rgba(49, 77, 93, 0.6);
     transform: translateY(-1rem);
   }
-  @media (max-width: 590px) {
-    box-shadow: none;
+
+@media (max-width: 800px) {
+ height: 300px;
+}
+  @media (max-width: 800px) {
+    margin: 2rem;
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  @media (max-width: 600px) {
+    margin: 1rem;
+    flex: 0 0 60%;
+    max-width: 60%;
   }
 `;
 

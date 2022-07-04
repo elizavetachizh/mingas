@@ -6,7 +6,6 @@ import FormQuestionForEntity from '../../FormQuestionForEntity';
 export default function ChangeFormQuestion() {
   const [active, setActive] = useState('Individual');
   return (
-    <Container>
       <TwoColumnTextAndForm>
         <OneColumn>
           <Button onClick={() => setActive('Individual')}>Обращение физических лиц</Button>
@@ -17,6 +16,5 @@ export default function ChangeFormQuestion() {
           {active === 'Entity' && <FormQuestionForEntity />}
         </TwoColumn>
       </TwoColumnTextAndForm>
-    </Container>
   );
 }

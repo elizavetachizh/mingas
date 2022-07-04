@@ -19,7 +19,7 @@ export default function ElectronicAppeal() {
         <DivImage style={styled}></DivImage>
       </Divbackground>
       <ChangeFormQuestion />
-      <Footer></Footer>
+      <Footer />
     </Container>
   );
 }

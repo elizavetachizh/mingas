@@ -12,9 +12,8 @@ export const ContainerLeaders = styled.a`
   height: auto;
   outline: 2px solid #0d4475; /* Чёрная рамка */
   border: 3px solid #fff; /* Белая рамка */
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 20px;
   line-height: 20px;
   color: #0d4475;
   &:hover {

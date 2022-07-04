@@ -7,6 +7,7 @@ import { Divbackground, DivImage } from '../styles';
 import minsk from '../../../assets/background/minsk.jpg';
 import HeaderFeedBack from '../HeaderFeedBack';
 import Footer from '../../../components/footer';
+import TitleFun from "../../../components/title";
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
@@ -14,12 +15,12 @@ const styled = {
 export default function ReceptionOfCitizens() {
   return (
     <Container>
-      <Header></Header>
+      <Header backgroundHeader={'blue'}/>
       <HeaderFeedBack />
       <Divbackground>
         <DivImage style={styled}></DivImage>
       </Divbackground>
-      <Title>График приёма граждан</Title>
+      <TitleFun infoTitle={'График приёма граждан'} color={'blue'} />
       <SectionTable>
         <Table>
           <Thead>

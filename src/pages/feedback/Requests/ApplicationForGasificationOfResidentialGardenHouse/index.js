@@ -107,7 +107,7 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
           name={'time'}
           error={errors.time}
           options={OPTIONS_TIME}
-        ></Select>
+         inputName={'time'}></Select>
         <DivInput>
           <Label>
             Производство проектно-изыскательских работ по устройству:<Span>*</Span>
@@ -120,6 +120,7 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
                 inputInform="production"
                 value={'газопровода-ввода'}
                 error={errors.isAgree}
+                onChange={handleCheckBox}
               />
               газопровода-ввода
             </Label>
@@ -132,54 +133,59 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
                 type={'checkbox'}
                 value={'внутридомовой системы газоснабжения'}
                 error={errors.isAgree}
+                onChange={handleCheckBox}
               />
               внутридомовой системы газоснабжения
             </Label>
           </span>
         </DivInput>
-        <DivInput>
-          <Label>
-            Выполнение строительно-монтажных работ по устройству:<Span>*</Span>
-          </Label>
-          <span>
-            <Label>
-              <InputInform
-                name="performance"
-                inputInform="performance"
-                type={'checkbox'}
-                value={'газопровода-ввода'}
-                error={errors.isAgree}
-              />
-              газопровода-ввода
-            </Label>
-          </span>
-          <span>
-            <Label>
-              <InputInform
-                name="performance"
-                inputInform="performance"
-                type={'checkbox'}
-                value={'внутридомовой системы газоснабжения'}
-                error={errors.isAgree}
-              />
-              внутридомовой системы газоснабжения
-            </Label>
-          </span>
-        </DivInput>
-        <DivInputCheckbox>
-          <InputInform
-            type="checkbox"
-            span={'*'}
-            onChange={handleCheckBox}
-            checked={requestValues.isAgree}
-            inputName="isAgree"
-            error={errors.isAgree}
-          />
-          <Label>
-            Согласен на обработку данных
-            <Span>*</Span>
-          </Label>
-        </DivInputCheckbox>
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    Выполнение строительно-монтажных работ по устройству:<Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <span>*/}
+        {/*    <Label>*/}
+        {/*      <InputInform*/}
+        {/*        name="performance"*/}
+        {/*        inputInform="performance"*/}
+        {/*        type={'checkbox'}*/}
+        {/*        value={'газопровода-ввода'}*/}
+        {/*        error={errors.isAgree}*/}
+        {/*        onChange={handleCheckBox}*/}
+        {/*      />*/}
+        {/*      газопровода-ввода*/}
+        {/*    </Label>*/}
+        {/*  </span>*/}
+        {/*  <span>*/}
+        {/*    <Label>*/}
+        {/*      <InputInform*/}
+        {/*        name="performance"*/}
+        {/*        inputInform="performance"*/}
+        {/*        type={'checkbox'}*/}
+        {/*        value={'внутридомовой системы газоснабжения'}*/}
+        {/*        error={errors.isAgree}*/}
+        {/*        onChange={handleCheckBox}*/}
+        {/*      />*/}
+        {/*      внутридомовой системы газоснабжения*/}
+        {/*    </Label>*/}
+        {/*  </span>*/}
+        {/*</DivInput>*/}
+        {/*<DivInputCheckbox>*/}
+        {/*  <InputInform*/}
+        {/*    type="checkbox"*/}
+        {/*    span={'*'}*/}
+        {/*    onChange={handleCheckBox}*/}
+        {/*    checked={requestValues.isAgree}*/}
+        {/*    inputName="isAgree"*/}
+        {/*    error={errors.isAgree}*/}
+        {/*    inputInform={'isAgree'}*/}
+        {/*    value={' Согласен на обработку данных'}*/}
+        {/*  />*/}
+        {/*  <Label>*/}
+        {/*    Согласен на обработку данных*/}
+        {/*    <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*</DivInputCheckbox>*/}
         <Button
           disabled={isButtonDisabled}
           type="submit"
