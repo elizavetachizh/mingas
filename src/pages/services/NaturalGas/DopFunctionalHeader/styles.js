@@ -41,3 +41,18 @@ export const BtnLink = styled(NavLink)`
     max-width: 60%;
   }
 `;
+
+export const Calculater = styled.a`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease-in-out;
+  height: 50px;
+  border: 1px solid #0d4475;
+  color: white !important;
+  background-color: #6ec1e4;
+  &:hover {
+    background-color: #0d4475;
+  }
+`

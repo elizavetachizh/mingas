@@ -21,9 +21,12 @@ import {
   DivFirstHeader,
   Div104,
   DivPersonalAcc,
+  DropdownBlock,
+  DivButtonBlock,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import eye from '../../assets/png/visibilitys.png';
+import next from '../../assets/png/next.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
 import search from '../../assets/png/search.svg';
@@ -42,6 +45,7 @@ import personal from '../../assets/icons/user.png';
 import { AutocompleteSuggestions, Button, Form, Input } from '../../pages/Home/Serch/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { data } from '../../assets/data_services';
+import { NavLink } from 'react-router-dom';
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -151,7 +155,7 @@ export default function Header({ backgroundHeader }) {
                 <Button style={searchStyle} type={'submit'} />
               </Form>
               {/*<Searchicon></Searchicon>*/}
-              <PersonalAccButton to={'/Personal'}>
+              <PersonalAccButton href={'https://service.mingas.by:5200/'}>
                 <img src={personal} alt={''} />{' '}
                 <DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>
               </PersonalAccButton>
@@ -179,7 +183,15 @@ export default function Header({ backgroundHeader }) {
                 <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services">Услуги</ButtonLink>
-                  <ButtonLink to="/">Тарифы</ButtonLink>
+                  <ButtonLink to="/liquefied-gas-tariff">
+                    Тарифы
+                    <img alt={''} src={next} />
+                    <span>
+                      <NavLink to="/liquefied-gas-tariff">Тарифы на сжиженный газ</NavLink>
+                      <NavLink to="/natural-gas-tariff">Тарифы на природный газ</NavLink>
+                    </span>
+                  </ButtonLink>
+
                   <ButtonLink to="/">Графики</ButtonLink>
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
                   <ButtonLink to="/">Обратная связь</ButtonLink>

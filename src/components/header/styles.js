@@ -210,7 +210,7 @@ export const CompanyButton = styled(NavLink)`
 export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
-export const PersonalAccButton = styled(NavLink)`
+export const PersonalAccButton = styled.a`
   text-decoration: none;
   justify-content: space-around;
   display: flex;
@@ -246,21 +246,21 @@ export const DivButtonHeader = styled.div`
 export const Dropdown = styled.div`
   position: relative;
   display: inline-block;
-  &:hover button {
-    background-color: #000;
-    color: #314d5c !important;
-  }
+  //&:hover a {
+  //  background-color: #000;
+  //  color: #314d5c !important;
+  //}
 
   &:hover div {
     display: flex;
     width: auto;
-    min-width: 200px;
+    min-width: 220px;
     height: auto;
     align-items: flex-start;
     flex-direction: column;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    background-color: #f1f1f1;
-    padding: 10px;
+    //box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    background-color: #e8f3ff;
+    padding: 14px;
   }
   &:hover div a {
     margin: 5%;
@@ -344,4 +344,43 @@ export const DivPersonalAcc = styled.div`
   @media (max-width: 900px) {
     display: none;
   }
+`;
+
+export const DropdownBlock = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover a {
+    background-color: #000;
+    color: #314d5c !important;
+  }
+
+  &:hover div {
+    display: flex !important;
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+    //padding: 10px;
+  }
+  &:hover div a {
+    margin: 5%;
+    display: flex !important;
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+    //padding: 10px;
+  }
+`;
+
+export const DivButtonBlock = styled.div`
+  display: none !important;
+  position: absolute;
+  
 `;

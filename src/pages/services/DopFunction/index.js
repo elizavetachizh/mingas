@@ -19,8 +19,8 @@ export default function DopFunctionService({ name, description }) {
   };
   return (
     <AdditionalDiv>
-      <button onClick={animate}>{name}</button>
-      {open && <DescriptionService>{description}</DescriptionService>}
+      <TitleFun color={'blue'} infoTitle={name} />
+      <DescriptionService>{description}</DescriptionService>}
     </AdditionalDiv>
   );
 }

@@ -34,6 +34,8 @@ import SearchPage from './pages/SearchPage';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
 import Gratitude from './pages/company/Gratitude';
 import MethodPayment from './components/MethodPayment';
+import NaturalGasTariff from "./pages/tariff/naturalGasTariff";
+import LiquefiedGasTariff from "./pages/tariff/liquefiedGasTariff";
 function App() {
   const makeAPICall = async () => {
     try {
@@ -86,6 +88,8 @@ function App() {
         <Route path={'/Personal'} element={<Personal />} />
         <Route path={'/Personal/tasks'} element={<Tasks />} />
         <Route path={'/SearchPage'} element={<SearchPage />} />
+        <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff/>}/>
+        <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff/>}/>
       </Routes>
 
       {/*<link rel="stylesheet" href="../../src/web_chat/static/css/main.bbd16e91.css" />*/}

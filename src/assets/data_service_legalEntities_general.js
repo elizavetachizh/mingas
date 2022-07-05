@@ -220,12 +220,22 @@ export const data = [
           приемки-передачи природного газа с 1-го по 10-ое число месяца, следующего за отчетным в
           каб. 118, ул.Ботаническая, подъезд 2.
         </p>
-        <a target="_blank" rel="noopener noreferrer" href={obrazets_acta}>
-          Образец акта приемки – передачи природного газа
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href={obrazets_acta}>
-          Доступ к информации о параметрах расхода газа
-        </a>
+        <ul>
+          <li>
+            <a target="_blank" rel="noopener noreferrer" href={obrazets_acta}>
+              Образец акта приемки – передачи природного газа
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={'https://mingas.by/dostup-k-informacii-o-parametrah-rashoda-gaza/'}
+            >
+              Доступ к информации о параметрах расхода газа
+            </a>
+          </li>
+        </ul>
         <div>
           <button>ЦЕНЫ НА ПРИРОДНЫЙ ГАЗ ДЛЯ ЮРИДИЧЕСКИХ ЛИЦ</button>
           <a className={'open-link'} href={tseni_Gas} download>
@@ -720,7 +730,7 @@ export const data = [
         </a>
         <p>
           На едином портале электронных услуг (
-          <a rel={"noopener noreferrer"} target={'_blank'} href={'https://portal.gov.by/'}>
+          <a rel={'noopener noreferrer'} target={'_blank'} href={'https://portal.gov.by/'}>
             portal.gov.by
           </a>
           ) доступна административная процедура (далее – АП) «Выдача разрешения на право

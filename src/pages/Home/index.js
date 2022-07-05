@@ -13,6 +13,7 @@ import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
 import useMediaQuery from './parallax/useMediaQuery';
 import '../../web_chat/static/css/main.bbd16e91.css';
 import TitleFun from '../../components/title';
+// import calculate from '../../components/calculate/index.html'
 export default function Home() {
   return (
     <Container>
@@ -25,6 +26,8 @@ export default function Home() {
 
         <HeaderRequests />
         <News />
+        {/*<iframe src={calculate}></iframe>*/}
+        {/*<a href={calculate}>calculate</a>*/}
       </HomeContainer>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />

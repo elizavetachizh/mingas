@@ -1,6 +1,7 @@
 import inform from './pdf/O-prodazhe-tovarov-i-ili-predostavlenii-uslug-v-rassrochku_2.pdf';
 import sample from '../assets/wordFile/sample.docx';
 import { NavLink } from "react-router-dom";
+import { Calculater } from "../pages/services/NaturalGas/DopFunctionalHeader/styles";
 const styleOl = {
   fontWeight: 'bold',
 };
@@ -1051,6 +1052,7 @@ export const data = [
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
+        <Calculater href={'https://mingas.by/calculate/'}>Калькулятор стоимости услуг</Calculater>
         <p>
           Услуги по газификации одноквартирного жилого дома природным газом (при наличии
           существующих уличных распределительных газопроводов) с оказанием гражданину комплексной
