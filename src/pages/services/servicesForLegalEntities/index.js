@@ -7,7 +7,7 @@ import TitleFun from '../../../components/title';
 import { DivServices } from '../styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-import { data } from '../../../assets/data_service_legalEntities_general';
+import { dataLegalEntities } from '../../../assets/data_service_legalEntities_general';
 import ServicesList from './serviceList';
 
 export default function ServicesForLegalEntities() {
@@ -17,7 +17,7 @@ export default function ServicesForLegalEntities() {
       <AdditionalDiv>
         <TitleFun color={'blue'} infoTitle={'Услуги для бизнеса'} />
         <DivServices>
-          {data.map((element) => (
+          {dataLegalEntities.map((element) => (
             <ServicesList
               serviceId={element.serviceId}
               imgCard={element.cardImg}

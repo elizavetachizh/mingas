@@ -44,7 +44,7 @@ import { AutocompleteSuggestions, Button, Form, Input } from '../../pages/Home/S
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { data } from '../../assets/data_services';
 import { NavLink } from 'react-router-dom';
-import SearchPage from "../../pages/SearchPage";
+import SearchPage from '../../pages/SearchPage';
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -153,7 +153,7 @@ export default function Header({ backgroundHeader }) {
               {/*  <AutocompleteSuggestions />*/}
               {/*  <Button style={searchStyle} type={'submit'} />*/}
               {/*</Form>*/}
-              {/*<SearchPage/>*/}
+              <SearchPage />
               {/*<Searchicon></Searchicon>*/}
               <PersonalAccButton href={'https://service.mingas.by:5200/'}>
                 <img src={personal} alt={''} />
