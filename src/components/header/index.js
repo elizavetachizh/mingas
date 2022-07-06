@@ -44,6 +44,7 @@ import { AutocompleteSuggestions, Button, Form, Input } from '../../pages/Home/S
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { data } from '../../assets/data_services';
 import { NavLink } from 'react-router-dom';
+import SearchPage from "../../pages/SearchPage";
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -88,36 +89,36 @@ export default function Header({ backgroundHeader }) {
   );
   const [input, setInput] = useState('');
   const { t } = useTranslation();
-  function onInputFun(event) {
-    // console.log(this.value);
-    const value = event.target.value.trim();
-    if (value !== '') {
-      data.forEach((element) => {
-        console.log(element);
-
-        if (element.nameCard.search(value) === -1) {
-          console.log(element.nameCard);
-          return (
-            <div>
-              {data.map((element) => (
-                <div>
-                  serviceId={element.serviceId}
-                  imgCard={element.cardImg}
-                  nameCard={element.nameCard}
-                  description={element.description}
-                </div>
-              ))}
-            </div>
-          );
-        }
-        if (element.nameCard.search(value) === element.nameCard) {
-          console.log(element);
-        }
-      });
-    }
-    setInput(event.target.value);
-    console.log(event.target.value);
-  }
+  // function onInputFun(event) {
+  //   // console.log(this.value);
+  //   const value = event.target.value.trim();
+  //   if (value !== '') {
+  //     data.forEach((element) => {
+  //       console.log(element);
+  //
+  //       if (element.nameCard.search(value) === -1) {
+  //         console.log(element.nameCard);
+  //         return (
+  //           <div>
+  //             {data.map((element) => (
+  //               <div>
+  //                 serviceId={element.serviceId}
+  //                 imgCard={element.cardImg}
+  //                 nameCard={element.nameCard}
+  //                 description={element.description}
+  //               </div>
+  //             ))}
+  //           </div>
+  //         );
+  //       }
+  //       if (element.nameCard.search(value) === element.nameCard) {
+  //         console.log(element);
+  //       }
+  //     });
+  //   }
+  //   setInput(event.target.value);
+  //   console.log(event.target.value);
+  // }
   return (
     <Container backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
@@ -147,11 +148,12 @@ export default function Header({ backgroundHeader }) {
               {/*    </span>*/}
               {/*  </fieldset>*/}
               {/*</form>*/}
-              <Form>
-                <Input onChange={onInputFun} type={'text'} placeholder={'Поиск по сайту'} />
-                <AutocompleteSuggestions />
-                <Button style={searchStyle} type={'submit'} />
-              </Form>
+              {/*<Form>*/}
+              {/*  <Input onChange={onInputFun} type={'text'} placeholder={'Поиск по сайту'} />*/}
+              {/*  <AutocompleteSuggestions />*/}
+              {/*  <Button style={searchStyle} type={'submit'} />*/}
+              {/*</Form>*/}
+              {/*<SearchPage/>*/}
               {/*<Searchicon></Searchicon>*/}
               <PersonalAccButton href={'https://service.mingas.by:5200/'}>
                 <img src={personal} alt={''} />

@@ -1,42 +1,49 @@
 import React, { useState } from 'react';
 import { data } from '../../assets/data_services';
+import { AutocompleteSuggestions, Button, Form, Input } from '../Home/Serch/styles';
+import search from '../../assets/png/search.svg';
 
 export default function SearchPage() {
+  const searchStyle = {
+    backgroundImage: `url(${search})`,
+  };
   const [message, setMessage] = useState('');
-
+  const result = [];
   const handleChange = (event) => {
     setMessage(event.target.value);
-    // data.forEach((element) => {
-    //   if (event.target.value === element.nameCard) {
-    //     console.log(element);
-    //   }
-    //   if (element.nameCard.search(event.target.value) === -1) {
-    //     console.log(element.nameCard);
-    //     console.log(event.target.value);
-    //   }
-    // });
-  //   let results = data.filter(function (entry) {
-  //
-  //     console.log(`results: ${entry.nameCard === event.target.value}`);
-  //     return <h2>{entry.nameCard}</h2>;
-  //   });
-  //   console.log(`results ${results}`);
-    let result;
-    Object.(data).forEach(key => {
-      if (key.includes(event.target.value)) {
-        result = data[key]
-      }
-    });
-    console.log(result)
-   };
-
-
+    console.log(event.target.value);
+  };
+  data.map((card) => {
+    if (card.nameCard.includes(message)) {
+      result.push(card);
+    }
+  });
+  const renderResult = () => {
+    return (
+      <>
+        {result.map((element) => {
+          return <div>{element.nameCard}</div>;
+        })}
+      </>
+    );
+  };
 
   return (
-    <div>
-      <input type="text" id="message" name="message" onChange={handleChange} value={message} />
-
-      {message === data.nameCard &&   <h2>Message: {message}</h2>}
-    </div>
+    <>
+      {/*<input type="text" id="message" name="message" onChange={handleChange} value={message} />*/}
+      <Form>
+        <Input
+          type="text"
+          id="message"
+          name="message"
+          onChange={handleChange}
+          value={message}
+          placeholder={'Поиск по сайту'}
+        />
+        <AutocompleteSuggestions />
+        <Button style={searchStyle} type={'submit'} />
+      </Form>
+      {result.length ? renderResult() : null}
+    </>
   );
 }
