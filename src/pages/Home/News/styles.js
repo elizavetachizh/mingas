@@ -5,9 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: #e9f1f5;
-  margin: 0px;
+  margin: 0;
   align-items: center;
-  padding: 50px 0;
+  //padding: 50px 0;
   @media (max-width: 640px) {
     width: 640px;
   }

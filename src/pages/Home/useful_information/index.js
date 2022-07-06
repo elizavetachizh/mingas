@@ -1,5 +1,5 @@
 import React from 'react';
-import { DivUsefulInform, DivInform, UsefulInformContainer, Line } from './styles';
+import { DivUsefulInform, DivInform, UsefulInformContainer } from './styles';
 import { Container } from '../styles';
 import LinkInform from './components_link_inform';
 import { data } from '../../../assets/data';
@@ -14,8 +14,6 @@ export default function UsefulInform() {
     <Container src={background}>
       <BackgroundStyle src={linesOne} />
       <DivUsefulInform>
-        {/*<Search />*/}
-        {/*<Line />*/}
         <UsefulInformContainer>
           <TitleForHome
             color={'blue'}
@@ -27,17 +25,11 @@ export default function UsefulInform() {
               <LinkInform
                 key={element.cardDesc}
                 cardImg={element.cardImg}
-                src={element.cardImg}
                 cardDesc={element.cardDesc}
+                link={element.link}
               />
             ))}
           </DivInform>
-          {/*<ButtonFun*/}
-          {/*  href={'/'}*/}
-          {/*  backgroundColor={'blue'}*/}
-          {/*  justifyContent={'center'}*/}
-          {/*  infoButton={t('infoButton:more')}*/}
-          {/*/>*/}
         </UsefulInformContainer>
       </DivUsefulInform>
     </Container>

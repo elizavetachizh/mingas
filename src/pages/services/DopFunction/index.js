@@ -20,7 +20,7 @@ export default function DopFunctionService({ name, description }) {
   return (
     <AdditionalDiv>
       <TitleFun color={'blue'} infoTitle={name} />
-      <DescriptionService>{description}</DescriptionService>}
+      <DescriptionService>{description}</DescriptionService>
     </AdditionalDiv>
   );
 }

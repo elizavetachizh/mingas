@@ -16,9 +16,10 @@ export const ContainerLeaders = styled.a`
   font-size: 20px;
   line-height: 20px;
   color: #0d4475;
+  transition: 0.6s;
   &:hover {
     text-decoration-color: rgba(49, 77, 93, 0.6);
-    transform: translate(-10px, -10px);
+    transform: scale(1.1);
   }
 `;
 export const ImageLeader = styled.img`

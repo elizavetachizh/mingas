@@ -21,8 +21,6 @@ import {
   DivFirstHeader,
   Div104,
   DivPersonalAcc,
-  DropdownBlock,
-  DivButtonBlock,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import eye from '../../assets/png/visibilitys.png';
@@ -156,7 +154,7 @@ export default function Header({ backgroundHeader }) {
               </Form>
               {/*<Searchicon></Searchicon>*/}
               <PersonalAccButton href={'https://service.mingas.by:5200/'}>
-                <img src={personal} alt={''} />{' '}
+                <img src={personal} alt={''} />
                 <DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>
               </PersonalAccButton>
             </DivFirstHeader>
@@ -182,7 +180,13 @@ export default function Header({ backgroundHeader }) {
               <Dropdown>
                 <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
                 <DivButtonHeader>
-                  <ButtonLink to="/services">Услуги</ButtonLink>
+                  <ButtonLink to="/services">
+                    Услуги <img alt={''} src={next} />
+                    <span>
+                      <NavLink to="/liquefied-gas-tariff">Тарифы на сжиженный газ</NavLink>
+                      <NavLink to="/natural-gas-tariff">Тарифы на природный газ</NavLink>
+                    </span>
+                  </ButtonLink>
                   <ButtonLink to="/liquefied-gas-tariff">
                     Тарифы
                     <img alt={''} src={next} />

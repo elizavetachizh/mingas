@@ -16,12 +16,12 @@ export default function NaturalGas() {
   );
   return (
     <Container>
-      <Header backgroundHeader={'blue'}></Header>
-      {/*<div>*/}
-      {/*  {data.map((element) => (*/}
-      {/*    <DopFunctionalHeader nameCard={element.nameCard} />*/}
-      {/*  ))}*/}
-      {/*</div>*/}
+      <Header backgroundHeader={'blue'} />
+      <div>
+        {data.map((element) => (
+          <DopFunctionalHeader nameCard={element.nameCard}/>
+        ))}
+      </div>
       <DopFunctionService
         name={currentDepartment.nameCard}
         description={currentDepartment.description}

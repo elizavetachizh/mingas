@@ -21,6 +21,7 @@ export const DivServicesList = styled(NavLink)`
   text-decoration: none;
   justify-content: center;
   text-decoration-color: transparent;
+  transition: 0.7s;
   &:hover {
     text-decoration: underline;
     text-decoration-color: rgba(49, 77, 93, 0.6);
