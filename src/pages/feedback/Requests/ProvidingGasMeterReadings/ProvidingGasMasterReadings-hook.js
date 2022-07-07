@@ -23,11 +23,11 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
       !isValidateEmail(requestValues.email) ||
-      !requestValues.isAgree ||
-      !requestValues.text ||
-      !requestValues.address ||
-      !requestValues.time ||
-      !requestValues.reading ||
+      // !requestValues.isAgree ||
+      // !requestValues.text ||
+      // !requestValues.address ||
+      // !requestValues.time ||
+      // !requestValues.reading ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -156,19 +156,9 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     async (event) => {
       event.preventDefault();
       try {
-        await axios({
-          url: process.env.EMAIL,
-          headers: {
-            'Content-type': 'application/json',
-          },
-          params: {
-            requestValues,
-          },
-          method: 'GET',
-          data: null,
-        }).then(({ data }) => {
-          return data;
-        });
+        await axios
+          .post('http://localhost:5000/users/', requestValues)
+          .then((response) => setRequestValues(response.data.respMesg));
       } catch (err) {
         console.log('error', err);
       }

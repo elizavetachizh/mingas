@@ -31,12 +31,12 @@ export default function ProvidingGasMeterReadings() {
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
-    form
+    form,
   } = useProvidingGasMasterReadings();
   return (
     <DivApplication>
       <TitleFun color={'blue'} infoTitle={'предоставление показаний счётчика газа'} />
-      <Form onSubmit={handleSubmit} ref={form}>
+      <Form onSubmit={handleSubmit} ref={form} method={'POST'} action={'sendmail'}>
         <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
@@ -87,83 +87,83 @@ export default function ProvidingGasMeterReadings() {
             span={'*'}
           />
         </DivInput>
-        <DivInput>
-          <Label>
-            {t('form:address')}
-            <Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'address'}
-            type="text"
-            name={'address'}
-            placeholder={'Введите адрес проживания'}
-            onChange={handleUserInput}
-            value={requestValues.address}
-            error={address && errors.address}
-            label={t('form:address')}
-            span={'*'}
-          />
-        </DivInput>
-        <Select
-          label={' Желаемое время для связи:'}
-          span={'*'}
-          onChange={handleChangeTime}
-          value={requestValues.time}
-          inputName={'time'}
-          error={errors.time}
-          options={OPTIONS_TIME}
-        ></Select>
-        <DivInput>
-          <Label>
-            Лицевой счёт: <Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'text'}
-            name={'text'}
-            type={'text'}
-            placeholder={'Введите Лицевой счёт'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-            label={'Лицевой счёт'}
-            span={'*'}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Показания счётчика<Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'reading'}
-            name={'reading'}
-            type={'text'}
-            placeholder={'Введите ваши показания счётчика'}
-            onChange={handleUserInput}
-            value={requestValues.reading}
-            error={errors.reading}
-            span={'*'}
-          />
-        </DivInput>
-        <DivInputFile>
-          {/*<Label>*/}
-          {/*  Фото счётчика<Span>*</Span>*/}
-          {/*</Label>*/}
-          <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
-        </DivInputFile>
-        <DivInputCheckbox>
-          <InputCheckbox
-            type="checkbox"
-            span={'*'}
-            onChange={handleCheckBox}
-            checked={requestValues.isAgree}
-            inputName="isAgree"
-            error={errors.isAgree}
-          />
-          <Label>
-            Согласен на обработку данных
-            <Span>*</Span>
-          </Label>
-        </DivInputCheckbox>
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    {t('form:address')}*/}
+        {/*    <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputName*/}
+        {/*    inputName={'address'}*/}
+        {/*    type="text"*/}
+        {/*    name={'address'}*/}
+        {/*    placeholder={'Введите адрес проживания'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.address}*/}
+        {/*    error={address && errors.address}*/}
+        {/*    label={t('form:address')}*/}
+        {/*    span={'*'}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
+        {/*<Select*/}
+        {/*  label={' Желаемое время для связи:'}*/}
+        {/*  span={'*'}*/}
+        {/*  onChange={handleChangeTime}*/}
+        {/*  value={requestValues.time}*/}
+        {/*  inputName={'time'}*/}
+        {/*  error={errors.time}*/}
+        {/*  options={OPTIONS_TIME}*/}
+        {/*/>*/}
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    Лицевой счёт: <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputName*/}
+        {/*    inputName={'text'}*/}
+        {/*    name={'text'}*/}
+        {/*    type={'text'}*/}
+        {/*    placeholder={'Введите Лицевой счёт'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.text}*/}
+        {/*    error={errors.text}*/}
+        {/*    label={'Лицевой счёт'}*/}
+        {/*    span={'*'}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    Показания счётчика<Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputName*/}
+        {/*    inputName={'reading'}*/}
+        {/*    name={'reading'}*/}
+        {/*    type={'text'}*/}
+        {/*    placeholder={'Введите ваши показания счётчика'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.reading}*/}
+        {/*    error={errors.reading}*/}
+        {/*    span={'*'}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
+        {/*<DivInputFile>*/}
+        {/*  /!*<Label>*!/*/}
+        {/*  /!*  Фото счётчика<Span>*</Span>*!/*/}
+        {/*  /!*</Label>*!/*/}
+        {/*  <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />*/}
+        {/*</DivInputFile>*/}
+        {/*<DivInputCheckbox>*/}
+        {/*  <InputCheckbox*/}
+        {/*    type="checkbox"*/}
+        {/*    span={'*'}*/}
+        {/*    onChange={handleCheckBox}*/}
+        {/*    checked={requestValues.isAgree}*/}
+        {/*    inputName="isAgree"*/}
+        {/*    error={errors.isAgree}*/}
+        {/*  />*/}
+        {/*  <Label>*/}
+        {/*    Согласен на обработку данных*/}
+        {/*    <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*</DivInputCheckbox>*/}
         <Button
           disabled={isButtonDisabled}
           type="submit"
