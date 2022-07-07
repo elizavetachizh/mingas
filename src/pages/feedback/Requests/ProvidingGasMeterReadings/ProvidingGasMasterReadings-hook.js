@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import * as emailjs from '@emailjs/browser';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
+import axios from 'axios';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
@@ -100,8 +101,17 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   );
   const handleFileInput = useCallback(
     (event: { target: { files: FileList } }) => {
+      let reader = new FileReader();
       const file = event.target.files[0];
+      reader.onloadend = () => {
+        this.setState({
+          file: file,
+          imagePreviewUrl: reader.result,
+        });
+      };
+      reader.readAsDataURL(file);
       setRequestValues({ ...setRequestValues, fileName: file.name });
+      alert(reader);
     },
     [setRequestValues]
   );
@@ -143,18 +153,37 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   }, []);
 
   const handleSubmit = useCallback(
-    (event) => {
+    async (event) => {
       event.preventDefault();
-      emailjs
-        .sendForm('service_9ojlulb', 'template_twbp1hs', form.current,'Cr7j1nqgFLXsPcHIL')
-        .then(
-          (result) => {
-            console.log(result.text);
+      try {
+        await axios({
+          url: process.env.EMAIL,
+          headers: {
+            'Content-type': 'application/json',
           },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+          params: {
+            requestValues,
+          },
+          method: 'GET',
+          data: null,
+        }).then(({ data }) => {
+          return data;
+        });
+      } catch (err) {
+        console.log('error', err);
+      }
+
+      // emailjs
+      //   .sendForm('service_9ojlulb', 'template_twbp1hs', form.current,'Cr7j1nqgFLXsPcHIL')
+      //   .then(
+      //     (result) => {
+      //       console.log(result.text);
+      //     },
+      //     (error) => {
+      //       console.log(error.text);
+      //     }
+      //   );
+
       clearForm();
       alert('Форма успешно заполнена');
     },
