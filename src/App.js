@@ -36,6 +36,7 @@ import Gratitude from './pages/company/Gratitude';
 import MethodPayment from './components/MethodPayment';
 import NaturalGasTariff from "./pages/tariff/naturalGasTariff";
 import LiquefiedGasTariff from "./pages/tariff/liquefiedGasTariff";
+import ElectronicAppealForEntity from "./pages/feedback/electronicCirculationForEntity";
 function App() {
   const makeAPICall = async () => {
     try {
@@ -60,6 +61,7 @@ function App() {
         <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
         <Route path={'/feedback/online-application'} element={<Requests />} />
         <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
+        <Route path={'/feedback/electronic-appeal-for-entity'} element={<ElectronicAppealForEntity />} />
         <Route path={'/feedback/usefull-information'} element={<UsefulInformation />} />
         <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
         <Route path="/*" element={<NoMatch />} />

@@ -22,7 +22,7 @@ export const Form = styled.form`
   @media (max-width: 1000px) {
     width: 130px;
   }
-  @media(max-width: 800px) {
+  @media (max-width: 800px) {
     width: auto;
   }
 `;
@@ -58,21 +58,13 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  position: absolute;
   top: 4px;
   right: 0.75rem;
-  background: #0d4475 50% 50% no-repeat;
+  background: rgba(0, 0, 0, 0) 50% 50% no-repeat;
   border-radius: 4px;
   width: 42px;
   height: 28px;
   border: 0;
   transition: all 0.3s;
-  @media (max-width: 1000px) {
-    display: none;
-  }
-  @media (max-width: 800px) {
-    display: block;
-    background: rgba(0, 0, 0, 0) 50% 50% no-repeat;
-    position: static;
-  }
+ 
 `;

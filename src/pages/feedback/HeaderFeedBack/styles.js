@@ -12,10 +12,10 @@ export const HeaderFeedbackDiv = styled.div`
   width: 100%;
   font-weight: bold;
   @media (max-width: 1100px) {
-    margin-top: 14%;
+    margin-top: 16%;
   }
   @media (max-width: 900px) {
-    margin-top: 16%;
+    margin-top: 18%;
     font-size: 18px;
   }
   @media (max-width: 600px) {

@@ -5,6 +5,7 @@ export const Select = styled.select`
   position: relative;
   color: white;
   font-size: 19px ;
+  width: 100px;
   border: none;
   option {
     border: 0;

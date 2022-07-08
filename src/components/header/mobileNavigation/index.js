@@ -5,19 +5,8 @@ import {
   Dropdown,
   LinksContainer,
   PressCenterButtons,
-  FeedBackButton,
   ServicesButton,
-  PersonalAccButton,
-  HiddenMenuTicker,
 } from './styles';
-import {
-  CareerButton,
-  DocumentsButton,
-  HistoryButton,
-  ManagementButton,
-  StructureButton,
-  UnionButton,
-} from '../../../pages/company/header_company/styles';
 import { ButtonLink } from '../../../pages/services/styles';
 import {
   ConcatsButton,
@@ -25,7 +14,7 @@ import {
   RequisitesButton,
   WorkScheduleButton,
 } from '../../../pages/concats/headerContacts/styles';
-import React, { useState } from 'react';
+import React from 'react';
 import { Trans } from 'react-i18next';
 import { t } from 'i18next';
 
@@ -38,12 +27,10 @@ export default function MobileNavigation() {
         </CompanyButton>
         <DivButtonHeader>
           <ButtonLink to="/company/history">История предприятия</ButtonLink>
-          {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
           <ButtonLink to="/company/structure">Руководство предприятия</ButtonLink>
           <ButtonLink to="/company/career">Карьера в УП "Мингаз"</ButtonLink>
           <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
           <ButtonLink to="/company/documentation">Документы</ButtonLink>
-          {/*<UnionButton to="/company/union">Профсоюз</UnionButton>*/}
         </DivButtonHeader>
       </Dropdown>
 

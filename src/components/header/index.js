@@ -21,13 +21,13 @@ import {
   DivFirstHeader,
   Div104,
   DivPersonalAcc,
+  DivPhone,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import eye from '../../assets/png/visibilitys.png';
 import next from '../../assets/png/next.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
-import search from '../../assets/png/search.svg';
 import { ButtonLink } from '../../pages/services/styles';
 import {
   ConcatsButton,
@@ -40,17 +40,12 @@ import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import personal from '../../assets/icons/user.png';
-import { AutocompleteSuggestions, Button, Form, Input } from '../../pages/Home/Serch/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
-import { data } from '../../assets/data_services';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
 const styleMenu = {
   width: '30px',
   height: '30px',
-};
-const searchStyle = {
-  backgroundImage: `url(${search})`,
 };
 const styleEye = {
   width: '32px',
@@ -87,38 +82,8 @@ export default function Header({ backgroundHeader }) {
       <img style={styleMenu} src={close} alt="" />
     </MenuClose>
   );
-  const [input, setInput] = useState('');
   const { t } = useTranslation();
-  // function onInputFun(event) {
-  //   // console.log(this.value);
-  //   const value = event.target.value.trim();
-  //   if (value !== '') {
-  //     data.forEach((element) => {
-  //       console.log(element);
-  //
-  //       if (element.nameCard.search(value) === -1) {
-  //         console.log(element.nameCard);
-  //         return (
-  //           <div>
-  //             {data.map((element) => (
-  //               <div>
-  //                 serviceId={element.serviceId}
-  //                 imgCard={element.cardImg}
-  //                 nameCard={element.nameCard}
-  //                 description={element.description}
-  //               </div>
-  //             ))}
-  //           </div>
-  //         );
-  //       }
-  //       if (element.nameCard.search(value) === element.nameCard) {
-  //         console.log(element);
-  //       }
-  //     });
-  //   }
-  //   setInput(event.target.value);
-  //   console.log(event.target.value);
-  // }
+
   return (
     <Container backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
@@ -130,35 +95,31 @@ export default function Header({ backgroundHeader }) {
           </LinkLogo>
           <DivColumn>
             <DivFirstHeader>
-              <GoBack onClick={() => navigate(-1)}>Назад</GoBack>
-              <Div104>
-                <p>Аварийная служба</p>
-                <a href={'tel:104'}>104</a>
-              </Div104>
-              <Language />
-              <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-                <img style={styleEye} src={eye} alt="" />
-              </IconEye>
-              {/*<form action={'/search/'} method="get">*/}
-              {/*  <fieldset>*/}
-              {/*    <input type={'search'} placeholder={'поиск по сайту'} />*/}
-              {/*    <span>*/}
-              {/*      {' '}*/}
-              {/*      <img src={search} />*/}
-              {/*    </span>*/}
-              {/*  </fieldset>*/}
-              {/*</form>*/}
-              {/*<Form>*/}
-              {/*  <Input onChange={onInputFun} type={'text'} placeholder={'Поиск по сайту'} />*/}
-              {/*  <AutocompleteSuggestions />*/}
-              {/*  <Button style={searchStyle} type={'submit'} />*/}
-              {/*</Form>*/}
-              <SearchPage />
-              {/*<Searchicon></Searchicon>*/}
+              {/*<GoBack onClick={() => navigate(-1)}>Назад</GoBack>*/}
+              <DivPhone>
+                <Div104>
+                  <p>
+                    Аварийная
+                    <br /> служба
+                  </p>
+                  <a href={'tel:104'}>104</a>
+                </Div104>
+                <Div104>
+                  <p>
+                    Контакт-центр <br /> УП "МИНГАЗ"
+                  </p>
+                  <a href={'tel:102'}>162</a>
+                </Div104>
+              </DivPhone>
               <PersonalAccButton href={'https://service.mingas.by:5200/'}>
                 <img src={personal} alt={''} />
                 <DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>
               </PersonalAccButton>
+              <SearchPage />
+              <Language />
+              <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
+                <img style={styleEye} src={eye} alt="" />
+              </IconEye>
             </DivFirstHeader>
             <ButtonsContainer>
               <Dropdown>
@@ -167,7 +128,6 @@ export default function Header({ backgroundHeader }) {
                 </CompanyButton>
                 <DivButtonHeader>
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
-                  {/*<ManagementButton to="/company/management">Руководство</ManagementButton>*/}
                   <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
                   <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
@@ -185,8 +145,9 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/services">
                     Услуги <img alt={''} src={next} />
                     <span>
-                      <NavLink to="/liquefied-gas-tariff">Тарифы на сжиженный газ</NavLink>
-                      <NavLink to="/natural-gas-tariff">Тарифы на природный газ</NavLink>
+                      <NavLink to="/">Административные процедуры</NavLink>
+                      <NavLink to="/residents/price">Прейскурант цен</NavLink>
+                      <NavLink to="/">Плановые работы</NavLink>
                     </span>
                   </ButtonLink>
                   <ButtonLink to="/liquefied-gas-tariff">
@@ -198,15 +159,12 @@ export default function Header({ backgroundHeader }) {
                     </span>
                   </ButtonLink>
 
-                  <ButtonLink to="/">Графики</ButtonLink>
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-                  <ButtonLink to="/">Обратная связь</ButtonLink>
+                  {/*<ButtonLink to="/">Обратная связь</ButtonLink>*/}
                   <ButtonLink to="/">Регламентирующие документы</ButtonLink>
                   <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
                   <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
-                  <ButtonLink to="/">Административные процедуры</ButtonLink>
-                  <ButtonLink to="/residents/price">Прейскурант цен</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
 
@@ -214,9 +172,9 @@ export default function Header({ backgroundHeader }) {
                 <ServicesButton to="/services/legal-entities">Для бизнеса</ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services/legal-entities">Услуги</ButtonLink>
-                  <ButtonLink to="/">Обратная связь</ButtonLink>
+                  <ButtonLink to="/feedback/electronic-appeal-for-entity">Обращение юридических лиц</ButtonLink>
                   <ButtonLink to="/">Тендеры</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
+                  <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>
                   <ButtonLink to="/">Административные процедуры</ButtonLink>
                   <ButtonLink to="/">Регламентирующие документы</ButtonLink>
                 </DivButtonHeader>

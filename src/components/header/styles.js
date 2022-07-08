@@ -85,7 +85,7 @@ export const Background = styled.div`
   z-index: 5;
   padding: 0 24px;
   margin: 0 auto;
-  height: 130px;
+  height: 150px;
   position: fixed;
   top: 0;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
@@ -306,36 +306,89 @@ export const DivColumn = styled.div`
   flex-direction: column;
   width: 100%;
 `;
-
+export const DivPhone = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 40%;
+  @media(max-width: 900px) {
+    width: 50%;
+  }
+  @media(max-width: 720px) {
+    width: 60%;
+  }
+`
 export const Div104 = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 0.6rem;
+  padding: 0 1.5rem;
   background: #df1e17;
+  border-radius: 2px;
+  cursor: pointer;
   color: #fff;
   text-decoration: none;
+  border: 2px solid #df1e17;
   p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.2;
   }
   a {
-    margin-right: 1.5rem;
-    font-family: Montserrat-Bold, Helvetica, Arial, sans-serif;
+    margin-right: 0.8rem;
+    font-family: Play, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.25;
     text-decoration: none;
     -webkit-text-decoration-color: rgba(255, 255, 255, 0);
     text-decoration-color: rgba(255, 255, 255, 0);
     transition: all 0.3s ease;
+    @media (max-width: 1170px) {
+      font-size: 1.4rem;
+    }
   }
-  @media (max-width: 650px) {
+  &:hover {
+    background: none;
+  }
+  @media (max-width: 1124px) {
+    padding: 0 1rem;
+  }
+  @media (max-width: 1020px) {
+    padding: 0 0.8rem;
+    p,
+    a {
+      margin: 0.8rem auto;
+    }
+  }
+
+  @media (max-width: 934px) {
+    padding: 0 0.5rem;
+    p,
+    a {
+      margin: 0.5rem auto;
+    }
+  }
+  @media (max-width: 780px) {
     //padding: 0;
     p,
     a {
       margin: 0;
+     
+    }
+    p{
+      font-size: 0.8rem;
+    }
+    a{
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 720px) {
+    //padding: 0;
+    p,
+    a {
+      margin: 0;
+      
     }
   }
 `;
@@ -382,5 +435,4 @@ export const DropdownBlock = styled.div`
 export const DivButtonBlock = styled.div`
   display: none !important;
   position: absolute;
-  
 `;

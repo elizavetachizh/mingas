@@ -48,19 +48,18 @@ export default function SearchPage() {
 
   return (
     <>
-      {/*<input type="text" id="message" name="message" onChange={handleChange} value={message} />*/}
-      <Form>
-        <Input
-          type="text"
-          id="message"
-          name="message"
-          onChange={handleChange}
-          value={message}
-          placeholder={'Поиск по сайту'}
-        />
-        <AutocompleteSuggestions />
+
+        {/*<Input*/}
+        {/*  type="text"*/}
+        {/*  id="message"*/}
+        {/*  name="message"*/}
+        {/*  onChange={handleChange}*/}
+        {/*  value={message}*/}
+        {/*  placeholder={'Поиск по сайту'}*/}
+        {/*/>*/}
+        {/*<AutocompleteSuggestions />*/}
         <Button style={searchStyle} type={'submit'} />
-      </Form>
+
       {message && result.length && renderResult()}
     </>
   );

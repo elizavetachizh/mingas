@@ -14,32 +14,37 @@ app.post('/users', (req, res) => {
     service: 'gmail',
     auth: {
       user: 'elizavetka.chizh@gmail.com',
-      pass: 'fmxzdaboecgvxeft',
+      pass: 'jugbujpdqhvpmdyh',
     },
   });
 
   const mailOptions = {
-    from: 'elizavetka.chizh@gmail.com', // sender address
-    to: req.body.name, // list of receivers
-    subject: req.body.phone, // Subject line
-    text: req.body.email,
+    from: req.body.email, // sender address
+    to: 'elizavetka.chizh@gmail.com', // list of receivers
+    subject: 'Предоставление показаний счётчика газа', // Subject line
+    text: req.body.name,
     html: `
         <div style="padding:10px;border-style: ridge">
-        <p>You have a new contact request.</p>
-        <h3>Contact Details</h3>
+        <p>От ${req.body.name}</p>
+        <h3>Сообщение:</h3>
         <ul>
-            <li>Email: ${req.body.name}</li>
-            <li>Subject: ${req.body.phone}</li>
-            <li>Message: ${req.body.email}</li>
+            <li>ФИО: ${req.body.name}</li>
+            <li>Email: ${req.body.email}</li>
+            <li>Контактный телефон: ${req.body.phone}</li>
+            <li>Адрес: ${req.body.address}</li>
+            <li>Желаемое время для связи: ${req.body.time}</li>
+            <li>Лицевой счёт: ${req.body.text}</li>
+            <li>Показания счётчика: ${req.body.reading}</li>
+            <li>Фото счётчика: ${req.body.file}</li>
         </ul>
         `,
   };
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      res.json({ status: true, respMesg: 'Email Sent Successfully' });
+      res.json({ status: true, respMesg: 'Форма успешно отправлена' });
     } else {
-      res.json({ status: true, respMesg: 'Email Sent Successfully' });
+      res.json({ status: true, respMesg: 'Форма успешно отправлена' });
     }
   });
 });
