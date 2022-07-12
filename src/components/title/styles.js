@@ -14,7 +14,7 @@ const titleFontSize = {
 };
 export const Title = styled.h2`
   font-style: normal;
-
+  z-index: 5;
   line-height: 37px;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ export const Title = styled.h2`
   font-size: 32px;
   justify-content: center;
   letter-spacing: 0.1em;
-  margin: 10% auto 6% auto;
+  margin: 12% auto 6% auto;
   text-align: center;
   ${({ color }) => titleColor[color]};
 

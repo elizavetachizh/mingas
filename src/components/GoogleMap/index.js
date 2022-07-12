@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { GoogleMap } from '@react-google-maps/api';
 import { DivMap } from './styles';
 import { defaultTheme } from './styles';

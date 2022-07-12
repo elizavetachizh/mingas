@@ -34,9 +34,11 @@ import SearchPage from './pages/SearchPage';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
 import Gratitude from './pages/company/Gratitude';
 import MethodPayment from './components/MethodPayment';
-import NaturalGasTariff from "./pages/tariff/naturalGasTariff";
-import LiquefiedGasTariff from "./pages/tariff/liquefiedGasTariff";
-import ElectronicAppealForEntity from "./pages/feedback/electronicCirculationForEntity";
+import NaturalGasTariff from './pages/tariff/naturalGasTariff';
+import LiquefiedGasTariff from './pages/tariff/liquefiedGasTariff';
+import ElectronicAppealForEntity from './pages/feedback/electronicCirculationForEntity';
+import AdministrativeServices from './components/administrativeServices';
+import InformationAdministrativeService from "./components/administrativeServices/InformaationAdministrativeService";
 function App() {
   const makeAPICall = async () => {
     try {
@@ -61,7 +63,10 @@ function App() {
         <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
         <Route path={'/feedback/online-application'} element={<Requests />} />
         <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
-        <Route path={'/feedback/electronic-appeal-for-entity'} element={<ElectronicAppealForEntity />} />
+        <Route
+          path={'/feedback/electronic-appeal-for-entity'}
+          element={<ElectronicAppealForEntity />}
+        />
         <Route path={'/feedback/usefull-information'} element={<UsefulInformation />} />
         <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
         <Route path="/*" element={<NoMatch />} />
@@ -90,8 +95,11 @@ function App() {
         <Route path={'/Personal'} element={<Personal />} />
         <Route path={'/Personal/tasks'} element={<Tasks />} />
         <Route path={'/SearchPage'} element={<SearchPage />} />
-        <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff/>}/>
-        <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff/>}/>
+        <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
+        <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
+        <Route path={'/services/administrative-services'} element={<AdministrativeServices />} />
+        <Route path={'/services/administrative-services/:serviceID'} element={<InformationAdministrativeService />} />
+        <Route path={'/services/administrative-services/:uniqueName'} element={<InformationAdministrativeService />} />
       </Routes>
 
       {/*<link rel="stylesheet" href="../../src/web_chat/static/css/main.bbd16e91.css" />*/}

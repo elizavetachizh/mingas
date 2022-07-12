@@ -145,7 +145,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/services">
                     Услуги <img alt={''} src={next} />
                     <span>
-                      <NavLink to="/">Административные процедуры</NavLink>
+                      <NavLink to="/services/administrative-services">Административные процедуры</NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
                       <NavLink to="/">Плановые работы</NavLink>
                     </span>

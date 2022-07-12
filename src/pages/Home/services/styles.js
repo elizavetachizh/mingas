@@ -51,6 +51,7 @@ export const DivDown = styled.div`
   width: 100%;
   display: grid;
   text-align: center;
+  z-index: 4;
   justify-content: center;
   grid-template-columns: 300px 300px;
   grid-template-rows: 300px 300px;
@@ -73,6 +74,7 @@ export const ServicesDiv = styled.div`
   display: flex;
   padding-bottom: 20px;
   justify-content: space-between;
+  z-index: 4;
 `;
 export const BackgroundStyle = styled.img`
   position: absolute;

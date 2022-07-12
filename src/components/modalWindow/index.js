@@ -3,15 +3,11 @@ import { ModalWindow, ModalWindowOpenAndClose, InformModal, Close } from './styl
 import close from '../../assets/png/close.png';
 import ModalSubdivision from './modalSubdivision';
 import { ImageLeader } from '../../pages/company/managment/divmagement/styles';
-const closeStyleButton = {
-  background: `url(${close})`,
-};
 
 export default function Modal({ handleCloseCLick, currentLeader }) {
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
   };
-
   return (
     <ModalWindow onClick={handleCloseCLick}>
       <ModalWindowOpenAndClose onClick={handleInsideClick}>
