@@ -29,12 +29,12 @@ export default function HomeServices() {
         <ServicesDiv>
           <DivDown>
             {data.map((element) => (
-              <LinkServices key={element.cardDesc} img={element.cardImg} nameCard={element.nameCard} />
+              <LinkServices key={element.cardId} img={element.cardImg} nameCard={element.nameCard} />
             ))}
           </DivDown>
           <DivDown>
             {dataLegalEntities.map((element) => (
-              <LinkServicesForLegalEntities key={element.cardDesc} img={element.cardImg} nameCard={element.nameCard} />
+              <LinkServicesForLegalEntities key={element.cardId} img={element.cardImg} nameCard={element.nameCard} />
             ))}
           </DivDown>
         </ServicesDiv>

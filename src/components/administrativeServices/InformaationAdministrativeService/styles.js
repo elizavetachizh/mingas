@@ -45,4 +45,7 @@ export const BtnIsOpen = styled.div`
 
 export const ContainerInformAboutService = styled.div`
 margin: 1rem auto;
+  p {
+    text-indent: 25px;
+  }
 `

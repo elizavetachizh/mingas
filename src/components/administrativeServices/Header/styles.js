@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const BlockBtn = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0.2rem auto;
+  margin: 0.2rem;
   padding: 10px;
 `;
 
@@ -17,6 +17,8 @@ export const Button = styled.button`
   text-align: center;
   width: 100%;
   font-size: 18px;
+  cursor: pointer;
+  transition: all .25s ease;
 `;
 export const ContainerBtnIcon = styled.div`
   display: flex;
@@ -24,7 +26,7 @@ export const ContainerBtnIcon = styled.div`
   width: 100%;
   margin: 0 auto;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 export const DivOpen = styled.div`
   display: none;
@@ -43,8 +45,15 @@ export const DivOpen = styled.div`
     background: none;
     border: none;
     font-size: 16px;
-    &.active {
+    text-align: justify;
+    margin: 1rem auto;
+    cursor: pointer;
+    transition: all .25s ease;
+    &:active {
       color: red;
+    }
+    &:hover {
+      color: #0d4475;
     }
   }
 `;

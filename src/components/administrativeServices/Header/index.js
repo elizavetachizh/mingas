@@ -1,5 +1,5 @@
 import { DivButton, HeaderCompanyDiv } from '../../../pages/concats/headerContacts/styles';
-import React, { useCallback, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { data } from '../../../assets/dataNavLinkAdministrativeServices';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';
@@ -9,6 +9,8 @@ export default function HeaderAdministrativeServices() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [links, setLinks] = useState([]);
+  const [currentServiceID, setServiceID] = useState('');
+
   const handlerLinkClick = useCallback((serviceID) => {
     navigate(`/services/administrative-services/${serviceID}`);
   }, []);
@@ -18,15 +20,16 @@ export default function HeaderAdministrativeServices() {
     },
     [pathname]
   );
-  const [isOpen, setIsOpen] = useState(false);
+
   const animate = useCallback(
     (serviceID) => {
       const current = data.find((element) => element.serviceID === serviceID);
       setLinks(current.links);
-      setIsOpen(!isOpen);
+      setServiceID(currentServiceID ? '' : serviceID);
     },
-    [isOpen]
+    [currentServiceID]
   );
+
   return (
     <HeaderCompanyDiv>
       <DivButton>
@@ -34,14 +37,14 @@ export default function HeaderAdministrativeServices() {
         {data.map((el) => (
           <BlockBtn>
             <ContainerBtnIcon >
-              <Button onClick={() => handlerLinkClick(el.serviceID)} key={el}>
+              <Button onClick={() => handlerLinkClick(el.serviceID)} key={el.serviceID}>
                 {el.serviceName}
               </Button>
-              {isOpen ? <IoIosArrowUp onClick={() => animate(el.serviceID)}/> : <IoIosArrowDown onClick={() => animate(el.serviceID)} />}
+              {currentServiceID === el.serviceID ? <IoIosArrowUp onClick={() => animate(el.serviceID)}/> : <IoIosArrowDown onClick={() => animate(el.serviceID)} />}
             </ContainerBtnIcon>
-            <DivOpen className={isOpen && `shake`}>
+            <DivOpen className={currentServiceID === el.serviceID && `shake`}>
               {links.map((link) => (
-                <button onClick={() => handlerLinkClickUniqueName(link.linkId)} key={link}>
+                <button onClick={() => handlerLinkClickUniqueName(link.linkId)} key={link.serviceID}>
                   {link.linkName}
                 </button>
               ))}

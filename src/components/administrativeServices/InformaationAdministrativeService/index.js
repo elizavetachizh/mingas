@@ -14,16 +14,13 @@ import up from '../../../assets/png/up_arrow_round.png';
 export default function InformationAdministrativeService() {
   const { serviceID } = useParams();
   const [searchParams] = useSearchParams();
+    const linkId = searchParams.get('linkId');
   const currentDepartment = useMemo(
-    () => data.filter((department) => department.serviceID === +serviceID),
-    [data, serviceID]
+    () => data.filter((department) => linkId ?
+        (department.serviceID === +serviceID && department.linkId === +linkId)
+        : department.serviceID === +serviceID),
+    [data, serviceID, linkId]
   );
-  const linkId = searchParams.get('linkId');
-  const currentLink = useMemo(
-    () => currentDepartment?.filter((department) => department.linkId === +linkId),
-    [data, linkId, currentDepartment]
-  );
-  console.log(currentLink);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -33,7 +30,7 @@ export default function InformationAdministrativeService() {
           {/*<TitleFun color={'blue'} infoTitle={currentDepartment.serviceName} />*/}
           <ContainerInform>
             {currentDepartment.map((el) => (
-              <DopFunctional
+              <DopFunctional key={el.uniqueName}
                 uniqueName={el.uniqueName}
                 maximumImplementationPeriod={el.maximumImplementationPeriod}
                 certificateValidityPeriod={el.certificateValidityPeriod}

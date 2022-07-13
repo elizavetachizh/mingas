@@ -16,7 +16,7 @@ export default function News() {
             cardDate={element.cardDate}
             cardLink={element.cardLink}
             cardDesc={element.cardDesc}
-          ></LinkNews>
+          />
         ))}
       </DivInform>
       <ButtonFun href={'/Press-Center'} infoButton={'Показать ещё'} backgroundColor={'blue'} />

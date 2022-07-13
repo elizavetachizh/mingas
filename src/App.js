@@ -40,18 +40,18 @@ import ElectronicAppealForEntity from './pages/feedback/electronicCirculationFor
 import AdministrativeServices from './components/administrativeServices';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 function App() {
-  const makeAPICall = async () => {
-    try {
-      const response = await fetch('http://localhost:8080/', { mode: 'cors' });
-      const data = await response.json();
-      console.log({ data });
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  useEffect(() => {
-    makeAPICall();
-  }, []);
+  // const makeAPICall = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:8080/', { mode: 'cors' });
+  //     const data = await response.json();backgroundColor
+  //     console.log({ data });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+  // useEffect(() => {
+  //   makeAPICall();
+  // }, []);
   return (
     <div>
       <Routes>
@@ -100,10 +100,6 @@ function App() {
         <Route path={'/services/administrative-services'} element={<AdministrativeServices />} />
         <Route
           path={'/services/administrative-services/:serviceID'}
-          element={<InformationAdministrativeService />}
-        />
-        <Route
-          path={'/services/administrative-services/:serviceID/:linkId'}
           element={<InformationAdministrativeService />}
         />
       </Routes>

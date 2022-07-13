@@ -5,7 +5,7 @@ export const HeaderCompanyDiv = styled.div`
   background: #e8f3ff;
   max-width: 40%;
   margin: 0 2%;
-  height: auto;
+  height: fit-content;
   @media (max-width: 800px) {
     height: auto;
   }

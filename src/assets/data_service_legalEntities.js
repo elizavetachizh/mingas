@@ -1,11 +1,11 @@
 export const dataLegalEntities = [
-  {cardImg: 52,
+  {cardId:1, cardImg: 52,
     nameCard: "Поверка средств измерений"},
-  {cardImg: 42,
+  {cardId:2, cardImg: 42,
     nameCard: "Природный газ для юридических лиц"},
-  {cardImg:62,
+  {cardId:3, cardImg:62,
     nameCard: "Тарифы на сжиженный газ для юридических лиц"},
-  {cardImg: 112,
+  {cardId:4, cardImg: 112,
     nameCard: "Регистрация объектов строительства"},
 
 ]
