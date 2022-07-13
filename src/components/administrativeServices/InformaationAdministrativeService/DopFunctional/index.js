@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
+import { Div, BtnIsOpen, ContainerInformAboutService } from '../styles';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import TitleFun from '../../../title';
-import { useState } from 'react';
-import { Div } from '../styles';
 
 export default function DopFunctional({
   uniqueName,
@@ -10,32 +11,45 @@ export default function DopFunctional({
   documents,
   contactInform,
 }) {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
-    setOpen(true);
-    if (open) {
-      setOpen(false);
+    setIsOpen(true);
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  };
+  const [isClose, setIsClose] = useState(false);
+  const animateClose = () => {
+    setIsClose(true);
+    if (isClose) {
+      setIsClose(false);
     }
   };
   return (
-    <div>
-      {/*<TitleFun color={'blue'} infoTitle={serviceName} />*/}
-      <h2>{uniqueName}</h2>
+    <ContainerInformAboutService>
+      <h3>{uniqueName}</h3>
       <p>
-        Максимальный срок осуществления административной процедуры: {maximumImplementationPeriod}
+        Максимальный срок осуществления административной процедуры:
+        <strong>{maximumImplementationPeriod}</strong>
       </p>
       <p>
         Срок действия справки, другого документа (решения), выдаваемых (принимаемого) при
-        осуществлении административной процедуры: {certificateValidityPeriod}
+        осуществлении административной процедуры: <strong>{certificateValidityPeriod}</strong>
       </p>
-      <p>Размер платы, взимаемой при осуществлении административной процедуры: {boardSize}</p>
-      <div onClick={animate}>
+      <p>
+        Размер платы, взимаемой при осуществлении административной процедуры:
+        <strong>{boardSize}</strong>
+      </p>
+      <BtnIsOpen onClick={animate}>
         <p>Документы и (или) сведения для осуществления административной процедуры: </p>
-      </div>
-      <Div>
-        <div className={open && `shake`}>{documents}</div>
-      </Div>
-      <p>Контактная информация {contactInform}</p>
-    </div>
+        {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+      </BtnIsOpen>
+      <Div className={isOpen && `shake`}>{documents}</Div>
+      <BtnIsOpen onClick={animateClose}>
+        <p>Контактная информация: </p> {isClose ? <IoIosArrowUp /> : <IoIosArrowDown />}
+      </BtnIsOpen>
+      <Div className={isClose && `shake`}>{contactInform}</Div>
+      <hr />
+    </ContainerInformAboutService>
   );
 }

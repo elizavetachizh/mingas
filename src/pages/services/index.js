@@ -32,7 +32,6 @@ export default function Services() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        {/*<Title>Услуги жителям столичного региона</Title>*/}
         <TitleFun color={'blue'} infoTitle={'Услуги жителям столичного региона'} />
         {/*<ButtonsServices>*/}
         {/*  <Button*/}

@@ -1,29 +1,52 @@
 import { DivButton, HeaderCompanyDiv } from '../../../pages/concats/headerContacts/styles';
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState } from 'react';
 import { data } from '../../../assets/dataNavLinkAdministrativeServices';
-import { useNavigate } from "react-router";
-import { Button } from "./styles";
+import { useLocation, useNavigate } from 'react-router';
+import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
-console.log(data.map((el)=>(el.links)));
 export default function HeaderAdministrativeServices() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const [links, setLinks] = useState([]);
   const handlerLinkClick = useCallback((serviceID) => {
     navigate(`/services/administrative-services/${serviceID}`);
   }, []);
-  const handlerLinkClickUniqueName = useCallback((uniqueName) => {
-    navigate(`/services/administrative-services/${uniqueName}`);
-  }, []);
+  const handlerLinkClickUniqueName = useCallback(
+    (linkId) => {
+      navigate(`${pathname}?linkId=${linkId}`);
+    },
+    [pathname]
+  );
+  const [isOpen, setIsOpen] = useState(false);
+  const animate = useCallback(
+    (serviceID) => {
+      const current = data.find((element) => element.serviceID === serviceID);
+      setLinks(current.links);
+      setIsOpen(!isOpen);
+    },
+    [isOpen]
+  );
   return (
     <HeaderCompanyDiv>
       <DivButton>
+        <Name>Административные услуги</Name>
         {data.map((el) => (
-        <div>  <Button onClick={() => handlerLinkClick(el.serviceID)} key={el}>
-          {el.serviceName}
-        </Button>
-          {el.links.map((link)=>(
-            <button onClick={() => handlerLinkClickUniqueName(link.uniqueName)} key={link} >{link.uniqueName}</button>
-          ))}
-        </div>
+          <BlockBtn>
+            <ContainerBtnIcon >
+              <Button onClick={() => handlerLinkClick(el.serviceID)} key={el}>
+                {el.serviceName}
+              </Button>
+              {isOpen ? <IoIosArrowUp onClick={() => animate(el.serviceID)}/> : <IoIosArrowDown onClick={() => animate(el.serviceID)} />}
+            </ContainerBtnIcon>
+            <DivOpen className={isOpen && `shake`}>
+              {links.map((link) => (
+                <button onClick={() => handlerLinkClickUniqueName(link.linkId)} key={link}>
+                  {link.linkName}
+                </button>
+              ))}
+            </DivOpen>
+          </BlockBtn>
         ))}
       </DivButton>
     </HeaderCompanyDiv>

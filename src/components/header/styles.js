@@ -322,6 +322,7 @@ export const Div104 = styled.div`
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
+  justify-content: space-around;
   background: #df1e17;
   border-radius: 2px;
   cursor: pointer;
@@ -333,7 +334,7 @@ export const Div104 = styled.div`
     line-height: 1.2;
   }
   a {
-    margin-right: 0.8rem;
+    margin: 0 0.6rem;
     font-family: Play, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -351,23 +352,20 @@ export const Div104 = styled.div`
   &:hover {
     background: none;
   }
-  @media (max-width: 1124px) {
-    padding: 0 1rem;
-  }
-  @media (max-width: 1020px) {
+  @media (max-width: 1133px) {
     padding: 0 0.8rem;
-    p,
-    a {
-      margin: 0.8rem auto;
-    }
+  }
+  @media (max-width: 1029px) {
+    padding: 0 0.5rem;
+    //a {
+    //  margin: 0.8rem;
+    //}
   }
 
-  @media (max-width: 934px) {
-    padding: 0 0.5rem;
-    p,
-    a {
-      margin: 0.5rem auto;
-    }
+  @media (max-width: 975px) {
+   p{
+     font-size: 0.8rem;
+   }
   }
   @media (max-width: 780px) {
     //padding: 0;

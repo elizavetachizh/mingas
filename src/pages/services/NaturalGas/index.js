@@ -6,6 +6,8 @@ import { Container } from '../../company/styles';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import DopFunctionalHeader from "./DopFunctionalHeader";
+import { DivServices } from "../styles";
+import ServicesList from "../servicesList";
 
 export default function NaturalGas() {
 
@@ -17,11 +19,21 @@ export default function NaturalGas() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      <div>
+      {/*<div>*/}
+      {/*  {data.map((element) => (*/}
+      {/*    <DopFunctionalHeader nameCard={element.nameCard}/>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
+      <DivServices>
         {data.map((element) => (
-          <DopFunctionalHeader nameCard={element.nameCard}/>
+          <ServicesList
+            serviceId={element.serviceId}
+            imgCard={element.cardImg}
+            nameCard={element.nameCard}
+            description={element.description}
+          />
         ))}
-      </div>
+      </DivServices>
       <DopFunctionService
         name={currentDepartment.nameCard}
         description={currentDepartment.description}

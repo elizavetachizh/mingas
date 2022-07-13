@@ -56,7 +56,7 @@ export const ContainerText = styled.div`
   text-align: justify;
   max-width: 1140px;
   margin: 0 auto;
-  font: 17px Roboto sans-serif;
+  font: 17px Play, sans-serif;
   p {
     text-indent: 25px;
   }

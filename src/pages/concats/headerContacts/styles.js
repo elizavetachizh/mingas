@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 export const HeaderCompanyDiv = styled.div`
   background: #e8f3ff;
-  max-width: 29%;
+  max-width: 40%;
   margin: 0 2%;
-  height: 300px;
-  @media(max-width: 800px) {
+  height: auto;
+  @media (max-width: 800px) {
     height: auto;
   }
 `;
@@ -14,7 +14,7 @@ export const HeaderCompanyDiv = styled.div`
 export const DivButton = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  //padding: 2rem 0;
 `;
 
 export const ConcatsButton = styled(NavLink)`
@@ -23,12 +23,12 @@ export const ConcatsButton = styled(NavLink)`
   font-weight: 300;
   font-size: 18px;
   text-align: left;
-  color: #0D4475 !important;
+  color: #0d4475 !important;
   padding: 0.8rem;
   &.active {
     color: #a69b14;
   }
-  @media(max-width: 400px) {
+  @media (max-width: 400px) {
     font-size: 14px;
   }
 `;
