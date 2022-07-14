@@ -29,6 +29,11 @@ export const Table = styled.table`
   width: 100%;
   background-color: transparent;
   margin-bottom: 30px;
+  font-family: Play, sans-serif;
+  border-collapse: collapse;
+  th {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 export const Tbody = styled.tbody`
@@ -38,12 +43,11 @@ export const Tbody = styled.tbody`
 export const Tr = styled.tr`
   font-size: 1rem;
   border-bottom: 1px solid #e0e0e0;
-  letter-spacing: 0.1em;
 `;
 
 export const Td = styled.td`
   vertical-align: top;
   color: #000;
-  padding: 1rem 0.6rem 2rem 2rem;
-  border-top: 0.1rem solid #e0e0e0;
+  padding: 0.6rem 0.6rem 1.6rem 1.6rem;
+  border: 0.1rem solid #e0e0e0;
 `;

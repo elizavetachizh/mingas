@@ -20,13 +20,14 @@ import up from '../../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
 import TitleFun from '../../../components/title';
+import TitleForHome from "../../../components/TitleForHome";
 export default function Career() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
 
       <HeaderCompany currentPage={'career'} />
-      <TitleFun color={'blue'} infoTitle={'Работа в РУП “Мингаз”'}></TitleFun>
+      <TitleForHome color={'blue'} infoTitle={'Работа в РУП “Мингаз”'}></TitleForHome>
       <DivAfterAndBefore>
         <DivAboutManagementBackground>
           <DivAboutmanagementWhiteFont>

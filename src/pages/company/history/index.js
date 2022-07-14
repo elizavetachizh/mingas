@@ -3,18 +3,17 @@ import { Container } from '../styles';
 import Header from '../../../components/header';
 import HeaderCompany from '../header_company';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import TitleFun from '../../../components/title';
 import Footer from '../../../components/footer';
 import Aos from 'aos';
-import history from '../../../assets/history/3.jpg';
 import history_2 from '../../../assets/history/7.png';
 import history_3 from '../../../assets/history/4.png';
 import history_4 from '../../../assets/history/5.png';
 import history_6 from '../../../assets/history/6.png';
 import history_7 from '../../../assets/history/8.png';
 import history_9 from '../../../assets/history/9.png';
-import history_10 from '../../../assets/history/11.png'
+import history_10 from '../../../assets/history/11.png';
 import { DivParagraphHistory, PWithImg, ImgBackground } from './styles';
+import TitleForHome from '../../../components/TitleForHome';
 
 export default function History() {
   useEffect(() => {
@@ -25,7 +24,10 @@ export default function History() {
       <Header backgroundHeader="blue" />
       <HeaderCompany />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Из истории газификации г. Минска и Минского района'} />
+        <TitleForHome
+          color={'blue'}
+          infoTitle={'Из истории газификации г. Минска и Минского района'}
+        />
         <DivParagraphHistory>
           <div data-aos={'fade-up'}>
             <PWithImg>

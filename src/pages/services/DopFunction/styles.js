@@ -39,3 +39,8 @@ export const DescriptionService = styled.div`
     }
   }
 `;
+
+export const ContainerFunctionService = styled.div`
+  display: flex;
+  flex-direction: column;
+`

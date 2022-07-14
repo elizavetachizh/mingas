@@ -1,5 +1,5 @@
 import { DivButton, HeaderCompanyDiv } from '../../../pages/concats/headerContacts/styles';
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 import { data } from '../../../assets/dataNavLinkAdministrativeServices';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';
@@ -36,15 +36,22 @@ export default function HeaderAdministrativeServices() {
         <Name>Административные услуги</Name>
         {data.map((el) => (
           <BlockBtn>
-            <ContainerBtnIcon >
+            <ContainerBtnIcon>
               <Button onClick={() => handlerLinkClick(el.serviceID)} key={el.serviceID}>
                 {el.serviceName}
               </Button>
-              {currentServiceID === el.serviceID ? <IoIosArrowUp onClick={() => animate(el.serviceID)}/> : <IoIosArrowDown onClick={() => animate(el.serviceID)} />}
+              {currentServiceID === el.serviceID ? (
+                <IoIosArrowUp onClick={() => animate(el.serviceID)} />
+              ) : (
+                <IoIosArrowDown onClick={() => animate(el.serviceID)} />
+              )}
             </ContainerBtnIcon>
             <DivOpen className={currentServiceID === el.serviceID && `shake`}>
               {links.map((link) => (
-                <button onClick={() => handlerLinkClickUniqueName(link.linkId)} key={link.serviceID}>
+                <button
+                  onClick={() => handlerLinkClickUniqueName(link.linkId)}
+                  key={link.serviceID}
+                >
                   {link.linkName}
                 </button>
               ))}

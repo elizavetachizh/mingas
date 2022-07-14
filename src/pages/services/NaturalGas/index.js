@@ -1,43 +1,52 @@
-import React, { useMemo, useState } from "react";
+import React, { useCallback } from 'react';
 import { data } from '../../../assets/data_services';
 import { useParams } from 'react-router-dom';
 import DopFunctionService from '../DopFunction';
 import { Container } from '../../company/styles';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
-import DopFunctionalHeader from "./DopFunctionalHeader";
-import { DivServices } from "../styles";
-import ServicesList from "../servicesList";
+import { useNavigate } from 'react-router';
+import { Button, Name } from '../../../components/administrativeServices/Header/styles';
+import { HeaderCompanyDiv } from '../../concats/headerContacts/styles';
+import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
+import { DivBlocks } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
+import { DivBtn } from "./DopFunctionalHeader/styles";
 
 export default function NaturalGas() {
+  const navigate = useNavigate();
 
+  const handlerServiceClick = useCallback((nameCard) => {
+    navigate(`/services/${nameCard}`);
+  }, []);
   const { nameCard } = useParams();
-  const currentDepartment = useMemo(
-    () => data.find((service) => service.nameCard === nameCard),
-    [data]
-  );
+  const currentDepartment = data.find((service) => service.nameCard === nameCard);
+
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      {/*<div>*/}
-      {/*  {data.map((element) => (*/}
-      {/*    <DopFunctionalHeader nameCard={element.nameCard}/>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
-      <DivServices>
-        {data.map((element) => (
-          <ServicesList
-            serviceId={element.serviceId}
-            imgCard={element.cardImg}
-            nameCard={element.nameCard}
-            description={element.description}
+      <AdditionalDiv>
+        <DivBlocks>
+          <HeaderCompanyDiv>
+            <Name>Услуги</Name>
+            {data.map((element) => (
+              <DivBtn>
+                <Button onClick={() => handlerServiceClick(element.nameCard)}>
+                  {element.nameCard}
+                </Button>
+              </DivBtn>
+            ))}
+          </HeaderCompanyDiv>
+          <DopFunctionService
+            name={currentDepartment.nameCard}
+            description={currentDepartment.description}
           />
-        ))}
-      </DivServices>
-      <DopFunctionService
-        name={currentDepartment.nameCard}
-        description={currentDepartment.description}
-      />
+        </DivBlocks>
+      </AdditionalDiv>
+      <ScrollToTop showUnder={160}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Header from '../../components/header';
 import { DivServices } from './styles';
 import { data } from '../../assets/data_services';
@@ -13,8 +13,6 @@ import axios from 'axios';
 
 const API = 'https://smiddle.mingas.by/';
 export default function Services() {
-
-  const [active, setActive] = useState('FoIndividuals');
   useEffect(() => {
     // set our variable to true
     let isApiSubscribed = true;
@@ -33,36 +31,19 @@ export default function Services() {
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <TitleFun color={'blue'} infoTitle={'Услуги жителям столичного региона'} />
-        {/*<ButtonsServices>*/}
-        {/*  <Button*/}
-        {/*    onClick={() => {*/}
-        {/*      setActive('FoIndividuals');*/}
-        {/*    }}*/}
-        {/*  >*/}
-        {/*    Для физических лиц*/}
-        {/*  </Button>*/}
-        {/*  <Button*/}
-        {/*    onClick={() => {*/}
-        {/*      setActive('ApplicationForVerificationOfGasMeters');*/}
-        {/*    }}*/}
-        {/*  >*/}
-        {/*    Для юридических лиц*/}
-        {/*  </Button>*/}
-        {/*  /!*<ButtonLink to={'/services/legal-entities'}>Для физических лиц</ButtonLink>*!/*/}
-        {/*  /!*<ButtonLink to={'/services/legal-entities'}>Для юридических лиц</ButtonLink>*!/*/}
-        {/*</ButtonsServices>*/}
-        {active === 'FoIndividuals' && (
-          <DivServices>
-            {data.map((element) => (
-              <ServicesList
-                serviceId={element.serviceId}
-                imgCard={element.cardImg}
-                nameCard={element.nameCard}
-                description={element.description}
-              />
-            ))}
-          </DivServices>
-        )}
+        {/*{active === 'FoIndividuals' && (*/}
+        <DivServices>
+          {data.map((element) => (
+            <ServicesList
+              key={element.nameCard}
+              serviceId={element.serviceId}
+              imgCard={element.cardImg}
+              nameCard={element.nameCard}
+              description={element.description}
+            />
+          ))}
+        </DivServices>
+        {/*)}*/}
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />

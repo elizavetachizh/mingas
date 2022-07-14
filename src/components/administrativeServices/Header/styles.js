@@ -9,6 +9,7 @@ export const BlockBtn = styled.div`
 
 export const Button = styled.button`
   font-weight: 400;
+  font-family: Play, sans-serif;
   font-style: normal;
   color: #000;
   text-decoration: none;
@@ -18,7 +19,7 @@ export const Button = styled.button`
   width: 100%;
   font-size: 18px;
   cursor: pointer;
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 `;
 export const ContainerBtnIcon = styled.div`
   display: flex;
@@ -48,7 +49,7 @@ export const DivOpen = styled.div`
     text-align: justify;
     margin: 1rem auto;
     cursor: pointer;
-    transition: all .25s ease;
+    transition: all 0.25s ease;
     &:active {
       color: red;
     }

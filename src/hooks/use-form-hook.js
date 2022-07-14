@@ -26,6 +26,7 @@ export const useForm = () => {
       !formValues.isAgree ||
       !formValues.text ||
       !formValues.message ||
+      !formValues.address ||
       !isValidatePhone(formValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -62,6 +63,11 @@ export const useForm = () => {
       case 'message':
         if (!formValues.message.length) {
           setErrors({ ...errors, message: 'Заполните, пожалуйста, обращение' });
+        }
+        break;
+      case 'address':
+        if (!formValues.address.length) {
+          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
         }
         break;
       default:

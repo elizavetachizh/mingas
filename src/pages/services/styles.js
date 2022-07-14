@@ -5,7 +5,7 @@ export const DivServices = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 2% auto;
+  margin: 10% auto;
   justify-content: center;
   @media (max-width: 550px) {
     width: 550px;

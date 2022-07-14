@@ -6,15 +6,15 @@ export const HeaderCompanyDiv = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin: 10% auto 0 auto;
+  margin: 12% auto 0 auto;
   @media (max-width: 1320px) {
-    margin-top: 12%;
-  }
-  @media (max-width: 990px) {
     margin-top: 14%;
   }
-  @media (max-width: 610px) {
+  @media (max-width: 990px) {
     margin-top: 16%;
+  }
+  @media (max-width: 610px) {
+    margin-top: 18%;
   }
   @media (max-width: 510px) {
     margin-top: 24%;

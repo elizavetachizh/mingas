@@ -2,10 +2,12 @@ import React from 'react';
 import { Container } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
-import TitleFun from '../../../components/title';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-
+import attesttat from '../../../assets/pdf/certificates/Аттестат_аккредитации_поверочной_лаборатории_СГЭМОиООС.pdf';
+import attesttat_1 from '../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД.pdf'
+import { ContainerIframe } from './styles';
+import TitleForHome from "../../../components/TitleForHome";
 const styled = {
   width: '100%',
   zIndex: '10',
@@ -18,10 +20,14 @@ export default function Documentation() {
     <Container>
       <Header backgroundHeader="blue" />
       <HeaderCompany currentPage={'documentation'} />
-      <TitleFun infoTitle={'Сертификаты, лицензии, свидетельства'} color={'blue'} />
+      <TitleForHome infoTitle={'Сертификаты, лицензии, свидетельства'} color={'blue'} />
       {/*<img style={styled} src={backgroundBefore}></img>*/}
-      <AdditionalDiv style={styled}><p>gvjhbglhnil</p></AdditionalDiv>
-        <input type={'file'}/>
+      <AdditionalDiv>
+        <ContainerIframe>
+          <iframe src={attesttat} />
+          <iframe src={attesttat_1} />
+        </ContainerIframe>
+      </AdditionalDiv>
       <Footer />
     </Container>
   );

@@ -35,14 +35,49 @@ export default function FormQuestionForEntity() {
     <Form onSubmit={handleSubmit} ref={form}>
       <DivInput>
         <Label>
-          {t('form:name')}
+          Наименование юридического лица
+          <Span>*</Span>
+        </Label>
+        <InputName
+          inputName={'organization'}
+          name={'organization'}
+          type={'text'}
+          placeholder={'Введите наименование юридического лица'}
+          onChange={handleUserInput}
+          value={formValues.name}
+          error={name && errors.name}
+        />
+      </DivInput>
+
+      <DivInput>
+        <Label>
+          Юридический адрес
+          <Span>*</Span>
+        </Label>
+        <InputName
+          inputName={'address'}
+          type="text"
+          name={'address'}
+          placeholder={'Введите юридический адрес'}
+          onChange={handleUserInput}
+          value={formValues.address}
+          error={address && errors.address}
+        />
+      </DivInput>
+
+      <DivInput>
+        <Label>
+          Фамилия, собственное имя, отчество (если таковое имеется) руководителя или лица,
+          уполномоченного подписывать обращения
           <Span>*</Span>
         </Label>
         <InputName
           inputName={'name'}
           name={'name'}
           type={'text'}
-          placeholder={'Введите ФИО полностью'}
+          placeholder={
+            'Фамилия, собственное имя, отчество (если таковое имеется) руководителя или лица, уполномоченного подписывать обращения'
+          }
           onChange={handleUserInput}
           value={formValues.name}
           error={name && errors.name}
@@ -57,75 +92,47 @@ export default function FormQuestionForEntity() {
           inputName={'email'}
           type="email"
           name="email"
-          placeholder={'Введите ваш e-mail'}
+          placeholder={'E-mail'}
           onChange={handleUserInput}
           value={formValues.email}
           error={email && errors.email}
         />
       </DivInput>
+
       <DivInput>
         <Label>
-          {t('form:address')}
+          Почтовый адрес
           <Span>*</Span>
         </Label>
         <InputName
-          inputName={'text'}
-          type="text"
-          name={'text'}
-          placeholder={'Введите адрес проживания'}
-          onChange={handleUserInput}
-          value={formValues.text}
-          error={address && errors.text}
-        />
-      </DivInput>
-      <DivInput>
-        <Label>
-          {t('form:phone')}
-          <Span>*</Span>
-        </Label>
-        <InputName
-          inputName={'phone'}
+          inputName={'address'}
           type="tel"
-          name="phone"
-          placeholder={'+375(ХХ)-ХХХ-ХХ-ХХ'}
+          name="address"
+          placeholder={'Введите почтовый адрес'}
           onChange={handleUserInput}
-          value={formValues.phone}
-          error={phone && errors.phone}
+          value={formValues.address}
+          error={address && errors.address}
         />
       </DivInput>
+
       <DivInput>
         <Label>
-          Название организации (полностью)
-          <Span>*</Span>
-        </Label>
-        <InputName
-          inputName={'organization'}
-          name={'organization'}
-          type={'text'}
-          placeholder={'Введите Название организации'}
-          onChange={handleUserInput}
-          value={formValues.name}
-          error={name && errors.name}
-        />
-      </DivInput>
-      <DivInput>
-        <Label>
-          ФИО руководителя (полностью)
+          Индекс
           <Span>*</Span>
         </Label>
         <InputName
           inputName={'name'}
           name={'name'}
           type={'text'}
-          placeholder={'Введите ФИО руководителя'}
+          placeholder={'Введите индекс'}
           onChange={handleUserInput}
-          value={formValues.name}
-          error={name && errors.name}
+          value={formValues.text}
+          error={errors.text}
         />
       </DivInput>
       <DivInput>
         <Label>
-          {t('form:text')}
+          Сообщение
           <Span>*</Span>
         </Label>
 
