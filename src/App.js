@@ -84,7 +84,7 @@ function App() {
           path="/company/management/production-technical-management"
           element={<ProductionTechnicalManagement />}
         />
-        <Route path={'/services/legal-entities/'} element={<ServicesForLegalEntities />} />
+        <Route path={'/services-legal-entities/'} element={<ServicesForLegalEntities />} />
         <Route path={'/services/legal-entities/:nameCard'} element={<CardOfServive />} />
         <Route path={'/contacts/requisites'} element={<Requisites />} />
         <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />

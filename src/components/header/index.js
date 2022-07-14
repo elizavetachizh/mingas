@@ -169,9 +169,9 @@ export default function Header({ backgroundHeader }) {
               </Dropdown>
 
               <Dropdown>
-                <ServicesButton to="/services/legal-entities">Для бизнеса</ServicesButton>
+                <ServicesButton to="/services-legal-entities">Для бизнеса</ServicesButton>
                 <DivButtonHeader>
-                  <ButtonLink to="/services/legal-entities">Услуги</ButtonLink>
+                  <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
                   <ButtonLink to="/feedback/electronic-appeal-for-entity">Обращение юридических лиц</ButtonLink>
                   <ButtonLink to="/">Тендеры</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>
@@ -180,32 +180,20 @@ export default function Header({ backgroundHeader }) {
                 </DivButtonHeader>
               </Dropdown>
 
-              {/*<Dropdown>*/}
-              {/*  <ServicesButton to="/feedback/online-application">*/}
-              {/*    {t('header:feedback')}*/}
-              {/*  </ServicesButton>*/}
-              {/*  <DivButtonHeader>*/}
-              {/*    <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>*/}
-              {/*    <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>*/}
-              {/*    <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>*/}
-              {/*    <ButtonLink to={'/feedback/online-application'}>Онлайн заявка</ButtonLink>*/}
-              {/*  </DivButtonHeader>*/}
-              {/*</Dropdown>*/}
-
               <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
               <Dropdown>
                 <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
                 <DivButtonHeader>
-                  <ConcatsButton to="/contacts">Контактная информация</ConcatsButton>
-                  <WorkScheduleButton to="/contacts/work-schedule">
+                  <ButtonLink to="/contacts">Контактная информация</ButtonLink>
+                  <ButtonLink to="/contacts/work-schedule">
                     График личного приёма граждан
-                  </WorkScheduleButton>
-                  <PhoneServicesButton to="/contacts/phone-services">
+                  </ButtonLink>
+                  <ButtonLink to="/contacts/phone-services">
                     Телефоны служб по работе с клиентами
-                  </PhoneServicesButton>
-                  <RequisitesButton to="/contacts/requisites">
+                  </ButtonLink>
+                  <ButtonLink to="/contacts/requisites">
                     Реквизиты предприятия
-                  </RequisitesButton>
+                  </ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
               <ServicesButton to="/company/union">Профсоюз</ServicesButton>

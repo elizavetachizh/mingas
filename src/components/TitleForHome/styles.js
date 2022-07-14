@@ -12,7 +12,7 @@ const titleFontSize = {
   m: `
   font-size: 32px`,
 };
-export const Title = styled.h2`
+export const  Title = styled.h2`
   font-style: normal;
 z-index: 2;
   line-height: 37px;

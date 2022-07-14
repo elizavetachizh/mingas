@@ -14,7 +14,7 @@ export const NoMatchContainer = styled.div`
   h3,
   h4 {
     text-align: center;
-    font-family: 'Play', serif;
+    font-family: Play, sans-serif;
     font-style: normal;
   }
 `;

@@ -32,15 +32,16 @@ export const ButtonLink = styled(NavLink)`
   }
   &:hover span {
     display: flex;
-    width: auto;
     min-width: 200px;
-    height: auto;
+    height: fit-content;
     left: 100%;
-    align-items: flex-end;
     flex-direction: column;
+    text-align: left;
     //box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
     background-color: #e8f3ff;
-    padding: 10px;
+    padding: 0 24px;
+    margin: 0 auto;
+    top: 0;
     a {
       color: #0d4475 !important;
       text-decoration: none;

@@ -248,14 +248,14 @@ export const Dropdown = styled.div`
   display: inline-block;
   //&:hover a {
   //  background-color: #000;
-  //  color: #314d5c !important;
+  //  color: #314d5c !important;  
   //}
 
   &:hover div {
     display: flex;
     width: auto;
     min-width: 220px;
-    height: auto;
+    height: fit-content;
     align-items: flex-start;
     flex-direction: column;
     //box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
@@ -274,7 +274,7 @@ export const GoBack = styled.button`
   font-size: 19px;
   text-decoration: none;
   color: #fff;
-  &.active {
+  &:active {
     color: #a69b14;
   }
   @media (max-width: 900px) {
