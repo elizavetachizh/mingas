@@ -29,12 +29,6 @@ import next from '../../assets/png/next.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
 import { ButtonLink } from '../../pages/services/styles';
-import {
-  ConcatsButton,
-  PhoneServicesButton,
-  RequisitesButton,
-  WorkScheduleButton,
-} from '../../pages/concats/headerContacts/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
@@ -54,7 +48,6 @@ export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
   const [open, setOpen] = useState(false);
   const isPhone = useMediaQuery('(max-width: 900px)');
-  const navigate = useNavigate();
   const changeBackground = () => {
     if (!isPhone) {
       if (window.scrollY >= 80) {
@@ -145,7 +138,9 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/services">
                     Услуги <img alt={''} src={next} />
                     <span>
-                      <NavLink to="/services/administrative-services">Административные процедуры</NavLink>
+                      <NavLink to="/services/administrative-services">
+                        Административные процедуры
+                      </NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
                       <NavLink to="/">Плановые работы</NavLink>
                     </span>
@@ -172,10 +167,14 @@ export default function Header({ backgroundHeader }) {
                 <ServicesButton to="/services-legal-entities">Для бизнеса</ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
-                  <ButtonLink to="/feedback/electronic-appeal-for-entity">Обращение юридических лиц</ButtonLink>
+                  <ButtonLink to="/feedback/electronic-appeal-for-entity">
+                    Обращение юридических лиц
+                  </ButtonLink>
                   <ButtonLink to="/">Тендеры</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>
-                  <ButtonLink to="/">Административные процедуры</ButtonLink>
+                  <ButtonLink to="/services-legal-entities/administrative-services-legal/">
+                    Административные процедуры
+                  </ButtonLink>
                   <ButtonLink to="/">Регламентирующие документы</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
@@ -191,9 +190,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/contacts/phone-services">
                     Телефоны служб по работе с клиентами
                   </ButtonLink>
-                  <ButtonLink to="/contacts/requisites">
-                    Реквизиты предприятия
-                  </ButtonLink>
+                  <ButtonLink to="/contacts/requisites">Реквизиты предприятия</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
               <ServicesButton to="/company/union">Профсоюз</ServicesButton>

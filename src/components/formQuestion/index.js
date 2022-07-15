@@ -73,13 +73,13 @@ export default function FormQuestion() {
           <Span>*</Span>
         </Label>
         <InputName
-          inputName={'text'}
+          inputName={'address'}
           type="text"
-          name={'text'}
+          name={'address'}
           placeholder={'Введите адрес проживания'}
           onChange={handleUserInput}
-          value={formValues.text}
-          error={address && errors.text}
+          value={formValues.address}
+          error={address && errors.address}
           label={t('form:address')}
           span={'*'}
         />

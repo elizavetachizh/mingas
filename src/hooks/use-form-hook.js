@@ -1,9 +1,12 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_FORM_STATE } from '../const/consts';
 import * as emailjs from '@emailjs/browser';
+import axios from 'axios';
 
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
+  const url = 'http://localhost:5000/users/';
+  const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
       email
@@ -24,7 +27,6 @@ export const useForm = () => {
       stringIncludesNumber(formValues.name) ||
       !isValidateEmail(formValues.email) ||
       !formValues.isAgree ||
-      !formValues.text ||
       !formValues.message ||
       !formValues.address ||
       !isValidatePhone(formValues.phone) ||
@@ -37,7 +39,7 @@ export const useForm = () => {
     switch (fieldName) {
       case 'name':
         if (stringIncludesNumber(formValues.name)) {
-          setErrors({ ...errors, name: 'ФИО может модержать только буквы!' });
+          setErrors({ ...errors, name: 'ФИО может содержать только буквы!' });
         }
         break;
       case 'email':
@@ -48,11 +50,6 @@ export const useForm = () => {
       case 'phone':
         if (!isValidatePhone(formValues.phone)) {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
-        }
-        break;
-      case 'text':
-        if (!formValues.text.length) {
-          setErrors({ ...errors, text: 'Заполните, пожалуйста, обращение' });
         }
         break;
       case 'isAgree':
@@ -114,28 +111,19 @@ export const useForm = () => {
 
   const clearForm = useCallback(() => {
     document.getElementById('file-input').value = '';
-    setFormValues({ ...INITIAL_FORM_STATE, name: '', date: '', email: '' });
+    setFormValues({ ...INITIAL_FORM_STATE, name: '', date: '', email: '', address: '' });
   }, []);
 
-  const handleSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-      clearForm();
-      emailjs
-        .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-
-      alert('Форма успешно заполнена');
-    },
-    [formValues]
-  );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post(url, formValues).then((response) => setMsg(response.data.respMesg));
+    } catch (err) {
+      console.log('error', err);
+    }
+    clearForm();
+    alert('Форма успешно заполнена');
+  };
 
   return {
     handleUserInput,

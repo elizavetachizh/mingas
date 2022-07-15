@@ -4,6 +4,7 @@ export const Form = styled.form`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  z-index: 10;
 `;
 
 export const DivInput = styled.div`
@@ -144,3 +145,14 @@ export const Button = styled.button`
     padding: 10px;
   }
 `;
+
+export const Background = styled.img`
+  position: absolute;
+  display: flex;
+  right: 0;
+  width: 50%;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+
+`

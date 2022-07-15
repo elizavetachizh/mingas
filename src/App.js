@@ -39,6 +39,7 @@ import LiquefiedGasTariff from './pages/tariff/liquefiedGasTariff';
 import ElectronicAppealForEntity from './pages/feedback/electronicCirculationForEntity';
 import AdministrativeServices from './components/administrativeServices';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
+import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
 function App() {
   // const makeAPICall = async () => {
   //   try {
@@ -85,6 +86,10 @@ function App() {
           element={<ProductionTechnicalManagement />}
         />
         <Route path={'/services-legal-entities/'} element={<ServicesForLegalEntities />} />
+        <Route
+          path={'/services-legal-entities/administrative-services-legal/'}
+          element={<AdministartiveServicesForLegal />}
+        />
         <Route path={'/services/legal-entities/:nameCard'} element={<CardOfServive />} />
         <Route path={'/contacts/requisites'} element={<Requisites />} />
         <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />

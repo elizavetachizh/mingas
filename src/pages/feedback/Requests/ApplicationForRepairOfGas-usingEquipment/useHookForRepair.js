@@ -23,7 +23,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
       stringIncludesNumber(requestValues.name) ||
       !isValidateEmail(requestValues.email) ||
       !requestValues.isAgree ||
-      // !requestValues.text ||
       !requestValues.address ||
       !requestValues.date ||
       !requestValues.time ||

@@ -2,8 +2,6 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
-import { useForm } from '../../../../hooks/use-form-hook';
-import app from '../../../../App';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const url = 'http://localhost:5000/users/';
@@ -114,13 +112,13 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const handleFileInput = useCallback(
     (event: { target: { files: FileList } }) => {
       const file = event.target.files;
-      setSelectedFile(file)
+      setSelectedFile(file);
       console.log(file);
       let reader = new FileReader();
       reader.readAsDataURL(file[0]);
       reader.onload = (e) => {
         console.log(e.target.result);
-        alert(e.target.result)
+        alert(e.target.result);
         const formData = { file: e.target.result };
         return axios.post(url, formData).then((response) => console.log('result', response));
       };
