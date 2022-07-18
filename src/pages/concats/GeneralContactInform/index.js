@@ -124,7 +124,7 @@ export default function GeneralInform() {
         {isLoaded ? (
           <Map center={center} mode={mode} markers={markers} onMarkerAdd={onMarkerAdd} />
         ) : (
-          <h2>Loading</h2>
+          <h2>Loading...</h2>
         )}
       </DivMap>
       <Footer />

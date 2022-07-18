@@ -16,7 +16,6 @@ import { DivBtn } from "./DopFunctionalHeader/styles";
 
 export default function NaturalGas() {
   const navigate = useNavigate();
-
   const handlerServiceClick = useCallback((nameCard) => {
     navigate(`/services/${nameCard}`);
   }, []);

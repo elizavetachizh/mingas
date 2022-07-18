@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useEffect } from 'react';
 import Header from '../../components/header';
 import { DivServices } from './styles';
 import { data } from '../../assets/data_services';
@@ -31,7 +31,6 @@ export default function Services() {
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <TitleFun color={'blue'} infoTitle={'Услуги жителям столичного региона'} />
-        {/*{active === 'FoIndividuals' && (*/}
         <DivServices>
           {data.map((element) => (
             <ServicesList
@@ -43,7 +42,6 @@ export default function Services() {
             />
           ))}
         </DivServices>
-        {/*)}*/}
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />

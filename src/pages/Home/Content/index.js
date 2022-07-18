@@ -1,12 +1,8 @@
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
 import { ContainerContent, DivContent, DivPrizes, Prizes } from './styles';
 import CarouselFun from '../slider';
 import { Parallax } from 'react-parallax';
-
-const fireBackground = {
-  display: 'none',
-};
 
 export default function ContentHome() {
   const [height, setHeight] = useState('900px');

@@ -1,6 +1,5 @@
 import React from 'react';
 import name from '../../assets/formPng/name.png';
-import phone from '../../assets/formPng/tel.png';
 import email from '../../assets/formPng/email.png';
 import address from '../../assets/formPng/map.png';
 import { useTranslation } from 'react-i18next';
@@ -165,7 +164,7 @@ export default function FormQuestionForEntity() {
             error={errors.isAgree}
           />
           <Label>
-            Согласен на обработку данных
+            Согласен на обработку персональных данных в соответствии с Политикой оператора
             <Span>*</Span>
           </Label>
         </DivInputCheckbox>

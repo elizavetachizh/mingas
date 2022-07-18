@@ -19,13 +19,14 @@ export const ContainerBtn = styled.div`
   div {
     padding: 2%;
     display: none;
-    transition: 0.7s all;
+    transition: 1s ease-out;
     p {
       text-align: justify;
     }
     &.shake {
       display: block;
-      transition: 0.7s all;
+      transition: 1s ease-out;
+      animation: animateSlideOut 0.8s;
     }
   }
 `;

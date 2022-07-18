@@ -8,7 +8,7 @@ export const ContainerLeaders = styled.a`
   text-align: center;
   cursor: pointer;
   margin: 4% auto;
-  width: 70%;
+  width: 60%;
   height: auto;
   outline: 2px solid #0d4475; /* Чёрная рамка */
   border: 3px solid #fff; /* Белая рамка */

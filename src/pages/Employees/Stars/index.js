@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import StarRatingComponent from 'react-star-rating-component';
 import { FaStar } from 'react-icons/fa';
 import './styles.css';
 

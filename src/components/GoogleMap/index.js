@@ -28,7 +28,6 @@ export const MODES = {
   MOVE: 0,
   SET_MARKER: 1,
 };
-
 export default function Map({ center, mode, markers, onMarkerAdd }) {
   const mapRef = useRef(undefined);
   const onLoad = useCallback(function callback(map) {

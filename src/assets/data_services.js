@@ -3,10 +3,97 @@ import sample from '../assets/wordFile/sample.docx';
 import { NavLink } from 'react-router-dom';
 import { Calculater } from '../pages/services/NaturalGas/DopFunctionalHeader/styles';
 import prodazha_tovarov from '../assets/pdf/O-prodazhe-tovarov-i-ili-predostavlenii-uslug-v-rassrochku_2.8d50a90c8c33a535b790.pdf';
+import Map, { MODES } from '../components/GoogleMap';
+import React, { useCallback, useEffect, useState } from 'react';
+import { defaultCenter, GetBrowserLocation } from '../components/GoogleMap/utilsGeo';
+import { useJsApiLoader } from '@react-google-maps/api';
+import { DivButtons, DivMap, Row } from '../pages/concats/styles';
+import AutoComplete from '../components/GoogleMap/AutoComplete';
+import ServiceGoogleMap from '../components/ServiceGoogleMap';
 const styleOl = {
   fontWeight: 'bold',
 };
+const API_KEY = process.env.REACT_APP_API_KEY;
 
+const libraries = ['places'];
+function GeneralInform() {
+  const [center, setCenter] = useState(defaultCenter);
+  const [mode, setMode] = useState(MODES.MOVE);
+  const [markers, setMarkers] = useState([]);
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script-1',
+    googleMapsApiKey: API_KEY,
+    libraries,
+  });
+
+  const onPlaceSelect = useCallback((coordinates) => {
+    setCenter(coordinates);
+  }, []);
+
+  const toggleMode = useCallback(() => {
+    switch (mode) {
+      case MODES.MOVE:
+        setMode(MODES.SET_MARKER);
+        break;
+      case MODES.SET_MARKER:
+        setMode(MODES.MOVE);
+        break;
+      default:
+        setMode(MODES.MOVE);
+    }
+  }, [mode]);
+
+  const onMarkerAdd = useCallback(
+    (coordinates) => {
+      setMarkers([...markers, coordinates]);
+    },
+    [markers]
+  );
+
+  const clear = useCallback(() => {
+    setMarkers([]);
+  }, []);
+
+  useEffect(() => {
+    GetBrowserLocation()
+      .then((curLoc) => {
+        setCenter(curLoc);
+      })
+      .catch((defaultLocation) => {
+        setCenter(defaultLocation);
+      });
+  }, []);
+  return (
+    <>
+      <DivMap>
+        <AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
+        <DivButtons>
+          <button
+            // href={'/'}
+            // backgroundColor={'blue'}
+            // infoButton={'Установить маркер'}
+            onClick={toggleMode}
+          >
+            Установить маркер
+          </button>
+          <button
+            // href={'/'}
+            // backgroundColor={'blue'}
+            // infoButton={'Очистить маркер'}
+            onClick={clear}
+          >
+            Очистить маркер
+          </button>
+        </DivButtons>
+        {isLoaded ? (
+          <Map center={center} mode={mode} markers={markers} onMarkerAdd={onMarkerAdd} />
+        ) : (
+          <h2>Loading</h2>
+        )}
+      </DivMap>
+    </>
+  );
+}
 export const data = [
   {
     serviceId: 1,
@@ -161,6 +248,7 @@ export const data = [
             со сжиженным газом, потребителю следует обратиться на любой из обменных пунктов газовых
             баллонов по адресам, указанным ниже.
           </p>
+          {/*<ServiceGoogleMap />*/}
           <ol>
             Обменные пункты УП «МИНГАЗ», где можно осуществить замену 5-ти, 12-ти и 27-ми литровых
             баллонов, расположены по следующим адресам:
