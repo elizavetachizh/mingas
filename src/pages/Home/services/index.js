@@ -21,7 +21,7 @@ export default function HomeServices() {
             infoButton={'Для физических лиц'}
           />
           <ButtonFun
-            href={'/services/legal-entities'}
+            href={'/services-legal-entities'}
             backgroundColor={'gray'}
             infoButton={'Для юридических лиц'}
           />

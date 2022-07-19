@@ -19,7 +19,7 @@ export const ContainerBtn = styled.div`
   div {
     padding: 2%;
     display: none;
-    transition: 1s ease-out;
+    transition: 0.55s opacity, 0.55s visibility;
     p {
       text-align: justify;
     }

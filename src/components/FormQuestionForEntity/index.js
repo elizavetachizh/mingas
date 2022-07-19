@@ -16,7 +16,7 @@ import {
   DivInput,
   Background,
 } from '../formQuestion/styles';
-import sttyleBackground from '../../assets/background/Без имени-3.png';
+import sttyleBackground from '../../assets/background/подложка_1.png';
 import { useForm } from '../../hooks/use-form-hook';
 const styled = {
   backgroundImage: `url(${sttyleBackground})`,

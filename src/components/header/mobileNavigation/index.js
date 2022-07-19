@@ -54,7 +54,7 @@ export default function MobileNavigation() {
       <Dropdown>
         <ServicesButton to="/services">Для бизнеса</ServicesButton>
         <DivButtonHeader>
-          <ButtonLink to="/services/legal-entities">Услуги</ButtonLink>
+          <ButtonLink to="/services-legal-entities/:nameCard">Услуги</ButtonLink>
           <ButtonLink to="/">Обратная связь</ButtonLink>
           <ButtonLink to="/">Тендеры</ButtonLink>
           <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>

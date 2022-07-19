@@ -1,5 +1,5 @@
 import React from 'react';
-import { Marker } from '@react-google-maps/api';
+import { InfoWindow, Marker } from '@react-google-maps/api';
 import marker from '../../../assets/marker/location34.png';
 
 export default function CurrentLocationMarker({ position }) {
@@ -7,7 +7,12 @@ export default function CurrentLocationMarker({ position }) {
     <Marker
       icon={{ url: marker }}
       position={position}
-      label={{ text: 'Вы находитесь здесь', fontFamily: 'Play', fontSize: '20px', color: 'black' }}
+      label={{
+        text: 'Вы находитесь здесь',
+        fontFamily: 'Play',
+        fontSize: '20px',
+        color: 'black',
+      }}
     />
   );
 }

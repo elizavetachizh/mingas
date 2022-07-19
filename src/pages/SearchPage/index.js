@@ -35,7 +35,7 @@ export default function SearchPage() {
           return (
             <div>
               {<NavLink to={`/services/${element.nameCard}`}>{element.nameCard}</NavLink> || (
-                <NavLink to={`/services/legal-entities/${element.nameCard}`}>
+                <NavLink to={`/services-legal-entities/${element.nameCard}`}>
                   {element.nameCard}
                 </NavLink>
               )}

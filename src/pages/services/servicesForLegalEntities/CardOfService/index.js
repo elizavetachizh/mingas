@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { dataLegalEntities } from '../../../../assets/data_service_legalEntities_general';
 import { Container } from '../../../company/styles';
@@ -8,22 +8,18 @@ import DopFunctionService from '../../DopFunction';
 import { useNavigate } from 'react-router';
 import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 import up from '../../../../assets/png/up_arrow_round.png';
-import { HeaderCompanyDiv } from "../../../concats/headerContacts/styles";
-import { Button, Name } from "../../../../components/administrativeServices/Header/styles";
-import { data } from "../../../../assets/data_services";
-import { DivBtn } from "../../NaturalGas/DopFunctionalHeader/styles";
-import { DivBlocks } from "../../../../components/administrativeServices/InformaationAdministrativeService/styles";
+import { HeaderCompanyDiv } from '../../../concats/headerContacts/styles';
+import { Button, Name } from '../../../../components/administrativeServices/Header/styles';
+import { DivBtn } from '../../NaturalGas/DopFunctionalHeader/styles';
+import { DivBlocks } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 export default function CardOfService() {
   const navigate = useNavigate();
   const handlerServiceClick = useCallback((nameCard) => {
-    navigate(`/services/legal-entities/${nameCard}`);
+    navigate(`/services-legal-entities/${nameCard}`);
   }, []);
   const { nameCard } = useParams();
-  const currentDepartment = useMemo(
-    () => dataLegalEntities.find((service) => service.nameCard === nameCard),
-    [dataLegalEntities]
-  );
+  const currentDepartment = dataLegalEntities.find((service) => service.nameCard === nameCard);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -31,7 +27,7 @@ export default function CardOfService() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Услуги</Name>
-            {data.map((element) => (
+            {dataLegalEntities.map((element) => (
               <DivBtn>
                 <Button onClick={() => handlerServiceClick(element.nameCard)}>
                   {element.nameCard}

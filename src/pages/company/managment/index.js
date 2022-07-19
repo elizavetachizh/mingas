@@ -21,6 +21,7 @@ import up from '../../../assets/png/up_arrow_round.png';
 import Leaders from './divmagement';
 import Modal from "../../../components/modalWindow";
 import Aos from "aos";
+import background from "../../../assets/background/подложка.png";
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -34,8 +35,15 @@ export default function Management() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+  const styleImage = {
+    backgroundImage: `url(${background})`,
+     backgroundRepeat: 'round',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'initial',
+    backgroundSize: 'cover'
+  }
   return (
-    <Container>
+    <Container style={styleImage}>
       <Header backgroundHeader={'blue'}/>
       {/*<ContentHome />*/}
       <HeaderCompany />

@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_FORM_STATE } from '../const/consts';
-import * as emailjs from '@emailjs/browser';
 import axios from 'axios';
 
 export const useForm = () => {
@@ -14,7 +13,7 @@ export const useForm = () => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375 \d{2} \d{3} \d{2} \d{2}/g.test(phone);
   };
 
   const stringIncludesNumber = (string: string): boolean => {

@@ -12,9 +12,14 @@ app.use(express.static(buildPath));
 app.post('/users', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
+    secure : true ,
     auth: {
       user: 'elizavetka.chizh@gmail.com',
       pass: 'jugbujpdqhvpmdyh',
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false,
     },
   });
 
@@ -39,6 +44,23 @@ app.post('/users', (req, res) => {
         </ul>
         `,
   };
+  // const mailOptionsFormQuestion = {
+  //   from: req.body.email, // sender address
+  //   to: 'elizavetka.chizh@gmail.com', // list of receivers
+  //   subject: 'Обращение физ. лиц', // Subject line
+  //   text: req.body.name,
+  //   html: `
+  //       <div style="padding:10px;border-style: ridge">
+  //       <p>От ${req.body.name}</p>
+  //       <h3>Сообщение:</h3>
+  //       <ul>
+  //           <li>ФИО: ${req.body.name}</li>
+  //           <li>Email: ${req.body.email}</li>
+  //           <li>Контактный телефон: ${req.body.phone}</li>
+  //           <li>Адрес: ${req.body.address}</li>
+  //       </ul>
+  //       `,
+  // };
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
@@ -51,5 +73,5 @@ app.post('/users', (req, res) => {
 
 // listen to the port
 app.listen(5000, () => {
-  console.log('server start on port 3030');
+  console.log('server start on port 5000');
 });

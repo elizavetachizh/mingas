@@ -15,7 +15,7 @@ const defaultOptions = {
   zoomControl: true,
   styles: defaultTheme,
   mapTypeControl: false,
-  scaleControl: false,
+  scaleControl: true,
   streetViewControl: false,
   rotateControl: false,
   clickableIcons: false,

@@ -16,7 +16,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375 \d{2} \d{3} \d{2} \d{2}/g.test(phone);
   };
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);

@@ -1,25 +1,27 @@
-import React, { useCallback, useRef } from 'react';
-import { GoogleMap } from '@react-google-maps/api';
+import React, { useCallback, useRef, useState } from 'react';
+import { GoogleMap, InfoWindow } from "@react-google-maps/api";
 import { defaultTheme, DivMap } from '../GoogleMap/styles';
 import CurrentLocationMarker from '../GoogleMap/CurrentLocationMarker';
-import Marker from '../GoogleMap/Marker';
+import CurrentLocationMarkerForService from './CurrentLocationMarkerForService';
+import { DivText } from '../../pages/Home/Content/styles';
 const containerStyle = {
   width: '100%',
   height: '100%',
 };
+const textStyle = { fontFamily: 'Play', fontSize: '20px', color: 'black', position: 'absolute' };
 
 const defaultOptions = {
   panControl: true,
   zoomControl: true,
   styles: defaultTheme,
-  mapTypeControl: false,
-  scaleControl: false,
-  streetViewControl: false,
-  rotateControl: false,
-  clickableIcons: false,
-  keyboardShortcuts: false,
-  disableDoubleClickZoom: false,
-  fullscreenControl: false,
+  mapTypeControl: true,
+  scaleControl: true,
+  streetViewControl: true,
+  rotateControl: true,
+  clickableIcons: true,
+  keyboardShortcuts: true,
+  disableDoubleClickZoom: true,
+  fullscreenControl: true,
 };
 
 export const MODES = {
@@ -27,7 +29,7 @@ export const MODES = {
   SET_MARKER: 1,
 };
 
-export default function MapService({ center, mode, markers, onMarkerAdd }) {
+export default function MapService({ center, mode, onMarkerAdd }) {
   const numbersOfImages = Array.from({ length: 5 }, (v, k) => k + 1);
   const mapRef = useRef(undefined);
   const onLoad = useCallback(function callback(map) {
@@ -50,36 +52,44 @@ export default function MapService({ center, mode, markers, onMarkerAdd }) {
   );
   const features = [
     {
-      position: new window.google.maps.LatLng(-33.91721, 151.2263),
+      position: new window.google.maps.LatLng(54.00904364902689, 27.272372098678225),
       type: 'info',
+      title: 'г.Заславль, ул.Советская, 79, тел. (017) 542-05-86',
     },
     {
-      position: new window.google.maps.LatLng(-33.91539, 151.2282),
+      position: new window.google.maps.LatLng(53.853669, 27.700371),
       type: 'info',
+      title: 'АГЗС №1 (д.Б.Тростинец, ул. Центральная, 41)',
     },
     {
-      position: new window.google.maps.LatLng(-33.91747, 151.22912),
+      position: new window.google.maps.LatLng(53.84972491811442, 27.420723984936426),
       type: 'info',
+      title: 'АГЗС №2 (д. Озерцо, р-н авторынка «Кольцо»)',
     },
     {
-      position: new window.google.maps.LatLng(-33.9191, 151.22907),
+      position: new window.google.maps.LatLng(53.834617, 27.602392),
       type: 'info',
+      title: 'АГЗС №6, ул.Уборевича, 109',
     },
     {
-      position: new window.google.maps.LatLng(-33.91725, 151.23011),
+      position: new window.google.maps.LatLng(54.00904364902689, 27.272372098678225),
       type: 'info',
+      title: 'г.Заславль, ул.Советская, 79, тел. (017) 542-05-86',
     },
     {
       position: new window.google.maps.LatLng(-33.91872, 151.23089),
       type: 'info',
+      title: '',
     },
   ];
-  for (let i = 0; i < features.length; i++) {
-    const marker = new window.google.maps.Marker({
-      position: features[i].position,
-    });
-    console.log(marker);
-  }
+  const [activeMarker, setActiveMarker] = useState(false);
+  const OpenInform = () => {
+    setActiveMarker(true);
+    if (activeMarker) {
+      setActiveMarker(false);
+    }
+    console.log(activeMarker);
+  };
   return (
     <DivMap>
       <GoogleMap
@@ -93,17 +103,14 @@ export default function MapService({ center, mode, markers, onMarkerAdd }) {
       >
         <CurrentLocationMarker position={center} />
         {numbersOfImages.map((el) => (
-          <CurrentLocationMarker position={features[el].position} />
+          <CurrentLocationMarkerForService
+            onOpen={() => OpenInform()}
+            text={features[el].title}
+            position={features[el].position}
+          ><InfoWindow onCloseClick={()=>console.log('fff')}><p>fff</p></InfoWindow>
+          </CurrentLocationMarkerForService>
         ))}
-        <CurrentLocationMarker position={features[0].position} />
-        <CurrentLocationMarker position={features[1].position} />
-        <CurrentLocationMarker position={features[2].position} />
-        {markers.map((pos) => {
-          return <Marker position={pos}></Marker>;
-        })}
-        {features.map((pos) => {
-          return <Marker position={pos}></Marker>;
-        })}
+        {activeMarker && <DivText style={textStyle}>{features[0].title}</DivText>}
       </GoogleMap>
     </DivMap>
   );

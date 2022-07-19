@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import NoMatch from './pages/noMatch';
 import Home from './pages/Home';
@@ -41,18 +40,6 @@ import AdministrativeServices from './components/administrativeServices';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
 function App() {
-  // const makeAPICall = async () => {
-  //   try {
-  //     const response = await fetch('http://localhost:8080/', { mode: 'cors' });
-  //     const data = await response.json();backgroundColor
-  //     console.log({ data });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
-  // useEffect(() => {
-  //   makeAPICall();
-  // }, []);
   return (
     <div>
       <Routes>
@@ -85,12 +72,12 @@ function App() {
           path="/company/management/production-technical-management"
           element={<ProductionTechnicalManagement />}
         />
-        <Route path={'/services-legal-entities/'} element={<ServicesForLegalEntities />} />
+        <Route path={'/services-legal-entities'} element={<ServicesForLegalEntities />} />
         <Route
           path={'/services-legal-entities/administrative-services-legal/'}
           element={<AdministartiveServicesForLegal />}
         />
-        <Route path={'/services/legal-entities/:nameCard'} element={<CardOfServive />} />
+        <Route path={'/services-legal-entities/:nameCard'} element={<CardOfServive />} />
         <Route path={'/contacts/requisites'} element={<Requisites />} />
         <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
         <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
@@ -108,16 +95,6 @@ function App() {
           element={<InformationAdministrativeService />}
         />
       </Routes>
-
-      {/*<link rel="stylesheet" href="../../src/web_chat/static/css/main.bbd16e91.css" />*/}
-      {/*<link rel="icon" type="image/x-icon" href="./web_chat/static/media/logo.fe536c0e.png" />*/}
-      {/*<div id="webChat"></div>*/}
-      {/*<span id="chatLanguage" data-language="ru"></span>*/}
-      {/*<span id="chatFontSize" data-size="medium"></span>*/}
-      {/*<span id="open_webchat" data-open="false"></span>*/}
-
-      {/*<script src="./web_chat/web_chat/config.js"></script>*/}
-      {/*<script type="text/javascript" src="./web_chat/static/js/main.28df611b.js"></script>*/}
     </div>
   );
 }

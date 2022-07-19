@@ -7,7 +7,7 @@ import { Container } from '../../Home/styles';
 import Footer from '../../../components/footer';
 import FormQuestion from '../../../components/formQuestion';
 const styled = {
-  background: `url(${minsk})  no-repeat`,
+  background: `url(${minsk}) no-repeat`,
   backgroundSize: 'cover',
 };
 export default function ElectronicAppeal() {

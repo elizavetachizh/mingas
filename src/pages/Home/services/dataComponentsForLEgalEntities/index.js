@@ -5,7 +5,7 @@ import { ContainerServices, Imagecard, Textcard } from "../dataComponents/styles
 export default function LinkServicesForLegalEntities({ img, nameCard }) {
   const navigate = useNavigate();
   const handlerLinkClick = useCallback((nameCard) => {
-    navigate(`/services/legal-entities/${nameCard}`);
+    navigate(`/services-legal-entities/${nameCard}`);
 
   }, []);
 
