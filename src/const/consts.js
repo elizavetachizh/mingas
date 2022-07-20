@@ -10,6 +10,8 @@ export const INITIAL_FORM_STATE = {
   message: '',
   fileName: '',
   male: false,
+  index: '',
+  organization: '',
 };
 
 export interface FormValuesConst {
@@ -24,6 +26,8 @@ export interface FormValuesConst {
   text: string;
   fileName: string;
   male: boolean;
+  organization: string;
+  index: string;
 }
 export interface InputProps {
   type: 'date' | 'text';
@@ -113,9 +117,9 @@ export interface requestValues {
   text?: string;
   fileName?: string;
   message: string;
-  number: string,
-  reading: string,
-  marka: string,
+  number: string;
+  reading: string;
+  marka: string;
 }
 
 export const OPTIONS = [

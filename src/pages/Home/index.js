@@ -10,7 +10,6 @@ import Footer from '../../components/footer';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
-import '../../web_chat/static/css/main.bbd16e91.css';
 export default function Home() {
   return (
     <Container>
@@ -26,21 +25,7 @@ export default function Home() {
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>
-
       <Footer />
-      <link
-        type={'text/css'}
-        rel={'stylesheet'}
-        href="../../components/web_chat/static/css/main.bbd16e91.css"
-      />
-
-      <div id="webChat"></div>
-      <span id="chatLanguage" data-language="ru"></span>
-      <span id="chatFontSize" data-size="medium"></span>
-      <span id="open_webchat" data-open="false"></span>
-
-      <script src="../../src/web_chat/web_chat/config"></script>
-      <script type="text/javascript" src="../../src/web_chat/static/js/main.28df611b"></script>
     </Container>
   );
 }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Div, BtnIsOpen, ContainerInformAboutService } from '../styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import TitleFun from '../../../title';
 
 export default function DopFunctional({
   uniqueName,

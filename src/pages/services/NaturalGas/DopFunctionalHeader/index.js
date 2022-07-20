@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { Name } from '../../servicesList/styles';
 import { BtnLink } from './styles';
 import { useNavigate } from 'react-router';
 

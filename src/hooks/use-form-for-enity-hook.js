@@ -2,9 +2,9 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_FORM_STATE } from '../const/consts';
 import axios from 'axios';
 
-export const useForm = () => {
+export const useFormForEnity = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'http://localhost:5000/questions/';
+  const url = 'http://localhost:5000/question-for-entity/';
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
@@ -12,23 +12,20 @@ export const useForm = () => {
     );
   };
   const form = useRef();
-  const isValidatePhone = (phone: string): boolean => {
-    return /\+375 \d{2} \d{3} \d{2} \d{2}/g.test(phone);
-  };
-
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);
   };
-
   const [errors, setErrors] = useState({});
   const isButtonDisabled = useMemo(() => {
     return !!(
       stringIncludesNumber(formValues.name) ||
       !isValidateEmail(formValues.email) ||
       !formValues.isAgree ||
+      !formValues.organization ||
       !formValues.message ||
       !formValues.address ||
-      !isValidatePhone(formValues.phone) ||
+      !formValues.text ||
+      !formValues.index ||
       Object.keys(errors)?.length
     );
   }, [formValues, errors]);
@@ -41,14 +38,14 @@ export const useForm = () => {
           setErrors({ ...errors, name: 'ФИО может содержать только буквы!' });
         }
         break;
+      case 'organization':
+        if (!formValues.organization.length) {
+          setErrors({ ...errors, organization: 'Заполните, пожалуйста название организации!' });
+        }
+        break;
       case 'email':
         if (!isValidateEmail(formValues.email)) {
           setErrors({ ...errors, email: 'Введите верный адрес почты!' });
-        }
-        break;
-      case 'phone':
-        if (!isValidatePhone(formValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
       case 'isAgree':
@@ -61,9 +58,19 @@ export const useForm = () => {
           setErrors({ ...errors, message: 'Заполните, пожалуйста, обращение' });
         }
         break;
+      case 'text':
+        if (!formValues.text.length) {
+          setErrors({ ...errors, text: 'Заполните, пожалуйста, почтовый адрес' });
+        }
+        break;
+      case 'index':
+        if (!formValues.index.length) {
+          setErrors({ ...errors, index: 'Заполните, пожалуйста, почтовый индекс!' });
+        }
+        break;
       case 'address':
         if (!formValues.address.length) {
-          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
+          setErrors({ ...errors, address: 'Введите, пожалуйста юридический адрес предприятия!' });
         }
         break;
       default:
@@ -110,7 +117,15 @@ export const useForm = () => {
 
   const clearForm = useCallback(() => {
     document.getElementById('file-input').value = '';
-    setFormValues({ ...INITIAL_FORM_STATE, name: '', date: '', email: '', address: '' });
+    setFormValues({
+      ...INITIAL_FORM_STATE,
+      name: '',
+      date: '',
+      email: '',
+      address: '',
+      organization: '',
+      index: '',
+    });
   }, []);
 
   const handleSubmit = async (event) => {

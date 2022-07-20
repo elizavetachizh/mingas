@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs } from 'react-google-maps';
-import { features } from '../../assets/data_address_map';
+import { obmen_balons } from '../../assets/data_address_obmen_balons';
 import { useLoadScript } from '@react-google-maps/api';
 const API_KEY = process.env.REACT_APP_API_KEY;
 const libraries = ['places'];
@@ -9,7 +9,7 @@ function Map() {
   const [activeMarker, setActiveMarker] = useState(null);
   return (
     <GoogleMap defaultZoom={10} defaultCenter={{ lat: 53.905812, lng: 27.602552 }}>
-      {features.map((el) => (
+      {obmen_balons.map((el) => (
         <Marker
           position={{ lat: el.position[0], lng: el.position[1] }}
           onClick={() => setActiveMarker(el)}
@@ -32,7 +32,7 @@ function Map() {
   );
 }
 const WrapperMap = withScriptjs(withGoogleMap(Map));
-export default function MapService() {
+export default function MapObenBalons() {
   const { isLoaded, loadError } = useLoadScript({
     id: 'google-map-script-1',
     googleMapsApiKey: API_KEY,

@@ -23,7 +23,7 @@ export default function InputName({
         value={value}
         onChange={onChange}
       />
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

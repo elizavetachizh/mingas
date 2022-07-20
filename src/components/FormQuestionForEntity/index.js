@@ -17,7 +17,7 @@ import {
   Background,
 } from '../formQuestion/styles';
 import sttyleBackground from '../../assets/background/подложка_1.png';
-import { useForm } from '../../hooks/use-form-hook';
+import { useFormForEnity } from '../../hooks/use-form-for-enity-hook';
 const styled = {
   backgroundImage: `url(${sttyleBackground})`,
 };
@@ -31,11 +31,11 @@ export default function FormQuestionForEntity() {
     isButtonDisabled,
     handleSubmit,
     form,
-  } = useForm();
+  } = useFormForEnity();
   const { t } = useTranslation();
   return (
     <>
-    <Background src={sttyleBackground}  />
+      <Background />
       <Form onSubmit={handleSubmit} ref={form}>
         <DivInput>
           <Label>
@@ -48,8 +48,8 @@ export default function FormQuestionForEntity() {
             type={'text'}
             placeholder={'Введите наименование юридического лица'}
             onChange={handleUserInput}
-            value={formValues.name}
-            error={name && errors.name}
+            value={formValues.organization}
+            error={errors.organization}
           />
         </DivInput>
 
@@ -109,13 +109,13 @@ export default function FormQuestionForEntity() {
             <Span>*</Span>
           </Label>
           <InputName
-            inputName={'address'}
-            type="tel"
-            name="address"
+            inputName={'text'}
+            type="text"
+            name="text"
             placeholder={'Введите почтовый адрес'}
             onChange={handleUserInput}
-            value={formValues.address}
-            error={address && errors.address}
+            value={formValues.text}
+            error={errors.text}
           />
         </DivInput>
 
@@ -125,13 +125,13 @@ export default function FormQuestionForEntity() {
             <Span>*</Span>
           </Label>
           <InputName
-            inputName={'name'}
-            name={'name'}
+            inputName={'index'}
+            name={'index'}
             type={'text'}
             placeholder={'Введите индекс'}
             onChange={handleUserInput}
-            value={formValues.text}
-            error={errors.text}
+            value={formValues.index}
+            error={errors.index}
           />
         </DivInput>
         <DivInput>
@@ -168,6 +168,11 @@ export default function FormQuestionForEntity() {
             <Span>*</Span>
           </Label>
         </DivInputCheckbox>
+        {isButtonDisabled && (
+          <Span>
+            <strong>Заполните, пожалуйста все необходимые поля!</strong>
+          </Span>
+        )}
         <Button
           disabled={isButtonDisabled}
           type="submit"
@@ -176,9 +181,6 @@ export default function FormQuestionForEntity() {
         >
           Отправить
         </Button>
-        {isButtonDisabled && (
-          <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
-        )}
       </Form>
     </>
   );

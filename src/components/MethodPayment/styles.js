@@ -6,7 +6,10 @@ export const ContainerBtn = styled.div`
   margin: 2% auto;
   display: flex;
   flex-direction: column;
-
+  transition: transform 0.5s;
+  &:hover {
+    transform: translateY(10px); /* Сдвигаем вниз */
+  }
   img {
     display: flex;
     flex-direction: column;
@@ -15,18 +18,16 @@ export const ContainerBtn = styled.div`
     text-align: center;
     margin: 4% auto;
   }
-
   div {
     padding: 2%;
     display: none;
-    transition: 0.55s opacity, 0.55s visibility;
+    transition: transform 0.5s;
     p {
       text-align: justify;
     }
     &.shake {
       display: block;
-      transition: 1s ease-out;
-      animation: animateSlideOut 0.8s;
+      transform: translateY(10px);
     }
   }
 `;
@@ -36,7 +37,7 @@ export const Div = styled.button`
   justify-content: space-between;
   position: relative;
   font-weight: 500;
-  font-size: 0.94117647058rem;
+  font-size: 0.9rem;
   line-height: 1.6875em;
   color: #3c3838;
   padding: 0;
@@ -49,6 +50,11 @@ export const Div = styled.button`
     background: #eeeeee;
     padding: 35px;
     margin: 0;
+  }
+  &:active {
+    div {
+      transition: 5s;
+    }
   }
 `;
 export const DivClose = Div;

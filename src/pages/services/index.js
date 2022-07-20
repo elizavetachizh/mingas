@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '../../components/header';
 import { DivServices } from './styles';
 import { data } from '../../assets/data_services';

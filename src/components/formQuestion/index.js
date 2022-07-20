@@ -29,10 +29,14 @@ export default function FormQuestion() {
     isButtonDisabled,
     handleSubmit,
     form,
+    msg,
   } = useForm();
   const { t } = useTranslation();
   return (
     <Form onSubmit={handleSubmit} ref={form}>
+      <p>
+        <b>{msg}</b>
+      </p>
       <DivInput>
         <Label>
           {t('form:name')}

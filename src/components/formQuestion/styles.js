@@ -89,6 +89,7 @@ export const DivInputCheckbox = styled.div`
 export const Label = styled.label`
   color: #2d4c6b;
   opacity: 0.65;
+  font-size: 20px;
   span {
     color: red;
   }
@@ -118,14 +119,17 @@ export const InputFile = styled.input`
 `;
 
 export const Button = styled.button`
-  color: #0d4475;
-  background: none;
+  //color: #0d4475;
+  //background: none;
+  border: solid #0d4475;
+  color: #fff; /* Цвет текста */
+  background: #0d4475; /* Цвет фона */
   font-size: 16px;
   font-weight: 500;
   width: 240px;
   text-align: center;
   text-decoration: none;
-  border: none;
+  //border: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,17 +137,17 @@ export const Button = styled.button`
   margin: 4% auto;
   cursor: pointer;
   transition: 0.8s linear;
-  &:hover {
-    border: solid #0d4475;
-    color: #fff; /* Цвет текста */
-    background: #0d4475; /* Цвет фона */
-    padding: 10px;}
-  &:focus {
-    border: solid #0d4475;
-    color: #fff; /* Цвет текста */
-    background: #0d4475; /* Цвет фона */
-    padding: 10px;
-  }
+  //&:hover {
+  //  border: solid #0d4475;
+  //  color: #fff; /* Цвет текста */
+  //  background: #0d4475; /* Цвет фона */
+  //  padding: 10px;}
+  //&:focus {
+  //  border: solid #0d4475;
+  //  color: #fff; /* Цвет текста */
+  //  background: #0d4475; /* Цвет фона */
+  //  padding: 10px;
+  //}
 `;
 
 export const Background = styled.img`
@@ -154,5 +158,4 @@ export const Background = styled.img`
   align-items: flex-start;
   margin: 0;
   padding: 0;
-
-`
+`;

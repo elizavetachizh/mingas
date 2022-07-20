@@ -27,7 +27,6 @@ import Branches from './pages/company/Branches';
 import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
 import NaturalGas from './pages/services/NaturalGas';
 import './App.css';
-import '../src/web_chat/static/css/main.bbd16e91.css';
 import ResidentsOfCapitalRegion from './pages/ResidentsOfCapital Region';
 import SearchPage from './pages/SearchPage';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
@@ -39,122 +38,69 @@ import ElectronicAppealForEntity from './pages/feedback/electronicCirculationFor
 import AdministrativeServices from './components/administrativeServices';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
-function App() {
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/company/history" element={<History />} />
-        <Route path="/contacts" element={<GeneralInform />} />
-        <Route path="/press-center" element={<PressCenter />} />
-        <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
-        <Route path={'/feedback/online-application'} element={<Requests />} />
-        <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
-        <Route
-          path={'/feedback/electronic-appeal-for-entity'}
-          element={<ElectronicAppealForEntity />}
-        />
-        <Route path={'/feedback/usefull-information'} element={<UsefulInformation />} />
-        <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
-        <Route path="/*" element={<NoMatch />} />
-        <Route path="/company/management" element={<Management />} />
-        <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
-        <Route path="/services/:nameCard" element={<NaturalGas />} />
-        <Route path="/services/method-payment" element={<MethodPayment />} />
-        <Route path="/company/structure/" element={<Structure />} />
-        <Route path="/company/career/" element={<Career />} />
-        <Route path="/company/branches" element={<Branches />} />
-        <Route path="/company/documentation/" element={<Documentation />} />
-        <Route path={'company/gratitude'} element={<Gratitude />} />
-        <Route path="/company/union/" element={<Union />} />
-        <Route
-          path="/company/management/production-technical-management"
-          element={<ProductionTechnicalManagement />}
-        />
-        <Route path={'/services-legal-entities'} element={<ServicesForLegalEntities />} />
-        <Route
-          path={'/services-legal-entities/administrative-services-legal/'}
-          element={<AdministartiveServicesForLegal />}
-        />
-        <Route path={'/services-legal-entities/:nameCard'} element={<CardOfServive />} />
-        <Route path={'/contacts/requisites'} element={<Requisites />} />
-        <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
-        <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
-        <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-        <Route path={'/dialog/:telegram'} element={<DialogViber />} />
-        <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
-        <Route path={'/Personal'} element={<Personal />} />
-        <Route path={'/Personal/tasks'} element={<Tasks />} />
-        <Route path={'/SearchPage'} element={<SearchPage />} />
-        <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
-        <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
-        <Route path={'/services/administrative-services'} element={<AdministrativeServices />} />
-        <Route
-          path={'/services/administrative-services/:serviceID'}
-          element={<InformationAdministrativeService />}
-        />
-      </Routes>
-    </div>
-  );
+import { Component } from 'react';
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/company/history" element={<History />} />
+          <Route path="/contacts" element={<GeneralInform />} />
+          <Route path="/press-center" element={<PressCenter />} />
+          <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
+          <Route path={'/feedback/online-application'} element={<Requests />} />
+          <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
+          <Route
+            path={'/feedback/electronic-appeal-for-entity'}
+            element={<ElectronicAppealForEntity />}
+          />
+          <Route path={'/feedback/usefull-information'} element={<UsefulInformation />} />
+          <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
+          <Route path="/*" element={<NoMatch />} />
+          <Route path="/company/management" element={<Management />} />
+          <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
+          <Route path="/services/:nameCard" element={<NaturalGas />} />
+          <Route path="/services/method-payment" element={<MethodPayment />} />
+          <Route path="/company/structure/" element={<Structure />} />
+          <Route path="/company/career/" element={<Career />} />
+          <Route path="/company/branches" element={<Branches />} />
+          <Route path="/company/documentation/" element={<Documentation />} />
+          <Route path={'company/gratitude'} element={<Gratitude />} />
+          <Route path="/company/union/" element={<Union />} />
+          <Route
+            path="/company/management/production-technical-management"
+            element={<ProductionTechnicalManagement />}
+          />
+          <Route path={'/services-legal-entities'} element={<ServicesForLegalEntities />} />
+          <Route
+            path={'/services-legal-entities/administrative-services-legal/'}
+            element={<AdministartiveServicesForLegal />}
+          />
+          <Route path={'/services-legal-entities/:nameCard'} element={<CardOfServive />} />
+          <Route path={'/contacts/requisites'} element={<Requisites />} />
+          <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
+          <Route
+            path={'/contacts/work-schedule'}
+            element={<SchedulePersonalReceptionOfCitizens />}
+          />
+          <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
+          <Route path={'/dialog/:telegram'} element={<DialogViber />} />
+          <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
+          <Route path={'/Personal'} element={<Personal />} />
+          <Route path={'/Personal/tasks'} element={<Tasks />} />
+          <Route path={'/SearchPage'} element={<SearchPage />} />
+          <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
+          <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
+          <Route path={'/services/administrative-services'} element={<AdministrativeServices />} />
+          <Route
+            path={'/services/administrative-services/:serviceID'}
+            element={<InformationAdministrativeService />}
+          />
+        </Routes>
+      </div>
+    );
+  }
 }
 export default App;
-
-//
-// class App extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="/services" element={<Services />} />
-//           <Route path="/company/history" element={<History />} />
-//           <Route path="/contacts" element={<GeneralInform />} />
-//           <Route path="/press-center" element={<PressCenter />} />
-//           {/*<Route path="/Service-Center" element={<ServiceCenter />} />*/}
-//           <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
-//           <Route path={'/feedback/online-application'} element={<Requests />} />
-//           <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
-//           <Route path={'/feedback/usefull-information'} element={<UsefulInformation />} />
-//           <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
-//           <Route path="/*" element={<NoMatch />} />
-//           <Route path="/company/management" element={<Management />} />
-//           <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
-//           <Route path="/services/:nameCard" element={<NaturalGas />} />
-//           <Route path="/company/structure/" element={<Structure />} />
-//           <Route path="/company/career/" element={<Career />} />
-//           <Route path="/company/branches" element={<Branches />} />
-//           <Route path="/company/documentation/" element={<Documentation />} />
-//           <Route path="/company/union/" element={<Union />} />
-//           <Route
-//             path="/company/management/production-technical-management"
-//             element={<ProductionTechnicalManagement />}
-//           />
-//           <Route path={'/services/legal-entities'} element={<ServicesForLegalEntities />} />
-//           <Route path={'/contacts/requisites'} element={<Requisites />} />
-//           <Route
-//             path={'/contacts/work-schedule'}
-//             element={<SchedulePersonalReceptionOfCitizens />}
-//           />
-//           <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-//           <Route path={'/dialog/:telegram'} element={<DialogViber />} />
-//           <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
-//           <Route path={'/Personal'} element={<Personal />} />
-//           <Route path={'/Personal/tasks'} element={<Tasks />} />
-//           <Route path={'/test'} element={<Test/>}/>
-//         </Routes>
-//         <link rel="stylesheet" href="../src/web_chat/web_chat/static/css/main.bbd16e91.css" />
-//         <link rel="icon" type="image/x-icon" href="../src/web_chat/static/media/logo.fe536c0e.png" />
-//         <div id="webChat"></div>
-//         <span id="chatLanguage" data-language="ru"></span>
-//         <span id="chatFontSize" data-size="medium"></span>
-//         <span id="open_webchat" data-open="false"></span>а
-//
-//         <script src="../src/web_chat/web_chat/config.js"></script>
-//         <script type="text/javascript" src="../src/web_chat/web_chat/static/js/main.28df611b.js"></script>
-//       </div>
-//     );
-//   }
-// }
-//
-// export default App;

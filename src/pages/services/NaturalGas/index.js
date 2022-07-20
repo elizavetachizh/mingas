@@ -39,7 +39,20 @@ export default function NaturalGas() {
           </HeaderCompanyDiv>
           <DopFunctionService
             name={currentDepartment.nameCard}
+            nameDescription={currentDepartment.nameDescription}
             description={currentDepartment.description}
+            nameDescription_1={currentDepartment.nameDescription_1}
+            description_1={currentDepartment.description_1}
+            nameDescription_2={currentDepartment.nameDescription_2}
+            description_2={currentDepartment.description_2}
+            nameDescription_3={currentDepartment.nameDescription_3}
+            description_3={currentDepartment.description_3}
+            nameDescription_4={currentDepartment.nameDescription_4}
+            description_4={currentDepartment.description_4}
+            nameDescription_5={currentDepartment.nameDescription_5}
+            description_5={currentDepartment.description_5}
+            nameDescription_6={currentDepartment.nameDescription_6}
+            description_6={currentDepartment.description_6}
           />
         </DivBlocks>
       </AdditionalDiv>

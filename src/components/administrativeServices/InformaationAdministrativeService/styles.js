@@ -41,6 +41,7 @@ export const BtnIsOpen = styled.div`
   margin: 1rem auto;
   p {
     padding: 20px;
+    width: 90%;
   }
 `;
 
