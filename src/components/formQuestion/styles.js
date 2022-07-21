@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
   width: 100%;
-  max-width: 1200px;
+  max-width: 980px;
   margin: 0 auto;
-  z-index: 10;
+  z-index: 3;
 `;
 
 export const DivInput = styled.div`
@@ -105,8 +105,10 @@ export const DivInputFile = styled.div`
   position: relative;
   overflow: hidden;
   text-align: center;
-  margin: 1.5rem 0;
-  height: 36px;
+  margin: 1.5rem 0 0;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const InputFile = styled.input`

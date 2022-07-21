@@ -1,14 +1,15 @@
 import React from 'react';
 import ButtonFun from '../../../components/button';
-import { Container, DivInform } from './styles';
-import { Title } from '../useful_information/styles';
+import {DivInform } from './styles';
 import { data } from '../../../assets/data_news';
 import LinkNews from './LinkToNews';
+import TitleForHome from "../../../components/TitleForHome";
+import { Container } from "../services/styles";
 
 export default function News() {
   return (
-    <Container backgroundColor={'gray'}>
-      <Title>Новости предприятия</Title>
+    <Container>
+      <TitleForHome color={'white'} infoTitle={'Новости предприятия'} />
       <DivInform>
         {data.map((element) => (
           <LinkNews
@@ -19,7 +20,7 @@ export default function News() {
           />
         ))}
       </DivInform>
-      <ButtonFun href={'/Press-Center'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
+      <ButtonFun href={'/Press-Center'} infoButton={'Показать ещё'} backgroundColor={'white'} />
     </Container>
   );
 }

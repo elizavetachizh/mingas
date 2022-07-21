@@ -49,9 +49,9 @@ export const Container = styled.div`
     @media (max-width: 894px) {
       background-color: rgba(200, 220, 231, 80%);
     }
-    @media (max-width: 650px) {
-      width: 650px;
-    }
+    //@media (max-width: 650px) {
+    //  width: 650px;
+    //}
   }
 `;
 export const Menu = styled.div`
@@ -64,11 +64,11 @@ export const Menu = styled.div`
   @media (max-width: 900px) {
     display: block;
   }
-  .opacity {
-    background-color: rgba(200, 220, 231, 0%);
-    color: #314d5c;
-    margin-top: 0;
-  }
+  //.opacity {
+  //  background-color: rgba(200, 220, 231, 0%);
+  //  color: #314d5c;
+  //  margin-top: 0;
+  //}
   img {
     margin: 10px;
   }
@@ -94,9 +94,11 @@ export const Background = styled.div`
     color: #314d5c;
   }
   .click {
-    opacity: 1;
+    display: block;
   }
-
+//@media(max-width: 1220px){
+//  padding: 0;
+//}
   @media (max-width: 900px) {
     background-color: rgba(200, 220, 231, 80%);
     height: 100px;

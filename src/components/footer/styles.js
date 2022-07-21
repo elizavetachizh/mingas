@@ -1,21 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  //max-width: 100%;
+  max-width: 100%;
   height: auto;
+  width: 100%;
   background-color: #0d4475;
   display: flex;
   flex-direction: column;
   font-size: 16px;
   padding: 10px 0;
   color: white;
-  @media (max-width: 640px) {
-    width: 640px;
-    max-width: 640px;
+  @media (max-width: 650px) {
+    width: 660px;
+    max-width: 660px;
   }
-  input {
-    padding: 1rem 1.5rem 1rem;
-  }
+  //input {
+  //  padding: 1rem 1.5rem 1rem;
+  //}
 `;
 
 export const Contacts = styled.div`
@@ -31,7 +32,7 @@ export const Contacts = styled.div`
     text-align: center;
   }
   @media (max-width: 640px) {
-    width: 640px;
+    width: 650px;
   }
 `;
 

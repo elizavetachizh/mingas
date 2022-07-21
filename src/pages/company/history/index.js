@@ -209,7 +209,6 @@ export default function History() {
         </DivParagraphHistory>
       </AdditionalDiv>
       <ImgBackground alt={''} src={history_6} />
-
       <Footer />
     </Container>
   );

@@ -32,7 +32,6 @@ import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router';
 import personal from '../../assets/icons/user.png';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { NavLink } from 'react-router-dom';
@@ -80,8 +79,9 @@ export default function Header({ backgroundHeader }) {
   return (
     <Container backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
-        {open ? closeMobile : openMobile}
         {open && <MobileNavigation />}
+        {open ? closeMobile : openMobile}
+
         <BackgroundText>
           <LinkLogo to="/">
             <Logo src={HeaderLogo} />

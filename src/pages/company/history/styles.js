@@ -85,16 +85,22 @@ export const WhatDoingCompaniInform = styled.div`
 export const PWithImg = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
   div {
     padding: 10px 20px;
   }
   img {
-    width: 400px;
-    height: 500px;
-    @media(max-width: 740px) {
-      width: 300px;
-      height: 600px;
-    }
+    width: 50%;
+    //@media (max-width: 740px) {
+    //  width: 300px;
+    //  height: 600px;
+    //}
+    //@media (max-width: 690px) {
+    //  width: 300px;
+    //  height: 500px;
+    //}
   }
 `;
 
@@ -115,11 +121,14 @@ export const DivParagraphHistory = styled.div`
 `;
 export const ImgBackground = styled.img`
   position: relative;
- bottom: 0;
+  bottom: 0;
+  width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   margin: 0 auto;
   background-repeat: no-repeat;
-  
+  @media(max-width: 651px) {
+    width: 40rem;
+  }
 `;

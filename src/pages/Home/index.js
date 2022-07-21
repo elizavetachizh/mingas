@@ -10,6 +10,7 @@ import Footer from '../../components/footer';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
+import StateInformResources from "../../components/stateInformResources";
 export default function Home() {
   return (
     <Container>
@@ -21,6 +22,7 @@ export default function Home() {
         <ParallaxDiv />
         <HeaderRequests />
         <News />
+        <StateInformResources/>
       </HomeContainer>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />

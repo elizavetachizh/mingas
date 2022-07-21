@@ -151,9 +151,9 @@ export default function FormQuestionForEntity() {
           />
         </DivInput>
         <DivInputFile>
-          <span>Прекрипите файл</span>
           <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
         </DivInputFile>
+        <span>Прекрипите файл</span>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

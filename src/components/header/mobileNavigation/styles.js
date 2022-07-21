@@ -49,7 +49,6 @@ export const LinksContainer = styled.div`
   transition: left 0.2s;
   color: #0d4475 !important;
   z-index: 2;
-  -webkit-transform: translateZ(0);
   background-color: rgba(200, 220, 231, 80%);
   -webkit-backface-visibility: hidden;
   &.opacity {
@@ -74,8 +73,6 @@ export const CompanyButton = styled(NavLink)`
 export const ServicesButton = CompanyButton;
 export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
-export const FeedBackButton = CompanyButton;
-export const PersonalAccButton = CompanyButton;
 
 export const DivButtonHeader = styled.div`
   display: none;
@@ -98,7 +95,7 @@ export const Dropdown = styled.div`
     align-items: flex-start;
     flex-direction: column;
     z-index: 5;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0px rgba(0, 0, 0, 0.2);
     background-color: #f1f1f1;
     padding: 10px;
   }

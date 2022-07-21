@@ -12,6 +12,9 @@ const buttonBackgroundColor = {
     border: 1px solid white;
     background-color: rgba(0,0,0,0);
     `,
+  white: `
+    background-color: #FFF;
+    color: #0D4475`,
 };
 
 export const Button = styled(NavLink)`

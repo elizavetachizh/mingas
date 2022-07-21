@@ -7,7 +7,7 @@ export const DivNews = styled.a`
   align-items: center;
   justify-content: center;
   margin: 0px 10px;
-  color: #3a5868;
+  color: #ffffff;
   &:hover {
     text-decoration: underline;
     text-decoration-color: rgba(49, 77, 93, 0.6);
