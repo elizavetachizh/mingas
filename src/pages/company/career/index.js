@@ -16,15 +16,18 @@ import {
   PhotoCareer,
   DivVacancies,
   TitleCareer,
+  LinkToWork,
+  ContainerForLinkToWork,
 } from './styles';
 import career from '../../../assets/png/oszczedzanie-gazu.jpg';
 import up from '../../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
-import workImg from '../../../assets/company/photo_2022-07-21_16-56-06.jpg'
+import workImg from '../../../assets/company/photo_2022-07-21_16-56-06.jpg';
 import TitleForHome from '../../../components/TitleForHome';
 import background from '../../../assets/background/подложка_3.png';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
+import SubTitleFun from '../../../components/SubTitle';
 export default function Career() {
   const styleImage = {
     backgroundImage: `url(${background})`,
@@ -76,20 +79,41 @@ export default function Career() {
         {/*  </DivAboutManagementBackground>*/}
         {/*</DivAfterAndBefore>*/}
         <AdditionalDiv>
-          <a
-            href={
-              'https://rabota.by/search/vacancy?text=%D0%9C%D0%B8%D0%BD%D0%B3%D0%B0%D0%B7&from=suggest_post&salary=&clusters=true&area=1002&ored_clusters=true&enable_snippets=true'
-            }
-          >
-            <PhotoCareer src={workImg} />
-            Актуальные вакансии на УП "МИНГАЗ"
-          </a>
+          <ContainerForLinkToWork>
+            <SubTitleFun
+              fontSize={'s'}
+              color={'blue'}
+              infoSubTitle={
+                'С актуальной информацией по имеющимся вакансиям на УП "МИНГАЗ" вы можете ознакомиться здесь:'
+              }
+            />
+            <LinkToWork
+              href={
+                'https://rabota.by/search/vacancy?text=%D0%9C%D0%B8%D0%BD%D0%B3%D0%B0%D0%B7&from=suggest_post&salary=&clusters=true&area=1002&ored_clusters=true&enable_snippets=true'
+              }
+            >
+              <p>
+                <a
+                  href={
+                    'https://rabota.by/search/vacancy?text=%D0%9C%D0%B8%D0%BD%D0%B3%D0%B0%D0%B7&from=suggest_post&salary=&clusters=true&area=1002&ored_clusters=true&enable_snippets=true'
+                  }
+                >
+                  rabota.by
+                </a>{' '}
+                Работа в Минске, свежие вакансии - <a href={'https://rabota.by/'}>rabota.by</a> Найти работу в Минске! ★ rabota.by -
+                свежие вакансии в Минске от прямых работодателей в 28 профобластях. Поиск работы и
+                сотрудников на rabota.by.
+              </p>
+              <img src={workImg} />
+            </LinkToWork>
+          </ContainerForLinkToWork>
+          <p></p>
           <DivForm className="form-div">
             <p>
-              При приеме на работу предлагаем заполнить
+              При приеме на работу предлагаем заполнить{' '}
               <a download href={anketa}>
                 анкету
-              </a>
+              </a>.
             </p>
           </DivForm>
           <p>Телефон отдела кадров УП «МИНГАЗ»: 80172992830, 80172992936</p>

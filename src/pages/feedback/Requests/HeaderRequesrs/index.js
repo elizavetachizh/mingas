@@ -16,7 +16,7 @@ export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForTheIssuanceOfTechnicalSpecifications');
   return (
     <Container>
-      <TitleForHome style={styledTitle} color={'blue'} infoTitle={'Оставить онлайн-заявку'} />
+      <TitleForHome fontSize={'m'} margin={'s'} style={styledTitle} color={'blue'} infoTitle={'Оставить онлайн-заявку'} />
       <ButtonForms>
         <HeaderBtnFeedback>
           <Button

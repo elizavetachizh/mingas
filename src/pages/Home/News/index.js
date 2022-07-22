@@ -9,7 +9,7 @@ import { Container } from "../services/styles";
 export default function News() {
   return (
     <Container>
-      <TitleForHome color={'white'} infoTitle={'Новости предприятия'} />
+      <TitleForHome fontSize={'m'} color={'white'} infoTitle={'Новости предприятия'} />
       <DivInform>
         {data.map((element) => (
           <LinkNews

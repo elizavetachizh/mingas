@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { data } from '../../../assets/data_services';
 import { useParams } from 'react-router-dom';
 import DopFunctionService from '../DopFunction';
@@ -12,48 +12,48 @@ import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { DivBlocks } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-import { DivBtn } from "./DopFunctionalHeader/styles";
+import { DivBtn } from './DopFunctionalHeader/styles';
+import TitleFun from '../../../components/title';
 
 export default function NaturalGas() {
-  const navigate = useNavigate();
-  const handlerServiceClick = useCallback((nameCard) => {
-    navigate(`/services/${nameCard}`);
-  }, []);
-  const { nameCard } = useParams();
-  const currentDepartment = data.find((service) => service.nameCard === nameCard);
-
+  const [inform, setInform] = useState([]);
+  const [currentServiceID, setServiceID] = useState('');
+  const [title, setTitle] = useState([]);
+  const animate = useCallback(
+    (descriptionID) => {
+      const current = data.find((element) => element.serviceId === descriptionID);
+      setInform(current.description);
+      setTitle(current.nameCard);
+      // console.log(current);
+      // console.log(inform);
+      console.log(data[0].nameCard);
+      setServiceID(currentServiceID ? '' : descriptionID);
+    },
+    [currentServiceID]
+  );
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>
-            <Name>Услуги</Name>
+            <Name>Услуги для физических лиц</Name>
             {data.map((element) => (
               <DivBtn>
-                <Button onClick={() => handlerServiceClick(element.nameCard)}>
+                <Button onClick={() => animate(element.serviceId)} key={element.serviceId}>
                   {element.nameCard}
                 </Button>
               </DivBtn>
             ))}
           </HeaderCompanyDiv>
-          <DopFunctionService
-            name={currentDepartment.nameCard}
-            nameDescription={currentDepartment.nameDescription}
-            description={currentDepartment.description}
-            nameDescription_1={currentDepartment.nameDescription_1}
-            description_1={currentDepartment.description_1}
-            nameDescription_2={currentDepartment.nameDescription_2}
-            description_2={currentDepartment.description_2}
-            nameDescription_3={currentDepartment.nameDescription_3}
-            description_3={currentDepartment.description_3}
-            nameDescription_4={currentDepartment.nameDescription_4}
-            description_4={currentDepartment.description_4}
-            nameDescription_5={currentDepartment.nameDescription_5}
-            description_5={currentDepartment.description_5}
-            nameDescription_6={currentDepartment.nameDescription_6}
-            description_6={currentDepartment.description_6}
-          />
+          <div>
+            {/*{title.map((element) => (*/}
+            {/*  <TitleFun infoTitle={element} color={'blue'} />*/}
+            {/*))}*/}
+            {inform.map((el) => (
+              <DopFunctionService nameDescription={el.nameDescription} inform={el.inform} />
+            ))}
+          </div>
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
 
-export const DivServicesList = styled(NavLink)`
+export const DivServicesList = styled.button`
   display: flex;
   flex: 0 0 30%;
   max-width: 28%;

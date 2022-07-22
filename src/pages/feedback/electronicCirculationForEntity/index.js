@@ -10,16 +10,17 @@ import { ContainerInform, TextForInformation } from './styles';
 import SubTitleFun from '../../../components/SubTitle';
 import TitleFun from '../../../components/title';
 import background from '../../../assets/background/подложка_3.png';
+import TitleForHome from '../../../components/TitleForHome';
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
 };
 const styleImage = {
   backgroundImage: `url(${background})`,
-   backgroundRepeat: 'no-repeat',
+  backgroundRepeat: 'no-repeat',
   // backgroundAttachment: 'fixed'
   // backgroundSize: 'cover',
-  widths: '50%'
+  widths: '50%',
 };
 export default function ElectronicAppealForEntity() {
   return (
@@ -30,7 +31,7 @@ export default function ElectronicAppealForEntity() {
       </Divbackground>
 
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Электронное обращение юридических лиц'} />
+        <TitleForHome color={'blue'} infoTitle={'Электронное обращение юридических лиц'} />
         <ContainerInform>
           <TextForInformation>
             <SubTitleFun color={'blue'} infoSubTitle={'Уважаемые посетители сайта!'} />

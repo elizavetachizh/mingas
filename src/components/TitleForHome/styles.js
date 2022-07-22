@@ -8,13 +8,18 @@ const titleColor = {
 };
 const titleFontSize = {
   s: `
-  font-size: 28px`,
+  font-size: 24px`,
   m: `
-  font-size: 32px`,
+  font-size: 28px`,
 };
-export const  Title = styled.h2`
+const titleMargin = {
+  s: `
+  margin: 2% auto 2% auto;
+  `,
+};
+export const Title = styled.h2`
   font-style: normal;
-z-index: 2;
+  z-index: 2;
   line-height: 37px;
   display: flex;
   align-items: center;
@@ -25,7 +30,7 @@ z-index: 2;
   margin: 4% auto;
   text-align: center;
   ${({ color }) => titleColor[color]};
-
+  ${({ margin }) => titleMargin[margin]};
   @media (max-width: 700px) {
     margin-top: 14%;
   }

@@ -6,7 +6,7 @@ import { DivCarousel } from './styles';
 export default function StateInformResources() {
   return (
     <Container>
-      <TitleForHome color={'blue'} infoTitle={'Государственные информационные ресурсы'} />
+      <TitleForHome fontSize={'m'} color={'blue'} infoTitle={'Государственные информационные ресурсы'} />
       <Carousel
         plugins={[
           'infinite',

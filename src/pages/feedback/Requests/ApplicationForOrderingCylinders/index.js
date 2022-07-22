@@ -17,6 +17,7 @@ import Select from '../../../../components/select';
 import { OPTIONS_TIME } from '../../../../const/consts';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
 import TitleFun from '../../../../components/title';
+import SubTitleFun from "../../../../components/SubTitle";
 
 export default function ApplicationForOrderingCylinders() {
   const {
@@ -31,7 +32,7 @@ export default function ApplicationForOrderingCylinders() {
   } = useForOrderingCylinders();
   return (
     <DivApplication>
-      <TitleFun color={'blue'} infoTitle={'Заявка на заказ баллонов'}></TitleFun>
+      <SubTitleFun color={'blue'} infoTitle={'Заявка на заказ баллонов'}></SubTitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>

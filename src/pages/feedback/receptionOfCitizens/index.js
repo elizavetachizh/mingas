@@ -20,7 +20,7 @@ export default function ReceptionOfCitizens() {
       <Divbackground>
         <DivImage style={styled}></DivImage>
       </Divbackground>
-      <TitleFun infoTitle={'График приёма граждан'} color={'blue'} />
+      <TitleFun margin={'s'} infoTitle={'График приёма граждан'} color={'blue'} />
       <SectionTable>
         <Table>
           <Thead>

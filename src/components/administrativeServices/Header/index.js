@@ -24,8 +24,8 @@ export default function HeaderAdministrativeServices() {
   const animate = useCallback(
     (serviceID) => {
       const current = data.find((element) => element.serviceID === serviceID);
-      setLinks(current.links);
-      setServiceID(currentServiceID ? '' : serviceID);
+       setLinks(current.links);
+       setServiceID(currentServiceID ? '' : serviceID);
     },
     [currentServiceID]
   );

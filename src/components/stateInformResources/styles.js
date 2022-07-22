@@ -6,4 +6,8 @@ export const DivCarousel = styled.div`
     text-decoration: none;
     color: black;
   }
+  &:hover {
+    transform: scale(1.1);
+    transition: 1s;
+  }
 `

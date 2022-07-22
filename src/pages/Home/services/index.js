@@ -6,14 +6,17 @@ import { Container, DivInform, DivDown, ButtonServicesHome, ServicesDiv } from '
 import LinkServices from './dataComponents';
 import { useTranslation } from 'react-i18next';
 import TitleForHome from '../../../components/TitleForHome';
-import LinkServicesForLegalEntities from "./dataComponentsForLEgalEntities";
+import LinkServicesForLegalEntities from './dataComponentsForLEgalEntities';
 
 export default function HomeServices() {
   const { t } = useTranslation();
   return (
     <Container>
       <DivInform>
-        <TitleForHome infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'} />
+        <TitleForHome
+          fontSize={'m'}
+          infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'}
+        />
         <ButtonServicesHome>
           <ButtonFun
             href={'/services'}
@@ -29,12 +32,20 @@ export default function HomeServices() {
         <ServicesDiv>
           <DivDown>
             {data.map((element) => (
-              <LinkServices key={element.cardId} img={element.cardImg} nameCard={element.nameCard} />
+              <LinkServices
+                key={element.cardId}
+                img={element.cardImg}
+                nameCard={element.nameCard}
+              />
             ))}
           </DivDown>
           <DivDown>
             {dataLegalEntities.map((element) => (
-              <LinkServicesForLegalEntities key={element.cardId} img={element.cardImg} nameCard={element.nameCard} />
+              <LinkServicesForLegalEntities
+                key={element.cardId}
+                img={element.cardImg}
+                nameCard={element.nameCard}
+              />
             ))}
           </DivDown>
         </ServicesDiv>

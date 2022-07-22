@@ -22,6 +22,7 @@ import InputText from '../../../../components/input/inputText';
 import InputDate from '../../../../components/input/InputDate';
 import TitleFun from '../../../../components/title';
 import { useRequestForVerificationOfGasMeters } from './verificationOfGasMeters-hook';
+import SubTitleFun from "../../../../components/SubTitle";
 
 export default function ApplicationForVerificationOfGasMeters() {
   const {
@@ -37,7 +38,7 @@ export default function ApplicationForVerificationOfGasMeters() {
   } = useRequestForVerificationOfGasMeters();
   return (
     <DivApplication>
-      <TitleFun infoTitle={'Заявка на поверку счетчиков газа'} color={'blue'}></TitleFun>
+      <SubTitleFun infoTitle={'Заявка на поверку счетчиков газа'} color={'blue'}></SubTitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>

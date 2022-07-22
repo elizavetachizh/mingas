@@ -17,7 +17,7 @@ export default function UsefulInform() {
         <UsefulInformContainer>
           <TitleForHome
             color={'blue'}
-            fontSize={'s'}
+            fontSize={'m'}
             infoTitle={<Trans i18nKey="usefulInform:usefulInform"></Trans>}
           ></TitleForHome>
           <DivInform>

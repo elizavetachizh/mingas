@@ -8,9 +8,11 @@ const titleColor = {
 };
 const titleFontSize = {
   s: `
-  font-size: 28px`,
+  font-size: 18px;
+   text-transform: none;
+   `,
   m: `
-  font-size: 32px`,
+  font-size: 22px`,
 };
 export const SubTitle = styled.h2`
   font-style: normal;
@@ -24,7 +26,7 @@ export const SubTitle = styled.h2`
   margin: 0 auto;
   text-align: center;
   ${({ color }) => titleColor[color]};
-
+  ${({ fontSize }) => titleFontSize[fontSize]};
   @media (max-width: 700px) {
     margin-top: 14%;
   }
@@ -34,5 +36,4 @@ export const SubTitle = styled.h2`
   @media (max-width: 500px) {
     margin-top: 20%;
   }
-  // ${({ fontSize }) => titleFontSize[fontSize]}
 `;

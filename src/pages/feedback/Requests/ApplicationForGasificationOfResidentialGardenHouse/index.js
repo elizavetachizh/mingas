@@ -21,6 +21,7 @@ import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import TitleFun from '../../../../components/title';
 import InputInform from '../../../../components/input/InputInform';
+import SubTitleFun from "../../../../components/SubTitle";
 
 export default function ApplicationForGasificationOfResidentialGardenHouse() {
   const {
@@ -35,10 +36,10 @@ export default function ApplicationForGasificationOfResidentialGardenHouse() {
   } = useGardenHouse();
   return (
     <DivApplication>
-      <TitleFun
+      <SubTitleFun
         color={'blue'}
         infoTitle={'заявка на газификацию жилого (садового) дома'}
-      ></TitleFun>
+      ></SubTitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>

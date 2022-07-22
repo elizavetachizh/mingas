@@ -39,6 +39,7 @@ import AdministrativeServices from './components/administrativeServices';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
 import { Component } from 'react';
+import ParentOrganizations from './pages/company/parentOrganizations';
 class App extends Component {
   render() {
     return (
@@ -66,6 +67,7 @@ class App extends Component {
           <Route path="/company/structure/" element={<Structure />} />
           <Route path="/company/career/" element={<Career />} />
           <Route path="/company/branches" element={<Branches />} />
+          <Route path={'/company/parent-organizations'} element={<ParentOrganizations />} />
           <Route path="/company/documentation/" element={<Documentation />} />
           <Route path={'company/gratitude'} element={<Gratitude />} />
           <Route path="/company/union/" element={<Union />} />

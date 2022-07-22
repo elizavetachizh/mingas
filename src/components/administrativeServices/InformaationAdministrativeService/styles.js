@@ -38,16 +38,16 @@ export const BtnIsOpen = styled.div`
   padding: 0 2rem;
   background: #f6f6f6;
   cursor: pointer;
-  margin: 1rem auto;
+  margin: 1rem 0 1rem 0;
   p {
-    padding: 20px;
+    padding: 0 10px;
     width: 90%;
   }
 `;
 
 export const ContainerInformAboutService = styled.div`
 margin: 1rem auto;
-  p {
-    text-indent: 25px;
-  }
+  //p {
+  //  text-indent: 25px;
+  //}
 `

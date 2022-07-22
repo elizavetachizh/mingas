@@ -19,6 +19,7 @@ import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import { useRequestForIssuance } from './IssuanceOfTS-hook';
 import TitleFun from '../../../../components/title';
+import SubTitleFun from "../../../../components/SubTitle";
 
 export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   const {
@@ -34,7 +35,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
 
   return (
     <DivApplication>
-      <TitleFun color={'blue'} infoTitle={'Заявка на выдачу ТУ'}></TitleFun>
+      <SubTitleFun color={'blue'} infoTitle={'Заявка на выдачу ТУ'} />
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>

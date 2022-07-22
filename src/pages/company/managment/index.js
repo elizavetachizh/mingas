@@ -43,7 +43,7 @@ export default function Management() {
     backgroundSize: 'cover'
   }
   return (
-    <Container style={styleImage}>
+    <Container>
       <Header backgroundHeader={'blue'}/>
       {/*<ContentHome />*/}
       <HeaderCompany />

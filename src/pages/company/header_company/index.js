@@ -14,7 +14,10 @@ export default function HeaderCompany() {
         <HeaderCompanyBtn to="/company/management">
           {t('headerCompany:management')}
         </HeaderCompanyBtn>
-        <HeaderCompanyBtn to="/company/career">{t('headerCompany:careerMingaz')}</HeaderCompanyBtn>
+        <HeaderCompanyBtn to="/company/career">Работа в УП "МИНГАЗ"</HeaderCompanyBtn>
+        <HeaderCompanyBtn to="/company/parent-organizations">
+          Вышестоящие организации
+        </HeaderCompanyBtn>
         <HeaderCompanyBtn to="/company/branches">Филиалы УП "Мингаз"</HeaderCompanyBtn>
         <HeaderCompanyBtn to="/company/documentation">
           {t('headerCompany:documentation')}

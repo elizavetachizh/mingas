@@ -16,10 +16,13 @@ export const Button = styled.button`
   border: none;
   background: none;
   text-align: center;
-  width: 100%;
+  width: 90%;
   font-size: 18px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 1s;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 export const ContainerBtnIcon = styled.div`
   display: flex;

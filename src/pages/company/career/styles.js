@@ -31,3 +31,31 @@ export const DivAfterAndBefore = styled.div`
     width: 550px;
   }
 `;
+
+export const LinkToWork = styled.a`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-decoration: none;
+  color: black;
+  border-left: 4px solid #0d4475;
+  height: fit-content;
+
+  a {
+    color: #0d4475;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  a,
+  p {
+    margin-left: 10px;
+  }
+`;
+
+export const ContainerForLinkToWork = styled.div`
+  border:1px solid #cccccc;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+`

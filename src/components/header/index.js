@@ -123,6 +123,9 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
                   <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
                   <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
+                  <ButtonLink to="/company/parent-organizations">
+                    Вышестоящие организации
+                  </ButtonLink>
                   <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/documentation">
                     Сертификаты, лицензии, свидетельства
@@ -145,14 +148,14 @@ export default function Header({ backgroundHeader }) {
                       <NavLink to="/">Плановые работы</NavLink>
                     </span>
                   </ButtonLink>
-                  <ButtonLink to="/liquefied-gas-tariff">
-                    Тарифы
-                    <img alt={''} src={next} />
-                    <span>
-                      <NavLink to="/liquefied-gas-tariff">Тарифы на сжиженный газ</NavLink>
-                      <NavLink to="/natural-gas-tariff">Тарифы на природный газ</NavLink>
-                    </span>
-                  </ButtonLink>
+                  {/*<ButtonLink to="/liquefied-gas-tariff">*/}
+                  {/*  Тарифы*/}
+                  {/*  <img alt={''} src={next} />*/}
+                  {/*  <span>*/}
+                  {/*    <NavLink to="/liquefied-gas-tariff">Тарифы на сжиженный газ</NavLink>*/}
+                  {/*    <NavLink to="/natural-gas-tariff">Тарифы на природный газ</NavLink>*/}
+                  {/*  </span>*/}
+                  {/*</ButtonLink>*/}
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
                   {/*<ButtonLink to="/">Обратная связь</ButtonLink>*/}
