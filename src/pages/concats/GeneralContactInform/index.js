@@ -11,9 +11,10 @@ import { Container } from '../../styles';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
 import TitleFun from '../../../components/title';
+import { YMaps } from "react-yandex-maps";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-
+const API_KEY_YANDEX = process.env.REACT_APP_API_KEY_YANDEX;
 export const styleTd = {
   width: '50%',
   fontWeight: 'bold',
@@ -100,7 +101,12 @@ export default function GeneralInform() {
           </ContactsInform>
         </Row>
       </AdditionalDiv>
-
+      <YMaps
+        enterprise
+        query={{
+          apikey:API_KEY_YANDEX,
+        }}
+      />
       <DivMap>
         <AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
         <DivButtons>

@@ -11,17 +11,19 @@ export const Button = styled.button`
   font-weight: 400;
   font-family: Play, sans-serif;
   font-style: normal;
-  color: #000;
   text-decoration: none;
   border: none;
   background: none;
+  height: 100%;
   text-align: center;
   width: 90%;
   font-size: 18px;
   cursor: pointer;
   transition: 1s;
+
   &:hover {
-    transform: scale(1.1);
+    //transform: scale(1.1);
+    color: white;
   }
 `;
 export const ContainerBtnIcon = styled.div`
@@ -29,8 +31,18 @@ export const ContainerBtnIcon = styled.div`
   flex-direction: row;
   width: 100%;
   margin: 0 auto;
+  color: #0d4475;
   align-items: center;
   justify-content: space-between;
+  //background-color: #0d4475;
+  //&:hover {
+  //  background-color: #0d4475;
+  //  color: white;
+  //}
+  &.active {
+    background-color: #0d4475;
+    color: white;
+  }
 `;
 export const DivOpen = styled.div`
   display: none;

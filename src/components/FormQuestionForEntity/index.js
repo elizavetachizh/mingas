@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import name from '../../assets/formPng/name.png';
 import email from '../../assets/formPng/email.png';
 import address from '../../assets/formPng/map.png';
@@ -33,6 +33,28 @@ export default function FormQuestionForEntity() {
     form,
   } = useFormForEnity();
   const { t } = useTranslation();
+
+  const [data, setData] = useState([]);
+  const getData = useCallback(async () => {
+    const response = await fetch(
+      'http://www.portal.nalog.gov.by/grp/getData?unp=100582333&charset=UTF-8&type=json',
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+      }
+    );
+
+    return await response.json();
+  }, []);
+  useEffect(() => {
+    getData().then((result) => {
+      setData(result);
+      console.log(data);
+    });
+  }, []);
+  console.log(data);
   return (
     <>
       <Background />

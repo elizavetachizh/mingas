@@ -24,19 +24,25 @@ export default function HeaderAdministrativeServices() {
   const animate = useCallback(
     (serviceID) => {
       const current = data.find((element) => element.serviceID === serviceID);
-       setLinks(current.links);
-       setServiceID(currentServiceID ? '' : serviceID);
+      setLinks(current.links);
+      setServiceID(currentServiceID ? '' : serviceID);
     },
     [currentServiceID]
   );
-
+  const [isActive, setISActive] = useState(false);
+  const HandlerAcriv = () => {
+    setISActive(true);
+    if (isActive) {
+      setISActive(false);
+    }
+  };
   return (
     <HeaderCompanyDiv>
       <DivButton>
         <Name>Административные услуги</Name>
         {data.map((el) => (
           <BlockBtn>
-            <ContainerBtnIcon>
+            <ContainerBtnIcon onClick={HandlerAcriv} className={isActive && 'active'}>
               <Button onClick={() => handlerLinkClick(el.serviceID)} key={el.serviceID}>
                 {el.serviceName}
               </Button>

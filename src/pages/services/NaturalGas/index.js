@@ -1,11 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { data } from '../../../assets/data_services';
-import { useParams } from 'react-router-dom';
 import DopFunctionService from '../DopFunction';
 import { Container } from '../../company/styles';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
-import { useNavigate } from 'react-router';
 import { Button, Name } from '../../../components/administrativeServices/Header/styles';
 import { HeaderCompanyDiv } from '../../concats/headerContacts/styles';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
@@ -13,7 +11,6 @@ import { DivBlocks } from '../../../components/administrativeServices/Informaati
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { DivBtn } from './DopFunctionalHeader/styles';
-import TitleFun from '../../../components/title';
 
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
