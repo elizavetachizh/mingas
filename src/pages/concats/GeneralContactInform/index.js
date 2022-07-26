@@ -11,7 +11,7 @@ import { Container } from '../../styles';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
 import TitleFun from '../../../components/title';
-import { YMaps } from "react-yandex-maps";
+import { YMaps } from 'react-yandex-maps';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_KEY_YANDEX = process.env.REACT_APP_API_KEY_YANDEX;
@@ -101,38 +101,66 @@ export default function GeneralInform() {
           </ContactsInform>
         </Row>
       </AdditionalDiv>
-      <YMaps
-        enterprise
-        query={{
-          apikey:API_KEY_YANDEX,
-        }}
-      />
-      <DivMap>
-        <AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />
-        <DivButtons>
-          <button
-            // href={'/'}
-            // backgroundColor={'blue'}
-            // infoButton={'Установить маркер'}
-            onClick={toggleMode}
-          >
-            Установить маркер
-          </button>
-          <button
-            // href={'/'}
-            // backgroundColor={'blue'}
-            // infoButton={'Очистить маркер'}
-            onClick={clear}
-          >
-            Очистить маркер
-          </button>
-        </DivButtons>
-        {isLoaded ? (
-          <Map center={center} mode={mode} markers={markers} onMarkerAdd={onMarkerAdd} />
-        ) : (
-          <h2>Loading...</h2>
-        )}
-      </DivMap>
+      {/*<YMaps*/}
+      {/*  enterprise*/}
+      {/*  query={{*/}
+      {/*    apikey:API_KEY_YANDEX,*/}
+      {/*  }}*/}
+      {/*/>*/}
+      {/*<DivMap>*/}
+      {/*  <AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />*/}
+      {/*  <DivButtons>*/}
+      {/*    <button*/}
+      {/*      // href={'/'}*/}
+      {/*      // backgroundColor={'blue'}*/}
+      {/*      // infoButton={'Установить маркер'}*/}
+      {/*      onClick={toggleMode}*/}
+      {/*    >*/}
+      {/*      Установить маркер*/}
+      {/*    </button>*/}
+      {/*    <button*/}
+      {/*      // href={'/'}*/}
+      {/*      // backgroundColor={'blue'}*/}
+      {/*      // infoButton={'Очистить маркер'}*/}
+      {/*      onClick={clear}*/}
+      {/*    >*/}
+      {/*      Очистить маркер*/}
+      {/*    </button>*/}
+      {/*  </DivButtons>*/}
+      {/*  {isLoaded ? (*/}
+      {/*    <Map center={center} mode={mode} markers={markers} onMarkerAdd={onMarkerAdd} />*/}
+      {/*  ) : (*/}
+      {/*    <h2>Loading...</h2>*/}
+      {/*  )}*/}
+      {/*</DivMap>*/}
+      {/*<div style="position:relative;overflow:hidden;">*/}
+      {/*  <a*/}
+      {/*    href="https://yandex.by/maps/org/mingaz/41119693302/?utm_medium=mapframe&utm_source=maps"*/}
+      {/*    style="color:#eee;font-size:12px;position:absolute;top:0px;"*/}
+      {/*  >*/}
+      {/*    Мингаз*/}
+      {/*  </a>*/}
+      {/*  <a*/}
+      {/*    href="https://yandex.by/maps/157/minsk/category/gas_supply_services/184108297/?utm_medium=mapframe&utm_source=maps"*/}
+      {/*    style="color:#eee;font-size:12px;position:absolute;top:14px;"*/}
+      {/*  >*/}
+      {/*    Служба газового хозяйства в Минске*/}
+      {/*  </a>*/}
+      {/*  <a*/}
+      {/*    href="https://yandex.by/maps/157/minsk/category/municipal_housing_authority/184108301/?utm_medium=mapframe&utm_source=maps"*/}
+      {/*    style="color:#eee;font-size:12px;position:absolute;top:28px;"*/}
+      {/*  >*/}
+      {/*    Коммунальная служба в Минске*/}
+      {/*  </a>*/}
+      {/*  <iframe*/}
+      {/*    src="https://yandex.by/map-widget/v1/-/CCURMME-DA"*/}
+      {/*    width="560"*/}
+      {/*    height="400"*/}
+      {/*    frameBorder="1"*/}
+      {/*    allowFullScreen="true"*/}
+      {/*    style="position:relative;"*/}
+      {/*  ></iframe>*/}
+      {/*</div>*/}
       <Footer />
     </Container>
   );

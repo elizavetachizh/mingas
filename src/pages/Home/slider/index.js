@@ -38,7 +38,7 @@ export default function CarouselFun() {
                 infoButton={t('infoButton:more')}
               />
             </DivInformAbout>
-            <img src={phone} alt={''} />
+            <a href={'tel:162'}><img src={phone} alt={''} /></a>
           </DivText>
 
           <DivText>
@@ -50,7 +50,7 @@ export default function CarouselFun() {
                 infoButton={t('infoButton:more')}
               />
             </DivInformAbout>
-            <img src={worker} alt={''} />
+          <a href={''}>  <img src={worker} alt={''} /></a>
           </DivText>
         </Carousel>
       </WindowDiv>
