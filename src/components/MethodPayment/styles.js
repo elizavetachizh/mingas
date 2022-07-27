@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const opacityAnimation = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`;
 
 export const ContainerBtn = styled.div`
   max-width: 1140px;
@@ -27,7 +32,8 @@ export const ContainerBtn = styled.div`
     }
     &.shake {
       display: block;
-      transform: translateY(10px);
+      opacity: 0;
+      animation: ${opacityAnimation} 2s forwards;
     }
   }
 `;

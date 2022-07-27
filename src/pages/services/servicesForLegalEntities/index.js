@@ -25,9 +25,6 @@ export default function ServicesForLegalEntities() {
       setInformLegal(current.description);
       handlerServiceClick(current.nameCard);
       setServiceID(currentServiceID ? '' : descriptionLegalID);
-      console.log(informLegal);
-      console.log(current);
-      console.log(currentServiceID);
     },
     [currentServiceID]
   );

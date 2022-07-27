@@ -63,7 +63,7 @@ class App extends Component {
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
           <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
-          <Route path="/services/:nameCard" element={<NaturalGas />} />
+          <Route path="/services/:cardId" element={<NaturalGas />} />
           <Route path="/services/method-payment" element={<MethodPayment />} />
           <Route path="/company/structure/" element={<Structure />} />
           <Route path="/company/career/" element={<Career />} />
