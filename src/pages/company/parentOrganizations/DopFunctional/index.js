@@ -5,17 +5,16 @@ export default function DopFunctional({ link, name, address, phone, fax, workMod
     <ContainerForInform>
       <BlockLingAndImage>
         <a href={link}>
-          {' '}
-          <p>{name}</p>
-          <img src={require('../../../../assets/png/ministerstvo.png')} alt={''} />
+          {/*<p>{name}</p>*/}
+          <img src={require(`../../../../assets/png/${img}.png`)} alt={''} />
         </a>
       </BlockLingAndImage>
-      <BlockInform>
-        <p>{address}</p>
-        <a href={`tel:${phone}`}>{phone}</a>
-        <p>{fax}</p>
-        <p>{workMode}</p>
-      </BlockInform>
+      {/*<BlockInform>*/}
+      {/*  <p>{address}</p>*/}
+      {/*  <a href={`tel:${phone}`}>{phone}</a>*/}
+      {/*  <p>{fax}</p>*/}
+      {/*  <p>{workMode}</p>*/}
+      {/*</BlockInform>*/}
     </ContainerForInform>
   );
 }

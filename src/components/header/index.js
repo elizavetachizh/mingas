@@ -166,6 +166,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
                   <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
+                  <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
 

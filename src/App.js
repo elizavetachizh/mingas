@@ -40,6 +40,7 @@ import InformationAdministrativeService from './components/administrativeService
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
 import { Component } from 'react';
 import ParentOrganizations from './pages/company/parentOrganizations';
+import LeaveFeedback from './components/leaveFeedback';
 class App extends Component {
   render() {
     return (
@@ -100,6 +101,7 @@ class App extends Component {
             path={'/services/administrative-services/:serviceID'}
             element={<InformationAdministrativeService />}
           />
+          <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />
         </Routes>
       </div>
     );

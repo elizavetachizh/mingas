@@ -7,6 +7,7 @@ import TitleForHome from '../../../components/TitleForHome';
 import HeaderCompany from '../header_company';
 import {data} from '../../../assets/data_ParentOrganization'
 import DopFunctional from "./DopFunctional";
+import { ContainerLinks } from "./styles";
 export default function ParentOrganizations() {
   return (
     <Container>
@@ -15,9 +16,11 @@ export default function ParentOrganizations() {
       <AdditionalDiv>
 
         <TitleForHome infoTitle={'Вышестоящие организации'} color={'blue'} />
-        {data.map((el)=>(
-          <DopFunctional img={el.img} link={el.link} name={el.name} address={el.address} phone={el.phone} fax={el.fax} workMode={el.workingMode}/>
-        ))}
+       <ContainerLinks>
+         {data.map((el)=>(
+           <DopFunctional img={el.img} link={el.link} name={el.name} address={el.address} phone={el.phone} fax={el.fax} workMode={el.workingMode}/>
+         ))}
+       </ContainerLinks>
       </AdditionalDiv>
       <Footer />
     </Container>

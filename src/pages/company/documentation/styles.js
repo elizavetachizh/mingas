@@ -13,3 +13,8 @@ export const ContainerIframe = styled.div`
     margin: 1rem 2rem;
   }
 `;
+
+export const ContainerDocumentation = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
