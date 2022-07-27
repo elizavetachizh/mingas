@@ -16,8 +16,6 @@ export default function CarouselFun() {
         <Carousel
           plugins={[
             'infinite',
-            'arrows',
-            'clickToChange',
             {
               resolve: autoplayPlugin,
               options: {
@@ -25,7 +23,7 @@ export default function CarouselFun() {
               },
             },
           ]}
-          animationSpeed={1000}
+          animationSpeed={2000}
         >
           <DivText>
             <DivInformAbout>
@@ -38,7 +36,9 @@ export default function CarouselFun() {
                 infoButton={t('infoButton:more')}
               />
             </DivInformAbout>
-            <a href={'tel:162'}><img src={phone} alt={''} /></a>
+            <a href={'tel:162'}>
+              <img src={phone} alt={''} />
+            </a>
           </DivText>
 
           <DivText>
@@ -50,7 +50,10 @@ export default function CarouselFun() {
                 infoButton={t('infoButton:more')}
               />
             </DivInformAbout>
-          <a href={''}>  <img src={worker} alt={''} /></a>
+            <a href={''}>
+              {' '}
+              <img src={worker} alt={''} />
+            </a>
           </DivText>
         </Carousel>
       </WindowDiv>

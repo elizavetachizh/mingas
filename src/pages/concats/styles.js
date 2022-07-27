@@ -2,9 +2,15 @@ import styled from 'styled-components';
 
 export const DivMap = styled.div`
   display: flex;
+  width: 50%;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  iframe{
+    width: 1000px;
+    height: 500px;
+  }
   @media(max-width: 500px) {
     width: 600px;
   }

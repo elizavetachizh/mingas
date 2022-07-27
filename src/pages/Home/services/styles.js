@@ -35,16 +35,6 @@ export const Title = styled.h2`
   }
 `;
 
-export const TitleCard = styled.h3``;
-
-export const DivUp = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  margin: auto;
-`;
-
 export const DivDown = styled.div`
   font-style: normal;
   font-size: 18px;

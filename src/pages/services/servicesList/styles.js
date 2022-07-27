@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from "react-router-dom";
 
 export const DivServicesList = styled.button`
   display: flex;
@@ -28,9 +27,9 @@ export const DivServicesList = styled.button`
     transform: translateY(-1rem);
   }
 
-@media (max-width: 800px) {
- height: 300px;
-}
+  @media (max-width: 800px) {
+    height: 300px;
+  }
   @media (max-width: 800px) {
     margin: 2rem;
     flex: 0 0 40%;

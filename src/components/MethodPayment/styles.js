@@ -63,7 +63,7 @@ export const ContainerText = styled.div`
   text-align: justify;
   max-width: 1140px;
   margin: 0 auto;
-  font: 17px Play, sans-serif;
+  font-size: 16px;
   p {
     text-indent: 25px;
   }

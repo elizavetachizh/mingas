@@ -5,7 +5,6 @@ export const Pre = styled.div`
   margin: 0 auto;
   text-align: justify;
   text-indent: 25px;
-  font-family: Play, sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 30px;
@@ -15,7 +14,6 @@ export const Contacts = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   text-align: justify;
-  font-family: Play, sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 30px;

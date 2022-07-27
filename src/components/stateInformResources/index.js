@@ -25,7 +25,7 @@ export default function StateInformResources() {
           // {
           //   resolve: slidesToShowPlugin,
           //   options: {
-          //     numberOfSlides: 3,
+          //     numberOfSlides: 2,
           //   },
           // },
         ]}

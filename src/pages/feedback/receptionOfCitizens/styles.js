@@ -4,7 +4,6 @@ export const Table = styled.table`
   width: 90%;
   margin: 0 auto;
   border: 1px solid #ddd;
-  font-family: Play, sans-serif;
   @media (max-width: 900px) {
     font-size: 14px;
   }

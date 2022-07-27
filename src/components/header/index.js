@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {
+import GlobalStyle, {
   Container,
   Background,
   Menu,
@@ -22,6 +22,7 @@ import {
   Div104,
   DivPersonalAcc,
   DivPhone,
+  FontStyles,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
 import eye from '../../assets/png/visibilitys.png';
@@ -78,6 +79,8 @@ export default function Header({ backgroundHeader }) {
 
   return (
     <Container backgroundHeader={backgroundHeader}>
+      <FontStyles />
+      <GlobalStyle />
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}

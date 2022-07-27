@@ -9,8 +9,6 @@ export const BlockBtn = styled.div`
 
 export const Button = styled.button`
   font-weight: 400;
-  font-family: Play, sans-serif;
-  font-style: normal;
   text-decoration: none;
   border: none;
   background: none;
@@ -20,11 +18,14 @@ export const Button = styled.button`
   font-size: 18px;
   cursor: pointer;
   transition: 1s;
-
-  &:hover {
-    //transform: scale(1.1);
-    color: white;
-  }
+&.background {
+  background-color: #0d4475;
+  color: white;
+}
+  //&:hover {
+  //  //transform: scale(1.1);
+  //  color: white;
+  //}
 `;
 export const ContainerBtnIcon = styled.div`
   display: flex;

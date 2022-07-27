@@ -20,7 +20,6 @@ export const ImageLink = styled.img`
 `;
 
 export const TextLink = styled.p`
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;

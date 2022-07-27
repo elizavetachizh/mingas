@@ -1,6 +1,20 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import Play from '../../assets/fonds/Play/Play-Regular.ttf';
+export const FontStyles = createGlobalStyle`
 
+@font-face {
+  font-family: 'Play';
+  src: url(${Play}) format('woff2');
+}
+`;
+const GlobalStyle = createGlobalStyle`
+body {
+  font-family: 'Play', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+}
+`;
+export default GlobalStyle;
 const HeaderBackgroundColor = {
   gray: `
     background-color: #E9F1F5;
@@ -96,9 +110,9 @@ export const Background = styled.div`
   .click {
     display: block;
   }
-//@media(max-width: 1220px){
-//  padding: 0;
-//}
+  //@media(max-width: 1220px){
+  //  padding: 0;
+  //}
   @media (max-width: 900px) {
     background-color: rgba(200, 220, 231, 80%);
     height: 100px;
@@ -250,7 +264,7 @@ export const Dropdown = styled.div`
   display: inline-block;
   //&:hover a {
   //  background-color: #000;
-  //  color: #314d5c !important;  
+  //  color: #314d5c !important;
   //}
 
   &:hover div {
@@ -313,13 +327,13 @@ export const DivPhone = styled.div`
   flex-direction: row;
   justify-content: space-around;
   width: 40%;
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     width: 50%;
   }
-  @media(max-width: 720px) {
+  @media (max-width: 720px) {
     width: 60%;
   }
-`
+`;
 export const Div104 = styled.div`
   display: flex;
   align-items: center;
@@ -337,7 +351,6 @@ export const Div104 = styled.div`
   }
   a {
     margin: 0 0.6rem;
-    font-family: Play, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #fff;
@@ -365,21 +378,20 @@ export const Div104 = styled.div`
   }
 
   @media (max-width: 975px) {
-   p{
-     font-size: 0.8rem;
-   }
+    p {
+      font-size: 0.8rem;
+    }
   }
   @media (max-width: 780px) {
     //padding: 0;
     p,
     a {
       margin: 0;
-     
     }
-    p{
+    p {
       font-size: 0.8rem;
     }
-    a{
+    a {
       font-size: 1rem;
     }
   }
@@ -388,7 +400,6 @@ export const Div104 = styled.div`
     p,
     a {
       margin: 0;
-      
     }
   }
 `;
@@ -430,9 +441,4 @@ export const DropdownBlock = styled.div`
     background-color: #f1f1f1;
     //padding: 10px;
   }
-`;
-
-export const DivButtonBlock = styled.div`
-  display: none !important;
-  position: absolute;
 `;

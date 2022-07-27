@@ -28,9 +28,6 @@ export default function Services() {
       setInform(current.description);
       handlerServiceClick(current.nameCard);
       setServiceID(currentServiceID ? '' : descriptionID);
-      console.log(inform);
-      console.log(current);
-      console.log(currentServiceID);
     },
     [currentServiceID]
   );
@@ -44,7 +41,6 @@ export default function Services() {
             <ServicesList
               onClick={() => {
                 animate(element.serviceId);
-                console.log(element.serviceId);
               }}
               key={element.serviceId}
               serviceId={element.serviceId}

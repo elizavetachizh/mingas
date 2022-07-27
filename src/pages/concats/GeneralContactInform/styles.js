@@ -29,7 +29,6 @@ export const Table = styled.table`
   width: 100%;
   background-color: transparent;
   margin-bottom: 30px;
-  font-family: Play, sans-serif;
   border-collapse: collapse;
   th {
     padding: 1rem 0.5rem;
@@ -38,6 +37,7 @@ export const Table = styled.table`
 
 export const Tbody = styled.tbody`
   border-top: 0.1rem solid #e0e0e0;
+  text-align: left;
 `;
 
 export const Tr = styled.tr`

@@ -3,6 +3,7 @@ import { Container } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
+import {Helmet} from "react-helmet";
 import {
   DivAboutManagementBackground,
   DivAboutmanagementWhiteFont,
@@ -100,9 +101,9 @@ export default function Career() {
                 >
                   rabota.by
                 </a>{' '}
-                Работа в Минске, свежие вакансии - <a href={'https://rabota.by/'}>rabota.by</a> Найти работу в Минске! ★ rabota.by -
-                свежие вакансии в Минске от прямых работодателей в 28 профобластях. Поиск работы и
-                сотрудников на rabota.by.
+                Работа в Минске, свежие вакансии - <a href={'https://rabota.by/'}>rabota.by</a>{' '}
+                Найти работу в Минске! ★ rabota.by - свежие вакансии в Минске от прямых
+                работодателей в 28 профобластях. Поиск работы и сотрудников на rabota.by.
               </p>
               <img src={workImg} />
             </LinkToWork>
@@ -113,7 +114,8 @@ export default function Career() {
               При приеме на работу предлагаем заполнить{' '}
               <a download href={anketa}>
                 анкету
-              </a>.
+              </a>
+              .
             </p>
           </DivForm>
           <p>Телефон отдела кадров УП «МИНГАЗ»: 80172992830, 80172992936</p>
@@ -122,6 +124,16 @@ export default function Career() {
             По вопросам трудоустройства обращаться по адресу: г. Минск, ул. Ботаническая, д. 11/1
             каб. 103.
           </p>
+          <script
+            className="hh-script"
+            src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
+          ></script>
+          <Helmet>
+            <script className="hh-script"
+                    src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"></script>
+
+
+          </Helmet>
         </AdditionalDiv>
       </>
       <ScrollToTop showUnder={160}>

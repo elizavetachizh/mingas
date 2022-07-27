@@ -32,8 +32,6 @@ export const BtnIsOpen = styled.div`
   align-items: center;
   position: relative;
   font-weight: 500;
-  font-size: 0.94117647058rem;
-  line-height: 1.6875em;
   color: #3c3838;
   padding: 0 2rem;
   background: #f6f6f6;
@@ -46,8 +44,5 @@ export const BtnIsOpen = styled.div`
 `;
 
 export const ContainerInformAboutService = styled.div`
-margin: 1rem auto;
-  //p {
-  //  text-indent: 25px;
-  //}
-`
+  margin: 1rem auto;
+`;
