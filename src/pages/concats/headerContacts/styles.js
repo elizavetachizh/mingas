@@ -3,18 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 export const HeaderCompanyDiv = styled.div`
   background: #e8f3ff;
-  max-width: 40%;
+  width: 40%;
   margin: 0 2%;
   height: fit-content;
-  //@media (max-width: 800px) {
-  //  height: auto;
-  //}
 `;
 
 export const DivButton = styled.div`
   display: flex;
   flex-direction: column;
-  //padding: 2rem 0;
 `;
 
 export const ConcatsButton = styled(NavLink)`

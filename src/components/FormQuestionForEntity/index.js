@@ -16,11 +16,7 @@ import {
   DivInput,
   Background,
 } from '../formQuestion/styles';
-import sttyleBackground from '../../assets/background/подложка_1.png';
 import { useFormForEnity } from '../../hooks/use-form-for-enity-hook';
-const styled = {
-  backgroundImage: `url(${sttyleBackground})`,
-};
 export default function FormQuestionForEntity() {
   const {
     handleUserInput,

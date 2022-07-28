@@ -7,7 +7,10 @@ import Footer from '../../../components/footer';
 import { Button, Name } from '../../../components/administrativeServices/Header/styles';
 import { HeaderCompanyDiv } from '../../concats/headerContacts/styles';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import { DivBlocks } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
+import {
+  ContainerDescription,
+  DivBlocks,
+} from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { DivBtn } from './DopFunctionalHeader/styles';
@@ -16,7 +19,6 @@ import { useParams } from 'react-router';
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
   const [currentServiceID, setServiceID] = useState(null);
-  const [isBackgorund, setIsBackground] = useState(false);
   const [title, setTitle] = useState([]);
   const { cardId } = useParams();
 
@@ -35,22 +37,9 @@ export default function NaturalGas() {
       setInform(current.description);
       setTitle(current.nameCard);
       setServiceID(descriptionID);
-      // if (data.find((element) => element.serviceId === descriptionID)) {
-      //   setIsBackground(true);
-      // }
-      // if (data.find((element) => element.serviceId === descriptionID) && isBackgorund) {
-      //   setIsBackground(false);
-      // }
-      // if (isBackgorund) {
-      //   setIsBackground(false);
-      // }
     },
     [currentServiceID]
   );
-
-  useEffect(() => {
-    console.log(currentServiceID);
-  }, [currentServiceID]);
 
   return (
     <Container>
@@ -71,12 +60,12 @@ export default function NaturalGas() {
               </DivBtn>
             ))}
           </HeaderCompanyDiv>
-          <div>
+          <ContainerDescription>
             <Name>{title}</Name>
             {inform.map((el) => (
               <DopFunctionService nameDescription={el.nameDescription} inform={el.inform} />
             ))}
-          </div>
+          </ContainerDescription>
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

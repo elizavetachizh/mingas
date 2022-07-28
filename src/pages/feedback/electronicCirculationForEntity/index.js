@@ -8,20 +8,12 @@ import FormQuestionForEntity from '../../../components/FormQuestionForEntity';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { ContainerInform, TextForInformation } from './styles';
 import SubTitleFun from '../../../components/SubTitle';
-import TitleFun from '../../../components/title';
-import background from '../../../assets/background/подложка_3.png';
 import TitleForHome from '../../../components/TitleForHome';
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
 };
-const styleImage = {
-  backgroundImage: `url(${background})`,
-  backgroundRepeat: 'no-repeat',
-  // backgroundAttachment: 'fixed'
-  // backgroundSize: 'cover',
-  widths: '50%',
-};
+
 export default function ElectronicAppealForEntity() {
   return (
     <Container>

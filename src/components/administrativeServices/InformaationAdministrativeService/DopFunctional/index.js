@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Div, BtnIsOpen, ContainerInformAboutService } from '../styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { Name } from "../../Header/styles";
 
 export default function DopFunctional({
-                                        serviceName,
   uniqueName,
   maximumImplementationPeriod,
   certificateValidityPeriod,
@@ -28,7 +26,6 @@ export default function DopFunctional({
   };
   return (
     <ContainerInformAboutService>
-      <Name>{serviceName}</Name>
       <h3>{uniqueName}</h3>
       <p>
         Максимальный срок осуществления административной процедуры:

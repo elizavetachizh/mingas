@@ -8,8 +8,8 @@ import TitleForHome from '../../../components/TitleForHome';
 import { AdditionalDiv } from "../../concats/GeneralContactInform/styles";
 import SubTitleFun from "../../../components/SubTitle";
 import { ContainerIframe } from "../documentation/styles";
-import gratitude from '../../../assets/pdf/gratitude/Дипломы Лучшие товары 2021-2022.pdf'
-import gratitude_1 from '../../../assets/pdf/gratitude/Лауреат Лучшие товары РБ 2019.pdf'
+import gratitude from '../../../assets/pdf/gratitude/eee.pdf'
+import gratitude_1 from '../../../assets/pdf/gratitude/rrr.pdf'
 import gratitude_2 from '../../../assets/pdf/gratitude/Scan20220708132344.pdf'
 import gratitude_3 from '../../../assets/pdf/gratitude/Scan20220708132759.pdf'
 import gratitude_4 from '../../../assets/pdf/gratitude/Scan20220708133203.pdf'

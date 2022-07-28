@@ -20,7 +20,6 @@ import Union from './pages/company/union';
 import Tasks from './pages/Employees/Tasks';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import UsefulInformation from './pages/feedback/uaefulIndormation';
-import ElectronicAppeal from './pages/feedback/electronicСirculation';
 import Requests from './pages/feedback/Requests';
 import QuestionAnswer from './pages/feedback/QuestionAnswer';
 import Branches from './pages/company/Branches';
@@ -41,6 +40,7 @@ import AdministartiveServicesForLegal from './components/administartiveServicesF
 import { Component } from 'react';
 import ParentOrganizations from './pages/company/parentOrganizations';
 import LeaveFeedback from './components/leaveFeedback';
+import ElectronicAppeal from "./pages/feedback/electronicСirculation";
 class App extends Component {
   render() {
     return (
@@ -81,7 +81,7 @@ class App extends Component {
             path={'/services-legal-entities/administrative-services-legal/'}
             element={<AdministartiveServicesForLegal />}
           />
-          <Route path={'/services-legal-entities/:nameCard'} element={<CardOfServive />} />
+          <Route path={'/services-legal-entities/:cardId'} element={<CardOfServive />} />
           <Route path={'/contacts/requisites'} element={<Requisites />} />
           <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
           <Route

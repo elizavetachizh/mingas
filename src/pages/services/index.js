@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import Header from '../../components/header';
-import { DivServices } from './styles';
 import { data } from '../../assets/data_services';
 import ServicesList from './servicesList';
 import Footer from '../../components/footer';
@@ -10,6 +9,7 @@ import ScrollToTop from 'react-scroll-up';
 import TitleFun from '../../components/title';
 import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import { useNavigate } from 'react-router';
+import { DivServices } from './styles';
 
 export default function Services() {
   const navigate = useNavigate();
@@ -35,21 +35,6 @@ export default function Services() {
               description={element.description}
             />
           ))}
-          {/*{data.map((element) => (*/}
-          {/*  <Button*/}
-          {/*    onClick={() => {*/}
-          {/*      animate(element.serviceId);*/}
-          {/*      console.log(element.serviceId);*/}
-          {/*    }}*/}
-          {/*    key={element.serviceId}*/}
-          {/*    // serviceId={element.serviceId}*/}
-          {/*    // imgCard={element.cardImg}*/}
-          {/*    // nameCard={element.nameCard}*/}
-          {/*    // description={element.description}*/}
-          {/*  >*/}
-          {/*    {element.nameCard}*/}
-          {/*  </Button>*/}
-          {/*))}*/}
         </DivServices>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

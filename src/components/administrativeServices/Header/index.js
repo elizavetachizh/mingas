@@ -1,7 +1,7 @@
 import { DivButton, HeaderCompanyDiv } from '../../../pages/concats/headerContacts/styles';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { data } from '../../../assets/dataNavLinkAdministrativeServices';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
@@ -9,11 +9,14 @@ export default function HeaderAdministrativeServices() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [links, setLinks] = useState([]);
-  const [currentServiceID, setServiceID] = useState('');
-
-  const handlerLinkClick = useCallback((serviceID) => {
-    navigate(`/services/administrative-services/${serviceID}`);
-  }, []);
+  const [currentServiceID, setServiceID] = useState(null);
+  const handlerLinkClick = useCallback(
+    (serviceID) => {
+      const current = data.find((element) => element.serviceID === serviceID);
+      navigate(`/services/administrative-services/${current.serviceID}`);
+    },
+    [currentServiceID]
+  );
   const handlerLinkClickUniqueName = useCallback(
     (linkId) => {
       navigate(`${pathname}?linkId=${linkId}`);
@@ -29,21 +32,18 @@ export default function HeaderAdministrativeServices() {
     },
     [currentServiceID]
   );
-  const [isActive, setISActive] = useState(false);
-  const HandlerAcriv = () => {
-    setISActive(true);
-    if (isActive) {
-      setISActive(false);
-    }
-  };
   return (
     <HeaderCompanyDiv>
       <DivButton>
         <Name>Административные услуги</Name>
         {data.map((el) => (
           <BlockBtn>
-            <ContainerBtnIcon onClick={HandlerAcriv} className={isActive && 'active'}>
-              <Button onClick={() => handlerLinkClick(el.serviceID)} key={el.serviceID}>
+            <ContainerBtnIcon>
+              <Button
+                className={currentServiceID === el.serviceID && 'background'}
+                onClick={() => handlerLinkClick(el.serviceID)}
+                key={el.serviceID}
+              >
                 {el.serviceName}
               </Button>
               {currentServiceID === el.serviceID ? (

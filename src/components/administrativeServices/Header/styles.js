@@ -18,14 +18,10 @@ export const Button = styled.button`
   font-size: 18px;
   cursor: pointer;
   transition: 1s;
-&.background {
-  background-color: #0d4475;
-  color: white;
-}
-  //&:hover {
-  //  //transform: scale(1.1);
-  //  color: white;
-  //}
+  &.background {
+    background-color: #0d4475;
+    color: white;
+  }
 `;
 export const ContainerBtnIcon = styled.div`
   display: flex;
@@ -35,11 +31,6 @@ export const ContainerBtnIcon = styled.div`
   color: #0d4475;
   align-items: center;
   justify-content: space-between;
-  //background-color: #0d4475;
-  //&:hover {
-  //  background-color: #0d4475;
-  //  color: white;
-  //}
   &.active {
     background-color: #0d4475;
     color: white;
@@ -55,9 +46,9 @@ export const DivOpen = styled.div`
   &.shake {
     display: flex;
     flex-direction: column;
-
     transition: 0.7s all;
   }
+
   button {
     background: none;
     border: none;

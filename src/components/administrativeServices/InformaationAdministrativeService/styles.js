@@ -1,23 +1,30 @@
-import styled from 'styled-components';
-
+import styled, { keyframes } from "styled-components";
+const opacityAnimation = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`;
 export const Div = styled.div`
   padding: 2%;
   display: none;
-  transition: 0.7s all;
   p {
     text-align: justify;
   }
   &.shake {
     display: block;
-    transition: 0.7s all;
+    opacity: 0;
+    animation: ${opacityAnimation} 2s forwards;
   }
 `;
 
 export const DivBlocks = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 `;
 
+export const ContainerDescription = styled.div`
+  width: 50%;
+`
 export const ContainerInform = styled.div`
   display: flex;
   flex-direction: column;

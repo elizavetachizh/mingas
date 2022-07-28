@@ -3,7 +3,7 @@ var ACCOUNT_ID = '52974d21-85a6-41ca-9c49-f5a835bdf17b';
 
 //  ***** configuration first icon (chat-icon)
 var VISIBLE_CHAT_ICON = true;
-var CHAT_ICON_WITH_NOTIFICATION = true;
+var CHAT_ICON_WITH_NOTIFICATION = false;
 
 //  ***** social network link's
 //var LINK_FACEBOOK = 'test';

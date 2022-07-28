@@ -26,7 +26,6 @@ export const ContainerBtn = styled.div`
   div {
     padding: 2%;
     display: none;
-    transition: transform 0.5s;
     p {
       text-align: justify;
     }
@@ -56,11 +55,6 @@ export const Div = styled.button`
     background: #eeeeee;
     padding: 35px;
     margin: 0;
-  }
-  &:active {
-    div {
-      transition: 5s;
-    }
   }
 `;
 export const DivClose = Div;

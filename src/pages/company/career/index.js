@@ -3,7 +3,7 @@ import { Container } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
-import {Helmet} from "react-helmet";
+import { Helmet } from 'react-helmet';
 import {
   DivAboutManagementBackground,
   DivAboutmanagementWhiteFont,
@@ -26,17 +26,11 @@ import ScrollToTop from 'react-scroll-up';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
 import workImg from '../../../assets/company/photo_2022-07-21_16-56-06.jpg';
 import TitleForHome from '../../../components/TitleForHome';
-import background from '../../../assets/background/подложка_3.png';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import SubTitleFun from '../../../components/SubTitle';
 export default function Career() {
-  const styleImage = {
-    backgroundImage: `url(${background})`,
-    backgroundRepeat: 'round',
-    // backgroundAttachment: 'fixed'
-  };
   return (
-    <Container style={styleImage}>
+    <Container>
       <Header backgroundHeader="blue" />
       <>
         <HeaderCompany currentPage={'career'} />
@@ -129,10 +123,10 @@ export default function Career() {
             src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
           ></script>
           <Helmet>
-            <script className="hh-script"
-                    src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"></script>
-
-
+            <script
+              className="hh-script"
+              src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
+            ></script>
           </Helmet>
         </AdditionalDiv>
       </>

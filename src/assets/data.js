@@ -1,8 +1,3 @@
-import { useTranslation } from 'react-i18next';
-
-export default function () {
-  const { t, i18n } = useTranslation();
-}
 export const data = [
   { cardImg: 1, cardDesc: 'Оплата за газ', link: 'services/method-payment' },
   {
