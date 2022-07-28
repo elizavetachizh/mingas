@@ -11,52 +11,98 @@ import certificat_7 from '../../../../assets/pdf/certificates/ISO14001-2015/3.pn
 import certificat_8 from '../../../../assets/pdf/certificates/ISO14001-2015/4.png';
 import certificat_9 from '../../../../assets/pdf/certificates/ISO14001-2015/5.png';
 
-import { AttestatsBlock, ContainerAttestat } from '../attestats/styles';
+import certificat_10 from '../../../../assets/pdf/certificates/Certificate_Briquette/1.png';
+import certificat_11 from '../../../../assets/pdf/certificates/Certificate_Briquette/2.png';
+import certificat_12 from '../../../../assets/pdf/certificates/Certificate_Briquette/3.png';
+import certificat_13 from '../../../../assets/pdf/certificates/Certificate_Briquette/4.png';
+import certificat_14 from '../../../../assets/pdf/certificates/Certificate_Briquette/5.png';
+
+import certificat_15 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/1.png';
+import certificat_16 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/2.png';
+import certificat_17 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/3.png';
+import certificat_18 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/4.png';
+import certificat_19 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/5.png';
+import certificat_20 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/6.png';
+import certificat_21 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/7.png';
+import certificat_22 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/8.png';
+import { ContainerCertificats } from '../../styles';
 export default function CertificatsFunction() {
   return (
-    <AttestatsBlock>
-      <ContainerAttestat>
-        {' '}
-        <Carousel
-          plugins={[
-            {
-              resolve: autoplayPlugin,
-              options: {
-                interval: 2000,
-              },
+    <ContainerCertificats>
+      <Carousel
+        plugins={[
+          {
+            resolve: autoplayPlugin,
+            options: {
+              interval: 2000,
             },
-          ]}
-          animationSpeed={1000}
-        >
-          <img src={certificat} />
-          <img src={certificat_1} />
-          <img src={certificat_2} />
-          <img src={certificat_3} />
-          <img src={certificat_4} />
-          {/*<img src={certificat_1} />*/}
-        </Carousel>
-      </ContainerAttestat>
-      <ContainerAttestat>
-        {' '}
-        <Carousel
-          plugins={[
-            'infinite',
-            {
-              resolve: autoplayPlugin,
-              options: {
-                interval: 2000,
-              },
+          },
+        ]}
+        animationSpeed={1000}
+      >
+        <img src={certificat} />
+        <img src={certificat_1} />
+        <img src={certificat_2} />
+        <img src={certificat_3} />
+        <img src={certificat_4} />
+      </Carousel>
+      <Carousel
+        plugins={[
+          'infinite',
+          {
+            resolve: autoplayPlugin,
+            options: {
+              interval: 2000,
             },
-          ]}
-          animationSpeed={1000}
-        >
-          <img src={certificat_5} />
-          <img src={certificat_6} />
-          <img src={certificat_7} />
-          <img src={certificat_8} />
-          <img src={certificat_9} />
-        </Carousel>
-      </ContainerAttestat>
-    </AttestatsBlock>
+          },
+        ]}
+        animationSpeed={1000}
+      >
+        <img src={certificat_5} />
+        <img src={certificat_6} />
+        <img src={certificat_7} />
+        <img src={certificat_8} />
+        <img src={certificat_9} />
+      </Carousel>
+      <Carousel
+        plugins={[
+          'infinite',
+          {
+            resolve: autoplayPlugin,
+            options: {
+              interval: 2000,
+            },
+          },
+        ]}
+        animationSpeed={1000}
+      >
+        <img src={certificat_10} />
+        <img src={certificat_11} />
+        <img src={certificat_12} />
+        <img src={certificat_13} />
+        <img src={certificat_14} />
+      </Carousel>
+      <Carousel
+        plugins={[
+          'infinite',
+          {
+            resolve: autoplayPlugin,
+            options: {
+              interval: 2000,
+            },
+          },
+        ]}
+        animationSpeed={1000}
+      >
+        <img src={certificat_15} />
+        <img src={certificat_16} />
+        <img src={certificat_17} />
+        <img src={certificat_18} />
+        <img src={certificat_19} />
+        <img src={certificat_20} />
+        <img src={certificat_21} />
+        <img src={certificat_22} />
+      </Carousel>
+    </ContainerCertificats>
   );
 }

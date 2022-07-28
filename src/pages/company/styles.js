@@ -18,3 +18,12 @@ export const ContainerGraditude = styled.div`
     width: 300px;
   }
 `;
+
+export const ContainerCertificats = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  div{
+    margin: 2% auto;
+  }
+`;
