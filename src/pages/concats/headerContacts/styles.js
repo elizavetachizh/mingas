@@ -2,18 +2,16 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const HeaderCompanyDiv = styled.div`
-  background: #e8f3ff;
-  width: 40%;
   margin: 0 2%;
   height: fit-content;
 `;
 
 export const DivButton = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  background: #e8f3ff;
 `;
 
-export const ConcatsButton = styled(NavLink)`
+export const HeaderConcatsBtn = styled(NavLink)`
   text-decoration: none;
   font-style: normal;
   font-weight: 300;
@@ -28,9 +26,3 @@ export const ConcatsButton = styled(NavLink)`
     font-size: 14px;
   }
 `;
-
-export const WorkScheduleButton = ConcatsButton;
-
-export const PhoneServicesButton = ConcatsButton;
-
-export const RequisitesButton = ConcatsButton;

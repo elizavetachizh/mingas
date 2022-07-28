@@ -57,18 +57,6 @@ export default function CarouselFun() {
           </DivText>
         </Carousel>
       </WindowDiv>
-
-      {/*<WindowDivMaxWidth>*/}
-      {/*  <Text>*/}
-      {/*    Добро пожаловать на сайт <br />*/}
-      {/*    производственного республиканского <br />*/}
-      {/*    унитарного предприятия “МИНГАЗ”*/}
-      {/*  </Text>*/}
-      {/*  <DivInformAbout>*/}
-      {/*    <ButtonFun href={'/Services'} backgroundColor={'blue'} infoButton={'Подробнее'} />*/}
-      {/*    <img src={phone} alt={''} />*/}
-      {/*  </DivInformAbout>*/}
-      {/*</WindowDivMaxWidth>*/}
     </Main>
   );
 }

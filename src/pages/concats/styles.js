@@ -42,13 +42,14 @@ export const ContactsInform = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 `;
 
 export const Row = styled.div`
   display: flex;
   max-width: 1190px;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   margin: 6rem auto;
   color: #0D4475;
   @media (max-width: 600px) {

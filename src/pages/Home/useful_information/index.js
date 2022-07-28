@@ -1,5 +1,5 @@
 import React from 'react';
-import { DivUsefulInform, DivInform, UsefulInformContainer } from './styles';
+import { DivUsefulInform, DivInform } from './styles';
 import { Container } from '../styles';
 import LinkInform from './components_link_inform';
 import { data } from '../../../assets/data';
@@ -14,23 +14,21 @@ export default function UsefulInform() {
     <Container src={background}>
       <BackgroundStyle src={linesOne} />
       <DivUsefulInform>
-        <UsefulInformContainer>
-          <TitleForHome
-            color={'blue'}
-            fontSize={'m'}
-            infoTitle={<Trans i18nKey="usefulInform:usefulInform"></Trans>}
-          ></TitleForHome>
-          <DivInform>
-            {data.map((element) => (
-              <LinkInform
-                key={element.cardDesc}
-                cardImg={element.cardImg}
-                cardDesc={element.cardDesc}
-                link={element.link}
-              />
-            ))}
-          </DivInform>
-        </UsefulInformContainer>
+        <TitleForHome
+          color={'blue'}
+          fontSize={'m'}
+          infoTitle={<Trans i18nKey="usefulInform:usefulInform"></Trans>}
+        ></TitleForHome>
+        <DivInform>
+          {data.map((element) => (
+            <LinkInform
+              key={element.cardDesc}
+              cardImg={element.cardImg}
+              cardDesc={element.cardDesc}
+              link={element.link}
+            />
+          ))}
+        </DivInform>
       </DivUsefulInform>
     </Container>
   );

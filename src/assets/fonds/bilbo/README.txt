@@ -1,1 +1,0 @@
-Bilbo is a very legible calligraphic style that has a masculine feel. It can be used for more than just display. It has a sister family ideal for headlines and other larger display usage, [Bilbo Swash Caps](http://www.google.com/fonts/specimen/Bilbo+Swash+Caps). Use Bilbo in body copy that requires added warmth to a message.

@@ -29,14 +29,6 @@ export default function PhoneLineServices() {
                   <Td>Кроме праздничных дней с 8.00 до 20.00</Td>
                 </Tr>
                 <Tr>
-                  <Td style={styleTd}>Дополнительные телефоны</Td>
-                  <Td>
-                    8017-299-28-40; <br />
-                    8017-299-28-72; <br />
-                    8017-299-29-17
-                  </Td>
-                </Tr>
-                <Tr>
                   <Td style={styleTd}>«Горячая линия»:</Td>
                   <Td>
                     8017-299-28-70, <br />

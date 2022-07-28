@@ -1,16 +1,16 @@
 import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
 import React from 'react';
-import attesttat from '../../../../assets/pdf/certificates/Аттестат_аккредитации_поверочной_лаборатории_СГЭМОиООС/1.png';
-import attesttat_1 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_поверочной_лаборатории_СГЭМОиООС/2.png';
-import attesttat_2 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/1.png';
-import attesttat_3 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/2.png';
-import attesttat_4 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/3.png';
-import attesttat_5 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/4.png';
-import attesttat_6 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/5.png';
-import attesttat_7 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/6.png';
-import attesttat_8 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/7.png';
-import attesttat_9 from '../../../../assets/pdf/certificates/Аттестат_аккредитации_СНКИиТД/8.png';
-import { AttestatsBlock, ContainerAttestat } from "./styles";
+import attesttat from '../../../../assets/pdf/certificates/Certificate_SGEMOiOOS/1.png';
+import attesttat_1 from '../../../../assets/pdf/certificates/Certificate_SGEMOiOOS/2.png';
+import attesttat_2 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/1.png';
+import attesttat_3 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/2.png';
+import attesttat_4 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/3.png';
+import attesttat_5 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/4.png';
+import attesttat_6 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/5.png';
+import attesttat_7 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/6.png';
+import attesttat_8 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/7.png';
+import attesttat_9 from '../../../../assets/pdf/certificates/Certificate_SNKIiTD/8.png';
+import { AttestatsBlock, ContainerAttestat } from './styles';
 export default function AttestatsFunction() {
   return (
     <AttestatsBlock>

@@ -6,9 +6,15 @@ export const Container = styled.div`
   h1 {
     color: #000;
   }
-  @media(max-width: 640px) {
+  @media (max-width: 640px) {
     width: 640px;
   }
 `;
 export const DialogViber = styled.div``;
-export const DialogTelegram=DialogViber;
+export const DialogTelegram = DialogViber;
+
+export const ContainerGraditude = styled.div`
+  img {
+    width: 300px;
+  }
+`;
