@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 export const ContainerContent = styled.div`
   @media (max-width: 1200px) {
-    max-height: 900px;
+    max-height: 800px;
   }
   @media (max-width: 640px) {
     width: 640px;
   }
-
 `;
 
 // export const DivImage = styled.div`
@@ -31,7 +30,7 @@ export const DivContent = styled.div`
     max-height: 900px;
   }
   @media (max-width: 600px) {
-   flex-direction: column;
+    flex-direction: column;
   }
 
   //&:before {
@@ -53,19 +52,20 @@ export const DivText = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  @media(max-width: 600px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  a {
-    width: 50%;
-    margin: 0 auto;
-    @media (max-width: 1200px) {
-      //width: 30%;
+    @media (max-width: 870px) {
+      img {
+        width: 100%;
+      }
     }
-  
-  }
+    @media (max-width: 650px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
 `;
 
 export const DivInformAbout = styled.div`
@@ -96,8 +96,7 @@ export const DivPrizes = styled.div`
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(5px);
-  height: 900px;
+  height: 800px;
   @media (max-width: 1200px) {
     max-height: 900px;
   }
@@ -105,7 +104,7 @@ export const DivPrizes = styled.div`
 
 export const Prizes = styled.div`
   display: flex;
-  padding: 80px 20px 0px;
+  padding: 80px 20px 0;
 
   flex-direction: column;
   img {

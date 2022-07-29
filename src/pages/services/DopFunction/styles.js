@@ -4,9 +4,6 @@ export const DescriptionService = styled.div`
   max-width: 1100px;
   margin: 0 auto;
   font-size: 18px;
-  p {
-    text-indent: 25px;
-  }
   a {
     color: #0170b9;
     text-decoration: none;
@@ -43,4 +40,4 @@ export const DescriptionService = styled.div`
 export const ContainerFunctionService = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;

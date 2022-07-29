@@ -36,6 +36,7 @@ export default function HomeServices() {
                 key={element.cardId}
                 img={element.cardImg}
                 nameCard={element.nameCard}
+                cardId={element.cardId}
               />
             ))}
           </DivDown>
@@ -43,6 +44,7 @@ export default function HomeServices() {
             {dataLegalEntities.map((element) => (
               <LinkServicesForLegalEntities
                 key={element.cardId}
+                cardId={element.cardId}
                 img={element.cardImg}
                 nameCard={element.nameCard}
               />

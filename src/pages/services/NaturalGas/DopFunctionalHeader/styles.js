@@ -43,7 +43,3 @@ export const Calculater = styled.a`
     background-color: #0d4475;
   }
 `;
-export const DivBtn = styled.div`
-  margin: 0.2rem;
-  padding: 0.8rem;
-`;

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { data } from '../../assets/data_services';
 import { dataLegalEntities } from '../../assets/data_service_legalEntities_general';
-import { Button, Input } from '../Home/Serch/styles';
+import { Button, FormSearch, ContainerFormSearch } from '../Home/Serch/styles';
 import search from '../../assets/png/search.svg';
 import { Div } from './styles';
 import { NavLink } from 'react-router-dom';
-
+import { IoMdClose } from "react-icons/io";
 export default function SearchPage() {
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
@@ -21,9 +21,7 @@ export default function SearchPage() {
   const result = [];
   const handleChange = (event) => {
     setMessage(event.target.value);
-    console.log(event.target.value);
   };
-  console.log(message);
   {
     data.map((card) => {
       if (card.nameCard.includes(message)) {
@@ -36,7 +34,6 @@ export default function SearchPage() {
         }
       });
   }
-  console.log(result);
   const renderResult = () => {
     return (
       <Div>
@@ -44,10 +41,10 @@ export default function SearchPage() {
           return (
             <div>
               {(
-                <NavLink to={`/services-legal-entities/${element.nameCard}`}>
+                <NavLink to={`/services-legal-entities/${element.serviceId}`}>
                   {element.nameCard}
                 </NavLink>
-              ) && <NavLink to={`/services/${element.nameCard}`}>{element.nameCard}</NavLink>}
+              ) && <NavLink to={`/services/${element.serviceId}`}>{element.nameCard}</NavLink>}
             </div>
           );
         })}
@@ -57,20 +54,14 @@ export default function SearchPage() {
 
   return (
     <>
-      {/*<Input*/}
-      {/*  type="text"*/}
-      {/*  id="message"*/}
-      {/*  name="message"*/}
-      {/*  onChange={handleChange}*/}
-      {/*  value={message}*/}
-      {/*  placeholder={'Поиск по сайту'}*/}
-      {/*/>*/}
-      {/*<AutocompleteSuggestions />*/}
       <Button onClick={() => handleForm()} style={searchStyle} type={'submit'} />
       {isForm && (
-        <form action={'search'}>
-          <input onChange={handleChange} type={'text'} />
-        </form>
+        <ContainerFormSearch>
+          <FormSearch action={'search'}>
+            <input placeholder="Введите поисковый запрос" onChange={handleChange} type={'text'} />
+            <IoMdClose color={'black'} />
+          </FormSearch>
+        </ContainerFormSearch>
       )}
       {message && result.length && renderResult()}
     </>

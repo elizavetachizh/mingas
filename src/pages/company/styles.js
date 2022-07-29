@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  
+  div.class-parag {
+    width: 300px;
+  }
   max-width: 100%;
   height: auto;
   h1 {

@@ -1,7 +1,10 @@
 body {
   margin: 0;
   width: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
+.myDiv {
+  width: 200px;
+}
+.class-parag {
+  width: 200px;
+}

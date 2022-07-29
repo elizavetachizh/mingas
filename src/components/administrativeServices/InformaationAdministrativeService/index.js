@@ -7,7 +7,7 @@ import Header from '../../header';
 import Footer from '../../footer';
 import { AdditionalDiv } from '../../../pages/concats/GeneralContactInform/styles';
 import HeaderAdministrativeServices from '../Header';
-import { DivBlocks, ContainerInform } from './styles';
+import { DivBlocks, ContainerInform, ContainerDescription } from './styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { Name } from '../Header/styles';

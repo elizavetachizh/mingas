@@ -37,12 +37,11 @@ export const HeaderCompanyDiv = styled.div`
 
 export const DivButton = styled.div`
   max-width: 1440px;
-  font-style: normal;
-  font-weight: 400;
+  width: 100%;
   font-size: 16px;
-  line-height: 20px;
   display: flex;
   flex-direction: row;
+  
   align-items: center;
   justify-content: space-around;
   margin: 10px auto;
@@ -55,7 +54,7 @@ export const DivButton = styled.div`
 export const HeaderCompanyBtn = styled(NavLink)`
   text-decoration: none;
   color: #0d4475;
-  margin: 0 14px;
+  margin: 0 auto;
 
   &.active {
     color: #a69b14;

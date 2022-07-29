@@ -14,7 +14,6 @@ import telegram from '../../assets/icons/telegram.png';
 import instagram from '../../assets/icons/instagram.png';
 import viber from '../../assets/icons/viber.png';
 import {
-  Container,
   Contacts,
   Telephons,
   ContactInform,
@@ -28,6 +27,7 @@ import {
 import ButtonFun from '../button';
 import { Trans } from 'react-i18next';
 import { t } from 'i18next';
+import { Container } from "../../pages/Home/services/styles";
 const line = {
   width: '70%',
 };

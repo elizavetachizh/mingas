@@ -11,7 +11,7 @@ export const HeaderBtnFeedback = styled.div`
   max-width: 29%;
   //margin: 0 2%;
   height: 300px;
-  @media(max-width: 700px) {
+  @media (max-width: 700px) {
     height: auto;
     width: 100%;
     margin: 0 auto;
@@ -31,19 +31,19 @@ export const Button = styled.button`
   cursor: pointer;
   transition: 0.8s linear;
   &:hover {
-    border: solid  #0d4475;
+    border: solid #0d4475;
     color: #fff; /* Цвет текста */
     background: #0d4475; /* Цвет фона */
     padding: 10px;
   }
   &:focus {
-    border: solid  #0d4475;
+    border: solid #0d4475;
     color: #fff; /* Цвет текста */
     background: #0d4475; /* Цвет фона */
     padding: 10px;
   }
   &:active {
-    border: solid  #0d4475;
+    border: solid #0d4475;
     color: #fff; /* Цвет текста */
     background: #0d4475; /* Цвет фона */
     padding: 10px;
@@ -78,17 +78,16 @@ export const Divbackground = styled.div`
   &:after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2;
   }
-  @media(max-width: 640px) {
+  @media (max-width: 640px) {
     width: 640px;
   }
-  
 `;
 export const DivImage = styled.div`
   height: 470px;

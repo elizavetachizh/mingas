@@ -40,7 +40,7 @@ import AdministartiveServicesForLegal from './components/administartiveServicesF
 import { Component } from 'react';
 import ParentOrganizations from './pages/company/parentOrganizations';
 import LeaveFeedback from './components/leaveFeedback';
-import ElectronicAppeal from "./pages/feedback/electronicСirculation";
+import ElectronicAppeal from './pages/feedback/electronicСirculation';
 class App extends Component {
   render() {
     return (

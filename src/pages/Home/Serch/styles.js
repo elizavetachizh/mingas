@@ -66,5 +66,33 @@ export const Button = styled.button`
   height: 28px;
   border: 0;
   transition: all 0.3s;
- 
+`;
+export const ContainerFormSearch = styled.div`
+  &:before {
+    content: '';
+    position: absolute;
+    left: -1500px;
+    right: -1500px;
+    top: 0;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+  }
+`;
+export const FormSearch = styled.form`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  input {
+    border: none;
+    height: 80px;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 80px;
+    padding: 0 16px 2px;
+    margin: 0;
+    background: none;
+    width: 100%;
+  }
 `;

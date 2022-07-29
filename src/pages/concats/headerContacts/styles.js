@@ -4,11 +4,14 @@ import { NavLink } from 'react-router-dom';
 export const HeaderCompanyDiv = styled.div`
   margin: 0 2%;
   height: fit-content;
+  background: #e8f3ff;
+  width: 50%;
 `;
 
 export const DivButton = styled.div`
   display: flex;
-  flex-direction: column;  background: #e8f3ff;
+  flex-direction: column;
+  background: #e8f3ff;
 `;
 
 export const HeaderConcatsBtn = styled(NavLink)`
@@ -16,6 +19,7 @@ export const HeaderConcatsBtn = styled(NavLink)`
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
+  background: #e8f3ff;
   text-align: left;
   color: #0d4475;
   padding: 0.8rem;

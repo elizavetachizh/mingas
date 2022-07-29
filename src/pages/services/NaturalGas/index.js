@@ -4,16 +4,15 @@ import DopFunctionService from '../DopFunction';
 import { Container } from '../../company/styles';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
-import { Button, Name } from '../../../components/administrativeServices/Header/styles';
-import { HeaderCompanyDiv } from '../../concats/headerContacts/styles';
+import { BlockBtn, Button, Name } from '../../../components/administrativeServices/Header/styles';
+import { DivButton, HeaderCompanyDiv } from '../../concats/headerContacts/styles';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import {
-  ContainerDescription,
+  ContainerInform,
   DivBlocks,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-import { DivBtn } from './DopFunctionalHeader/styles';
 import { useParams } from 'react-router';
 
 export default function NaturalGas() {
@@ -47,25 +46,27 @@ export default function NaturalGas() {
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>
-            <Name>Услуги для физических лиц</Name>
-            {data.map((element) => (
-              <DivBtn>
-                <Button
-                  className={currentServiceID === element.serviceId ? 'background' : ''}
-                  onClick={() => animate(element.serviceId)}
-                  key={element.serviceId}
-                >
-                  {element.nameCard}
-                </Button>
-              </DivBtn>
-            ))}
+            <DivButton>
+              <Name>Услуги для физических лиц</Name>
+              {data.map((element) => (
+                <BlockBtn>
+                  <Button
+                    className={currentServiceID === element.serviceId ? 'background' : ''}
+                    onClick={() => animate(element.serviceId)}
+                    key={element.serviceId}
+                  >
+                    {element.nameCard}
+                  </Button>
+                </BlockBtn>
+              ))}
+            </DivButton>
           </HeaderCompanyDiv>
-          <ContainerDescription>
+          <ContainerInform>
             <Name>{title}</Name>
             {inform.map((el) => (
               <DopFunctionService nameDescription={el.nameDescription} inform={el.inform} />
             ))}
-          </ContainerDescription>
+          </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

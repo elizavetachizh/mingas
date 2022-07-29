@@ -53,9 +53,10 @@ export const LinkToWork = styled.a`
 `;
 
 export const ContainerForLinkToWork = styled.div`
-  border:1px solid #cccccc;
-  border-radius: 5px;
-  width: 50%;
-  margin: 0 auto;
-  padding: 1rem;
-`
+  div.myDiv {
+    width: 200px;
+  }
+  div.class-parag {
+    width: 200px;
+  }
+`;

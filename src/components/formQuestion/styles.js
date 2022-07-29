@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: 100%;
+  width: 80%;
   max-width: 980px;
   margin: 0 auto;
   z-index: 3;
@@ -11,9 +11,6 @@ export const DivInput = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
-  //input {
-  //  height: 100px;
-  //}
 `;
 
 export const TwoColumnTextAndForm = styled.div`
@@ -53,9 +50,7 @@ export const OneColumn = styled.div`
   }
   h3 {
     color: #2d9cdb;
-    font-weight: 600;
     font-size: 1.25rem;
-    line-height: 1;
     text-transform: uppercase;
   }
   @media (max-width: 700px) {
@@ -109,6 +104,13 @@ export const DivInputFile = styled.div`
   height: 50px;
   display: flex;
   flex-direction: column;
+  div{
+    display: flex;
+    flex-direction: column;
+  }
+  span {
+    margin-top: 30px;
+  }
 `;
 
 export const InputFile = styled.input`
@@ -139,17 +141,6 @@ export const Button = styled.button`
   margin: 4% auto;
   cursor: pointer;
   transition: 0.8s linear;
-  //&:hover {
-  //  border: solid #0d4475;
-  //  color: #fff; /* Цвет текста */
-  //  background: #0d4475; /* Цвет фона */
-  //  padding: 10px;}
-  //&:focus {
-  //  border: solid #0d4475;
-  //  color: #fff; /* Цвет текста */
-  //  background: #0d4475; /* Цвет фона */
-  //  padding: 10px;
-  //}
 `;
 
 export const Background = styled.img`

@@ -10,7 +10,7 @@ export const ContainerLeaders = styled.a`
   margin: 4% auto;
   width: 60%;
   height: auto;
-  outline: 2px solid #0d4475; /* Чёрная рамка */
+  //outline: 2px solid #0d4475; /* Чёрная рамка */
   border: 3px solid #fff; /* Белая рамка */
   font-weight: bold;
   font-size: 20px;
@@ -20,6 +20,8 @@ export const ContainerLeaders = styled.a`
   &:hover {
     text-decoration-color: rgba(49, 77, 93, 0.6);
     transform: scale(1.1);
+    //outline: 1px solid #0d4475;
+    box-shadow: 10px 10px 10px 10px #cccccc, 15px 10px 10px #cccccc;
   }
 `;
 export const ImageLeader = styled.img`

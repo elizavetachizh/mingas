@@ -18,9 +18,6 @@ export const TextForInformation = styled.div`
       text-decoration: none;
       color:#0d4475;
     }
-    form {
-      width: 50%;
-    }
     button{
       width: 150px;
       height: 50px;

@@ -1,14 +1,12 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 import { ContainerServices, Imagecard, Textcard } from './styles';
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router';
 
-export default function LinkServices({ img, nameCard }) {
+export default function LinkServices({ img, nameCard, cardId }) {
   const navigate = useNavigate();
-  const handlerLinkClick = useCallback((nameCard) => {
-    navigate(`/services/${nameCard}`);
-
+  const handlerLinkClick = useCallback(() => {
+    navigate(`/services/${cardId}`);
   }, []);
-
 
   return (
     <ContainerServices onClick={() => handlerLinkClick(nameCard)}>

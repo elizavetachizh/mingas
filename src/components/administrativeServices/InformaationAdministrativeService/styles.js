@@ -7,7 +7,7 @@ export const Div = styled.div`
   padding: 2%;
   display: none;
   p {
-    text-align: justify;
+    text-align: left;
   }
   &.shake {
     display: block;
@@ -23,13 +23,17 @@ export const DivBlocks = styled.div`
 `;
 
 export const ContainerDescription = styled.div`
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  max-width: 980px;
+  margin: 0 auto;
 `
 export const ContainerInform = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 980px;
-  margin: 0 auto;
+  margin: 0 4%;
+  width: 100%;
 `;
 
 export const BtnIsOpen = styled.div`

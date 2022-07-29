@@ -2,10 +2,10 @@ import React, { useCallback } from "react";
 import { useNavigate } from "react-router";
 import { ContainerServices, Imagecard, Textcard } from "../dataComponents/styles";
 
-export default function LinkServicesForLegalEntities({ img, nameCard }) {
+export default function LinkServicesForLegalEntities({ img, nameCard,cardId }) {
   const navigate = useNavigate();
-  const handlerLinkClick = useCallback((nameCard) => {
-    navigate(`/services-legal-entities/${nameCard}`);
+  const handlerLinkClick = useCallback(() => {
+    navigate(`/services-legal-entities/${cardId}`);
 
   }, []);
 

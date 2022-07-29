@@ -6,6 +6,7 @@ import { Divbackground, DivImage } from '../styles';
 import { Container } from '../../Home/styles';
 import minsk from '../../../assets/background/minsk.jpg';
 import Footer from '../../../components/footer';
+import { Parallax } from "react-parallax";
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
@@ -13,10 +14,17 @@ const styled = {
 export default function UsefulInformation() {
   return (
     <Container>
-      <Header></Header>
+      <Header backgroundHeader={'blue'}/>
       <HeaderFeedBack />
       <Divbackground>
-        <DivImage style={styled}></DivImage>
+        <DivImage>
+          <Parallax
+            style={{ height: '470px' }}
+            bgImage={minsk}
+            strength={-100}
+          >
+          </Parallax>
+        </DivImage>
       </Divbackground>
       <Title>Useful information</Title>
       <Footer></Footer>

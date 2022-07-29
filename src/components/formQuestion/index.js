@@ -123,8 +123,10 @@ export default function FormQuestion() {
         />
       </DivInput>
       <DivInputFile>
-        <span>Прекрипите файл</span>
-        <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
+        <div>
+          <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
+          <span>Прекрипите файл</span>
+        </div>
       </DivInputFile>
       <DivInputCheckbox>
         <InputCheckbox

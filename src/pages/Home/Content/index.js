@@ -5,11 +5,16 @@ import CarouselFun from '../slider';
 import { Parallax } from 'react-parallax';
 
 export default function ContentHome() {
-  const [height, setHeight] = useState('900px');
+  const [height, setHeight] = useState('796px');
 
   return (
     <ContainerContent>
-      <Parallax style={{ height: `${height}`, width: '100%' }} bgImage={imageContent}>
+      <Parallax
+        style={{ height: `${height}` }}
+        bgImage={imageContent}
+        strength={-100}
+        blur={{ min: -4, max: 10 }}
+      >
         <DivPrizes>
           <Prizes>
             <img src={require(`../../../assets/prizes/primary_1.png`)} />
