@@ -3,7 +3,7 @@ import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
 import { useState } from 'react';
-import { ContainerBtn, Div, DivClose, ContainerText } from './styles';
+import { ContainerBtn, Div, DivClose, ContainerText, ImgERIP } from "./styles";
 import TitleFun from '../title';
 import payment from '../../assets/payment/1.png';
 import bankBook from '../../assets/payment/2.png';
@@ -62,14 +62,14 @@ export default function MethodPayment() {
             </p>
             <p>1.Выбрать пункт «Система Расчет» (ЕРИП);</p>
             <p>2.Выбрать последовательно вкладки: ЕРИП / Коммунальные платежи /</p>
-            <img alt={''} src={payment} />
+            <ImgERIP alt={''} src={payment} />
             <p>3.Газоснабжение / Минск / Мингаз / Газоснабжение;</p>
             <p>4.Ввести номер лицевого счета;</p>
-            <img src={bankBook} alt={''} />
+            <ImgERIP src={bankBook} alt={''} />
             <p>5.Ввести показания счетчика газа;</p>
-            <img src={meterReading} alt={''} />
-            <img alt={''} src={meterReading_2} />
-            <img alt={''} src={paymentDetails} />
+            <ImgERIP src={meterReading} alt={''} />
+            <ImgERIP alt={''} src={meterReading_2} />
+            <ImgERIP alt={''} src={paymentDetails} />
             <p>6.Проверить корректность информации;</p>
             <p>7.Совершить платеж.</p>
           </div>

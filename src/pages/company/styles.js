@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  
   div.class-parag {
     width: 300px;
   }
@@ -27,7 +26,9 @@ export const ContainerCertificats = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  div{
-    margin: 2% auto;
+  @media (max-width: 930px) {
+    img {
+      width: 70%;
+    }
   }
 `;

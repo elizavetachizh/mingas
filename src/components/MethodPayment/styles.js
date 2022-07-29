@@ -22,6 +22,7 @@ export const ContainerBtn = styled.div`
     align-items: center;
     text-align: center;
     margin: 4% auto;
+    
   }
   div {
     padding: 2%;
@@ -72,3 +73,9 @@ export const ContainerText = styled.div`
     height: 1125px;
   }
 `;
+
+export const ImgERIP = styled.img`
+@media(max-width: 930px) {
+  width: 50%;
+}
+`

@@ -12,7 +12,15 @@ export const AdditionalDiv = styled.div`
   } ;
   @media (max-width: 500px) {
     width: 500px;
-    margin: 0 65px;
+    margin: 24% 65px;
+  } ;
+  @media (max-width: 410px) {
+    width: 500px;
+    margin: 30% 65px;
+  } ;
+  @media (max-width: 335px) {
+    width: 500px;
+    margin: 36% 65px;
   } ;
 `;
 

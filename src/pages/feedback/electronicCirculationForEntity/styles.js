@@ -22,4 +22,7 @@ export const TextForInformation = styled.div`
       width: 150px;
       height: 50px;
     }
+    @media(max-width: 720px){
+      width: 80%;
+    }
   `
