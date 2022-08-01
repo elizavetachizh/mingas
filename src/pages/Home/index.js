@@ -1,5 +1,5 @@
 import Header from '../../components/header';
-import { Container, HomeContainer } from './styles';
+import { Container } from './styles';
 import React from 'react';
 import ContentHome from './Content';
 import UsefulInform from './useful_information';
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <Container>
       <Header />
-      <HomeContainer>
+      <>
         <ContentHome />
         <UsefulInform />
         <HomeServices />
@@ -23,8 +23,7 @@ export default function Home() {
         <HeaderRequests />
         <News />
         <StateInformResources />
-
-      </HomeContainer>
+      </>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>

@@ -12,6 +12,6 @@ export const ParallaxDivInter = styled.div`
 
 export const ParallaxD = styled.div`
   @media (max-width: 640px) {
-    width: 640px;
+    width: 650px;
   }
 `

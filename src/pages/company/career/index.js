@@ -5,9 +5,9 @@ import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { Helmet } from 'react-helmet';
 import { DivForm, ContainerForLinkToWork } from './styles';
-import career from '../../../assets/png/oszczedzanie-gazu.jpg';
 import up from '../../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
+import background from '../../../assets/background/podlojca4.png';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
 import TitleForHome from '../../../components/TitleForHome';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
@@ -21,23 +21,27 @@ div.style.width = '170px';
 parag.style.width = '170px';
 parag.classList.add('class-parag');
 div.appendChild(parag);
+
+const styleImage = {
+  backgroundImage: `url(${background})`,
+   backgroundRepeat: 'round',
+  backgroundAttachment: 'fixed'
+};
 export default function Career() {
   useEffect(() => {
     const script = document.createElement('script');
-
     script.src = url;
     script.async = true;
-
     parag.appendChild(script);
     return () => {
       parag.removeChild(script);
     };
   }, []);
   return (
-    <Container>
+    <Container style={styleImage}>
       <Header backgroundHeader="blue" />
       <>
-        <HeaderCompany currentPage={'career'} />
+        <HeaderCompany />
         <TitleForHome color={'blue'} infoTitle={'Работа в РУП “Мингаз”'}></TitleForHome>
         <AdditionalDiv>
           <ContainerForLinkToWork></ContainerForLinkToWork>

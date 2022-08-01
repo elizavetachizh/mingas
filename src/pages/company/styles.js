@@ -4,13 +4,13 @@ export const Container = styled.div`
   div.class-parag {
     width: 300px;
   }
-  max-width: 100%;
-  height: auto;
+  margin: 0 auto;
+  width: 100%;
   h1 {
     color: #000;
   }
   @media (max-width: 640px) {
-    width: 640px;
+    width: 650px;
   }
 `;
 export const DialogViber = styled.div``;

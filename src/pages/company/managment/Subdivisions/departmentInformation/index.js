@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
-import { Container } from '../../styles';
 import Header from '../../../../../components/header';
 import { data } from '../../../../../assets/data_department';
 import DopFunctional from '../DopFunctional';
 import { useParams } from 'react-router-dom';
+import { Container } from "../../../styles";
 
 export default function DepartmentInformation({ currentLink }) {
   const { linkId } = useParams();
@@ -13,7 +13,7 @@ export default function DepartmentInformation({ currentLink }) {
   );
 
   return (
-    <Container titleDepartment={currentLink}>
+    <Container>
       <Header backgroundHeader={'blue'} />
       <DopFunctional
         id={currentDepartment.id}

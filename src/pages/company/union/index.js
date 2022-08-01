@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Container } from '../managment/styles';
 import Header from '../../../components/header';
 import './styles.css';
 import Aos from 'aos';
@@ -8,6 +7,7 @@ import napravlenie from '../../../assets/union/napravlenie.jpg';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import Footer from '../../../components/footer';
 import TitleFun from '../../../components/title';
+import { Container } from "../../styles";
 
 export default function Union() {
   useEffect(() => {

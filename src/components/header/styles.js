@@ -118,33 +118,6 @@ export const Background = styled.div`
     height: 100px;
     display: flex;
     flex-direction: row;
-    @media (max-width: 630px) {
-      margin-left: 50px;
-    }
-    @media (max-width: 580px) {
-      margin-left: 70px;
-    }
-    @media (max-width: 550px) {
-      margin-left: 100px;
-    }
-    @media (max-width: 520px) {
-      margin-left: 130px;
-    }
-    @media (max-width: 490px) {
-      margin-left: 160px;
-    }
-    @media (max-width: 460px) {
-      margin-left: 200px;
-    }
-    @media (max-width: 420px) {
-      margin-left: 240px;
-    }
-    @media (max-width: 380px) {
-      margin-left: 280px;
-    }
-    @media (max-width: 340px) {
-      margin-left: 320px;
-    }
   }
 `;
 export const BackgroundText = styled.div`

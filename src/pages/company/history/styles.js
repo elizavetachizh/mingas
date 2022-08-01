@@ -27,23 +27,11 @@ export const DivTextPhoto = styled.div`
     max-width: 100%;
     width: 100%;
   }
-  @media (max-width: 550px) {
-    margin-left: 10%;
-    max-width: 100%;
-    width: 100%;
-  }
-  @media (max-width: 450px) {
-    width: 450px;
-    margin-left: 20%;
-  }
-  @media (max-width: 400px) {
-    width: 450px;
-    margin-left: 26%;
-  }
 `;
 
 export const DivText = styled.div`
   width: 50%;
+
   @media (max-width: 600px) {
     width: 100%;
     margin: 0 auto;
@@ -51,6 +39,11 @@ export const DivText = styled.div`
   p {
     text-indent: 25px;
     text-align: justify;
+  }
+  @media (max-width: 600px) {
+    p {
+      margin: 4%;
+    }
   }
 `;
 
@@ -128,7 +121,7 @@ export const ImgBackground = styled.img`
   display: flex;
   margin: 0 auto;
   background-repeat: no-repeat;
-  @media(max-width: 651px) {
-    width: 40rem;
-  }
+  //@media(max-width: 651px) {
+  //  width: 40rem;
+  //}
 `;

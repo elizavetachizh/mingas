@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 const opacityAnimation = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -21,18 +21,11 @@ export const DivBlocks = styled.div`
   flex-direction: row;
   justify-content: space-around;
 `;
-
-export const ContainerDescription = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 980px;
-  margin: 0 auto;
-`
 export const ContainerInform = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 980px;
-  margin: 0 4%;
+  margin: 0 auto;
   width: 100%;
 `;
 

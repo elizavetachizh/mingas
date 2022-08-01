@@ -24,14 +24,14 @@ export const HeaderCompanyDiv = styled.div`
     justify-content: center;
     align-items: center;
     width: 60%;
-    @media (max-width: 600px) {
-      width: 90%;
-      margin: 0 16%;
-    }
-    @media (max-width: 400px) {
-      width: 100%;
-      margin: 0 26%;
-    }
+    //@media (max-width: 600px) {
+    //  width: 90%;
+    //  margin: 0 16%;
+    //}
+    //@media (max-width: 400px) {
+    //  width: 100%;
+    //  margin: 0 26%;
+    //}
   }
 `;
 

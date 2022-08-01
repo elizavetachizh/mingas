@@ -16,7 +16,6 @@ import {
   ContainerInform,
   ContainerInformAboutService,
   Div,
-  DivBlocks,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Thead } from '../../pages/feedback/receptionOfCitizens/styles';

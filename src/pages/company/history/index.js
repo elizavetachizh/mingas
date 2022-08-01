@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Container } from '../styles';
 import Header from '../../../components/header';
 import HeaderCompany from '../header_company';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
@@ -14,6 +13,7 @@ import history_9 from '../../../assets/history/9.png';
 import history_10 from '../../../assets/history/11.png';
 import { DivParagraphHistory, PWithImg, ImgBackground } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
+import { Container } from "../../styles";
 
 export default function History() {
   useEffect(() => {

@@ -6,11 +6,10 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 0;
   padding-bottom: 40px;
-  height: auto;
   color: #fff;
   align-items: center;
   @media (max-width: 640px) {
-    width: 640px;
+    width: 650px;
   }
 `;
 

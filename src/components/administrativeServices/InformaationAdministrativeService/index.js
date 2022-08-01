@@ -1,16 +1,16 @@
 import { useParams, useSearchParams } from 'react-router-dom';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {useEffect, useMemo, useState } from 'react';
 import { data } from '../../../assets/dataInformAdministrativeService';
 import DopFunctional from './DopFunctional';
-import { Container } from '../../../pages/company/managment/styles';
 import Header from '../../header';
 import Footer from '../../footer';
 import { AdditionalDiv } from '../../../pages/concats/GeneralContactInform/styles';
 import HeaderAdministrativeServices from '../Header';
-import { DivBlocks, ContainerInform, ContainerDescription } from './styles';
+import { DivBlocks, ContainerInform } from './styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { Name } from '../Header/styles';
+import { Container } from "../../../pages/company/styles";
 
 export default function InformationAdministrativeService() {
   const { serviceID } = useParams();

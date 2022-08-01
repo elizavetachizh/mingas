@@ -6,7 +6,6 @@ import { t } from 'i18next';
 export default function HeaderCompany() {
   return (
     <HeaderCompanyDiv>
-      <Header />
       <DivButton>
         <HeaderCompanyBtn to="/company/history">
           {t('headerCompany:companyHistory')}

@@ -11,7 +11,7 @@ import TitleForHome from '../../../components/TitleForHome';
 
 export default function UsefulInform() {
   return (
-    <Container src={background}>
+    <>
       <BackgroundStyle src={linesOne} />
       <DivUsefulInform>
         <TitleForHome
@@ -30,6 +30,6 @@ export default function UsefulInform() {
           ))}
         </DivInform>
       </DivUsefulInform>
-    </Container>
+    </>
   );
 }
