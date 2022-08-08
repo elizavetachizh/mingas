@@ -1,17 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { dataLegalEntities } from '../../../../assets/data_service_legalEntities_general';
+import { dataLegalEntities } from '../../../../assets/data/data_service_legalEntities_general';
 import { Container } from '../../../company/styles';
 import Header from '../../../../components/header';
 import Footer from '../../../../components/footer';
 import DopFunctionService from '../../DopFunction';
 import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 import up from '../../../../assets/png/up_arrow_round.png';
-import { DivButton, HeaderCompanyDiv } from '../../../concats/headerContacts/styles';
-import { BlockBtn, Button, Name } from "../../../../components/administrativeServices/Header/styles";
+import { HeaderCompanyDiv } from '../../../concats/headerContacts/styles';
+import {
+  BlockBtn,
+  Button,
+  Name,
+} from '../../../../components/administrativeServices/Header/styles';
 import {
   ContainerInform,
-  DivBlocks
-} from "../../../../components/administrativeServices/InformaationAdministrativeService/styles";
+  DivBlocks,
+} from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import { useParams } from 'react-router';
 
@@ -44,20 +48,18 @@ export default function CardOfService() {
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>
-            <DivButton>
-              <Name>Услуги для юридических лиц</Name>
-              {dataLegalEntities.map((element) => (
-                <BlockBtn>
-                  <Button
-                    className={currentServiceID === element.serviceId ? 'background' : ''}
-                    onClick={() => animate(element.serviceId)}
-                    key={element.serviceId}
-                  >
-                    {element.nameCard}
-                  </Button>
-                </BlockBtn>
-              ))}
-            </DivButton>
+            <Name>Услуги для юридических лиц</Name>
+            {dataLegalEntities.map((element) => (
+              <BlockBtn>
+                <Button
+                  className={currentServiceID === element.serviceId ? 'background' : ''}
+                  onClick={() => animate(element.serviceId)}
+                  key={element.serviceId}
+                >
+                  {element.nameCard}
+                </Button>
+              </BlockBtn>
+            ))}
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>

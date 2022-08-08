@@ -1,28 +1,33 @@
 import React from 'react';
 import { Container } from '../../styles';
 import Header from '../../../components/header';
-import { Title } from '../../Home/useful_information/styles';
 import HeaderFeedBack from '../HeaderFeedBack';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { Divbackground, DivImage } from '../styles';
 import minsk from '../../../assets/background/minsk.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
+import Menu from './Menu';
 const styled = {
-  background: `url(${minsk})  no-repeat`,
+  background: `url(${minsk}) no-repeat`,
   backgroundSize: 'cover',
 };
 export default function QuestionAnswer() {
   return (
     <Container>
-      <Header backgroundHeader={'blue'}></Header>
+      <Header backgroundHeader={'blue'} />
       <HeaderFeedBack />
       <Divbackground>
-        <DivImage style={styled}></DivImage>
+        <DivImage style={styled} />
       </Divbackground>
       <AdditionalDiv>
-        <Title>Question answer</Title>
+        <Menu />
       </AdditionalDiv>
-      <Footer></Footer>
+      <ScrollToTop showUnder={160}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
+      <Footer />
     </Container>
   );
 }

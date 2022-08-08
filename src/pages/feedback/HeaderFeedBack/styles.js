@@ -5,8 +5,8 @@ export const HeaderFeedbackDiv = styled.div`
   position: absolute;
   z-index: 4;
   display: flex;
+  text-align: center;
   flex-direction: column;
-  color: #0d4475;
   margin: 12% auto;
   font-size: 20px;
   width: 100%;
@@ -50,15 +50,6 @@ export const UsefullInformBtn = styled(NavLink)`
 `;
 
 export const QuestionAnswerBtn = UsefullInformBtn;
-
 export const OnlineApplicationBtn = UsefullInformBtn;
 export const AppealBtn = UsefullInformBtn;
 export const ReceptionOfCitizensBtn = UsefullInformBtn;
-
-export const DivBtnHeader = styled.div`
-  //width: 100%;
-  //height: 80px;
-  //background-color: white;
-  //text-align: center;
-  //align-items: center;
-`;

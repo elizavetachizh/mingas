@@ -1,6 +1,6 @@
 import { useParams, useSearchParams } from 'react-router-dom';
-import React, {useEffect, useMemo, useState } from 'react';
-import { data } from '../../../assets/dataInformAdministrativeService';
+import React, { useEffect, useMemo, useState } from 'react';
+import { data } from '../../../assets/data/dataInformAdministrativeService';
 import DopFunctional from './DopFunctional';
 import Header from '../../header';
 import Footer from '../../footer';
@@ -10,7 +10,7 @@ import { DivBlocks, ContainerInform } from './styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { Name } from '../Header/styles';
-import { Container } from "../../../pages/company/styles";
+import { Container } from '../../../pages/company/styles';
 
 export default function InformationAdministrativeService() {
   const { serviceID } = useParams();
@@ -26,10 +26,10 @@ export default function InformationAdministrativeService() {
       ),
     [data, serviceID, linkId]
   );
-    useEffect(()=>{
-      const current = data.find((element) => element.serviceID === +serviceID);
-      setTitle(current.serviceName);
-    })
+  useEffect(() => {
+    const current = data.find((element) => element.serviceID === +serviceID);
+    setTitle(current.serviceName);
+  });
 
   return (
     <Container>
@@ -40,7 +40,6 @@ export default function InformationAdministrativeService() {
           <ContainerInform>
             {serviceID && <Name>{title}</Name>}
             <>
-              {' '}
               {currentDepartment.map((el) => (
                 <DopFunctional
                   key={el.uniqueName}

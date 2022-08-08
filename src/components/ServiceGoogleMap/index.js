@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs } from 'react-google-maps';
-import { obmenie_puncti } from '../../assets/data-address_obmenie_puncti';
+import { obmenie_puncti } from '../../assets/data/data-address_obmenie_puncti';
 import { useLoadScript } from '@react-google-maps/api';
 const API_KEY = process.env.REACT_APP_API_KEY;
 const libraries = ['places'];

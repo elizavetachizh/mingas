@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleMap, InfoWindow, Marker, withGoogleMap, withScriptjs } from 'react-google-maps';
-import { obmen_balons } from '../../assets/data_address_obmen_balons';
+import { obmen_balons } from '../../assets/data/data_address_obmen_balons';
 import { useLoadScript } from '@react-google-maps/api';
 const API_KEY = process.env.REACT_APP_API_KEY;
 const libraries = ['places'];

@@ -37,7 +37,7 @@ export const ContainerBtn = styled.div`
     }
   }
 `;
-export const Div = styled.button`
+export const BtnOpenInform = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,7 +58,7 @@ export const Div = styled.button`
     margin: 0;
   }
 `;
-export const DivClose = Div;
+export const DivClose = BtnOpenInform;
 
 export const ContainerText = styled.div`
   text-align: justify;

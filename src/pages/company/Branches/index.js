@@ -3,7 +3,8 @@ import { Container } from '../styles';
 import Header from '../../../components/header';
 import HeaderCompany from '../header_company';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import TitleForHome from "../../../components/TitleForHome";
+import TitleForHome from '../../../components/TitleForHome';
+import Ogonek from './Ogonek';
 
 export default function Branches() {
   return (
@@ -11,7 +12,8 @@ export default function Branches() {
       <Header backgroundHeader={'blue'} />
       <HeaderCompany></HeaderCompany>
       <AdditionalDiv>
-        <TitleForHome color={'blue'} infoTitle={'Филиалы УП "Мингаз"'}></TitleForHome>
+        <TitleForHome margin={'s'} color={'blue'} infoTitle={'Филиалы УП "Мингаз"'} />
+        <Ogonek />
       </AdditionalDiv>
     </Container>
   );

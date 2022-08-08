@@ -5,7 +5,7 @@ import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import TitleForHome from '../../../components/TitleForHome';
 import HeaderCompany from '../header_company';
-import {data} from '../../../assets/data_ParentOrganization'
+import {data} from '../../../assets/data/data_ParentOrganization'
 import DopFunctional from "./DopFunctional";
 import { ContainerLinks } from "./styles";
 export default function ParentOrganizations() {

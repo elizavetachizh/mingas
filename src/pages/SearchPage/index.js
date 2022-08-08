@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { data } from '../../assets/data_services';
-import { dataLegalEntities } from '../../assets/data_service_legalEntities_general';
+import { data } from '../../assets/data/data_services';
+import { dataLegalEntities } from '../../assets/data/data_service_legalEntities_general';
 import { Button, FormSearch, ContainerFormSearch } from '../Home/Serch/styles';
 import search from '../../assets/png/search.svg';
 import { Div } from './styles';

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import Header from '../../components/header';
-import { data } from '../../assets/data_services';
+import { data } from '../../assets/data/data_services';
 import ServicesList from './servicesList';
 import Footer from '../../components/footer';
 import { Container } from '../company/styles';

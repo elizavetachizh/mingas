@@ -7,7 +7,7 @@ import TitleFun from '../../../components/title';
 import { DivServices } from '../styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-import { dataLegalEntities } from '../../../assets/data_service_legalEntities_general';
+import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities_general';
 import ServicesList from './serviceList';
 import { useNavigate } from 'react-router';
 

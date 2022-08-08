@@ -1,12 +1,10 @@
-import React, { useCallback } from 'react';
-import { BtnLink } from './styles';
-import { useNavigate } from 'react-router';
+import React from 'react';
+import { Button } from '../../../../components/administrativeServices/Header/styles';
 
-export default function DopFunctionalHeader({ nameCard }) {
-  const navigate = useNavigate();
-  const handlerLinkClick = useCallback((nameCard) => {
-    navigate(`/services/${nameCard}`);
-  }, []);
-
-  return <BtnLink onClick={handlerLinkClick(nameCard)}>{nameCard}</BtnLink>;
+export default function DopFunctionalHeader({ nameCard, onClick = {}, className }) {
+  return (
+    <Button className={className} onClick={onClick}>
+      {nameCard}
+    </Button>
+  );
 }

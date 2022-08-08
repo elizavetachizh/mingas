@@ -1,64 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PageSection, Table, Tbody, Tr, Td, AdditionalDiv } from './styles';
 import Header from '../../../components/header';
-import { ContactsInform, DivButtons, DivMap, Row } from '../styles';
+import { ContactsInform, DivMap, Row } from '../styles';
 import HeaderConcats from '../headerContacts';
-import { Title } from '../../Home/useful_information/styles';
-import AutoComplete from '../../../components/GoogleMap/AutoComplete';
-import Map, { MODES } from '../../../components/GoogleMap';
 import Footer from '../../../components/footer';
 import { Container } from '../../styles';
-import { useJsApiLoader } from '@react-google-maps/api';
 import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
 import TitleFun from '../../../components/title';
-import { YMaps } from 'react-yandex-maps';
-
-const API_KEY = process.env.REACT_APP_API_KEY;
-const API_KEY_YANDEX = process.env.REACT_APP_API_KEY_YANDEX;
 export const styleTd = {
   width: '50%',
   fontWeight: 'bold',
 };
-const libraries = ['places'];
 
 export default function GeneralInform() {
   const [center, setCenter] = useState(defaultCenter);
-  const [mode, setMode] = useState(MODES.MOVE);
-  const [markers, setMarkers] = useState([]);
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script-1',
-    googleMapsApiKey: API_KEY,
-    libraries,
-  });
-
-  const onPlaceSelect = useCallback((coordinates) => {
-    setCenter(coordinates);
-  }, []);
-
-  const toggleMode = useCallback(() => {
-    switch (mode) {
-      case MODES.MOVE:
-        setMode(MODES.SET_MARKER);
-        break;
-      case MODES.SET_MARKER:
-        setMode(MODES.MOVE);
-        break;
-      default:
-        setMode(MODES.MOVE);
-    }
-  }, [mode]);
-
-  const onMarkerAdd = useCallback(
-    (coordinates) => {
-      setMarkers([...markers, coordinates]);
-    },
-    [markers]
-  );
-
-  const clear = useCallback(() => {
-    setMarkers([]);
-  }, []);
-
   useEffect(() => {
     GetBrowserLocation()
       .then((curLoc) => {
@@ -101,30 +56,6 @@ export default function GeneralInform() {
           </ContactsInform>
         </Row>
         <DivMap>
-          {/*<AutoComplete isLoaded={isLoaded} onSelect={onPlaceSelect} />*/}
-          {/*<DivButtons>*/}
-          {/*  <button*/}
-          {/*    // href={'/'}*/}
-          {/*    // backgroundColor={'blue'}*/}
-          {/*    // infoButton={'Установить маркер'}*/}
-          {/*    onClick={toggleMode}*/}
-          {/*  >*/}
-          {/*    Установить маркер*/}
-          {/*  </button>*/}
-          {/*  <button*/}
-          {/*    // href={'/'}*/}
-          {/*    // backgroundColor={'blue'}*/}
-          {/*    // infoButton={'Очистить маркер'}*/}
-          {/*    onClick={clear}*/}
-          {/*  >*/}
-          {/*    Очистить маркер*/}
-          {/*  </button>*/}
-          {/*</DivButtons>*/}
-          {/*{isLoaded ? (*/}
-          {/*  <Map center={center} mode={mode} markers={markers} onMarkerAdd={onMarkerAdd} />*/}
-          {/*) : (*/}
-          {/*  <h2>Loading...</h2>*/}
-          {/*)}*/}
           <div style={{ position: 'relative', overflow: 'hidden' }}>
             <a
               href="https://yandex.by/maps/org/mingaz/41119693302/?utm_medium=mapframe&utm_source=maps"
@@ -153,7 +84,6 @@ export default function GeneralInform() {
           </div>
         </DivMap>
       </AdditionalDiv>
-
       <Footer />
     </Container>
   );

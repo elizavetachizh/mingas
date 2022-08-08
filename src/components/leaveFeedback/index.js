@@ -2,15 +2,30 @@ import { Container } from '../../pages/styles';
 import Header from '../header';
 import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import TitleForHome from '../TitleForHome';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import TitleFun from '../title';
 
+console.log('http://www.portal.nalog.gov.by/grp/getData?unp=100582333&charset=UTF-8&type=json');
 export default function LeaveFeedback() {
+  const [data, setData] = useState([]);
+  const getData = useCallback(async () => {
+    const response = await fetch(
+      'http://www.portal.nalog.gov.by/grp/getData?unp=100582333'
+    );
+    return await response.json();
+  }, []);
+
+  useEffect(() => {
+    getData()
+      .then((result) => setData(result))
+      .catch((err) => console.error(err));
+  }, []);
+  console.log(data);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <TitleForHome infoTitle={'Возможность оставить отзыв'} color={'blue'} />
+        <TitleFun infoTitle={'Возможность оставить отзыв'} color={'blue'} />
         <div style={{ width: '560px', height: '800px', overflow: 'hidden', position: 'relative' }}>
           <iframe
             style={{
@@ -43,6 +58,7 @@ export default function LeaveFeedback() {
               maxHeight: '14px',
               whiteSpace: 'nowrap',
             }}
+            rel="noreferrer"
           >
             Мингаз на карте Минска — Яндекс Карты
           </a>

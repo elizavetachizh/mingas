@@ -1,21 +1,19 @@
 import React from 'react';
-import { DivButton, HeaderCompanyDiv, HeaderConcatsBtn } from './styles';
+import {HeaderCompanyDiv, HeaderConcatsBtn } from './styles';
 import { Name } from '../../../components/administrativeServices/Header/styles';
 
 export default function HeaderConcats() {
   return (
     <HeaderCompanyDiv>
       <Name>Контактная информация</Name>
-      <DivButton>
-        <HeaderConcatsBtn to="/contacts">Общая информация</HeaderConcatsBtn>
-        <HeaderConcatsBtn to="/contacts/work-schedule">
-          График личного приёма граждан
-        </HeaderConcatsBtn>
-        <HeaderConcatsBtn to="/contacts/phone-services">
-          Телефоны служб по работе с клиентами
-        </HeaderConcatsBtn>
-        <HeaderConcatsBtn to="/contacts/requisites">Реквизиты предприятия</HeaderConcatsBtn>
-      </DivButton>
+      <HeaderConcatsBtn to="/contacts">Общая информация</HeaderConcatsBtn>
+      <HeaderConcatsBtn to="/contacts/work-schedule">
+        График личного приёма граждан
+      </HeaderConcatsBtn>
+      <HeaderConcatsBtn to="/contacts/phone-services">
+        Телефоны служб по работе с клиентами
+      </HeaderConcatsBtn>
+      <HeaderConcatsBtn to="/contacts/requisites">Реквизиты предприятия</HeaderConcatsBtn>
     </HeaderCompanyDiv>
   );
 }

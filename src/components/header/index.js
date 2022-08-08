@@ -15,7 +15,6 @@ import GlobalStyle, {
   Dropdown,
   DivButtonHeader,
   PersonalAccButton,
-  GoBack,
   DivColumn,
   BackgroundText,
   DivFirstHeader,
@@ -91,7 +90,6 @@ export default function Header({ backgroundHeader }) {
           </LinkLogo>
           <DivColumn>
             <DivFirstHeader>
-              {/*<GoBack onClick={() => navigate(-1)}>Назад</GoBack>*/}
               <DivPhone>
                 <Div104>
                   <p>
@@ -134,7 +132,6 @@ export default function Header({ backgroundHeader }) {
                     Сертификаты, лицензии, свидетельства
                   </ButtonLink>
                   <ButtonLink to="/company/gratitude">Благодарности и награды</ButtonLink>
-                  {/*<UnionButton to="/company/union">Профсоюз</UnionButton>*/}
                 </DivButtonHeader>
               </Dropdown>
 
@@ -151,20 +148,13 @@ export default function Header({ backgroundHeader }) {
                       <NavLink to="/">Плановые работы</NavLink>
                     </span>
                   </ButtonLink>
-                  {/*<ButtonLink to="/liquefied-gas-tariff">*/}
-                  {/*  Тарифы*/}
-                  {/*  <img alt={''} src={next} />*/}
-                  {/*  <span>*/}
-                  {/*    <NavLink to="/liquefied-gas-tariff">Тарифы на сжиженный газ</NavLink>*/}
-                  {/*    <NavLink to="/natural-gas-tariff">Тарифы на природный газ</NavLink>*/}
-                  {/*  </span>*/}
-                  {/*</ButtonLink>*/}
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-                  {/*<ButtonLink to="/">Обратная связь</ButtonLink>*/}
                   <ButtonLink to="/">Регламентирующие документы</ButtonLink>
                   <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
+                  <ButtonLink to={'/feedback/question-answer/1'}>
+                    Часто задаваемые вопросы
+                  </ButtonLink>
                   <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
                   <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
                 </DivButtonHeader>
@@ -178,7 +168,9 @@ export default function Header({ backgroundHeader }) {
                     Обращение юридических лиц
                   </ButtonLink>
                   <ButtonLink to="/">Тендеры</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>
+                  <ButtonLink to={'/feedback/question-answer/:titleIdParameters'}>
+                    Вопрос-ответ
+                  </ButtonLink>
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                     Административные процедуры
                   </ButtonLink>

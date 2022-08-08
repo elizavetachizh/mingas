@@ -25,7 +25,7 @@ export const ContainerInform = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 980px;
-  margin: 0 auto;
+  margin: 4% auto 0;
   width: 100%;
 `;
 

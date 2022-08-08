@@ -1,6 +1,5 @@
 import React from 'react';
 import { HeaderCompanyDiv, DivButton, HeaderCompanyBtn } from './styles';
-import Header from '../../../components/header';
 import { t } from 'i18next';
 
 export default function HeaderCompany() {

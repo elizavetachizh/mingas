@@ -1,9 +1,7 @@
 import React from 'react';
 import { DivUsefulInform, DivInform } from './styles';
-import { Container } from '../styles';
 import LinkInform from './components_link_inform';
-import { data } from '../../../assets/data';
-import background from '../../../assets/background/background.png';
+import { data } from '../../../assets/data/data';
 import linesOne from '../../../assets/background/lines.png';
 import { BackgroundStyle } from '../services/styles';
 import { Trans } from 'react-i18next';

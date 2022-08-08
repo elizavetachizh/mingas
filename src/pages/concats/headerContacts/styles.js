@@ -2,16 +2,12 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const HeaderCompanyDiv = styled.div`
-  margin: 0 2%;
+  margin:4% 2% 0;
   height: fit-content;
   background: #e8f3ff;
   width: 50%;
-`;
-
-export const DivButton = styled.div`
   display: flex;
   flex-direction: column;
-  background: #e8f3ff;
 `;
 
 export const HeaderConcatsBtn = styled(NavLink)`

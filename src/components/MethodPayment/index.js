@@ -3,7 +3,7 @@ import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
 import { useState } from 'react';
-import { ContainerBtn, Div, DivClose, ContainerText, ImgERIP } from "./styles";
+import { ContainerBtn, BtnOpenInform, DivClose, ContainerText, ImgERIP } from './styles';
 import TitleFun from '../title';
 import payment from '../../assets/payment/1.png';
 import bankBook from '../../assets/payment/2.png';
@@ -39,17 +39,17 @@ export default function MethodPayment() {
 
   return (
     <Container>
-      <Header backgroundHeader={'blue'}></Header>
+      <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <TitleFun infoTitle={'Способы оплаты'} color={'blue'} />
         <ContainerBtn>
-          <Div onClick={animate}>
+          <BtnOpenInform onClick={animate}>
             <p>
               Памятка об оплате за потребленный природный газ в переходный период через
               Интернет-Банкинг
             </p>
             {open ? <img alt={'up'} src={up} /> : <img src={down} alt={'down'} />}
-          </Div>
+          </BtnOpenInform>
           <div className={open && `shake`}>
             <p>
               Окончание отопительного периода 2022 год г. Минск – 10.05.2022, Минский район –

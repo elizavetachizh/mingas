@@ -13,8 +13,8 @@ import {
   WhatDoingCompaniInform,
   WhatDoingCompany,
 } from '../history/styles';
-import { data } from '../../../assets/whatDoingMinGaz';
-import { management } from '../../../assets/data_management';
+import { data } from '../../../assets/data/whatDoingMinGaz';
+import { management } from '../../../assets/data/data_management';
 import ScrollToTop from 'react-scroll-up';
 import Footer from '../../../components/footer';
 import up from '../../../assets/png/up_arrow_round.png';

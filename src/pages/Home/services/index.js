@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonFun from '../../../components/button';
-import { data } from '../../../assets/data_service_individuals';
-import { dataLegalEntities } from '../../../assets/data_service_legalEntities';
+import { data } from '../../../assets/data/data_service_individuals';
+import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities';
 import { Container, DivInform, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
 import { useTranslation } from 'react-i18next';

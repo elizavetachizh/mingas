@@ -41,6 +41,7 @@ import { Component } from 'react';
 import ParentOrganizations from './pages/company/parentOrganizations';
 import LeaveFeedback from './components/leaveFeedback';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
+import Information from "./pages/feedback/QuestionAnswer/Information";
 class App extends Component {
   render() {
     return (
@@ -52,6 +53,7 @@ class App extends Component {
           <Route path="/contacts" element={<GeneralInform />} />
           <Route path="/press-center" element={<PressCenter />} />
           <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
+          <Route path="/feedback/question-answer/:titleId" element={<Information />} />
           <Route path={'/feedback/online-application'} element={<Requests />} />
           <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
           <Route
@@ -89,14 +91,11 @@ class App extends Component {
             element={<SchedulePersonalReceptionOfCitizens />}
           />
           <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-          <Route path={'/dialog/:telegram'} element={<DialogViber />} />
-          <Route path={'/dialog/:viber'} element={<DialogTelegram />} />
           <Route path={'/Personal'} element={<Personal />} />
           <Route path={'/Personal/tasks'} element={<Tasks />} />
           <Route path={'/SearchPage'} element={<SearchPage />} />
           <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
           <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
-          <Route path={'/services/administrative-services'} element={<AdministrativeServices />} />
           <Route
             path={'/services/administrative-services/:serviceID'}
             element={<InformationAdministrativeService />}

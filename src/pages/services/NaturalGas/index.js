@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { data } from '../../../assets/data_services';
+import { data } from '../../../assets/data/data_services';
 import DopFunctionService from '../DopFunction';
 import { Container } from '../../company/styles';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
-import { BlockBtn, Button, Name } from '../../../components/administrativeServices/Header/styles';
-import { DivButton, HeaderCompanyDiv } from '../../concats/headerContacts/styles';
+import { BlockBtn, Name } from '../../../components/administrativeServices/Header/styles';
+import { HeaderCompanyDiv } from '../../concats/headerContacts/styles';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import {
   ContainerInform,
@@ -14,6 +14,7 @@ import {
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { useParams } from 'react-router';
+import DopFunctionalHeader from './DopFunctionalHeader';
 
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
@@ -46,20 +47,17 @@ export default function NaturalGas() {
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>
-            <DivButton>
-              <Name>Услуги для физических лиц</Name>
-              {data.map((element) => (
-                <BlockBtn>
-                  <Button
-                    className={currentServiceID === element.serviceId ? 'background' : ''}
-                    onClick={() => animate(element.serviceId)}
-                    key={element.serviceId}
-                  >
-                    {element.nameCard}
-                  </Button>
-                </BlockBtn>
-              ))}
-            </DivButton>
+            <Name>Услуги для физических лиц</Name>
+            {data.map((element) => (
+              <BlockBtn>
+                <DopFunctionalHeader
+                  nameCard={element.nameCard}
+                  className={currentServiceID === element.serviceId ? 'background' : ''}
+                  onClick={() => animate(element.serviceId)}
+                  key={element.serviceId}
+                />
+              </BlockBtn>
+            ))}
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>

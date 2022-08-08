@@ -1,5 +1,4 @@
 .App {
-  /*text-align: center;*/
   width: 100%;
 }
 
@@ -11,11 +10,5 @@
 body {
   margin: 0;
   width: 100%;
-}
-.myDiv {
-  width: 200px;
-}
-.class-parag {
-  width: 200px;
 }
 

@@ -1,6 +1,5 @@
-import { Table, Tbody, Td, Tr } from '../pages/concats/GeneralContactInform/styles';
-import { Thead } from '../pages/feedback/receptionOfCitizens/styles';
-import { TransitLayer } from '@react-google-maps/api';
+import { Table, Td, Tr, Tbody } from '../../pages/concats/GeneralContactInform/styles';
+import { Thead } from '../../pages/feedback/receptionOfCitizens/styles';
 
 export const data = [
   {

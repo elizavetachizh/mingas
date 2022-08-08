@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import Header from '../../../../../components/header';
-import { data } from '../../../../../assets/data_department';
+import { data } from '../../../../../assets/data/data_department';
 import DopFunctional from '../DopFunctional';
 import { useParams } from 'react-router-dom';
 import { Container } from "../../../styles";
