@@ -1,13 +1,13 @@
 import React from 'react';
-import { AdditionalDiv, PageSection, Table, Tbody, Td, Tr } from '../GeneralContactInform/styles';
+import { AdditionalDiv, PageSection } from '../GeneralContactInform/styles';
 import { Container } from '../../styles';
 import Header from '../../../components/header';
 import { Row } from '../styles';
 import HeaderConcats from '../headerContacts';
 import Footer from '../../../components/footer';
-import { Title } from '../../Home/useful_information/styles';
 import { styleTd } from '../GeneralContactInform';
 import TitleFun from '../../../components/title';
+import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
 
 export default function PhoneLineServices() {
   return (
@@ -18,28 +18,28 @@ export default function PhoneLineServices() {
         <Row>
           <HeaderConcats />
           <PageSection>
-            <Table>
+            <Table style={{ height: '100%', margin: 'auto 0' }}>
               <Tbody>
-                <Tr>
-                  <Td style={styleTd}>Контакт-центр УП «МИНГАЗ»</Td>
-                  <Td>162</Td>
-                </Tr>
-                <Tr>
-                  <Td style={styleTd}>График работы</Td>
-                  <Td>Кроме праздничных дней с 8.00 до 20.00</Td>
-                </Tr>
-                <Tr>
-                  <Td style={styleTd}>«Горячая линия»:</Td>
-                  <Td>
+                <tr>
+                  <td style={styleTd}>Контакт-центр УП «МИНГАЗ»</td>
+                  <td>162</td>
+                </tr>
+                <tr>
+                  <td style={styleTd}>График работы</td>
+                  <td>Кроме праздничных дней с 8.00 до 20.00</td>
+                </tr>
+                <tr>
+                  <td style={styleTd}>«Горячая линия»:</td>
+                  <td>
                     8017-299-28-70, <br />
                     пн.-чт. с 8:00 до 17:00, <br />
                     пт. с 8:00 до 15:45
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td style={styleTd}>Круглосуточно</Td>
-                  <Td>8017-299-29-08</Td>
-                </Tr>
+                  </td>
+                </tr>
+                <tr>
+                  <td style={styleTd}>Круглосуточно</td>
+                  <td>8017-299-29-08</td>
+                </tr>
               </Tbody>
             </Table>
           </PageSection>

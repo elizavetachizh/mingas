@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  div.class-parag {
-    width: 300px;
-  }
   margin: 0 auto;
   width: 100%;
   h1 {
@@ -13,8 +10,6 @@ export const Container = styled.div`
     width: 650px;
   }
 `;
-export const DialogViber = styled.div``;
-export const DialogTelegram = DialogViber;
 
 export const ContainerGraditude = styled.div`
   img {

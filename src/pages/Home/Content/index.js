@@ -16,12 +16,6 @@ export default function ContentHome() {
         blur={{ min: -4, max: 10 }}
       >
         <DivPrizes>
-          <Prizes>
-            <img src={require(`../../../assets/prizes/primary_1.png`)} />
-            <img src={require(`../../../assets/prizes/primary_2.png`)} />
-            <img src={require(`../../../assets/prizes/primary_3.png`)} />
-            <img src={require(`../../../assets/prizes/primary_4.png`)} />
-          </Prizes>
           <DivContent>
             <CarouselFun />
           </DivContent>

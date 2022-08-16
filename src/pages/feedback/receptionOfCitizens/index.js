@@ -8,6 +8,7 @@ import minsk from '../../../assets/background/minsk.jpg';
 import HeaderFeedBack from '../HeaderFeedBack';
 import Footer from '../../../components/footer';
 import TitleFun from "../../../components/title";
+import { AdditionalDiv } from "../../concats/GeneralContactInform/styles";
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
@@ -20,7 +21,7 @@ export default function ReceptionOfCitizens() {
       <Divbackground>
         <DivImage style={styled}></DivImage>
       </Divbackground>
-      <TitleFun margin={'s'} infoTitle={'График приёма граждан'} color={'blue'} />
+    <AdditionalDiv>  <TitleFun margin={'s'} infoTitle={'График приёма граждан'} color={'blue'} />
       <SectionTable>
         <Table>
           <Thead>
@@ -211,8 +212,8 @@ export default function ReceptionOfCitizens() {
             </tr>
           </Tbody>
         </Table>
-      </SectionTable>
-      <Footer></Footer>
+      </SectionTable></AdditionalDiv>
+      <Footer />
     </Container>
   );
 }

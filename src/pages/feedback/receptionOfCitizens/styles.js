@@ -1,21 +1,25 @@
 import styled from 'styled-components';
 
 export const Table = styled.table`
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  border: 1px solid #ddd;
+  text-align: left;
+  border-collapse: collapse;
+  td, th {
+    border: 1px solid grey;
+  }
   @media (max-width: 900px) {
     font-size: 14px;
   }
-  @media(max-width: 610px) {
+  @media (max-width: 610px) {
     width: 100%;
     margin: 0 auto;
   }
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     width: 100%;
     margin: 0 4%;
   }
-  @media(max-width: 550px) {
+  @media (max-width: 550px) {
     width: 100%;
     margin: 0 8%;
   }
@@ -31,11 +35,7 @@ export const Thead = styled.thead`
 
 export const Tbody = styled.tbody`
   color: #314d5c;
-  tr:nth-child(2n) {
-    background-color: rgba(200, 220, 231, 80%);
-  }
 `;
 export const SectionTable = styled.section`
   margin-bottom: 6%;
- 
 `;

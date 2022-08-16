@@ -29,7 +29,7 @@ export default function InformationAdministrativeService() {
   useEffect(() => {
     const current = data.find((element) => element.serviceID === +serviceID);
     setTitle(current.serviceName);
-  });
+  }, [serviceID]);
 
   return (
     <Container>

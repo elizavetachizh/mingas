@@ -1,24 +1,17 @@
 import { Container } from '../../pages/styles';
 import Header from '../header';
-import {
-  AdditionalDiv,
-  Table,
-  Tbody,
-  Td,
-  Tr,
-} from '../../pages/concats/GeneralContactInform/styles';
+import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import React, { useState } from 'react';
 import {
   BtnIsOpen,
-  ContainerInform,
   ContainerInformAboutService,
   Div,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { Thead } from '../../pages/feedback/receptionOfCitizens/styles';
+import { Table, Tbody, Thead } from '../../pages/feedback/receptionOfCitizens/styles';
 
 export default function AdministartiveServicesForLegal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +32,8 @@ export default function AdministartiveServicesForLegal() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <ContainerInform>
+        <div style={{ width: '100%', margin:  '8% 4%' }}>
+          {' '}
           <ContainerInformAboutService>
             <h3>
               1. Выдача заключения о соответствии принимаемого в эксплуатацию объекта строительства
@@ -60,7 +54,13 @@ export default function AdministartiveServicesForLegal() {
             </p>
             <BtnIsOpen onClick={animate}>
               <p>Документы и (или) сведения для осуществления административной процедуры: </p>
-              {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              <div>
+                {isOpen ? (
+                  <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+                ) : (
+                  <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+                )}
+              </div>
             </BtnIsOpen>
             <Div className={isOpen && `shake`}>
               <ul>
@@ -69,37 +69,44 @@ export default function AdministartiveServicesForLegal() {
               </ul>
             </Div>
             <BtnIsOpen onClick={animateClose}>
-              <p>Контактная информация: </p> {isClose ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              <p>Контактная информация: </p>{' '}
+              <div>
+                {isClose ? (
+                  <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+                ) : (
+                  <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+                )}
+              </div>
             </BtnIsOpen>
             <Div className={isClose && `shake`}>
               <h4>УП «Мингаз»</h4>
               <Table>
                 <Thead>
-                  <Tr>
+                  <tr>
                     <th>Должность, ФИО лица ответственного за прием заявлений</th>
                     <th>Номер телефона </th>
                     <th>Время приема</th>
-                  </Tr>
+                  </tr>
                 </Thead>
                 <Tbody>
-                  <Tr>
-                    <Td>
+                  <tr>
+                    <td>
                       заместитель главного инженера
                       <br />
                       Сазанчук А.Л.
-                    </Td>
-                    <Td>
+                    </td>
+                    <td>
                       тел. 299-28-42,
                       <br />
                       каб. 220.
-                    </Td>
-                    <Td>
+                    </td>
+                    <td>
                       8:00-17:00 (пн.-чт.) <br />
                       8:00-15:45 (пт.)
                       <br />
                       обед: 12:00-13:00
-                    </Td>
-                  </Tr>
+                    </td>
+                  </tr>
                 </Tbody>
               </Table>
             </Div>
@@ -132,7 +139,14 @@ export default function AdministartiveServicesForLegal() {
             </p>
             <BtnIsOpen onClick={animate}>
               <p>Документы и (или) сведения для осуществления административной процедуры: </p>
-              {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              <div>
+                {' '}
+                {isOpen ? (
+                  <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+                ) : (
+                  <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+                )}
+              </div>
             </BtnIsOpen>
             <Div className={isOpen && `shake`}>
               <ul>
@@ -141,21 +155,28 @@ export default function AdministartiveServicesForLegal() {
               </ul>
             </Div>
             <BtnIsOpen onClick={animateClose}>
-              <p>Контактная информация: </p> {isClose ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              <p>Контактная информация: </p>{' '}
+              <div>
+                {isClose ? (
+                  <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+                ) : (
+                  <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+                )}
+              </div>
             </BtnIsOpen>
             <Div className={isClose && `shake`}>
               <h4>УП «Мингаз»</h4>
               <Table>
                 <Thead>
-                  <Tr>
+                  <tr>
                     <th>Должность, ФИО лица ответственного за прием заявлений</th>
                     <th>Номер телефона </th>
                     <th>Время приема</th>
-                  </Tr>
+                  </tr>
                 </Thead>
                 <Tbody>
-                  <Tr>
-                    <Td>
+                  <tr>
+                    <td>
                       руководитель сектора:
                       <br />
                       Ковалевич И.Ю.,
@@ -167,25 +188,27 @@ export default function AdministartiveServicesForLegal() {
                       Заренок В.А.,
                       <br />
                       Воронкова Т.Н.
-                    </Td>
-                    <Td>
+                    </td>
+                    <td>
                       тел. 299-28-26,
                       <br />
                       каб. 111.
-                    </Td>
-                    <Td>
+                    </td>
+                    <td>
                       8:30-16:30 (пн.-чт.) <br />
                       8:30-15:15 (пт.)
                       <br />
                       обед: 12:00-12:45
-                    </Td>
-                  </Tr>
+                    </td>
+                  </tr>
                 </Tbody>
               </Table>
             </Div>
             <hr />
           </ContainerInformAboutService>
-        </ContainerInform>
+        </div>
+
+        {/*</ContainerInform>*/}
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />

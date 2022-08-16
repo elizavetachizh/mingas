@@ -28,6 +28,7 @@ import ButtonFun from '../button';
 import { Trans } from 'react-i18next';
 import { t } from 'i18next';
 import { Container } from "../../pages/Home/services/styles";
+import { Prizes } from "../../pages/Home/Content/styles";
 const line = {
   width: '70%',
 };
@@ -36,7 +37,7 @@ export default function Footer() {
     <Container>
       <LinksContainer>
         <LinkLogo to="/">
-          <Logo src={HeaderLogo} />
+          <Logo style={{width: '70px', height: '70px'}} src={HeaderLogo} />
         </LinkLogo>
         <CompanyButton to="/company/history">
           <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
@@ -50,9 +51,12 @@ export default function Footer() {
       <hr style={line} />
       <LinksNetwork>
         <LinksSocialMedia>
-          <Instagram src={instagram} />
-          <Telegram to={'/dialog/:telegram'} src={telegram} />
-          <Viber to={'/dialog/:viber'} src={viber} />
+          <Prizes>
+            <img src={require(`../../assets/prizes/primary_1.png`)} />
+            <img src={require(`../../assets/prizes/primary_2.png`)} />
+            <img src={require(`../../assets/prizes/primary_3.png`)} />
+            <img src={require(`../../assets/prizes/primary_4.png`)} />
+          </Prizes>
         </LinksSocialMedia>
         <Contacts>
           <Telephons>

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { data } from '../../assets/data/data_services';
 import { dataLegalEntities } from '../../assets/data/data_service_legalEntities_general';
 import { Button, FormSearch, ContainerFormSearch } from '../Home/Serch/styles';
 import search from '../../assets/png/search.svg';
 import { Div } from './styles';
 import { NavLink } from 'react-router-dom';
-import { IoMdClose } from "react-icons/io";
+import { IoIosSearch, IoMdClose } from 'react-icons/io';
 export default function SearchPage() {
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
@@ -18,6 +18,7 @@ export default function SearchPage() {
     backgroundImage: `url(${search})`,
   };
   const [message, setMessage] = useState('');
+  const [navbar, setNavbar] = useState(false);
   const result = [];
   const handleChange = (event) => {
     setMessage(event.target.value);
@@ -28,12 +29,21 @@ export default function SearchPage() {
         result.push(card);
       }
     }) &&
+    // eslint-disable-next-line array-callback-return
       dataLegalEntities.map((card) => {
         if (card.nameCard.includes(message)) {
           result.push(card);
         }
       });
   }
+  useEffect(() => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  });
+
   const renderResult = () => {
     return (
       <Div>
@@ -54,7 +64,20 @@ export default function SearchPage() {
 
   return (
     <>
-      <Button onClick={() => handleForm()} style={searchStyle} type={'submit'} />
+      {navbar ? (
+        <IoIosSearch
+          style={{ height: '26px', width: '26px' }}
+          color={'#0d4475'}
+          onClick={() => handleForm()}
+          type={'submit'}
+        />
+      ) : (
+        <IoIosSearch
+          style={{ height: '26px', width: '26px' }}
+          onClick={() => handleForm()}
+          type={'submit'}
+        />
+      )}
       {isForm && (
         <ContainerFormSearch>
           <FormSearch action={'search'}>

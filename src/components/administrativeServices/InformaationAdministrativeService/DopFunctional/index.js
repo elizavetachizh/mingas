@@ -41,11 +41,26 @@ export default function DopFunctional({
       </p>
       <BtnIsOpen onClick={animate}>
         <p>Документы и (или) сведения для осуществления административной процедуры: </p>
-        {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        <div>
+          {' '}
+          {isOpen ? (
+            <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+          ) : (
+            <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+          )}
+        </div>
       </BtnIsOpen>
       <Div className={isOpen && `shake`}>{documents}</Div>
       <BtnIsOpen onClick={animateClose}>
-        <p>Контактная информация: </p> {isClose ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        <p>Контактная информация: </p>{' '}
+        <div>
+          {' '}
+          {isClose ? (
+            <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+          ) : (
+            <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+          )}
+        </div>
       </BtnIsOpen>
       <Div className={isClose && `shake`}>{contactInform}</Div>
       <hr />

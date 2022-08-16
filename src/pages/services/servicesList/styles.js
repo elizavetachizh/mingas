@@ -56,4 +56,7 @@ export const DivInformService = styled.div`
 export const Name = styled.h3`
   text-align: center;
   color: #0d4475;
+  @media(max-width: 848px) {
+    font-size: 14px;
+  }
 `;

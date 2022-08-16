@@ -6,6 +6,7 @@ import prodazha_tovarov from '../../assets/pdf/O-prodazhe-tovarov-i-ili-predosta
 import MapService from '../../components/ServiceGoogleMap/map';
 import MapServiceObmeniePuncti from '../../components/ServiceGoogleMap';
 import MapObenBalons from '../../components/ServiceGoogleMap/mapObenBalons';
+import { Table } from "../../pages/feedback/receptionOfCitizens/styles";
 const styleOl = {
   fontWeight: 'bold',
 };
@@ -174,7 +175,7 @@ export const data = [
               </strong>
             </p>
             <p>Тарифы на услуги газоснабжения для населения представлены ниже: </p>
-            <table style={{ marginBottom: '100px' }}>
+            <Table style={{ marginBottom: '100px', fontSize: '16px' }}>
               <tbody>
                 <tr>
                   <td rowSpan="3">
@@ -271,7 +272,7 @@ export const data = [
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </Table>
             <table style={{ marginBottom: '100px' }}>
               <tbody>
                 <tr>

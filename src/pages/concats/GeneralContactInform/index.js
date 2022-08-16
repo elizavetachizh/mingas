@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { PageSection, Table, Tbody, Tr, Td, AdditionalDiv } from './styles';
 import Header from '../../../components/header';
 import { ContactsInform, DivMap, Row } from '../styles';
 import HeaderConcats from '../headerContacts';
@@ -7,6 +6,8 @@ import Footer from '../../../components/footer';
 import { Container } from '../../styles';
 import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
 import TitleFun from '../../../components/title';
+import { AdditionalDiv } from './styles';
+import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
 export const styleTd = {
   width: '50%',
   fontWeight: 'bold',
@@ -31,28 +32,26 @@ export default function GeneralInform() {
         <Row>
           <HeaderConcats />
           <ContactsInform>
-            <PageSection>
-              <Table>
-                <Tbody>
-                  <Tr>
-                    <Td style={styleTd}>Адрес</Td>
-                    <Td>220037, г.Минск, ул.Ботаническая, 11/1</Td>
-                  </Tr>
-                  <Tr>
-                    <Td style={styleTd}>Телефон (приёмная руководителя)</Td>
-                    <Td>(017) 299-28-80</Td>
-                  </Tr>
-                  <Tr>
-                    <Td style={styleTd}>E-mail</Td>
-                    <Td>root@mingas.by</Td>
-                  </Tr>
-                  <Tr>
-                    <Td style={styleTd}>Факс</Td>
-                    <Td>(017) 366-36-33</Td>
-                  </Tr>
-                </Tbody>
-              </Table>
-            </PageSection>
+            <Table style={{ height: '100%', margin: 'auto 0' }}>
+              <Tbody>
+                <tr>
+                  <td style={styleTd}>Адрес</td>
+                  <td>220037, г.Минск, ул.Ботаническая, 11/1</td>
+                </tr>
+                <tr>
+                  <td style={styleTd}>Телефон (приёмная руководителя)</td>
+                  <td>(017) 299-28-80</td>
+                </tr>
+                <tr>
+                  <td style={styleTd}>E-mail</td>
+                  <td>root@mingas.by</td>
+                </tr>
+                <tr>
+                  <td style={styleTd}>Факс</td>
+                  <td>(017) 366-36-33</td>
+                </tr>
+              </Tbody>
+            </Table>
           </ContactsInform>
         </Row>
         <DivMap>

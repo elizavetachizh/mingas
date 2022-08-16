@@ -1,19 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
-
 import { t } from 'i18next';
 import photoHistory from '../../../assets/management/0.jpg';
-import WhatDoingMinGaz from '../history/whatDoingMinGaz';
-import { Description, DivLeadersPhotoPosition } from './styles';
+import { DivLeadersPhotoPosition } from './styles';
 import Header from '../../../components/header';
 import HeaderCompany from '../header_company';
 import {
   DivText,
   DivTextPhoto,
   ImageDiv,
-  WhatDoingCompaniInform,
-  WhatDoingCompany,
 } from '../history/styles';
-import { data } from '../../../assets/data/whatDoingMinGaz';
 import { management } from '../../../assets/data/data_management';
 import ScrollToTop from 'react-scroll-up';
 import Footer from '../../../components/footer';
@@ -22,6 +17,7 @@ import Leaders from './divmagement';
 import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import { Container } from '../styles';
+import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -39,51 +35,40 @@ export default function Management() {
     <Container>
       <Header backgroundHeader={'blue'} />
       {/*<ContentHome />*/}
-      <HeaderCompany />
-      <DivTextPhoto>
-        <DivText data-aos={'fade-up'}>
-          <p>{t('history:text1')}</p>
-          <p>{t('history:text2')}</p>
-          <p>{t('history:text3')}</p>
-          <p>{t('history:text4')}</p>
-          <p>
-            {' '}
-            Руководство текущей деятельностью УП "Мингаз" согласно уставу осуществляет генеральный
-            директор, избираемый Общим собранием акционеров сроком на три года. Генеральный директор
-            подотчетен Общему собранию акционеров и Совету директоров Общества.
-          </p>
-        </DivText>
-        <ImageDiv data-aos={'fade-up'} src={photoHistory} />
-      </DivTextPhoto>
+      <AdditionalDiv>
+        <HeaderCompany />
+        <DivTextPhoto>
+          <DivText data-aos={'fade-up'}>
+            <p>{t('history:text1')}</p>
+            <p>{t('history:text2')}</p>
+            <p>{t('history:text3')}</p>
+            <p>{t('history:text4')}</p>
+            <p>
+              Руководство текущей деятельностью УП "Мингаз" согласно уставу осуществляет генеральный
+              директор, избираемый Общим собранием акционеров сроком на три года. Генеральный
+              директор подотчетен Общему собранию акционеров и Совету директоров Общества.
+            </p>
+          </DivText>
+          <ImageDiv data-aos={'fade-up'} src={photoHistory} />
+        </DivTextPhoto>
 
-      <DivLeadersPhotoPosition>
-        {management.map((element) => (
-          <Leaders
-            handlerLeaderClick={handlerLeaderClick}
-            cardImg={element.cardImg}
-            leader={element}
-            key={element.fullName}
-            fullName={element.fullName}
-            position={element.position}
-            links={element.links}
-          />
-        ))}
-      </DivLeadersPhotoPosition>
-      {isModalVisible && (
-        <Modal handleCloseCLick={handleCloseCLick} currentLeader={currentLeader} />
-      )}
-      <WhatDoingCompany>
-        <h2 data-aos={'fade-up'}>ЧТО ДЕЛАЕТ РУП "МИНГАЗ"</h2>
-        <WhatDoingCompaniInform>
-          {data.map((element) => (
-            <WhatDoingMinGaz
-              key={element.desc}
+        <DivLeadersPhotoPosition>
+          {management.map((element) => (
+            <Leaders
+              handlerLeaderClick={handlerLeaderClick}
               cardImg={element.cardImg}
-              cardDesc={element.cardDesc}
+              leader={element}
+              key={element.fullName}
+              fullName={element.fullName}
+              position={element.position}
+              links={element.links}
             />
           ))}
-        </WhatDoingCompaniInform>
-      </WhatDoingCompany>
+        </DivLeadersPhotoPosition>
+        {isModalVisible && (
+          <Modal handleCloseCLick={handleCloseCLick} currentLeader={currentLeader} />
+        )}
+      </AdditionalDiv>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>

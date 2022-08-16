@@ -26,12 +26,12 @@ export const Title = styled.h2`
   font-size: 32px;
   justify-content: center;
   letter-spacing: 0.1em;
-  margin: 12% auto 6% auto;
+  margin: 14% auto 6% auto;
   text-align: center;
   ${({ color }) => titleColor[color]};
   ${({ margin }) => titleMargin[margin]};
-  @media (max-width: 700px) {
-    margin-top: 14%;
+  @media (max-width: 1020px) {
+    margin-top: 16%;
   }
   @media (max-width: 640px) {
     font-size: 24px;

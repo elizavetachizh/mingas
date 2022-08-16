@@ -11,7 +11,6 @@ import GlobalStyle, {
   ServicesButton,
   ContactButton,
   PressCenterButtons,
-  IconEye,
   Dropdown,
   DivButtonHeader,
   PersonalAccButton,
@@ -21,10 +20,9 @@ import GlobalStyle, {
   Div104,
   DivPersonalAcc,
   DivPhone,
-  FontStyles,
 } from './styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
-import eye from '../../assets/png/visibilitys.png';
+import HeaderLogoBlue from '../../assets/png/mingaz_logo_blue.png';
 import next from '../../assets/png/next.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
@@ -32,16 +30,13 @@ import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
-import personal from '../../assets/icons/user.png';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
+import { IoMdContact, IoMdEyeOff } from 'react-icons/io';
 const styleMenu = {
   width: '30px',
   height: '30px',
-};
-const styleEye = {
-  width: '32px',
 };
 export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
@@ -78,42 +73,56 @@ export default function Header({ backgroundHeader }) {
 
   return (
     <Container backgroundHeader={backgroundHeader}>
-      <FontStyles />
       <GlobalStyle />
       <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}
-
         <BackgroundText>
           <LinkLogo to="/">
-            <Logo src={HeaderLogo} />
+            {navbar ? (
+              <Logo style={{ width: '80px', height: '80px' }} src={HeaderLogoBlue} />
+            ) : (
+              <Logo src={HeaderLogo} />
+            )}
           </LinkLogo>
           <DivColumn>
             <DivFirstHeader>
               <DivPhone>
                 <Div104>
-                  <p>
-                    Аварийная
-                    <br /> служба
-                  </p>
-                  <a href={'tel:104'}>104</a>
+                  <div className={navbar && 'opacity'}>
+                    <a href={'tel:104'}>104</a>
+                  </div>
+                  <p>Аварийная служба</p>
                 </Div104>
                 <Div104>
-                  <p>
-                    Контакт-центр <br /> УП "МИНГАЗ"
-                  </p>
-                  <a href={'tel:102'}>162</a>
+                  <div className={navbar && 'opacity'}>
+                    <a href={'tel:162'}>162</a>
+                  </div>
+                  <p>Контакт-центр</p>
                 </Div104>
               </DivPhone>
               <PersonalAccButton href={'https://service.mingas.by:5200/'}>
-                <img src={personal} alt={''} />
+                {navbar ? (
+                  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />
+                ) : (
+                  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />
+                )}
                 <DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>
               </PersonalAccButton>
               <SearchPage />
               <Language />
-              <IconEye href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-                <img style={styleEye} src={eye} alt="" />
-              </IconEye>
+              {navbar ? (
+                <IoMdEyeOff
+                  color={'#0d4475'}
+                  style={{ width: '30px', height: '30px' }}
+                  href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
+                />
+              ) : (
+                <IoMdEyeOff
+                  style={{ width: '30px', height: '30px' }}
+                  href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
+                />
+              )}
             </DivFirstHeader>
             <ButtonsContainer>
               <Dropdown>
@@ -127,7 +136,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/company/parent-organizations">
                     Вышестоящие организации
                   </ButtonLink>
-                  <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
+                  <ButtonLink to="/company/branches/1">Филиалы УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/documentation">
                     Сертификаты, лицензии, свидетельства
                   </ButtonLink>
@@ -168,7 +177,7 @@ export default function Header({ backgroundHeader }) {
                     Обращение юридических лиц
                   </ButtonLink>
                   <ButtonLink to="/">Тендеры</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer/:titleIdParameters'}>
+                  <ButtonLink to={'/feedback/question-answer/1'}>
                     Вопрос-ответ
                   </ButtonLink>
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">

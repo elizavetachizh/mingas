@@ -9,16 +9,12 @@ export const HistoryButton = styled.a`
 `;
 
 export const DivTextPhoto = styled.div`
-  max-width: 1440px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin: 50px auto;
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
   color: black;
   @media (max-width: 600px) {
     flex-direction: column-reverse;

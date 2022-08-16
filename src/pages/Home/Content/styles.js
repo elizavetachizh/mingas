@@ -104,12 +104,10 @@ export const DivPrizes = styled.div`
 
 export const Prizes = styled.div`
   display: flex;
-  padding: 80px 20px 0;
-
   flex-direction: column;
   img {
     margin: 10px;
-    width: 65px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 `;

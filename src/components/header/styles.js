@@ -1,13 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import Play from '../../assets/fonds/Play/Play-Regular.ttf';
-export const FontStyles = createGlobalStyle`
-
-@font-face {
-  font-family: 'Play';
-  src: url(${Play}) format('woff2');
-}
-`;
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: 'Play', sans-serif;
@@ -36,8 +28,6 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  text-align: justify;
-  justify-content: center;
   font-size: 19px;
   top: 0;
   z-index: 5;
@@ -51,18 +41,15 @@ export const Container = styled.div`
   }
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
-    color: #314d5c;
+    color: #0d4475;
     a,
     p,
     select,
     img,
     button {
-      color: #314d5c;
+      color: #0d4475;
     }
-    background-color: rgba(200, 220, 231, 80%);
-    @media (max-width: 894px) {
-      background-color: rgba(200, 220, 231, 80%);
-    }
+    background-color: rgba(250, 250, 250, 100%);
   }
 `;
 export const Menu = styled.div`
@@ -89,7 +76,7 @@ export const MenuClose = styled.div`
 export const Background = styled.div`
   width: 100%;
   z-index: 5;
-  padding: 0 24px;
+  //padding: 0 24px;
   margin: 0 auto;
   height: 150px;
   position: fixed;
@@ -97,7 +84,7 @@ export const Background = styled.div`
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
     background-color: rgba(200, 220, 231, 0%);
-    color: #314d5c;
+    color: #0d4475;
   }
   .click {
     display: block;
@@ -131,12 +118,12 @@ export const Logo = styled.img`
 export const Title = styled.h3``;
 
 export const ButtonsContainer = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: row;
-  padding: 20px 0;
+  padding: 16px 0;
   height: 50%;
-  align-items: center;
+  align-items: end;
   justify-content: space-around;
   width: 100%;
   @media (max-width: 1140px) {
@@ -190,9 +177,10 @@ export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 export const PersonalAccButton = styled.a`
   text-decoration: none;
-  justify-content: space-around;
+  justify-content: space-between;
   display: flex;
   padding: 0 20px;
+  align-items: center;
   color: white;
   &.active {
     color: #a69b14;
@@ -212,14 +200,10 @@ export const PersonalAccButton = styled.a`
   }
 `;
 
-export const IconEye = styled.a`
-  margin: 0 10px;
-`;
-
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
-  color: #314d5c !important;
+  color: #0d4475 !important;
 `;
 export const Dropdown = styled.div`
   position: relative;
@@ -271,37 +255,62 @@ export const DivPhone = styled.div`
 `;
 export const Div104 = styled.div`
   display: flex;
-  align-items: center;
-  padding: 0 1.5rem;
-  justify-content: space-around;
-  background: #df1e17;
+  flex-direction: column;
+  text-align: center;
   border-radius: 2px;
   cursor: pointer;
-  color: #fff;
   text-decoration: none;
-  border: 2px solid #df1e17;
-  p {
-    font-size: 1rem;
-    line-height: 1.2;
+  width: 40%;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.8s;
+    color: white;
   }
-  a {
-    margin: 0 0.6rem;
-    font-weight: 400;
-    font-style: normal;
-    color: #fff;
-    font-size: 1.6rem;
-    line-height: 1.25;
-    text-decoration: none;
-    -webkit-text-decoration-color: rgba(255, 255, 255, 0);
-    text-decoration-color: rgba(255, 255, 255, 0);
-    transition: all 0.3s ease;
-    @media (max-width: 1170px) {
-      font-size: 1.4rem;
+  p {
+    font-size: 1.1rem;
+    margin: 4px 0;
+    font-weight: bold;
+    @media(max-width: 1144px){
+      margin: 2px auto;
+      font-size: 1rem;
     }
   }
-  &:hover {
-    background: none;
+  div {
+    width: 100%;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      border: 2px solid white;
+      a {
+        color: white;
+      }
+    }
+    a {
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      color: white;
+      font-size: 68px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      @media (max-width: 1038px) {
+        font-size: 3rem;
+      }
+    }
+    &.opacity {
+      background: #0d4475;
+      border: none;
+      a {
+        color: white;
+      }
+    }
   }
+
   @media (max-width: 1133px) {
     padding: 0 0.8rem;
   }

@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { CompanyButton } from '../../../components/header/styles';
 
 export const HeaderCompanyDiv = styled.div`
   display: flex;
   flex-direction: column;
-
   margin: 12% auto 0 auto;
   @media (max-width: 1320px) {
     margin-top: 14%;

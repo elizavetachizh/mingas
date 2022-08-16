@@ -1,20 +1,24 @@
 import React from 'react';
 import { Container } from '../styles';
 import Header from '../../../components/header';
-import HeaderCompany from '../header_company';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import TitleForHome from '../../../components/TitleForHome';
-import Ogonek from './Ogonek';
+import HeaderBranches from './Header';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
+import Footer from '../../../components/footer';
 
 export default function Branches() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      <HeaderCompany></HeaderCompany>
+      {/*<HeaderCompany />*/}
       <AdditionalDiv>
-        <TitleForHome margin={'s'} color={'blue'} infoTitle={'Филиалы УП "Мингаз"'} />
-        <Ogonek />
+        <HeaderBranches />
       </AdditionalDiv>
+      <ScrollToTop showUnder={160}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
+      <Footer />
     </Container>
   );
 }

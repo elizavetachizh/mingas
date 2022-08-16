@@ -5,7 +5,6 @@ import PressCenter from './pages/PressCenter';
 import Services from './pages/services';
 import History from './pages/company/history';
 import Management from './pages/company/managment';
-import Structure from './pages/company/structure';
 import Career from './pages/company/career';
 import Documentation from './pages/company/documentation';
 import ProductionTechnicalManagement from './pages/company/managment/Subdivisions/departmentInformation';
@@ -14,7 +13,6 @@ import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
 import GeneralInform from './pages/concats/GeneralContactInform';
-import { DialogViber, DialogTelegram } from './pages/company/styles';
 import Personal from './pages/PersonalAccount';
 import Union from './pages/company/union';
 import Tasks from './pages/Employees/Tasks';
@@ -34,14 +32,13 @@ import MethodPayment from './components/MethodPayment';
 import NaturalGasTariff from './pages/tariff/naturalGasTariff';
 import LiquefiedGasTariff from './pages/tariff/liquefiedGasTariff';
 import ElectronicAppealForEntity from './pages/feedback/electronicCirculationForEntity';
-import AdministrativeServices from './components/administrativeServices';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
 import { Component } from 'react';
 import ParentOrganizations from './pages/company/parentOrganizations';
 import LeaveFeedback from './components/leaveFeedback';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
-import Information from "./pages/feedback/QuestionAnswer/Information";
+import Information from './pages/feedback/QuestionAnswer/Information';
 class App extends Component {
   render() {
     return (
@@ -67,9 +64,8 @@ class App extends Component {
           <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
           <Route path="/services/:cardId" element={<NaturalGas />} />
           <Route path="/services/method-payment" element={<MethodPayment />} />
-          <Route path="/company/structure/" element={<Structure />} />
           <Route path="/company/career/" element={<Career />} />
-          <Route path="/company/branches" element={<Branches />} />
+          <Route path="/company/branches/:linkId" element={<Branches />} />
           <Route path={'/company/parent-organizations'} element={<ParentOrganizations />} />
           <Route path="/company/documentation/" element={<Documentation />} />
           <Route path={'company/gratitude'} element={<Gratitude />} />

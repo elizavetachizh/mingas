@@ -1,5 +1,5 @@
 import { HeaderCompanyDiv } from '../../../pages/concats/headerContacts/styles';
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { data } from '../../../assets/data/dataNavLinkAdministrativeServices';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';

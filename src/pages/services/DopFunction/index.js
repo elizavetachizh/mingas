@@ -17,7 +17,13 @@ export default function DopFunctionService({ nameDescription, inform }) {
     <ContainerFunctionService>
       <BtnIsOpen onClick={animate}>
         <p>{nameDescription}</p>
-        {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        <div>
+          {isOpen ? (
+            <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+          ) : (
+            <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+          )}
+        </div>
       </BtnIsOpen>
       <Div className={isOpen && `shake`}>
         <DescriptionService>{inform}</DescriptionService>

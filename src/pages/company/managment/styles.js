@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Description = styled.p``;
-
 export const DivLeadersPhotoPosition = styled.div`
   margin: 50px;
   display: grid;

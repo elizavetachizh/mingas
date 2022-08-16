@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const AdditionalDiv = styled.div`
   margin: 6% auto;
   max-width: 1440px;
-  text-align: justify;
+  text-align: left;
   @media (max-width: 1500px) {
     margin: 14% auto 4% auto;
   } ;
@@ -12,7 +12,7 @@ export const AdditionalDiv = styled.div`
   } ;
   @media (max-width: 500px) {
     width: 500px;
-    margin: 24% 65px;
+    margin: 24% 60px;
   } ;
   @media (max-width: 410px) {
     width: 500px;

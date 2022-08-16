@@ -21,7 +21,7 @@ export default function Services() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Услуги жителям столичного региона'} />
+        <TitleFun  color={'blue'} infoTitle={'Услуги жителям столичного региона'} />
         <DivServices>
           {data.map((element) => (
             <ServicesList

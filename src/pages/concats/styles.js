@@ -19,24 +19,6 @@ export const DivMap = styled.div`
   }
 `;
 
-export const DivButtons = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px;
-  width: 30%;
-  @media (max-width: 600px) {
-    width: 80%;
-  }
-  @media (max-width: 500px) {
-    margin-left: 20%;
-    width: 100%;
-  }
-  @media (max-width: 400px) {
-  }
-`;
-
 export const ContactsInform = styled.div`
   display: flex;
   justify-content: center;
