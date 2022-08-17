@@ -136,7 +136,18 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/company/parent-organizations">
                     Вышестоящие организации
                   </ButtonLink>
-                  <ButtonLink to="/company/branches/1">Филиалы УП "Мингаз"</ButtonLink>
+                  <ButtonLink to="/company/branches/1" style={{ width: '100%' }}>
+                    Филиалы УП "Мингаз" <img alt={''} src={next} />
+                    <span style={{ margin: '20% 0 0' }}>
+                      <NavLink to="/company/branches/ogonek">
+                        Филиал оздоровительный комплекс "Огонёк"
+                      </NavLink>
+                      <NavLink to="/company/branches/Bubni">Филиал "Бубны"</NavLink>
+                      <NavLink to="/company/branches/TBZ">
+                        Филиал "Торфобрикетный завод "Сергеевическое"
+                      </NavLink>
+                    </span>
+                  </ButtonLink>
                   <ButtonLink to="/company/documentation">
                     Сертификаты, лицензии, свидетельства
                   </ButtonLink>
@@ -177,9 +188,7 @@ export default function Header({ backgroundHeader }) {
                     Обращение юридических лиц
                   </ButtonLink>
                   <ButtonLink to="/">Тендеры</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer/1'}>
-                    Вопрос-ответ
-                  </ButtonLink>
+                  <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                     Административные процедуры
                   </ButtonLink>

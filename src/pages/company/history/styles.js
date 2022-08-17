@@ -2,9 +2,14 @@ import styled from 'styled-components';
 
 export const DivTextPhoto = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 850px) {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
   @media (max-width: 600px) {
     flex-direction: column-reverse;
     margin: 0 auto;
@@ -16,7 +21,7 @@ export const DivTextPhoto = styled.div`
 
 export const DivText = styled.div`
   width: 50%;
-font-size: 18px;
+  font-size: 18px;
   color: #0d4475;
   @media (max-width: 600px) {
     width: 100%;
@@ -24,12 +29,21 @@ font-size: 18px;
   }
   p {
     text-indent: 25px;
-    text-align: justify;
+    text-align: left;
+  }
+  @media (max-width: 850px) {
+    width: 100%;
   }
 `;
 
 export const ImageDiv = styled.img`
   width: 30%;
+  @media (max-width: 950px) {
+    width: 40%;
+  }
+  @media (max-width: 850px) {
+    float: right;
+  }
   @media (max-width: 600px) {
     width: 50%;
     margin: 0 auto;
@@ -85,7 +99,7 @@ export const ImgBackground = styled.img`
   display: block;
   margin: 0 auto;
   background-repeat: no-repeat;
-  @media(max-width: 651px) {
+  @media (max-width: 651px) {
     width: 650px;
   }
 `;

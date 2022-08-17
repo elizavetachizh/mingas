@@ -18,7 +18,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
   };
   return (
     <ContainerFunctionService style={{ margin: '4% auto' }}>
-      <Name style={{width: '100%'}}>{name}</Name>
+      <Name style={{ width: '100%' }}>{name}</Name>
       {photo ? (
         <img
           style={{ width: '50%', margin: '4% auto' }}
@@ -34,7 +34,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
       {description ? (
         <>
           {' '}
-          <BtnIsOpen  style={{width: '100%'}} onClick={animate}>
+          <BtnIsOpen style={{ width: '100%' }} onClick={animate}>
             <p>Основные задачи:</p>
             <div>
               {isOpen ? (
@@ -60,7 +60,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
         <></>
       )}
       {contacts ? (
-        <LinksNetwork style={{ width: '48%' }}>
+        <LinksNetwork style={{ width: '370px' }}>
           <IoIosPin style={{ margin: '0 4%', color: '#0e43af', width: '40px', height: '40px' }} />
           {contacts}
         </LinksNetwork>

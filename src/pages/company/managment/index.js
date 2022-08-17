@@ -34,6 +34,7 @@ export default function Management() {
       <AdditionalDiv>
         <HeaderCompany />
         <DivTextPhoto>
+          <ImageDiv data-aos={'fade-up'} src={photoHistory} />
           <DivText data-aos={'fade-up'}>
             <p>{t('history:text1')}</p>
             <p>{t('history:text2')}</p>
@@ -45,7 +46,6 @@ export default function Management() {
               директор подотчетен Общему собранию акционеров и Совету директоров Общества.
             </p>
           </DivText>
-          <ImageDiv data-aos={'fade-up'} src={photoHistory} />
         </DivTextPhoto>
 
         <DivLeadersPhotoPosition>

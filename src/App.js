@@ -20,7 +20,6 @@ import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import UsefulInformation from './pages/feedback/uaefulIndormation';
 import Requests from './pages/feedback/Requests';
 import QuestionAnswer from './pages/feedback/QuestionAnswer';
-import Branches from './pages/company/Branches';
 import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
 import NaturalGas from './pages/services/NaturalGas';
 import './App.css';
@@ -39,6 +38,9 @@ import ParentOrganizations from './pages/company/parentOrganizations';
 import LeaveFeedback from './components/leaveFeedback';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
 import Information from './pages/feedback/QuestionAnswer/Information';
+import TBZ from './pages/company/Branches/TBZ';
+import Bubni from './pages/company/Branches/Bubni';
+import Ogonek from './pages/company/Branches/Ogonek';
 class App extends Component {
   render() {
     return (
@@ -65,7 +67,9 @@ class App extends Component {
           <Route path="/services/:cardId" element={<NaturalGas />} />
           <Route path="/services/method-payment" element={<MethodPayment />} />
           <Route path="/company/career/" element={<Career />} />
-          <Route path="/company/branches/:linkId" element={<Branches />} />
+          <Route path="/company/branches/TBZ" element={<TBZ />} />
+          <Route path="/company/branches/Bubni" element={<Bubni />} />
+          <Route path="/company/branches/ogonek" element={<Ogonek />} />
           <Route path={'/company/parent-organizations'} element={<ParentOrganizations />} />
           <Route path="/company/documentation/" element={<Documentation />} />
           <Route path={'company/gratitude'} element={<Gratitude />} />

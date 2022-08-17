@@ -42,24 +42,24 @@ export default function HeaderBranches() {
   }, [linkId, inform, title]);
   return (
     <DivBlocks>
-      <HeaderCompanyDiv>
-        <Name>Филиалы УП "Мингаз"</Name>
-        {links.map((el) => (
-          <BlockBtn>
-            <Button
-              className={currentServiceID === el.id ? 'background' : ''}
-              key={el.id}
-              onClick={() => handlerLinkClick(el.id)}
-            >
-              {el.name}
-            </Button>
-          </BlockBtn>
-        ))}
-      </HeaderCompanyDiv>
-      <ContainerInform>
-        {linkId && <Name>{title}</Name>}
-        {inform}
-      </ContainerInform>
+      {/*<HeaderCompanyDiv>*/}
+      {/*<Name>Филиалы УП "Мингаз"</Name>*/}
+      {/*{links.map((el) => (*/}
+      {/*  <BlockBtn>*/}
+      {/*    <Button*/}
+      {/*      className={currentServiceID === el.id ? 'background' : ''}*/}
+      {/*      key={el.id}*/}
+      {/*      onClick={() => handlerLinkClick(el.id)}*/}
+      {/*    >*/}
+      {/*      {el.name}*/}
+      {/*    </Button>*/}
+      {/*  </BlockBtn>*/}
+      {/*))}*/}
+      {/*</HeaderCompanyDiv>*/}
+      {/*<ContainerInform>*/}
+      {/*  {linkId && <Name>{title}</Name>}*/}
+      {/*  {inform}*/}
+      {/*</ContainerInform>*/}
     </DivBlocks>
   );
 }

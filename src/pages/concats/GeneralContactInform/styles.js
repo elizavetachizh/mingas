@@ -6,22 +6,23 @@ export const AdditionalDiv = styled.div`
   text-align: left;
   @media (max-width: 1500px) {
     margin: 14% auto 4% auto;
-  } ;
+  }
   @media (max-width: 670px) {
     margin: 20% auto 4% auto;
-  } ;
+    width: 670px;
+  }
   @media (max-width: 570px) {
     width: 570px;
     margin: 24% 60px;
-  } ;
+  }
   @media (max-width: 500px) {
     width: 500px;
     margin: 24% 60px;
-  } ;
+  }
   @media (max-width: 410px) {
     width: 500px;
     margin: 30% 65px;
-  } ;
+  }
   @media (max-width: 335px) {
     width: 500px;
     margin: 36% 65px;

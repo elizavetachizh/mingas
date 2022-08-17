@@ -10,17 +10,16 @@ export default GlobalStyle;
 const HeaderBackgroundColor = {
   gray: `
     background-color: #E9F1F5;
-    color: #314D5C
+    color: #0d4475 !important
     `,
   blue: `
     background-color: #0d4475;
     color: #FFF;
     `,
   border: `
-    color: #FFF;
+    color: #0d4475;
     border: 1px solid white;
-    padding: 10px;
-    background-color: rgba(0,0,0,0);
+    background-color: white;
     `,
 };
 
@@ -32,13 +31,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 5;
   margin: 0 auto;
-  a,
-  p,
-  select,
-  img,
-  button {
-    color: white;
-  }
+
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
     color: #0d4475;
@@ -53,6 +46,13 @@ export const Container = styled.div`
   }
 `;
 export const Menu = styled.div`
+  a,
+  p,
+  select,
+  img,
+  button {
+    color: white;
+  }
   margin-top: 25px;
   display: none;
   cursor: pointer;
@@ -98,6 +98,13 @@ export const Background = styled.div`
 `;
 export const BackgroundText = styled.div`
   max-width: 1300px;
+  a,
+  p,
+  select,
+  img,
+  button {
+    color: white;
+  }
   display: flex;
   flex-direction: row;
   z-index: 5;
@@ -148,7 +155,6 @@ export const LinksContainer = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 19px;
-  color: white !important;
   @media (max-width: 1140px) {
     font-size: 14px;
   }
@@ -163,7 +169,6 @@ export const LinksContainer = styled.div`
 export const CompanyButton = styled(NavLink)`
   text-decoration: none;
   padding: 0 20px;
-  color: #fff;
   &.active {
     color: #a69b14;
   }
@@ -181,7 +186,6 @@ export const PersonalAccButton = styled.a`
   display: flex;
   padding: 0 20px;
   align-items: center;
-  color: white;
   &.active {
     color: #a69b14;
   }
@@ -207,7 +211,7 @@ export const DivButtonHeader = styled.div`
 `;
 export const Dropdown = styled.div`
   position: relative;
-  display: inline-block;
+  display: block;
 
   &:hover div {
     display: flex;
@@ -270,7 +274,7 @@ export const Div104 = styled.div`
     font-size: 1.1rem;
     margin: 4px 0;
     font-weight: bold;
-    @media(max-width: 1144px){
+    @media (max-width: 1144px) {
       margin: 2px auto;
       font-size: 1rem;
     }
