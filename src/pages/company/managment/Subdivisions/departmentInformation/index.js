@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Header from '../../../../../components/header';
 import { data } from '../../../../../assets/data/data_department';
 import DopFunctional from '../DopFunctional';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { Container } from '../../../styles';
 import { AdditionalDiv } from '../../../../concats/GeneralContactInform/styles';
 import Footer from '../../../../../components/footer';
@@ -14,44 +14,63 @@ import {
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { HeaderCompanyDiv } from '../../../../concats/headerContacts/styles';
 import DopFunctionalHeader from '../../../../services/NaturalGas/DopFunctionalHeader';
-import { BlockBtn, Name } from '../../../../../components/administrativeServices/Header/styles';
-import { useNavigate } from 'react-router';
+import {
+  BlockBtn,
+  ContainerBtnIcon,
+  DivOpen,
+  Name,
+} from '../../../../../components/administrativeServices/Header/styles';
+import { useLocation, useNavigate } from 'react-router';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
   const [currentServiceID, setDepartamentId] = useState(null);
-  const [description, setDescription] = useState('');
-  const [photo, setPhoto] = useState('Горбач');
-  const [chief, setChief] = useState('');
-  const [schedule, setSchedule] = useState('');
-  const [contacts, setContacts] = useState('');
-  const [name, setName] = useState('');
+  const [inform, setInform] = useState([]);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+
   useEffect(() => {
-    if (!currentServiceID && !description && !chief && !name && !photo) {
-      const current = data.find((element) => element.id === +linkId);
-      navigate(`/company/management/${current.id}`);
-      setDescription(current.description);
-      setChief(current.chief);
-      setPhoto(current.photo);
-      setSchedule(current.schedule);
+    if (!currentServiceID && !inform.length) {
+      const current = data.find((element) => element.idName === +linkId);
+      setInform(current.information);
       setDepartamentId(+linkId);
-      setName(current.name);
-      setContacts(current.contacts);
     }
-  }, [currentServiceID, description, contacts, schedule, photo, chief, linkId, name]);
+  }, [currentServiceID, linkId, inform]);
+  const currentDepartment = useMemo(
+    () =>
+      inform.filter((department) =>
+        id
+          ? department.idNameInform === +linkId && department.id === +id
+          : department.idNameInform === +linkId
+      ),
+
+    [data, id, linkId]
+  );
   const changeDepartment = useCallback(
     (departamentId) => {
-      const current = data.find((element) => element.id === departamentId);
+      const current = data.find((element) => element.idName === departamentId);
       setDepartamentId(departamentId);
-      setDescription(current.description);
-      setPhoto(current.photo);
-      setChief(current.chief);
-      setContacts(current.contacts);
-      setSchedule(current.schedule);
-      setName(current.name);
+      setInform(current.information);
+      navigate(`/company/management/${current.idName}`);
+    },
+    [currentServiceID, inform]
+  );
+  const animate = useCallback(
+    (descriptionID) => {
+      const current = data.find((element) => element.idName === descriptionID);
+      setInform(current.information);
+      setDepartamentId(currentServiceID ? '' : descriptionID);
     },
     [currentServiceID]
+  );
+  const handlerLinkClickUniqueName = useCallback(
+    (id) => {
+      navigate(`${pathname}?id=${id}`);
+    },
+    [pathname]
   );
   return (
     <Container>
@@ -62,24 +81,39 @@ export default function DepartmentInformation() {
             <Name>Наименования подразделений</Name>
             {data.map((element) => (
               <BlockBtn>
-                <DopFunctionalHeader
-                  nameCard={element.name}
-                  className={currentServiceID === element.id ? 'background' : ''}
-                  onClick={() => changeDepartment(element.id)}
-                  key={element.id}
-                />
+                <ContainerBtnIcon>
+                  <DopFunctionalHeader
+                    nameCard={element.fullName}
+                    className={currentServiceID === element.idName ? 'background' : ''}
+                    onClick={() => changeDepartment(element.idName)}
+                    key={element.idName}
+                  />
+                  {currentServiceID === element.idName ? (
+                    <IoIosArrowUp onClick={() => animate(element.idName)} />
+                  ) : (
+                    <IoIosArrowDown onClick={() => animate(element.idName)} />
+                  )}
+                </ContainerBtnIcon>
+
+                <DivOpen className={currentServiceID === element.idName && `shake`}>
+                  {inform.map((link) => (
+                    <button onClick={() => handlerLinkClickUniqueName(link.id)}>{link.name}</button>
+                  ))}
+                </DivOpen>
               </BlockBtn>
             ))}
           </HeaderCompanyDiv>
           <ContainerInform>
-            <Name>{name}</Name>
-            <DopFunctional
-              photo={photo}
-              chief={chief}
-              description={description}
-              schedule={schedule}
-              contacts={contacts}
-            />
+            {currentDepartment.map((el) => (
+              <DopFunctional
+                name={el.name}
+                contacts={el.contacts}
+                schedule={el.schedule}
+                photo={el.photo}
+                chief={el.chief}
+                description={el.description}
+              />
+            ))}
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

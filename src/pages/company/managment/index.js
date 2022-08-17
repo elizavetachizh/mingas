@@ -4,11 +4,7 @@ import photoHistory from '../../../assets/management/0.jpg';
 import { DivLeadersPhotoPosition } from './styles';
 import Header from '../../../components/header';
 import HeaderCompany from '../header_company';
-import {
-  DivText,
-  DivTextPhoto,
-  ImageDiv,
-} from '../history/styles';
+import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
 import { management } from '../../../assets/data/data_management';
 import ScrollToTop from 'react-scroll-up';
 import Footer from '../../../components/footer';
@@ -58,7 +54,8 @@ export default function Management() {
               handlerLeaderClick={handlerLeaderClick}
               cardImg={element.cardImg}
               leader={element}
-              key={element.fullName}
+              key={element.id}
+              id={element.id}
               fullName={element.fullName}
               position={element.position}
               links={element.links}

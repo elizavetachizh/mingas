@@ -3,7 +3,7 @@ import { Container } from '../../pages/Home/News/styles';
 import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { DivCarousel } from './styles';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import { DivInform } from "../../pages/Home/useful_information/styles";
+import { DivInform } from '../../pages/Home/useful_information/styles';
 // import '@brainhubeu/react-carousel/lib/style.css';
 export default function StateInformResources() {
   return (
@@ -56,7 +56,7 @@ export default function StateInformResources() {
             </figure>
           </DivCarousel>
           <DivCarousel>
-            <a href="https://www.sb.by/" target="_blank">
+            <a href="https://www.sb.by/" target="_blank" rel="noreferrer">
               <img
                 width="208"
                 height="113"
@@ -68,7 +68,7 @@ export default function StateInformResources() {
             </a>
           </DivCarousel>
           <DivCarousel>
-            <a href="https://minsknews.by/" target="_blank">
+            <a href="https://minsknews.by/" target="_blank" rel="noreferrer">
               <img
                 width="208"
                 height="113"
@@ -79,23 +79,26 @@ export default function StateInformResources() {
               <p>Минск-Сегодня</p>
             </a>
           </DivCarousel>
-          {/*<DivCarousel>*/}
-          {/*  <a*/}
-          {/*    href="https://pravo.by/pravovaya-informatsiya/vsenarodnoe-obsuzhdenie-proekta-konstitutsii-respubliki-belarus/"*/}
-          {/*    target="_blank"*/}
-          {/*  >*/}
-          {/*    <img*/}
-          {/*      width="208"*/}
-          {/*      height="113"*/}
-          {/*      src="https://www.google.com/#"*/}
-          {/*      className="attachment-full size-full"*/}
-          {/*      alt=""*/}
-          {/*    />*/}
-          {/*    <p>Проект изменений и дополнений Конституции Республики Беларусь</p>*/}
-          {/*  </a>*/}
-          {/*</DivCarousel>*/}
           <DivCarousel>
-            <a href="https://pravo.by/" target="_blank">
+            <a
+              href="http://xn----7sbgfh2alwzdhpc0c.xn--90ais/organization/33279/org-page"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                width="208"
+                height="113"
+                src="https://mingas.by/wp-content/uploads/2019/03/d676007c6bce67133b0ea05bc310ca0e.png"
+                className="attachment-full size-full"
+                alt=""
+              />
+              <p>
+                Портал рейтинговой оценки качества оказания услуг орагнизациями Республики Беларусь
+              </p>
+            </a>
+          </DivCarousel>
+          <DivCarousel>
+            <a href="https://pravo.by/" target="_blank" rel="noreferrer">
               <img
                 width="208"
                 height="113"
@@ -107,7 +110,7 @@ export default function StateInformResources() {
             </a>
           </DivCarousel>
           <DivCarousel>
-            <a href="https://minsk.gov.by/ru/" target="_blank">
+            <a href="https://minsk.gov.by/ru/" target="_blank" rel="noreferrer">
               <h1
                 style={{
                   fontSize: '26px',

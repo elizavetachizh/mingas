@@ -1,5 +1,5 @@
 import { HeaderCompanyDiv } from '../../../pages/concats/headerContacts/styles';
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState } from 'react';
 import { data } from '../../../assets/data/dataNavLinkAdministrativeServices';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';
@@ -14,6 +14,7 @@ export default function HeaderAdministrativeServices() {
     (serviceID) => {
       const current = data.find((element) => element.serviceID === serviceID);
       navigate(`/services/administrative-services/${current.serviceID}`);
+      setServiceID(serviceID);
     },
     [currentServiceID]
   );
@@ -44,7 +45,7 @@ export default function HeaderAdministrativeServices() {
             >
               {el.serviceName}
             </Button>
-            { currentServiceID === el.serviceID ? (
+            {currentServiceID === el.serviceID ? (
               <IoIosArrowUp onClick={() => animate(el.serviceID)} />
             ) : (
               <IoIosArrowDown onClick={() => animate(el.serviceID)} />

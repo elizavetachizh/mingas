@@ -1,4 +1,3 @@
-import inform from '../pdf/O-prodazhe-tovarov-i-ili-predostavlenii-uslug-v-rassrochku_2.pdf';
 import sample from '../../assets/wordFile/sample.docx';
 import { NavLink } from 'react-router-dom';
 import { Calculater } from '../../pages/services/NaturalGas/DopFunctionalHeader/styles';

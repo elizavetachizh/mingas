@@ -1,13 +1,12 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from "react";
 import { Container, Name } from './styles';
 import { useNavigate } from 'react-router';
 export default function ModalSubdivision({ links }) {
   const navigate = useNavigate();
   const handlerLinkClick = useCallback((linkId) => {
-    const current = links.find((element) => element.id === linkId);
-    navigate(`/company/management/${current.id}`);
-    console.log(current);
-  }, []);
+    const current = links.find((element) => element.id === +linkId);
+     navigate(`/company/management/${current.id}`);
+  }, [links]);
   return (
     <div>
       <Container>

@@ -39,6 +39,10 @@ export const Contacts = styled.div`
 export const LinksNetwork = styled.div`
   display: flex;
   flex-direction: row;
+  width: 320px;
+  margin: 2% 0 ;
+  text-align: left;
+  justify-content: space-around;
   @media(max-width: 990px) {
     flex-direction: column;
   }

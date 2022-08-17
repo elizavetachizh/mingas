@@ -4,7 +4,8 @@ export const DivCarousel = styled.div`
   text-align: center;
   a{
     text-decoration: none;
-    color: black;
+    color: #0d4475;
+    font-size: 18px;
   }
   &:hover {
     transform: scale(1.1);

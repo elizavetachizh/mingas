@@ -30,7 +30,6 @@ export default function InformationAdministrativeService() {
     const current = data.find((element) => element.serviceID === +serviceID);
     setTitle(current.serviceName);
   }, [serviceID]);
-
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

@@ -42,7 +42,6 @@ export const ContainerBtnIcon = styled.div`
 export const DivOpen = styled.div`
   display: none;
   transition: 0.7s all;
-
   p {
     text-align: left;
   }
@@ -51,13 +50,12 @@ export const DivOpen = styled.div`
     flex-direction: column;
     transition: 0.7s all;
   }
-
   button {
     background: none;
     border: none;
     font-size: 16px;
     text-align: left;
-    margin: 1rem auto;
+    margin: 1rem 0;
     cursor: pointer;
     transition: all 0.25s ease;
     &:active {
@@ -73,6 +71,7 @@ export const Name = styled.div`
   padding: 2rem 1.5rem;
   color: #fff;
   border-radius: 20px;
+  
   text-align: center;
   font-size: 1.5rem;
   text-transform: uppercase;

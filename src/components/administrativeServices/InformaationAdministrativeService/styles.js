@@ -7,6 +7,7 @@ export const Div = styled.div`
   padding: 2%;
   display: none;
   border-radius: 20px;
+  margin: 4% auto;
   font-size: 16px;
   border: 1px solid #1b3a91;
   p {
@@ -44,7 +45,7 @@ export const BtnIsOpen = styled.div`
   padding: 0 0.1rem;
   background: #0e43af;
   cursor: pointer;
-  margin: 1rem 0 1rem 0;
+  margin: 1rem auto;
   border-radius: 50px;
   div {
     background: white;
