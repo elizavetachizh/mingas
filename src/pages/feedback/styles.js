@@ -55,7 +55,7 @@ export const Button = styled.button`
 export const ButtonForms = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80%;
   margin: 2% auto;
   @media (max-width: 700px) {
     flex-direction: column;

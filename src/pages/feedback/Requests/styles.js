@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  border: 1px solid #0d4475;
+  width: 50%;
+  border-radius: 30px;
   @media(max-width: 880px){
     width: 70%;
   }

@@ -23,7 +23,7 @@ export const subdivisions = [
     ),
     contacts: (
       <div>
-        Телефон: <a href={'tel:162'}>162</a>,<br />
+        Телефон:
         <a href={'tel:8017-345-89-56'}>8017-345-89-56</a> <br />
         Адрес:{' '}
         <a href={'https://yandex.by/maps/-/CCURfIuotD'} target="_blank" rel="noreferrer">
@@ -61,7 +61,7 @@ export const subdivisions = [
     ),
     contacts: (
       <div>
-        Телефон: <a href={'tel:162'}>162</a>,<br />
+        Телефон:
         <a href={'tel:8017-299-28-29'}>8017-299-28-29</a> <br />
         Адрес:{' '}
         <a href={'https://yandex.by/maps/-/CCURfIVGTC'} target="_blank" rel="noreferrer">
@@ -103,7 +103,7 @@ export const subdivisions = [
     ),
     contacts: (
       <div>
-        Телефон: <a href={'tel:162'}>162</a>,<br />
+        Телефон:
         <a href={'tel:8017-224-02-87'}>8017-224-02-87</a> <br />
         Адрес:{' '}
         <a href={'https://yandex.by/maps/-/CCURfIrWcC'} target="_blank" rel="noreferrer">
@@ -141,7 +141,7 @@ export const subdivisions = [
     ),
     contacts: (
       <div>
-        Телефон: <a href={'tel:162'}>162</a>,<br />
+        Телефон:
         <a href={'tel:8017-370-66-15'}>8017-370-66-15</a> <br />
         Адрес:{' '}
         <a href={'https://yandex.by/maps/-/CCURfISeLA'} target="_blank" rel="noreferrer">
@@ -175,11 +175,11 @@ export const subdivisions = [
     ),
     contacts: (
       <div>
-        Телефон: <a href={'tel:162'}>162</a>,<br />
+        Телефон:
         <a href={'8017-299-28-76'}>8017-299-28-76</a> <br />
         Адрес:{' '}
         <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-          г. Минск, ул. Ботаническая, 11 (1 подъезд)
+          г. Минск, ул. Ботаническая, 11
         </a>
       </div>
     ),
@@ -192,7 +192,6 @@ export const subdivisions = [
     description: (
       <div>
         <ul>
-          {' '}
           <li>
             сверка показаний приборов индивидуального учета расхода газа методом обхода
             потребителей;
@@ -216,11 +215,11 @@ export const subdivisions = [
     ),
     contacts: (
       <div>
-        Телефон: <a href={'tel:162'}>162</a>,<br />
+        Телефон:
         <a href={'8017-299-28-20'}>8017-299-28-20</a> <br />
         Адрес:{' '}
         <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-          г. Минск, ул. Ботаническая, 11 (1 подъезд)
+          г. Минск, ул. Ботаническая, 11
         </a>
       </div>
     ),
@@ -233,9 +232,7 @@ export const subdivisions = [
     description: (
       <div>
         <ul>
-          <li>
-            снятие в поверку/ремонт приборов индивидуального учета расхода газа.
-          </li>
+          <li>снятие в поверку/ремонт приборов индивидуального учета расхода газа.</li>
         </ul>
       </div>
     ),
@@ -249,11 +246,11 @@ export const subdivisions = [
     ),
     contacts: (
       <div>
-        Телефон: <a href={'tel:162'}>162</a>,<br />
+        Телефон:
         <a href={'8017-299-28-20'}>8017-299-28-20</a> <br />
         Адрес:{' '}
         <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-          г. Минск, ул. Ботаническая, 11 (1 подъезд)
+          г. Минск, ул. Ботаническая, 11
         </a>
       </div>
     ),

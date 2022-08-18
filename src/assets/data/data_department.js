@@ -58,7 +58,7 @@ export const data = [
             <a href={'tel:8017-299-28-62'}>8017-299-28-62</a> <br />
             Адрес:{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -96,7 +96,7 @@ export const data = [
             <br />
             Адрес:{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -136,7 +136,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-32'}>8017-299-29-32</a>, <br /> Адрес:{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -147,7 +147,7 @@ export const data = [
         name: 'Помощник руководителя',
         photo: '',
         chief: 'Рудько Валерий Александрович',
-        description: undefined,
+        description: '',
         schedule: (
           <div>
             График работы: <br />
@@ -270,7 +270,7 @@ export const data = [
             Телефон: <a href={'tel:8017-299-28-36'}>8017-299-28-36</a>,{' '}
             <a href={'tel:8017-299-29-38'}>8017-299-29-38</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -310,7 +310,7 @@ export const data = [
             Телефон: <a href={'tel:8017-299-28-64'}>8017-299-28-64</a>,
             <a href={'tel:8017-299-29-12'}>8017-299-29-12</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -357,7 +357,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-512-46-95'}>8017-512-46-95</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -414,7 +414,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel: 8017-299-29-42'}>8017-299-29-42</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -523,7 +523,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-28-46'}>8017-299-28-46</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая,
             </a>
           </div>
         ),
@@ -638,7 +638,7 @@ export const data = [
           <div>
             {' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -703,7 +703,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-11'}>8017-299-29-11</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -737,7 +737,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-28'}>8017-299-29-28</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -788,7 +788,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-44'}>8017-299-29-44</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -850,7 +850,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-28-20'}>8017-299-28-20</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -930,11 +930,12 @@ export const data = [
             Телефоны: <a href={'tel:162'}>162</a>, <a href={'tel:8017-299-28-20'}>8017-299-28-20</a>{' '}
             <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
             <br />
+            Центр обслуживания населения
             <a href={'https://yandex.by/maps/-/CCURbBgb8C'} target="_blank" rel="noreferrer">
-              Для жителей г. Заславль, ул. Советская,79
+              г. Заславль, ул. Советская,79
             </a>
           </div>
         ),
@@ -988,7 +989,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-28-95'}>8017-299-28-95</a>,<br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1047,7 +1048,7 @@ export const data = [
             Телефоны: <a href={'tel:8017-299-28-94'}>8017-299-28-94</a>,<br />
             <a href={'tel:8017-299-28-73'}>8017-299-28-73</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1087,7 +1088,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-28-71'}>8017-299-28-71</a>,<br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1135,7 +1136,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-28-90'}>8017-299-28-90</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1183,7 +1184,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-19'}>8017-299-29-19</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1230,7 +1231,7 @@ export const data = [
             <a href={'tel:8017-299-28-34'}>8017-299-28-34</a>, <br />
             <a href={'tel:8017-299-28-08'}>8017-299-28-08</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1271,7 +1272,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-05'}>8017-299-29-05</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1355,7 +1356,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-47'}>8017-299-29-47</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1385,7 +1386,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-28-27'}>8017-299-28-27</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1460,7 +1461,7 @@ export const data = [
           <div>
             Телефон:<a href={'tel:8017-299-28-16'}>8017-299-28-16</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -1468,17 +1469,18 @@ export const data = [
       {
         id: 31,
         idNameInform: 7,
-        name: 'Филиал “Торфобрикетный завод  “Сергеевичское”',
-        photo: '',
+        name: (
+          <NavLink
+            style={{ textDecoration: 'none', transform: 'scale(1.1)' }}
+            to={'/company/branches/TBZ'}
+          >
+            Филиал “Торфобрикетный завод “Сергеевичское”
+          </NavLink>
+        ),
+        photo: 'Молочко',
         chief: 'Начальник – Молочко Алексей Александрович',
         description: '',
-        schedule: (
-          <div style={{ width: '100%', margin: '0 auto' }}>
-            <NavLink to={'/company/branches/3'}>
-              <img style={{ width: '100%' }} src={require('../../assets/TBZ/tbzpng.png')} />
-            </NavLink>
-          </div>
-        ),
+        schedule: '',
         contacts: (
           <div
             style={{
@@ -1506,17 +1508,15 @@ export const data = [
       {
         id: 32,
         idNameInform: 7,
-        name: 'Филиал по производству сельскохозяйственной продукции “Бубны”',
+        name: (
+          <NavLink to={'/company/branches/ogonek'}>
+            Филиал по производству сельскохозяйственной продукции “Бубны”
+          </NavLink>
+        ),
         photo: 'Белокурский',
         chief:
           'Руководство филиалом осуществляет первый заместитель директора - главный инженер – Белокурский Владимир Петрович',
-        description: (
-          <div style={{ width: '100%', margin: '0 auto' }}>
-            <NavLink to={'/company/branches/3'}>
-              <img style={{ width: '100%' }} src={require('../../assets/TBZ/tbzpng.png')} />
-            </NavLink>
-          </div>
-        ),
+        description: '',
         schedule: (
           <div>
             График работы: <br />
@@ -1572,7 +1572,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-29-35'}>8017-299-29-35</a>, <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),

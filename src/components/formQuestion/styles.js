@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: 80%;
+  width: 90%;
   max-width: 980px;
   margin: 0 auto;
   z-index: 3;
@@ -9,8 +9,9 @@ export const Form = styled.form`
 
 export const DivInput = styled.div`
   display: flex;
+  width: 90%;
+  margin: 0 auto;
   flex-direction: column;
-  margin-top: 1.5rem;
   @media(max-width: 640px) {
     text-align: center;
   }

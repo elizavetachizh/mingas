@@ -22,7 +22,7 @@ import InputText from '../../../../components/input/inputText';
 import InputDate from '../../../../components/input/InputDate';
 import TitleFun from '../../../../components/title';
 import { useRequestForVerificationOfGasMeters } from './verificationOfGasMeters-hook';
-import SubTitleFun from "../../../../components/SubTitle";
+import SubTitleFun from '../../../../components/SubTitle';
 
 export default function ApplicationForVerificationOfGasMeters() {
   const {

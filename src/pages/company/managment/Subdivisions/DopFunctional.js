@@ -22,7 +22,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
       <Name>{name}</Name>
       {photo ? (
         <img
-          style={{ width: '50%', margin: '4% auto' }}
+          style={{ width: '40%', margin: '4% auto' }}
           src={require(`../../../../assets/management/departaments/${photo}.jpg`)}
           alt={''}
         />
