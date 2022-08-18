@@ -1,26 +1,26 @@
 import styled from 'styled-components';
 
 export const HeaderBtnFeedback = styled.div`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  margin-top: 6%;
+  margin: 6% 2%;
+  padding: 4%;
   display: flex;
   flex-direction: column;
-  background: #e8f3ff;
-  max-width: 29%;
-  height: 300px;
+  //max-width: 29%;
+  background: linear-gradient(to top left, #1241b3 10px, #2c5acf 100px, 150px, #1b3a91);
+  height: fit-content;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   @media (max-width: 700px) {
-    height: auto;
-    width: 100%;
     margin: 0 auto;
-    max-width: 700px;
+    width: 80%;
+    //max-width: 500px;
     text-align: center;
   }
 `;
 export const Button = styled.button`
-  color: #0d4475;
-  font-size: 16px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
   text-align: left;
   background: none;
   border: none;
@@ -29,24 +29,24 @@ export const Button = styled.button`
   text-decoration: none;
   cursor: pointer;
   transition: 0.8s linear;
-  &:hover {
-    border: solid #0d4475;
-    color: #fff; /* Цвет текста */
-    background: #0d4475; /* Цвет фона */
-    padding: 10px;
-  }
-  &:focus {
-    border: solid #0d4475;
-    color: #fff; /* Цвет текста */
-    background: #0d4475; /* Цвет фона */
-    padding: 10px;
-  }
-  &:active {
-    border: solid #0d4475;
-    color: #fff; /* Цвет текста */
-    background: #0d4475; /* Цвет фона */
-    padding: 10px;
-  }
+  //&:hover {
+  //  border: solid #0d4475;
+  //  color: #fff; /* Цвет текста */
+  //  background: #0d4475; /* Цвет фона */
+  //  padding: 10px;
+  //}
+  //&:focus {
+  //  border: solid #0d4475;
+  //  color: #fff; /* Цвет текста */
+  //  background: #0d4475; /* Цвет фона */
+  //  padding: 10px;
+  //}
+  //&:active {
+  //  border: solid #0d4475;
+  //  color: #fff; /* Цвет текста */
+  //  background: #0d4475; /* Цвет фона */
+  //  padding: 10px;
+  //}
   @media (max-width: 700px) {
     text-align: center;
   }
@@ -55,7 +55,7 @@ export const Button = styled.button`
 export const ButtonForms = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 1140px;
+  width: 100%;
   margin: 2% auto;
   @media (max-width: 700px) {
     flex-direction: column;

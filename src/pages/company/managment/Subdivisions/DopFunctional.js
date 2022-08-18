@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ContainerFunctionService, DescriptionService } from '../../../services/DopFunction/styles';
 import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
 import {
+  General,
   BtnIsOpen,
   Div,
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
@@ -18,7 +19,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
   };
   return (
     <ContainerFunctionService style={{ margin: '4% auto' }}>
-      <Name style={{ width: '100%' }}>{name}</Name>
+      <Name>{name}</Name>
       {photo ? (
         <img
           style={{ width: '50%', margin: '4% auto' }}
@@ -32,8 +33,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
         <TitleForHome color={'blue'} infoTitle={chief} fontSize={'s'} />
       </div>
       {description ? (
-        <>
-          {' '}
+        <General>
           <BtnIsOpen style={{ width: '100%' }} onClick={animate}>
             <p>Основные задачи:</p>
             <div>
@@ -47,7 +47,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
           <Div className={isOpen && `shake`}>
             <DescriptionService>{description}</DescriptionService>
           </Div>
-        </>
+        </General>
       ) : (
         <></>
       )}

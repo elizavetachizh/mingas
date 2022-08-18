@@ -9,7 +9,7 @@ export const Div = styled.div`
   border-radius: 20px;
   margin: 4% auto;
   font-size: 16px;
-  border: 1px solid #1b3a91;
+  //border: 1px solid #1b3a91;
   p {
     text-align: left;
   }
@@ -24,6 +24,9 @@ export const DivBlocks = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  //@media(max-width: 820px){
+  //  flex-direction: column;
+  //}
 `;
 export const ContainerInform = styled.div`
   display: flex;
@@ -33,19 +36,25 @@ export const ContainerInform = styled.div`
   margin: 4% 2% 0;
   width: 100%;
 `;
-
+export const General = styled.div`
+  border: 1px solid #1b3a91;
+  border-radius: 50px;
+  margin: 1rem auto;
+  padding: 0;
+  width: 100%;
+`
 export const BtnIsOpen = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  position: relative;
+  width: 100%;
   color: white;
   padding: 0 0.1rem;
   background: #0e43af;
   cursor: pointer;
-  margin: 1rem auto;
+  //margin: 4% auto;
   border-radius: 50px;
   div {
     background: white;
@@ -58,8 +67,8 @@ export const BtnIsOpen = styled.div`
     }
   }
   p {
-    padding: 0 20px;
     width: 90%;
+    padding: 0 20px;
     @media(max-width: 684px) {
       font-size: 14px;
     }

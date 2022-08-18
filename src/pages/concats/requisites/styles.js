@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const PageSection = styled.div`
   color: #383838;
+  width: 90%;
+  margin: 0 auto;
   background: #fff;
   box-shadow: 0 6px 30px rgb(0 0 0 / 10%);
   padding: 2rem 0;

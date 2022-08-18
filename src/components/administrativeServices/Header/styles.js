@@ -13,8 +13,8 @@ export const Button = styled.button`
   text-decoration: none;
   border: none;
   background: none;
-  text-align: center;
-  //width: 90%;
+  text-align: left;
+  width: 90%;
   font-size: 18px;
   cursor: pointer;
   transition: 1s;
@@ -31,6 +31,7 @@ export const ContainerBtnIcon = styled.div`
   flex-direction: row;
   width: 100%;
   margin: 0 auto;
+  text-align: left;
   color: #1241b3;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +72,7 @@ export const Name = styled.div`
   padding: 2rem 1.5rem;
   color: #fff;
   border-radius: 20px;
-  
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   text-align: center;
   font-size: 1.5rem;
   text-transform: uppercase;

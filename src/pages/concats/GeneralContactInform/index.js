@@ -3,11 +3,12 @@ import Header from '../../../components/header';
 import { ContactsInform, DivMap, Row } from '../styles';
 import HeaderConcats from '../headerContacts';
 import Footer from '../../../components/footer';
-import { Container } from '../../styles';
+
 import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap/utilsGeo';
 import TitleFun from '../../../components/title';
 import { AdditionalDiv } from './styles';
 import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
+import { Container } from "../../company/styles";
 export const styleTd = {
   width: '50%',
   fontWeight: 'bold',
@@ -76,10 +77,9 @@ export default function GeneralInform() {
             </a>
             <iframe
               src="https://yandex.by/map-widget/v1/-/CCURMME-DA"
-              frameBorder="1"
               allowFullScreen="true"
               style={{ position: 'relative' }}
-            ></iframe>
+            />
           </div>
         </DivMap>
       </AdditionalDiv>

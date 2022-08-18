@@ -14,7 +14,6 @@ import {
   InputFile,
   Button,
   DivInput,
-  Background,
 } from '../formQuestion/styles';
 import { useFormForEnity } from '../../hooks/use-form-for-enity-hook';
 export default function FormQuestionForEntity() {
@@ -47,13 +46,10 @@ export default function FormQuestionForEntity() {
   useEffect(() => {
     getData().then((result) => {
       setData(result);
-      console.log(data);
     });
   }, []);
-  console.log(data);
   return (
     <>
-      <Background />
       <Form onSubmit={handleSubmit} ref={form}>
         <DivInput>
           <Label>

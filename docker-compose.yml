@@ -11,7 +11,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
-      - C:\mongo:/data/db
+      - C:\mongo:/subdivisions/db
 
   mongo-express:
     image: mongo-express

@@ -136,7 +136,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/company/parent-organizations">
                     Вышестоящие организации
                   </ButtonLink>
-                  <ButtonLink to="/company/branches/1" style={{ width: '100%' }}>
+                  <ButtonLink to="/company/branches/ogonek" style={{ width: '100%' }}>
                     Филиалы УП "Мингаз" <img alt={''} src={next} />
                     <span style={{ margin: '20% 0 0' }}>
                       <NavLink to="/company/branches/ogonek">
@@ -170,7 +170,7 @@ export default function Header({ backgroundHeader }) {
                   </ButtonLink>
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-                  <ButtonLink to="/">Регламентирующие документы</ButtonLink>
+                  <ButtonLink to="/regulatory-documents">Регламентирующие документы</ButtonLink>
                   <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer/1'}>
                     Часто задаваемые вопросы
@@ -192,7 +192,9 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                     Административные процедуры
                   </ButtonLink>
-                  <ButtonLink to="/">Регламентирующие документы</ButtonLink>
+                  <ButtonLink to="/regulatory-documents-for-entity">
+                    Регламентирующие документы
+                  </ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
 

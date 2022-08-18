@@ -104,7 +104,7 @@ export const DivPrizes = styled.div`
 
 export const Prizes = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   img {
     margin: 10px;
     width: 50px;

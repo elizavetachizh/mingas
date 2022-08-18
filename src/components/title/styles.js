@@ -25,7 +25,6 @@ export const Title = styled.h2`
   text-transform: uppercase;
   font-size: 32px;
   justify-content: center;
-  letter-spacing: 0.1em;
   margin: 14% auto 6% auto;
   text-align: center;
   ${({ color }) => titleColor[color]};

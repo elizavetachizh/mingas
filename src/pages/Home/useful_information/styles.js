@@ -4,7 +4,7 @@ export const DivUsefulInform = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #e9f1f5;
+  //background-color: #e9f1f5;
   margin: 0 auto;
   align-items: center;
   @media (max-width: 640px) {

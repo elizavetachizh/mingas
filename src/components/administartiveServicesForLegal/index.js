@@ -1,4 +1,3 @@
-import { Container } from '../../pages/styles';
 import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
@@ -12,6 +11,8 @@ import {
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Table, Tbody, Thead } from '../../pages/feedback/receptionOfCitizens/styles';
+import TitleFun from "../title";
+import { Container } from "../../pages/company/styles";
 
 export default function AdministartiveServicesForLegal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,11 @@ export default function AdministartiveServicesForLegal() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <div style={{ width: '100%', margin:  '8% 4%' }}>
+        <TitleFun
+          color={'blue'}
+          infoTitle={'Административные услуги для юридических лиц'}
+        />
+        <div style={{ width: '100%', margin: '8% auto' }}>
           {' '}
           <ContainerInformAboutService>
             <h3>
@@ -52,7 +57,7 @@ export default function AdministartiveServicesForLegal() {
               Размер платы, взимаемой при осуществлении административной процедуры:
               <strong>бесплатно</strong>
             </p>
-            <BtnIsOpen onClick={animate}>
+            <BtnIsOpen  style={{margin: '4% auto'}} onClick={animate}>
               <p>Документы и (или) сведения для осуществления административной процедуры: </p>
               <div>
                 {isOpen ? (
@@ -137,7 +142,7 @@ export default function AdministartiveServicesForLegal() {
               Размер платы, взимаемой при осуществлении административной процедуры:
               <strong>бесплатно</strong>
             </p>
-            <BtnIsOpen onClick={animate}>
+            <BtnIsOpen  style={{margin: '4% auto'}} onClick={animate}>
               <p>Документы и (или) сведения для осуществления административной процедуры: </p>
               <div>
                 {' '}

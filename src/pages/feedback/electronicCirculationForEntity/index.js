@@ -2,13 +2,13 @@ import React from 'react';
 import minsk from '../../../assets/background/minsk.jpg';
 import Header from '../../../components/header';
 import { Divbackground, DivImage } from '../styles';
-import { Container } from '../../Home/styles';
 import Footer from '../../../components/footer';
 import FormQuestionForEntity from '../../../components/FormQuestionForEntity';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { ContainerInform, TextForInformation } from './styles';
 import SubTitleFun from '../../../components/SubTitle';
 import TitleForHome from '../../../components/TitleForHome';
+import { Container } from "../../company/styles";
 const styled = {
   background: `url(${minsk})  no-repeat`,
   backgroundSize: 'cover',
@@ -21,7 +21,6 @@ export default function ElectronicAppealForEntity() {
       <Divbackground>
         <DivImage style={styled}></DivImage>
       </Divbackground>
-
       <AdditionalDiv>
         <TitleForHome color={'blue'} infoTitle={'Электронное обращение юридических лиц'} />
         <ContainerInform>

@@ -5,6 +5,7 @@ export const HeaderCompanyDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 1440px;
   margin: 14% auto 0 auto;
   @media (max-width: 1320px) {
     margin-top: 16%;

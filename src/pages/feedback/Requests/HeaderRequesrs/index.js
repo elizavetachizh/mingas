@@ -7,24 +7,21 @@ import ApplicationForTheIssuanceOfTechnicalSpecifications from '../ApplicationFo
 import ApplicationForGasificationOfResidentialGardenHouse from '../ApplicationForGasificationOfResidentialGardenHouse';
 import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../ApplicationToCallRepresentativeOfGasSupplyOrganization';
 import ProvidingGasMeterReadings from '../ProvidingGasMeterReadings';
-import { Container } from '../../../Home/News/styles';
 import TitleForHome from '../../../../components/TitleForHome';
-import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 const styledTitle = {
   margin: '0',
 };
 export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForTheIssuanceOfTechnicalSpecifications');
   return (
-    <Container>
-      <TitleForHome
-        fontSize={'m'}
-        margin={'s'}
-        style={styledTitle}
-        color={'blue'}
-        infoTitle={'Оставить онлайн-заявку'}
-      />
-      <AdditionalDiv>
+      <>
+        <TitleForHome
+          fontSize={'m'}
+          margin={'s'}
+          style={styledTitle}
+          color={'blue'}
+          infoTitle={'Оставить онлайн-заявку'}
+        />
         {' '}
         <ButtonForms>
           <HeaderBtnFeedback>
@@ -96,7 +93,6 @@ export default function HeaderRequests() {
             <ApplicationForTheIssuanceOfTechnicalSpecifications />
           )}
         </ButtonForms>
-      </AdditionalDiv>
-    </Container>
+      </>
   );
 }

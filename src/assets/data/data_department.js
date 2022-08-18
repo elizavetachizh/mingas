@@ -614,8 +614,12 @@ export const data = [
             </p>
             <ul>
               В состав СЭВОГ входит:
-              <li>сервисный центр</li>
-              <li>производственный участок №1</li>
+              <li>
+                <NavLink to={'/company/management/:linkId/1'}>сервисный центр</NavLink>
+              </li>
+              <li>
+                <NavLink to={'/company/management/:linkId/2'}>производственный участок №1</NavLink>
+              </li>
               <li> производственный участок №2 </li>
               <li>производственный участок №3 </li>
               <li>группа приёмки и пуска газа </li>

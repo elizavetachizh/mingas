@@ -41,6 +41,9 @@ import Information from './pages/feedback/QuestionAnswer/Information';
 import TBZ from './pages/company/Branches/TBZ';
 import Bubni from './pages/company/Branches/Bubni';
 import Ogonek from './pages/company/Branches/Ogonek';
+import RegulatoryDocuments from './components/RegulatoryDocuments';
+import RegulatoryDocumentsForLegal from "./components/RegulatoryDocumentForLegal";
+import Subdivisions from "./components/Subdivisions";
 class App extends Component {
   render() {
     return (
@@ -64,6 +67,7 @@ class App extends Component {
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
           <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
+          <Route path="/company/management/:linkId/:subdivisionId" element={<Subdivisions />} />
           <Route path="/services/:cardId" element={<NaturalGas />} />
           <Route path="/services/method-payment" element={<MethodPayment />} />
           <Route path="/company/career/" element={<Career />} />
@@ -101,6 +105,8 @@ class App extends Component {
             element={<InformationAdministrativeService />}
           />
           <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />
+          <Route path={'/regulatory-documents'} element={<RegulatoryDocuments />} />
+          <Route path={'/regulatory-documents-for-entity'} element={<RegulatoryDocumentsForLegal />} />
         </Routes>
       </div>
     );

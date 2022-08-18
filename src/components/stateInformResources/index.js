@@ -1,10 +1,8 @@
 import TitleForHome from '../TitleForHome';
 import { Container } from '../../pages/Home/News/styles';
-import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import Carousel, {slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { DivCarousel } from './styles';
-import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import { DivInform } from '../../pages/Home/useful_information/styles';
-// import '@brainhubeu/react-carousel/lib/style.css';
 export default function StateInformResources() {
   return (
     <Container>

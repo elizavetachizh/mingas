@@ -9,24 +9,23 @@ export const AdditionalDiv = styled.div`
   }
   @media (max-width: 670px) {
     margin: 20% auto 4% auto;
-    width: 670px;
+    width: 640px;
   }
   @media (max-width: 570px) {
-    width: 570px;
-    margin: 24% 60px;
+    margin: 24% 0;
   }
-  @media (max-width: 500px) {
-    width: 500px;
-    margin: 24% 60px;
-  }
-  @media (max-width: 410px) {
-    width: 500px;
-    margin: 30% 65px;
-  }
-  @media (max-width: 335px) {
-    width: 500px;
-    margin: 36% 65px;
-  } ;
+  //@media (max-width: 500px) {
+  //  width: 480px;
+  //  margin: 24% 60px;
+  //}
+  //@media (max-width: 410px) {
+  //  width: 500px;
+  //  margin: 30% 65px;
+  //}
+  //@media (max-width: 335px) {
+  //  width: 500px;
+  //  margin: 36% 65px;
+  //} ;
 `;
 
 export const PageSection = styled.div`

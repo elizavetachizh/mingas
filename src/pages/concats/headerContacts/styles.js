@@ -9,6 +9,9 @@ export const HeaderCompanyDiv = styled.div`
   border-radius: 20px;
   border: 1px solid #1b3a91;
   flex-direction: column;
+  @media(max-width: 820px) {
+    display: none;
+  }
 `;
 
 export const HeaderConcatsBtn = styled(NavLink)`

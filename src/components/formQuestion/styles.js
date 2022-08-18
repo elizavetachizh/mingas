@@ -11,6 +11,9 @@ export const DivInput = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
+  @media(max-width: 640px) {
+    text-align: center;
+  }
 `;
 
 export const TwoColumnTextAndForm = styled.div`
@@ -125,13 +128,15 @@ export const InputFile = styled.input`
 export const Button = styled.button`
   //color: #0d4475;
   //background: none;
-  border: solid #0d4475;
+  border:1px solid #0d4475;
   color: #fff; /* Цвет текста */
-  background: #0d4475; /* Цвет фона */
+  background: linear-gradient(to top left, #1241b3 10px, #2c5acf 50px, 70px, #1b3a91);
+  border-radius: 30px;
   font-size: 16px;
   font-weight: 500;
   width: 240px;
   text-align: center;
+  
   text-decoration: none;
   //border: none;
   display: flex;

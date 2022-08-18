@@ -4,24 +4,19 @@ export const Table = styled.table`
   width: 100%;
   margin: 0 auto;
   text-align: left;
+  font-size: 18px;
   border-collapse: collapse;
   td, th {
     border: 1px solid grey;
+  
   }
   @media (max-width: 900px) {
     font-size: 14px;
-  }
-  @media (max-width: 610px) {
-    width: 100%;
-    margin: 0 auto;
-  }
-  @media (max-width: 600px) {
-    width: 100%;
-    margin: 0 4%;
+    width: 80%;
   }
   @media (max-width: 550px) {
     width: 100%;
-    margin: 0 8%;
+    margin: 0 auto;
   }
 `;
 

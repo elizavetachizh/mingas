@@ -39,7 +39,7 @@ export default function DopFunctional({
         Размер платы, взимаемой при осуществлении административной процедуры:
         <strong>{boardSize}</strong>
       </p>
-      <BtnIsOpen onClick={animate}>
+      <BtnIsOpen onClick={animate} style={{margin: '4% auto'}}>
         <p>Документы и (или) сведения для осуществления административной процедуры: </p>
         <div>
           {' '}
