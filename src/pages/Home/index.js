@@ -14,13 +14,13 @@ import StateInformResources from '../../components/stateInformResources';
 export default function Home() {
   return (
     <Container>
-      <Header />
+      <Header backgroundHeader={'gray'} />
       <>
         <ContentHome />
         <UsefulInform />
-        <HomeServices />
-        <ParallaxDiv />
         <HeaderRequests />
+        <ParallaxDiv />
+        <HomeServices />
         <News />
         <StateInformResources />
       </>

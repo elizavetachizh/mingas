@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
-import { ContainerContent, DivContent, DivPrizes, Prizes } from './styles';
+import { ContainerContent, DivContent, DivPrizes } from './styles';
 import CarouselFun from '../slider';
 import { Parallax } from 'react-parallax';
 

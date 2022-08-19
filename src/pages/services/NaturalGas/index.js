@@ -13,7 +13,7 @@ import {
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from "react-router";
 import DopFunctionalHeader from './DopFunctionalHeader';
 
 export default function NaturalGas() {
@@ -21,6 +21,7 @@ export default function NaturalGas() {
   const [currentServiceID, setServiceID] = useState(null);
   const [title, setTitle] = useState([]);
   const { cardId } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!inform.length && !currentServiceID && (!title.length || !title)) {
@@ -37,6 +38,7 @@ export default function NaturalGas() {
       setInform(current.description);
       setTitle(current.nameCard);
       setServiceID(descriptionID);
+      navigate(`/services/${descriptionID}`)
     },
     [currentServiceID]
   );

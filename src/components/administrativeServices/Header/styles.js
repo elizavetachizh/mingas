@@ -72,13 +72,20 @@ export const Name = styled.div`
   padding: 2rem 1.5rem;
   color: #fff;
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   font-size: 1.5rem;
   text-transform: uppercase;
   background: linear-gradient(to bottom right, #1241b3, #2c5acf 90px, 110px, #1b3a91);
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     font-size: 1.2rem;
     padding: 1.4rem 1rem;
+  }
+  a {
+    color: white;
+  }
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.8s;
   }
 `;

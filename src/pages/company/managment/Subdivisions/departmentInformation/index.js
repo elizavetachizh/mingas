@@ -37,6 +37,11 @@ export default function DepartmentInformation() {
       const current = data.find((element) => element.idName === +linkId);
       setInform(current.information);
       setDepartamentId(+linkId);
+      // inform.filter((department) =>
+      //   id
+      //     ? department.idNameInform === +linkId && department.id === +id
+      //     : department.idNameInform === +linkId
+      // );
     }
   }, [currentServiceID, linkId, inform]);
   const currentDepartment = useMemo(

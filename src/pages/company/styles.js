@@ -14,6 +14,9 @@ export const Container = styled.div`
 export const ContainerGraditude = styled.div`
   img {
     width: 300px;
+    &.visibleOpen{
+      width: 500px;
+    }
   }
 `;
 

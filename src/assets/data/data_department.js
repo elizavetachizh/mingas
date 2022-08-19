@@ -1394,7 +1394,14 @@ export const data = [
       {
         id: 29,
         idNameInform: 6,
-        name: 'Филиал “Оздоровительный комплекс “Огонек”',
+        name: (
+          <NavLink
+            style={{ textDecoration: 'none', transform: 'scale(1.1)' }}
+            to={'/company/branches/ogonek'}
+          >
+            Филиал “Оздоровительный комплекс “Огонек”
+          </NavLink>
+        ),
         photo: 'Шаматульский',
         chief: 'Директор - Шаматульский Виталий Леонидович',
         description: (
@@ -1405,7 +1412,7 @@ export const data = [
             </ul>
           </div>
         ),
-        schedule: <div></div>,
+        schedule: '',
         contacts: (
           <div>
             Телефон: <a href={'tel:8017-544-31-71'}>8017-544-31-71</a>
@@ -1480,28 +1487,19 @@ export const data = [
         photo: 'Молочко',
         chief: 'Начальник – Молочко Алексей Александрович',
         description: '',
-        schedule: '',
+        schedule: (
+          <div>
+            График работы: <br />
+            понедельник-пятница: 08:00 – 17:00 <br />
+          </div>
+        ),
         contacts: (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              width: '100%',
-              margin: '0 auto',
-              justifyContent: 'space-between',
-            }}
-          >
-            <div>
-              График работы: <br />
-              понедельник-пятница: 08:00 – 17:00 <br />
-            </div>
-            <div>
-              Телефон: <a href={'tel:8017-132-01-51'}>8017-132-01-51</a>, <br />
-              Адрес:{' '}
-              <a href={'https://yandex.by/maps/-/CCURbJCUdC'} target="_blank" rel="noreferrer">
-                Минская область, Пуховичский район, п.Правдинский, ул. Юбилейная, 46
-              </a>
-            </div>
+          <div>
+            Телефон: <a href={'tel:8017-132-01-51'}>8017-132-01-51</a>, <br />
+            Адрес:{' '}
+            <a href={'https://yandex.by/maps/-/CCURbJCUdC'} target="_blank" rel="noreferrer">
+              Минская область, Пуховичский район, п.Правдинский, ул. Юбилейная, 46
+            </a>
           </div>
         ),
       },
@@ -1509,7 +1507,10 @@ export const data = [
         id: 32,
         idNameInform: 7,
         name: (
-          <NavLink to={'/company/branches/ogonek'}>
+          <NavLink
+            style={{ textDecoration: 'none', transform: 'scale(1.1)' }}
+            to={'/company/branches/Bubni'}
+          >
             Филиал по производству сельскохозяйственной продукции “Бубны”
           </NavLink>
         ),

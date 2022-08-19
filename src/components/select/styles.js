@@ -10,7 +10,7 @@ export const SelectDiv = styled.select`
 `;
 
 export const DivSelect = styled.div`
-  width: 100%;
+  width: 98%;
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;

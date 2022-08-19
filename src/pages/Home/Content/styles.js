@@ -9,16 +9,6 @@ export const ContainerContent = styled.div`
   }
 `;
 
-// export const DivImage = styled.div`
-//   display: flex;
-//   align-items: end;
-//
-//   @media (max-width: 1406px) {
-//     max-height: 600px;
-//     width: 100%;
-//   }
-// `;
-
 export const DivContent = styled.div`
   width: 100%;
   position: absolute;
@@ -32,19 +22,6 @@ export const DivContent = styled.div`
   @media (max-width: 600px) {
     flex-direction: column;
   }
-
-  //&:before {
-  //  position: absolute;
-  //  content: '';
-  //  background: inherit;
-  //  left: 0;
-  //  right: 0;
-  //  top: 0;
-  //  bottom: 0;
-  //  box-shadow: inset 0 0 0 3000px rgba(150, 150, 150, 0.192);
-  //  filter: blur(10px);
-  //  border-radius: 15px;
-  //}
 `;
 
 export const DivText = styled.div`
@@ -52,20 +29,20 @@ export const DivText = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-    @media (max-width: 870px) {
-      img {
-        width: 100%;
-      }
+  @media (max-width: 870px) {
+    img {
+      width: 100%;
     }
-    @media (max-width: 650px) {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      img{
-        width: 80%;
-        margin: 0 auto;
-      }
+  }
+  @media (max-width: 650px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 80%;
+      margin: 0 auto;
     }
+  }
 `;
 
 export const DivInformAbout = styled.div`

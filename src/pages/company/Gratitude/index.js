@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Container, ContainerGraditude } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
@@ -6,18 +6,23 @@ import Footer from '../../../components/footer';
 import TitleForHome from '../../../components/TitleForHome';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { ContainerIframe } from '../documentation/styles';
-import gratitude11 from '../../../assets/pdf/gratitude/1/1.png';
-import gratitude12 from '../../../assets/pdf/gratitude/1/2.png';
-import gratitude13 from '../../../assets/pdf/gratitude/1/3.png';
-import gratitude21 from '../../../assets/pdf/gratitude/2/1.png';
-import gratitude31 from '../../../assets/pdf/gratitude/3/1.png';
-import gratitude41 from '../../../assets/pdf/gratitude/4/1.png';
-import gratitude51 from '../../../assets/pdf/gratitude/5/1.png';
-import gratitude61 from '../../../assets/pdf/gratitude/6/1.png';
-import gratitude71 from '../../../assets/pdf/gratitude/7/1.png';
-import gratitude81 from '../../../assets/pdf/gratitude/8/1.png';
-
+import { gratitude } from '../../../assets/data/gratitude';
 export default function Gratitude() {
+  const [visible, setVisible] = useState(false);
+  const [currentServiceID, setServiceID] = useState(null);
+  const openImage = useCallback(
+    (id) => {
+      const current = gratitude.find((el) => el.id === id);
+      setServiceID(id);
+      if (current) {
+        setVisible(true);
+        if (visible === true) {
+          setVisible(false);
+        }
+      }
+    },
+    [visible, currentServiceID]
+  );
   return (
     <Container>
       <Header backgroundHeader="blue" />
@@ -25,37 +30,15 @@ export default function Gratitude() {
       <TitleForHome infoTitle={'Благодарности и награды'} color={'blue'}></TitleForHome>
       <AdditionalDiv>
         <ContainerIframe>
-          <ContainerGraditude>
-            <img src={gratitude71} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude81} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude41} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude31} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude12} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude11} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude13} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude21} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude51} alt={''} />
-          </ContainerGraditude>
-          <ContainerGraditude>
-            <img src={gratitude61} alt={''} />
-          </ContainerGraditude>{' '}
-
+          {gratitude.map((element) => (
+            <ContainerGraditude onClick={() => openImage(element.id)}>
+              <img
+                className={visible && 'visibleOpen'}
+                src={require(`../../../assets/pdf/gratitude/${element.img}.png`)}
+                alt={''}
+              />
+            </ContainerGraditude>
+          ))}
           {/*<Carousel*/}
           {/*  plugins={[*/}
           {/*    'infinite',*/}

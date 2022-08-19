@@ -19,7 +19,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
   };
   return (
     <ContainerFunctionService style={{ margin: '4% auto' }}>
-      <Name>{name}</Name>
+      <Name style={{ color: 'white', textDecoration: 'none' }}>{name}</Name>
       {photo ? (
         <img
           style={{ width: '40%', margin: '4% auto' }}

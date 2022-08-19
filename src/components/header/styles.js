@@ -9,15 +9,33 @@ body {
 export default GlobalStyle;
 const HeaderBackgroundColor = {
   gray: `
-    background-color: #E9F1F5;
-    color: #0d4475 !important
+    background-color: none;
+    a,
+  p,
+  select,
+  img,
+  button {
+    color: white;
+ }
     `,
   blue: `
     background-color: #0d4475;
-    color: #FFF;
+      a,
+  p,
+  select,
+  img,
+  button {
+    color: white;
+  }
     `,
   border: `
+ a,
+  p,
+  select,
+  img,
+  button {
     color: #0d4475;
+ }
     border: 1px solid white;
     background-color: white;
     `,
@@ -31,10 +49,9 @@ export const Container = styled.div`
   top: 0;
   z-index: 5;
   margin: 0 auto;
-
+ 
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
-    color: #0d4475;
     a,
     p,
     select,
@@ -81,7 +98,7 @@ export const Background = styled.div`
   height: 150px;
   position: fixed;
   top: 0;
-  ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
+  // ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
     background-color: rgba(200, 220, 231, 0%);
     color: #0d4475;
@@ -98,13 +115,6 @@ export const Background = styled.div`
 `;
 export const BackgroundText = styled.div`
   max-width: 1300px;
-  a,
-  p,
-  select,
-  img,
-  button {
-    color: white;
-  }
   display: flex;
   flex-direction: row;
   z-index: 5;
@@ -125,7 +135,7 @@ export const Logo = styled.img`
 export const Title = styled.h3``;
 
 export const ButtonsContainer = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(204, 204, 204, 0.8);
   display: flex;
   flex-direction: row;
   padding: 16px 0;
@@ -290,15 +300,11 @@ export const Div104 = styled.div`
     justify-content: center;
     &:hover {
       border: 2px solid white;
-      a {
-        color: white;
-      }
     }
     a {
       font-weight: bold;
       margin: 0;
       padding: 0;
-      color: white;
       font-size: 68px;
       text-decoration: none;
       transition: all 0.3s ease;

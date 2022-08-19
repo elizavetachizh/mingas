@@ -1,32 +1,5 @@
 import styled from 'styled-components';
 
-export const Links = styled.ul`
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  justify-content: space-around;
-  a {
-    text-decoration: none;
-    color: #0d4475;
-  }
-  li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    img {
-      width: 64px;
-    }
-  }
-`;
 export const BlockInformOgonek = styled.div`
   display: flex;
   flex-direction: row;
@@ -34,8 +7,8 @@ export const BlockInformOgonek = styled.div`
   height: fit-content;
   margin: 6% auto;
   justify-content: space-around;
-  border-radius: 20px;
-  border: 1px solid #1b3a91;
+  //border-radius: 20px;
+  //border: 1px solid #1b3a91;
   div {
     width: 50%;
     margin: 0 auto;
@@ -58,5 +31,19 @@ export const BlockInformOgonek = styled.div`
   img {
     width: 46%;
     border-radius: 20px;
+  }
+`;
+
+export const ContainerParallax = styled.div`
+  margin-top: 150px;
+  height: fit-content;
+  @media (max-width: 1400px) {
+    height: 500px;
+  }
+  @media (max-width: 1000px) {
+    height: 400px;
+  }
+  @media (max-width: 700px) {
+    margin-top: 100px;
   }
 `;

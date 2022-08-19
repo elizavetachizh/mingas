@@ -1,10 +1,18 @@
 import React from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
-import background from '../../../../assets/Bubni/backgorund.jpg';
+import background from '../../../../assets/Bubni/background2.jpg';
+import photo from '../../../../assets/management/departaments/Белокурский.jpg';
+import { DivInform } from '../../../Home/News/styles';
+import TitleForHome from '../../../../components/TitleForHome';
+import { LinksNetwork } from '../../../../components/footer/styles';
+import { IoIosCall } from 'react-icons/io';
 export default function Bubni() {
   return (
     <SchemaOfBranches
       background={background}
+      name={'Филиал Бубны'}
+      height={'500px'}
+      nameDescription={'О нас'}
       description={
         <>
           {' '}
@@ -51,14 +59,44 @@ export default function Bubni() {
             потребления ТЭР, сокращению издержек производства, увеличению доходности и наращиванию
             оборотных средств.
           </p>
-          <h3>Наша продукция</h3>
-          <h3>
-            Руководство службой осуществляет первый заместитель директора - главный инженер –
-            Белокурский Владимир Петрович
-          </h3>
-          <p>
-            Контактный телефон<a href={'tel:8017-712-36-07'}>8017-712-36-07</a>
-          </p>
+        </>
+      }
+      nameProducts={'Наша продукция'}
+      products={
+        <DivInform style={{ textAlign: 'center', color: '#0d4475' }}>
+          <div>
+            <img src={require('../../../../assets/Bubni/zerno.png')} />
+            <p>Зерновые и зернобобовые</p>
+          </div>
+          <div>
+            <img src={require('../../../../assets/Bubni/flowers.png')} />
+            <p>Рапс</p>
+          </div>
+          <div>
+            <img src={require('../../../../assets/Bubni/milk.png')} />
+            <p>Молоко</p>
+          </div>
+          <div>
+            <img src={require('../../../../assets/Bubni/meet.png')} />
+            <p>Мясо КРС</p>
+          </div>
+        </DivInform>
+      }
+      photo={photo}
+      inform={
+        <>
+          <TitleForHome
+            infoTitle={
+              'Руководство службой осуществляет первый заместитель директора - главный инженер Белокурский Владимир Петрович'
+            }
+            color={'blue'}
+            fontSize={'s'}
+          />
+          <LinksNetwork style={{ fontSize: '18px' }}>
+            <IoIosCall style={{ color: '#0e43af', width: '35px', height: '35px' }} />
+            Контактный телефон<a href={'tel:8017-712-36-07'}> 8017-712-36-07</a>
+          </LinksNetwork>
+
           <div style={{ position: 'relative', overflow: 'hidden' }}>
             <a
               href="https://yandex.by/maps/org/proizvodstvennoye_respublikanskoye_predpriyatiye_mingaz_filial_bubny_po_proizvodstvu_selskokhozyaystvennoy_produktsii/1038334797/?utm_medium=mapframe&utm_source=maps"
@@ -77,7 +115,6 @@ export default function Bubni() {
               src="https://yandex.by/map-widget/v1/-/CCURZLF3OD"
               width="100%"
               height="400"
-              frameBorder="1"
               allowFullScreen="true"
               style={{ position: 'relative' }}
             />

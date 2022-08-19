@@ -1,18 +1,23 @@
 import React, { useCallback } from 'react';
 import { ContainerLeaders, ImageLeader, FullNameLeader, PositionLeader } from './styles';
-import { useNavigate } from "react-router";
 
-export default function Leaders({ cardImg, fullName, position, handlerLeaderClick, leader, id }) {
-  const navigate = useNavigate();
+export default function Leaders({
+  cardImg,
+  fullName,
+  position,
+  handlerLeaderClick,
+  leader,
+  idName,
+}) {
   const onClick = useCallback(() => {
     handlerLeaderClick(leader);
-    navigate(`/company/management/${id}`);
   }, [handlerLeaderClick, leader]);
   return (
     <ContainerLeaders onClick={onClick}>
       <div>
         <ImageLeader src={require(`../../../../assets/management/${cardImg}.jpg`)} key={cardImg} />
       </div>
+      <p style={{ display: 'none' }}>{idName}</p>
       <FullNameLeader>{fullName}</FullNameLeader>
       <PositionLeader>{position}</PositionLeader>
     </ContainerLeaders>

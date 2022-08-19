@@ -17,9 +17,13 @@ import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
+  const [nameId, setNameId] = useState(null)
+  const [inform, setInform] = useState([]);
   const handlerLeaderClick = useCallback((leader) => {
     setModalVisible(true);
     setCurrentLeader(leader);
+     setInform(leader)
+    setNameId(leader.id)
   }, []);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
@@ -27,10 +31,10 @@ export default function Management() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      {/*<ContentHome />*/}
       <AdditionalDiv>
         <HeaderCompany />
         <DivTextPhoto>
@@ -47,23 +51,20 @@ export default function Management() {
             </p>
           </DivText>
         </DivTextPhoto>
-
         <DivLeadersPhotoPosition>
           {management.map((element) => (
-            <Leaders
+            <Leaders idName={element.id}
               handlerLeaderClick={handlerLeaderClick}
               cardImg={element.cardImg}
               leader={element}
               key={element.id}
-              id={element.id}
               fullName={element.fullName}
               position={element.position}
-              links={element.links}
             />
           ))}
         </DivLeadersPhotoPosition>
         {isModalVisible && (
-          <Modal handleCloseCLick={handleCloseCLick} currentLeader={currentLeader} />
+          <Modal handleCloseCLick={handleCloseCLick} currentLeader={inform} nameId={nameId} />
         )}
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

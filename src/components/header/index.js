@@ -88,7 +88,7 @@ export default function Header({ backgroundHeader }) {
           <DivColumn>
             <DivFirstHeader>
               <DivPhone>
-                <Div104>
+                <Div104 >
                   <div className={navbar && 'opacity'}>
                     <a href={'tel:104'}>104</a>
                   </div>

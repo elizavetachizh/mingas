@@ -4,7 +4,7 @@ import close from '../../assets/png/close.png';
 import ModalSubdivision from './modalSubdivision';
 import { ImageLeader } from '../../pages/company/managment/divmagement/styles';
 
-export default function Modal({ handleCloseCLick, currentLeader }) {
+export default function Modal({ handleCloseCLick, currentLeader, nameId }) {
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
   };
@@ -16,9 +16,10 @@ export default function Modal({ handleCloseCLick, currentLeader }) {
           <ImageLeader src={require(`../../assets/management/${currentLeader.cardImg}.jpg`)} />
           <p>{currentLeader.fullName}</p>
           <p>{currentLeader.position}</p>
+
          <strong>
            Курируемые направления:</strong>
-          <ModalSubdivision links={currentLeader.links} />
+          <ModalSubdivision linksId={nameId} links={currentLeader.links} />
         </InformModal>
       </ModalWindowOpenAndClose>
     </ModalWindow>

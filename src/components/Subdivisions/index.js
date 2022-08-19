@@ -16,12 +16,12 @@ import { useNavigate } from 'react-router';
 
 export default function Subdivisions() {
   const { subdivisionId } = useParams();
-  const navigate = useNavigate();
-  const Navigate = () => {
-    navigate(`/company/management/:linkId/${subdivisions.id}`);
-    subdivisions.id = subdivisionId;
-  };
-  Navigate();
+  // const navigate = useNavigate();
+  // const Navigate = () => {
+  //   navigate(`/company/management/:linkId/${subdivisions.id}`);
+  //   subdivisions.id = subdivisionId;
+  // };
+  // Navigate();
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
