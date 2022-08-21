@@ -12,7 +12,7 @@ export const HeaderBtnFeedback = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   @media (max-width: 700px) {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     //max-width: 500px;
     text-align: center;
   }
@@ -55,9 +55,9 @@ export const Button = styled.button`
 export const ButtonForms = styled.div`
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 90%;
   margin: 2% auto;
-  @media (max-width: 700px) {
+  @media (max-width: 770px) {
     flex-direction: column;
   }
 `;

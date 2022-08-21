@@ -49,7 +49,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 5;
   margin: 0 auto;
- 
+
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
     a,
@@ -260,12 +260,6 @@ export const DivPhone = styled.div`
   flex-direction: row;
   justify-content: space-around;
   width: 40%;
-  @media (max-width: 900px) {
-    width: 50%;
-  }
-  @media (max-width: 720px) {
-    width: 60%;
-  }
 `;
 export const Div104 = styled.div`
   display: flex;

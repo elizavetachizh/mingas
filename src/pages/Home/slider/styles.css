@@ -127,12 +127,13 @@
     transition: 0.3s;
     font-size: 0;
 }
-/*.BrainhubCarousel__arrows:hover:enabled {*/
-/*    background-color: #314D5C;*/
-/*}*/
+.BrainhubCarousel__arrows:hover:enabled {
+    background-color: #314D5C;
+}
 .BrainhubCarousel__arrows:hover:enabled span {
     border-color: #fff;
     margin: 0;
+    background-color: #314D5C;
 }
 .BrainhubCarousel__arrows:disabled {
     background-color: #ccc;

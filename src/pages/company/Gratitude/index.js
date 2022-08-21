@@ -12,13 +12,12 @@ export default function Gratitude() {
   const [currentServiceID, setServiceID] = useState(null);
   const openImage = useCallback(
     (id) => {
-      const current = gratitude.find((el) => el.id === id);
-      setServiceID(id);
-      if (current) {
+      if (currentServiceID === id) {
+        setServiceID(null);
+        setVisible(false);
+      } else {
+        setServiceID(id);
         setVisible(true);
-        if (visible === true) {
-          setVisible(false);
-        }
       }
     },
     [visible, currentServiceID]
@@ -27,13 +26,13 @@ export default function Gratitude() {
     <Container>
       <Header backgroundHeader="blue" />
       <HeaderCompany currentPage={'gratitude'} />
-      <TitleForHome infoTitle={'Благодарности и награды'} color={'blue'}></TitleForHome>
+      <TitleForHome infoTitle={'Благодарности и награды'} color={'blue'} />
       <AdditionalDiv>
         <ContainerIframe>
           {gratitude.map((element) => (
             <ContainerGraditude onClick={() => openImage(element.id)}>
               <img
-                className={visible && 'visibleOpen'}
+                className={currentServiceID === element.id && visible && 'visibleOpen'}
                 src={require(`../../../assets/pdf/gratitude/${element.img}.png`)}
                 alt={''}
               />

@@ -8,12 +8,13 @@ import price_1 from '../../assets/pdf/Prejskurant-1-s-01.01.2022.pdf';
 import price_2 from '../../assets/pdf/Prejskurant-9-s-23.03.2022.pdf';
 import price_3 from '../../assets/pdf/Prejskurant-11-s-04.10.2019-szhatyj.pdf';
 import { Links } from './styles';
+import TitleFun from '../../components/title';
 export default function ResidentsOfCapitalRegion() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <Title>Прейскуранты цен</Title>
+        <TitleFun color={'blue'} infoTitle={'Прейскуранты цен'} />
         <Links>
           <a href={price_1} download>
             Скачать “Прейскурант №1: Тарифы на работы(услуги) оказываемые населению”

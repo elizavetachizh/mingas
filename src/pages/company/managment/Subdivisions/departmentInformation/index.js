@@ -35,6 +35,7 @@ export default function DepartmentInformation() {
   useEffect(() => {
     if (!currentServiceID && !inform.length) {
       const current = data.find((element) => element.idName === +linkId);
+      console.log(current);
       setInform(current.information);
       setDepartamentId(+linkId);
       // inform.filter((department) =>
@@ -43,16 +44,17 @@ export default function DepartmentInformation() {
       //     : department.idNameInform === +linkId
       // );
     }
-  }, [currentServiceID, linkId, inform]);
+  }, [currentServiceID, linkId, inform, id]);
+
   const currentDepartment = useMemo(
     () =>
       inform.filter((department) =>
         id
-          ? department.idNameInform === +linkId && department.id === +id
-          : department.idNameInform === +linkId
+          ? department.idNameInform === currentServiceID && department.id === +id
+          : department.idNameInform === currentServiceID
       ),
 
-    [data, id, linkId]
+    [inform, id, currentServiceID]
   );
   const changeDepartment = useCallback(
     (departamentId) => {
@@ -122,9 +124,9 @@ export default function DepartmentInformation() {
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
+      {/*<ScrollToTop showUnder={160}>*/}
+      {/*  <img src={up} alt={''} />*/}
+      {/*</ScrollToTop>*/}
       <Footer />
     </Container>
   );

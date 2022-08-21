@@ -6,6 +6,7 @@ import {
   LinksContainer,
   PressCenterButtons,
   ServicesButton,
+  DivBlocksHeader,
 } from './styles';
 import { ButtonLink } from '../../../pages/services/styles';
 import React, { useState } from 'react';
@@ -39,30 +40,49 @@ export default function MobileNavigation() {
   return (
     <LinksContainer>
       <Dropdown>
-        <CompanyButton to="/company/history">
-          <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
-          {isOpen ? <IoIosArrowUp onClick={animate} /> : <IoIosArrowDown onClick={animate} />}
-        </CompanyButton>
+        <DivBlocksHeader>
+          {' '}
+          <CompanyButton to="/company/history">
+            <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
+          </CompanyButton>
+          <div>
+            {isOpen ? <IoIosArrowUp onClick={animate} /> : <IoIosArrowDown onClick={animate} />}
+          </div>
+        </DivBlocksHeader>
         <DivButtonHeader className={isOpen && `shake`}>
           <ButtonLink to="/company/history">История предприятия</ButtonLink>
           <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
           <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
           <ButtonLink to="/company/parent-organizations">Вышестоящие организации</ButtonLink>
-          <ButtonLink to="/company/branches">Филиалы УП "Мингаз"</ButtonLink>
+          <ButtonLink to="/company/branches/ogonek" style={{ width: '100%' }}>
+            Филиалы УП "Мингаз" <img alt={''} src={next} />
+            <span style={{ margin: '20% 0 0' }}>
+              <NavLink to="/company/branches/ogonek">
+                Филиал оздоровительный комплекс "Огонёк"
+              </NavLink>
+              <NavLink to="/company/branches/Bubni">Филиал "Бубны"</NavLink>
+              <NavLink to="/company/branches/TBZ">
+                Филиал "Торфобрикетный завод "Сергеевическое"
+              </NavLink>
+            </span>
+          </ButtonLink>
           <ButtonLink to="/company/documentation">Сертификаты, лицензии, свидетельства</ButtonLink>
           <ButtonLink to="/company/gratitude">Благодарности и награды</ButtonLink>
         </DivButtonHeader>
       </Dropdown>
 
       <Dropdown>
-        <ServicesButton to="/services">
-          {t('header:Services')}{' '}
-          {isOpenBtn ? (
-            <IoIosArrowUp onClick={animateOpenBtn} />
-          ) : (
-            <IoIosArrowDown onClick={animateOpenBtn} />
-          )}
-        </ServicesButton>
+        <DivBlocksHeader>
+          {' '}
+          <ServicesButton to="/services">{t('header:Services')}></ServicesButton>
+          <div>
+            {isOpenBtn ? (
+              <IoIosArrowUp onClick={animateOpenBtn} />
+            ) : (
+              <IoIosArrowDown onClick={animateOpenBtn} />
+            )}
+          </div>
+        </DivBlocksHeader>
         <DivButtonHeader className={isOpenBtn && `shake`}>
           <ButtonLink to="/services">
             Услуги <img alt={''} src={next} />
@@ -72,44 +92,41 @@ export default function MobileNavigation() {
               <NavLink to="/">Плановые работы</NavLink>
             </span>
           </ButtonLink>
-          {/*<ButtonLink to="/liquefied-gas-tariff">*/}
-          {/*  Тарифы*/}
-          {/*  <img alt={''} src={next} />*/}
-          {/*  <span>*/}
-          {/*    <NavLink to="/liquefied-gas-tariff">Тарифы на сжиженный газ</NavLink>*/}
-          {/*    <NavLink to="/natural-gas-tariff">Тарифы на природный газ</NavLink>*/}
-          {/*  </span>*/}
-          {/*</ButtonLink>*/}
-
           <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-          {/*<ButtonLink to="/">Обратная связь</ButtonLink>*/}
-          <ButtonLink to="/">Регламентирующие документы</ButtonLink>
+          <ButtonLink to="/regulatory-documents">Регламентирующие документы</ButtonLink>
           <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
-          <ButtonLink to={'/feedback/question-answer'}>Часто задаваемые вопросы</ButtonLink>
+          <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
           <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
+          <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
         </DivButtonHeader>
       </Dropdown>
 
       <Dropdown>
-        <ServicesButton to="/services-legal-entities">
-          Для бизнеса{' '}
-          {isOpenBtnForBusiness ? (
-            <IoIosArrowUp onClick={animateOpenBtnForBusiness} />
-          ) : (
-            <IoIosArrowDown onClick={animateOpenBtnForBusiness} />
-          )}
-        </ServicesButton>
+        <DivBlocksHeader>
+          {' '}
+          <ServicesButton to="/services-legal-entities">
+            Для бизнеса{' '}
+            <div>
+              {' '}
+              {isOpenBtnForBusiness ? (
+                <IoIosArrowUp onClick={animateOpenBtnForBusiness} />
+              ) : (
+                <IoIosArrowDown onClick={animateOpenBtnForBusiness} />
+              )}
+            </div>
+          </ServicesButton>
+        </DivBlocksHeader>
         <DivButtonHeader className={isOpenBtnForBusiness && `shake`}>
           <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
           <ButtonLink to="/feedback/electronic-appeal-for-entity">
             Обращение юридических лиц
           </ButtonLink>
           <ButtonLink to="/">Тендеры</ButtonLink>
-          <ButtonLink to={'/feedback/question-answer'}>Вопрос-ответ</ButtonLink>
+          <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
           <ButtonLink to="/services-legal-entities/administrative-services-legal/">
             Административные процедуры
           </ButtonLink>
-          <ButtonLink to="/">Регламентирующие документы</ButtonLink>
+          <ButtonLink to="/regulatory-documents-for-entity">Регламентирующие документы</ButtonLink>
         </DivButtonHeader>
       </Dropdown>
 

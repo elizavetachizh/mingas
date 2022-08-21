@@ -10,9 +10,9 @@ export const Form = styled.form`
 export const DivInput = styled.div`
   display: flex;
   width: 90%;
-  margin: 0;
+  margin: 4% 0;
   flex-direction: column;
-  @media(max-width: 640px) {
+  @media (max-width: 640px) {
     text-align: center;
   }
 `;
@@ -89,6 +89,7 @@ export const Label = styled.label`
   color: #2d4c6b;
   opacity: 0.65;
   font-size: 20px;
+  margin-bottom: 4px;
   span {
     color: red;
   }
@@ -108,7 +109,7 @@ export const DivInputFile = styled.div`
   height: 50px;
   display: flex;
   flex-direction: column;
-  div{
+  div {
     display: flex;
     flex-direction: column;
   }
@@ -129,7 +130,7 @@ export const InputFile = styled.input`
 export const Button = styled.button`
   //color: #0d4475;
   //background: none;
-  border:1px solid #0d4475;
+  border: 1px solid #0d4475;
   color: #fff; /* Цвет текста */
   background: linear-gradient(to top left, #1241b3 10px, #2c5acf 50px, 70px, #1b3a91);
   border-radius: 30px;
@@ -137,7 +138,7 @@ export const Button = styled.button`
   font-weight: 500;
   width: 240px;
   text-align: center;
-  
+
   text-decoration: none;
   //border: none;
   display: flex;

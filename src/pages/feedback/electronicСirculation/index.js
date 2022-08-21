@@ -19,7 +19,7 @@ export default function ElectronicAppeal() {
       <Header backgroundHeader="blue" />
       <HeaderFeedBack />
       <Divbackground>
-        <DivImage style={styled}></DivImage>
+        <DivImage style={styled} />
       </Divbackground>
       <AdditionalDiv>
         <TitleForHome color={'blue'} infoTitle={'Электронное обращение физических лиц'} />

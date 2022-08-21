@@ -23,6 +23,7 @@ export const Div = styled.div`
 export const DivBlocks = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-around;
   //@media(max-width: 820px){
   //  flex-direction: column;
@@ -41,14 +42,15 @@ export const General = styled.div`
   border-radius: 50px;
   margin: 1rem auto;
   padding: 0;
-  width: 100%;
-`
+  width: 90%;
+`;
 export const BtnIsOpen = styled.div`
   display: flex;
   flex-direction: row;
+  font-size: 16px;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 70px;
   width: 100%;
   color: white;
   padding: 0 0.1rem;
@@ -58,18 +60,18 @@ export const BtnIsOpen = styled.div`
   border-radius: 50px;
   div {
     background: white;
-    border-radius: 50px;
+    border-radius: 50%;
     height: 92%;
-    width: 56px;
+    width: 64px;
     text-align: center;
-    @media(max-width: 800px) {
+    @media (max-width: 800px) {
       height: 84%;
     }
   }
   p {
     width: 90%;
     padding: 0 20px;
-    @media(max-width: 684px) {
+    @media (max-width: 684px) {
       font-size: 14px;
     }
   }

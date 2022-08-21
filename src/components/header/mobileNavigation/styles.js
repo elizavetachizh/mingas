@@ -31,7 +31,12 @@ export const Container = styled.div`
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   }
 `;
-
+export const DivBlocksHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`;
 export const LinksContainer = styled.div`
   flex-direction: column;
   top: 99px;
@@ -47,7 +52,7 @@ export const LinksContainer = styled.div`
   box-sizing: border-box;
   background-color: #eee;
   transition: left 0.2s;
-  color: #0d4475 !important;
+  color: #0d4475;
   z-index: 2;
   background-color: rgba(200, 220, 231, 80%);
   -webkit-backface-visibility: hidden;

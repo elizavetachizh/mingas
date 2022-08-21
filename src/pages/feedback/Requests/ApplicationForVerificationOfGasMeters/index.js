@@ -37,8 +37,8 @@ export default function ApplicationForVerificationOfGasMeters() {
     form,
   } = useRequestForVerificationOfGasMeters();
   return (
-    <DivApplication>
-      <SubTitleFun infoTitle={'Заявка на поверку счетчиков газа'} color={'blue'}></SubTitleFun>
+    <>
+      <SubTitleFun infoTitle={'Заявка на поверку счетчиков газа'} color={'blue'} />
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>
@@ -205,6 +205,6 @@ export default function ApplicationForVerificationOfGasMeters() {
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
         )}
       </Form>
-    </DivApplication>
+    </>
   );
 }

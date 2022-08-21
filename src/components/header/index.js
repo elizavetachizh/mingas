@@ -88,7 +88,7 @@ export default function Header({ backgroundHeader }) {
           <DivColumn>
             <DivFirstHeader>
               <DivPhone>
-                <Div104 >
+                <Div104>
                   <div className={navbar && 'opacity'}>
                     <a href={'tel:104'}>104</a>
                   </div>
@@ -127,7 +127,7 @@ export default function Header({ backgroundHeader }) {
             <ButtonsContainer>
               <Dropdown>
                 <CompanyButton to="/company/history">
-                  <Trans i18nKey="header:ABOUTTHEENTERPRISE"></Trans>
+                  <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
                 </CompanyButton>
                 <DivButtonHeader>
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>

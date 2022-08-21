@@ -2,7 +2,7 @@ import { Container } from '../../pages/styles';
 import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ContainerBtn, BtnOpenInform, DivClose, ContainerText, ImgERIP } from './styles';
 import TitleFun from '../title';
 import payment from '../../assets/payment/1.png';
@@ -21,6 +21,12 @@ import results_2 from '../../assets/payment/8.png';
 import down from '../../assets/icons/down-arrow.png';
 import up from '../../assets/icons/up-arrow.png';
 import pamyatka from '../../assets/pdf/Pamyatka-ob-oplate-za-potreblennyj-prirodnyj-gaz-v-perehodnyj-period-2022-goda.pdf';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import {
+  BtnIsOpen,
+  Div,
+  General,
+} from '../administrativeServices/InformaationAdministrativeService/styles';
 export default function MethodPayment() {
   const [open, setOpen] = useState(false);
   const animate = () => {
@@ -42,15 +48,21 @@ export default function MethodPayment() {
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <TitleFun infoTitle={'Способы оплаты'} color={'blue'} />
-        <ContainerBtn>
-          <BtnOpenInform onClick={animate}>
+        <General>
+          <BtnIsOpen onClick={animate}>
             <p>
               Памятка об оплате за потребленный природный газ в переходный период через
               Интернет-Банкинг
             </p>
-            {open ? <img alt={'up'} src={up} /> : <img src={down} alt={'down'} />}
-          </BtnOpenInform>
-          <div className={open && `shake`}>
+            <div>
+              {open ? (
+                <IoIosArrowUp style={{ color: '#0e43af', margin: '42% 0' }} />
+              ) : (
+                <IoIosArrowDown style={{ color: '#0e43af', margin: '42% 0' }} />
+              )}
+            </div>
+          </BtnIsOpen>
+          <Div className={open && `shake`}>
             <p>
               Окончание отопительного периода 2022 год г. Минск – 10.05.2022, Минский район –
               11.05.2022.
@@ -72,16 +84,22 @@ export default function MethodPayment() {
             <ImgERIP alt={''} src={paymentDetails} />
             <p>6.Проверить корректность информации;</p>
             <p>7.Совершить платеж.</p>
-          </div>
-        </ContainerBtn>
-        <ContainerBtn>
-          <DivClose onClick={animateClose}>
+          </Div>
+        </General>
+        <General>
+          <BtnIsOpen onClick={animateClose}>
             <p>
               Памятка об оплате за потребленный природный газ в переходный период через М-Банкинг
             </p>
-            {close ? <img alt={'up'} src={up} /> : <img src={down} alt={'down'} />}
-          </DivClose>
-          <div className={close && `shake`}>
+            <div>
+              {close ? (
+                <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+              ) : (
+                <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+              )}
+            </div>
+          </BtnIsOpen>
+          <Div className={close && `shake`}>
             <p>
               <strong>
                 Для проведения платежа за потребленный газ через М-Банкинг необходимо:
@@ -124,8 +142,8 @@ export default function MethodPayment() {
             <img alt={'results'} src={results_2} />
             <p>9.Проверить корректность информации;</p>
             <p>10.Совершить платеж.</p>
-          </div>
-        </ContainerBtn>
+          </Div>
+        </General>
         <ContainerText>
           <p>
             <a href={'https://raschet.by/main.aspx?guid=1001'}>Система «Расчет»</a> —
