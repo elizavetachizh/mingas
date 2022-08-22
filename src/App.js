@@ -53,7 +53,7 @@ class App extends Component {
           <Route path="/services" element={<Services />} />
           <Route path="/company/history" element={<History />} />
           <Route path="/contacts" element={<GeneralInform />} />
-          <Route path="/press-center" element={<PressCenter />} />
+          <Route path="/press-center/:newsId" element={<PressCenter />} />
           <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
           <Route path="/feedback/question-answer/:titleId" element={<Information />} />
           <Route path={'/feedback/online-application'} element={<Requests />} />

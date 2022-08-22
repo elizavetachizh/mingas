@@ -7,7 +7,8 @@ import napravlenie from '../../../assets/union/napravlenie.jpg';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import Footer from '../../../components/footer';
 import TitleFun from '../../../components/title';
-import { Container } from "../../styles";
+import TitleForHome from "../../../components/TitleForHome";
+import {Container} from "../styles";
 
 export default function Union() {
   useEffect(() => {
@@ -19,6 +20,11 @@ export default function Union() {
       <AdditionalDiv>
         <TitleFun color={'blue'} infoTitle={'Первичная профсоюзная организация УП «МИНГАЗ»'} />
         <div className={'grids'}>
+          <img
+            style={{ width: '30%', margin: '0 35%' }}
+            src={require('../../../assets/management/departaments/Доморацкая.jpg')}
+          />
+          <TitleForHome margin={'s'} color={'blue'} infoTitle={'ПРЕДСЕДАТЕЛЬ ПРОФКОМА ПЕРВИЧНОЙ ПРОФСОЮЗНОЙ ОРГАНИЗАЦИИ УП «МИНГАЗ» - ДОМОРАЦКАЯ МАРИНА АЛЕКСЕЕВНА'} fontSize={'s'} />
           <div className={'text--div'}>
             <div className={'boxes'} data-aos={'fade-up'}>
               Первичная профсоюзная организация УП «МИНГАЗ» входит в состав Белорусского

@@ -198,7 +198,16 @@ export default function Header({ backgroundHeader }) {
                 </DivButtonHeader>
               </Dropdown>
 
-              <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
+              <Dropdown>
+                <PressCenterButtons to="/press-center/1">
+                  {t('header:PressCenter')}
+                  <DivButtonHeader>
+                    <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
+                    <ButtonLink to="/press-center/2">Новости</ButtonLink>
+                    <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
+                  </DivButtonHeader>
+                </PressCenterButtons>
+              </Dropdown>
               <Dropdown>
                 <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
                 <DivButtonHeader>

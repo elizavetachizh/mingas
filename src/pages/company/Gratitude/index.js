@@ -5,8 +5,9 @@ import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import TitleForHome from '../../../components/TitleForHome';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import { ContainerIframe } from '../documentation/styles';
 import { gratitude } from '../../../assets/data/gratitude';
+import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
+
 export default function Gratitude() {
   const [visible, setVisible] = useState(false);
   const [currentServiceID, setServiceID] = useState(null);
@@ -28,59 +29,30 @@ export default function Gratitude() {
       <HeaderCompany currentPage={'gratitude'} />
       <TitleForHome infoTitle={'Благодарности и награды'} color={'blue'} />
       <AdditionalDiv>
-        <ContainerIframe>
-          {gratitude.map((element) => (
-            <ContainerGraditude onClick={() => openImage(element.id)}>
-              <img
-                className={currentServiceID === element.id && visible && 'visibleOpen'}
-                src={require(`../../../assets/pdf/gratitude/${element.img}.png`)}
-                alt={''}
-              />
-            </ContainerGraditude>
-          ))}
-          {/*<Carousel*/}
-          {/*  plugins={[*/}
-          {/*    'infinite',*/}
-          {/*    {*/}
-          {/*      resolve: autoplayPlugin,*/}
-          {/*      options: {*/}
-          {/*        interval: 4000,*/}
-          {/*      },*/}
-          {/*    },*/}
-          {/*  ]}*/}
-          {/*  animationSpeed={2000}*/}
-          {/*>*/}
-          {/*  <DivText>*/}
-          {/*    <DivInformAbout>*/}
-          {/*      <Text>*/}
-          {/*        <Trans i18nKey="description:part1"></Trans>*/}
-          {/*      </Text>*/}
-          {/*      <ButtonFun*/}
-          {/*        href={'/Services'}*/}
-          {/*        backgroundColor={'blue'}*/}
-          {/*        infoButton={t('infoButton:more')}*/}
-          {/*      />*/}
-          {/*    </DivInformAbout>*/}
-          {/*    <a href={'tel:162'}>*/}
-          {/*      <img src={phone} alt={''} />*/}
-          {/*    </a>*/}
-          {/*  </DivText>*/}
-          {/*  <DivText>*/}
-          {/*    <DivInformAbout>*/}
-          {/*      <Text>{t('description:part2')}</Text>*/}
-          {/*      <ButtonFun*/}
-          {/*        href={'/Press-Center'}*/}
-          {/*        backgroundColor={'blue'}*/}
-          {/*        infoButton={t('infoButton:more')}*/}
-          {/*      />*/}
-          {/*    </DivInformAbout>*/}
-          {/*    <a href={''}>*/}
-          {/*      {' '}*/}
-          {/*      <img src={worker} alt={''} />*/}
-          {/*    </a>*/}
-          {/*  </DivText>*/}
-          {/*</Carousel>*/}
-        </ContainerIframe>
+        <div style={{ width: '80%', margin: '0 auto' }}>
+          <Carousel
+            plugins={[
+              'arrows',
+              {
+                resolve: autoplayPlugin,
+                options: {
+                  interval: 2000,
+                },
+              },
+            ]}
+            animationSpeed={1000}
+          >
+            {gratitude.map((element) => (
+              <ContainerGraditude onClick={() => openImage(element.id)}>
+                <img
+                  className={currentServiceID === element.id && visible && 'visibleOpen'}
+                  src={require(`../../../assets/pdf/gratitude/${element.img}.png`)}
+                  alt={''}
+                />
+              </ContainerGraditude>
+            ))}
+          </Carousel>
+        </div>
       </AdditionalDiv>
       <Footer />
     </Container>

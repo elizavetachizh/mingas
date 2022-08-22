@@ -62,6 +62,7 @@
 }
 .BrainhubCarousel__arrows {
     cursor: pointer;
+    background-color: #314D5C !important;
 
 }
 .BrainhubCarousel__loader {

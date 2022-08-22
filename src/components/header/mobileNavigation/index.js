@@ -19,6 +19,10 @@ export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBtn, setIsOpenBtn] = useState(false);
   const [isOpenBtnForBusiness, setIsOpenBtnForBusiness] = useState(false);
+  // const [isHandleBtn, setIsHandleBtn] = useState(false);
+  // const handleBtn = () => {
+  //   setIsHandleBtn(true);
+  // };
   const animate = () => {
     setIsOpen(true);
     if (isOpen) {
@@ -42,14 +46,14 @@ export default function MobileNavigation() {
       <Dropdown>
         <DivBlocksHeader>
           {' '}
-          <CompanyButton to="/company/history">
+          <CompanyButton className={isOpen && `handleBtn`} to="/company/history">
             <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
           </CompanyButton>
           <div>
             {isOpen ? <IoIosArrowUp onClick={animate} /> : <IoIosArrowDown onClick={animate} />}
           </div>
         </DivBlocksHeader>
-        <DivButtonHeader className={isOpen && `shake`}>
+        <DivButtonHeader className={isOpen && `handleBtn`}>
           <ButtonLink to="/company/history">История предприятия</ButtonLink>
           <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
           <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
@@ -74,7 +78,7 @@ export default function MobileNavigation() {
       <Dropdown>
         <DivBlocksHeader>
           {' '}
-          <ServicesButton to="/services">{t('header:Services')}></ServicesButton>
+          <CompanyButton className={isOpenBtn && `handleBtn`} to="/services">{t('header:Services')}</CompanyButton>
           <div>
             {isOpenBtn ? (
               <IoIosArrowUp onClick={animateOpenBtn} />
@@ -83,28 +87,28 @@ export default function MobileNavigation() {
             )}
           </div>
         </DivBlocksHeader>
-        <DivButtonHeader className={isOpenBtn && `shake`}>
-          <ButtonLink to="/services">
-            Услуги <img alt={''} src={next} />
-            <span>
+        <DivButtonHeader className={isOpenBtn && `handleBtn`}>
+        <div>  <ButtonLink to="/services">
+          Услуги <img alt={''} src={next} />
+          <span>
               <NavLink to="/services/administrative-services">Административные процедуры</NavLink>
               <NavLink to="/residents/price">Прейскурант цен</NavLink>
               <NavLink to="/">Плановые работы</NavLink>
             </span>
-          </ButtonLink>
+        </ButtonLink>
           <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
           <ButtonLink to="/regulatory-documents">Регламентирующие документы</ButtonLink>
           <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
           <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
           <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
-          <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
+          <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink></div>
         </DivButtonHeader>
       </Dropdown>
 
       <Dropdown>
         <DivBlocksHeader>
           {' '}
-          <ServicesButton to="/services-legal-entities">
+          <CompanyButton className={isOpenBtnForBusiness && `handleBtn`} to="/services-legal-entities">
             Для бизнеса{' '}
             <div>
               {' '}
@@ -114,9 +118,9 @@ export default function MobileNavigation() {
                 <IoIosArrowDown onClick={animateOpenBtnForBusiness} />
               )}
             </div>
-          </ServicesButton>
+          </CompanyButton>
         </DivBlocksHeader>
-        <DivButtonHeader className={isOpenBtnForBusiness && `shake`}>
+        <DivButtonHeader className={isOpenBtnForBusiness && `handleBtn`}>
           <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
           <ButtonLink to="/feedback/electronic-appeal-for-entity">
             Обращение юридических лиц

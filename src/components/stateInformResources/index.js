@@ -4,14 +4,20 @@ import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { DivCarousel } from './styles';
 import { DivInform } from '../../pages/Home/useful_information/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
+import React from 'react';
 export default function StateInformResources() {
   const isPhone = useMediaQuery('(max-width: 800px)');
   return (
-    <Container>
+    <>
       <TitleForHome
         fontSize={'m'}
         color={'blue'}
         infoTitle={'Государственные информационные ресурсы'}
+      />
+      <img
+        alt={'ornament'}
+        style={{ width: '100%' }}
+        src={require('../../assets/background/ornament.png')}
       />
       <DivInform>
         {isPhone ? (
@@ -248,6 +254,11 @@ export default function StateInformResources() {
           </Carousel>
         )}
       </DivInform>
-    </Container>
+      <img
+        alt={'ornament'}
+        style={{ width: '100%', marginBottom: '2%' }}
+        src={require('../../assets/background/ornament.png')}
+      />
+    </>
   );
 }

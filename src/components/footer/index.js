@@ -23,17 +23,12 @@ export default function Footer() {
           <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogo} />
         </LinkLogo>
         <Prizes>
-          <img src={require(`../../assets/prizes/primary_1.png`)} />
-          <img src={require(`../../assets/prizes/primary_2.png`)} />
-          <img src={require(`../../assets/prizes/primary_3.png`)} />
-          <img src={require(`../../assets/prizes/primary_4.png`)} />
+          <img src={require(`../../assets/prizes/1.png`)} />
+          <img src={require(`../../assets/prizes/2.png`)} />
+          <img src={require(`../../assets/prizes/3.png`)} />
+          <img src={require(`../../assets/prizes/4.png`)} />
         </Prizes>
       </LinksContainer>
-      {/*<hr style={line} />*/}
-      {/*<LinksNetwork>*/}
-      {/*  <LinksSocialMedia>*/}
-
-      {/*  </LinksSocialMedia>*/}
         <Contacts>
       <Telephons>
         <ButtonFun href={'/contacts/phone-services'} infoButton={'Телефоны для связи'} />

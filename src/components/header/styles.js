@@ -149,12 +149,7 @@ export const ButtonsContainer = styled.div`
   @media (max-width: 1063px) {
     font-size: 16px;
   }
-  @media (max-width: 1017px) {
-    font-size: 15px;
-  }
-  @media (max-width: 975px) {
-    font-size: 13px;
-  }
+ 
   @media (max-width: 900px) {
     display: none;
   }
@@ -182,6 +177,9 @@ export const CompanyButton = styled(NavLink)`
   &.active {
     color: #a69b14;
   }
+  @media (max-width: 1017px) {
+    padding: 0 10px;
+  }
   @media (max-width: 900px) {
     display: none;
   }
@@ -208,9 +206,6 @@ export const PersonalAccButton = styled.a`
   }
   @media (max-width: 1017px) {
     font-size: 15px;
-  }
-  @media (max-width: 975px) {
-    font-size: 13px;
   }
 `;
 

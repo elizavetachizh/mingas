@@ -76,6 +76,8 @@ export const CompanyButton = styled(NavLink)`
   &:hover {
     color: #a69b14;
   }
+  &.handleBtn {
+  }
 `;
 
 export const ServicesButton = CompanyButton;
@@ -101,6 +103,24 @@ export const DivButtonHeader = styled.div`
       margin: 5%;
     }
   }
+  &.handleBtn {
+    display: flex;
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+    padding: 10px;
+    a {
+      margin: 5%;
+    }
+    &:after {
+      content: '';
+      margin-bottom: 100%;
+    }
+  }
 `;
 export const Dropdown = styled.div`
   position: relative;
@@ -108,28 +128,5 @@ export const Dropdown = styled.div`
   margin: 10px 0;
   &:hover button {
     background-color: #000;
-  }
-  //
-  //&:hover div {
-  //  display: flex;
-  //  width: auto;
-  //  min-width: 200px;
-  //  height: auto;
-  //  align-items: flex-start;
-  //  flex-direction: column;
-  //  z-index: 5;
-  //  box-shadow: 0 8px 16px 0px rgba(0, 0, 0, 0.2);
-  //  background-color: #f1f1f1;
-  //  padding: 10px;
-  //}
-  //&:hover div a {
-  //  margin: 5%;
-  //}
-`;
-
-export const HiddenMenuTicker = styled.input`
-  display: none;
-  &:checked {
-    left: 0;
   }
 `;

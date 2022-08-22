@@ -14,19 +14,8 @@ export const Container = styled.div`
 export const ContainerGraditude = styled.div`
   img {
     width: 300px;
-    &.visibleOpen{
+    &.visibleOpen {
       width: 500px;
-    }
-  }
-`;
-
-export const ContainerCertificats = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  @media (max-width: 930px) {
-    img {
-      width: 70%;
     }
   }
 `;

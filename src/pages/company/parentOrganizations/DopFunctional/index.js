@@ -1,20 +1,11 @@
-import { BlockInform, BlockLingAndImage, ContainerForInform } from '../styles';
+import {ContainerForInform } from '../styles';
 
-export default function DopFunctional({ link, name, address, phone, fax, workMode, img }) {
+export default function DopFunctional({ link, img }) {
   return (
     <ContainerForInform>
-      <BlockLingAndImage>
-        <a href={link}>
-          {/*<p>{name}</p>*/}
-          <img src={require(`../../../../assets/png/${img}.png`)} alt={''} />
-        </a>
-      </BlockLingAndImage>
-      {/*<BlockInform>*/}
-      {/*  <p>{address}</p>*/}
-      {/*  <a href={`tel:${phone}`}>{phone}</a>*/}
-      {/*  <p>{fax}</p>*/}
-      {/*  <p>{workMode}</p>*/}
-      {/*</BlockInform>*/}
+      <a href={link}>
+        <img src={require(`../../../../assets/png/${img}.png`)} alt={''} />
+      </a>
     </ContainerForInform>
   );
 }

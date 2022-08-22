@@ -1,10 +1,10 @@
 import React from 'react';
 import ButtonFun from '../../../components/button';
-import {DivInform } from './styles';
+import { DivInform } from './styles';
 import { data } from '../../../assets/data/data_news';
 import LinkNews from './LinkToNews';
-import TitleForHome from "../../../components/TitleForHome";
-import { Container } from "../services/styles";
+import TitleForHome from '../../../components/TitleForHome';
+import { Container } from '../services/styles';
 
 export default function News() {
   return (
