@@ -3,7 +3,7 @@ import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
 import React, { useState } from 'react';
-import { ContainerBtn, BtnOpenInform, DivClose, ContainerText, ImgERIP } from './styles';
+import { ContainerText, ImgERIP } from './styles';
 import TitleFun from '../title';
 import payment from '../../assets/payment/1.png';
 import bankBook from '../../assets/payment/2.png';
@@ -18,8 +18,6 @@ import ERIP_5 from '../../assets/payment/5-1.png';
 import ERIP_6 from '../../assets/payment/6-1.png';
 import results from '../../assets/payment/7.png';
 import results_2 from '../../assets/payment/8.png';
-import down from '../../assets/icons/down-arrow.png';
-import up from '../../assets/icons/up-arrow.png';
 import pamyatka from '../../assets/pdf/Pamyatka-ob-oplate-za-potreblennyj-prirodnyj-gaz-v-perehodnyj-period-2022-goda.pdf';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import {

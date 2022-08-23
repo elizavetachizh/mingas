@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'http://localhost:5000/questions/';
+  const url = 'http://87.61.8.174:8080/questions/';
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(

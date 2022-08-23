@@ -187,7 +187,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/feedback/electronic-appeal-for-entity">
                     Обращение юридических лиц
                   </ButtonLink>
-                  <ButtonLink to="/">Тендеры</ButtonLink>
+                  <ButtonLink to="/tenders">Тендеры</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                     Административные процедуры

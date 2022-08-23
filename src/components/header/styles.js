@@ -149,7 +149,7 @@ export const ButtonsContainer = styled.div`
   @media (max-width: 1063px) {
     font-size: 16px;
   }
- 
+
   @media (max-width: 900px) {
     display: none;
   }
@@ -220,8 +220,8 @@ export const Dropdown = styled.div`
 
   &:hover div {
     display: flex;
-    width: auto;
     min-width: 220px;
+    width: 250px;
     height: fit-content;
     align-items: flex-start;
     flex-direction: column;

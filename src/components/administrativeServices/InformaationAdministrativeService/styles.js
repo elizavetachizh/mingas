@@ -23,7 +23,7 @@ export const Div = styled.div`
 export const DivBlocks = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: space-around;
   //@media(max-width: 820px){
   //  flex-direction: column;

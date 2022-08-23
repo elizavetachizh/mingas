@@ -17,7 +17,6 @@ import Personal from './pages/PersonalAccount';
 import Union from './pages/company/union';
 import Tasks from './pages/Employees/Tasks';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
-import UsefulInformation from './pages/feedback/uaefulIndormation';
 import Requests from './pages/feedback/Requests';
 import QuestionAnswer from './pages/feedback/QuestionAnswer';
 import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
@@ -42,8 +41,9 @@ import TBZ from './pages/company/Branches/TBZ';
 import Bubni from './pages/company/Branches/Bubni';
 import Ogonek from './pages/company/Branches/Ogonek';
 import RegulatoryDocuments from './components/RegulatoryDocuments';
-import RegulatoryDocumentsForLegal from "./components/RegulatoryDocumentForLegal";
-import Subdivisions from "./components/Subdivisions";
+import RegulatoryDocumentsForLegal from './components/RegulatoryDocumentForLegal';
+import Subdivisions from './components/Subdivisions';
+import Tenders from './components/tenders';
 class App extends Component {
   render() {
     return (
@@ -62,7 +62,7 @@ class App extends Component {
             path={'/feedback/electronic-appeal-for-entity'}
             element={<ElectronicAppealForEntity />}
           />
-          <Route path={'/feedback/usefull-information'} element={<UsefulInformation />} />
+
           <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
@@ -106,7 +106,11 @@ class App extends Component {
           />
           <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />
           <Route path={'/regulatory-documents'} element={<RegulatoryDocuments />} />
-          <Route path={'/regulatory-documents-for-entity'} element={<RegulatoryDocumentsForLegal />} />
+          <Route
+            path={'/regulatory-documents-for-entity'}
+            element={<RegulatoryDocumentsForLegal />}
+          />
+          <Route path={'/tenders'} element={<Tenders />} />
         </Routes>
       </div>
     );

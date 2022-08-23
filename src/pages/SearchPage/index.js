@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { data } from '../../assets/data/data_services';
 import { dataLegalEntities } from '../../assets/data/data_service_legalEntities_general';
-import { Button, FormSearch, ContainerFormSearch } from '../Home/Serch/styles';
 import search from '../../assets/png/search.svg';
-import { Div } from './styles';
+import { ContainerFormSearch, Div, FormSearch } from './styles';
 import { NavLink } from 'react-router-dom';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 export default function SearchPage() {
@@ -13,9 +12,6 @@ export default function SearchPage() {
     if (isForm) {
       setIsForm(false);
     }
-  };
-  const searchStyle = {
-    backgroundImage: `url(${search})`,
   };
   const [message, setMessage] = useState('');
   const [navbar, setNavbar] = useState(false);
@@ -29,7 +25,7 @@ export default function SearchPage() {
         result.push(card);
       }
     }) &&
-    // eslint-disable-next-line array-callback-return
+      // eslint-disable-next-line array-callback-return
       dataLegalEntities.map((card) => {
         if (card.nameCard.includes(message)) {
           result.push(card);

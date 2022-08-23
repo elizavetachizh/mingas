@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const AdditionalDiv = styled.div`
   margin: 6% auto;
   max-width: 1440px;
-  text-align: left;
+  text-align: left; a{
+  text-decoration: none;
+}
   @media (max-width: 1500px) {
     margin: 14% auto 4% auto;
   }
@@ -14,18 +16,6 @@ export const AdditionalDiv = styled.div`
   @media (max-width: 570px) {
     margin: 24% 0;
   }
-  //@media (max-width: 500px) {
-  //  width: 480px;
-  //  margin: 24% 60px;
-  //}
-  //@media (max-width: 410px) {
-  //  width: 500px;
-  //  margin: 30% 65px;
-  //}
-  //@media (max-width: 335px) {
-  //  width: 500px;
-  //  margin: 36% 65px;
-  //} ;
 `;
 
 export const PageSection = styled.div`

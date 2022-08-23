@@ -21,7 +21,7 @@ export const ModalWindowOpenAndClose = styled.div`
   border-radius: 10px;
   padding: 3%;
   text-align: center;
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     width: 500px;
   }
 `;

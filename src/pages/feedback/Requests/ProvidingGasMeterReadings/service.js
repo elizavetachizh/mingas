@@ -4,6 +4,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
 const cors = require('cors');
+const PORT = 8080;
 app.use(cors());
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.json());
@@ -69,7 +70,7 @@ app.post('/questions', (req, res) => {
 
   const mailOptionsFormQuestion = {
     from: req.body.email, // sender address
-    to: 'chizhem@mingas.by ', // list of receivers
+    to: 'elizavetka.chizh@gmail.com', // list of receivers
     subject: 'Обращение физ. лиц', // Subject line
     text: req.body.name,
     html: `
@@ -109,7 +110,7 @@ app.post('/question-for-entity', (req, res) => {
 
   const mailOptionsFormQuestionForEntity = {
     from: req.body.email, // sender address
-    to: 'chizhem@mingas.by ', // list of receivers
+    to: 'elizavetka.chizh@gmail.com ', // list of receivers
     subject: 'Обращение юр. лиц', // Subject line
     text: req.body.name,
     html: `
@@ -137,6 +138,6 @@ app.post('/question-for-entity', (req, res) => {
 });
 
 // listen to the port
-app.listen(5000, () => {
-  console.log('server start on port 5000');
+app.listen(PORT, '172.16.192.50', () => {
+  console.log(`server start on port ${PORT}`);
 });
