@@ -1,7 +1,7 @@
 {
   "name": "react-tutorial",
   "version": "0.1.0",
-  "proxy": "http://87.61.8.174:8080/",
+  "proxy": "http://localhost:8080/",
   "private": true,
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",
