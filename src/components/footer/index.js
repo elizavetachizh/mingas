@@ -27,6 +27,7 @@ export default function Footer() {
           <img src={require(`../../assets/prizes/2.png`)} />
           <img src={require(`../../assets/prizes/3.png`)} />
           <img src={require(`../../assets/prizes/4.png`)} />
+            <img src={require(`../../assets/prizes/5.png`)} />
         </Prizes>
       </LinksContainer>
         <Contacts>

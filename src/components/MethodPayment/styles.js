@@ -22,7 +22,6 @@ export const ContainerBtn = styled.div`
     align-items: center;
     text-align: center;
     margin: 4% auto;
-    
   }
   div {
     padding: 2%;
@@ -58,11 +57,10 @@ export const BtnOpenInform = styled.button`
     margin: 0;
   }
 `;
-export const DivClose = BtnOpenInform;
 
 export const ContainerText = styled.div`
   text-align: justify;
-  max-width: 1140px;
+  max-width: 980px;
   margin: 0 auto;
   font-size: 16px;
   p {
@@ -71,11 +69,25 @@ export const ContainerText = styled.div`
   iframe {
     width: 100%;
     height: 1125px;
+    @media (max-width: 1024px) {
+      width: 90%;
+      margin: 0 5%;
+    }
+  }
+  @media (max-width: 1024px) {
+    p,
+    ol {
+      width: 80%;
+      margin: 0 10%;
+    }
   }
 `;
 
 export const ImgERIP = styled.img`
-@media(max-width: 930px) {
-  width: 50%;
-}
-`
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  @media (max-width: 930px) {
+    width: 50%;
+  }
+`;

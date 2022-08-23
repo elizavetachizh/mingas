@@ -13,6 +13,9 @@ export const Div = styled.div`
   p {
     text-align: left;
   }
+  //img{
+  //  margin: 0 25%;
+  //}
   &.shake {
     display: block;
     opacity: 0;
@@ -43,6 +46,9 @@ export const General = styled.div`
   margin: 1rem auto;
   padding: 0;
   width: 90%;
+  img{
+    text-align: center;
+  }
 `;
 export const BtnIsOpen = styled.div`
   display: flex;

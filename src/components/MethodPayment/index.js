@@ -1,4 +1,3 @@
-import { Container } from '../../pages/styles';
 import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
@@ -25,6 +24,7 @@ import {
   Div,
   General,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
+import {Container} from "../../pages/company/styles";
 export default function MethodPayment() {
   const [open, setOpen] = useState(false);
   const animate = () => {

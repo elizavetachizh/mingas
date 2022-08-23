@@ -43,7 +43,7 @@ const HeaderBackgroundColor = {
 
 export const Container = styled.div`
   display: flex;
-  width: 100%;
+  //width: 100%;
   align-items: center;
   font-size: 19px;
   top: 0;
@@ -142,7 +142,7 @@ export const ButtonsContainer = styled.div`
   height: 50%;
   align-items: end;
   justify-content: space-around;
-  width: 100%;
+  //width: 100%;
   @media (max-width: 1140px) {
     font-size: 17px;
   }
