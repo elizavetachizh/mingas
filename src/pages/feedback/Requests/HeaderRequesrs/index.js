@@ -14,7 +14,7 @@ const styledTitle = {
 export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForTheIssuanceOfTechnicalSpecifications');
   return (
-      <>
+      <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px'}}>
         <TitleForHome
           fontSize={'m'}
           margin={'s'}
@@ -93,6 +93,6 @@ export default function HeaderRequests() {
             <ApplicationForTheIssuanceOfTechnicalSpecifications />
           )}
         </ButtonForms>
-      </>
+      </div>
   );
 }

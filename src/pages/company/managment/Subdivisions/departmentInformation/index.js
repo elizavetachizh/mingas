@@ -38,11 +38,6 @@ export default function DepartmentInformation() {
       console.log(current);
       setInform(current.information);
       setDepartamentId(+linkId);
-      // inform.filter((department) =>
-      //   id
-      //     ? department.idNameInform === +linkId && department.id === +id
-      //     : department.idNameInform === +linkId
-      // );
     }
   }, [currentServiceID, linkId, inform, id]);
 
@@ -61,6 +56,7 @@ export default function DepartmentInformation() {
       const current = data.find((element) => element.idName === departamentId);
       setDepartamentId(departamentId);
       setInform(current.information);
+        window.scrollTo(0, 0);
       navigate(`/company/management/${current.idName}`);
     },
     [currentServiceID, inform]
@@ -76,6 +72,7 @@ export default function DepartmentInformation() {
   const handlerLinkClickUniqueName = useCallback(
     (id) => {
       navigate(`${pathname}?id=${id}`);
+        window.scrollTo(0, 0);
     },
     [pathname]
   );

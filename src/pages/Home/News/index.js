@@ -8,8 +8,8 @@ import { Container } from '../services/styles';
 
 export default function News() {
   return (
-    <Container>
-      <TitleForHome fontSize={'m'} color={'white'} infoTitle={'Новости предприятия'} />
+    <Container style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px'}}>
+      <TitleForHome fontSize={'m'} color={'white'} infoTitle={'СМИ о нас'} />
       <DivInform>
         {data.map((element) => (
           <LinkNews

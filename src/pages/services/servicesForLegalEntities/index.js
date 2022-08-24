@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { Container } from '../../Home/styles';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
@@ -10,6 +9,7 @@ import up from '../../../assets/png/up_arrow_round.png';
 import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities_general';
 import ServicesList from './serviceList';
 import { useNavigate } from 'react-router';
+import {Container} from "../../company/styles";
 
 export default function ServicesForLegalEntities() {
   const navigate = useNavigate();

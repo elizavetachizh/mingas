@@ -2,7 +2,7 @@ import React from 'react';
 import { DivUsefulInform, DivInform } from './styles';
 import LinkInform from './components_link_inform';
 import { data } from '../../../assets/data/data';
-import linesOne from '../../../assets/background/lines.png';
+import linesOne from '../../../assets/background/rig.png';
 import { BackgroundStyle } from '../services/styles';
 import { Trans } from 'react-i18next';
 import TitleForHome from '../../../components/TitleForHome';
@@ -10,9 +10,8 @@ import TitleForHome from '../../../components/TitleForHome';
 export default function UsefulInform() {
   return (
     <>
-      <BackgroundStyle src={linesOne} />
       <DivUsefulInform>
-        <TitleForHome
+        <TitleForHome margin={'s'}
           color={'blue'}
           fontSize={'m'}
           infoTitle={<Trans i18nKey="usefulInform:usefulInform"></Trans>}
@@ -26,7 +25,9 @@ export default function UsefulInform() {
               link={element.link}
             />
           ))}
+
         </DivInform>
+          <hr/>
       </DivUsefulInform>
     </>
   );

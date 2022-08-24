@@ -1,14 +1,14 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import English from './locales/en/translationEN.json';
-import Русский from './locales/ru/translationRU.json';
-import Беларуская from './locales/bel/translationBEL.json';
+import En from './locales/en/translationEN.json';
+import Ру from './locales/ru/translationRU.json';
+import Бел from './locales/bel/translationBEL.json';
 
 const resources = {
-  Русский,
-  English,
-  Беларуская,
+  Ру,
+  En,
+  Бел,
 };
 export const availableLanguages = Object.keys(resources);
 i18n
@@ -22,7 +22,7 @@ i18n
   .init({
     debug: true,
     // Стандартный язык
-    fallbackLng: 'Русский',
+    fallbackLng: 'Ру',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },

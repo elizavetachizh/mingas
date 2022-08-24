@@ -32,7 +32,6 @@ export default function Services() {
               serviceId={element.serviceId}
               imgCard={element.cardImg}
               nameCard={element.nameCard}
-              description={element.description}
             />
           ))}
         </DivServices>

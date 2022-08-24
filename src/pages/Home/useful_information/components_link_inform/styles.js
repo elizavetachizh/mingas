@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 export const ContentLink = styled(NavLink)`
   display: flex;
@@ -15,13 +15,8 @@ export const ContentLink = styled(NavLink)`
     transform: scale(1.1);
   }
 `;
-
-export const ImageLink = styled.img`
-`;
-
 export const TextLink = styled.p`
   font-weight: 400;
   font-size: 16px;
-  line-height: 19px;
   color: #0d4475;
 `;

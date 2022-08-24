@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 
-export const Select = styled.select`
+export const Select = styled.div`
   background: transparent;
-  position: relative;
-  color: white;
-  font-size: 19px ;
-  width: 100px;
-  border: none;
-  option {
-    border: 0;
-    background: #0D4475;
-    box-shadow: none;
+  border-radius: 50%;
+  border: 2px solid #0d4475;
+  color: #0d4475;
+  padding: 7px 0;
+  select {
+    background: transparent;
+    //border-radius: 50%;
+    //border: 2px solid white;
+    position: relative;
+    font-size: 18px;
+    width: 44px;
+    border: none;
+    option {
+      border: 0;
+      background: #0d4475;
+      box-shadow: none;
+    }
   }
 `;

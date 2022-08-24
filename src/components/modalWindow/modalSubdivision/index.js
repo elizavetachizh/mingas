@@ -8,17 +8,16 @@ export default function ModalSubdivision({ links, linksId }) {
       if (linksId) {
         const current = links.find((element) => element.id === +linkId);
         navigate(`/company/management/${linksId}?id=${current.id}`);
+        window.scrollTo(0, 0);
       }
     },
     [links, linksId]
   );
   return (
-    <div>
-      <Container>
-        {links.map((link) => (
-          <Name onClick={() => handlerLinkClick(link.id)}>{link.name}</Name>
-        ))}
-      </Container>
-    </div>
+    <Container>
+      {links.map((link) => (
+        <Name onClick={() => handlerLinkClick(link.id)}>{link.name}</Name>
+      ))}
+    </Container>
   );
 }

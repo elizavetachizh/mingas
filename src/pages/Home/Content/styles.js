@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ContainerContent = styled.div`
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
   @media (max-width: 1200px) {
     max-height: 800px;
   }
@@ -15,6 +17,7 @@ export const DivContent = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
+  border-radius: 10px;
   bottom: 0;
   @media (max-width: 1200px) {
     max-height: 900px;
@@ -28,10 +31,12 @@ export const DivText = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-radius: 10px;
   align-items: center;
   @media (max-width: 870px) {
     img {
       width: 100%;
+      
     }
   }
   @media (max-width: 650px) {
@@ -73,7 +78,7 @@ export const DivPrizes = styled.div`
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.25);
-  height: 800px;
+  height: 510px;
   @media (max-width: 1200px) {
     max-height: 900px;
   }

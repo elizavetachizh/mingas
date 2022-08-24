@@ -12,18 +12,19 @@ export const ContainerLinks = styled.div`
   flex-direction: row;
 
   div {
-    
     a {
       text-decoration: none;
       color: #0d4475;
       font-size: 18px;
-      text-align: center; img{
-     margin: 0 auto;
-    }
+      text-align: center;
+      img {
+        margin: 0 auto;
+      }
       p {
         text-align: center;
         width: 50%;
-      margin: 0 auto}
+        margin: 0 auto;
+      }
     }
   }
   @media (max-width: 700px) {

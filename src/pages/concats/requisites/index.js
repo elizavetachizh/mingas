@@ -1,6 +1,4 @@
 import React from 'react';
-import { Container } from '../../Home/styles';
-import { Title } from '../../Home/useful_information/styles';
 import { Abbreviated, Certificate, Codbank, NameBank, NumberScore, PageSection } from './styles';
 import Header from '../../../components/header';
 import HeaderConcats from '../headerContacts';
@@ -8,6 +6,7 @@ import { Row } from '../styles';
 import { AdditionalDiv } from '../GeneralContactInform/styles';
 import Footer from '../../../components/footer';
 import TitleFun from '../../../components/title';
+import {Container} from "../../company/styles";
 
 export default function Requisites() {
   return (

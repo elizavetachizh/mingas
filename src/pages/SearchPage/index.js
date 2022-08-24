@@ -62,14 +62,14 @@ export default function SearchPage() {
     <>
       {navbar ? (
         <IoIosSearch
-          style={{ height: '26px', width: '26px' }}
+          style={{ height: '36px', width: '36px' }}
           color={'#0d4475'}
           onClick={() => handleForm()}
           type={'submit'}
         />
       ) : (
         <IoIosSearch
-          style={{ height: '26px', width: '26px' }}
+          style={{ height: '36px', width: '36px' }}
           onClick={() => handleForm()}
           type={'submit'}
         />

@@ -17,13 +17,11 @@ import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
-  const [nameId, setNameId] = useState(null)
-  const [inform, setInform] = useState([]);
+  const [nameId, setNameId] = useState(null);
   const handlerLeaderClick = useCallback((leader) => {
     setModalVisible(true);
     setCurrentLeader(leader);
-     setInform(leader)
-    setNameId(leader.id)
+    setNameId(leader.id);
   }, []);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
@@ -53,7 +51,8 @@ export default function Management() {
         </DivTextPhoto>
         <DivLeadersPhotoPosition>
           {management.map((element) => (
-            <Leaders idName={element.id}
+            <Leaders
+              idName={element.id}
               handlerLeaderClick={handlerLeaderClick}
               cardImg={element.cardImg}
               leader={element}
@@ -64,7 +63,11 @@ export default function Management() {
           ))}
         </DivLeadersPhotoPosition>
         {isModalVisible && (
-          <Modal handleCloseCLick={handleCloseCLick} currentLeader={inform} nameId={nameId} />
+          <Modal
+            handleCloseCLick={handleCloseCLick}
+            currentLeader={currentLeader}
+            nameId={nameId}
+          />
         )}
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

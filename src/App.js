@@ -13,9 +13,7 @@ import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
 import GeneralInform from './pages/concats/GeneralContactInform';
-import Personal from './pages/PersonalAccount';
 import Union from './pages/company/union';
-import Tasks from './pages/Employees/Tasks';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import Requests from './pages/feedback/Requests';
 import QuestionAnswer from './pages/feedback/QuestionAnswer';
@@ -44,6 +42,8 @@ import RegulatoryDocuments from './components/RegulatoryDocuments';
 import RegulatoryDocumentsForLegal from './components/RegulatoryDocumentForLegal';
 import Subdivisions from './components/Subdivisions';
 import Tenders from './components/tenders';
+import ResidentsOfTheCapitalRegion from './components/ResidentsOfTheCapitalRegion';
+import ForBusiness from './components/ForBusiness';
 class App extends Component {
   render() {
     return (
@@ -95,8 +95,6 @@ class App extends Component {
             element={<SchedulePersonalReceptionOfCitizens />}
           />
           <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-          <Route path={'/Personal'} element={<Personal />} />
-          <Route path={'/Personal/tasks'} element={<Tasks />} />
           <Route path={'/SearchPage'} element={<SearchPage />} />
           <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
           <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
@@ -111,6 +109,11 @@ class App extends Component {
             element={<RegulatoryDocumentsForLegal />}
           />
           <Route path={'/tenders'} element={<Tenders />} />
+          <Route
+            path={'/residents-of-the-capital-region'}
+            element={<ResidentsOfTheCapitalRegion />}
+          />
+          <Route path={'/for-business'} element={<ForBusiness />} />
         </Routes>
       </div>
     );

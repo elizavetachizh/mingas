@@ -1,5 +1,4 @@
 import Header from '../../components/header';
-import { Container } from './styles';
 import React from 'react';
 import ContentHome from './Content';
 import UsefulInform from './useful_information';
@@ -11,6 +10,9 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
 import StateInformResources from '../../components/stateInformResources';
+import {BackgroundStyle} from "./services/styles";
+import linesOne from "../../assets/background/rig.png";
+import {Container} from "../company/styles";
 export default function Home() {
   return (
     <Container>
@@ -18,15 +20,16 @@ export default function Home() {
       <>
         <ContentHome />
         <UsefulInform />
+          <BackgroundStyle src={linesOne} />
         <HeaderRequests />
         <ParallaxDiv />
         <HomeServices />
         <News />
         <StateInformResources />
       </>
-      <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
+      {/*<ScrollToTop showUnder={160}>*/}
+      {/*  <img src={up} alt={''} />*/}
+      {/*</ScrollToTop>*/}
       <Footer />
     </Container>
   );

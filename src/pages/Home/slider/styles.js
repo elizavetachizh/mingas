@@ -4,6 +4,7 @@ export const Main = styled.div`
   width: 90%;
   display: flex;
   align-items: center;
+  border-radius: 10px;
   @media (max-width: 1200px) {
     max-height: 600px;
   }
@@ -15,6 +16,7 @@ export const Main = styled.div`
 export const WindowDiv = styled.div`
   max-height: 100%;
   width: 100%;
+  border-radius: 10px;
   overflow: hidden;
 
   img {

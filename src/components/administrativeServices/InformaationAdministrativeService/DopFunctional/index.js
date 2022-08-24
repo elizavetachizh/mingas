@@ -39,30 +39,42 @@ export default function DopFunctional({
         Размер платы, взимаемой при осуществлении административной процедуры:
         <strong>{boardSize}</strong>
       </p>
-      <BtnIsOpen onClick={animate} style={{margin: '4% auto'}}>
-        <p>Документы и (или) сведения для осуществления административной процедуры: </p>
-        <div>
-          {' '}
-          {isOpen ? (
-            <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
-          ) : (
-            <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
-          )}
-        </div>
-      </BtnIsOpen>
-      <Div className={isOpen && `shake`}>{documents}</Div>
-      <BtnIsOpen onClick={animateClose}>
-        <p>Контактная информация: </p>{' '}
-        <div>
-          {' '}
-          {isClose ? (
-            <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
-          ) : (
-            <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
-          )}
-        </div>
-      </BtnIsOpen>
-      <Div className={isClose && `shake`}>{contactInform}</Div>
+      {documents ? (
+        <>
+          <BtnIsOpen onClick={animate} style={{ margin: '4% auto' }}>
+            <p>Документы и (или) сведения для осуществления административной процедуры: </p>
+            <div>
+              {' '}
+              {isOpen ? (
+                <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+              ) : (
+                <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+              )}
+            </div>
+          </BtnIsOpen>
+          <Div className={isOpen && `shake`}>{documents}</Div>
+        </>
+      ) : (
+        <></>
+      )}
+      {contactInform ? (
+        <>
+          <BtnIsOpen onClick={animateClose}>
+            <p>Контактная информация: </p>
+            <div>
+              {' '}
+              {isClose ? (
+                <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+              ) : (
+                <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+              )}
+            </div>
+          </BtnIsOpen>
+          <Div className={isClose && `shake`}>{contactInform}</Div>
+        </>
+      ) : (
+        <></>
+      )}
       <hr />
     </ContainerInformAboutService>
   );

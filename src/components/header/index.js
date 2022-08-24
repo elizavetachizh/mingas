@@ -16,13 +16,12 @@ import GlobalStyle, {
   PersonalAccButton,
   DivColumn,
   BackgroundText,
+  ContainerElements,
   DivFirstHeader,
   Div104,
-  DivPersonalAcc,
   DivPhone,
 } from './styles';
-import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
-import HeaderLogoBlue from '../../assets/png/mingaz_logo_blue.png';
+import HeaderLogoBlue from '../../assets/png/logoBlue.png';
 import next from '../../assets/png/next.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
@@ -74,60 +73,75 @@ export default function Header({ backgroundHeader }) {
   return (
     <Container backgroundHeader={backgroundHeader}>
       <GlobalStyle />
-      <Background backgroundHeader={backgroundHeader} className={navbar && 'opacity'}>
+      <Background backgroundHeader={backgroundHeader}>
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}
         <BackgroundText>
-          <LinkLogo to="/">
-            {navbar ? (
-              <Logo style={{ width: '80px', height: '80px' }} src={HeaderLogoBlue} />
-            ) : (
-              <Logo src={HeaderLogo} />
-            )}
-          </LinkLogo>
+          {/*<LinkLogo to="/">*/}
+          {/*  {navbar ? (*/}
+          {/*    <Logo style={{ width: '80px', height: '80px' }} src={HeaderLogoBlue} />*/}
+          {/*  ) : (*/}
+          {/*    <Logo src={HeaderLogo} />*/}
+          {/*  )}*/}
+          {/*</LinkLogo>*/}
           <DivColumn>
             <DivFirstHeader>
               <DivPhone>
+                {/*<LinkLogo to="/">*/}
+                {/*  {navbar ? (*/}
+                {/*    <Logo style={{ width: '80px', height: '80px' }} src={HeaderLogoBlue} />*/}
+                {/*  ) : (*/}
+                {/*    <Logo src={HeaderLogo} />*/}
+                {/*  )}*/}
+                {/*</LinkLogo>*/}
+                <LinkLogo to="/">
+                  <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogoBlue} />
+                </LinkLogo>
                 <Div104>
-                  <div className={navbar && 'opacity'}>
+                  <div>
                     <a href={'tel:104'}>104</a>
                   </div>
                   <p>Аварийная служба</p>
                 </Div104>
                 <Div104>
-                  <div className={navbar && 'opacity'}>
+                  <div>
                     <a href={'tel:162'}>162</a>
                   </div>
                   <p>Контакт-центр</p>
                 </Div104>
               </DivPhone>
-              <PersonalAccButton href={'https://service.mingas.by:5200/'}>
+              <ContainerElements >
+                {' '}
+                <PersonalAccButton href={'https://service.mingas.by:5200/'}>
+                  {/*{navbar ? (*/}
+                  {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />*/}
+                  {/*) : (*/}
+                  {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />*/}
+                  {/*)}*/}
+                  <IoMdContact style={{ width: '36px', height: '36px' }} color={'#0d4475'} />
+                  {/*<DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>*/}
+                </PersonalAccButton>
+                <SearchPage />
+                <Language />
                 {navbar ? (
-                  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />
+                  <IoMdEyeOff
+                    color={'#0d4475'}
+                    style={{ width: '40px', height: '40px' }}
+                    href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
+                  />
                 ) : (
-                  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />
+                  <IoMdEyeOff
+                    style={{ width: '40px', height: '40px' }}
+                    href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
+                  />
                 )}
-                <DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>
-              </PersonalAccButton>
-              <SearchPage />
-              <Language />
-              {navbar ? (
-                <IoMdEyeOff
-                  color={'#0d4475'}
-                  style={{ width: '30px', height: '30px' }}
-                  href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
-                />
-              ) : (
-                <IoMdEyeOff
-                  style={{ width: '30px', height: '30px' }}
-                  href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
-                />
-              )}
+              </ContainerElements>
             </DivFirstHeader>
             <ButtonsContainer>
               <Dropdown>
                 <CompanyButton to="/company/history">
                   <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
+                  <div></div>
                 </CompanyButton>
                 <DivButtonHeader>
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
@@ -156,7 +170,10 @@ export default function Header({ backgroundHeader }) {
               </Dropdown>
 
               <Dropdown>
-                <ServicesButton to="/services">{t('header:Services')}</ServicesButton>
+                <ServicesButton to="/residents-of-the-capital-region">
+                  {t('header:Services')}
+                  <div></div>
+                </ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services">
                     Услуги <img alt={''} src={next} />
@@ -181,7 +198,9 @@ export default function Header({ backgroundHeader }) {
               </Dropdown>
 
               <Dropdown>
-                <ServicesButton to="/services-legal-entities">Для бизнеса</ServicesButton>
+                <ServicesButton to="/for-business">
+                  Для бизнеса <div></div>
+                </ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
                   <ButtonLink to="/feedback/electronic-appeal-for-entity">
@@ -201,15 +220,19 @@ export default function Header({ backgroundHeader }) {
               <Dropdown>
                 <PressCenterButtons to="/press-center/1">
                   {t('header:PressCenter')}
-                  <DivButtonHeader>
-                    <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
-                    <ButtonLink to="/press-center/2">Новости</ButtonLink>
-                    <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
-                  </DivButtonHeader>
+                  <div></div>
                 </PressCenterButtons>
+                <DivButtonHeader>
+                  <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
+                  <ButtonLink to="/press-center/2">Новости</ButtonLink>
+                  <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
+                </DivButtonHeader>
               </Dropdown>
               <Dropdown>
-                <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
+                <ContactButton to="/Contacts">
+                  {t('header:Contacts')}
+                  <div></div>
+                </ContactButton>
                 <DivButtonHeader>
                   <ButtonLink to="/contacts">Контактная информация</ButtonLink>
                   <ButtonLink to="/contacts/work-schedule">
@@ -221,7 +244,9 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/contacts/requisites">Реквизиты предприятия</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
-              <ServicesButton to="/company/union">Профсоюз</ServicesButton>
+              <ServicesButton to="/company/union">
+                Профсоюз<div></div>
+              </ServicesButton>
               {/*<MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>*/}
             </ButtonsContainer>
           </DivColumn>

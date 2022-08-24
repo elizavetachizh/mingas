@@ -15,6 +15,8 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalHeader from './DopFunctionalHeader';
+import {BackgroundStyle} from "../../Home/services/styles";
+import linesOne from "../../../assets/background/rig.png";
 
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
@@ -38,6 +40,7 @@ export default function NaturalGas() {
       setInform(current.description);
       setTitle(current.nameCard);
       setServiceID(descriptionID);
+        window.scrollTo(0, 0);
       navigate(`/services/${descriptionID}`);
     },
     [currentServiceID]
@@ -46,6 +49,7 @@ export default function NaturalGas() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+        <BackgroundStyle src={linesOne} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

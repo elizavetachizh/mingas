@@ -38,6 +38,7 @@ export default function CardOfService() {
       const current = dataLegalEntities.find((element) => element.serviceId === descriptionID);
       setInform(current.description);
       setTitle(current.nameCard);
+        window.scrollTo(0, 0);
       setServiceID(currentServiceID ? '' : descriptionID);
     },
     [currentServiceID]

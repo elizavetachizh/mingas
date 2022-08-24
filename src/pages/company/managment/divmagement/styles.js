@@ -25,7 +25,8 @@ export const ContainerLeaders = styled.a`
   }
 `;
 export const ImageLeader = styled.img`
-  width: 70%;
+    width: 70%;
+
 `;
 export const FullNameLeader = styled.p`
   text-align: center;

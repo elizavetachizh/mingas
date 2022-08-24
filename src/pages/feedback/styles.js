@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderBtnFeedback = styled.div`
-  margin: 6% 2%;
-  padding: 4%;
+  margin: 4% 2%;
+  padding: 2%;
   display: flex;
   flex-direction: column;
   //max-width: 29%;
@@ -57,7 +57,7 @@ export const ButtonForms = styled.div`
   flex-direction: row;
   width: 90%;
   margin: 2% auto;
-  @media (max-width: 770px) {
+  @media (max-width: 900px) {
     flex-direction: column;
   }
 `;

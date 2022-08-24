@@ -1,5 +1,5 @@
 import { useParams, useSearchParams } from 'react-router-dom';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { data } from '../../../assets/data/dataInformAdministrativeService';
 import DopFunctional from './DopFunctional';
 import Header from '../../header';
@@ -13,10 +13,16 @@ import { Name } from '../Header/styles';
 import { Container } from '../../../pages/company/styles';
 
 export default function InformationAdministrativeService() {
+
   const { serviceID } = useParams();
   const [searchParams] = useSearchParams();
   const linkId = searchParams.get('linkId');
   const [title, setTitle] = useState('');
+  // const h2ref = useRef(null);
+  //
+  // useLayoutEffect(() => {
+  //     h2ref.current.scrollIntoView({block: 'start', inline:'start'});
+  // }, []);
   const currentDepartment = useMemo(
     () =>
       data.filter((department) =>

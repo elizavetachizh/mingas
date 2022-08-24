@@ -10,23 +10,10 @@ export default GlobalStyle;
 const HeaderBackgroundColor = {
   gray: `
     background-color: none;
-    a,
-  p,
-  select,
-  img,
-  button {
-    color: white;
- }
+  
     `,
   blue: `
     background-color: #0d4475;
-      a,
-  p,
-  select,
-  img,
-  button {
-    color: white;
-  }
     `,
   border: `
  a,
@@ -43,23 +30,32 @@ const HeaderBackgroundColor = {
 
 export const Container = styled.div`
   display: flex;
+
   //width: 100%;
+  a,
+  p,
+  select,
+  img,
+  button {
+    color: #0d4475;
+  }
   align-items: center;
-  font-size: 19px;
+  font-size: 18px;
   top: 0;
+  color: #0d4475;
   z-index: 5;
   margin: 0 auto;
-
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
-    a,
-    p,
-    select,
-    img,
-    button {
-      color: #0d4475;
-    }
-    background-color: rgba(250, 250, 250, 100%);
+    //background-color: rgba(250, 250, 250, 20%);
+    //backdrop-filter: blur(30px);
+    //a,
+    //p,
+    //select,
+    //img,
+    //button {
+    //  color: white;
+    //}
   }
 `;
 export const Menu = styled.div`
@@ -92,17 +88,20 @@ export const MenuClose = styled.div`
 `;
 export const Background = styled.div`
   width: 100%;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 20px 20px;
   z-index: 5;
   //padding: 0 24px;
+  background-color: white;
   margin: 0 auto;
-  height: 150px;
+  height: fit-content;
+  color: #0d4475;
   position: fixed;
   top: 0;
-  // ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
-  .opacity {
-    background-color: rgba(200, 220, 231, 0%);
-    color: #0d4475;
-  }
+  //.opacity {
+  //  background-color: rgba(200, 220, 231, 0%);
+  //  color: #0d4475;
+  //}
   .click {
     display: block;
   }
@@ -111,6 +110,12 @@ export const Background = styled.div`
     height: 100px;
     display: flex;
     flex-direction: row;
+  }
+  @media (min-width: 1600px) {
+    width: 90%;
+  }
+  @media (min-width: 2000px) {
+    width: 80%;
   }
 `;
 export const BackgroundText = styled.div`
@@ -132,14 +137,13 @@ export const Logo = styled.img`
   height: 100px;
 `;
 
-export const Title = styled.h3``;
-
 export const ButtonsContainer = styled.div`
-  border-top: 1px solid rgba(204, 204, 204, 0.8);
+  //border-top: 1px solid rgba(204, 204, 204, 0.8);
   display: flex;
   flex-direction: row;
-  padding: 16px 0;
-  height: 50%;
+  padding: 4px 0;
+  margin: 4px 0;
+  height: fit-content;
   align-items: end;
   justify-content: space-around;
   //width: 100%;
@@ -174,6 +178,11 @@ export const LinksContainer = styled.div`
 export const CompanyButton = styled(NavLink)`
   text-decoration: none;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   &.active {
     color: #a69b14;
   }
@@ -183,6 +192,20 @@ export const CompanyButton = styled(NavLink)`
   @media (max-width: 900px) {
     display: none;
   }
+  div {
+    margin: 8px 0 0;
+    content: '';
+    width: 7px;
+    color: #0d4475;
+    height: 7px;
+    background-color: #0d4475;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    &.active {
+      color: #a69b14;
+    }
+  }
 `;
 
 export const ServicesButton = CompanyButton;
@@ -191,8 +214,9 @@ export const PressCenterButtons = CompanyButton;
 export const PersonalAccButton = styled.a`
   text-decoration: none;
   justify-content: space-between;
+  color: #0d4475;
   display: flex;
-  padding: 0 20px;
+  //padding: 0 20px;
   align-items: center;
   &.active {
     color: #a69b14;
@@ -212,7 +236,7 @@ export const PersonalAccButton = styled.a`
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
-  color: #0d4475 !important;
+  color: #0d4475;
 `;
 export const Dropdown = styled.div`
   position: relative;
@@ -238,44 +262,73 @@ export const DivFirstHeader = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   text-decoration: none;
-  color: #fff;
-  padding: 12px 0 0;
-  margin: 0 0 12px;
+  color: #0d4475;
+  //padding: 12px 0 0;
+  //margin: 12px auto;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.8);
 `;
 
 export const DivColumn = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
 `;
 export const DivPhone = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin: 12px 0;
   justify-content: space-around;
   width: 40%;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+  @media (max-width: 674px) {
+    width: 56%;
+  }
 `;
+
+export const ContainerElements = styled.div`  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px 0;
+  justify-content: space-around;
+  width: 20%;
+  @media(max-width:900px ){
+    width: 30%;
+  }
+\`;`;
 export const Div104 = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  border-radius: 2px;
   cursor: pointer;
   text-decoration: none;
-  width: 40%;
+  width: 30%;
+  @media (max-width: 1249px) {
+    width: 40%;
+  }
+  @media (max-width: 937px) {
+    width: 50%;
+  }
+  @media (max-width: 674px) {
+    width: 60%;
+  }
   &:hover {
     transform: scale(1.1);
     transition: transform 0.8s;
     color: white;
   }
   p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 4px 0;
     font-weight: bold;
     @media (max-width: 1144px) {
       margin: 2px auto;
-      font-size: 1rem;
     }
   }
   div {
@@ -287,9 +340,6 @@ export const Div104 = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover {
-      border: 2px solid white;
-    }
     a {
       font-weight: bold;
       margin: 0;
@@ -310,18 +360,11 @@ export const Div104 = styled.div`
     }
   }
 
-  @media (max-width: 1133px) {
-    padding: 0 0.8rem;
-  }
-  @media (max-width: 1029px) {
-    padding: 0 0.5rem;
-  }
-
-  @media (max-width: 975px) {
-    p {
-      font-size: 0.8rem;
-    }
-  }
+  //@media (max-width: 975px) {
+  //  p {
+  //    font-size: 0.8rem;
+  //  }
+  //}
   @media (max-width: 780px) {
     p,
     a {

@@ -30,14 +30,9 @@ export default function CarouselFun() {
               <Text>
                 <Trans i18nKey="description:part1"></Trans>
               </Text>
-              <ButtonFun
-                href={'/Services'}
-                backgroundColor={'blue'}
-                infoButton={t('infoButton:more')}
-              />
             </DivInformAbout>
             <a href={'tel:162'}>
-              <img src={phone} alt={''} />
+              <img src={phone} style={{width: '80%'}} alt={''} />
             </a>
           </DivText>
 

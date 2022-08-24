@@ -1,28 +1,17 @@
 import React from 'react';
-import minsk from '../../../assets/background/minsk.jpg';
 import Header from '../../../components/header';
-import HeaderFeedBack from '../HeaderFeedBack';
-import { Divbackground, DivImage } from '../styles';
-import { Container } from '../../Home/styles';
 import Footer from '../../../components/footer';
 import FormQuestion from '../../../components/formQuestion';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import TitleForHome from '../../../components/TitleForHome';
 import { ContainerInform } from '../electronicCirculationForEntity/styles';
-const styled = {
-  background: `url(${minsk}) no-repeat`,
-  backgroundSize: 'cover',
-};
+import { Container } from '../../company/styles';
+import TitleFun from "../../../components/title";
 export default function ElectronicAppeal() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
-      <HeaderFeedBack />
-      <Divbackground>
-        <DivImage style={styled} />
-      </Divbackground>
       <AdditionalDiv>
-        <TitleForHome color={'blue'} infoTitle={'Электронное обращение физических лиц'} />
+        <TitleFun color={'blue'} infoTitle={'Электронное обращение физических лиц'} />
         <ContainerInform>
           <FormQuestion />
         </ContainerInform>

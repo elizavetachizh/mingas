@@ -21,7 +21,9 @@ export default function HeaderAdministrativeServices() {
   const handlerLinkClickUniqueName = useCallback(
     (linkId) => {
       navigate(`${pathname}?linkId=${linkId}`);
+      window.scrollTo(0, 0);
     },
+
     [pathname]
   );
   const animate = useCallback(
@@ -34,7 +36,7 @@ export default function HeaderAdministrativeServices() {
   );
   return (
     <HeaderCompanyDiv>
-      <Name>Административные услуги</Name>
+      <Name>Административные процедуры</Name>
       {data.map((el) => (
         <BlockBtn>
           <ContainerBtnIcon>

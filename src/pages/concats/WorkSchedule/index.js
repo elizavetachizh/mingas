@@ -15,7 +15,7 @@ export default function SchedulePersonalReceptionOfCitizens() {
       <AdditionalDiv>
         <TitleFun color={'blue'} infoTitle={'График приёма граждан'} />
         <Row>
-          <HeaderConcats></HeaderConcats>
+          <HeaderConcats />
           <ReceptionSchedule />
         </Row>
       </AdditionalDiv>

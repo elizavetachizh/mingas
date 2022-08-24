@@ -1,16 +1,15 @@
 import React from 'react';
-import { ContentLink, ImageLink, TextLink } from './styles';
-import { Trans, useTranslation } from 'react-i18next';
+import { ContentLink, TextLink } from './styles';
 const styleDiv = {
-  height: '80px',
+  height: '60px',
 };
 export default function LinkInform({ cardImg, cardDesc, link }) {
   return (
     <ContentLink to={`${link}`}>
       <div style={styleDiv}>
-        <ImageLink src={require(`../../../../assets/icons_useful_inform/${cardImg}.png`)} />
+        <img src={require(`../../../../assets/icons_useful_inform/${cardImg}.png`)} />
       </div>
-      <div style={styleDiv}>
+      <div>
         <TextLink>{cardDesc}</TextLink>
       </div>
     </ContentLink>

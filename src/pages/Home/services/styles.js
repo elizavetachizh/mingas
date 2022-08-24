@@ -4,7 +4,7 @@ export const Container = styled.div`
   background-color: #0d4475;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 1% 0;
   padding-bottom: 40px;
   color: #fff;
   align-items: center;
@@ -69,11 +69,25 @@ export const BackgroundStyle = styled.img`
   position: absolute;
   display: flex;
   right: 0;
-  align-items: flex-start;
-  margin: 0;
+  width: 22%;
+  z-index: -1;
+  align-items: center;
+  margin: auto 0;
   padding: 0;
-  @media (max-width: 1200px) {
-    display: none;
+  @media (max-width: 1599px) {
+    margin: 8% 0;
+  }
+  @media (max-width: 1150px) {
+    margin: 14% 0;
+  }
+  @media (max-width: 900px) {
+display: none;
+  }
+  @media (min-width: 1600px) {
+      margin: 4% 5%;
+  }
+  @media (min-width: 2000px) {
+      margin: 1% 10%;
   }
 `;
 

@@ -15,15 +15,12 @@ export const ModalWindow = styled.div`
 
 export const ModalWindowOpenAndClose = styled.div`
   width: 500px;
-  height: auto;
+  height: fit-content;
   background: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   border-radius: 10px;
-  padding: 3%;
+  padding: 2%;
   text-align: center;
-  @media (max-width: 900px) {
-    width: 500px;
-  }
 `;
 
 export const InformModal = styled.div`
@@ -32,6 +29,13 @@ export const InformModal = styled.div`
   align-items: center;
   flex-direction: column;
   color: #314d5c;
+img{
+  width: 50%;
+  @media(max-width: 555px){
+    width: 70%;
+  }
+}
+  
 `;
 
 export const Close = styled.img`
