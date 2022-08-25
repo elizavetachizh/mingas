@@ -1,16 +1,20 @@
 import TitleForHome from '../TitleForHome';
-import { Container } from '../../pages/Home/News/styles';
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { DivCarousel } from './styles';
 import { DivInform } from '../../pages/Home/useful_information/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import React from 'react';
+const styledTitle = {
+  margin: '0',
+};
 export default function StateInformResources() {
   const isPhone = useMediaQuery('(max-width: 800px)');
   return (
-    <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px'}}>
+    <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px' }}>
       <TitleForHome
-        fontSize={'m'} margin={'s'}
+        style={styledTitle}
+        fontSize={'m'}
+        margin={'s'}
         color={'blue'}
         infoTitle={'Государственные информационные ресурсы'}
       />

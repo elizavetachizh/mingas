@@ -22,18 +22,6 @@ export const DivInform = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.h2`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  margin: 4% auto;
-  text-align: center;
-  @media (max-width: 640px) {
-    font-size: 20px;
-  }
-`;
-
 export const DivDown = styled.div`
   font-style: normal;
   font-size: 18px;
@@ -81,13 +69,13 @@ export const BackgroundStyle = styled.img`
     margin: 14% 0;
   }
   @media (max-width: 900px) {
-display: none;
+    display: none;
   }
   @media (min-width: 1600px) {
-      margin: 4% 5%;
+    margin: 4% 5%;
   }
   @media (min-width: 2000px) {
-      margin: 1% 10%;
+    margin: 1% 10%;
   }
 `;
 

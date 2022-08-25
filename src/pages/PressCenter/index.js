@@ -60,7 +60,7 @@ export default function PressCenter() {
           <ContainerInform>
             <Name>{title}</Name>
             {/*<video><source src={require('../../assets/video/Фильм.mp4')}/></video>*/}
-            <DopFunctionalPressCenter inform={inform}/>
+            <DopFunctionalPressCenter inform={inform} />
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

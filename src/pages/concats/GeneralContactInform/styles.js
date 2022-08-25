@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const AdditionalDiv = styled.div`
-  margin: 6% auto;
+  margin: 8% auto 4%;
   max-width: 1440px;
   text-align: left; a{
   text-decoration: none;

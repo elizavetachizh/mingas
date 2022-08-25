@@ -1,11 +1,7 @@
 import { photo } from './liveInStyleOfMingas';
 import { Article, ContainerArticles } from '../../pages/PressCenter/styles';
 import gradient from '../../assets/background/gradient.png';
-import close from '../png/close.png';
-import { newspape } from '../../components/newspape';
-const closeStyleButton = {
-  backgroundImage: `url(${gradient})`,
-};
+
 export const pressCenter = [
   {
     id: 1,
@@ -58,7 +54,7 @@ export const pressCenter = [
               <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
             </a>
           </Article>
-          <Article
+          <Article className={'quarter'}
             style={{
               backgroundImage: `url('${gradient}')`,
             }}
@@ -81,7 +77,7 @@ export const pressCenter = [
               </p>
             </a>
           </Article>
-          <Article
+          <Article className={'quarter'}
             style={{
               backgroundImage: `url('${gradient}')`,
             }}

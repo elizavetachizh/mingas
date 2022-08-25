@@ -36,7 +36,6 @@ export const DivText = styled.div`
   @media (max-width: 870px) {
     img {
       width: 100%;
-      
     }
   }
   @media (max-width: 650px) {
@@ -44,7 +43,7 @@ export const DivText = styled.div`
     justify-content: center;
     align-items: center;
     img {
-      width: 80%;
+      width: 70%;
       margin: 0 auto;
     }
   }

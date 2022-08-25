@@ -27,9 +27,9 @@ export default function Home() {
         <News />
         <StateInformResources />
       </>
-      {/*<ScrollToTop showUnder={160}>*/}
-      {/*  <img src={up} alt={''} />*/}
-      {/*</ScrollToTop>*/}
+      <ScrollToTop showUnder={160}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

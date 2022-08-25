@@ -14,7 +14,7 @@ const titleFontSize = {
 };
 const titleMargin = {
   s: `
-  margin: 2% auto 2% auto;
+  margin: 2% auto 2% auto !important;
   `,
 };
 export const Title = styled.h2`

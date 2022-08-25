@@ -29,8 +29,13 @@ export const Button = styled(NavLink)`
   justify-content: center;
   align-items: center;
   height: 50px;
-  margin: 4% auto;
-  z-index: 3;
+  margin: 2% auto;
+  z-index: 2;
   cursor: pointer;
+  @media (max-width:950px) {
+    width: 250px;
+    font-size: 16px;
+  }
   ${({ backgroundColor }) => buttonBackgroundColor[backgroundColor]}
+ 
 `;
