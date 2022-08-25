@@ -1,58 +1,64 @@
 import React, { useCallback, useState } from 'react';
-import { Container, ContainerGraditude } from '../styles';
+import { Container, ContainerGraditude, BlockOfGraditude } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import TitleForHome from '../../../components/TitleForHome';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { gratitude } from '../../../assets/data/gratitude';
-import Carousel, { autoplayPlugin } from '@brainhubeu/react-carousel';
+import {
+  Close,
+  InformModal,
+  ModalWindow,
+  ModalWindowOpenAndClose,
+} from '../../../components/modalWindow/styles';
+import close from '../../../assets/png/close.png';
 
 export default function Gratitude() {
-  const [visible, setVisible] = useState(false);
   const [currentServiceID, setServiceID] = useState(null);
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [image, setImage] = useState('');
   const openImage = useCallback(
     (id) => {
-      if (currentServiceID === id) {
-        setServiceID(null);
-        setVisible(false);
-      } else {
-        setServiceID(id);
-        setVisible(true);
-      }
+      setServiceID(id);
+      setImage(gratitude[id - 1].img);
+      setModalVisible(true);
     },
-    [visible, currentServiceID]
+    [currentServiceID]
   );
+  const handleInsideClick = (event: MouseEvent) => {
+    event.stopPropagation();
+  };
+  const handleCloseCLick = useCallback(() => {
+    setModalVisible(false);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader="blue" />
       <HeaderCompany currentPage={'gratitude'} />
       <TitleForHome infoTitle={'Благодарности и награды'} color={'blue'} />
       <AdditionalDiv>
-        <div style={{ width: '80%', margin: '0 auto' }}>
-          <Carousel
-            plugins={[
-              'arrows',
-              {
-                resolve: autoplayPlugin,
-                options: {
-                  interval: 2000,
-                },
-              },
-            ]}
-            animationSpeed={1000}
-          >
-            {gratitude.map((element) => (
-              <ContainerGraditude onClick={() => openImage(element.id)}>
+        <BlockOfGraditude>
+          {gratitude.map((element) => (
+            <ContainerGraditude onClick={() => openImage(element.id)}>
+              <img src={require(`../../../assets/pdf/gratitude/${element.img}.png`)} alt={''} />
+            </ContainerGraditude>
+          ))}
+        </BlockOfGraditude>
+        {isModalVisible && (
+          <ModalWindow onClick={handleCloseCLick}>
+            <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
+              <Close src={close} onClick={handleCloseCLick} />
+              <InformModal>
                 <img
-                  className={currentServiceID === element.id && visible && 'visibleOpen'}
-                  src={require(`../../../assets/pdf/gratitude/${element.img}.png`)}
+                  className={'gratitude'}
+                  src={require(`../../../assets/pdf/gratitude/${image}.png`)}
                   alt={''}
                 />
-              </ContainerGraditude>
-            ))}
-          </Carousel>
-        </div>
+              </InformModal>
+            </ModalWindowOpenAndClose>
+          </ModalWindow>
+        )}
       </AdditionalDiv>
       <Footer />
     </Container>

@@ -21,6 +21,9 @@ export const ModalWindowOpenAndClose = styled.div`
   border-radius: 10px;
   padding: 2%;
   text-align: center;
+  &.gratitude {
+    width: 600px;
+  }
 `;
 
 export const InformModal = styled.div`
@@ -29,13 +32,15 @@ export const InformModal = styled.div`
   align-items: center;
   flex-direction: column;
   color: #314d5c;
-img{
-  width: 50%;
-  @media(max-width: 555px){
-    width: 70%;
+  img {
+    width: 50%;
+    @media (max-width: 555px) {
+      width: 70%;
+    }
+    &.gratitude {
+      width: 70%;
+    }
   }
-}
-  
 `;
 
 export const Close = styled.img`

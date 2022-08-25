@@ -37,13 +37,15 @@ export const ButtonLink = styled(NavLink)`
     left: 100%;
     flex-direction: column;
     text-align: left;
+    border-radius: 30px;
+    border: 1px solid #0d4475;
     //box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
-    background-color: #e8f3ff;
+    background-color: white;
     padding: 0 24px;
     margin: 0 auto;
     top: 0;
     a {
-      color: #0d4475 !important;
+      color: #0d4475;
       text-decoration: none;
     }
   }

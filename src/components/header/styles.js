@@ -192,7 +192,7 @@ export const CompanyButton = styled(NavLink)`
   @media (max-width: 900px) {
     display: none;
   }
-  div {
+  span {
     margin: 8px 0 0;
     content: '';
     width: 7px;
@@ -237,6 +237,7 @@ export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
   color: #0d4475;
+  border-radius: 30px;
 `;
 export const Dropdown = styled.div`
   position: relative;
@@ -246,10 +247,13 @@ export const Dropdown = styled.div`
     display: flex;
     min-width: 220px;
     width: 250px;
+    margin-top: 7px;
+    z-index: 3;
     height: fit-content;
     align-items: flex-start;
     flex-direction: column;
-    background-color: #e8f3ff;
+    background-color: white;
+    border: 1px solid #0d4475;
     padding: 14px;
   }
   &:hover div a {

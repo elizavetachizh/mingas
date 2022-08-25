@@ -56,7 +56,7 @@ export default function DepartmentInformation() {
       const current = data.find((element) => element.idName === departamentId);
       setDepartamentId(departamentId);
       setInform(current.information);
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
       navigate(`/company/management/${current.idName}`);
     },
     [currentServiceID, inform]
@@ -72,7 +72,7 @@ export default function DepartmentInformation() {
   const handlerLinkClickUniqueName = useCallback(
     (id) => {
       navigate(`${pathname}?id=${id}`);
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
     },
     [pathname]
   );

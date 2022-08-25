@@ -76,7 +76,7 @@ export const Name = styled.div`
   text-align: center;
   font-size: 1.5rem;
   text-transform: uppercase;
-  background: linear-gradient(to bottom right, #1241b3, #2c5acf 90px, 110px, #1b3a91);
+  background: linear-gradient(to bottom right, #1241b3, #2c5acf 90px, 110px, #0d4475);
   @media (max-width: 500px) {
     font-size: 1.2rem;
     padding: 1.4rem 1rem;

@@ -17,7 +17,7 @@ import ButtonFun from '../button';
 import { Prizes } from '../../pages/Home/Content/styles';
 export default function Footer() {
   return (
-    <div style={{ backgroundColor: '#0d4475', bottom: '0', margin: '0', padding: 0 }}>
+    <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px', backgroundColor: '#0d4475', bottom: '0', margin: '0', padding: 0 }}>
       <LinksContainer>
         <LinkLogo to="/">
           <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogo} />

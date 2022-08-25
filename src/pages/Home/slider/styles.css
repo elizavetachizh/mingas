@@ -135,7 +135,7 @@
   /*background-color: #314D5C;*/
 }
 .BrainhubCarousel__arrows:disabled {
-  background-color: #0d4475 !important;
+  /*background-color: #0d4475 !important;*/
 }
 .BrainhubCarousel__arrowLeft span {
   transform: translate(-50%, -50%) rotate(-135deg);

@@ -6,7 +6,7 @@ export const HeaderBtnFeedback = styled.div`
   display: flex;
   flex-direction: column;
   //max-width: 29%;
-  background: linear-gradient(to top left, #1241b3 10px, #2c5acf 100px, 150px, #1b3a91);
+  background: linear-gradient(to bottom right, #3d6990 50%, #3d6990 50%, 60%, #0d4475);
   height: fit-content;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

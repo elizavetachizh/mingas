@@ -11,8 +11,16 @@ export const Container = styled.div`
   //}
   
 `;
+export const BlockOfGraditude = styled.div`
+display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+`
 
 export const ContainerGraditude = styled.div`
+  
+  margin: auto;
   img {
     width: 300px;
     &.visibleOpen {

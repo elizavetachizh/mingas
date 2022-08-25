@@ -110,7 +110,7 @@ export default function Header({ backgroundHeader }) {
                   <p>Контакт-центр</p>
                 </Div104>
               </DivPhone>
-              <ContainerElements >
+              <ContainerElements>
                 {' '}
                 <PersonalAccButton href={'https://service.mingas.by:5200/'}>
                   {/*{navbar ? (*/}
@@ -141,7 +141,7 @@ export default function Header({ backgroundHeader }) {
               <Dropdown>
                 <CompanyButton to="/company/history">
                   <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
-                  <div></div>
+                  <span />
                 </CompanyButton>
                 <DivButtonHeader>
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
@@ -172,7 +172,7 @@ export default function Header({ backgroundHeader }) {
               <Dropdown>
                 <ServicesButton to="/residents-of-the-capital-region">
                   {t('header:Services')}
-                  <div></div>
+                  <span />
                 </ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services">
@@ -199,7 +199,7 @@ export default function Header({ backgroundHeader }) {
 
               <Dropdown>
                 <ServicesButton to="/for-business">
-                  Для бизнеса <div></div>
+                  Для бизнеса <span />
                 </ServicesButton>
                 <DivButtonHeader>
                   <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
@@ -220,7 +220,7 @@ export default function Header({ backgroundHeader }) {
               <Dropdown>
                 <PressCenterButtons to="/press-center/1">
                   {t('header:PressCenter')}
-                  <div></div>
+                  <span />
                 </PressCenterButtons>
                 <DivButtonHeader>
                   <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
@@ -231,7 +231,7 @@ export default function Header({ backgroundHeader }) {
               <Dropdown>
                 <ContactButton to="/Contacts">
                   {t('header:Contacts')}
-                  <div></div>
+                  <span />
                 </ContactButton>
                 <DivButtonHeader>
                   <ButtonLink to="/contacts">Контактная информация</ButtonLink>
@@ -245,7 +245,8 @@ export default function Header({ backgroundHeader }) {
                 </DivButtonHeader>
               </Dropdown>
               <ServicesButton to="/company/union">
-                Профсоюз<div></div>
+                Профсоюз
+                <span />
               </ServicesButton>
               {/*<MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>*/}
             </ButtonsContainer>
