@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { BlockOfGraditude, Container, ContainerGraditude } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
@@ -16,36 +16,34 @@ import {
 import close from '../../../assets/png/close.png';
 
 export default function Documentation() {
-  const [numPage, setNumPage] = useState(1);
-  const [pageNumber, setPageNumber] = useState(1);
+  const [numPage, setNumPage] = useState(null);
+  const [pageNumber, setPageNumber] = useState(null);
   const [isModalVisible, setModalVisible] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [image, setImage] = useState('');
-  const [generalId, setGeneralId] = useState(1);
+  const [generalId, setGeneralId] = useState(null);
   const [inform, setInform] = useState([]);
-  const [currentServiceID, setServiceID] = useState(null);
+  const [image, setImage] = useState(1);
   const openImage = useCallback(
     (id) => {
+      const current = certifications.find((element) => element.GeneralId === id);
+      setPageNumber(current?.inform[0].id);
+      setNumPage(current.inform.length);
       setModalVisible(true);
-      if (currentServiceID === id) {
-        setServiceID(null);
-        setVisible(false);
-      } else {
-        setServiceID(id);
-        setVisible(true);
-      }
+      setGeneralId(id);
     },
-    [visible, currentServiceID]
+    [generalId, image]
   );
 
   useEffect(() => {
-    if (!inform.length && !inform) {
-      const current = certifications.find((element) => element.GeneralId === generalId);
-      setInform(current.inform);
-      setGeneralId(current.GeneralId);
-      setNumPage(inform.id);
+    if (!inform) {
+      const current = certifications.find((element) => element.GeneralId === +generalId);
+      setInform(current?.inform);
+      setGeneralId(current?.GeneralId);
+      setNumPage(inform?.id);
+      const currentImage = current.image.find((element) => element.img === setImage);
+      setImage(currentImage?.img);
     }
-  }, [pageNumber, inform]);
+  }, [pageNumber, inform, generalId, image]);
+
   const changePage = (offSet) => {
     setPageNumber((prevPAgeNumber) => prevPAgeNumber + offSet);
   };
@@ -53,7 +51,9 @@ export default function Documentation() {
     changePage(-1);
   };
   const changePageNext = () => {
-    changePage(+1);
+    if (pageNumber < numPage) {
+      changePage(+1);
+    }
   };
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
@@ -68,26 +68,26 @@ export default function Documentation() {
       <TitleForHome infoTitle={'Сертификаты, лицензии, свидетельства'} color={'blue'} />
       <AdditionalDiv>
         <BlockOfGraditude>
-          {generalId === 1 &&
-            certifications.map((element) => (
-              <ContainerGraditude onClick={() => openImage(element.id)}>
-                <img
-                  className={currentServiceID === element.id && visible}
-                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${pageNumber}.png`)}
-                  alt={''}
-                />
-              </ContainerGraditude>
-            ))}
+          {certifications.map((element) => (
+            <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
+              <img
+                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.png`)}
+                alt={''}
+              />
+            </ContainerGraditude>
+          ))}
           {isModalVisible && (
             <ModalWindow onClick={handleCloseCLick}>
               <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
                 <Close src={close} onClick={handleCloseCLick} />
                 <InformModal>
-                  <img
-                    className={'gratitude'}
-                    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${pageNumber}.png`)}
-                    alt={''}
-                  />
+                  {inform.map((el) => (
+                    <img
+                      className={'gratitude'}
+                      src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${el.img}.png`)}
+                      alt={''}
+                    />
+                  ))}
                   <p>
                     Page {pageNumber} of {numPage}
                   </p>

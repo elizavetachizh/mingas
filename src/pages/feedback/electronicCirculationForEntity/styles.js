@@ -5,10 +5,10 @@ export const TextForInformation = styled.div`
   text-align: start;
 `
   export const ContainerInform = styled.div`
-    border-radius: 3px;
     padding: 10px 15px 0;
     border:1px solid #cccccc;
     width: 50%;
+    border-radius: 20px;
     margin: 0 auto;
     
     h2{

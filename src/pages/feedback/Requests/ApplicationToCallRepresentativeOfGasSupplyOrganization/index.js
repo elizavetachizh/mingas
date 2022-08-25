@@ -8,10 +8,10 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
     <DivApplication>
       <TitleFun
         color={'blue'}
-        infoTitle={'  Заявка на вызов представителя газоснабжающей организации'}
+        infoTitle={'Заявка на вызов представителя газоснабжающей организации'}
       />
-      <LinkToCallRepresentative href={'https://gasification.mingas.by:5003/'}>
-        <img src={control} alt={''}/>
+      <LinkToCallRepresentative target={'_blank'} href={'https://gasification.mingas.by:5003/'}>
+        <img src={control} alt={''} />
         Оставить заявку
       </LinkToCallRepresentative>
     </DivApplication>

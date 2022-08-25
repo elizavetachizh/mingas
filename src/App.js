@@ -44,6 +44,7 @@ import Subdivisions from './components/Subdivisions';
 import Tenders from './components/tenders';
 import ResidentsOfTheCapitalRegion from './components/ResidentsOfTheCapitalRegion';
 import ForBusiness from './components/ForBusiness';
+import Branches from './pages/company/Branches';
 class App extends Component {
   render() {
     return (
@@ -114,6 +115,7 @@ class App extends Component {
             element={<ResidentsOfTheCapitalRegion />}
           />
           <Route path={'/for-business'} element={<ForBusiness />} />
+          <Route path={'/company/branches'} element={<Branches />} />
         </Routes>
       </div>
     );

@@ -33,10 +33,8 @@ export const DivText = styled.div`
   justify-content: center;
   border-radius: 10px;
   align-items: center;
-  @media (max-width: 870px) {
-    img {
-      width: 100%;
-    }
+  img {
+    width: 80%;
   }
   @media (max-width: 650px) {
     flex-direction: column;
@@ -44,7 +42,13 @@ export const DivText = styled.div`
     align-items: center;
     img {
       width: 70%;
-      margin: 0 auto;
+      margin: 0 25%;
+    }
+  }
+  @media (max-width: 400px) {
+    img {
+      width: 60%;
+      margin: 0 25%;
     }
   }
 `;

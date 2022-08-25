@@ -150,7 +150,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/company/parent-organizations">
                     Вышестоящие организации
                   </ButtonLink>
-                  <ButtonLink to="/company/branches/ogonek" style={{ width: '100%' }}>
+                  <ButtonLink to="/company/branches" style={{ width: '100%' }}>
                     Филиалы УП "Мингаз" <img alt={''} src={next} />
                     <span style={{ margin: '20% 0 0' }}>
                       <NavLink to="/company/branches/ogonek">

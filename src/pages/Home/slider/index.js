@@ -32,7 +32,7 @@ export default function CarouselFun() {
               </Text>
             </DivInformAbout>
             <a href={'tel:162'}>
-              <img src={phone} style={{width: '80%'}} alt={''} />
+              <img src={phone} alt={''} />
             </a>
           </DivText>
 

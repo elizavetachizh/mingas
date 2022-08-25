@@ -14,7 +14,6 @@ export const HeaderCompanyDiv = styled.div`
   }
 `;
 
-
 export const HeaderConcatsBtn = styled(NavLink)`
   text-decoration: none;
   font-style: normal;

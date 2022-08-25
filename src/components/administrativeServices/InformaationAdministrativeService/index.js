@@ -1,5 +1,5 @@
 import { useParams, useSearchParams } from 'react-router-dom';
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { data } from '../../../assets/data/dataInformAdministrativeService';
 import DopFunctional from './DopFunctional';
 import Header from '../../header';
@@ -11,18 +11,14 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { Name } from '../Header/styles';
 import { Container } from '../../../pages/company/styles';
+import useMediaQuery from '../../../pages/Home/parallax/useMediaQuery';
 
 export default function InformationAdministrativeService() {
-
+  const isPhone = useMediaQuery('(max-width: 820px)');
   const { serviceID } = useParams();
   const [searchParams] = useSearchParams();
   const linkId = searchParams.get('linkId');
   const [title, setTitle] = useState('');
-  // const h2ref = useRef(null);
-  //
-  // useLayoutEffect(() => {
-  //     h2ref.current.scrollIntoView({block: 'start', inline:'start'});
-  // }, []);
   const currentDepartment = useMemo(
     () =>
       data.filter((department) =>
@@ -44,19 +40,35 @@ export default function InformationAdministrativeService() {
           <HeaderAdministrativeServices />
           <ContainerInform>
             {serviceID && <Name>{title}</Name>}
-            <>
-              {currentDepartment.map((el) => (
-                <DopFunctional
-                  key={el.uniqueName}
-                  uniqueName={el.uniqueName}
-                  maximumImplementationPeriod={el.maximumImplementationPeriod}
-                  certificateValidityPeriod={el.certificateValidityPeriod}
-                  boardSize={el.boardSize}
-                  documents={el.documents}
-                  contactInform={el.contactInform}
-                />
-              ))}
-            </>
+            {isPhone ? (
+              <>
+                {data.map((el) => (
+                  <DopFunctional
+                    key={el.uniqueName}
+                    uniqueName={el.uniqueName}
+                    maximumImplementationPeriod={el.maximumImplementationPeriod}
+                    certificateValidityPeriod={el.certificateValidityPeriod}
+                    boardSize={el.boardSize}
+                    documents={el.documents}
+                    contactInform={el.contactInform}
+                  />
+                ))}
+              </>
+            ) : (
+              <>
+                {currentDepartment.map((el) => (
+                  <DopFunctional
+                    key={el.uniqueName}
+                    uniqueName={el.uniqueName}
+                    maximumImplementationPeriod={el.maximumImplementationPeriod}
+                    certificateValidityPeriod={el.certificateValidityPeriod}
+                    boardSize={el.boardSize}
+                    documents={el.documents}
+                    contactInform={el.contactInform}
+                  />
+                ))}
+              </>
+            )}
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

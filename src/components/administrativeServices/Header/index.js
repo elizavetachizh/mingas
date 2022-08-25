@@ -14,7 +14,8 @@ export default function HeaderAdministrativeServices() {
     (serviceID) => {
       const current = data.find((element) => element.serviceID === serviceID);
       navigate(`/services/administrative-services/${current.serviceID}`);
-      setServiceID(serviceID);
+      setServiceID(currentServiceID ? '' : serviceID);
+      setLinks(current.links);
     },
     [currentServiceID]
   );

@@ -19,10 +19,6 @@ export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBtn, setIsOpenBtn] = useState(false);
   const [isOpenBtnForBusiness, setIsOpenBtnForBusiness] = useState(false);
-  // const [isHandleBtn, setIsHandleBtn] = useState(false);
-  // const handleBtn = () => {
-  //   setIsHandleBtn(true);
-  // };
   const animate = () => {
     setIsOpen(true);
     if (isOpen) {
@@ -58,7 +54,7 @@ export default function MobileNavigation() {
           <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
           <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
           <ButtonLink to="/company/parent-organizations">Вышестоящие организации</ButtonLink>
-          <ButtonLink to="/company/branches/ogonek" style={{ width: '100%' }}>
+          <ButtonLink to="/company/branches" style={{ width: '100%' }}>
             Филиалы УП "Мингаз" <img alt={''} src={next} />
             <span style={{ margin: '20% 0 0' }}>
               <NavLink to="/company/branches/ogonek">
@@ -78,7 +74,9 @@ export default function MobileNavigation() {
       <Dropdown>
         <DivBlocksHeader>
           {' '}
-          <CompanyButton className={isOpenBtn && `handleBtn`} to="/services">{t('header:Services')}</CompanyButton>
+          <CompanyButton className={isOpenBtn && `handleBtn`} to="/residents-of-the-capital-region">
+            {t('header:Services')}
+          </CompanyButton>
           <div>
             {isOpenBtn ? (
               <IoIosArrowUp onClick={animateOpenBtn} />
@@ -88,30 +86,33 @@ export default function MobileNavigation() {
           </div>
         </DivBlocksHeader>
         <DivButtonHeader className={isOpenBtn && `handleBtn`}>
-        <div>  <ButtonLink to="/services">
-          Услуги <img alt={''} src={next} />
-          <span>
-              <NavLink to="/services/administrative-services">Административные процедуры</NavLink>
-              <NavLink to="/residents/price">Прейскурант цен</NavLink>
-              <NavLink to="/">Плановые работы</NavLink>
-            </span>
-        </ButtonLink>
-          <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-          <ButtonLink to="/regulatory-documents">Регламентирующие документы</ButtonLink>
-          <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
-          <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
-          <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
-          <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink></div>
+          <div>
+            {' '}
+            <ButtonLink to="/services">
+              Услуги <img alt={''} src={next} />
+              <span>
+                <NavLink to="/services/administrative-services/">
+                  Административные процедуры
+                </NavLink>
+                <NavLink to="/residents/price">Прейскурант цен</NavLink>
+                <NavLink to="/">Плановые работы</NavLink>
+              </span>
+            </ButtonLink>
+            <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
+            <ButtonLink to="/regulatory-documents">Регламентирующие документы</ButtonLink>
+            <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
+            <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
+            <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
+            <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
+          </div>
         </DivButtonHeader>
       </Dropdown>
 
       <Dropdown>
         <DivBlocksHeader>
-          {' '}
-          <CompanyButton className={isOpenBtnForBusiness && `handleBtn`} to="/services-legal-entities">
-            Для бизнеса{' '}
+          <CompanyButton className={isOpenBtnForBusiness && `handleBtn`} to="/for-business">
+            Для бизнеса
             <div>
-              {' '}
               {isOpenBtnForBusiness ? (
                 <IoIosArrowUp onClick={animateOpenBtnForBusiness} />
               ) : (
@@ -125,7 +126,7 @@ export default function MobileNavigation() {
           <ButtonLink to="/feedback/electronic-appeal-for-entity">
             Обращение юридических лиц
           </ButtonLink>
-          <ButtonLink to="/">Тендеры</ButtonLink>
+          <ButtonLink to="/tenders">Тендеры</ButtonLink>
           <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
           <ButtonLink to="/services-legal-entities/administrative-services-legal/">
             Административные процедуры
@@ -134,7 +135,17 @@ export default function MobileNavigation() {
         </DivButtonHeader>
       </Dropdown>
 
-      <PressCenterButtons to="/Press-Center">{t('header:PressCenter')}</PressCenterButtons>
+      <Dropdown>
+        <PressCenterButtons to="/press-center/1">
+          {t('header:PressCenter')}
+          <span />
+        </PressCenterButtons>
+        <DivButtonHeader>
+          <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
+          <ButtonLink to="/press-center/2">Новости</ButtonLink>
+          <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
+        </DivButtonHeader>
+      </Dropdown>
       <Dropdown>
         <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
         <DivButtonHeader>
