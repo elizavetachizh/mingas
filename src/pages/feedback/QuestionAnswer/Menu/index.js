@@ -20,6 +20,8 @@ export default function Menu() {
     (titleId) => {
       const current = dataAnswer.find((element) => element.titleId === titleId);
       navigate(`/feedback/question-answer/${current.titleId}`);
+      setServiceID(currentServiceID ? '' : titleId);
+      setLinks(current.blockInform);
     },
     [currentServiceID]
   );
@@ -36,6 +38,7 @@ export default function Menu() {
   const handlerLinkClickUniqueName = useCallback(
     (questionId) => {
       navigate(`${pathname}?questionId=${questionId}`);
+      window.scrollTo(0, 0);
     },
     [pathname]
   );

@@ -33,7 +33,7 @@ export const InformModal = styled.div`
   flex-direction: column;
   color: #314d5c;
   img {
-    width: 50%;
+    width: 56%;
     @media (max-width: 555px) {
       width: 70%;
     }

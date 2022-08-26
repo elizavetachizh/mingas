@@ -92,3 +92,39 @@ export const NavLinkService = styled(NavLink)`
     max-width: 60%;
   }
 `;
+
+export const BackgroundStyleServices = styled.img`
+  position: absolute;
+  display: flex;
+  right: 0;
+  width: 22%;
+  z-index: -1;
+  align-items: center;
+  margin: auto 0;
+  padding: 0;
+  @media (max-width: 1599px) {
+    margin: 8% 0;
+  }
+  @media (max-width: 1150px) {
+    margin: 14% 0;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
+  @media (min-width: 901px) {
+    margin: 50% 10%;
+    width: 44%;
+  }
+  @media (min-width: 1200px) {
+    margin: 26% 10%;
+    width: 36%;
+  }
+  @media (min-width: 1600px) {
+    margin: 20% 10%;
+    width: 28%;
+  }
+  @media (min-width: 2000px) {
+    margin: 10% 10%;
+    width: 25%;
+  }
+`;

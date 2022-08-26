@@ -17,6 +17,7 @@ import { useNavigate, useParams } from 'react-router';
 import DopFunctionalHeader from './DopFunctionalHeader';
 import {BackgroundStyle} from "../../Home/services/styles";
 import linesOne from "../../../assets/background/rig.png";
+import {BackgroundStyleServices} from "../styles";
 
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
@@ -49,7 +50,7 @@ export default function NaturalGas() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-        <BackgroundStyle src={linesOne} />
+        <BackgroundStyleServices src={linesOne} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

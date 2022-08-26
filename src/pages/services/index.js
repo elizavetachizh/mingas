@@ -11,6 +11,7 @@ import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import { useNavigate } from 'react-router';
 import { DivServices, NavLinkService } from './styles';
 import { links } from '../../assets/data/liksForServices';
+import { Name } from './servicesList/styles';
 
 export default function Services() {
   const navigate = useNavigate();
@@ -36,7 +37,10 @@ export default function Services() {
           {/*  />*/}
           {/*))}*/}
           {links.map((element) => (
-            <NavLinkService to={element.linkService}>{element.nameService}</NavLinkService>
+            <NavLinkService to={element.linkService}>
+              <img src={require(`../../assets/icons_services/${element.imgService}.png`)} />
+              <Name>{element.nameService}</Name>
+            </NavLinkService>
           ))}
         </DivServices>
       </AdditionalDiv>

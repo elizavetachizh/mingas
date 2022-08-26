@@ -68,7 +68,7 @@ export const BtnIsOpen = styled.div`
     background: white;
     border-radius: 50%;
     height: 92%;
-    width: 64px;
+    width: 70px;
     text-align: center;
     @media (max-width: 800px) {
       height: 84%;
