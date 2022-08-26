@@ -21,38 +21,46 @@ export default function Documentation() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [generalId, setGeneralId] = useState(null);
   const [inform, setInform] = useState([]);
-  const [image, setImage] = useState(1);
+  const [image, setImage] = useState(null);
+  const [name, setName] = useState('');
   const openImage = useCallback(
     (id) => {
       const current = certifications.find((element) => element.GeneralId === id);
-      setPageNumber(current?.inform[0].id);
-      setNumPage(current.inform.length);
+      // setPageNumber(current?.inform[0].id);
+      setInform(current?.inform);
+      setNumPage(inform?.length);
       setModalVisible(true);
       setGeneralId(id);
+      setName(current?.name);
+      setPageNumber(1);
+      setImage(current?.inform[0].img);
+      console.log(current?.name);
     },
-    [generalId, image]
+    [generalId, inform, name]
   );
 
   useEffect(() => {
-    if (!inform) {
-      const current = certifications.find((element) => element.GeneralId === +generalId);
-      setInform(current?.inform);
-      setGeneralId(current?.GeneralId);
-      setNumPage(inform?.id);
-      const currentImage = current.image.find((element) => element.img === setImage);
-      setImage(currentImage?.img);
+    const current = certifications.find((element) => element.GeneralId === +generalId);
+    setInform(current?.inform);
+    setGeneralId(current?.GeneralId);
+    if (!name) {
+      setName(current?.name);
     }
-  }, [pageNumber, inform, generalId, image]);
 
+    setNumPage(inform?.length);
+    console.log(current?.name);
+  }, [pageNumber, inform, generalId, name]);
   const changePage = (offSet) => {
     setPageNumber((prevPAgeNumber) => prevPAgeNumber + offSet);
   };
   const changePageBAck = () => {
     changePage(-1);
+    setImage(+image - +1);
   };
   const changePageNext = () => {
     if (pageNumber < numPage) {
       changePage(+1);
+      setImage(+image + +1);
     }
   };
   const handleInsideClick = (event: MouseEvent) => {
@@ -67,6 +75,7 @@ export default function Documentation() {
       <HeaderCompany currentPage={'documentation'} />
       <TitleForHome infoTitle={'Сертификаты, лицензии, свидетельства'} color={'blue'} />
       <AdditionalDiv>
+        <h3>{name}</h3>
         <BlockOfGraditude>
           {certifications.map((element) => (
             <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
@@ -81,13 +90,18 @@ export default function Documentation() {
               <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
                 <Close src={close} onClick={handleCloseCLick} />
                 <InformModal>
-                  {inform.map((el) => (
-                    <img
-                      className={'gratitude'}
-                      src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${el.img}.png`)}
-                      alt={''}
-                    />
-                  ))}
+                  {/*{inform.map((el) => (*/}
+                  {/*  <img*/}
+                  {/*    className={'gratitude'}*/}
+                  {/*    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${el.img}.png`)}*/}
+                  {/*    alt={''}*/}
+                  {/*  />*/}
+                  {/*))}*/}
+                  <img
+                    className={'gratitude'}
+                    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${image}.png`)}
+                    alt={''}
+                  />
                   <p>
                     Page {pageNumber} of {numPage}
                   </p>

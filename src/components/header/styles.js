@@ -247,7 +247,7 @@ export const Dropdown = styled.div`
     display: flex;
     min-width: 220px;
     width: 250px;
-    margin-top: 7px;
+    //margin-top: 4px;
     z-index: 3;
     height: fit-content;
     align-items: flex-start;

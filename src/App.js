@@ -104,7 +104,7 @@ class App extends Component {
             element={<InformationAdministrativeService />}
           />
           <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />
-          <Route path={'/regulatory-documents'} element={<RegulatoryDocuments />} />
+          <Route path={'/regulatory-documents/:documentId'} element={<RegulatoryDocuments />} />
           <Route
             path={'/regulatory-documents-for-entity'}
             element={<RegulatoryDocumentsForLegal />}

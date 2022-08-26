@@ -9,20 +9,18 @@ export const Container = styled.div`
   //@media(min-width: 1500px){
   //  width: 90%;
   //}
-  
 `;
 export const BlockOfGraditude = styled.div`
-display: flex;
+  display: flex;
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
-`
+`;
 
 export const ContainerGraditude = styled.div`
-  
   margin: auto;
   img {
-    width: 300px;
+    width: 260px;
     &.visibleOpen {
       width: 500px;
     }

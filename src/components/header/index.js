@@ -181,13 +181,15 @@ export default function Header({ backgroundHeader }) {
                       <NavLink to="/services/administrative-services/1">
                         Административные процедуры
                       </NavLink>
+                      <NavLink to="/services/3">Техническое обслуживание</NavLink>
+                      <NavLink to="/services/10">Реконструкция системы газоснабжения</NavLink>
+                      <NavLink to="/services/11">Газификация</NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
-                      <NavLink to="/">Плановые работы</NavLink>
                     </span>
                   </ButtonLink>
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-                  <ButtonLink to="/regulatory-documents">Регламентирующие документы</ButtonLink>
+                  <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>
                   <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
                   <ButtonLink to={'/feedback/question-answer/1'}>
                     Часто задаваемые вопросы

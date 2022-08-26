@@ -39,7 +39,7 @@ export default function DepartmentInformation() {
       setInform(current.information);
       setDepartamentId(+linkId);
     }
-  }, [currentServiceID, linkId, inform, id]);
+  }, [currentServiceID, linkId, inform]);
 
   const currentDepartment = useMemo(
     () =>
@@ -121,9 +121,9 @@ export default function DepartmentInformation() {
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
-      {/*<ScrollToTop showUnder={160}>*/}
-      {/*  <img src={up} alt={''} />*/}
-      {/*</ScrollToTop>*/}
+      <ScrollToTop showUnder={160}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );
