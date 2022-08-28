@@ -55,7 +55,7 @@ class App extends Component {
           <Route path="/company/history" element={<History />} />
           <Route path="/contacts" element={<GeneralInform />} />
           <Route path="/press-center/:newsId" element={<PressCenter />} />
-          <Route path="/feedback/question-answer" element={<QuestionAnswer />} />
+          {/*<Route path="/feedback/question-answer" element={<QuestionAnswer />} />*/}
           <Route path="/feedback/question-answer/:titleId" element={<Information />} />
           <Route path={'/feedback/online-application'} element={<Requests />} />
           <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />

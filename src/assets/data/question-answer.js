@@ -4,6 +4,7 @@ export const dataAnswer = [
     titleId: 1,
     blockInform: [
       {
+        titleIdName: 1,
         questionId: 1,
         question: 'Как оплатить в ЕРИП?',
         answer: (
@@ -33,6 +34,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 1,
         questionId: 2,
         question: 'Откуда берутся цены на газ для физических лиц?',
         answer: (
@@ -51,6 +53,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 1,
         questionId: 3,
         question: 'Почему показания в банке не поменялись?',
         answer: (
@@ -71,6 +74,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 1,
         questionId: 4,
         question:
           'Почему при отсутствии прописанных применяется цена на газ, обеспечивающая полное возмещение экономически обоснованных затрат?',
@@ -98,6 +102,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 1,
         questionId: 5,
         question: 'Что такое дифференцированная оплата за газ в частном доме?',
         answer: (
@@ -132,6 +137,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 1,
         questionId: 6,
         question: 'Почему нет субсидированного тарифа не по прописке?',
         answer: (
@@ -156,6 +162,7 @@ export const dataAnswer = [
     titleId: 2,
     blockInform: [
       {
+        titleIdName: 2,
         questionId: 7,
         question: 'Хочу подключить оборудование купленное за пределами Республики Беларусь.',
         answer: (
@@ -174,6 +181,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 2,
         questionId: 8,
         question: 'Ходят предлагают сигнализаторы за 140-250 руб. Это ваша организация?',
         answer: (
@@ -195,6 +203,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 2,
         questionId: 9,
         question:
           'Обязаны ли абоненты предоставлять доступ к газовому оборудованию работникам газоснабжающей организации?',
@@ -215,6 +224,7 @@ export const dataAnswer = [
         ),
       },
       {
+        titleIdName: 2,
         questionId: 10,
         question:
           'Почему замена газоиспользующего оборудования проводится не за счёт средств предприятия?',
@@ -233,6 +243,7 @@ export const dataAnswer = [
       },
       {
         questionId: 11,
+        titleIdName: 2,
         question: 'По какой причине могут отключить газ?',
         answer: (
           <div>
@@ -303,6 +314,7 @@ export const dataAnswer = [
       },
       {
         questionId: 12,
+        titleIdName: 2,
         question:
           'Можно ли зашить газовую трубу гипсокартоном, сохранив доступ к газовому вентилю и счетчику в навесном шкафчике кухни',
         answer: (
@@ -318,6 +330,7 @@ export const dataAnswer = [
       },
       {
         questionId: 13,
+        titleIdName: 2,
         question: 'Какой длины шланг можно использовать для подключения оборудования?',
         answer: (
           <div>
@@ -332,6 +345,7 @@ export const dataAnswer = [
       },
       {
         questionId: 14,
+        titleIdName: 2,
         question: 'У Вас есть рассрочка?',
         answer: (
           <div>
@@ -385,6 +399,7 @@ export const dataAnswer = [
       },
       {
         questionId: 15,
+        titleIdName: 2,
         question: 'Какое должно быть расстояние от газоиспользующего оборудования до розетки?',
         answer: (
           <div>
@@ -407,6 +422,7 @@ export const dataAnswer = [
       },
       {
         questionId: 16,
+        titleIdName: 2,
         question: 'Нужна ли дверь на кухне с газовой плитой?',
         answer: (
           <div>
@@ -434,6 +450,7 @@ export const dataAnswer = [
     blockInform: [
       {
         questionId: 17,
+        titleIdName: 3,
         question: 'Зачем при капитальном ремонте ставят счётчики? За чей счёт?',
         answer: (
           <div>
@@ -458,6 +475,7 @@ export const dataAnswer = [
       },
       {
         questionId: 18,
+        titleIdName: 3,
         question: 'Если газовый счётчик не прошёл поверку?',
         answer: (
           <div>
@@ -475,6 +493,7 @@ export const dataAnswer = [
       },
       {
         questionId: 19,
+        titleIdName: 3,
         question:
           'Обязательна ли плановая поверка и кто следит за сроками межповерочного интервала?',
         answer: (
@@ -494,6 +513,7 @@ export const dataAnswer = [
       },
       {
         questionId: 20,
+        titleIdName: 3,
         question: 'За чей счёт проводится поверка и ремонт счётчиков?',
         answer: (
           <div>
@@ -571,6 +591,7 @@ export const dataAnswer = [
     blockInform: [
       {
         questionId: 21,
+        titleIdName: 4,
         question:
           'Можно ли подключать сильфонную подводку к газовой плите в комплекте с диэлектрической вставкой? Какие вообще регламенты по шлангам по подключению к газовым плитам?',
         answer: (
@@ -594,6 +615,7 @@ export const dataAnswer = [
       },
       {
         questionId: 22,
+        titleIdName: 4,
         question: 'Можно ли заменить плиту самостоятельно?',
         answer: (
           <div>
@@ -617,6 +639,7 @@ export const dataAnswer = [
       },
       {
         questionId: 23,
+        titleIdName: 4,
         question:
           'Можно ли использовать плиту для природного газа, если она сейчас подключена на баллон?',
         answer: (
@@ -633,6 +656,7 @@ export const dataAnswer = [
       },
       {
         questionId: 24,
+        titleIdName: 4,
         question: 'Можно ли отремонтировать плиту, которой 20 лет?',
         answer: (
           <div>
@@ -652,6 +676,7 @@ export const dataAnswer = [
       },
       {
         questionId: 25,
+        titleIdName: 4,
         question:
           'Для чего необходима диагностика газоиспользующего оборудования? Как её осуществить и куда можно обратиться?',
         answer: (
@@ -673,6 +698,7 @@ export const dataAnswer = [
       },
       {
         questionId: 26,
+        titleIdName: 4,
         question: 'Можно ли устанавливать электрический духовой шкаф под газовой варочной панелью?',
         answer: (
           <div>
@@ -692,6 +718,7 @@ export const dataAnswer = [
     blockInform: [
       {
         questionId: 27,
+        titleIdName: 5,
         question: 'Как оплатить в ЕРИП за ТО?',
         answer: (
           <div>
@@ -720,6 +747,7 @@ export const dataAnswer = [
       },
       {
         questionId: 28,
+        titleIdName: 5,
         question:
           'С какой периодичностью должен осуществляться контроль газового оборудования и газопроводов в жилых домах работниками УП «МИНГАЗ»?',
         answer: (
@@ -767,6 +795,7 @@ export const dataAnswer = [
       },
       {
         questionId: 29,
+        titleIdName: 5,
         question: 'Что в себя включает ТО газовых колонок и какие операции при этом производятся?',
         answer: (
           <div>

@@ -18,6 +18,8 @@ export const Button = styled.button`
   font-size: 18px;
   cursor: pointer;
   transition: 1s;
+  outline: none;
+
   &.background {
     //background-color: #0d4475;
     background-color: #1241b3;
@@ -26,6 +28,7 @@ export const Button = styled.button`
     padding: 12px;
   }
 `;
+
 export const ContainerBtnIcon = styled.div`
   display: flex;
   flex-direction: row;
@@ -52,16 +55,21 @@ export const DivOpen = styled.div`
     transition: 0.7s all;
   }
   button {
-    background: none;
+    background-color: transparent;
     border: none;
     font-size: 16px;
     text-align: left;
     margin: 1rem 0;
     cursor: pointer;
     transition: all 0.25s ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+
     &:active {
       color: red;
+      background-color: transparent;
     }
+
     &:hover {
       color: #0d4475;
     }

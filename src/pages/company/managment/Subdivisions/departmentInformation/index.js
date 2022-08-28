@@ -35,7 +35,6 @@ export default function DepartmentInformation() {
   useEffect(() => {
     if (!currentServiceID && !inform.length) {
       const current = data.find((element) => element.idName === +linkId);
-      console.log(current);
       setInform(current.information);
       setDepartamentId(+linkId);
     }

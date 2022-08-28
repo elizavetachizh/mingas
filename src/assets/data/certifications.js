@@ -1,4 +1,4 @@
-export const certifications = [
+export const documents = [
   {
     GeneralId: 1,
     name: 'Сертификаты',
@@ -160,22 +160,16 @@ export const certifications = [
   {
     GeneralId: 18,
     name: 'Аттестаты',
-    inform: [
-      { id: 1, img: '62' },
-    ],
+    inform: [{ id: 1, img: '62' }],
   },
   {
     GeneralId: 19,
     name: 'Аттестаты',
-    inform: [
-      { id: 1, img: '63' },
-    ],
+    inform: [{ id: 1, img: '63' }],
   },
   {
     GeneralId: 20,
     name: 'Аттестаты',
-    inform: [
-      { id: 1, img: '64' },
-    ],
+    inform: [{ id: 1, img: '64' }],
   },
 ];
