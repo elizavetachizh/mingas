@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import video from '../../assets/video/Фильм.mp4';
 import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import {
   ContainerInform,
@@ -13,6 +14,8 @@ import { Container } from '../company/styles';
 import { pressCenter } from '../../assets/data/pressCenterHeader';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalPressCenter from './DopFunctional';
+import ReactPlayer from 'react-player';
+
 export default function PressCenter() {
   const [inform, setInform] = useState('');
   const [currentNewsID, setNewsID] = useState(null);
@@ -59,8 +62,14 @@ export default function PressCenter() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>
-            {/*<video><source src={require('../../assets/video/Фильм.mp4')}/></video>*/}
-            <DopFunctionalPressCenter inform={inform} />
+            {/*<ReactPlayer*/}
+            {/*  className={'react-player'}*/}
+            {/*  light={require('../../assets/png/logo_video.png')}*/}
+            {/*  style={{ margin: '2% auto', backgroundSize: '50%', backgroundRepeat: 'no-repeat' }}*/}
+            {/*  controls*/}
+            {/*  url={video}*/}
+            {/*/>*/}
+            <DopFunctionalPressCenter inform={inform} controls />
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

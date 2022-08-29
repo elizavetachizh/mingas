@@ -35,6 +35,10 @@ export const ContainerInform = styled.div`
   max-width: 980px;
   margin: 4% 2% 0;
   width: 100%;
+  div.react-player {
+    background-size: 50%;
+    background-repeat: no-repeat;
+  }
 `;
 export const General = styled.div`
   border: 1px solid #1b3a91;
