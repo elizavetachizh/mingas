@@ -45,6 +45,7 @@ import Tenders from './components/tenders';
 import ResidentsOfTheCapitalRegion from './components/ResidentsOfTheCapitalRegion';
 import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
+import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 class App extends Component {
   render() {
     return (
@@ -68,7 +69,8 @@ class App extends Component {
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
           <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
-          <Route path="/company/management/:linkId/:subdivisionId" element={<Subdivisions />} />
+          <Route path="/company/management/3/:subdivisionId" element={<Subdivisions />} />
+          <Route path="/company/management/4/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
           <Route path="/services/:cardId" element={<NaturalGas />} />
           <Route path="/services/method-payment" element={<MethodPayment />} />
           <Route path="/company/career/" element={<Career />} />

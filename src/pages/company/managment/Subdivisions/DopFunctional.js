@@ -60,7 +60,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
         <></>
       )}
       {contacts ? (
-        <LinksNetwork style={{ width: '370px' }}>
+        <LinksNetwork>
           <IoIosPin style={{ margin: '0 4%', color: '#0e43af', width: '40px', height: '40px' }} />
           {contacts}
         </LinksNetwork>

@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
-
+import React from 'react';
+import { subdivisions } from './subdivisions';
+import { subdivisionsSUPGN } from './subdivisionsSUPGN';
 export const data = [
   {
     idName: 1,
@@ -615,14 +617,20 @@ export const data = [
             <ul>
               В состав СЭВОГ входит:
               <li>
-                <NavLink to={'/company/management/:linkId/1'}>сервисный центр</NavLink>
+                <NavLink to={`${subdivisions[0].link}`}>сервисный центр</NavLink>
               </li>
               <li>
-                <NavLink to={'/company/management/:linkId/2'}>производственный участок №1</NavLink>
+                <NavLink to={`${subdivisions[1].link}`}>производственный участок №1</NavLink>
               </li>
-              <li> производственный участок №2 </li>
-              <li>производственный участок №3 </li>
-              <li>группа приёмки и пуска газа </li>
+              <li>
+                <NavLink to={`${subdivisions[2].link}`}>производственный участок №2</NavLink>
+              </li>
+              <li>
+                <NavLink to={`${subdivisions[3].link}`}>производственный участок №3</NavLink>
+              </li>
+              <li>
+                <NavLink to={`${subdivisions[4].link}`}>группа приёмки и пуска газа</NavLink>
+              </li>
             </ul>
           </div>
         ),
@@ -636,7 +644,6 @@ export const data = [
         ),
         contacts: (
           <div>
-            {' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
             </a>
@@ -822,18 +829,22 @@ export const data = [
               </li>
               <li>
                 участок организации ремонта и поверки бытовых счетчиков газа службы учета
-                потребленного газа населением{' '}
+                потребленного газа населением
               </li>
             </ul>
             <ul>
-              В состав СУПГН входит:{' '}
+              В состав СУПГН входит:
               <li>
-                участок организации начислений и контроля поступления оплат службы учета
-                потребленного газа населением{' '}
+                <NavLink to={`${subdivisionsSUPGN[0].link}`}>
+                  участок организации начислений и контроля поступления оплат службы учета
+                  потребленного газа населением
+                </NavLink>
               </li>
               <li>
-                участок организации ремонта и поверки бытовых счетчиков газа службы учета
-                потребленного газа населением{' '}
+                <NavLink to={`${subdivisionsSUPGN[1].link}`}>
+                  участок организации ремонта и поверки бытовых счетчиков газа службы учета
+                  потребленного газа населением
+                </NavLink>
               </li>
             </ul>
           </div>

@@ -23,10 +23,16 @@ export const ContainerLeaders = styled.a`
     //outline: 1px solid #0d4475;
     box-shadow: 10px 10px 10px 10px #cccccc, 15px 10px 10px #cccccc;
   }
+  &.for-admission-schedule {
+    margin: 0 auto;
+    text-align: center;
+    p {
+      margin: 0 auto;
+    }
+  }
 `;
 export const ImageLeader = styled.img`
-    width: 70%;
-
+  width: 70%;
 `;
 export const FullNameLeader = styled.p`
   text-align: center;

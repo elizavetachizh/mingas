@@ -33,3 +33,16 @@ export const ContainerOfDocuments = styled.div`
   width: 100%;
   margin: 0 auto;
 `;
+
+export const DivButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+button{
+  border: none;
+  background: none;
+}
+`;

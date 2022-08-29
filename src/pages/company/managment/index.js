@@ -23,6 +23,7 @@ export default function Management() {
     setCurrentLeader(leader);
     setNameId(leader.id);
   }, []);
+  console.log(currentLeader);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);

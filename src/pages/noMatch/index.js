@@ -7,10 +7,10 @@ export default function NoMatch() {
   return (
     <NoMatchContainer>
       <h3>
-          404: The page you are looking for isn’t here
+        Данная страница не была найдена
       </h3>
         <h4>
-            You either tried some shady route or you came here by mistake. Whichever it is, try using the navigation
+            Попробуйте найти что-то другое...
         </h4>
         
     </NoMatchContainer>

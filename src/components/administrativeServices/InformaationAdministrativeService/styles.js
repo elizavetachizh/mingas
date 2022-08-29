@@ -9,13 +9,9 @@ export const Div = styled.div`
   border-radius: 20px;
   margin: 4% auto;
   font-size: 16px;
-  //border: 1px solid #1b3a91;
   p {
     text-align: left;
   }
-  //img{
-  //  margin: 0 25%;
-  //}
   &.shake {
     display: block;
     opacity: 0;
@@ -46,7 +42,7 @@ export const General = styled.div`
   margin: 1rem auto;
   padding: 0;
   width: 90%;
-  img{
+  img {
     text-align: center;
   }
 `;

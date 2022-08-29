@@ -1,18 +1,18 @@
-import { Container } from '../../pages/company/styles';
-import Header from '../header';
-import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
+import { Container } from '../../styles';
+import Header from '../../../../components/header';
+import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 import {
   ContainerInform,
   DivBlocks,
-} from '../administrativeServices/InformaationAdministrativeService/styles';
-import { subdivisions } from '../../assets/data/subdivisions';
-import DopFunctional from '../../pages/company/managment/Subdivisions/DopFunctional';
+} from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
+import DopFunctional from '../Subdivisions/DopFunctional';
 import ScrollToTop from 'react-scroll-up';
-import up from '../../assets/png/up_arrow_round.png';
-import Footer from '../footer';
+import up from '../../../../assets/png/up_arrow_round.png';
+import Footer from '../../../../components/footer';
 import React, { useEffect } from 'react';
+import { subdivisionsSUPGN } from '../../../../assets/data/subdivisionsSUPGN';
 
-export default function Subdivisions() {
+export default function SubdivisionsSUPGN() {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
     <Container>
@@ -20,7 +20,7 @@ export default function Subdivisions() {
       <AdditionalDiv>
         <DivBlocks>
           <ContainerInform>
-            {subdivisions.map((el) => (
+            {subdivisionsSUPGN.map((el) => (
               <DopFunctional
                 name={el.name}
                 contacts={el.contacts}

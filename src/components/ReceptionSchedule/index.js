@@ -1,7 +1,9 @@
-import { Table, Tbody } from '../../pages/feedback/receptionOfCitizens/styles';
+import { Table, Tbody, ContainerTable } from '../../pages/feedback/receptionOfCitizens/styles';
 import React, { useCallback, useState } from 'react';
-import { management } from '../../assets/data/data_management';
 import Modal from '../modalWindow';
+import { admissionSchedule } from '../../assets/data/admissionSchedule';
+import DopFunctionalForColumn from '../../pages/feedback/receptionOfCitizens/DopFunctionalForColumn';
+import { NavLink } from 'react-router-dom';
 
 export default function ReceptionSchedule() {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -12,38 +14,150 @@ export default function ReceptionSchedule() {
     setCurrentLeader(leader);
     setNameId(leader.id);
   }, []);
-  console.log(currentLeader)
-  console.log(nameId)
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
-  const onClick = useCallback(() => {
-    handlerLeaderClick(management);
-    setNameId(management.id);
-    console.log(nameId)
-  }, [handlerLeaderClick]);
+
   return (
-    <>
-      {' '}
+    <ContainerTable>
+      <Table className={'firstColumn'}>
+        <thead style={{ height: '30px', textAlign: 'center' }}>
+          <tr>
+            <th>ФИО</th>
+          </tr>
+        </thead>
+        <Tbody className={'firstColumn'}>
+          {admissionSchedule.map((el) => (
+            <tr>
+              <td>
+                <DopFunctionalForColumn
+                  handlerLeaderClick={handlerLeaderClick}
+                  fullName={el.fullName}
+                  idName={el.id}
+                  leader={el}
+                  position={el.position}
+                />
+              </td>
+            </tr>
+          ))}
+          <tr>
+            <td>
+              <NavLink to={'/company/management/2?id=5'}> Яскевич Виталий Владимирович</NavLink>
+              <br />
+              Начальник производственно-технического управления
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/5?id=24'}>Курленя Виталий Алексеевич</NavLink>
+              <br />
+              Начальник службы заказчика
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/3?id=18'}>Безмен Алексей Валерьевич</NavLink>
+              <br />
+              Начальник Контакт центра
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/3?id=13'}>Рашев Евгений Алексеевич</NavLink>
+              <br />
+              Начальник службы эксплуатации внутридомовых объектов газопотребления
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/2?id=8'}>Краснощекий Яков Александрович</NavLink>
+              <br />
+              Начальник транспортной службы
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/2?id=9'}>Веренич Артем Сергеевич</NavLink>
+              <br />
+              Начальник службы эксплуатации объектов газораспределительной системы
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/3?id=17'}>Пятница Александр Владимирович</NavLink>
+              <br />
+              Начальник службы учета потребленного газа населением
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/7?id=32'}>Белокурский Владимир Петрович</NavLink>
+              <br />
+              Первый заместитель директора - главный инженер сельскохозяйственного филиала «Бубны»
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/7?id=31'}>Молочко Алексей Александрович</NavLink>
+              <br />
+              Директор филиала «Торфобрикетный завод «Сергеевичское»
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/3/2'}> Горбач Марина Владимировна</NavLink>
+              <br />
+              Начальник участка № 1 службы эксплуатации объектов газораспредели-тельной системы
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/3/3'}>Канапацкая Юлия Петровна</NavLink>
+              <br />
+              Начальник участка № 2 службы эксплуатации объектов газораспредели-тельной системы
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/3/4'}>Пашинь Татьяна Владимировна</NavLink>
+              <br /> Начальник участка № 3 службы эксплуатации объектов газораспредели-тельной
+              системы
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/3/2'}> Савченко Александр Константинович</NavLink>
+              <br />
+              Начальник сервисного центра службы эксплуатации объектов газораспределительной системы
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <NavLink to={'/company/management/4/1'}>Казимирчик Татьяна Евгеньевна</NavLink>
+              <br />
+              Начальник участка организации начислений и контроля поступления оплат службы учета
+              потребленного газа населением
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Раковский Евгений Дмитриевич
+              <br />
+              Начальник участка организации ремонта и поверки бытовых счетчиков газа службы учета
+              потребленного газа населением
+            </td>
+          </tr>
+        </Tbody>
+      </Table>
       <Table>
         <thead style={{ height: '30px', textAlign: 'center' }}>
           <tr>
-            <th>
-              ФИО
-              <br />
-              Должность
-            </th>
             <th>График приёма граждан</th>
             <th>Порядок записи на прием</th>
           </tr>
         </thead>
         <Tbody>
           <tr>
-            <td>
-              <a> {management[0].fullName}</a>
-              <br />
-              Генеральный директор УП "Мингаз"
-            </td>
             <td>
               <p>1-я среда месяца 08.00-12.00 каб.113</p>
               <p>3-я среда месяца 16.00-20.00 каб.113</p>
@@ -60,11 +174,6 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              {management[1].fullName}
-              <br />
-              Первый заместитель генерального директора - главный инженер
-            </td>
-            <td>
               <p>2-й вторник месяца 08.00-12.00 каб.230</p>
               <p>4-й вторник месяца 16.00-20.00 каб.230</p>
               <p>Выездной прием – ежеквартально</p>
@@ -80,11 +189,6 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              {management[4].fullName}
-              <br />
-              Заместитель генерального директора
-            </td>
-            <td>
               <p>2-я среда месяца 08.00-12.00 каб.233</p>
               <p>Выездной прием – ежеквартально</p>
             </td>
@@ -95,11 +199,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              {management[3].fullName}
-              <br />
-              Заместитель генерального директора
-            </td>
             <td>1-я среда месяца 08.00-12.00 каб.236</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел.299 29 29</p>
@@ -108,11 +207,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              {management[6].fullName}
-              <br />
-              Заместитель генерального директора
-            </td>
             <td>
               <p>
                 2-я среда месяца 08.00-12.00 <br />
@@ -127,11 +221,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              {management[5].fullName}
-              <br />
-              Заместитель генерального директора
-            </td>
             <td>1-й вторник месяца 08.00-12.00 каб.235</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел.299 28 80</p>
@@ -140,11 +229,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              {management[2].fullName}
-              <br />
-              Заместитель главного инженера
-            </td>
             <td>1-й четверг месяца 08.00-12.00 каб.220</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел. 299 28 69</p>
@@ -153,11 +237,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Яскевич Виталий Владимирович
-              <br />
-              Начальник производственно-технического управления
-            </td>
             <td>1-я среда месяца 08.00-12.00</td>
             <td>
               <p>
@@ -168,11 +247,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Курленя Виталий Алексеевич
-              <br />
-              Начальник службы заказчика
-            </td>
             <td>2-й вторник месяца 16.00-20.00</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел.299 29 18</p>
@@ -181,7 +255,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>Безмен Алексей Валерьевич</td>
             <td>2-я среда месяца 15.00-18.00</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел. 299 28 70</p>
@@ -190,11 +263,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Рашев Евгений Алексеевич
-              <br />
-              Начальник службы эксплуатации внутридомовых объектов газопотребления
-            </td>
             <td>
               <p>2-я среда месяца 08.00-12.00 каб.311</p>
               <p>4-я среда месяца 16.00-20.00 каб.311</p>
@@ -207,11 +275,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Краснощекий Яков Александрович
-              <br />
-              Начальник транспортной службы
-            </td>
             <td>4-я среда месяца 08.00-12.00</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел.512 46 95</p>
@@ -220,11 +283,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Веренич Артем Сергеевич
-              <br />
-              Начальник службы эксплуатации объектов газораспределительной системы
-            </td>
             <td>1-й вторник месяца 08.00-12.00</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел.299 29 42</p>
@@ -233,11 +291,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Пятница Александр Владимирович
-              <br />
-              Начальник службы учета потребленного газа населением
-            </td>
             <td>
               1-я среда месяца 08.00-12.00<p> 3-я среда месяца 16.00-20.00</p>
             </td>
@@ -249,11 +302,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Белокурский Владимир Петрович
-              <br />
-              Первый заместитель директора - главный инженер сельскохозяйственного филиала «Бубны»
-            </td>
             <td>1-я среда месяца 16.00-20.00</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел.8 017 71 23 607</p>
@@ -261,11 +309,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Молочко Алексей Александрович
-              <br />
-              Директор филиала «Торфобрикетный завод «Сергеевичское»
-            </td>
             <td>2-й четверг месяца 08.00-12.00</td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел.8 017 13 20 151</p>
@@ -273,11 +316,6 @@ export default function ReceptionSchedule() {
             </td>
           </tr>
           <tr>
-            <td>
-              Горбач Марина Владимировна
-              <br />
-              Начальник участка № 1 службы эксплуатации объектов газораспредели-тельной системы
-            </td>
             <td>
               2-й четверг месяца 08.00-12.00
               <br />
@@ -296,11 +334,6 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              Канапацкая Юлия Петровна
-              <br />
-              Начальник участка № 2 службы эксплуатации объектов газораспредели-тельной системы
-            </td>
-            <td>
               2-й четверг месяца 08.00-12.00
               <br />
               4-й вторник месяца 16.00-20.00
@@ -318,10 +351,20 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              Савченко Александр Константинович
-              <br />
-              Начальник сервисного центра службы эксплуатации объектов газораспределительной системы
+              2-й вторник месяца 08.00-12.00 <br />
+              4-й вторник месяца 16.00-20.00 <br />
+              ул.Л.Беды,д.8
             </td>
+            <td>
+              <p>Предварительная запись на прием осуществляется по тел. 370 66 15</p>
+              <p>
+                Понедельник-пятница: с 8.00 до 17.00, <br />
+                пятница: с 08.00 до 15.45 <br />
+                обеденный перерыв с 12.00 до 12.45
+              </p>
+            </td>
+          </tr>
+          <tr>
             <td>
               2-й понедельник месяца 08.00-12.00
               <br />
@@ -340,17 +383,9 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              Казимирчик Татьяна Евгеньевна
-              <br />
-              Начальник участка организации начислений и контроля поступления оплат службы учета
-              потребленного газа населением
-            </td>
-            <td>
               2-й вторник месяца 08.00-12.00
               <br />
               4-й вторник месяца 16.00-20.00
-              <br />
-              д.Большой Тростенец, ул.Центральная, 41/1
             </td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел. 299 28 20</p>
@@ -363,17 +398,9 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              Раковский Евгений Дмитриевич
-              <br />
-              Начальник участка организации ремонта и поверки бытовых счетчиков газа службы учета
-              потребленного газа населением
-            </td>
-            <td>
-              2-й вторник месяца 08.00-12.00
+              1-й вторник месяца 08.00-12.00
               <br />
               3-й вторник месяца 16.00-20.00
-              <br />
-              д.Большой Тростенец, ул.Центральная, 41/1
             </td>
             <td>
               <p>Предварительная запись на прием осуществляется по тел. 299 28 20</p>
@@ -389,6 +416,6 @@ export default function ReceptionSchedule() {
       {isModalVisible && (
         <Modal handleCloseCLick={handleCloseCLick} currentLeader={currentLeader} nameId={nameId} />
       )}
-    </>
+    </ContainerTable>
   );
 }

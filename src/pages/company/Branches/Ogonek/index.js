@@ -8,12 +8,7 @@ import React from 'react';
 export default function Ogonek() {
   return (
     <SchemaOfBranches
-      height={'600px'}
-      name={
-        <>
-          Оздровительный комплекс Огонек
-        </>
-      }
+      name={<>Оздровительный комплекс Огонек</>}
       background={background}
       nameDescription={'О нас'}
       description={
@@ -147,7 +142,6 @@ export default function Ogonek() {
               src="https://yandex.by/map-widget/v1/-/CCURZDF7-D"
               width="100%"
               height="400"
-              frameBorder="1"
               allowFullScreen="true"
               style={{ position: 'relative' }}
             />

@@ -25,7 +25,6 @@ export default function SchemaOfBranches({
   products,
   photo,
   inform,
-  height,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
@@ -56,7 +55,7 @@ export default function SchemaOfBranches({
         </Parallax>
       </ContainerParallax>
       <AdditionalDiv style={{ margin: '0 auto 4%' }}>
-        <General style={{ width: '50%', margin: '4% auto' }}>
+        <General style={{ width: '60%', margin: '4% auto' }}>
           <BtnIsOpen onClick={animate}>
             <p style={{ textAlign: 'center', fontSize: '18px' }}>{nameDescription}</p>
             <div>
@@ -72,7 +71,7 @@ export default function SchemaOfBranches({
           </Div>
         </General>
         {products ? (
-          <General style={{ width: '50%', margin: '0 auto 4%' }}>
+          <General style={{ width: '60%', margin: '0 auto 4%' }}>
             {' '}
             <BtnIsOpen onClick={animateClose}>
               <p style={{ textAlign: 'center', fontSize: '18px' }}>{nameProducts}</p>

@@ -325,7 +325,6 @@
 //   );
 // }
 import React, { useCallback, useEffect, useState } from 'react';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Container } from '../../pages/company/styles';
 import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
@@ -334,9 +333,8 @@ import {
   DivBlocks,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { HeaderCompanyDiv } from '../../pages/concats/headerContacts/styles';
-import { BlockBtn, ContainerBtnIcon, DivOpen, Name } from '../administrativeServices/Header/styles';
+import { BlockBtn, ContainerBtnIcon, Name } from '../administrativeServices/Header/styles';
 import DopFunctionalHeader from '../../pages/services/NaturalGas/DopFunctionalHeader';
-import DopFunctional from '../../pages/company/parentOrganizations/DopFunctional';
 import Footer from '../footer';
 import { data } from '../../assets/data/regularyDocuments';
 import ScrollToTop from 'react-scroll-up';
@@ -350,34 +348,20 @@ export default function DepartmentInformation() {
   const [inform, setInform] = useState([]);
   const navigate = useNavigate();
   const [name, setName] = useState('');
-  // const { pathname } = useLocation();
-  // const [searchParams] = useSearchParams();
-  // const id = searchParams.get('id');
-  //
+
   useEffect(() => {
     if (!currentDocumentId && !inform.length) {
       const current = data.find((element) => element.idName === +documentId);
-      console.log(current);
       setInform(current.inform);
       setDocumentId(+documentId);
       setName(current?.separation);
     }
   }, [currentDocumentId, documentId, inform, name]);
-  //
-  // const currentDepartment = useMemo(
-  //   () =>
-  //     inform.filter((department) =>
-  //       id
-  //         ? department.idNameInform === currentServiceID && department.id === +id
-  //         : department.idNameInform === currentServiceID
-  //     ),
-  //
-  //   [inform, id, currentServiceID]
-  // );
+
   const changeDocument = useCallback(
     (documentId) => {
       const current = data.find((element) => element.idName === documentId);
-      setDocumentId(documentId);
+      setDocumentId(currentDocumentId && currentDocumentId === documentId ? '' : documentId);
       setInform(current.inform);
       window.scrollTo(0, 0);
       navigate(`/regulatory-documents/${current.idName}`);

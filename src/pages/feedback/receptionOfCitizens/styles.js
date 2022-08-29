@@ -6,9 +6,9 @@ export const Table = styled.table`
   text-align: left;
   font-size: 18px;
   border-collapse: collapse;
-  td, th {
+  td,
+  th {
     border: 1px solid grey;
-  
   }
   @media (max-width: 900px) {
     font-size: 14px;
@@ -17,6 +17,9 @@ export const Table = styled.table`
   @media (max-width: 550px) {
     width: 100%;
     margin: 0 auto;
+  }
+  &.firstColumn {
+    width: 40%;
   }
 `;
 
@@ -30,7 +33,38 @@ export const Thead = styled.thead`
 
 export const Tbody = styled.tbody`
   color: #314d5c;
+  tr {
+    height: 200px;
+    @media (max-width: 1049px) {
+      height: 250px;
+    }
+    @media (max-width: 1004px) {
+      height: 270px;
+    }
+    @media (max-width: 950px) {
+      height: 300px;
+    }
+    td {
+      height: 200px;
+      @media (max-width: 1390px) {
+        height: 225px;
+      }
+    }
+  }
+  &.firstColumn {
+    tr {
+      td {
+        height: 200px;
+        //@media (max-width: 1390px) {
+        //  height: 225px;
+        //}
+      }
+    }
+  }
 `;
-export const SectionTable = styled.section`
-  margin-bottom: 6%;
+
+export const ContainerTable = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: inherit;
 `;

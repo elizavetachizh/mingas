@@ -22,6 +22,7 @@ import {
 } from '../../../../../components/administrativeServices/Header/styles';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import SearchForDepartments from '../../SearchForDepartments';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
@@ -53,21 +54,14 @@ export default function DepartmentInformation() {
   const changeDepartment = useCallback(
     (departamentId) => {
       const current = data.find((element) => element.idName === departamentId);
-      setDepartamentId(departamentId);
+      setDepartamentId(currentServiceID && currentServiceID === departamentId ? '' : departamentId);
       setInform(current.information);
       window.scrollTo(0, 0);
       navigate(`/company/management/${current.idName}`);
     },
     [currentServiceID, inform]
   );
-  const animate = useCallback(
-    (descriptionID) => {
-      const current = data.find((element) => element.idName === descriptionID);
-      setInform(current.information);
-      setDepartamentId(currentServiceID ? '' : descriptionID);
-    },
-    [currentServiceID]
-  );
+
   const handlerLinkClickUniqueName = useCallback(
     (id) => {
       navigate(`${pathname}?id=${id}`);
@@ -82,6 +76,7 @@ export default function DepartmentInformation() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Наименования подразделений</Name>
+            <SearchForDepartments />
             {data.map((element) => (
               <BlockBtn>
                 <ContainerBtnIcon>
@@ -92,9 +87,9 @@ export default function DepartmentInformation() {
                     key={element.idName}
                   />
                   {currentServiceID === element.idName ? (
-                    <IoIosArrowUp onClick={() => animate(element.idName)} />
+                    <IoIosArrowUp onClick={() => changeDepartment(element.idName)} />
                   ) : (
-                    <IoIosArrowDown onClick={() => animate(element.idName)} />
+                    <IoIosArrowDown onClick={() => changeDepartment(element.idName)} />
                   )}
                 </ContainerBtnIcon>
 

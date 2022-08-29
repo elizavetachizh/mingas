@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { BlockOfGraditude, Container, ContainerGraditude, ContainerOfDocuments } from '../styles';
+import { BlockOfGraditude, Container, ContainerGraditude, ContainerOfDocuments, DivButtons } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
@@ -44,7 +44,6 @@ export default function Documentation() {
   const openImage = useCallback(
     (id) => {
       const current = documents.find((element) => element.GeneralId === id);
-      // setPageNumber(current?.inform[0].id);
       setInform(current?.inform);
       setNumPage(inform?.length);
       setModalVisible(true);
@@ -160,11 +159,14 @@ export default function Documentation() {
                   src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${image}.png`)}
                   alt={''}
                 />
-                <p>
-                  Page {pageNumber} of {numPage}
-                </p>
-                {pageNumber > 1 && <button onClick={changePageBAck}>pre</button>}
-                <button onClick={changePageNext}>next</button>
+                <DivButtons>
+                  {' '}
+                  {pageNumber > 1 && <button onClick={changePageBAck}>Предыдущая</button>}
+                  <p>
+                    Страница {pageNumber} из {numPage}
+                  </p>
+                  <button onClick={changePageNext}>Следующая</button>
+                </DivButtons>
               </InformModal>
             </ModalWindowOpenAndClose>
           </ModalWindow>

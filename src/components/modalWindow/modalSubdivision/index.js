@@ -13,6 +13,7 @@ export default function ModalSubdivision({ links, linksId }) {
     },
     [links, linksId]
   );
+  console.log(links);
   return (
     <Container>
       {links.map((link) => (

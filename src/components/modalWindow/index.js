@@ -15,9 +15,7 @@ export default function Modal({ handleCloseCLick, currentLeader, nameId }) {
           <img alt={''} src={require(`../../assets/management/${currentLeader.cardImg}.jpg`)} />
           <p>{currentLeader.fullName}</p>
           <p>{currentLeader.position}</p>
-
-         <strong>
-           Курируемые направления:</strong>
+          <strong>Курируемые направления:</strong>
           <ModalSubdivision linksId={nameId} links={currentLeader.links} />
         </InformModal>
       </ModalWindowOpenAndClose>

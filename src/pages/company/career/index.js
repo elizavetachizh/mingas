@@ -4,7 +4,7 @@ import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { Helmet } from 'react-helmet';
-import { DivForm, ContainerForLinkToWork } from './styles';
+import { DivForm } from './styles';
 import up from '../../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
@@ -15,7 +15,6 @@ import {
   Div,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
-import { DescriptionService } from '../../services/DopFunction/styles';
 import { LinksNetwork } from '../../../components/footer/styles';
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
@@ -46,7 +45,7 @@ export default function Career() {
       <TitleForHome color={'blue'} infoTitle={'Работа в РУП “Мингаз”'}></TitleForHome>
       <AdditionalDiv>
         <DivForm className="form-div">
-          <BtnIsOpen style={{ width: '50%', margin: '4% auto' }}  onClick={animate}>
+          <BtnIsOpen style={{ width: '50%', margin: '4% auto' }} onClick={animate}>
             <p>Полезная информация:</p>
             <div>
               {isOpen ? (
@@ -56,7 +55,7 @@ export default function Career() {
               )}
             </div>
           </BtnIsOpen>
-          <Div style={{ width: '50%', margin: '4% auto' }}  className={isOpen && `shake`}>
+          <Div style={{ width: '50%', margin: '4% auto' }} className={isOpen && `shake`}>
             <p>
               При приеме на работу предлагаем заполнить{' '}
               <a download href={anketa}>
@@ -92,23 +91,35 @@ export default function Career() {
               минут) в пятницу с 8 часов 00 минут до 15 часов 45 минут (обеденный перерыв с 12 часов
               00 минут до 12 часов 45 минут)
             </p>
-            <LinksNetwork>
+
+            <LinksNetwork
+              style={{ left: '0', margin: '0 0 2%' }}
+              // style={{ width: '51%' }}
+            >
               <IoMdClock
-                style={{ margin: '0 4%', color: '#0e43af', width: '35px', height: '35px' }}
+                style={{ margin: '0 4%', color: '#0e43af', width: '40px', height: '40px' }}
               />
               <div>
-                График работы: <br />
-                понедельник-четверг: 8:00 – 17:00 <br />
-                пятница: 8:00 – 15:45 <br />
-                перерыв: 12.00 – 12.45
+                График работы:
+                <br /> понедельник-четверг: 8:00 – 17:00,
+                <br />
+                пятница: 8:00 – 15:45 перерыв: 12.00 – 12.45
               </div>
             </LinksNetwork>
-            <LinksNetwork style={{ width: '51%' }}>
+            <LinksNetwork
+              style={{ left: '0', margin: '0' }}
+              // style={{ width: '51%' }}
+            >
               <IoIosPin
                 style={{ margin: '0 4%', color: '#0e43af', width: '40px', height: '40px' }}
               />
               <div>
-                Телефон: <a href={'tel:8017-299-29-36'}>8017-299-29-36</a>,<br />
+                Телефон:{' '}
+                <a href={'tel:8017-299-29-36'}>
+                  <br />
+                  8017-299-29-36
+                </a>
+                ,<br />
                 <a href={'tel:8017-299-28-62'}>8017-299-28-62</a> <br />
                 Адрес:{' '}
                 <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">

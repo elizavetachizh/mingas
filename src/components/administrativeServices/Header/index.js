@@ -4,6 +4,7 @@ import { data } from '../../../assets/data/dataNavLinkAdministrativeServices';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import SearchForDepartments from "../../../pages/company/managment/SearchForDepartments";
 
 export default function HeaderAdministrativeServices() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function HeaderAdministrativeServices() {
     (serviceID) => {
       const current = data.find((element) => element.serviceID === serviceID);
       navigate(`/services/administrative-services/${current.serviceID}`);
-      setServiceID(currentServiceID ? '' : serviceID);
+      setServiceID(currentServiceID && currentServiceID === serviceID ? '' : serviceID);
       setLinks(current.links);
     },
     [currentServiceID]
@@ -27,17 +28,11 @@ export default function HeaderAdministrativeServices() {
 
     [pathname]
   );
-  const animate = useCallback(
-    (serviceID) => {
-      const current = data.find((element) => element.serviceID === serviceID);
-      setLinks(current.links);
-      setServiceID(currentServiceID ? '' : serviceID);
-    },
-    [currentServiceID]
-  );
+
   return (
     <HeaderCompanyDiv>
       <Name>Административные процедуры</Name>
+        <SearchForDepartments />
       {data.map((el) => (
         <BlockBtn>
           <ContainerBtnIcon>
@@ -49,9 +44,9 @@ export default function HeaderAdministrativeServices() {
               {el.serviceName}
             </Button>
             {currentServiceID === el.serviceID ? (
-              <IoIosArrowUp onClick={() => animate(el.serviceID)} />
+              <IoIosArrowUp onClick={() => handlerLinkClick(el.serviceID)} />
             ) : (
-              <IoIosArrowDown onClick={() => animate(el.serviceID)} />
+              <IoIosArrowDown onClick={() => handlerLinkClick(el.serviceID)} />
             )}
           </ContainerBtnIcon>
           <DivOpen className={currentServiceID === el.serviceID && `shake`}>
