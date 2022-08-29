@@ -14,8 +14,12 @@ export const DivSelect = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
-  @media(max-width: 640px){
+  @media (max-width: 640px) {
     width: 530px;
+    margin: 1.5rem auto 0;
+  }
+  @media (max-width: 350px) {
+    width: 280px;
     margin: 1.5rem auto 0;
   }
 `;

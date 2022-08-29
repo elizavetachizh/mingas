@@ -10,6 +10,8 @@
 body {
   margin: 0;
   width: 100%;
+  overflow-x:hidden
+  /*overflow: hidden;*/
 }
 @media (min-width: 1600px) {
   body {
@@ -20,6 +22,12 @@ body {
 @media (min-width: 2000px) {
   body {
     width: 80%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 320px) {
+  body {
+    width: 100%;
     margin: 0 auto;
   }
 }

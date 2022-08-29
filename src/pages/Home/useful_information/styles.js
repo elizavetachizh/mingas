@@ -9,9 +9,9 @@ export const DivUsefulInform = styled.div`
   margin: 0 auto;
   align-items: center;
   //box-shadow: 0 11px 6px -11px rgba(0, 0, 0, 0.3);
-  @media (max-width: 640px) {
-    width: 650px;
-  }
+  //@media (max-width: 640px) {
+  //  width: 650px;
+  //}
 `;
 
 export const DivInform = styled.div`

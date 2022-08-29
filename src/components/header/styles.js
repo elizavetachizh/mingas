@@ -30,7 +30,7 @@ const HeaderBackgroundColor = {
 
 export const Container = styled.div`
   display: flex;
-
+  min-width: 320px;
   //width: 100%;
   a,
   p,
@@ -88,6 +88,7 @@ export const MenuClose = styled.div`
 `;
 export const Background = styled.div`
   width: 100%;
+  min-width: 320px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0 0 20px 20px;
   z-index: 5;

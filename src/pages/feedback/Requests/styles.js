@@ -15,6 +15,10 @@ export const Form = styled.form`
     width: 100%;
     max-width: 100%;
   }
+  @media (max-width: 350px) {
+    width: 350px;
+    max-width: 100%;
+  }
 `;
 
 export const DivApplication = styled.div`
