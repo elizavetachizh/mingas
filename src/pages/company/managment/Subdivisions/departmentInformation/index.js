@@ -95,7 +95,9 @@ export default function DepartmentInformation() {
 
                 <DivOpen className={currentServiceID === element.idName && `shake`}>
                   {inform.map((link) => (
-                    <button onClick={() => handlerLinkClickUniqueName(link.id)}>{link.name}</button>
+                    <button onClick={() => handlerLinkClickUniqueName(link.id)} className={'shake'}>
+                      {link.name}
+                    </button>
                   ))}
                 </DivOpen>
               </BlockBtn>

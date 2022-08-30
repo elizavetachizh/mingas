@@ -45,6 +45,19 @@ export default function Career() {
       <TitleForHome color={'blue'} infoTitle={'Работа в РУП “Мингаз”'}></TitleForHome>
       <AdditionalDiv>
         <DivForm className="form-div">
+          <div style={{ width: '500px' }}>
+            {' '}
+            <script
+              className="hh-script"
+              src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
+            ></script>
+            <Helmet>
+              <script
+                className="hh-script"
+                src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
+              ></script>
+            </Helmet>
+          </div>
           <BtnIsOpen style={{ width: '50%', margin: '4% auto' }} onClick={animate}>
             <p>Полезная информация:</p>
             <div>
@@ -128,19 +141,6 @@ export default function Career() {
               </div>
             </LinksNetwork>
           </Div>
-          <div style={{ width: '500px' }}>
-            {' '}
-            <script
-              className="hh-script"
-              src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
-            ></script>
-            <Helmet>
-              <script
-                className="hh-script"
-                src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
-              ></script>
-            </Helmet>
-          </div>
         </DivForm>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

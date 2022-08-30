@@ -269,7 +269,7 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-28-36'}>8017-299-28-36</a>,{' '}
+            Телефон: <a href={'tel:8017-299-28-36'}>8017-299-28-36</a>,<br/>
             <a href={'tel:8017-299-29-38'}>8017-299-29-38</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
@@ -507,7 +507,7 @@ export const data = [
               </li>
             </ul>
             <ul>
-              В состав СНКИИТД входит:
+              В состав СНКИиТД входит:
               <li>участок неразрушающего контроля, измерений и технической диагностики (УНКиТД)</li>
               <li>участок электрофизических измерений (УЭФИ)</li>
             </ul>
@@ -525,7 +525,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-299-28-46'}>8017-299-28-46</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая,
+              г. Минск, ул. Ботаническая 11,
             </a>
           </div>
         ),
@@ -586,7 +586,7 @@ export const data = [
             Телефон: <a href={'tel:104'}>104</a>,<br />{' '}
             <a href={'tel:8017-299-29-08'}>8017-299-29-08</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-              г. Минск, ул. Ботаническая, 11 (1 подъезд)
+              г. Минск, ул. Ботаническая, 11
             </a>
           </div>
         ),
@@ -647,6 +647,7 @@ export const data = [
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
             </a>
+            Телефон: <a href={'tel:8017-299-28-29'}>8017-299-28-29</a> <br />
           </div>
         ),
       },
@@ -1310,8 +1311,19 @@ export const data = [
             </ul>
           </div>
         ),
-        contacts: '',
-        schedule: '',
+        contacts: (
+          <div>
+            <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
+              г. Минск, ул. Ботаническая, 11
+            </a>
+          </div>
+        ),
+        schedule: (
+          <div>
+            График работы: <br />
+            круглосуточно без выходных и перерывов
+          </div>
+        ),
       },
       {
         id: 27,
@@ -1427,6 +1439,10 @@ export const data = [
         contacts: (
           <div>
             Телефон: <a href={'tel:8017-544-31-71'}>8017-544-31-71</a>
+            Адрес:{' '}
+            <a href={'https://yandex.by/maps/-/CCUVMRwdCB'} target="_blank" rel="noreferrer">
+              Минский р-н, ждановичский сельсовет, 54 корпус 2
+            </a>
           </div>
         ),
       },

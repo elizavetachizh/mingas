@@ -64,14 +64,10 @@ export const DivOpen = styled.div`
     transition: all 0.25s ease;
     outline: none;
     -webkit-tap-highlight-color: transparent;
-
-    &:active {
-      color: red;
-      background-color: transparent;
-    }
-
-    &:hover {
+    &.shake {
       color: #0d4475;
+      font-weight: bold;
+      text-decoration-line: underline;
     }
   }
 `;

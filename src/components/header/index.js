@@ -112,7 +112,7 @@ export default function Header({ backgroundHeader }) {
               </DivPhone>
               <ContainerElements>
                 {' '}
-                <PersonalAccButton href={'https://service.mingas.by:5200/'}>
+                <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
                   {/*{navbar ? (*/}
                   {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />*/}
                   {/*) : (*/}
@@ -209,7 +209,9 @@ export default function Header({ backgroundHeader }) {
                     Обращение юридических лиц
                   </ButtonLink>
                   <ButtonLink to="/tenders">Тендеры</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
+                  <ButtonLink to={'/feedback/question-answer/1'}>
+                    Часто задаваемые вопросы
+                  </ButtonLink>
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                     Административные процедуры
                   </ButtonLink>

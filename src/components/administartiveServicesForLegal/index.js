@@ -11,8 +11,8 @@ import {
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Table, Tbody, Thead } from '../../pages/feedback/receptionOfCitizens/styles';
-import TitleFun from "../title";
-import { Container } from "../../pages/company/styles";
+import TitleFun from '../title';
+import { Container } from '../../pages/company/styles';
 
 export default function AdministartiveServicesForLegal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,90 +33,8 @@ export default function AdministartiveServicesForLegal() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
-        <TitleFun
-          color={'blue'}
-          infoTitle={'Административные услуги для юридических лиц'}
-        />
+        <TitleFun color={'blue'} infoTitle={'Административные услуги для юридических лиц'} />
         <div style={{ width: '100%', margin: '8% auto' }}>
-          {' '}
-          <ContainerInformAboutService>
-            <h3>
-              1. Выдача заключения о соответствии принимаемого в эксплуатацию объекта строительства
-              разрешительной и проектной документации (в части энергетической безопасности) (п.
-              3.9.7)
-            </h3>
-            <p>
-              Максимальный срок осуществления административной процедуры:
-              <strong>5 рабочих дней</strong>
-            </p>
-            <p>
-              Срок действия справки, другого документа (решения), выдаваемых (принимаемого) при
-              осуществлении административной процедуры: <strong>бессрочно</strong>
-            </p>
-            <p>
-              Размер платы, взимаемой при осуществлении административной процедуры:
-              <strong>бесплатно</strong>
-            </p>
-            <BtnIsOpen  style={{margin: '4% auto'}} onClick={animate}>
-              <p>Документы и (или) сведения для осуществления административной процедуры: </p>
-              <div>
-                {isOpen ? (
-                  <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
-                ) : (
-                  <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
-                )}
-              </div>
-            </BtnIsOpen>
-            <Div className={isOpen && `shake`}>
-              <ul>
-                <li>заявление;</li>
-                <li>проектная документация.</li>
-              </ul>
-            </Div>
-            <BtnIsOpen onClick={animateClose}>
-              <p>Контактная информация: </p>{' '}
-              <div>
-                {isClose ? (
-                  <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
-                ) : (
-                  <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
-                )}
-              </div>
-            </BtnIsOpen>
-            <Div className={isClose && `shake`}>
-              <h4>УП «Мингаз»</h4>
-              <Table>
-                <Thead>
-                  <tr>
-                    <th>Должность, ФИО лица ответственного за прием заявлений</th>
-                    <th>Номер телефона </th>
-                    <th>Время приема</th>
-                  </tr>
-                </Thead>
-                <Tbody>
-                  <tr>
-                    <td>
-                      заместитель главного инженера
-                      <br />
-                      Сазанчук А.Л.
-                    </td>
-                    <td>
-                      тел. 299-28-42,
-                      <br />
-                      каб. 220.
-                    </td>
-                    <td>
-                      8:00-17:00 (пн.-чт.) <br />
-                      8:00-15:45 (пт.)
-                      <br />
-                      обед: 12:00-13:00
-                    </td>
-                  </tr>
-                </Tbody>
-              </Table>
-            </Div>
-            <hr />
-          </ContainerInformAboutService>
           <ContainerInformAboutService>
             <h3>
               1.2. Выдача разрешения на право производства ремонтных, строительных и земляных работ
@@ -142,7 +60,7 @@ export default function AdministartiveServicesForLegal() {
               Размер платы, взимаемой при осуществлении административной процедуры:
               <strong>бесплатно</strong>
             </p>
-            <BtnIsOpen  style={{margin: '4% auto'}} onClick={animate}>
+            <BtnIsOpen style={{ margin: '4% auto' }} onClick={animate}>
               <p>Документы и (или) сведения для осуществления административной процедуры: </p>
               <div>
                 {' '}
@@ -212,8 +130,6 @@ export default function AdministartiveServicesForLegal() {
             <hr />
           </ContainerInformAboutService>
         </div>
-
-        {/*</ContainerInform>*/}
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
