@@ -15,6 +15,9 @@ import { t } from 'i18next';
 import next from '../../../assets/png/next.png';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
+import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from '../styles';
+import SearchPage from '../../../pages/SearchPage';
+import Language from '../language';
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBtn, setIsOpenBtn] = useState(false);
@@ -39,6 +42,24 @@ export default function MobileNavigation() {
   };
   return (
     <LinksContainer>
+      <ContainerElements style={{ display: 'block' }}>
+        {' '}
+        <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
+          {/*{navbar ? (*/}
+          {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />*/}
+          {/*) : (*/}
+          {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />*/}
+          {/*)}*/}
+          <IoMdContacts className={'icon'} />
+          {/*<DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>*/}
+        </PersonalAccButton>
+        <SearchPage />
+        <Language />
+          <IoMdEyeOffs
+            className={'icon'}
+            href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
+          />
+      </ContainerElements>
       <Dropdown>
         <DivBlocksHeader>
           {' '}

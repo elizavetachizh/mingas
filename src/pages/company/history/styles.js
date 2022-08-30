@@ -11,7 +11,7 @@ export const DivTextPhoto = styled.div`
     margin: 0 auto;
   }
   @media (max-width: 600px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0 auto;
     text-align: center;
     max-width: 100%;
@@ -23,16 +23,19 @@ export const DivText = styled.div`
   width: 50%;
   font-size: 18px;
   color: #0d4475;
-  @media (max-width: 600px) {
-    width: 100%;
-    margin: 0 auto;
-  }
+  
   p {
     text-indent: 25px;
     text-align: left;
   }
   @media (max-width: 850px) {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  @media (max-width: 600px) {
+    width: 96%;
+    margin: 0 auto;
   }
 `;
 
@@ -47,6 +50,7 @@ export const ImageDiv = styled.img`
   @media (max-width: 600px) {
     width: 50%;
     margin: 0 auto;
+    float: none;
   }
 `;
 

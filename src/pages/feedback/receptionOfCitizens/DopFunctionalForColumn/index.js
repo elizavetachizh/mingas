@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { BlockForAdmissionSchedule } from './styles';
 
 export default function DopFunctionalForColumn({
   fullName,
@@ -11,10 +12,10 @@ export default function DopFunctionalForColumn({
     handlerLeaderClick(leader);
   }, [handlerLeaderClick, leader]);
   return (
-    <p onClick={onClick} className={'for-admission-schedule'}>
+    <BlockForAdmissionSchedule onClick={onClick} >
       <p style={{ display: 'none' }}>{idName}</p>
-      <p>{fullName}</p>
+      <>{fullName}</>
       <p>{position}</p>
-    </p>
+    </BlockForAdmissionSchedule>
   );
 }

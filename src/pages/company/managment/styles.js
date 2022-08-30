@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const DivLeadersPhotoPosition = styled.div`
-  margin: 50px;
   display: grid;
+  margin: 0 auto;
+  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  grid-gap: 20px;
-  @media (max-width: 400px) {
-    margin: 0;
+  @media (max-width: 578px) {
+    display: flex;
+    flex-direction: column;
   }
 `;

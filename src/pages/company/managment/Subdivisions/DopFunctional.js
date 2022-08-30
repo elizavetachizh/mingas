@@ -4,7 +4,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/i
 import {
   General,
   BtnIsOpen,
-  Div,
+  Div, IoIosArrowUps, IoIosArrowDowns, IoMdClocks, IoIosPins,
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
@@ -38,9 +38,9 @@ export default function DopFunctional({ name, photo, chief, description, contact
             <p>Основные задачи:</p>
             <div>
               {isOpen ? (
-                <IoIosArrowUp style={{ color: '#0e43af', margin: '36% 0' }} />
+                <IoIosArrowUps />
               ) : (
-                <IoIosArrowDown style={{ color: '#0e43af', margin: '36% 0' }} />
+                <IoIosArrowDowns />
               )}
             </div>
           </BtnIsOpen>
@@ -53,7 +53,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
       )}
       {schedule ? (
         <LinksNetwork>
-          <IoMdClock style={{ margin: '0 4%', color: '#0e43af', width: '35px', height: '35px' }} />
+          <IoMdClocks  />
           {schedule}
         </LinksNetwork>
       ) : (
@@ -61,7 +61,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
       )}
       {contacts ? (
         <LinksNetwork>
-          <IoIosPin style={{ margin: '0 4%', color: '#0e43af', width: '40px', height: '40px' }} />
+          <IoIosPins />
           {contacts}
         </LinksNetwork>
       ) : (

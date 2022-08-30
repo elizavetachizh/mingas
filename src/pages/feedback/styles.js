@@ -5,15 +5,18 @@ export const HeaderBtnFeedback = styled.div`
   padding: 2%;
   display: flex;
   flex-direction: column;
-  //max-width: 29%;
   background: linear-gradient(to bottom right, #3d6990 50%, #3d6990 50%, 60%, #0d4475);
   height: fit-content;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  @media (max-width: 950px) {
+    margin: 0 auto;
+    width: 64%;
+    text-align: center;
+  }
   @media (max-width: 700px) {
     margin: 0 auto;
-    width: 90%;
-    //max-width: 500px;
+    width: 70%;
     text-align: center;
   }
 `;
@@ -50,6 +53,9 @@ export const Button = styled.button`
   @media (max-width: 700px) {
     text-align: center;
   }
+  @media (max-width: 464px) {
+   font-size: 16px;
+  }
 `;
 
 export const ButtonForms = styled.div`
@@ -57,7 +63,7 @@ export const ButtonForms = styled.div`
   flex-direction: row;
   width: 90%;
   margin: 2% auto;
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
     flex-direction: column;
   }
 `;

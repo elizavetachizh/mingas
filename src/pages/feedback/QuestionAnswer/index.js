@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from '../../styles';
 import Header from '../../../components/header';
 import HeaderFeedBack from '../HeaderFeedBack';
 import Footer from '../../../components/footer';
@@ -9,6 +8,7 @@ import minsk from '../../../assets/background/minsk.jpg';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import Menu from './Menu';
+import { Container } from '../../company/styles';
 const styled = {
   background: `url(${minsk}) no-repeat`,
   backgroundSize: 'cover',

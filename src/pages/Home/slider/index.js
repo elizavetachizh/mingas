@@ -1,13 +1,14 @@
 import React from 'react';
-import { Main, WindowDiv } from './styles';
+import { Main, WindowDiv, BackgroundContainer } from './styles';
 import Carousel, { autoplayPlugin, Dots } from '@brainhubeu/react-carousel';
 import './styles.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
 import ButtonFun from '../../../components/button';
 import phone from '../../../assets/png/PhoneFour.png';
-import worker from '../../../assets/png/master.png';
 import { Trans, useTranslation } from 'react-i18next';
-import dayOfGas from '../../../assets/png/dayOfGas.jpg'
+import dayOfGas from '../../../assets/png/dayOfGas2.jpg';
+import { Parallax } from 'react-parallax';
+import imageContent from '../../../assets/background/mingas_background(2).jpg';
 // export default function CarouselFun() {
 //   const { t, i18n } = useTranslation();
 //   return (
@@ -58,32 +59,33 @@ import dayOfGas from '../../../assets/png/dayOfGas.jpg'
 
 export default class CarouselFun extends React.Component {
   // const { t, i18n } = useTranslation();
+
   constructor() {
     super();
 
     this.state = {
       value: 0,
       slides: [
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <BackgroundContainer
+            src={imageContent}
+          />
+          <DivText className={'phone'}>
+            <DivInformAbout>
+              <Text>
+                {/*<Trans i18nKey="description:part1"></Trans>*/}
+                Добро пожаловать на сайт <br />
+                производственного республиканского <br />
+                унитарного предприятия “МИНГАЗ”
+              </Text>
+            </DivInformAbout>
+            <a className={'phone'} href={'tel:162'}>
+              <img src={phone} alt={''} />
+            </a>
+          </DivText>
+        </div>,
         <DivText>
-          <DivInformAbout>
-            {/*<Text>*/}
-            {/*  <Trans i18nKey="description:part1"></Trans>*/}
-            {/*</Text>*/}
-          </DivInformAbout>
-          <a href={'tel:162'}>
-            <img src={phone} alt={''} />
-          </a>
-        </DivText>,
-        <DivText>
-          <DivInformAbout>
-            {/*<Text>{t('description:part2')}</Text>*/}
-            {/*<ButtonFun*/}
-            {/*  href={'/Press-Center'}*/}
-            {/*  backgroundColor={'blue'}*/}
-            {/*  infoButton={t('infoButton:more')}*/}
-            {/*/>*/}
-          </DivInformAbout>
-          <a href={''}>
+          <a className={'day-of-gas'} href={''}>
             <img src={dayOfGas} alt={''} />
           </a>
         </DivText>,
@@ -101,9 +103,9 @@ export default class CarouselFun extends React.Component {
       <Main>
         <WindowDiv>
           <Carousel
-              value={this.state.value}
-              slides={this.state.slides}
-              onChange={this.onchange}
+            value={this.state.value}
+            slides={this.state.slides}
+            onChange={this.onchange}
             // plugins={[
             //   'infinite',
             //   {
@@ -115,9 +117,12 @@ export default class CarouselFun extends React.Component {
             // ]}
             // animationSpeed={2000}
           ></Carousel>
-            <Dots value={this.state.value} onChange={this.onchange} number={this.state.slides.length} />
+          <Dots
+            value={this.state.value}
+            onChange={this.onchange}
+            number={this.state.slides.length}
+          />
         </WindowDiv>
-
       </Main>
     );
   }

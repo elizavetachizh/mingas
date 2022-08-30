@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { NavLink } from 'react-router-dom';
 export const Table = styled.table`
   width: 100%;
   margin: 0 auto;
@@ -58,6 +58,14 @@ export const Tbody = styled.tbody`
         //@media (max-width: 1390px) {
         //  height: 225px;
         //}
+      }
+    }
+  }
+  &.general {
+    tr {
+      height: fit-content;
+      td{
+        height: fit-content;
       }
     }
   }

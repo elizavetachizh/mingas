@@ -15,7 +15,7 @@ export const ParallaxDivInter = styled.div`
 export const ParallaxD = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  @media (max-width: 640px) {
-    width: 650px;
-  }
+  //@media (max-width: 640px) {
+  //  width: 650px;
+  //}
 `

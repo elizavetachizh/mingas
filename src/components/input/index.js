@@ -4,7 +4,6 @@ import { Input } from './styles';
 const divStyle = {
   margin: '0',
   width: '100%',
-  textAlign: 'center',
 };
 export default function InputName({
   error,
@@ -15,7 +14,7 @@ export default function InputName({
   placeholder,
 }: InputProps): JSX.Element {
   return (
-    <div style={divStyle}>
+    <div>
       <Input
         type={type}
         name={inputName}

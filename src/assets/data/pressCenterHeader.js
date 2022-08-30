@@ -34,7 +34,6 @@ export const pressCenter = [
           height="315"
           src="https://www.youtube.com/embed/cBJcdXWlgV4"
           title="YouTube video player"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
@@ -54,7 +53,8 @@ export const pressCenter = [
               <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
             </a>
           </Article>
-          <Article className={'quarter'}
+          <Article
+            className={'quarter'}
             style={{
               backgroundImage: `url('${gradient}')`,
             }}
@@ -77,7 +77,8 @@ export const pressCenter = [
               </p>
             </a>
           </Article>
-          <Article className={'quarter'}
+          <Article
+            className={'quarter'}
             style={{
               backgroundImage: `url('${gradient}')`,
             }}

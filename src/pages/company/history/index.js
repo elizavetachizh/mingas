@@ -13,7 +13,7 @@ import history_9 from '../../../assets/history/9.png';
 import history_10 from '../../../assets/history/11.png';
 import { PWithImg, ImgBackground, BlockImage } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
-import { Container } from '../../styles';
+import {Container} from "../styles";
 
 export default function History() {
   useEffect(() => {

@@ -33,8 +33,8 @@ export default function GeneralInform() {
         <Row>
           <HeaderConcats />
           <ContactsInform>
-            <Table style={{ height: '100%', margin: 'auto 0' }}>
-              <Tbody>
+            <Table>
+              <Tbody className={'general'}>
                 <tr>
                   <td style={styleTd}>Адрес</td>
                   <td>220037, г.Минск, ул.Ботаническая, 11/1</td>

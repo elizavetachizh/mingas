@@ -20,6 +20,8 @@ import GlobalStyle, {
   DivFirstHeader,
   Div104,
   DivPhone,
+  IoMdEyeOffs,
+  IoMdContacts,
 } from './styles';
 import HeaderLogoBlue from '../../assets/png/logoBlue.png';
 import next from '../../assets/png/next.png';
@@ -32,7 +34,6 @@ import { Trans, useTranslation } from 'react-i18next';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
-import { IoMdContact, IoMdEyeOff } from 'react-icons/io';
 const styleMenu = {
   width: '30px',
   height: '30px',
@@ -95,7 +96,7 @@ export default function Header({ backgroundHeader }) {
                 {/*  )}*/}
                 {/*</LinkLogo>*/}
                 <LinkLogo to="/">
-                  <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogoBlue} />
+                  <Logo src={HeaderLogoBlue} />
                 </LinkLogo>
                 <Div104>
                   <div>
@@ -118,20 +119,19 @@ export default function Header({ backgroundHeader }) {
                   {/*) : (*/}
                   {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />*/}
                   {/*)}*/}
-                  <IoMdContact style={{ width: '36px', height: '36px' }} color={'#0d4475'} />
+                  <IoMdContacts className={'icon'} />
                   {/*<DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>*/}
                 </PersonalAccButton>
                 <SearchPage />
                 <Language />
                 {navbar ? (
-                  <IoMdEyeOff
-                    color={'#0d4475'}
-                    style={{ width: '40px', height: '40px' }}
+                  <IoMdEyeOffs
+                    className={'icon'}
                     href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
                   />
                 ) : (
-                  <IoMdEyeOff
-                    style={{ width: '40px', height: '40px' }}
+                  <IoMdEyeOffs
+                    className={'icon'}
                     href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
                   />
                 )}

@@ -2,9 +2,9 @@ import React, { useCallback, useRef } from 'react';
 import { GoogleMap } from '@react-google-maps/api';
 import { DivMap } from './styles';
 import { defaultTheme } from './styles';
-import { Container } from '../../pages/styles';
 import CurrentLocationMarker from './CurrentLocationMarker';
 import Marker from './Marker';
+import {Container} from "../../pages/company/styles";
 const containerStyle = {
   width: '100%',
   height: '100%',

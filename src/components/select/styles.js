@@ -10,16 +10,14 @@ export const SelectDiv = styled.select`
 `;
 
 export const DivSelect = styled.div`
-  width: 98%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  margin-top: 1.5rem;
+  margin: 1.5rem auto 0;
   @media (max-width: 640px) {
-    width: 530px;
-    margin: 1.5rem auto 0;
+    //width: 530px;
   }
   @media (max-width: 350px) {
     width: 280px;
-    margin: 1.5rem auto 0;
   }
 `;

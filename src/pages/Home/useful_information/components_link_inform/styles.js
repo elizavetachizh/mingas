@@ -14,6 +14,14 @@ export const ContentLink = styled(NavLink)`
     //увеличение масштаба
     transform: scale(1.1);
   }
+  div {
+    img {
+      @media (max-width: 646px) {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  }
 `;
 export const TextLink = styled.p`
   font-weight: 400;

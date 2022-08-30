@@ -8,42 +8,40 @@ export const Container = styled.div`
   padding-bottom: 40px;
   color: #fff;
   align-items: center;
-  @media (max-width: 640px) {
-    width: 650px;
-  }
-`;
-
-export const DivInform = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-direction: column;
 `;
 
 export const DivDown = styled.div`
-  font-style: normal;
   font-size: 18px;
   width: 100%;
   display: grid;
   text-align: center;
-  z-index: 4;
   justify-content: center;
   grid-template-columns: 300px 300px;
-  grid-template-rows: 300px 300px;
-  margin: auto;
+  grid-template-rows: 300px;
+  margin: 0 auto;
   @media (max-width: 1190px) {
     grid-template-columns: 250px 250px;
-    grid-template-rows: 250px 250px;
+    grid-template-rows: 250px;
   }
   @media (max-width: 990px) {
     grid-template-columns: 300px;
-    grid-template-rows: 300px 300px;
+    grid-template-rows: 300px;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 596px) {
     grid-template-columns: 250px;
-    grid-template-rows: 250px 250px;
+    grid-template-rows: none;
+  }
+  @media (max-width: 486px) {
+    grid-template-columns: 220px;
+    grid-template-rows: none;
+  }
+  @media (max-width: 422px) {
+    grid-template-columns: 200px;
+    grid-template-rows: none;
+  }
+  @media (max-width: 392px) {
+    grid-template-columns: 180px;
+    grid-template-rows: none;
   }
 `;
 export const ServicesDiv = styled.div`
@@ -51,7 +49,6 @@ export const ServicesDiv = styled.div`
   display: flex;
   padding-bottom: 20px;
   justify-content: space-between;
-  z-index: 4;
 `;
 export const BackgroundStyle = styled.img`
   position: absolute;

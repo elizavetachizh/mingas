@@ -20,4 +20,8 @@ export const Select = styled.div`
       box-shadow: none;
     }
   }
+  @media (max-width: 500px) {
+    font-size: 14px;
+    width: 40px;
+  }
 `;

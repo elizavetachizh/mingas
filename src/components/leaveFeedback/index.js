@@ -1,12 +1,10 @@
-import { Container } from '../../pages/styles';
 import Header from '../header';
 import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import TitleFun from '../title';
-import { Div } from '../administrativeServices/InformaationAdministrativeService/styles';
-import { DivInput } from '../formQuestion/styles';
 import { ContainerLinks } from '../../pages/company/parentOrganizations/styles';
+import {Container} from "../../pages/company/styles";
 
 export default function LeaveFeedback() {
   const [data, setData] = useState([]);

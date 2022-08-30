@@ -31,6 +31,7 @@ export default function ReceptionSchedule() {
             <tr>
               <td>
                 <DopFunctionalForColumn
+
                   handlerLeaderClick={handlerLeaderClick}
                   fullName={el.fullName}
                   idName={el.id}

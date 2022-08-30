@@ -33,10 +33,17 @@ export const Title = styled.h2`
     margin-top: 16%;
   }
   @media (max-width: 640px) {
-    font-size: 24px;
+    font-size: 28px;
+    margin-top: 18%;
   }
   @media (max-width: 500px) {
-    margin-top: 20%;
+    margin-top: 26%;
   }
+  @media (max-width: 400px) {
+    margin-top: 30%;
+  }
+  //@media (max-width: 500px) {
+  //  margin-top: 20%;
+  //}
   // ${({ fontSize }) => titleFontSize[fontSize]}
 `;

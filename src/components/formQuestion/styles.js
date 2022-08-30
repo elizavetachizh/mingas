@@ -10,7 +10,7 @@ export const Form = styled.form`
 export const DivInput = styled.div`
   display: flex;
   width: 90%;
-  margin: 2% 0;
+  margin: 2% auto;
   flex-direction: column;
   @media (max-width: 640px) {
     text-align: center;

@@ -12,9 +12,6 @@ export const Contacts = styled.div`
     align-items: center;
     text-align: center;
   }
-  @media (max-width: 640px) {
-    width: 650px;
-  }
 `;
 
 export const LinksNetwork = styled.div`

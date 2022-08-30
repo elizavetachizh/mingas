@@ -32,10 +32,16 @@ export const Button = styled(NavLink)`
   margin: 2% auto;
   z-index: 2;
   cursor: pointer;
-  @media (max-width:950px) {
+  @media (max-width: 950px) {
     width: 250px;
     font-size: 16px;
   }
+  @media (max-width: 596px) {
+    width: 200px;
+  }
+  @media (max-width: 480px) {
+    width: 170px;
+    height: 40px;
+  }
   ${({ backgroundColor }) => buttonBackgroundColor[backgroundColor]}
- 
 `;

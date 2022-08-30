@@ -5,7 +5,7 @@ export const Div = styled.div`
   position: absolute;
   z-index: 5;
   background-color: #0c76e8;
-  width: auto;
+  //width: auto;
   height: fit-content;
   a {
     text-decoration: none;

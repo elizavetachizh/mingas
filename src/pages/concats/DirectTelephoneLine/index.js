@@ -1,6 +1,5 @@
 import React from 'react';
 import { AdditionalDiv, PageSection } from '../GeneralContactInform/styles';
-import { Container } from '../../styles';
 import Header from '../../../components/header';
 import { Row } from '../styles';
 import HeaderConcats from '../headerContacts';
@@ -8,6 +7,7 @@ import Footer from '../../../components/footer';
 import { styleTd } from '../GeneralContactInform';
 import TitleFun from '../../../components/title';
 import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
+import {Container} from "../../company/styles";
 
 export default function PhoneLineServices() {
   return (
@@ -19,7 +19,7 @@ export default function PhoneLineServices() {
           <HeaderConcats />
           <PageSection>
             <Table style={{ height: '100%', margin: 'auto 0' }}>
-              <Tbody>
+              <Tbody className={'general'}>
                 <tr>
                   <td style={styleTd}>Контакт-центр УП «МИНГАЗ»</td>
                   <td>162</td>

@@ -12,8 +12,8 @@ export const Form = styled.form`
     width: 70%;
   }
   @media (max-width: 640px) {
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   @media (max-width: 350px) {
     width: 350px;

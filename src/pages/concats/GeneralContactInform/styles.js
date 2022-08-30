@@ -3,18 +3,12 @@ import styled from 'styled-components';
 export const AdditionalDiv = styled.div`
   margin: 12% auto 4%;
   max-width: 1440px;
-  text-align: left; a{
-  text-decoration: none;
-}
-  @media (max-width: 1500px) {
-    margin: 14% auto 4% auto;
+  text-align: left;
+  a {
+    text-decoration: none;
   }
-  @media (max-width: 670px) {
-    margin: 20% auto 4% auto;
-    width: 640px;
-  }
-  @media (max-width: 570px) {
-    margin: 24% 0;
+  @media(max-width: 900px){
+    margin-top: 104px;
   }
 `;
 

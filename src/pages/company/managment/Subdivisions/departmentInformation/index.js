@@ -34,7 +34,7 @@ export default function DepartmentInformation() {
   const id = searchParams.get('id');
 
   useEffect(() => {
-    if (!currentServiceID && !inform.length) {
+    if ((!inform.length || !inform) && !currentServiceID) {
       const current = data.find((element) => element.idName === +linkId);
       setInform(current.information);
       setDepartamentId(+linkId);
@@ -45,8 +45,8 @@ export default function DepartmentInformation() {
     () =>
       inform.filter((department) =>
         id
-          ? department.idNameInform === currentServiceID && department.id === +id
-          : department.idNameInform === currentServiceID
+          ? department.idNameInform === +currentServiceID && department.id === +id
+          : department.idNameInform === +currentServiceID
       ),
 
     [inform, id, currentServiceID]
@@ -54,12 +54,12 @@ export default function DepartmentInformation() {
   const changeDepartment = useCallback(
     (departamentId) => {
       const current = data.find((element) => element.idName === departamentId);
+      navigate(`/company/management/${current.idName}`);
       setDepartamentId(currentServiceID && currentServiceID === departamentId ? '' : departamentId);
       setInform(current.information);
       window.scrollTo(0, 0);
-      navigate(`/company/management/${current.idName}`);
     },
-    [currentServiceID, inform]
+    [currentServiceID]
   );
 
   const handlerLinkClickUniqueName = useCallback(
@@ -69,6 +69,7 @@ export default function DepartmentInformation() {
     },
     [pathname]
   );
+    console.log(currentDepartment)
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -95,7 +96,11 @@ export default function DepartmentInformation() {
 
                 <DivOpen className={currentServiceID === element.idName && `shake`}>
                   {inform.map((link) => (
-                    <button onClick={() => handlerLinkClickUniqueName(link.id)} className={'shake'}>
+                    <button
+                      onClick={() => handlerLinkClickUniqueName(link.id)}
+                      key={link.id}
+                      className={'shake'}
+                    >
                       {link.name}
                     </button>
                   ))}
@@ -106,6 +111,7 @@ export default function DepartmentInformation() {
           <ContainerInform>
             {currentDepartment.map((el) => (
               <DopFunctional
+                  key={el.name}
                 name={el.name}
                 contacts={el.contacts}
                 schedule={el.schedule}

@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { IoMdContact, IoMdEyeOff } from 'react-icons/io';
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: 'Play', sans-serif;
@@ -31,7 +32,7 @@ const HeaderBackgroundColor = {
 export const Container = styled.div`
   display: flex;
   min-width: 320px;
-  //width: 100%;
+  width: 100%;
   a,
   p,
   select,
@@ -114,6 +115,7 @@ export const Background = styled.div`
   }
   @media (min-width: 1600px) {
     width: 90%;
+    margin: 0 auto;
   }
   @media (min-width: 2000px) {
     width: 80%;
@@ -134,8 +136,12 @@ export const BackgroundText = styled.div`
 export const LinkLogo = styled(NavLink)``;
 
 export const Logo = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  @media (max-width: 646px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -164,12 +170,17 @@ export const LinksContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 19px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
   @media (max-width: 1140px) {
     font-size: 14px;
   }
   @media (max-width: 1022px) {
     font-size: 13px;
+  }
+  @media (max-width: 990px) {
+    font-size: 12px;
   }
   @media (max-width: 990px) {
     font-size: 12px;
@@ -273,6 +284,9 @@ export const DivFirstHeader = styled.div`
   //padding: 12px 0 0;
   //margin: 12px auto;
   border-bottom: 1px solid rgba(204, 204, 204, 0.8);
+  @media (max-width: 900px) {
+    border-bottom: none;
+  }
 `;
 
 export const DivColumn = styled.div`
@@ -291,22 +305,29 @@ export const DivPhone = styled.div`
   @media (max-width: 900px) {
     width: 50%;
   }
-  @media (max-width: 674px) {
-    width: 56%;
+  @media (max-width: 640px) {
+    width: 80%;
+    justify-content: right;
   }
 `;
 
-export const ContainerElements = styled.div`  
+export const ContainerElements = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 12px 0;
   justify-content: space-around;
   width: 20%;
-  @media(max-width:900px ){
+  @media (max-width: 900px) {
     width: 30%;
   }
-\`;`;
+  @media (max-width: 1020px) {
+    width: 32%;
+  }
+  @media (max-width: 640px) {
+    display: none;
+  }
+`;
 export const Div104 = styled.div`
   display: flex;
   flex-direction: column;
@@ -355,6 +376,9 @@ export const Div104 = styled.div`
       @media (max-width: 1038px) {
         font-size: 3rem;
       }
+      @media (max-width: 500px) {
+        font-size: 2.4rem;
+      }
     }
     &.opacity {
       background: #0d4475;
@@ -364,12 +388,6 @@ export const Div104 = styled.div`
       }
     }
   }
-
-  //@media (max-width: 975px) {
-  //  p {
-  //    font-size: 0.8rem;
-  //  }
-  //}
   @media (max-width: 780px) {
     p,
     a {
@@ -383,7 +401,6 @@ export const Div104 = styled.div`
     }
   }
   @media (max-width: 720px) {
-    //padding: 0;
     p,
     a {
       margin: 0;
@@ -391,8 +408,18 @@ export const Div104 = styled.div`
   }
 `;
 
-export const DivPersonalAcc = styled.div`
-  @media (max-width: 900px) {
-    display: none;
+export const IoMdContacts = styled(IoMdContact)`
+  width: 46px;
+  height: 46px;
+  @media (max-width: 760px) {
+    width: 36px;
+  }
+`;
+
+export const IoMdEyeOffs = styled(IoMdEyeOff)`
+  width: 46px;
+  height: 46px;
+  @media (max-width: 760px) {
+    width: 36px;
   }
 `;

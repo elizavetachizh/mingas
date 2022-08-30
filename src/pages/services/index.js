@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import Header from '../../components/header';
 import { data } from '../../assets/data/data_services';
-import ServicesList from './servicesList';
 import Footer from '../../components/footer';
 import { Container } from '../company/styles';
 import up from '../../assets/png/up_arrow_round.png';

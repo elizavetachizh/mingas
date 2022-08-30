@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
 const opacityAnimation = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -90,4 +91,30 @@ export const BtnIsOpen = styled.div`
 export const ContainerInformAboutService = styled.div`
   margin: 1rem auto;
   max-width: 980px;
+`;
+
+export const IoIosArrowUps = styled(IoIosArrowUp)`
+  color: #0e43af;
+  width: 24px;
+  height: 24px;
+  margin: 30% auto;
+`;
+
+export const IoIosArrowDowns = styled(IoIosArrowDown)`
+  color: #0e43af;
+  width: 24px;
+  margin: 30% auto;
+  height: 24px;
+`;
+
+export const IoMdClocks = styled(IoMdClock)`
+  color: #0e43af;
+  width: 35px;
+  height: 35px;
+`;
+
+export const IoIosPins = styled(IoIosPin)`
+  color: #0e43af;
+  width: 35px;
+  height: 35px;
 `;
