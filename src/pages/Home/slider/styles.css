@@ -195,19 +195,21 @@
 .BrainhubCarousel__dots .BrainhubCarousel__dot:before {
   content: '';
   display: block;
-  width: 5px;
-  height: 5px;
+  width: 10px !important;
+  height: 10px !important;
   border-radius: 50%;
   padding: 0;
-  border: none;
+  border: 1px solid #cccc !important;
+  color: #cccc !important;
 }
 .BrainhubCarousel__dots .BrainhubCarousel__thumbnail {
   outline: 0;
   padding: 10px;
-  border: none;
   opacity: 0.5;
   font-size: 0;
   cursor: pointer;
+  border: 1px solid #cccc !important;
+  color: #cccc !important;
 }
 .BrainhubCarousel__dots .BrainhubCarousel__thumbnail.BrainhubCarousel__thumbnail--selected {
   opacity: 1 !important;

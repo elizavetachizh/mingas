@@ -49,7 +49,9 @@ export const DivText = styled.div`
   }
   a.phone {
     margin-bottom: -130px;
-
+    @media (max-width: 3000px) {
+      margin-bottom: -200px;
+    }
     @media (min-width: 2400px) {
       margin-bottom: -270px;
     }
@@ -57,13 +59,19 @@ export const DivText = styled.div`
       margin-bottom: -200px;
     }
     @media (max-width: 2150px) {
-      margin-bottom: -150px;
+      margin-bottom: -176px;
+    }
+    @media (max-width: 1890px) {
+      margin-bottom: -156px;
     }
     @media (max-width: 1750px) {
       margin-bottom: -100px;
     }
     @media (max-width: 1550px) {
-      margin-bottom: -94px;
+      margin-bottom: -108px;
+    }
+    @media (max-width: 1315px) {
+      margin-bottom: -120px;
     }
     @media (max-width: 1060px) {
       margin-bottom: -84px;
