@@ -18,6 +18,7 @@ import Select from '../../../../components/select';
 import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
 import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';
 import TitleFun from '../../../../components/title';
+import SubTitleFun from "../../../../components/SubTitle";
 
 export default function ApplicationForRepairOfGasUsingEquipment() {
   const {
@@ -33,7 +34,6 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
   } = UseForRepairOfGasUsingEquipment();
   return (
     <DivApplication>
-      <TitleFun color={'blue'} infoTitle={'Заявка на ремонт газоиспользующего оборудования'} />
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>

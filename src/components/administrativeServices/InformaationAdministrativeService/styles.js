@@ -34,7 +34,7 @@ export const ContainerInform = styled.div`
   flex-direction: column;
   border-radius: 30px;
   max-width: 980px;
-  margin: 4% 2% 0;
+  margin: 0 auto;
   width: 100%;
   div.react-player {
     background-size: 50%;
@@ -117,4 +117,59 @@ export const IoIosPins = styled(IoIosPin)`
   color: #0e43af;
   width: 35px;
   height: 35px;
+`;
+
+export const BlockSearch = styled.div`
+  width: 50%;
+  margin: 2% auto 0;
+`;
+export const SearchService = styled.button`
+  background: none;
+  border: none;
+  align-items: center;
+  color: #0d4475;
+  font-size: 16px;
+  justify-content: space-around;
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  flex-direction: row;
+`;
+
+export const ContainerFormSearchForService = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  form {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    input {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      margin: 0;
+      background: none;
+      width: 100%;
+    }
+  }
+`;
+
+export const BlockSearchService = styled.div`
+  color: #0d4475;
+  div {
+    margin: 2% auto;
+    color: #0d4475;
+    a {
+      color: #0d4475;
+    }
+    a:hover {
+      color: #0d4475;
+    }
+    a:active {
+      color: #0d4475;
+    }
+  }
 `;

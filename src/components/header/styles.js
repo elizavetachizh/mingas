@@ -45,6 +45,7 @@ export const Container = styled.div`
   top: 0;
   color: #0d4475;
   z-index: 5;
+  //filter: blur(2px) brightness(0.8);
   margin: 0 auto;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
   .opacity {
@@ -67,7 +68,7 @@ export const Menu = styled.div`
   button {
     color: white;
   }
-  margin-top: 25px;
+  margin-top: 16px;
   display: none;
   cursor: pointer;
   background: rgba(0, 0, 0, 0);
@@ -100,17 +101,14 @@ export const Background = styled.div`
   color: #0d4475;
   position: fixed;
   top: 0;
-  //.opacity {
-  //  background-color: rgba(200, 220, 231, 0%);
-  //  color: #0d4475;
-  //}
   .click {
     display: block;
   }
   @media (max-width: 900px) {
-    background-color: rgba(200, 220, 231, 80%);
-    height: 100px;
+    background-color: rgba(200, 220, 231, 40%);
+    backdrop-filter: blur(50px);
     display: flex;
+    height: 80px;
     flex-direction: row;
   }
   @media (min-width: 1600px) {
@@ -122,7 +120,7 @@ export const Background = styled.div`
   }
 `;
 export const BackgroundText = styled.div`
-  max-width: 1300px;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   z-index: 5;
@@ -142,6 +140,14 @@ export const Logo = styled.img`
     width: 60px;
     height: 60px;
   }
+  @media (max-width: 645px) {
+    width: 54px;
+    height: 54px;
+  }
+  @media (max-width: 424px) {
+    width: 46px;
+    height: 46px;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -152,8 +158,8 @@ export const ButtonsContainer = styled.div`
   margin: 4px 0;
   height: fit-content;
   align-items: end;
-  justify-content: space-around;
-  //width: 100%;
+  justify-content: space-between;
+  width: 100%;
   @media (max-width: 1140px) {
     font-size: 17px;
   }
@@ -305,9 +311,15 @@ export const DivPhone = styled.div`
   @media (max-width: 900px) {
     width: 50%;
   }
+  @media (max-width: 673px) {
+    width: 56%;
+  }
   @media (max-width: 640px) {
-    width: 80%;
-    justify-content: right;
+    width: 60%;
+    justify-content: left;
+  }
+  @media (max-width: 540px) {
+    width: 64%;
   }
 `;
 
@@ -334,7 +346,7 @@ export const Div104 = styled.div`
   text-align: center;
   cursor: pointer;
   text-decoration: none;
-  width: 30%;
+  width: 34%;
   @media (max-width: 1249px) {
     width: 40%;
   }
@@ -342,7 +354,10 @@ export const Div104 = styled.div`
     width: 50%;
   }
   @media (max-width: 674px) {
-    width: 60%;
+    width: 64%;
+  }
+  @media (max-width: 674px) {
+    width: 68%;
   }
   &:hover {
     transform: scale(1.1);
@@ -355,6 +370,15 @@ export const Div104 = styled.div`
     font-weight: bold;
     @media (max-width: 1144px) {
       margin: 2px auto;
+    }
+    @media (max-width: 788px) {
+      font-size: 0.8rem;
+    }
+    @media (max-width: 512px) {
+      font-size: 0.6rem;
+    }
+    @media (max-width: 424px) {
+      margin: 0;padding: 0;
     }
   }
   div {
@@ -376,8 +400,13 @@ export const Div104 = styled.div`
       @media (max-width: 1038px) {
         font-size: 3rem;
       }
-      @media (max-width: 500px) {
+      @media (max-width: 540px) {
         font-size: 2.4rem;
+      }
+      @media (max-width: 424px) {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0;
       }
     }
     &.opacity {
@@ -386,24 +415,6 @@ export const Div104 = styled.div`
       a {
         color: white;
       }
-    }
-  }
-  @media (max-width: 780px) {
-    p,
-    a {
-      margin: 0;
-    }
-    p {
-      font-size: 0.8rem;
-    }
-    a {
-      font-size: 1rem;
-    }
-  }
-  @media (max-width: 720px) {
-    p,
-    a {
-      margin: 0;
     }
   }
 `;

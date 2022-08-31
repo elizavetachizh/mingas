@@ -46,6 +46,8 @@ export const Image = styled.img`
   margin: 0 auto;
   color: #314d5c;
   max-width: 100%;
+  width: 76px;
+  height: 76px;
 `;
 
 export const DivInformService = styled.div`

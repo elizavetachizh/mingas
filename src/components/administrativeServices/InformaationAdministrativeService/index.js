@@ -1,74 +1,133 @@
-import { useParams, useSearchParams } from 'react-router-dom';
-import React, { useEffect, useMemo, useState } from 'react';
+import { NavLink, useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { data } from '../../../assets/data/dataInformAdministrativeService';
 import DopFunctional from './DopFunctional';
 import Header from '../../header';
 import Footer from '../../footer';
 import { AdditionalDiv } from '../../../pages/concats/GeneralContactInform/styles';
-import HeaderAdministrativeServices from '../Header';
-import { DivBlocks, ContainerInform } from './styles';
+import {
+  DivBlocks,
+  ContainerInform,
+  BlockSearch,
+  SearchService,
+  ContainerFormSearchForService,
+  BlockSearchService,
+} from './styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
-import { Name } from '../Header/styles';
 import { Container } from '../../../pages/company/styles';
-import useMediaQuery from '../../../pages/Home/parallax/useMediaQuery';
+import { IoIosSearch, IoMdClose } from 'react-icons/io';
+import { useLocation, useNavigate } from 'react-router';
 
 export default function InformationAdministrativeService() {
-  const isPhone = useMediaQuery('(max-width: 820px)');
-  const { serviceID } = useParams();
+  const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const linkId = searchParams.get('linkId');
-  const [title, setTitle] = useState('');
-  const currentDepartment = useMemo(
-    () =>
-      data.filter((department) =>
-        linkId
-          ? department.serviceID === +serviceID && department.linkId === +linkId
-          : department.serviceID === +serviceID
-      ),
-    [data, serviceID, linkId]
-  );
+  const [info, setInfo] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    const current = data.find((element) => element.serviceID === +serviceID);
-    setTitle(current.serviceName);
-  }, [serviceID]);
+    if (linkId) {
+      const currentBlockInfo = data?.filter((blockInfo) => blockInfo.linkId === +linkId);
+      setInfo(currentBlockInfo);
+    } else {
+      setInfo(data);
+    }
+  }, [data, linkId]);
+  const [isForm, setIsForm] = useState(false);
+  const handleForm = () => {
+    setIsForm(true);
+    if (isForm) {
+      setIsForm(false);
+    }
+  };
+  const [message, setMessage] = useState('');
+  const result = [];
+
+  const handleChange = (event) => {
+    setMessage(event.target.value);
+  };
+  {
+    data.map((card) => {
+      if (card.uniqueName.includes(message)) {
+        result.push(card);
+      }
+    });
+  }
+
+  const renderResult = () => {
+    return (
+      <BlockSearchService>
+        {result.length ? (
+          result.map((element) => {
+            return (
+              <div>
+                {' '}
+                <NavLink
+                  style={{ margin: '20px auto' }}
+                  to={`${pathname}?linkId=${element.linkId}`}
+                >
+                  {element.uniqueName}
+                </NavLink>
+              </div>
+            );
+          })
+        ) : (
+          <p>К сожалению, такой процедуры найти не удалось</p>
+        )}
+      </BlockSearchService>
+    );
+  };
+  const handleInsideClick = (event: MouseEvent) => {
+    event.stopPropagation();
+    setIsForm(false);
+    setMessage('');
+    setInfo(data);
+    navigate('/services/administrative-services');
+  };
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
+        <BlockSearch>
+          {isForm ? (
+            <IoIosSearch style={{ display: 'none' }} />
+          ) : (
+            <SearchService onClick={() => handleForm()}>
+              <p>Поиск по административным услугам</p>
+              <IoIosSearch
+                style={{ height: '30px', width: '30px' }}
+                color={'#0d4475'}
+                type={'submit'}
+              />
+            </SearchService>
+          )}
+          {isForm && (
+            <ContainerFormSearchForService>
+              <form action={'search'}>
+                <input
+                  placeholder="Введите название административной процедуры"
+                  onChange={handleChange}
+                  type={'text'}
+                />
+                <IoMdClose style={{ width: '60px' }} color={'black'} onClick={handleInsideClick} />
+              </form>
+            </ContainerFormSearchForService>
+          )}
+          {message && renderResult()}
+        </BlockSearch>
         <DivBlocks>
-          <HeaderAdministrativeServices />
           <ContainerInform>
-            {serviceID && <Name>{title}</Name>}
-            {isPhone ? (
-              <>
-                {data.map((el) => (
-                  <DopFunctional
-                    key={el.uniqueName}
-                    uniqueName={el.uniqueName}
-                    maximumImplementationPeriod={el.maximumImplementationPeriod}
-                    certificateValidityPeriod={el.certificateValidityPeriod}
-                    boardSize={el.boardSize}
-                    documents={el.documents}
-                    contactInform={el.contactInform}
-                  />
-                ))}
-              </>
-            ) : (
-              <>
-                {currentDepartment.map((el) => (
-                  <DopFunctional
-                    key={el.uniqueName}
-                    uniqueName={el.uniqueName}
-                    maximumImplementationPeriod={el.maximumImplementationPeriod}
-                    certificateValidityPeriod={el.certificateValidityPeriod}
-                    boardSize={el.boardSize}
-                    documents={el.documents}
-                    contactInform={el.contactInform}
-                  />
-                ))}
-              </>
-            )}
+            {info.map((el) => (
+              <DopFunctional
+                key={el.uniqueName}
+                uniqueName={el.uniqueName}
+                maximumImplementationPeriod={el.maximumImplementationPeriod}
+                certificateValidityPeriod={el.certificateValidityPeriod}
+                boardSize={el.boardSize}
+                documents={el.documents}
+                contactInform={el.contactInform}
+              />
+            ))}
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

@@ -7,7 +7,7 @@ export const links = [
   },
   {
     id: 2,
-    link: '/services/administrative-services/1',
+    link: '/services/administrative-services',
     name: 'Административные процедуры',
     cardImg: 5,
   },

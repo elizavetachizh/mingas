@@ -7,9 +7,6 @@ export const DivServices = styled.div`
   flex-wrap: wrap;
   margin: 10% auto;
   justify-content: center;
-  @media (max-width: 550px) {
-    width: 550px;
-  }
 `;
 
 export const ButtonLink = styled(NavLink)`

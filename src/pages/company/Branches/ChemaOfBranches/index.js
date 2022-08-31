@@ -44,7 +44,7 @@ export default function SchemaOfBranches({
     <Container>
       <Header backgroundHeader={'border'} />
       <ContainerParallax>
-        <Parallax style={{ height: '550px' }} bgImage={background} strength={-200}>
+        <Parallax style={{ height: '450px' }} bgImage={background} strength={-200}>
           <Main style={{ margin: '8% auto 0' }}>
             <WindowDiv>
               <DivText>
@@ -55,7 +55,7 @@ export default function SchemaOfBranches({
         </Parallax>
       </ContainerParallax>
       <AdditionalDiv style={{ margin: '0 auto 4%' }}>
-        <General style={{ width: '60%', margin: '4% auto' }}>
+        <General style={{ width: '60%', margin: '2% auto 4%' }}>
           <BtnIsOpen onClick={animate}>
             <p style={{ textAlign: 'center', fontSize: '18px' }}>{nameDescription}</p>
             <div>

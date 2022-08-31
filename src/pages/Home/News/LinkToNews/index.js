@@ -8,9 +8,9 @@ export default function LinkNews({ cardImg, cardDate, cardLink, cardDesc }) {
       style={{
         backgroundImage: `url('${gradient}')`,
       }}
-      to={cardLink}
+      href={cardLink}
     >
-      <img src={require(`../../../../assets/photo_news/${cardImg}.png`)} />
+      <img src={{cardImg}} />
       <DateLink>{cardDate}</DateLink>
       <DescLink>{cardDesc}</DescLink>
     </DivNews>

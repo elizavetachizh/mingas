@@ -64,6 +64,7 @@ export const FormSearch = styled.form`
     font-size: 1.3rem;
     line-height: 80px;
     padding: 0 16px 2px;
+    outline: none;
     margin: 0;
     background: none;
     width: 100%;

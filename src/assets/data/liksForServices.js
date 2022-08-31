@@ -5,7 +5,7 @@ export const links = [
     idService: 1,
     imgService: 4,
     nameService: 'Административные процедуры',
-    linkService: '/services/administrative-services/1',
+    linkService: '/services/administrative-services',
   },
   {
     idService: 2,

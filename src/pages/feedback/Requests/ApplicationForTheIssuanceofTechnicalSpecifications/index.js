@@ -35,7 +35,6 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
 
   return (
     <DivApplication>
-      <SubTitleFun color={'blue'} infoTitle={'Заявка на выдачу ТУ'} />
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>

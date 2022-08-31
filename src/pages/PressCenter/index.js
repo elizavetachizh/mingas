@@ -39,7 +39,6 @@ export default function PressCenter() {
     },
     [currentNewsID]
   );
-  console.log(inform);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

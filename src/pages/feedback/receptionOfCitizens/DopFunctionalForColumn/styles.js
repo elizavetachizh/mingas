@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 export const BlockForAdmissionSchedule = styled.div`
   cursor: pointer;
+  color: #0d4475;
   &:hover {
-    transform: scale(1.1);
-    transition: transform 0.8s;
+    text-decoration-line: underline;
   }
 `;

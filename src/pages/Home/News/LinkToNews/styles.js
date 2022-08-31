@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const DivNews = styled(NavLink)`
+export const DivNews = styled.a`
   display: flex;
   flex-direction: column;
   text-decoration: none;

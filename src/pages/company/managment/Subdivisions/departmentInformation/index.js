@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Header from '../../../../../components/header';
 import { data } from '../../../../../assets/data/data_department';
 import DopFunctional from '../DopFunctional';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { NavLink, useParams, useSearchParams } from 'react-router-dom';
 import { Container } from '../../../styles';
 import { AdditionalDiv } from '../../../../concats/GeneralContactInform/styles';
 import Footer from '../../../../../components/footer';
@@ -11,6 +11,9 @@ import up from '../../../../../assets/png/up_arrow_round.png';
 import {
   DivBlocks,
   ContainerInform,
+  SearchService,
+  ContainerFormSearchForService,
+  BlockSearchService,
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { HeaderCompanyDiv } from '../../../../concats/headerContacts/styles';
 import DopFunctionalHeader from '../../../../services/NaturalGas/DopFunctionalHeader';
@@ -21,8 +24,7 @@ import {
   Name,
 } from '../../../../../components/administrativeServices/Header/styles';
 import { useLocation, useNavigate } from 'react-router';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import SearchForDepartments from '../../SearchForDepartments';
+import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
@@ -32,7 +34,8 @@ export default function DepartmentInformation() {
   const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
-
+  // const [info, setInfo] = useState([]);
+  // const currentSearch = useMemo(() => data.find((element) => element.idName === +linkId), []);
   useEffect(() => {
     if ((!inform.length || !inform) && !currentServiceID) {
       const current = data.find((element) => element.idName === +linkId);
@@ -55,7 +58,7 @@ export default function DepartmentInformation() {
     (departamentId) => {
       const current = data.find((element) => element.idName === departamentId);
       navigate(`/company/management/${current.idName}`);
-      setDepartamentId(currentServiceID && currentServiceID === departamentId ? '' : departamentId);
+      setDepartamentId(departamentId);
       setInform(current.information);
       window.scrollTo(0, 0);
     },
@@ -69,7 +72,63 @@ export default function DepartmentInformation() {
     },
     [pathname]
   );
-    console.log(currentDepartment)
+  //
+  // useEffect(() => {
+  //   if (id && message !== '') {
+  //     const currentBlockInfo = currentDepartment.filter((blockInfo) => blockInfo.id === +id);
+  //     setInfo(currentBlockInfo);
+  //   } else {
+  //     setInfo(currentDepartment);
+  //   }
+  // }, [currentSearch, id, currentDepartment]);
+  //
+  // const [isForm, setIsForm] = useState(false);
+  // const handleForm = () => {
+  //   setIsForm(true);
+  //   if (isForm) {
+  //     setIsForm(false);
+  //   }
+  // };
+  // const [message, setMessage] = useState('');
+  // const result = [];
+  //
+  // const handleChange = (event) => {
+  //   setMessage(event.target.value);
+  // };
+  // {
+  //   currentDepartment.map((card) => {
+  //     if (card.name.includes(message)) {
+  //       result.push(card);
+  //     }
+  //   });
+  // }
+
+  // const renderResult = () => {
+  //   return (
+  //     <BlockSearchService>
+  //       {result.length ? (
+  //         result.map((element) => {
+  //           return (
+  //             <div>
+  //               <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
+  //                 {element.name}
+  //               </NavLink>
+  //             </div>
+  //           );
+  //         })
+  //       ) : (
+  //         <p>К сожалению, такой процедуры найти не удалось</p>
+  //       )}
+  //     </BlockSearchService>
+  //   );
+  // };
+  // const handleInsideClick = (event: MouseEvent) => {
+  //   event.stopPropagation();
+  //   setIsForm(false);
+  //   setMessage('');
+  //   setInfo(currentDepartment);
+  //   navigate('/company/management/1');
+  // };
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -77,7 +136,35 @@ export default function DepartmentInformation() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Наименования подразделений</Name>
-            <SearchForDepartments />
+            {/*{isForm ? (*/}
+            {/*  <IoIosSearch style={{ display: 'none' }} />*/}
+            {/*) : (*/}
+            {/*  <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>*/}
+            {/*    <p>Поиск по административным услугам</p>*/}
+            {/*    <IoIosSearch*/}
+            {/*      style={{ height: '30px', width: '30px' }}*/}
+            {/*      color={'#0d4475'}*/}
+            {/*      type={'submit'}*/}
+            {/*    />*/}
+            {/*  </SearchService>*/}
+            {/*)}*/}
+            {/*{isForm && (*/}
+            {/*  <ContainerFormSearchForService style={{ margin: '4% auto' }}>*/}
+            {/*    <form action={'search'}>*/}
+            {/*      <input*/}
+            {/*        placeholder="Введите название отдела"*/}
+            {/*        onChange={handleChange}*/}
+            {/*        type={'text'}*/}
+            {/*      />*/}
+            {/*      <IoMdClose*/}
+            {/*        style={{ width: '60px' }}*/}
+            {/*        color={'black'}*/}
+            {/*        onClick={handleInsideClick}*/}
+            {/*      />*/}
+            {/*    </form>*/}
+            {/*  </ContainerFormSearchForService>*/}
+            {/*)}*/}
+            {/*{message && renderResult()}*/}
             {data.map((element) => (
               <BlockBtn>
                 <ContainerBtnIcon>
@@ -99,7 +186,7 @@ export default function DepartmentInformation() {
                     <button
                       onClick={() => handlerLinkClickUniqueName(link.id)}
                       key={link.id}
-                      className={'shake'}
+                      className={+id === +link.id ? 'shake' : ''}
                     >
                       {link.name}
                     </button>
@@ -111,7 +198,7 @@ export default function DepartmentInformation() {
           <ContainerInform>
             {currentDepartment.map((el) => (
               <DopFunctional
-                  key={el.name}
+                key={el.name}
                 name={el.name}
                 contacts={el.contacts}
                 schedule={el.schedule}

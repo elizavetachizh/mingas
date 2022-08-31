@@ -38,7 +38,6 @@ export default function ApplicationForVerificationOfGasMeters() {
   } = useRequestForVerificationOfGasMeters();
   return (
     <>
-      <SubTitleFun infoTitle={'Заявка на поверку счетчиков газа'} color={'blue'} />
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>
@@ -99,86 +98,86 @@ export default function ApplicationForVerificationOfGasMeters() {
             error={address && errors.address}
           />
         </DivInput>
-        <DivInput>
-          <Label>
-            Желаемая дата выполнения работы <Span>*</Span>
-          </Label>
-          <InputDate
-            error={errors.date}
-            inputDate={'date'}
-            onChange={handleUserInput}
-            type={'date'}
-            name={'date'}
-            value={requestValues.date}
-            placeholder={'Введите желаемую дату выполнения работы'}
-          />
-        </DivInput>
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    Желаемая дата выполнения работы <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputDate*/}
+        {/*    error={errors.date}*/}
+        {/*    inputDate={'date'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    type={'date'}*/}
+        {/*    name={'date'}*/}
+        {/*    value={requestValues.date}*/}
+        {/*    placeholder={'Введите желаемую дату выполнения работы'}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
 
-        <Select
-          label={'Желаемое время для выполнения работы'}
-          span={'*'}
-          name={'time'}
-          onChange={handleChangeTime}
-          value={requestValues.time}
-          inputName={'time'}
-          error={errors.time}
-          options={OPTIONS_TIME}
-        ></Select>
-        <Select
-          label={'Вид работы'}
-          span={'*'}
-          name={'work'}
-          onChange={handleChangeWork}
-          value={requestValues.work}
-          inputName={'work'}
-          error={errors.work}
-          options={OPTIONS}
-        ></Select>
-        <DivInput>
-          <Label>
-            Марка индивидуального прибора учета расхода газа: <Span>*</Span>
-          </Label>
-          <InputText
-            inputText={'marka'}
-            name={'marka'}
-            type={'text'}
-            placeholder={'Введите марку индивидуального прибора учета расхода газа'}
-            onChange={handleUserInput}
-            value={requestValues.marka}
-            error={errors.marka}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Номер индивидуального прибора учета расхода газа: <Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'number'}
-            name={'number'}
-            type={'text'}
-            placeholder={'Введите номер индивидуального прибора учета расхода газа'}
-            onChange={handleUserInput}
-            value={requestValues.number}
-            error={errors.number}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            {t('form:text')}
-            <Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'message'}
-            type="message"
-            name="message"
-            placeholder={'Текст сообщения'}
-            onChange={handleUserInput}
-            value={requestValues.message}
-            error={errors.message}
-            label={t('form:text')}
-            span={'*'}
-          />
-        </DivInput>
+        {/*<Select*/}
+        {/*  label={'Желаемое время для выполнения работы'}*/}
+        {/*  span={'*'}*/}
+        {/*  name={'time'}*/}
+        {/*  onChange={handleChangeTime}*/}
+        {/*  value={requestValues.time}*/}
+        {/*  inputName={'time'}*/}
+        {/*  error={errors.time}*/}
+        {/*  options={OPTIONS_TIME}*/}
+        {/*></Select>*/}
+        {/*<Select*/}
+        {/*  label={'Вид работы'}*/}
+        {/*  span={'*'}*/}
+        {/*  name={'work'}*/}
+        {/*  onChange={handleChangeWork}*/}
+        {/*  value={requestValues.work}*/}
+        {/*  inputName={'work'}*/}
+        {/*  error={errors.work}*/}
+        {/*  options={OPTIONS}*/}
+        {/*></Select>*/}
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    Марка индивидуального прибора учета расхода газа: <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputText*/}
+        {/*    inputText={'marka'}*/}
+        {/*    name={'marka'}*/}
+        {/*    type={'text'}*/}
+        {/*    placeholder={'Введите марку индивидуального прибора учета расхода газа'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.marka}*/}
+        {/*    error={errors.marka}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    Номер индивидуального прибора учета расхода газа: <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputName*/}
+        {/*    inputName={'number'}*/}
+        {/*    name={'number'}*/}
+        {/*    type={'text'}*/}
+        {/*    placeholder={'Введите номер индивидуального прибора учета расхода газа'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.number}*/}
+        {/*    error={errors.number}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    {t('form:text')}*/}
+        {/*    <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputName*/}
+        {/*    inputName={'message'}*/}
+        {/*    type="message"*/}
+        {/*    name="message"*/}
+        {/*    placeholder={'Текст сообщения'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.message}*/}
+        {/*    error={errors.message}*/}
+        {/*    label={t('form:text')}*/}
+        {/*    span={'*'}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
@@ -193,6 +192,9 @@ export default function ApplicationForVerificationOfGasMeters() {
             <Span>*</Span>
           </Label>
         </DivInputCheckbox>
+        <span style={{ color: 'red' }}>
+          *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
+        </span>
         <Button
           disabled={isButtonDisabled}
           type="submit"

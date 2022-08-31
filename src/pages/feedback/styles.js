@@ -28,10 +28,15 @@ export const Button = styled.button`
   background: none;
   border: none;
   margin: 2% 0;
-  padding: 2% 0;
+  padding: 2%;
   text-decoration: none;
   cursor: pointer;
   transition: 0.8s linear;
+  &.active {
+    background-color: white;
+    border-radius: 30px;
+    color: #0d4475;
+  }
   //&:hover {
   //  border: solid #0d4475;
   //  color: #fff; /* Цвет текста */

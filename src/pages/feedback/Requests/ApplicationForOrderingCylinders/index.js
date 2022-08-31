@@ -32,7 +32,6 @@ export default function ApplicationForOrderingCylinders() {
   } = useForOrderingCylinders();
   return (
     <DivApplication>
-      <SubTitleFun color={'blue'} infoTitle={'Заявка на заказ баллонов'}></SubTitleFun>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>

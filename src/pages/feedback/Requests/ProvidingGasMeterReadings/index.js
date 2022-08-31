@@ -40,7 +40,6 @@ export default function ProvidingGasMeterReadings() {
   } = useProvidingGasMasterReadings();
   return (
     <DivApplication>
-      <TitleFun color={'blue'} infoTitle={'предоставление показаний счётчика газа'} />
       <Form ref={form} onSubmit={handleSubmit}>
         <p>
           <b>{msg}</b>
@@ -116,22 +115,22 @@ export default function ProvidingGasMeterReadings() {
           error={errors.time}
           options={OPTIONS_TIME}
         />
-        <DivInput>
-          <Label>
-            Лицевой счёт: <Span>*</Span>
-          </Label>
-          <InputName
-            inputName={'text'}
-            name={'text'}
-            type={'text'}
-            placeholder={'Введите Лицевой счёт'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-            label={'Лицевой счёт'}
-            span={'*'}
-          />
-        </DivInput>
+        {/*<DivInput>*/}
+        {/*  <Label>*/}
+        {/*    Лицевой счёт: <Span>*</Span>*/}
+        {/*  </Label>*/}
+        {/*  <InputName*/}
+        {/*    inputName={'text'}*/}
+        {/*    name={'text'}*/}
+        {/*    type={'text'}*/}
+        {/*    placeholder={'Введите Лицевой счёт'}*/}
+        {/*    onChange={handleUserInput}*/}
+        {/*    value={requestValues.text}*/}
+        {/*    error={errors.text}*/}
+        {/*    label={'Лицевой счёт'}*/}
+        {/*    span={'*'}*/}
+        {/*  />*/}
+        {/*</DivInput>*/}
         <DivInput>
           <Label>
             Показания счётчика<Span>*</Span>

@@ -23,7 +23,7 @@ export const DivContent = styled.div`
     height: fit-content;
   }
   @media (max-width: 900px) {
-    margin-top: 100px;
+    margin-top: 80px;
   }
   //@media (max-width: 600px) {
   //  flex-direction: column;
@@ -116,7 +116,7 @@ export const DivText = styled.div`
     //}
   }
   &.media-phone {
-    margin-top: 100px;
+    margin-top: 80px;
     a {
       img {
         border-radius: 20px;

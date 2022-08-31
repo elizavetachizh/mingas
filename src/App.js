@@ -69,8 +69,8 @@ class App extends Component {
           <Route path="/*" element={<NoMatch />} />
           <Route path="/company/management" element={<Management />} />
           <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
-          <Route path="/company/management/3/:subdivisionId" element={<Subdivisions />} />
-          <Route path="/company/management/4/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
+          <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
+          <Route path="/company/management/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
           <Route path="/services/:cardId" element={<NaturalGas />} />
           <Route path="/services/method-payment" element={<MethodPayment />} />
           <Route path="/company/career/" element={<Career />} />
@@ -102,7 +102,7 @@ class App extends Component {
           <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
           <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
           <Route
-            path={'/services/administrative-services/:serviceID'}
+            path={'/services/administrative-services/'}
             element={<InformationAdministrativeService />}
           />
           <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />

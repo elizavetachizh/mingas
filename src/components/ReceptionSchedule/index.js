@@ -21,7 +21,7 @@ export default function ReceptionSchedule() {
   return (
     <ContainerTable>
       <Table className={'firstColumn'}>
-        <thead style={{ height: '30px', textAlign: 'center' }}>
+        <thead style={{ height: '45px', textAlign: 'center' }}>
           <tr>
             <th>ФИО</th>
           </tr>
@@ -31,7 +31,6 @@ export default function ReceptionSchedule() {
             <tr>
               <td>
                 <DopFunctionalForColumn
-
                   handlerLeaderClick={handlerLeaderClick}
                   fullName={el.fullName}
                   idName={el.id}
@@ -151,7 +150,7 @@ export default function ReceptionSchedule() {
         </Tbody>
       </Table>
       <Table>
-        <thead style={{ height: '30px', textAlign: 'center' }}>
+        <thead style={{ height: '45px', textAlign: 'center' }}>
           <tr>
             <th>График приёма граждан</th>
             <th>Порядок записи на прием</th>

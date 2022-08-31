@@ -3,10 +3,11 @@ import { DivApplication } from '../styles';
 import TitleFun from '../../../../components/title';
 import control from '../../../../assets/png/control.png';
 import { LinkToCallRepresentative } from './styles';
+import TitleForHome from "../../../../components/TitleForHome";
 export default function ApplicationToCallRepresentativeOfGasSupplyOrganization() {
   return (
     <DivApplication>
-      <TitleFun
+      <TitleForHome
         color={'blue'}
         infoTitle={'Заявка на вызов представителя газоснабжающей организации'}
       />

@@ -25,27 +25,23 @@ export default function HeaderRequests() {
       <ButtonForms>
         <HeaderBtnFeedback>
           <Button
-            onClick={() => {
-              setActive('ApplicationForTheIssuanceOfTechnicalSpecifications');
-            }}
-          >
-            Заявка на выдачу ТУ
-          </Button>
-          <Button
-            onClick={() => {
-              setActive('ApplicationForVerificationOfGasMeters');
-            }}
-          >
-            Заявка на поверку счетчиков газа
-          </Button>
-          <Button
+            className={active === 'ApplicationForOrderingCylinders' && 'active'}
             onClick={() => {
               setActive('ApplicationForOrderingCylinders');
             }}
           >
-            Заявка на заказ баллонов
+            Заказать баллон СУГ 50 литров
           </Button>
           <Button
+            className={active === 'ApplicationForVerificationOfGasMeters' && 'active'}
+            onClick={() => {
+              setActive('ApplicationForVerificationOfGasMeters');
+            }}
+          >
+            Снятие счётчика в поверку
+          </Button>
+          <Button
+            className={active === 'ApplicationForRepairOfGasUsingEquipment' && 'active'}
             onClick={() => {
               setActive('ApplicationForRepairOfGasUsingEquipment');
             }}
@@ -53,13 +49,9 @@ export default function HeaderRequests() {
             Заявка на ремонт газоиспользующего оборудования
           </Button>
           <Button
-            onClick={() => {
-              setActive('ApplicationForGasificationOfResidentialGardenHouse');
-            }}
-          >
-            Заявка на газификацию жилого (садового) дома
-          </Button>
-          <Button
+            className={
+              active === 'ApplicationToCallRepresentativeOfGasSupplyOrganization' && 'active'
+            }
             onClick={() => {
               setActive('ApplicationToCallRepresentativeOfGasSupplyOrganization');
             }}
@@ -67,27 +59,45 @@ export default function HeaderRequests() {
             Заявка на вызов представителя газоснабжающей организации
           </Button>
           <Button
+            className={active === 'ProvidingGasMeterReadings' && 'active'}
             onClick={() => {
               setActive('ProvidingGasMeterReadings');
             }}
           >
             Предоставление показаний счётчика газа
           </Button>
+          <Button
+            className={active === 'ApplicationForTheIssuanceOfTechnicalSpecifications' && 'active'}
+            onClick={() => {
+              setActive('ApplicationForTheIssuanceOfTechnicalSpecifications');
+            }}
+          >
+            Заявка на техническое обслуживание
+          </Button>
+          {/*<Button*/}
+          {/*  onClick={() => {*/}
+          {/*    setActive('ApplicationForGasificationOfResidentialGardenHouse');*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  Заявка на газификацию жилого (садового) дома*/}
+          {/*</Button>*/}
         </HeaderBtnFeedback>
+        {active === 'ApplicationForOrderingCylinders' && <ApplicationForOrderingCylinders />}
         {active === 'ApplicationForVerificationOfGasMeters' && (
           <ApplicationForVerificationOfGasMeters />
         )}
-        {active === 'ApplicationForOrderingCylinders' && <ApplicationForOrderingCylinders />}
         {active === 'ApplicationForRepairOfGasUsingEquipment' && (
           <ApplicationForRepairOfGasUsingEquipment />
-        )}
-        {active === 'ProvidingGasMeterReadings' && <ProvidingGasMeterReadings />}
-        {active === 'ApplicationForGasificationOfResidentialGardenHouse' && (
-          <ApplicationForGasificationOfResidentialGardenHouse />
         )}
         {active === 'ApplicationToCallRepresentativeOfGasSupplyOrganization' && (
           <ApplicationToCallRepresentativeOfGasSupplyOrganization />
         )}
+
+        {active === 'ProvidingGasMeterReadings' && <ProvidingGasMeterReadings />}
+        {/*{active === 'ApplicationForGasificationOfResidentialGardenHouse' && (*/}
+        {/*  <ApplicationForGasificationOfResidentialGardenHouse />*/}
+        {/*)}*/}
+
         {active === 'ApplicationForTheIssuanceOfTechnicalSpecifications' && (
           <ApplicationForTheIssuanceOfTechnicalSpecifications />
         )}

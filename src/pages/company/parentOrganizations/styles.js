@@ -7,7 +7,7 @@ export const ContainerLinks = styled.div`
   width: 100%;
   justify-content: space-around;
   margin: 0 auto;
-  align-items: center;
+  align-items: start;
   display: flex;
   flex-direction: row;
 

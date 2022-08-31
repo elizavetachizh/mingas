@@ -10,17 +10,30 @@ import DopFunctional from '../../pages/company/managment/Subdivisions/DopFunctio
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import Footer from '../footer';
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { useParams } from 'react-router';
 
 export default function Subdivisions() {
-  useEffect(() => window.scrollTo(0, 0), []);
+    const subdivisionId = useParams();
+  const [info, setInfo] = useState([]);
+    const object = Object.values(subdivisionId)
+  useEffect(() => {
+    if (+object[0]) {
+      const current = subdivisions.filter((element) => element.id === +object[0]);
+      setInfo(current);
+    } else {
+      setInfo(subdivisions);
+    }
+    window.scrollTo(0, 0);
+  }, [subdivisionId, subdivisions]);
+    console.log(object[0])
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <DivBlocks>
           <ContainerInform>
-            {subdivisions.map((el) => (
+            {info.map((el) => (
               <DopFunctional
                 name={el.name}
                 contacts={el.contacts}

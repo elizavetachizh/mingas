@@ -177,7 +177,7 @@ export const data = [
         name: 'Производственно-техническое управление (ПТУ)',
         id: 5,
         idNameInform: 2,
-        photo: '',
+        photo: 'Яскевич',
         chief: 'Начальник - Яскевич Виталий Владимирович ',
         description: (
           <div>
@@ -213,7 +213,8 @@ export const data = [
         contacts: (
           <div>
             Телефон: <a href={'tel:8017-299-28-69'}>8017-299-28-69</a>,
-            <br /><a href={'tel:8017-299-29-26'}>8017-299-29-26</a> <br />
+            <br />
+            <a href={'tel:8017-299-29-26'}>8017-299-29-26</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
             </a>
@@ -269,7 +270,7 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-28-36'}>8017-299-28-36</a>,<br/>
+            Телефон: <a href={'tel:8017-299-28-36'}>8017-299-28-36</a>,<br />
             <a href={'tel:8017-299-29-38'}>8017-299-29-38</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
@@ -593,7 +594,6 @@ export const data = [
       },
     ],
   },
-
   {
     idName: 3,
     fullName: 'Сазанчук Александр Леонидович',
@@ -617,19 +617,29 @@ export const data = [
             <ul>
               В состав СЭВОГ входит:
               <li>
-                <NavLink to={`${subdivisions[0].link}`}>сервисный центр</NavLink>
+                <NavLink to={`/company/management/division/${subdivisions[0].id}`}>
+                  сервисный центр
+                </NavLink>
               </li>
               <li>
-                <NavLink to={`${subdivisions[1].link}`}>производственный участок №1</NavLink>
+                <NavLink to={`/company/management/division/${subdivisions[1].id}`}>
+                  производственный участок №1
+                </NavLink>
               </li>
               <li>
-                <NavLink to={`${subdivisions[2].link}`}>производственный участок №2</NavLink>
+                <NavLink to={`/company/management/division/${subdivisions[2].id}`}>
+                  производственный участок №2
+                </NavLink>
               </li>
               <li>
-                <NavLink to={`${subdivisions[3].link}`}>производственный участок №3</NavLink>
+                <NavLink to={`/company/management/division/${subdivisions[3].id}`}>
+                  производственный участок №3
+                </NavLink>
               </li>
               <li>
-                <NavLink to={`${subdivisions[4].link}`}>группа приёмки и пуска газа</NavLink>
+                <NavLink to={`/company/management/division/${subdivisions[4].id}`}>
+                  группа приёмки и пуска газа
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -836,13 +846,13 @@ export const data = [
             <ul>
               В состав СУПГН входит:
               <li>
-                <NavLink to={`${subdivisionsSUPGN[0].link}`}>
+                <NavLink to={`/company/management/division/${subdivisions[5].id}`}>
                   участок организации начислений и контроля поступления оплат службы учета
                   потребленного газа населением
                 </NavLink>
               </li>
               <li>
-                <NavLink to={`${subdivisionsSUPGN[1].link}`}>
+                <NavLink to={`/company/management/division/${subdivisions[6].id}`}>
                   участок организации ремонта и поверки бытовых счетчиков газа службы учета
                   потребленного газа населением
                 </NavLink>
