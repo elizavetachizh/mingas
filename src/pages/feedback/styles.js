@@ -5,7 +5,16 @@ export const HeaderBtnFeedback = styled.div`
   padding: 2%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom right, #3d6990 50%, #3d6990 50%, 60%, #0d4475);
+  //background: linear-gradient(to bottom right, #3d6990 50%, #3d6990 50%, 60%, #0d4475);
+  background-image: linear-gradient(
+    -55deg,
+    rgb(17, 65, 179) 0%,
+    rgb(52, 39, 164) 0%,
+    rgb(51, 59, 164) 19%,
+    rgb(50, 79, 163) 50%,
+    rgb(50, 59, 152) 79%,
+    rgb(49, 38, 140) 100%
+  );
   height: fit-content;
   border-radius: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -59,7 +68,7 @@ export const Button = styled.button`
     text-align: center;
   }
   @media (max-width: 464px) {
-   font-size: 16px;
+    font-size: 16px;
   }
 `;
 

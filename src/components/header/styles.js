@@ -38,12 +38,12 @@ export const Container = styled.div`
   select,
   img,
   button {
-    color: #0d4475;
+    color: white;
   }
   align-items: center;
   font-size: 18px;
   top: 0;
-  color: #0d4475;
+  color: white;
   z-index: 5;
   //filter: blur(2px) brightness(0.8);
   margin: 0 auto;
@@ -98,7 +98,7 @@ export const Background = styled.div`
   background-color: white;
   margin: 0 auto;
   height: fit-content;
-  color: #0d4475;
+  color: white;
   position: fixed;
   top: 0;
   .click {
@@ -214,9 +214,9 @@ export const CompanyButton = styled(NavLink)`
     margin: 8px 0 0;
     content: '';
     width: 7px;
-    color: #0d4475;
+    color: white;
     height: 7px;
-    background-color: #0d4475;
+    background-color: white;
     align-items: center;
     text-align: center;
     border-radius: 50%;
@@ -232,7 +232,7 @@ export const PressCenterButtons = CompanyButton;
 export const PersonalAccButton = styled.a`
   text-decoration: none;
   justify-content: space-between;
-  color: #0d4475;
+  color: white;
   display: flex;
   //padding: 0 20px;
   align-items: center;
@@ -254,7 +254,7 @@ export const PersonalAccButton = styled.a`
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
-  color: #0d4475;
+  color: white;
   border-radius: 30px;
 `;
 export const Dropdown = styled.div`
@@ -286,7 +286,7 @@ export const DivFirstHeader = styled.div`
   width: 100%;
   justify-content: space-between;
   text-decoration: none;
-  color: #0d4475;
+  color: white;
   //padding: 12px 0 0;
   //margin: 12px auto;
   border-bottom: 1px solid rgba(204, 204, 204, 0.8);
@@ -450,5 +450,5 @@ export const IoMdEyeOffs = styled(IoMdEyeOff)`
 export const IoIosSearchs = styled(IoIosSearch)`
   height: 36px;
   width: 36px;
-  color: #0d4475;
+  color: white;
 `;

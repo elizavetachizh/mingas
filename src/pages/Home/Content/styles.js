@@ -4,6 +4,7 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
+  margin-top: 170px;
   //@media(max-width: 700px) {
   //  display: none;
   //}
@@ -13,7 +14,7 @@ export const DivContent = styled.div`
   width: 100%;
   //position: absolute;
   height: 608px;
-  margin-top: 154px;
+  margin-top: 160px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;

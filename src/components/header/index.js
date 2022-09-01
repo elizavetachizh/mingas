@@ -23,7 +23,7 @@ import GlobalStyle, {
   IoMdEyeOffs,
   IoMdContacts,
 } from './styles';
-import HeaderLogoBlue from '../../assets/png/logoBlue.png';
+import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.png';
 import next from '../../assets/png/next.png';
 import menu from '../../assets/icons/menu.png';
 import close from '../../assets/png/close.png';
@@ -74,7 +74,7 @@ export default function Header({ backgroundHeader }) {
   return (
     <Container backgroundHeader={backgroundHeader}>
       <GlobalStyle />
-      <Background backgroundHeader={backgroundHeader}>
+      <Background style={{ backgroundColor: '#0d4475'}} backgroundHeader={backgroundHeader}>
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}
         <BackgroundText>
@@ -193,7 +193,7 @@ export default function Header({ backgroundHeader }) {
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
                   <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>
-                  <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
+                  {/*<ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>*/}
                   <ButtonLink to={'/feedback/question-answer/1'}>
                     Часто задаваемые вопросы
                   </ButtonLink>

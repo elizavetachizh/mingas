@@ -104,7 +104,7 @@ export default function News() {
             </a>
           </ArticleForHome>
         </DivInform>
-        <ButtonFun href={'/Press-Center'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
+        <ButtonFun href={'/press-center/1'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
       </div>
     </>
   );

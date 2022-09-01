@@ -1560,6 +1560,7 @@ export const data = [
           'Обменные пункты РУП «ПО Белоруснефть-Минскавтозаправка», где ежедневно с 08.00 до 22.00 можно осуществить замену 27-ти литровых баллонов:',
         inform: (
           <div>
+              <MapService />
             <ol>
               <li>
                 <a href={'https://yandex.by/maps/-/CCURM-A2hB'} target={'_blank'} rel="noreferrer">

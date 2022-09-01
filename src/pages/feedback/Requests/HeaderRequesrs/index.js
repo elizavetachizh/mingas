@@ -46,7 +46,7 @@ export default function HeaderRequests() {
               setActive('ApplicationForRepairOfGasUsingEquipment');
             }}
           >
-            Заявка на ремонт газоиспользующего оборудования
+            Ремонт газового оборудования
           </Button>
           <Button
             className={
@@ -56,7 +56,7 @@ export default function HeaderRequests() {
               setActive('ApplicationToCallRepresentativeOfGasSupplyOrganization');
             }}
           >
-            Заявка на вызов представителя газоснабжающей организации
+            Вызов представителя газоснабжающей организации
           </Button>
           <Button
             className={active === 'ProvidingGasMeterReadings' && 'active'}
@@ -72,7 +72,7 @@ export default function HeaderRequests() {
               setActive('ApplicationForTheIssuanceOfTechnicalSpecifications');
             }}
           >
-            Заявка на техническое обслуживание
+            Техническое обслуживание
           </Button>
           {/*<Button*/}
           {/*  onClick={() => {*/}

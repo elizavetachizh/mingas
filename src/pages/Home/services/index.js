@@ -17,11 +17,15 @@ export default function HomeServices() {
         infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'}
       />
       <ButtonServicesHome>
-        <ButtonFun href={'/services'} backgroundColor={'gray'} infoButton={'Для физических лиц'} />
+        <ButtonFun
+          href={'/services'}
+          backgroundColor={'gray'}
+          infoButton={'Жителям столичного региона'}
+        />
         <ButtonFun
           href={'/services-legal-entities'}
           backgroundColor={'gray'}
-          infoButton={'Для юридических лиц'}
+          infoButton={'Для бизнеса'}
         />
       </ButtonServicesHome>
       <ServicesDiv>

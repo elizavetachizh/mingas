@@ -141,7 +141,7 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              Раковский Евгений Дмитриевич
+              <NavLink to={'/company/management/division/7'}>Раковский Евгений Дмитриевич</NavLink>
               <br />
               Начальник участка организации ремонта и поверки бытовых счетчиков газа службы учета
               потребленного газа населением
