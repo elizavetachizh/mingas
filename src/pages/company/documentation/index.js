@@ -94,7 +94,7 @@ export default function Documentation() {
       <Header backgroundHeader="blue" />
       <HeaderCompany currentPage={'documentation'} />
       <TitleForHome infoTitle={'Сертификаты, лицензии, свидетельства'} color={'blue'} />
-      <AdditionalDiv>
+      <AdditionalDiv style={{margin: '4% auto'}}>
         <ContainerOfDocuments>
           {' '}
           <TitleForHome color={'blue'} infoTitle={certifications[0].name} />

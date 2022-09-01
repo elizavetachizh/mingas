@@ -10,8 +10,15 @@ import TitleForHome from '../../../components/TitleForHome';
 export default function UsefulInform() {
   return (
     <>
-      <DivUsefulInform>
-        <TitleForHome margin={'s'}
+      <DivUsefulInform
+        style={{
+          backgroundColor: 'rgba(200, 220, 231, 40%)',
+          backdropFilter: 'blur(50px)',
+          marginTop: '30px',
+        }}
+      >
+        <TitleForHome
+          margin={'s'}
           color={'blue'}
           fontSize={'m'}
           infoTitle={<Trans i18nKey="usefulInform:usefulInform"></Trans>}
@@ -25,9 +32,8 @@ export default function UsefulInform() {
               link={element.link}
             />
           ))}
-
         </DivInform>
-          <hr/>
+        <hr />
       </DivUsefulInform>
     </>
   );

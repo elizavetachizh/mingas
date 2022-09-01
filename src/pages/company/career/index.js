@@ -42,8 +42,8 @@ export default function Career() {
     <Container>
       <Header backgroundHeader="blue" />
       <HeaderCompany />
-      <TitleForHome color={'blue'} infoTitle={'Работа в РУП “Мингаз”'}></TitleForHome>
-      <AdditionalDiv>
+      <TitleForHome color={'blue'} infoTitle={'Работа в РУП “Мингаз”'} />
+      <AdditionalDiv style={{margin: '4% auto'}}>
         <DivForm className="form-div">
           <div style={{ width: '500px' }}>
             {' '}

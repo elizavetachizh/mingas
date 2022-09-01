@@ -39,23 +39,27 @@ export const DivBlocksHeader = styled.div`
 `;
 export const LinksContainer = styled.div`
   flex-direction: column;
-  top: 99px;
+  top: 80px;
   left: 0;
-  height: 100%;
+  height: fit-content;
   width: auto;
-  background-color: rgba(200, 220, 231, 100%);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+  //background-color: rgba(200, 220, 231, 100%);
+  background-color: rgba(200, 220, 231, 80%);
+  backdrop-filter: blur(5px);
   display: flex;
+  border-radius: 20px;
   position: fixed;
   list-style: none;
   padding: 10px;
   margin: 0;
   box-sizing: border-box;
-  background-color: #eee;
+  //background-color: #eee;
   transition: left 0.2s;
   color: #0d4475;
   z-index: 2;
-  background-color: rgba(200, 220, 231, 80%);
-  -webkit-backface-visibility: hidden;
+  //background-color: rgba(200, 220, 231, 80%);
+  //-webkit-backface-visibility: hidden;
   &.opacity {
     left: 0;
   }
@@ -86,7 +90,7 @@ export const PressCenterButtons = CompanyButton;
 
 export const DivButtonHeader = styled.div`
   display: none;
-  position: absolute;
+  //position: absolute;
   margin: 0 20px;
   &.shake {
     display: flex;
@@ -105,20 +109,15 @@ export const DivButtonHeader = styled.div`
   }
   &.handleBtn {
     display: flex;
-    width: auto;
-    min-width: 200px;
-    height: auto;
+    height: fit-content;
+    width: 80%;
     align-items: flex-start;
     flex-direction: column;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    background-color: #f1f1f1;
     padding: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
     a {
       margin: 5%;
-    }
-    &:after {
-      content: '';
-      margin-bottom: 100%;
     }
   }
 `;

@@ -6,6 +6,7 @@ export const HeaderCompanyDiv = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1440px;
+  flex-wrap: wrap;
   margin: 14% auto 0 auto;
   @media (max-width: 1320px) {
     margin-top: 16%;
@@ -37,12 +38,12 @@ export const HeaderCompanyDiv = styled.div`
 
 export const DivButton = styled.div`
   max-width: 1440px;
-  width: 96%;
-  margin: 0 2%;
+  width: 100%;
+  margin: 0 auto;
   font-size: 16px;
   display: flex;
   flex-direction: row;
-
+flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   @media (max-width: 900px) {
@@ -53,8 +54,14 @@ export const DivButton = styled.div`
 
 export const HeaderCompanyBtn = styled(NavLink)`
   text-decoration: none;
+  text-align: center;
   color: #0d4475;
-  margin: 0 auto;
+  margin: 2% auto;
+  padding:0 0.5%;
+  @media(max-width: 1340px){
+    padding:0 0.8%;
+    margin: 2%;
+  }
   &.active {
     color: #a69b14;
   }

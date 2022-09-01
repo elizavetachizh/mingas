@@ -178,12 +178,15 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/services">
                     Услуги <img alt={''} src={next} />
                     <span>
-                      <NavLink to="/services/administrative-services/1">
+                      <NavLink to="/services/administrative-services">
                         Административные процедуры
                       </NavLink>
+                      <NavLink to="/services/1">Газоснабжение потребителей</NavLink>
                       <NavLink to="/services/3">Техническое обслуживание</NavLink>
-                      <NavLink to="/services/10">Реконструкция системы газоснабжения</NavLink>
+                      <NavLink to="/services/10">Реконструкция</NavLink>
                       <NavLink to="/services/11">Газификация</NavLink>
+                      <NavLink to="/services/2">Обмен и покупка баллонов</NavLink>
+                      <NavLink to="/services/9">Цены на газ и услуги</NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
                     </span>
                   </ButtonLink>
@@ -228,17 +231,17 @@ export default function Header({ backgroundHeader }) {
                 </PressCenterButtons>
                 <DivButtonHeader>
                   <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
-                  <ButtonLink to="/press-center/2">Новости</ButtonLink>
+                  {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
                   <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
               <Dropdown>
-                <ContactButton to="/Contacts">
+                <ContactButton to="/contacts/phone-services">
                   {t('header:Contacts')}
                   <span />
                 </ContactButton>
                 <DivButtonHeader>
-                  <ButtonLink to="/contacts">Контактная информация</ButtonLink>
+                  {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
                   <ButtonLink to="/contacts/work-schedule">
                     График личного приёма граждан
                   </ButtonLink>

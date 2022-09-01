@@ -5,6 +5,7 @@ import search from '../../assets/png/search.svg';
 import { ContainerFormSearch, Div, FormSearch } from './styles';
 import { NavLink } from 'react-router-dom';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
+import {IoIosSearchs} from "../../components/header/styles";
 export default function SearchPage() {
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
@@ -58,9 +59,7 @@ export default function SearchPage() {
       {isForm ? (
         <IoIosSearch style={{ display: 'none' }} />
       ) : (
-        <IoIosSearch
-          style={{ height: '36px', width: '36px' }}
-          color={'#0d4475'}
+        <IoIosSearchs
           onClick={() => handleForm()}
           type={'submit'}
         />

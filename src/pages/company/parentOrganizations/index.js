@@ -13,7 +13,7 @@ export default function ParentOrganizations() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <HeaderCompany />
-      <AdditionalDiv>
+      <AdditionalDiv style={{margin: '4% auto'}}>
         <TitleForHome infoTitle={'Вышестоящие организации'} color={'blue'} />
         <ContainerLinks>
           {data.map((el) => (

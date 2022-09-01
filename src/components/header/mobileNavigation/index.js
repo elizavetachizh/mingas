@@ -42,7 +42,7 @@ export default function MobileNavigation() {
   };
   return (
     <LinksContainer>
-      <ContainerElements style={{ display: 'block' }}>
+      <ContainerElements className={'mobile'}>
         {' '}
         <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
           {/*{navbar ? (*/}
@@ -50,15 +50,15 @@ export default function MobileNavigation() {
           {/*) : (*/}
           {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />*/}
           {/*)}*/}
-          <IoMdContacts className={'icon'} />
+          <IoMdContacts className={'icon iconMobile'} />
           {/*<DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>*/}
         </PersonalAccButton>
         <SearchPage />
         <Language />
-          <IoMdEyeOffs
-            className={'icon'}
-            href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
-          />
+        <IoMdEyeOffs
+          className={'icon'}
+          href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
+        />
       </ContainerElements>
       <Dropdown>
         <DivBlocksHeader>
@@ -115,12 +115,17 @@ export default function MobileNavigation() {
                 <NavLink to="/services/administrative-services/">
                   Административные процедуры
                 </NavLink>
+                <NavLink to="/services/1">Газоснабжение потребителей</NavLink>
+                <NavLink to="/services/3">Техническое обслуживание</NavLink>
+                <NavLink to="/services/10">Реконструкция</NavLink>
+                <NavLink to="/services/11">Газификация</NavLink>
+                <NavLink to="/services/2">Обмен и покупка баллонов</NavLink>
+                <NavLink to="/services/9">Цены на газ и услуги</NavLink>
                 <NavLink to="/residents/price">Прейскурант цен</NavLink>
-                <NavLink to="/">Плановые работы</NavLink>
               </span>
             </ButtonLink>
             <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-            <ButtonLink to="/regulatory-documents">Регламентирующие документы</ButtonLink>
+            <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>
             <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
             <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
             <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
@@ -163,14 +168,14 @@ export default function MobileNavigation() {
         </PressCenterButtons>
         <DivButtonHeader>
           <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
-          <ButtonLink to="/press-center/2">Новости</ButtonLink>
+          {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
           <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
         </DivButtonHeader>
       </Dropdown>
       <Dropdown>
-        <ContactButton to="/Contacts">{t('header:Contacts')}</ContactButton>
+        <ContactButton to="/contacts/phone-services">{t('header:Contacts')}</ContactButton>
         <DivButtonHeader>
-          <ButtonLink to="/contacts">Контактная информация</ButtonLink>
+          {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
           <ButtonLink to="/contacts/work-schedule">График личного приёма граждан</ButtonLink>
           <ButtonLink to="/contacts/phone-services">
             Телефоны служб по работе с клиентами

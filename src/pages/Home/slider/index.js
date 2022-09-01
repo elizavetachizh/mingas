@@ -1,13 +1,10 @@
 import React from 'react';
 import { Main, WindowDiv, BackgroundContainer } from './styles';
-import Carousel, { autoplayPlugin, Dots } from '@brainhubeu/react-carousel';
+import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import './styles.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
-import ButtonFun from '../../../components/button';
 import phone from '../../../assets/png/PhoneFour.png';
-import { Trans, useTranslation } from 'react-i18next';
 import dayOfGas from '../../../assets/png/dayOfGas2.jpg';
-import { Parallax } from 'react-parallax';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
 // export default function CarouselFun() {
 //   const { t, i18n } = useTranslation();
@@ -67,9 +64,7 @@ export default class CarouselFun extends React.Component {
       value: 0,
       slides: [
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <BackgroundContainer
-            src={imageContent}
-          />
+          <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
             <DivInformAbout>
               <Text>
@@ -103,6 +98,17 @@ export default class CarouselFun extends React.Component {
       <Main>
         <WindowDiv>
           <Carousel
+            plugins={[
+              'centered',
+              'infinite',
+              {
+                resolve: autoplayPlugin,
+                options: {
+                  interval: 6000,
+                },
+              },
+            ]}
+            animationSpeed={2000}
             value={this.state.value}
             slides={this.state.slides}
             onChange={this.onchange}

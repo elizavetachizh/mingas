@@ -5,24 +5,24 @@ export const links = [
     name: 'Услуги',
     cardImg: 5,
   },
-  {
-    id: 2,
-    link: '/services/administrative-services',
-    name: 'Административные процедуры',
-    cardImg: 5,
-  },
-  {
-    id: 3,
-    link: '/residents/price',
-    name: 'Прейскурант цен',
-    cardImg: 5,
-  },
-  {
-    id: 4,
-    link: '/',
-    name: 'Плановые работы',
-    cardImg: 5,
-  },
+  // {
+  //   id: 2,
+  //   link: '/services/administrative-services',
+  //   name: 'Административные процедуры',
+  //   cardImg: 5,
+  // },
+  // {
+  //   id: 3,
+  //   link: '/residents/price',
+  //   name: 'Прейскурант цен',
+  //   cardImg: 5,
+  // },
+  // {
+  //   id: 4,
+  //   link: '/',
+  //   name: 'Плановые работы',
+  //   cardImg: 5,
+  // },
   {
     id: 5,
     link: '/feedback/online-application',

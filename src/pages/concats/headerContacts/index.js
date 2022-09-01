@@ -2,11 +2,11 @@ import React from 'react';
 import {HeaderCompanyDiv, HeaderConcatsBtn } from './styles';
 import { Name } from '../../../components/administrativeServices/Header/styles';
 
-export default function HeaderConcats() {
+export default function HeaderConcats({width}) {
   return (
-    <HeaderCompanyDiv>
+    <HeaderCompanyDiv width={width}>
       <Name>Контактная информация</Name>
-      <HeaderConcatsBtn to="/contacts">Общая информация</HeaderConcatsBtn>
+      {/*<HeaderConcatsBtn to="/contacts">Общая информация</HeaderConcatsBtn>*/}
       <HeaderConcatsBtn to="/contacts/work-schedule">
         График личного приёма граждан
       </HeaderConcatsBtn>

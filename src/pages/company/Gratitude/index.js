@@ -37,7 +37,7 @@ export default function Gratitude() {
       <Header backgroundHeader="blue" />
       <HeaderCompany currentPage={'gratitude'} />
       <TitleForHome infoTitle={'Благодарности и награды'} color={'blue'} />
-      <AdditionalDiv>
+      <AdditionalDiv style={{margin: '4% auto'}}>
         <BlockOfGraditude>
           {gratitude.map((element) => (
             <ContainerGraditude onClick={() => openImage(element.id)}>

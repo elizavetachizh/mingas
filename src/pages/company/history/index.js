@@ -23,8 +23,9 @@ export default function History() {
     <Container>
       <Header backgroundHeader="blue" />
       <HeaderCompany />
-      <AdditionalDiv>
+      <AdditionalDiv style={{margin: '4% auto'}}>
         <TitleForHome
+            margin={'s'}
           color={'blue'}
           infoTitle={'Из истории газификации г. Минска и Минского района'}
         />

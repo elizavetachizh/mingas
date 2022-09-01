@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { IoMdContact, IoMdEyeOff } from 'react-icons/io';
+import { IoIosSearch, IoMdContact, IoMdEyeOff } from 'react-icons/io';
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: 'Play', sans-serif;
@@ -339,6 +339,13 @@ export const ContainerElements = styled.div`
   @media (max-width: 640px) {
     display: none;
   }
+  &.mobile {
+    display: flex;
+    width: 60%;
+    @media(min-width: 640px) {
+      display: none;
+    }
+  }
 `;
 export const Div104 = styled.div`
   display: flex;
@@ -378,7 +385,8 @@ export const Div104 = styled.div`
       font-size: 0.6rem;
     }
     @media (max-width: 424px) {
-      margin: 0;padding: 0;
+      margin: 0;
+      padding: 0;
     }
   }
   div {
@@ -432,5 +440,15 @@ export const IoMdEyeOffs = styled(IoMdEyeOff)`
   height: 46px;
   @media (max-width: 760px) {
     width: 36px;
+    height: 36px;
   }
+  &.iconMobile {
+    width: 46px;
+    height: 46px;
+  }
+`;
+export const IoIosSearchs = styled(IoIosSearch)`
+  height: 36px;
+  width: 36px;
+  color: #0d4475;
 `;

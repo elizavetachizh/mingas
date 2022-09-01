@@ -1,6 +1,25 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-
+const MenuWidth = {
+  s: `
+    width: 80%;
+  
+    `,
+ //  blue: `
+ //    background-color: #0d4475;
+ //    `,
+ //  border: `
+ // a,
+ //  p,
+ //  select,
+ //  img,
+ //  button {
+ //    color: #0d4475;
+ // }
+ //    border: 1px solid white;
+ //    background-color: white;
+ //    `,
+};
 export const HeaderFeedbackDiv = styled.div`
   position: absolute;
   z-index: 4;
@@ -11,6 +30,7 @@ export const HeaderFeedbackDiv = styled.div`
   font-size: 20px;
   width: 100%;
   font-weight: bold;
+  ${({ width }) => MenuWidth[width]};
   @media (max-width: 1100px) {
     margin-top: 16%;
   }

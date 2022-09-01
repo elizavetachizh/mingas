@@ -17,6 +17,8 @@ export default function News() {
           boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)',
           borderRadius: '20px',
           paddingBottom: '1%',
+          backgroundColor: 'rgba(200, 220, 231, 40%)',
+          backdropFilter: 'blur(50px)',
         }}
       >
         <TitleForHome

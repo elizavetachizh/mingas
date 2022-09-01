@@ -1,6 +1,25 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-
+const MenuWidth = {
+    s: `
+    width: 30%;
+  
+    `,
+    //  blue: `
+    //    background-color: #0d4475;
+    //    `,
+    //  border: `
+    // a,
+    //  p,
+    //  select,
+    //  img,
+    //  button {
+    //    color: #0d4475;
+    // }
+    //    border: 1px solid white;
+    //    background-color: white;
+    //    `,
+};
 export const HeaderCompanyDiv = styled.div`
   margin: 4% 2% 0;
   height: fit-content;
@@ -8,7 +27,7 @@ export const HeaderCompanyDiv = styled.div`
   display: flex;
   border-radius: 20px;
   border: 1px solid #1b3a91;
-  flex-direction: column;
+  flex-direction: column; ${({ width }) => MenuWidth[width]};
   @media (max-width: 820px) {
     display: none;
   }
