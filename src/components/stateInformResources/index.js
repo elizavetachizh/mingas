@@ -10,7 +10,7 @@ const styledTitle = {
 export default function StateInformResources() {
   const isPhone = useMediaQuery('(max-width: 800px)');
   return (
-    <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px' }}>
+    <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px', marginBottom: '10px' }}>
       <TitleForHome
         style={styledTitle}
         fontSize={'m'}

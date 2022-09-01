@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Select = styled.div`
   background: transparent;
   border-radius: 50%;
-  border: 2px solid #0d4475;
-  color: #0d4475;
+  border: 2px solid white;
+  color: white;
   padding: 7px 0;
   select {
     background: transparent;
@@ -16,7 +16,7 @@ export const Select = styled.div`
     border: none;
     option {
       border: 0;
-      background: #0d4475;
+      background: white;
       box-shadow: none;
     }
   }

@@ -16,7 +16,7 @@ import { Container } from '../company/styles';
 export default function Home() {
   return (
     <Container>
-      <Header backgroundHeader={'gray'} />
+      <Header />
       <>
         <ContentHome />
         <UsefulInform />

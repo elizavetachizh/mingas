@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { IoIosSearch, IoMdContact, IoMdEyeOff } from 'react-icons/io';
+import { IoIosClose, IoIosMenu, IoIosSearch, IoMdContact, IoMdEyeOff } from 'react-icons/io';
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: 'Play', sans-serif;
@@ -61,24 +61,12 @@ export const Container = styled.div`
   }
 `;
 export const Menu = styled.div`
-  a,
-  p,
-  select,
-  img,
-  button {
-    color: white;
-  }
   margin-top: 16px;
   display: none;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0);
-  border: rgba(0, 0, 0, 0);
   float: left;
   @media (max-width: 900px) {
     display: block;
-  }
-  img {
-    margin: 10px;
   }
 `;
 
@@ -94,8 +82,17 @@ export const Background = styled.div`
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0 0 20px 20px;
   z-index: 5;
+  background-image: linear-gradient(
+    -55deg,
+    rgb(1, 95, 156) 0%,
+    rgb(16, 69, 141) 0%,
+    rgb(15, 89, 141) 19%,
+    rgb(15, 78, 140) 60%,
+    rgb(14, 78, 129) 79%,
+    rgb(13, 68, 117) 100%
+  );
   //padding: 0 24px;
-  background-color: white;
+  //background-color: white;
   margin: 0 auto;
   height: fit-content;
   color: white;
@@ -134,15 +131,11 @@ export const BackgroundText = styled.div`
 export const LinkLogo = styled(NavLink)``;
 
 export const Logo = styled.img`
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   @media (max-width: 646px) {
-    width: 60px;
-    height: 60px;
-  }
-  @media (max-width: 645px) {
-    width: 54px;
-    height: 54px;
+    width: 70px;
+    height: 70px;
   }
   @media (max-width: 424px) {
     width: 46px;
@@ -305,7 +298,7 @@ export const DivPhone = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 12px 0;
+  margin: 4px 0;
   justify-content: space-around;
   width: 40%;
   @media (max-width: 900px) {
@@ -342,7 +335,7 @@ export const ContainerElements = styled.div`
   &.mobile {
     display: flex;
     width: 60%;
-    @media(min-width: 640px) {
+    @media (min-width: 640px) {
       display: none;
     }
   }
@@ -378,6 +371,9 @@ export const Div104 = styled.div`
     @media (max-width: 1144px) {
       margin: 2px auto;
     }
+    @media (max-width: 819px) {
+   font-size: 0.9rem;
+    }
     @media (max-width: 788px) {
       font-size: 0.8rem;
     }
@@ -407,6 +403,9 @@ export const Div104 = styled.div`
       transition: all 0.3s ease;
       @media (max-width: 1038px) {
         font-size: 3rem;
+      }
+      @media (max-width: 819px) {
+        font-size: 2.6rem;
       }
       @media (max-width: 540px) {
         font-size: 2.4rem;
@@ -451,4 +450,17 @@ export const IoIosSearchs = styled(IoIosSearch)`
   height: 36px;
   width: 36px;
   color: white;
+`;
+export const IoIosMenus = styled(IoIosMenu)`
+  color: white;
+  width: 40px;
+  height: 40px;
+  margin-top: 6px;
+`;
+
+export const IoIosCloses = styled(IoIosClose)`
+  color: white;
+  width: 44px;
+  height: 44px;
+  //margin-top: 6px;
 `;

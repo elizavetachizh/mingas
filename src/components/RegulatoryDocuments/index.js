@@ -3,7 +3,7 @@
 // import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 // import TitleFun from '../title';
 // import { Table, Tbody } from '../../pages/feedback/receptionOfCitizens/styles';
-// import one from '../../assets/RegularyDocuments/1.png';
+// import one from '../../assets/RegularyDocuments/112.png';
 // import two from '../../assets/RegularyDocuments/2.docx';
 // import three from '../../assets/RegularyDocuments/3.docx';
 // import four from '../../assets/RegularyDocuments/4.docx';

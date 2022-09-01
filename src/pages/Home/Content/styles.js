@@ -4,7 +4,7 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
-  margin-top: 170px;
+  margin-top: 84px;
   //@media(max-width: 700px) {
   //  display: none;
   //}

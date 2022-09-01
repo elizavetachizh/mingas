@@ -23,7 +23,7 @@ export const Div = styled.div`
 export const DivBlocks = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: baseline;
   justify-content: space-around;
   //@media(max-width: 820px){
   //  flex-direction: column;
@@ -61,7 +61,15 @@ export const BtnIsOpen = styled.div`
   width: 100%;
   color: white;
   padding: 0 0.1rem;
-  background: #0e43af;
+  background-image: linear-gradient(
+          -55deg,
+          rgb(1, 95, 156) 0%,
+          rgb(16, 69, 141) 0%,
+          rgb(15, 89, 141) 19%,
+          rgb(15, 78, 140) 60%,
+          rgb(14, 78, 129) 79%,
+          rgb(13, 68, 117) 100%
+  );
   cursor: pointer;
   //margin: 4% auto;
   border-radius: 50px;

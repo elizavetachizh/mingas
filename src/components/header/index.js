@@ -22,11 +22,11 @@ import GlobalStyle, {
   DivPhone,
   IoMdEyeOffs,
   IoMdContacts,
+  IoIosMenus,
+  IoIosCloses
 } from './styles';
 import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.png';
 import next from '../../assets/png/next.png';
-import menu from '../../assets/icons/menu.png';
-import close from '../../assets/png/close.png';
 import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
@@ -34,10 +34,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
-const styleMenu = {
-  width: '30px',
-  height: '30px',
-};
+
 export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
   const [open, setOpen] = useState(false);
@@ -60,13 +57,13 @@ export default function Header({ backgroundHeader }) {
   };
   const openMobile = (
     <Menu onClick={onClick}>
-      <img style={styleMenu} src={menu} alt={''} />
+      <IoIosMenus />
     </Menu>
   );
 
   const closeMobile = (
     <MenuClose onClick={onClick}>
-      <img style={styleMenu} src={close} alt="" />
+      <IoIosCloses />
     </MenuClose>
   );
   const { t } = useTranslation();
@@ -74,7 +71,7 @@ export default function Header({ backgroundHeader }) {
   return (
     <Container backgroundHeader={backgroundHeader}>
       <GlobalStyle />
-      <Background style={{ backgroundColor: '#0d4475'}} backgroundHeader={backgroundHeader}>
+      <Background backgroundHeader={backgroundHeader}>
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}
         <BackgroundText>

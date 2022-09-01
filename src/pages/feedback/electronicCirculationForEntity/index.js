@@ -18,9 +18,9 @@ export default function ElectronicAppealForEntity() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
-      <Divbackground>
-        <DivImage style={styled}></DivImage>
-      </Divbackground>
+      {/*<Divbackground>*/}
+      {/*  <DivImage style={styled}></DivImage>*/}
+      {/*</Divbackground>*/}
       <AdditionalDiv>
         <TitleForHome color={'blue'} infoTitle={'Электронное обращение юридических лиц'} />
         <ContainerInform>

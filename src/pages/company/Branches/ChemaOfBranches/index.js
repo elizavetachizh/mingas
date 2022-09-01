@@ -42,7 +42,7 @@ export default function SchemaOfBranches({
   };
   return (
     <Container>
-      <Header backgroundHeader={'border'} />
+      <Header/>
       <ContainerParallax>
         <Parallax style={{ height: '450px' }} bgImage={background} strength={-200}>
           <Main style={{ margin: '8% auto 0' }}>

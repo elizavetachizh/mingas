@@ -11,101 +11,99 @@ const styledTitle = {
 };
 export default function News() {
   return (
-    <>
-      <div
-        style={{
-          boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)',
-          borderRadius: '20px',
-          paddingBottom: '1%',
-          backgroundColor: 'rgba(200, 220, 231, 40%)',
-          backdropFilter: 'blur(50px)',
-        }}
-      >
-        <TitleForHome
-          style={styledTitle}
-          margin={'s'}
-          fontSize={'m'}
-          color={'blue'}
-          infoTitle={'СМИ о нас'}
-        />
+    <div
+      style={{
+        boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)',
+        borderRadius: '20px',
+        paddingBottom: '10px',
+        backgroundColor: 'rgba(13, 68, 117, 20%)',
+        backdropFilter: 'blur(50px)',
+      }}
+    >
+      <TitleForHome
+        style={styledTitle}
+        margin={'s'}
+        fontSize={'m'}
+        color={'blue'}
+        infoTitle={'СМИ о нас'}
+      />
 
-        <DivInform>
-          <ArticleForHome style={{ backgroundImage: `url('${gradient}')` }} className={'general'}>
-            <a
-              target={'_blank'}
-              href={
-                'https://minsknews.by/mozhno-li-samostoyatelno-podklyuchit-gazovuyu-plitu-kommentarij-mingaza/'
+      <DivInform>
+        <ArticleForHome style={{ backgroundImage: `url('${gradient}')` }} className={'general'}>
+          <a
+            target={'_blank'}
+            href={
+              'https://minsknews.by/mozhno-li-samostoyatelno-podklyuchit-gazovuyu-plitu-kommentarij-mingaza/'
+            }
+          >
+            <img
+              src={
+                'https://minsknews.by/wp-content/uploads/2022/02/Depositphotos_22540503_S-900x596.jpg'
               }
-            >
-              <img
-                src={
-                  'https://minsknews.by/wp-content/uploads/2022/02/Depositphotos_22540503_S-900x596.jpg'
-                }
-              />
-              <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
-            </a>
-          </ArticleForHome>
-          <ArticleForHome
-            className={'quarter'}
-            style={{
-              backgroundImage: `url('${gradient}')`,
-            }}
+            />
+            <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
+          </a>
+        </ArticleForHome>
+        <ArticleForHome
+          className={'quarter'}
+          style={{
+            backgroundImage: `url('${gradient}')`,
+          }}
+        >
+          <a
+            target={'_blank'}
+            href={
+              'https://minsknews.by/hozyajke-chastnogo-doma-naschitali-bolee-19-tys-rublej-za-gaz-iz-za-poddelnoj-plomby-na-schetchike/'
+            }
           >
-            <a
-              target={'_blank'}
-              href={
-                'https://minsknews.by/hozyajke-chastnogo-doma-naschitali-bolee-19-tys-rublej-za-gaz-iz-za-poddelnoj-plomby-na-schetchike/'
+            <img
+              src={
+                'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
               }
-            >
-              <img
-                src={
-                  'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                }
-              />
+            />
 
-              <p>
-                Хозяйке частного дома насчитали более 19 тыс. рублей за газ из-за поддельной пломбы
-                на счетчике
-              </p>
-            </a>
-          </ArticleForHome>
-          <ArticleForHome
-            className={'quarter'}
-            style={{
-              backgroundImage: `url('${gradient}')`,
-            }}
+            <p>
+              Хозяйке частного дома насчитали более 19 тыс. рублей за газ из-за поддельной пломбы на
+              счетчике
+            </p>
+          </a>
+        </ArticleForHome>
+        <ArticleForHome
+          className={'quarter'}
+          style={{
+            backgroundImage: `url('${gradient}')`,
+          }}
+        >
+          <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
+            <img src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
+            <p>
+              Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
+            </p>
+          </a>
+        </ArticleForHome>
+        <ArticleForHome
+          style={{
+            backgroundImage: `url('${gradient}')`,
+          }}
+        >
+          <a
+            target={'_blank'}
+            href={'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'}
           >
-            <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
-              <img src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
-              <p>
-                Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
-              </p>
-            </a>
-          </ArticleForHome>
-          <ArticleForHome
-            style={{
-              backgroundImage: `url('${gradient}')`,
-            }}
-          >
-            <a
-              target={'_blank'}
-              href={'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'}
-            >
-              <img
-                src={
-                  'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                }
-              />
+            <img
+              src={
+                'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
+              }
+            />
 
-              <p>
-                О реальном положении дел на ТБЗ «Сергеевичское» — Пухавiцкiя навiны. Пуховичские
-                новости. Марьина Горка. Новости Марьиной Горки
-              </p>
-            </a>
-          </ArticleForHome>
-        </DivInform>
-        <ButtonFun href={'/press-center/1'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
-      </div>
-    </>
+            <p>
+              О реальном положении дел на ТБЗ «Сергеевичское» — Пухавiцкiя навiны. Пуховичские
+              новости. Марьина Горка. Новости Марьиной Горки
+            </p>
+          </a>
+        </ArticleForHome>
+      </DivInform>
+      <ButtonFun href={'/press-center/1'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
+    </div>
   );
 }

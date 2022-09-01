@@ -25,9 +25,11 @@ import {
 } from '../../../../../components/administrativeServices/Header/styles';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
+import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
+  const isPhone = useMediaQuery('(max-width: 800px)');
   const [currentServiceID, setDepartamentId] = useState(null);
   const [inform, setInform] = useState([]);
   const navigate = useNavigate();
@@ -196,17 +198,37 @@ export default function DepartmentInformation() {
             ))}
           </HeaderCompanyDiv>
           <ContainerInform>
-            {currentDepartment.map((el) => (
-              <DopFunctional
-                key={el.name}
-                name={el.name}
-                contacts={el.contacts}
-                schedule={el.schedule}
-                photo={el.photo}
-                chief={el.chief}
-                description={el.description}
-              />
-            ))}
+            {isPhone ? (
+              <>
+                {' '}
+                {inform.map((el) => (
+                  <DopFunctional
+                    key={el.name}
+                    name={el.name}
+                    contacts={el.contacts}
+                    schedule={el.schedule}
+                    photo={el.photo}
+                    chief={el.chief}
+                    description={el.description}
+                  />
+                ))}
+              </>
+            ) : (
+              <>
+                {' '}
+                {currentDepartment.map((el) => (
+                  <DopFunctional
+                    key={el.name}
+                    name={el.name}
+                    contacts={el.contacts}
+                    schedule={el.schedule}
+                    photo={el.photo}
+                    chief={el.chief}
+                    description={el.description}
+                  />
+                ))}
+              </>
+            )}
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
