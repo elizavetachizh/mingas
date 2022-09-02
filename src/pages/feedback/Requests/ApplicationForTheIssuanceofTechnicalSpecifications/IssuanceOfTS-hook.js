@@ -24,6 +24,9 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
       !isValidateEmail(requestIssuanceValues.email) ||
       !requestIssuanceValues.isAgree ||
       !requestIssuanceValues.time ||
+      !requestIssuanceValues.text ||
+      !requestIssuanceValues.address ||
+      !requestIssuanceValues.date ||
       !isValidatePhone(requestIssuanceValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -49,15 +52,33 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
         break;
       case 'isAgree':
         if (!!requestIssuanceValues.isAgree) {
-          setErrors({ ...errors, isAgree: 'Заполните поле' });
+          setErrors({ ...errors, isAgree: 'Заполните все поля со *' });
         }
         break;
       case 'time':
         if (requestIssuanceValues.time.trim().length) {
           setErrors({
             ...errors,
-            time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
+            time: 'Выберете тип оборудования',
           });
+        }
+        break;
+      case 'text':
+        if (!requestIssuanceValues.text.length) {
+          setErrors({
+            ...errors,
+            text: 'Введите, пожалуйста, ваш лицевой счёт',
+          });
+        }
+        break;
+      case 'address':
+        if (!requestIssuanceValues.address.length) {
+          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
+        }
+        break;
+      case 'date':
+        if (!requestIssuanceValues.date) {
+          setErrors({ ...errors, date: 'Заполните, пожалуйста,  желаемую дату выполнения работы' });
         }
         break;
       default:

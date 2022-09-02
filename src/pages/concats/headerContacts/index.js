@@ -1,8 +1,8 @@
 import React from 'react';
-import {HeaderCompanyDiv, HeaderConcatsBtn } from './styles';
+import { HeaderCompanyDiv, HeaderConcatsBtn } from './styles';
 import { Name } from '../../../components/administrativeServices/Header/styles';
 
-export default function HeaderConcats({width}) {
+export default function HeaderConcats({ width }) {
   return (
     <HeaderCompanyDiv width={width}>
       <Name>Контактная информация</Name>

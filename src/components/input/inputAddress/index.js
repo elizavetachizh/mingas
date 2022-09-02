@@ -1,12 +1,6 @@
-
 import type { InputPropsAddress } from '../../../const/consts';
-import { Input } from "../styles";
+import { Input } from '../styles';
 
-const divStyle = {
-  margin: '0',
-  width: '100%',
-  textAlign: 'center',
-};
 export default function InputAddress({
   error,
   inputAddress,
@@ -16,7 +10,7 @@ export default function InputAddress({
   placeholder,
 }: InputPropsAddress): JSX.Element {
   return (
-    <div style={divStyle}>
+    <div>
       <Input
         type={type}
         name={inputAddress}

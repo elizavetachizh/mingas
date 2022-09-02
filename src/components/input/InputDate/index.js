@@ -1,6 +1,5 @@
-import { Input } from "../styles";
-import type { InputPropsInform } from "../../../const/consts";
-
+import { Input } from '../styles';
+import type { InputPropsInform } from '../../../const/consts';
 
 const divStyle = {
   margin: '0',
@@ -24,7 +23,7 @@ export default function InputDate({
         value={value}
         onChange={onChange}
       />
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

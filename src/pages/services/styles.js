@@ -5,7 +5,7 @@ export const DivServices = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 10% auto;
+  margin: 6% auto;
   justify-content: center;
 `;
 
@@ -52,6 +52,7 @@ export const NavLinkService = styled(NavLink)`
   display: flex;
   flex: 0 0 30%;
   max-width: 28%;
+
   padding: 1rem;
   height: 270px;
   margin: 1rem;
@@ -124,4 +125,15 @@ export const BackgroundStyleServices = styled.img`
     margin: 10% 10%;
     width: 25%;
   }
+`;
+
+export const BlockGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  text-align: center;
+  p{
+    font-weight: bold;
+    text-align: center;
+  }
+  //grid-auto-rows: ()
 `;

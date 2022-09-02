@@ -16,9 +16,6 @@ import { t } from 'i18next';
 import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
-import Select from '../../../../components/select';
-import { OPTIONS_TIME } from '../../../../const/consts';
-import TitleFun from '../../../../components/title';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
@@ -29,21 +26,14 @@ export default function ProvidingGasMeterReadings() {
     requestValues,
     errors,
     handleFileInput,
-    handleChangeTime,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
     form,
-    msg,
-    email,
-    phone,
   } = useProvidingGasMasterReadings();
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit}>
-        <p>
-          <b>{msg}</b>
-        </p>
         <DivInput>
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
@@ -54,7 +44,7 @@ export default function ProvidingGasMeterReadings() {
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
             value={requestValues.name}
-            error={name && errors.name}
+            error={errors.name}
             inputName={'name'}
           />
         </DivInput>
@@ -70,7 +60,21 @@ export default function ProvidingGasMeterReadings() {
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
-            error={email && errors.email}
+            error={errors.email}
+          />
+        </DivInput>
+        <DivInput>
+          <Label>
+            Номер договора (лицевой счёт): <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'text'}
+            name={'text'}
+            type={'text'}
+            placeholder={'Введите абонентский номер'}
+            onChange={handleUserInput}
+            value={requestValues.text}
+            error={errors.text}
           />
         </DivInput>
         <DivInput>
@@ -85,7 +89,7 @@ export default function ProvidingGasMeterReadings() {
             placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
-            error={phone && errors.phone}
+            error={errors.phone}
           />
         </DivInput>
         <DivInput>
@@ -100,37 +104,10 @@ export default function ProvidingGasMeterReadings() {
             placeholder={'Введите адрес проживания'}
             onChange={handleUserInput}
             value={requestValues.address}
-            error={address && errors.address}
+            error={errors.address}
             label={t('form:address')}
-            span={'*'}
           />
         </DivInput>
-        <Select
-          label={'Желаемое время для связи:'}
-          span={'*'}
-          onChange={handleChangeTime}
-          value={requestValues.time}
-          inputName={'time'}
-          name={'time'}
-          error={errors.time}
-          options={OPTIONS_TIME}
-        />
-        {/*<DivInput>*/}
-        {/*  <Label>*/}
-        {/*    Лицевой счёт: <Span>*</Span>*/}
-        {/*  </Label>*/}
-        {/*  <InputName*/}
-        {/*    inputName={'text'}*/}
-        {/*    name={'text'}*/}
-        {/*    type={'text'}*/}
-        {/*    placeholder={'Введите Лицевой счёт'}*/}
-        {/*    onChange={handleUserInput}*/}
-        {/*    value={requestValues.text}*/}
-        {/*    error={errors.text}*/}
-        {/*    label={'Лицевой счёт'}*/}
-        {/*    span={'*'}*/}
-        {/*  />*/}
-        {/*</DivInput>*/}
         <DivInput>
           <Label>
             Показания счётчика<Span>*</Span>
@@ -147,9 +124,7 @@ export default function ProvidingGasMeterReadings() {
           />
         </DivInput>
         <DivInputFile>
-          {/*<Label>*/}
-          {/*  Фото счётчика<Span>*</Span>*/}
-          {/*</Label>*/}
+          <Label>Прикрепить фото прибора учёта</Label>
           <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
         </DivInputFile>
         <DivInputCheckbox>

@@ -25,10 +25,7 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
       !requestValues.isAgree ||
       !requestValues.address ||
       !requestValues.date ||
-      !requestValues.time ||
-      !requestValues.work ||
-      !requestValues.number ||
-        !requestValues.marka ||
+      !requestValues.text ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -62,41 +59,17 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
         }
         break;
+      case 'text':
+        if (!requestValues.text.length) {
+          setErrors({
+            ...errors,
+            text: 'Введите, пожалуйста, ваш лицевой счёт',
+          });
+        }
+        break;
       case 'date':
         if (!requestValues.date) {
           setErrors({ ...errors, date: 'Заполните, пожалуйста,  желаемую дату выполнения работы' });
-        }
-        break;
-      case 'time':
-        if (requestValues.time.trim().length) {
-          setErrors({
-            ...errors,
-            time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
-          });
-        }
-        break;
-      case 'work':
-        if (requestValues.work.trim().length) {
-          setErrors({
-            ...errors,
-            work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
-          });
-        }
-        break;
-      case 'number':
-        if (!requestValues.number) {
-          setErrors({
-            ...errors,
-            number: 'Укажите ваш номер индивидуального прибора учета расхода газа',
-          });
-        }
-        break;
-      case 'marka':
-        if (!requestValues.marka) {
-          setErrors({
-            ...errors,
-            marka: 'Укажите ваш номер индивидуального прибора учета расхода газа',
-          });
         }
         break;
       default:
@@ -109,25 +82,6 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
       event.preventDefault();
       const { name, value } = event.target;
       setRequestValues(Object.assign(requestValues, { [name]: value }));
-      validate(name);
-    },
-    [requestValues]
-  );
-
-  const handleChangeWork = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setRequestValues({ ...requestValues, work: value });
-      validate(name);
-    },
-    [requestValues]
-  );
-  const handleChangeTime = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setRequestValues({ ...requestValues, time: value });
       validate(name);
     },
     [requestValues]
@@ -146,8 +100,7 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
       email: '',
       phone: '',
       address: '',
-      number: '',
-      marka: '',
+      text: '',
     });
   }, []);
 
@@ -175,9 +128,6 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeWork,
-    handleChangeTime,
-    // handleFileInput,
     handleCheckBox,
     clearForm,
     isButtonDisabled,

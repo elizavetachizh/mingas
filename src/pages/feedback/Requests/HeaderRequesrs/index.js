@@ -12,9 +12,11 @@ const styledTitle = {
   margin: '0',
 };
 export default function HeaderRequests() {
-  const [active, setActive] = useState('ApplicationForTheIssuanceOfTechnicalSpecifications');
+  const [active, setActive] = useState('ApplicationForOrderingCylinders');
   return (
-    <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px', marginTop: '0' }}>
+    <div
+      style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px', marginTop: '0' }}
+    >
       <TitleForHome
         fontSize={'m'}
         margin={'s'}
@@ -74,13 +76,6 @@ export default function HeaderRequests() {
           >
             Техническое обслуживание
           </Button>
-          {/*<Button*/}
-          {/*  onClick={() => {*/}
-          {/*    setActive('ApplicationForGasificationOfResidentialGardenHouse');*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*  Заявка на газификацию жилого (садового) дома*/}
-          {/*</Button>*/}
         </HeaderBtnFeedback>
         {active === 'ApplicationForOrderingCylinders' && <ApplicationForOrderingCylinders />}
         {active === 'ApplicationForVerificationOfGasMeters' && (
@@ -92,12 +87,7 @@ export default function HeaderRequests() {
         {active === 'ApplicationToCallRepresentativeOfGasSupplyOrganization' && (
           <ApplicationToCallRepresentativeOfGasSupplyOrganization />
         )}
-
         {active === 'ProvidingGasMeterReadings' && <ProvidingGasMeterReadings />}
-        {/*{active === 'ApplicationForGasificationOfResidentialGardenHouse' && (*/}
-        {/*  <ApplicationForGasificationOfResidentialGardenHouse />*/}
-        {/*)}*/}
-
         {active === 'ApplicationForTheIssuanceOfTechnicalSpecifications' && (
           <ApplicationForTheIssuanceOfTechnicalSpecifications />
         )}

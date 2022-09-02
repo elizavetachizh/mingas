@@ -19,6 +19,7 @@ export const ContainerLinks = styled.div`
       text-align: center;
       img {
         margin: 0 auto;
+        width: 330px;
       }
       p {
         text-align: center;

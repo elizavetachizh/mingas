@@ -26,7 +26,8 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
       !requestValues.address ||
       !requestValues.date ||
       !requestValues.time ||
-      !requestValues.work ||
+      !requestValues.text ||
+      !requestValues.message ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -57,7 +58,7 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
         break;
       case 'isAgree':
         if (!!requestValues.isAgree) {
-          setErrors({ ...errors, isAgree: 'Заполните поле' });
+          setErrors({ ...errors, isAgree: 'Заполните все поля со *' });
         }
         break;
       case 'date':
@@ -66,18 +67,26 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
         }
         break;
       case 'time':
-        if (requestValues.time.trim().length) {
+        if (requestValues.time.trim()) {
           setErrors({
             ...errors,
-            time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
+            time: 'Выбере тип оборудования',
           });
         }
         break;
-      case 'work':
-        if (requestValues.work.trim().length) {
+      case 'text':
+        if (!requestValues.text.length) {
           setErrors({
             ...errors,
-            work: 'Заполните, пожалуйста,  желаемое время выполнения работы',
+            text: 'Введите, пожалуйста, ваш лицевой счёт',
+          });
+        }
+        break;
+      case 'message':
+        if (!requestValues.message.length) {
+          setErrors({
+            ...errors,
+            text: 'Опишите неисправность либо поставьте -',
           });
         }
         break;
@@ -96,15 +105,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
     [requestValues]
   );
 
-  const handleChangeWork = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setRequestValues({ ...requestValues, work: value });
-      validate(name);
-    },
-    [requestValues]
-  );
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
@@ -120,14 +120,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
     validate('isAgree');
   }, [requestValues]);
 
-  // const handleFileInput = useCallback(
-  //   (event: { target: { files: FileList } }) => {
-  //     const file = event.target.files[0];
-  //     setRequestValues({ ...requestValues, fileName: file.name });
-  //   },
-  //   [requestValues]
-  // );
-
   const clearForm = useCallback(() => {
     setRequestValues({
       ...INITIAL_REQUEST_STATE,
@@ -137,6 +129,7 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
       phone: '',
       address: '',
       text: '',
+      message: '',
     });
   }, []);
 
@@ -164,9 +157,7 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeWork,
     handleChangeTime,
-    // handleFileInput,
     handleCheckBox,
     clearForm,
     isButtonDisabled,

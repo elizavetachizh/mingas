@@ -15,17 +15,14 @@ import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import address from '../../../../assets/formPng/map.png';
 import Select from '../../../../components/select';
-import { OPTIONS, OPTIONS_TIME } from '../../../../const/consts';
+import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';
-import TitleFun from '../../../../components/title';
-import SubTitleFun from "../../../../components/SubTitle";
 
 export default function ApplicationForRepairOfGasUsingEquipment() {
   const {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeWork,
     handleChangeTime,
     handleCheckBox,
     isButtonDisabled,
@@ -46,7 +43,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
             value={requestValues.name}
-            error={name && errors.name}
+            error={errors.name}
             label={t('form:name')}
             span={'*'}
           />
@@ -63,9 +60,23 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
-            error={email && errors.email}
+            error={errors.email}
             label={t('form:email')}
             span={'*'}
+          />
+        </DivInput>
+        <DivInput>
+          <Label>
+            Номер договора (лицевой счёт): <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'text'}
+            name={'text'}
+            type={'text'}
+            placeholder={'Введите абонентский номер'}
+            onChange={handleUserInput}
+            value={requestValues.text}
+            error={errors.text}
           />
         </DivInput>
         <DivInput>
@@ -80,26 +91,50 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
-            error={phone && errors.phone}
+            error={errors.phone}
             label={t('form:phone')}
             span={'*'}
           />
         </DivInput>
         <DivInput>
           <Label>
-            Адрес объекта:
+            Адрес:
             <Span>*</Span>
           </Label>
           <InputName
             inputName={'address'}
             type="text"
             name={'address'}
-            placeholder={'Введите адрес объекта'}
+            placeholder={'Введите ваш адрес'}
             onChange={handleUserInput}
             value={requestValues.address}
-            error={address && errors.address}
+            error={errors.address}
             label={t('form:address')}
             span={'*'}
+          />
+        </DivInput>
+        <Select
+          label={'Тип оборудования'}
+          span={'*'}
+          onChange={handleChangeTime}
+          value={requestValues.time}
+          inputName={'time'}
+          error={errors.time}
+          options={OPTIONS_EQUIPMENT}
+        ></Select>
+        <DivInput style={{ margin: '30px auto' }}>
+          <Label>
+            Опишите неисправность <Span>*</Span>
+          </Label>
+          <InputName
+            style={{ height: '100px', padding: '0 18px' }}
+            error={errors.message}
+            inputName={'message'}
+            onChange={handleUserInput}
+            type={'text'}
+            name={'message'}
+            value={requestValues.message}
+            placeholder={'Опишите неисправность'}
           />
         </DivInput>
         <DivInput>
@@ -116,24 +151,9 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             placeholder={'Введите желаемую дату выполнения работы'}
           />
         </DivInput>
-        <Select
-          label={' Желаемое время выполнения работы'}
-          span={'*'}
-          onChange={handleChangeTime}
-          value={requestValues.time}
-          inputName={'time'}
-          error={errors.time}
-          options={OPTIONS_TIME}
-        ></Select>
-        <Select
-          label={'Выбрать вид работы:'}
-          span={'*'}
-          onChange={handleChangeWork}
-          value={requestValues.work}
-          inputName={'work'}
-          error={errors.work}
-          options={OPTIONS}
-        ></Select>
+        <span style={{ color: 'red' }}>
+          *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
+        </span>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

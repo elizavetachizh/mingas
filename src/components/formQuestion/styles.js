@@ -119,9 +119,6 @@ export const DivInputFile = styled.div`
 `;
 
 export const InputFile = styled.input`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -132,7 +129,15 @@ export const Button = styled.button`
   //background: none;
   border: 1px solid #0d4475;
   color: #fff; /* Цвет текста */
-  background: linear-gradient(to top left, #1241b3 10px, #2c5acf 50px, 70px, #1b3a91);
+  background-image: linear-gradient(
+    -55deg,
+    rgb(1, 95, 156) 0%,
+    rgb(16, 69, 141) 0%,
+    rgb(15, 89, 141) 19%,
+    rgb(15, 78, 140) 69%,
+    rgb(14, 78, 129) 79%,
+    rgb(13, 68, 117) 100%
+  );
   border-radius: 30px;
   font-size: 16px;
   font-weight: 500;

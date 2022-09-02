@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
+import * as emailjs from '@emailjs/browser';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const url = 'http://localhost:5000/users/';
@@ -16,7 +17,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375 \d{2} \d{3} \d{2} \d{2}/g.test(phone);
+    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
   };
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);
@@ -28,7 +29,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
       !requestValues.isAgree ||
       !requestValues.text ||
       !requestValues.address ||
-      !requestValues.time ||
       !requestValues.reading ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
@@ -60,7 +60,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
         break;
       case 'isAgree':
         if (!!requestValues.isAgree) {
-          setErrors({ ...errors, isAgree: 'Заполните поле' });
+          setErrors({ ...errors, isAgree: 'Заполните все поля со *' });
         }
         break;
       case 'text':
@@ -68,14 +68,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
           setErrors({
             ...errors,
             text: 'Введите, пожалуйста, ваш лицевой счёт',
-          });
-        }
-        break;
-      case 'time':
-        if (requestValues.time.trim().length) {
-          setErrors({
-            ...errors,
-            time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
           });
         }
         break;
@@ -153,16 +145,36 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     });
   }, []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
-    } catch (err) {
-      console.log('error', err);
-    }
-    clearForm();
-    alert('Форма успешно заполнена');
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
+  //   } catch (err) {
+  //     console.log('error', err);
+  //   }
+  //   clearForm();
+  //   alert('Форма успешно заполнена');
+  // };
+
+  const handleSubmit = useCallback(
+    (event) => {
+      event.preventDefault();
+
+      emailjs
+        .sendForm('service_9ojlulb', 'template_d6awrvn', form.current, 'Cr7j1nqgFLXsPcHIL')
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      clearForm();
+      alert('Форма успешно заполнена');
+    },
+    [requestValues]
+  );
   return {
     handleUserInput,
     requestValues,

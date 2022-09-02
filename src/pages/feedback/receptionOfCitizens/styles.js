@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 export const Table = styled.table`
   width: 100%;
   margin: 0 auto;
@@ -25,6 +24,13 @@ export const Table = styled.table`
   }
   &.firstColumn {
     width: 40%;
+    tr {
+      td {
+        a {
+          color: #0d4475;
+        }
+      }
+    }
   }
 `;
 
@@ -37,42 +43,21 @@ export const Thead = styled.thead`
 `;
 
 export const Tbody = styled.tbody`
-  color: #0d4475;
-  a:hover,
-  a:active {
-    color: #0d4475 !important;
-  }
   tr {
     height: 300px;
     td {
-      a:hover,
-      a:active {
-        color: #0d4475 !important;
-      }
-      &:hover {
-        text-decoration-line: underline;
-      }
       @media (max-width: 1390px) {
         height: 225px;
       }
     }
   }
   &.firstColumn {
-    tr {
-      td {
-        a:hover,
-        a:active {
-          color: #0d4475 !important;
-        }
-      }
-    }
   }
   &.general {
     tr {
       height: fit-content;
       td {
         height: fit-content;
-        color: #0d4475;
       }
     }
   }

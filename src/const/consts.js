@@ -179,6 +179,24 @@ export const OPTIONS_TIME = [
     label: '17:00-20:00',
   },
 ];
+export const OPTIONS_EQUIPMENT = [
+  {
+    value: '',
+    label: 'Выберете тип оборудования',
+  },
+  {
+    value: 'Плита',
+    label: 'Плита',
+  },
+  {
+    value: 'Водонагреватель проточный газовый',
+    label: 'Водонагреватель проточный газовый',
+  },
+  {
+    value: 'Котёл отопительный',
+    label: 'Котёл отопительный',
+  },
+];
 
 export interface UseFormReturnValues {
   handleUserInput: (event: React.ChangeEvent<HTMLInputElement>) => void;

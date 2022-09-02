@@ -4,6 +4,7 @@ import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 
 export const useForOrderingCylinders = (): UseFormReturnValues => {
+  //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -21,10 +22,9 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
   const isButtonDisabled = useMemo(() => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
-      !isValidateEmail(requestValues.email) ||
       !requestValues.isAgree ||
       !requestValues.text ||
-      !requestValues.time ||
+      !requestValues.address ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -38,11 +38,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
           setErrors({ ...errors, name: 'ФИО может содержать только буквы!' });
         }
         break;
-      case 'email':
-        if (!isValidateEmail(requestValues.email)) {
-          setErrors({ ...errors, email: 'Введите верный адрес почты!' });
-        }
-        break;
       case 'phone':
         if (!isValidatePhone(requestValues.phone)) {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
@@ -50,14 +45,19 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
         break;
       case 'isAgree':
         if (!!requestValues.isAgree) {
-          setErrors({ ...errors, isAgree: 'Заполните поле' });
+          setErrors({ ...errors, isAgree: 'Заполните все поля со *' });
         }
         break;
-      case 'time':
-        if (requestValues.time.trim().length) {
+      case 'address':
+        if (!requestValues.address.length) {
+          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
+        }
+        break;
+      case 'text':
+        if (!requestValues.text.length) {
           setErrors({
             ...errors,
-            time: 'Заполните, пожалуйста,  желаемое время выполнения работы',
+            text: 'Введите, пожалуйста, ваш абонентский номер',
           });
         }
         break;
@@ -76,16 +76,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
     [requestValues]
   );
 
-  const handleChangeTime = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setRequestValues({ ...requestValues, time: value });
-      validate(name);
-    },
-    [requestValues]
-  );
-
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
@@ -99,6 +89,7 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
       email: '',
       phone: '',
       text: '',
+      address: '',
     });
   }, []);
 
@@ -126,7 +117,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
     handleUserInput,
     requestValues,
     errors,
-    handleChangeTime,
     handleCheckBox,
     clearForm,
     isButtonDisabled,

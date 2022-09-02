@@ -12,9 +12,9 @@ export default function DopFunctionalForColumn({
     handlerLeaderClick(leader);
   }, [handlerLeaderClick, leader]);
   return (
-    <BlockForAdmissionSchedule onClick={onClick} >
+    <BlockForAdmissionSchedule onClick={onClick}>
       <p style={{ display: 'none' }}>{idName}</p>
-      <>{fullName}</>
+      <p>{fullName}</p>
       <p>{position}</p>
     </BlockForAdmissionSchedule>
   );

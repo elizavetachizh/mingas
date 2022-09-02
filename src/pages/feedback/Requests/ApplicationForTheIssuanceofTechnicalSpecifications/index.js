@@ -14,12 +14,10 @@ import { t } from 'i18next';
 import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
 import Select from '../../../../components/select';
-import { OPTIONS_TIME } from '../../../../const/consts';
+import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import { useRequestForIssuance } from './IssuanceOfTS-hook';
-import TitleFun from '../../../../components/title';
-import SubTitleFun from "../../../../components/SubTitle";
 
 export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   const {
@@ -67,6 +65,37 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
         </DivInput>
         <DivInput>
           <Label>
+            Номер договора (лицевой счёт): <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'text'}
+            name={'text'}
+            type={'text'}
+            placeholder={'Введите абонентский номер'}
+            onChange={handleUserInput}
+            value={requestIssuanceValues.text}
+            error={errors.text}
+          />
+        </DivInput>
+        <DivInput>
+          <Label>
+            Адрес:
+            <Span>*</Span>
+          </Label>
+          <InputName
+            inputName={'address'}
+            type="text"
+            name={'address'}
+            placeholder={'Введите ваш адрес'}
+            onChange={handleUserInput}
+            value={requestIssuanceValues.address}
+            error={errors.address}
+            label={t('form:address')}
+            span={'*'}
+          />
+        </DivInput>
+        <DivInput>
+          <Label>
             {t('form:phone')}
             <Span>*</Span>
           </Label>
@@ -81,14 +110,31 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
           />
         </DivInput>
         <Select
-          label={'Желаемое время для связи'}
+          label={'Тип оборудования'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestIssuanceValues.time}
           inputName={'time'}
           error={errors.time}
-          options={OPTIONS_TIME}
+          options={OPTIONS_EQUIPMENT}
         ></Select>
+        <DivInput>
+          <Label>
+            Желаемая дата выполнения работы <Span>*</Span>
+          </Label>
+          <InputName
+            error={errors.date}
+            inputName={'date'}
+            onChange={handleUserInput}
+            type={'date'}
+            name={'date'}
+            value={requestIssuanceValues.date}
+            placeholder={'Введите желаемую дату выполнения работы'}
+          />
+        </DivInput>
+        <span style={{ color: 'red' }}>
+          *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
+        </span>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

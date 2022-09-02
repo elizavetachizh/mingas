@@ -8,21 +8,7 @@ export default function HeaderCompany() {
   const isPhone = useMediaQuery('(max-width: 800px)');
   return (
     <>
-      {isPhone ? (
-        <select>
-          <option>
-            <NavLink to="/company/history">
-              {t('headerCompany:companyHistory')}
-            </NavLink>
-          </option>
-          <option>
-            {' '}
-            <HeaderCompanyBtn to="/company/management">
-              {t('headerCompany:management')}
-            </HeaderCompanyBtn>
-          </option>
-        </select>
-      ) : (
+
         <HeaderCompanyDiv>
           <DivButton>
             <HeaderCompanyBtn to="/company/history">
@@ -43,7 +29,6 @@ export default function HeaderCompany() {
           </DivButton>
           <hr />
         </HeaderCompanyDiv>
-      )}
     </>
   );
 }

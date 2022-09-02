@@ -11,13 +11,9 @@ import {
 import InputName from '../../../../components/input';
 import name from '../../../../assets/formPng/name.png';
 import { t } from 'i18next';
-import email from '../../../../assets/formPng/email.png';
 import phone from '../../../../assets/formPng/tel.png';
-import Select from '../../../../components/select';
-import { OPTIONS_TIME } from '../../../../const/consts';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
-import TitleFun from '../../../../components/title';
-import SubTitleFun from "../../../../components/SubTitle";
+import address from '../../../../assets/formPng/map.png';
 
 export default function ApplicationForOrderingCylinders() {
   const {
@@ -25,7 +21,6 @@ export default function ApplicationForOrderingCylinders() {
     requestValues,
     errors,
     handleCheckBox,
-    handleChangeTime,
     isButtonDisabled,
     handleSubmit,
     form,
@@ -51,7 +46,7 @@ export default function ApplicationForOrderingCylinders() {
         </DivInput>
         <DivInput>
           <Label>
-            Ваш абонентский номер: <Span>*</Span>
+            Номер абонента: <Span>*</Span>
           </Label>
           <InputName
             inputName={'text'}
@@ -65,19 +60,17 @@ export default function ApplicationForOrderingCylinders() {
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:email')}
+            {t('form:address')}
             <Span>*</Span>
           </Label>
           <InputName
-            inputName={'email'}
-            type="email"
-            name="email"
-            placeholder={'Введите ваш e-mail'}
+            inputName={'address'}
+            type="text"
+            name={'address'}
+            placeholder={'Введите адрес проживания'}
             onChange={handleUserInput}
-            value={requestValues.email}
-            error={email && errors.email}
-            label={t('form:email')}
-            span={'*'}
+            value={requestValues.address}
+            error={address && errors.address}
           />
         </DivInput>
         <DivInput>
@@ -97,15 +90,6 @@ export default function ApplicationForOrderingCylinders() {
             span={'*'}
           />
         </DivInput>
-        <Select
-          label={'Желаемое время для связи:'}
-          span={'*'}
-          onChange={handleChangeTime}
-          value={requestValues.time}
-          inputName={'time'}
-          error={errors.time}
-          options={OPTIONS_TIME}
-        ></Select>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
@@ -129,7 +113,11 @@ export default function ApplicationForOrderingCylinders() {
           Отправить
         </Button>
         {isButtonDisabled && (
-          <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+          <div style={{ width: '100%', margin: '0 auto', textAlign: 'center' }}>
+            <span style={{ color: 'red', width: '100%', margin: '0 auto' }}>
+              Заполните, пожалуйста все необходимые поля
+            </span>
+          </div>
         )}
       </Form>
     </DivApplication>

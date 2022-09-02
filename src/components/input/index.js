@@ -1,10 +1,6 @@
 import type { InputProps } from '../../const/consts';
 import { Input } from './styles';
 
-const divStyle = {
-  margin: '0',
-  width: '100%',
-};
 export default function InputName({
   error,
   inputName,
@@ -12,10 +8,11 @@ export default function InputName({
   type,
   value,
   placeholder,
+  style,
 }: InputProps): JSX.Element {
   return (
     <div>
-      <Input
+      <Input style={style}
         type={type}
         name={inputName}
         placeholder={placeholder}

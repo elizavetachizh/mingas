@@ -13,7 +13,6 @@ export default function UsefulInform() {
       <DivUsefulInform
         style={{
           backgroundColor: 'rgba(13, 68, 117, 20%)',
-          backdropFilter: 'blur(50px)',
           marginTop: '10px',
         }}
       >

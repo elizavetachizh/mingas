@@ -1,11 +1,6 @@
-import { InputPropsPhone } from "../../../const/consts";
-import { Input } from "../styles";
+import { InputPropsPhone } from '../../../const/consts';
+import { Input } from '../styles';
 
-const divStyle = {
-  margin: '0',
-  width: '100%',
-  textAlign: 'center',
-};
 export default function InputPhone({
   error,
   inputPhone,
@@ -15,7 +10,7 @@ export default function InputPhone({
   placeholder,
 }: InputPropsPhone): JSX.Element {
   return (
-    <div style={divStyle}>
+    <div>
       <Input
         type={type}
         name={inputPhone}
@@ -23,7 +18,7 @@ export default function InputPhone({
         value={value}
         onChange={onChange}
       />
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

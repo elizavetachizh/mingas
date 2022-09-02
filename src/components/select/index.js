@@ -30,7 +30,7 @@ export default function Select({
           </option>
         ))}
       </SelectDiv>
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </DivSelect>
   );
 }
