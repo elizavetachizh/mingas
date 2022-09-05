@@ -108,6 +108,10 @@ export const Background = styled.div`
     height: 80px;
     flex-direction: row;
   }
+  @media(max-width: 1600px) {
+    box-shadow: none;
+    border-radius: 0;
+  }
   @media (min-width: 1600px) {
     width: 90%;
     margin: 0 auto;

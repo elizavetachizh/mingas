@@ -5,9 +5,10 @@ export const ContainerContent = styled.div`
   border-radius: 20px;
   width: 100%;
   margin-top: 84px;
-  //@media(max-width: 700px) {
-  //  display: none;
-  //}
+  @media(max-width: 1600px) {
+    box-shadow: none;
+    border-radius: 0;
+  }
 `;
 
 export const DivContent = styled.div`
@@ -18,7 +19,6 @@ export const DivContent = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  border-radius: 10px;
   bottom: 0;
   @media (max-width: 1700px) {
     height: fit-content;
@@ -35,10 +35,15 @@ export const DivText = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 10px;
   width: 100%;
   align-items: end;
   z-index: 5;
+  //a {
+  //  width: 100%;
+  //  //img {
+  //  //  width: 100%;
+  //  //}
+  //}
   &.phone {
     @media (max-width: 1100px) {
       width: 80%;
@@ -83,6 +88,12 @@ export const DivText = styled.div`
     @media (max-width: 740px) {
       margin-bottom: -40px;
     }
+    @media (max-width: 630px) {
+      margin-bottom: -22px;
+    }
+    @media (max-width: 425px) {
+      margin-bottom: -8px;
+    }
     img {
       width: 80%;
       @media (max-width: 1300px) {
@@ -90,6 +101,12 @@ export const DivText = styled.div`
       }
       @media (max-width: 1100px) {
         width: 60%;
+      }
+      @media (max-width: 500px) {
+        width: 66%;
+      }
+      @media (max-width: 380px) {
+        width: 80%;
       }
     }
   }
@@ -102,15 +119,28 @@ export const DivText = styled.div`
   //    margin: 0 25%;
   //  }
   //}
-  @media (max-width: 400px) {
-    img {
-      width: 60%;
-      margin: 0 25%;
-    }
-  }
+  //@media (max-width: 400px) {
+  //  img {
+  //    width: 60%;
+  //    margin: 0 25%;
+  //  }
+  //}
   a.day-of-gas {
-    @media (min-width: 2250px) {
+    @media (min-width: 2350px) {
       margin-bottom: -90px;
+    }
+    @media (min-width: 3000px) {
+      margin-bottom: -120px;
+    }
+    img.day-of-gas {
+      //@media (max-width: 500px) {
+      //  height: 190px;
+      //  width: auto;
+      //}
+      //@media (max-width: 370px) {
+      //  height: 170px;
+      //  width: auto;
+      //}
     }
     //@media (max-width: 2300px) {
     //  margin-bottom: 0;
@@ -154,6 +184,15 @@ export const Text = styled.p`
   @media (max-width: 850px) {
     font-size: 18px;
   }
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
+  @media (max-width: 380px) {
+    font-size: 12px;
+  }
 `;
 
 export const DivPrizes = styled.div`
@@ -173,7 +212,6 @@ export const Prizes = styled.div`
     margin: 10px;
     width: 50px;
     height: 50px;
-   
   }
   @media (max-width: 438px) {
     img {

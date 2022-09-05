@@ -135,5 +135,4 @@ export const BlockGrid = styled.div`
     font-weight: bold;
     text-align: center;
   }
-  //grid-auto-rows: ()
 `;

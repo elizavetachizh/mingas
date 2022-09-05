@@ -82,6 +82,7 @@ app.post('/questions', (req, res) => {
             <li>Email: ${req.body.email}</li>
             <li>Контактный телефон: ${req.body.phone}</li>
             <li>Адрес: ${req.body.address}</li>
+<!--               <li>Документ: ${req.body.formValues}</li>-->
         </ul>
         `,
   };
@@ -124,6 +125,7 @@ app.post('/question-for-entity', (req, res) => {
             <li>Почтовый адрес: ${req.body.text}</li>
             <li>Почтовый индекс: ${req.body.index}</li>
             <li>Текст сообщения: ${req.body.message}</li>
+         
         </ul>
         `,
   };
@@ -138,6 +140,6 @@ app.post('/question-for-entity', (req, res) => {
 });
 
 // listen to the port
-app.listen(PORT, '172.16.192.50', () => {
+app.listen(PORT, () => {
   console.log(`server start on port ${PORT}`);
 });

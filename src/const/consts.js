@@ -14,21 +14,6 @@ export const INITIAL_FORM_STATE = {
   organization: '',
 };
 
-export interface FormValuesConst {
-  name: string;
-  date: string;
-  email: string;
-  work: string;
-  phone: string;
-  address: string;
-  message: string;
-  isAgree: boolean;
-  text: string;
-  fileName: string;
-  male: boolean;
-  organization: string;
-  index: string;
-}
 export interface InputProps {
   type: 'date' | 'text';
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

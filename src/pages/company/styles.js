@@ -8,6 +8,7 @@ export const Container = styled.div`
     width: 100%;
     margin: 0 auto;
   }
+
 `;
 export const BlockOfGraditude = styled.div`
   display: flex;

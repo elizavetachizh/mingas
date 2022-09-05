@@ -11,10 +11,6 @@ export default function UsefulInform() {
   return (
     <>
       <DivUsefulInform
-        style={{
-          backgroundColor: 'rgba(13, 68, 117, 20%)',
-          marginTop: '10px',
-        }}
       >
         <TitleForHome
           margin={'s'}

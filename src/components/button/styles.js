@@ -5,7 +5,15 @@ const buttonBackgroundColor = {
     background-color: #E9F1F5;
     color: #0d4475`,
   blue: `
-    background-color: #0D4475;
+     background-image: linear-gradient(
+    -55deg,
+    rgb(1, 95, 156) 0%,
+    rgb(16, 69, 141) 0%,
+    rgb(15, 89, 141) 19%,
+    rgb(15, 78, 140) 60%,
+    rgb(14, 78, 129) 79%,
+    rgb(13, 68, 117) 100%
+  );
     color: #FFF`,
   border: `
     color: #FFF;

@@ -32,3 +32,20 @@ export const Telephons = styled.div`
 `;
 export const ContactInform = Telephons;
 export const WorkTime = Telephons;
+
+export const FooterContainer = styled.div`
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background-image: linear-gradient(
+    -55deg,
+    rgb(1, 95, 156) 0%,
+    rgb(16, 69, 141) 0%,
+    rgb(15, 89, 141) 19%,
+    rgb(15, 78, 140) 60%,
+    rgb(14, 78, 129) 79%,
+    rgb(13, 68, 117) 100%
+  );
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+`;

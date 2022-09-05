@@ -54,6 +54,7 @@ export const ArticleForHome = styled.div`
   text-align: center;
   background-repeat: no-repeat;
   background-position: bottom;
+  box-shadow: inset 0 -80px 50px -25px #0d4475;
   text-decoration-line: none;
   @media (min-width: 2400px) {
     width: 420px;
@@ -104,14 +105,24 @@ export const ArticleForHome = styled.div`
     font-weight: bold;
     font-size: 16px;
     @media (min-width: 330px) {
-      width: 70%;
+      width: 76%;
+    }
+    @media (min-width: 530px) {
+      width: 60%;
+    }
+    @media (min-width: 700px) {
+      width: 46%;
     }
     @media (min-width: 900px) {
-      width: 200px;
+      width: 34%;
     }
-    @media (max-width: 1490px) {
+    @media (min-width: 1150px) {
       width: 22%;
+      font-size: 14px;
     }
+    //@media (min-width: 1490px) {
+    //  width: 22%;
+    //}
     @media (min-width: 1500px) {
       width: 18%;
     }

@@ -6,20 +6,13 @@ import { pressCenter } from '../../../assets/data/pressCenterHeader';
 import DopFunctionalPressCenter from '../../PressCenter/DopFunctional';
 import { Article, ArticleForHome, ContainerArticles } from '../../PressCenter/styles';
 import gradient from '../../../assets/background/gradient.png';
+import { BlockContainerRequests } from '../../feedback/styles';
 const styledTitle = {
   margin: '0',
 };
 export default function News() {
   return (
-    <div
-      style={{
-        boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)',
-        borderRadius: '20px',
-        paddingBottom: '10px',
-        backgroundColor: 'rgba(13, 68, 117, 20%)',
-        backdropFilter: 'blur(50px)',
-      }}
-    >
+    <BlockContainerRequests>
       <TitleForHome
         style={styledTitle}
         margin={'s'}
@@ -29,7 +22,7 @@ export default function News() {
       />
 
       <DivInform>
-        <ArticleForHome style={{ backgroundImage: `url('${gradient}')` }} className={'general'}>
+        <ArticleForHome className={'general'}>
           <a
             target={'_blank'}
             href={
@@ -44,12 +37,7 @@ export default function News() {
             <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
           </a>
         </ArticleForHome>
-        <ArticleForHome
-          className={'quarter'}
-          style={{
-            backgroundImage: `url('${gradient}')`,
-          }}
-        >
+        <ArticleForHome className={'quarter'}>
           <a
             target={'_blank'}
             href={
@@ -68,12 +56,7 @@ export default function News() {
             </p>
           </a>
         </ArticleForHome>
-        <ArticleForHome
-          className={'quarter'}
-          style={{
-            backgroundImage: `url('${gradient}')`,
-          }}
-        >
+        <ArticleForHome className={'quarter'}>
           <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
             <img src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
             <p>
@@ -81,11 +64,7 @@ export default function News() {
             </p>
           </a>
         </ArticleForHome>
-        <ArticleForHome
-          style={{
-            backgroundImage: `url('${gradient}')`,
-          }}
-        >
+        <ArticleForHome>
           <a
             target={'_blank'}
             href={'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'}
@@ -104,6 +83,6 @@ export default function News() {
         </ArticleForHome>
       </DivInform>
       <ButtonFun href={'/press-center/1'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
-    </div>
+    </BlockContainerRequests>
   );
 }

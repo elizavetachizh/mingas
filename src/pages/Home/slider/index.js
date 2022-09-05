@@ -81,7 +81,7 @@ export default class CarouselFun extends React.Component {
         </div>,
         <DivText>
           <a className={'day-of-gas'} href={''}>
-            <img src={dayOfGas} alt={''} />
+            <img className={'day-of-gas'} src={dayOfGas} alt={''} />
           </a>
         </DivText>,
       ],

@@ -1,21 +1,13 @@
 import React from 'react';
 import { LinkLogo, LinksContainer, Logo } from '../header/styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
-import { Contacts, Telephons, ContactInform, WorkTime } from './styles';
+import { Contacts, Telephons, ContactInform, WorkTime, FooterContainer } from './styles';
 import ButtonFun from '../button';
 
 import { Prizes } from '../../pages/Home/Content/styles';
 export default function Footer() {
   return (
-    <div
-      style={{
-        boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)',
-        borderRadius: '20px',
-        backgroundColor: '#0d4475',
-        bottom: '0',
-        margin: '0',
-        padding: 0,
-      }}
+    <FooterContainer
     >
       <LinksContainer>
         <LinkLogo to="/">
@@ -48,6 +40,6 @@ export default function Footer() {
         </WorkTime>
       </Contacts>
       {/*</LinksNetwork>*/}
-    </div>
+    </FooterContainer>
   );
 }

@@ -11,7 +11,7 @@ import LinkServicesForLegalEntities from './dataComponentsForLEgalEntities';
 export default function HomeServices() {
   const { t } = useTranslation();
   return (
-    <Container style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px' }}>
+    <Container>
       <TitleForHome
         fontSize={'m'}
         infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'}

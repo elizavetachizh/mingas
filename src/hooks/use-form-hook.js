@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'http://87.61.8.174:8080/questions/';
+  const url = 'http://localhost:8080/questions/';
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
@@ -96,14 +96,11 @@ export const useForm = () => {
     validate('isAgree');
   }, [formValues]);
 
-  const handleSwitcher = useCallback(() => {
-    setFormValues({ ...formValues, male: !formValues.male });
-  }, [formValues]);
-
   const handleFileInput = useCallback(
     (event: { target: { files: FileList } }) => {
       const file = event.target.files[0];
       setFormValues({ ...formValues, fileName: file.name });
+      console.log(file)
     },
     [formValues]
   );
@@ -131,7 +128,6 @@ export const useForm = () => {
     handleChangeCountry,
     handleFileInput,
     handleCheckBox,
-    handleSwitcher,
     isButtonDisabled,
     handleSubmit,
     form,

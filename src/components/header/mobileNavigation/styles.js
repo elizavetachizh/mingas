@@ -43,25 +43,14 @@ export const LinksContainer = styled.div`
   height: fit-content;
   width: 500px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
-  //background-color: rgba(200, 220, 231, 100%);
   background-color: rgba(13, 68, 117, 80%);
   backdrop-filter: blur(5px);
   display: flex;
   border-radius: 20px;
   position: fixed;
-  list-style: none;
   padding: 10px;
   margin: 0;
-  box-sizing: border-box;
-  //background-color: #eee;
-  transition: left 0.2s;
-  color: #0d4475;
   z-index: 2;
-  //background-color: rgba(200, 220, 231, 80%);
-  //-webkit-backface-visibility: hidden;
-  &.opacity {
-    left: 0;
-  }
 `;
 
 export const CompanyButton = styled(NavLink)`

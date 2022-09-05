@@ -4,13 +4,14 @@ import { DivCarousel } from './styles';
 import { DivInform } from '../../pages/Home/useful_information/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import React from 'react';
+import {BlockContainerRequests} from "../../pages/feedback/styles";
 const styledTitle = {
   margin: '0',
 };
 export default function StateInformResources() {
   const isPhone = useMediaQuery('(max-width: 800px)');
   return (
-    <div style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px', marginBottom: '10px' }}>
+    <BlockContainerRequests>
       <TitleForHome
         style={styledTitle}
         fontSize={'m'}
@@ -208,6 +209,6 @@ export default function StateInformResources() {
         style={{ width: '100%', marginBottom: '2%' }}
         src={require('../../assets/background/ornament.png')}
       />
-    </div>
+    </BlockContainerRequests>
   );
 }

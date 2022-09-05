@@ -8,7 +8,7 @@ import { defaultCenter, GetBrowserLocation } from '../../../components/GoogleMap
 import TitleFun from '../../../components/title';
 import { AdditionalDiv } from './styles';
 import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
-import { Container } from "../../company/styles";
+import { Container } from '../../company/styles';
 export const styleTd = {
   width: '50%',
   fontWeight: 'bold',

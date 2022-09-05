@@ -7,7 +7,7 @@ import {
 } from '../../../../components/administrativeServices/Header/styles';
 import { dataAnswer } from '../../../../assets/data/question-answer';
 import DopFunctionalHeader from '../../../services/NaturalGas/DopFunctionalHeader';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
@@ -36,7 +36,7 @@ export default function Menu() {
   );
 
   return (
-    <HeaderCompanyDiv>
+    <HeaderCompanyDiv style={{ width: '80%', margin: '0 auto' }}>
       <Name>Тема</Name>
       {dataAnswer.map((element) => (
         <BlockBtn>

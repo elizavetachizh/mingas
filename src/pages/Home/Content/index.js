@@ -45,9 +45,9 @@ export default function ContentHome() {
       {/*  // </DivPrizes>*/}
       {/*  // </Parallax>*/}
       {/*)}*/}
-        <DivContent>
-          <CarouselFun />
-        </DivContent>
+      <DivContent>
+        <CarouselFun />
+      </DivContent>
     </ContainerContent>
   );
 }

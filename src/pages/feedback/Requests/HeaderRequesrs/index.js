@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonForms, HeaderBtnFeedback } from '../../styles';
+import { Button, ButtonForms, HeaderBtnFeedback, BlockContainerRequests } from '../../styles';
 import ApplicationForVerificationOfGasMeters from '../ApplicationForVerificationOfGasMeters';
 import ApplicationForOrderingCylinders from '../ApplicationForOrderingCylinders';
 import ApplicationForRepairOfGasUsingEquipment from '../ApplicationForRepairOfGas-usingEquipment';
@@ -14,8 +14,7 @@ const styledTitle = {
 export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForOrderingCylinders');
   return (
-    <div
-      style={{ boxShadow: ' 0 0 5px 3px rgba(0, 0, 0, 0.2)', borderRadius: '20px', marginTop: '0' }}
+    <BlockContainerRequests
     >
       <TitleForHome
         fontSize={'m'}
@@ -92,6 +91,6 @@ export default function HeaderRequests() {
           <ApplicationForTheIssuanceOfTechnicalSpecifications />
         )}
       </ButtonForms>
-    </div>
+    </BlockContainerRequests>
   );
 }

@@ -28,6 +28,12 @@ export const HeaderBtnFeedback = styled.div`
     width: 70%;
     text-align: center;
   }
+  @media (max-width: 640px) {
+    margin: 4% auto;
+  }
+  @media (max-width: 470px) {
+    width: 90%;
+  }
 `;
 export const Button = styled.button`
   color: white;
@@ -108,4 +114,16 @@ export const Divbackground = styled.div`
 export const DivImage = styled.div`
   height: 470px;
   width: 100%;
+`;
+
+export const BlockContainerRequests = styled.div`
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-top: 0;
+  
+  @media(max-width: 1600px) {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0 auto 0;
+  }
 `;

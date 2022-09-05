@@ -4,12 +4,16 @@ export const Div = styled.div`
   flex-direction: column;
   position: absolute;
   z-index: 5;
-  background-color: #0c76e8;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  color: black !important;
   //width: auto;
   height: fit-content;
+  padding: 2%;
   a {
     text-decoration: none;
     text-align: justify;
+    color: black;
   }
 `;
 
@@ -17,15 +21,15 @@ export const Form = styled.form`
   width: 250px;
   max-width: 100%;
   position: relative;
-  @media (max-width: 1600px) {
-    width: 200px;
-  }
-  @media (max-width: 1000px) {
-    width: 130px;
-  }
-  @media (max-width: 800px) {
-    width: auto;
-  }
+  //@media (max-width: 1600px) {
+  //  width: 200px;
+  //}
+  //@media (max-width: 1000px) {
+  //  width: 130px;
+  //}
+  //@media (max-width: 800px) {
+  //  width: auto;
+  //}
 `;
 
 export const Button = styled.button`
@@ -40,22 +44,30 @@ export const Button = styled.button`
 `;
 export const ContainerFormSearch = styled.div`
   z-index: 3;
-  &:before {
-    content: '';
-    position: absolute;
-    //left: -1500px;
-    //right: -1500px;
-    top: 0;
-    height: 154px;
-    background: rgba(255, 255, 255, 1);
-  }
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  left: 0;
+  
+  //&:before {
+  //  content: '';
+  //  position: absolute;
+  //  //left: -1500px;
+  //  //right: -1500px;
+  //  top: 0;
+  //  height: 154px;
+  //  background: rgba(255, 255, 255, 1);
+  //}
 `;
 export const FormSearch = styled.form`
   display: flex;
   flex-direction: row;
+  //position: absolute;
+  //background-color: white;
   align-items: center;
   z-index: 5;
-  width: 340px;
+  width: 31%;
+  margin: 0 auto;
   justify-content: space-around;
   position: relative;
   input {

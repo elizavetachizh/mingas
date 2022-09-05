@@ -19,9 +19,7 @@ import { NavLink, useParams, useSearchParams } from 'react-router-dom';
 import { dataAnswer } from '../../../../assets/data/question-answer';
 import DopFunctionService from '../../../services/DopFunction';
 import { useLocation, useNavigate } from 'react-router';
-import { data } from '../../../../assets/data/dataInformAdministrativeService';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
-import DopFunctional from '../../../../components/administrativeServices/InformaationAdministrativeService/DopFunctional';
 
 export default function Information() {
   const { titleId } = useParams();
@@ -32,7 +30,6 @@ export default function Information() {
   const navigate = useNavigate();
   const currentTheme = useMemo(
     () => dataAnswer.find((element) => element.titleId === +titleId),
-
     [titleId]
   );
 
@@ -41,17 +38,18 @@ export default function Information() {
     .concat(dataAnswer[2].blockInform)
     .concat(dataAnswer[3].blockInform)
     .concat(dataAnswer[4].blockInform);
-  console.log(infoForSearch);
+
   useEffect(() => {
     if (questionId) {
-      const currentBlockInfo = currentTheme?.blockInform.filter(
+      const currentBlockInfo = infoForSearch.filter(
         (blockInfo) => blockInfo.questionId === +questionId
       );
       setInfo(currentBlockInfo);
     } else {
       setInfo(currentTheme?.blockInform);
     }
-  }, [currentTheme, questionId]);
+    window.scrollTo(0, 0);
+  }, [questionId, currentTheme]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);
@@ -65,13 +63,12 @@ export default function Information() {
   const handleChange = (event) => {
     setMessage(event.target.value);
   };
-  {
-    infoForSearch.map((card) => {
-      if (card.question.includes(message)) {
-        result.push(card);
-      }
-    });
-  }
+
+  infoForSearch.map((card) => {
+    if (card.question.includes(message)) {
+      result.push(card);
+    }
+  });
 
   const renderResult = () => {
     return (
@@ -102,42 +99,47 @@ export default function Information() {
     setInfo(currentTheme?.blockInform);
     navigate('/feedback/question-answer/1');
   };
-  console.log(result);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
       <AdditionalDiv>
         <DivBlocks>
-          <Menu />
-        </DivBlocks>
-        <BlockSearch>
-          {isForm ? (
-            <IoIosSearch style={{ display: 'none' }} />
-          ) : (
-            <SearchService onClick={() => handleForm()}>
-              <p>Поиск по часто задаваемым вопросам</p>
-              <IoIosSearch
-                style={{ height: '30px', width: '30px' }}
-                color={'#0d4475'}
-                type={'submit'}
-              />
-            </SearchService>
-          )}
-          {isForm && (
-            <ContainerFormSearchForService>
-              <form action={'search'}>
-                <input
-                  placeholder="Введите интересующий вас вопрос"
-                  onChange={handleChange}
-                  type={'text'}
-                />
-                <IoMdClose style={{ width: '60px' }} color={'black'} onClick={handleInsideClick} />
-              </form>
-            </ContainerFormSearchForService>
-          )}
-          {message && renderResult()}
-        </BlockSearch>
-        <DivBlocks>
+          <div style={{ width: '80%' }}>
+            {' '}
+            <BlockSearch style={{ width: '80%' }}>
+              {isForm ? (
+                <IoIosSearch style={{ display: 'none' }} />
+              ) : (
+                <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
+                  <p>Поиск по часто задаваемым вопросам</p>
+                  <IoIosSearch
+                    style={{ height: '30px', width: '30px' }}
+                    color={'#0d4475'}
+                    type={'submit'}
+                  />
+                </SearchService>
+              )}
+              {isForm && (
+                <ContainerFormSearchForService>
+                  <form action={'search'}>
+                    <input
+                      placeholder="Введите интересующий вас вопрос"
+                      onChange={handleChange}
+                      type={'text'}
+                    />
+                    <IoMdClose
+                      style={{ width: '60px' }}
+                      color={'black'}
+                      onClick={handleInsideClick}
+                    />
+                  </form>
+                </ContainerFormSearchForService>
+              )}
+              {message && renderResult()}
+            </BlockSearch>
+            <Menu />
+          </div>
+
           <ContainerInform>
             {titleId && <Name>{currentTheme?.title}</Name>}
             <>

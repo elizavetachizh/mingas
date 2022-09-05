@@ -36,15 +36,31 @@ export default function DepartmentInformation() {
   const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
-  // const [info, setInfo] = useState([]);
-  // const currentSearch = useMemo(() => data.find((element) => element.idName === +linkId), []);
+  const [info, setInfo] = useState([]);
+  const currentSearch = useMemo(() => data.find((element) => element.idName === +linkId), [linkId]);
+
+  const infoForSearch = data[0].information
+    .concat(data[1].information)
+    .concat(data[2].information)
+    .concat(data[3].information)
+    .concat(data[4].information)
+    .concat(data[5].information)
+    .concat(data[6].information)
+    .concat(data[7].information);
+
   useEffect(() => {
     if ((!inform.length || !inform) && !currentServiceID) {
       const current = data.find((element) => element.idName === +linkId);
       setInform(current.information);
       setDepartamentId(+linkId);
     }
-  }, [currentServiceID, linkId, inform]);
+    if (id) {
+      const currentBlockInfo = infoForSearch.filter((information) => information.id === +id);
+      setInfo(currentBlockInfo);
+    } else {
+      setInfo(currentSearch?.information);
+    }
+  }, [currentServiceID, linkId, inform, id, currentSearch]);
 
   const currentDepartment = useMemo(
     () =>
@@ -74,63 +90,54 @@ export default function DepartmentInformation() {
     },
     [pathname]
   );
-  //
-  // useEffect(() => {
-  //   if (id && message !== '') {
-  //     const currentBlockInfo = currentDepartment.filter((blockInfo) => blockInfo.id === +id);
-  //     setInfo(currentBlockInfo);
-  //   } else {
-  //     setInfo(currentDepartment);
-  //   }
-  // }, [currentSearch, id, currentDepartment]);
-  //
-  // const [isForm, setIsForm] = useState(false);
-  // const handleForm = () => {
-  //   setIsForm(true);
-  //   if (isForm) {
-  //     setIsForm(false);
-  //   }
-  // };
-  // const [message, setMessage] = useState('');
-  // const result = [];
-  //
-  // const handleChange = (event) => {
-  //   setMessage(event.target.value);
-  // };
-  // {
-  //   currentDepartment.map((card) => {
-  //     if (card.name.includes(message)) {
-  //       result.push(card);
-  //     }
-  //   });
-  // }
 
-  // const renderResult = () => {
-  //   return (
-  //     <BlockSearchService>
-  //       {result.length ? (
-  //         result.map((element) => {
-  //           return (
-  //             <div>
-  //               <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
-  //                 {element.name}
-  //               </NavLink>
-  //             </div>
-  //           );
-  //         })
-  //       ) : (
-  //         <p>К сожалению, такой процедуры найти не удалось</p>
-  //       )}
-  //     </BlockSearchService>
-  //   );
-  // };
-  // const handleInsideClick = (event: MouseEvent) => {
-  //   event.stopPropagation();
-  //   setIsForm(false);
-  //   setMessage('');
-  //   setInfo(currentDepartment);
-  //   navigate('/company/management/1');
-  // };
+  const [isForm, setIsForm] = useState(false);
+  const handleForm = () => {
+    setIsForm(true);
+    if (isForm) {
+      setIsForm(false);
+    }
+  };
+  const [message, setMessage] = useState('');
+  const result = [];
+
+  const handleChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  infoForSearch.map((card) => {
+    if (typeof card.name === 'string') {
+      if (card.name.includes(message)) {
+        result.push(card);
+      }
+    }
+  });
+  const renderResult = () => {
+    return (
+      <BlockSearchService>
+        {result.length ? (
+          result.map((element) => {
+            return (
+              <div>
+                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
+                  {element.name}
+                </NavLink>
+              </div>
+            );
+          })
+        ) : (
+          <p>К сожалению, такого отдела найти не удалось</p>
+        )}
+      </BlockSearchService>
+    );
+  };
+  const handleInsideClick = (event: MouseEvent) => {
+    event.stopPropagation();
+    setIsForm(false);
+    setMessage('');
+    setInfo(currentSearch?.information);
+    navigate('/company/management/1');
+  };
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -138,35 +145,35 @@ export default function DepartmentInformation() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Наименования подразделений</Name>
-            {/*{isForm ? (*/}
-            {/*  <IoIosSearch style={{ display: 'none' }} />*/}
-            {/*) : (*/}
-            {/*  <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>*/}
-            {/*    <p>Поиск по административным услугам</p>*/}
-            {/*    <IoIosSearch*/}
-            {/*      style={{ height: '30px', width: '30px' }}*/}
-            {/*      color={'#0d4475'}*/}
-            {/*      type={'submit'}*/}
-            {/*    />*/}
-            {/*  </SearchService>*/}
-            {/*)}*/}
-            {/*{isForm && (*/}
-            {/*  <ContainerFormSearchForService style={{ margin: '4% auto' }}>*/}
-            {/*    <form action={'search'}>*/}
-            {/*      <input*/}
-            {/*        placeholder="Введите название отдела"*/}
-            {/*        onChange={handleChange}*/}
-            {/*        type={'text'}*/}
-            {/*      />*/}
-            {/*      <IoMdClose*/}
-            {/*        style={{ width: '60px' }}*/}
-            {/*        color={'black'}*/}
-            {/*        onClick={handleInsideClick}*/}
-            {/*      />*/}
-            {/*    </form>*/}
-            {/*  </ContainerFormSearchForService>*/}
-            {/*)}*/}
-            {/*{message && renderResult()}*/}
+            {isForm ? (
+              <IoIosSearch style={{ display: 'none' }} />
+            ) : (
+              <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>
+                <p>Поиск по отделам</p>
+                <IoIosSearch
+                  style={{ height: '30px', width: '30px' }}
+                  color={'#0d4475'}
+                  type={'submit'}
+                />
+              </SearchService>
+            )}
+            {isForm && (
+              <ContainerFormSearchForService style={{ margin: '4% auto' }}>
+                <form action={'search'}>
+                  <input
+                    placeholder="Введите название отдела"
+                    onChange={handleChange}
+                    type={'text'}
+                  />
+                  <IoMdClose
+                    style={{ width: '60px' }}
+                    color={'black'}
+                    onClick={handleInsideClick}
+                  />
+                </form>
+              </ContainerFormSearchForService>
+            )}
+            {message && renderResult()}
             {data.map((element) => (
               <BlockBtn>
                 <ContainerBtnIcon>
@@ -200,7 +207,6 @@ export default function DepartmentInformation() {
           <ContainerInform>
             {isPhone ? (
               <>
-                {' '}
                 {inform.map((el) => (
                   <DopFunctional
                     key={el.name}
@@ -215,18 +221,18 @@ export default function DepartmentInformation() {
               </>
             ) : (
               <>
-                {' '}
-                {currentDepartment.map((el) => (
-                  <DopFunctional
-                    key={el.name}
-                    name={el.name}
-                    contacts={el.contacts}
-                    schedule={el.schedule}
-                    photo={el.photo}
-                    chief={el.chief}
-                    description={el.description}
-                  />
-                ))}
+                {info.length &&
+                  info.map((el) => (
+                    <DopFunctional
+                      key={el.name}
+                      name={el.name}
+                      contacts={el.contacts}
+                      schedule={el.schedule}
+                      photo={el.photo}
+                      chief={el.chief}
+                      description={el.description}
+                    />
+                  ))}
               </>
             )}
           </ContainerInform>

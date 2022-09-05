@@ -49,4 +49,16 @@ export const BackgroundContainer = styled.img`
     margin-top: -230px;
     width: 105%;
   }
+  @media (max-width: 750px) {
+    width: 100%;
+    margin: -150px auto 0;
+  }
+  @media (max-width: 550px) {
+    width: 100%;
+    margin: -80px auto 0;
+  }
+  @media (max-width: 440px) {
+    width: 100%;
+    margin: -50px auto 0;
+  }
 `;

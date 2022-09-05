@@ -23,7 +23,7 @@ import GlobalStyle, {
   IoMdEyeOffs,
   IoMdContacts,
   IoIosMenus,
-  IoIosCloses
+  IoIosCloses,
 } from './styles';
 import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.png';
 import next from '../../assets/png/next.png';
@@ -54,6 +54,12 @@ export default function Header({ backgroundHeader }) {
 
   const onClick = () => {
     setOpen(!open);
+    if (open) {
+      document.body.classList.remove('mobile');
+    } else {
+      document.body.classList.add('mobile');
+    }
+    // document.body.style.position = 'fixed';
   };
   const openMobile = (
     <Menu onClick={onClick}>

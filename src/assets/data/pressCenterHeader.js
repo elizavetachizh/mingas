@@ -11,6 +11,7 @@ import { DescriptionService } from '../../pages/services/DopFunction/styles';
 import React from 'react';
 import SMI from '../../pages/PressCenter/SMI';
 import Newspaper from '../../pages/PressCenter/newspaper';
+import LifeOfMingas from "../../pages/PressCenter/lifeOfMingas";
 
 export const pressCenter = [
   {
@@ -32,11 +33,9 @@ export const pressCenter = [
     id: 3,
     name: 'Жизнь в стиле "Мингаз"',
     description: (
-      <div style={{ margin: '4% auto' }}>
-        {photo.map((el) => (
-          <img style={{ width: '50%' }} src={require(`../lifeinstyleOFMingas/${el.img}.jpg`)} />
-        ))}
-      </div>
+        <>
+          <LifeOfMingas />
+        </>
     ),
   },
 ];
