@@ -73,7 +73,7 @@ export default function TBZ() {
           <li>
             <h3>Топливные брикеты марки БТ-1 </h3>
             <img
-              style={{ width: '50%', margin: '0 25%' }}
+              style={{ width: '40%', margin: '0 25%' }}
               src={require('../../../../assets/TBZ/1.jpg')}
             />
             <ul>
@@ -88,7 +88,7 @@ export default function TBZ() {
             <h3>Торф для приготовления компостов</h3>
             <img
               style={{ width: '50%', margin: '0 25%' }}
-              src={require('../../../../assets/TBZ/background.jpg')}
+              src={require('../../../../assets/TBZ/3.jpg')}
             />
             <ul>
               Характеристики<li>влажность (не более) – 60%</li>

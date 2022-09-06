@@ -32,8 +32,8 @@ body {
   }
 }
 
-body.mobile {
-  position: fixed;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.4);
-}
+/*body.mobile {*/
+/*  position: fixed;*/
+/*  overflow: hidden;*/
+/*  !*background: rgba(0, 0, 0, 0.4);*!*/
+/*}*/

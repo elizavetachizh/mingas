@@ -13,7 +13,8 @@ import history_9 from '../../../assets/history/9.png';
 import history_10 from '../../../assets/history/11.png';
 import { PWithImg, ImgBackground, BlockImage } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
-import {Container} from "../styles";
+import { Container } from '../styles';
+import Feedback from '../../feedback';
 
 export default function History() {
   useEffect(() => {
@@ -22,10 +23,12 @@ export default function History() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
+      <Feedback />
       <HeaderCompany />
-      <AdditionalDiv style={{margin: '4% auto'}}>
+
+      <AdditionalDiv style={{ margin: '4% auto' }}>
         <TitleForHome
-            margin={'s'}
+          margin={'s'}
           color={'blue'}
           infoTitle={'Из истории газификации г. Минска и Минского района'}
         />
@@ -130,7 +133,7 @@ export default function History() {
         </div>
         <div data-aos={'fade-up'}>
           <PWithImg className={'reverse'}>
-            <img  className={'leftImg'} alt={''} src={history_10} />
+            <img className={'leftImg'} alt={''} src={history_10} />
             <div>
               <p>
                 16 апреля 1957 года Постановлением Совета Министров БССР и ЦК КПБ за №206 «О
@@ -150,7 +153,6 @@ export default function History() {
                 промышленности предопределило будущее Управления по газификации г.Минска «МИНГАЗ».
               </p>
             </div>
-
           </PWithImg>
         </div>
         <div data-aos={'fade-up'}>
@@ -208,11 +210,13 @@ export default function History() {
                 Вадим Евгеньевич.
               </p>
             </div>
-
           </PWithImg>
         </div>
       </AdditionalDiv>
-    <BlockImage>  <ImgBackground alt={''} src={history_6} /></BlockImage>
+      <BlockImage>
+        {' '}
+        <ImgBackground alt={''} src={history_6} />
+      </BlockImage>
       <Footer />
     </Container>
   );

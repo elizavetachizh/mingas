@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const DivCarousel = styled.div`
   text-align: center;
+  &:hover::after {
+    content: attr(data-title);
+  }
   img {
     width: 60%;
     height: 60%;
@@ -14,14 +17,14 @@ export const DivCarousel = styled.div`
     justify-content: center;
     p {
       margin: 0;
-      
     }
   }
   a {
     text-decoration: none;
     color: #0d4475;
     font-size: 18px;
-    @media(max-width: 568px) {
+
+    @media (max-width: 568px) {
       font-size: 16px;
     }
   }

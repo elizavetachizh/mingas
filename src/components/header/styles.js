@@ -43,7 +43,6 @@ export const Container = styled.div`
   align-items: center;
   font-size: 18px;
   top: 0;
-  color: white;
   z-index: 5;
   //filter: blur(2px) brightness(0.8);
   margin: 0 auto;
@@ -108,7 +107,7 @@ export const Background = styled.div`
     height: 80px;
     flex-direction: row;
   }
-  @media(max-width: 1600px) {
+  @media (max-width: 1600px) {
     box-shadow: none;
     border-radius: 0;
   }
@@ -251,13 +250,16 @@ export const PersonalAccButton = styled.a`
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
-  color: white;
   border-radius: 30px;
+  &.header-btns {
+    a {
+      color: #0d4475;
+    }
+  }
 `;
 export const Dropdown = styled.div`
   position: relative;
   display: block;
-
   &:hover div {
     display: flex;
     min-width: 220px;
@@ -376,7 +378,7 @@ export const Div104 = styled.div`
       margin: 2px auto;
     }
     @media (max-width: 819px) {
-   font-size: 0.9rem;
+      font-size: 0.9rem;
     }
     @media (max-width: 788px) {
       font-size: 0.8rem;

@@ -8,9 +8,9 @@ import {
   HeaderFeedbackDiv,
 } from './styles';
 
-export default function HeaderFeedBack({width}) {
+export default function HeaderFeedBack() {
   return (
-    <HeaderFeedbackDiv >
+    <HeaderFeedbackDiv>
       <div>
         <QuestionAnswerBtn to="/feedback/question-answer/1">Вопрос-ответ</QuestionAnswerBtn>
         <OnlineApplicationBtn to="/feedback/online-application">Онлайн заявка</OnlineApplicationBtn>

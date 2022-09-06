@@ -8,7 +8,6 @@ export const Container = styled.div`
     width: 100%;
     margin: 0 auto;
   }
-
 `;
 export const BlockOfGraditude = styled.div`
   display: flex;
@@ -51,11 +50,23 @@ export const DivButtons = styled.div`
 export const Link = styled.div`
   color: #0d4475;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
   margin: 2% auto;
-  width: 100%;
+  width: 50%;
   font-weight: bold;
   font-size: 20px;
+  a {
+    color: #0d4475;
+  }
+  a:hover {
+    color: #0d4475;
+  }
+  img {
+    width: 40%;
+    margin: 0 auto;
+  }
   &:hover {
     transform: scale(1.1);
     transition: transform 0.8s;

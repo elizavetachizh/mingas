@@ -1,5 +1,14 @@
+import { data } from './data';
 export default function Newspaper() {
-    return(
-        <div><iframe style={{height: '500px'}} src={require('../../../assets/pdf/newspaper/3.pdf')}/></div>
-    )
+  return (
+    <div>
+      {data.map((el) => (
+        <div>
+          <a href={el.link} target={'_blank'}>
+            {el.name}
+          </a>
+        </div>
+      ))}
+    </div>
+  );
 }

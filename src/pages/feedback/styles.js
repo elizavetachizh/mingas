@@ -95,8 +95,9 @@ export const Divbackground = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  height: 470px;
+  height: auto;
   width: 100%;
+  top: 154px;
   &:after {
     content: '';
     position: absolute;
@@ -105,25 +106,50 @@ export const Divbackground = styled.div`
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: 1;
+  }
+  p {
+    position: absolute;
   }
   @media (max-width: 640px) {
     width: 640px;
   }
 `;
 export const DivImage = styled.div`
-  height: 470px;
+  //height: 470px;
   width: 100%;
+  img {
+    width: 100%;
+  }
 `;
 
 export const BlockContainerRequests = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin-top: 0;
-  
-  @media(max-width: 1600px) {
+
+  @media (max-width: 1600px) {
     box-shadow: none;
     border-radius: 0;
     margin: 0 auto 0;
+  }
+`;
+
+export const Text = styled.div`
+  position: absolute;
+  color: white;
+  width: 100%;
+  z-index: 2;
+  margin: 10% auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  align-items: center;
+  font-weight: bold;
+  p {
+    z-index: 2;
+    margin:  auto;
+    width: 100%;
   }
 `;

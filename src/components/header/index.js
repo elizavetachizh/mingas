@@ -141,12 +141,12 @@ export default function Header({ backgroundHeader }) {
               </ContainerElements>
             </DivFirstHeader>
             <ButtonsContainer>
-              <Dropdown>
+              <Dropdown className={'header-btns'}>
                 <CompanyButton to="/company/history">
                   <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
                   <span />
                 </CompanyButton>
-                <DivButtonHeader>
+                <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
                   <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
                   <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
@@ -177,7 +177,7 @@ export default function Header({ backgroundHeader }) {
                   {t('header:Services')}
                   <span />
                 </ServicesButton>
-                <DivButtonHeader>
+                <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/services">
                     Услуги <img alt={''} src={next} />
                     <span>
@@ -209,7 +209,7 @@ export default function Header({ backgroundHeader }) {
                 <ServicesButton to="/for-business">
                   Для бизнеса <span />
                 </ServicesButton>
-                <DivButtonHeader>
+                <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
                   <ButtonLink to="/feedback/electronic-appeal-for-entity">
                     Обращение юридических лиц
@@ -232,7 +232,7 @@ export default function Header({ backgroundHeader }) {
                   {t('header:PressCenter')}
                   <span />
                 </PressCenterButtons>
-                <DivButtonHeader>
+                <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
                   {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
                   <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
@@ -243,7 +243,7 @@ export default function Header({ backgroundHeader }) {
                   {t('header:Contacts')}
                   <span />
                 </ContactButton>
-                <DivButtonHeader>
+                <DivButtonHeader className={'header-btns'}>
                   {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
                   <ButtonLink to="/contacts/work-schedule">
                     График личного приёма граждан

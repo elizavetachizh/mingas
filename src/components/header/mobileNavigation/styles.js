@@ -89,7 +89,6 @@ export const DivButtonHeader = styled.div`
     flex-direction: column;
     z-index: 5;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    background-color: #f1f1f1;
     padding: 10px;
     a {
       margin: 5%;
@@ -106,6 +105,7 @@ export const DivButtonHeader = styled.div`
     backdrop-filter: blur(5px);
     a {
       margin: 5%;
+      color: white;
     }
   }
 `;
@@ -116,4 +116,16 @@ export const Dropdown = styled.div`
   &:hover button {
     background-color: #000;
   }
+`;
+
+export const ContainerAbsolute = styled.div`
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 154px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
 `;

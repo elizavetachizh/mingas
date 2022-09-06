@@ -18,10 +18,10 @@ export const ButtonLink = styled(NavLink)`
   align-items: center;
   cursor: pointer;
   z-index: 2;
-  color: #0d4475 !important;
   margin: 0;
   &.active {
     color: #a69b14;
+    
   }
   span {
     display: none;
@@ -45,6 +45,10 @@ export const ButtonLink = styled(NavLink)`
       color: #0d4475;
       text-decoration: none;
     }
+  }
+  a {
+    color: #0d4475;
+    text-decoration: none;
   }
 `;
 
