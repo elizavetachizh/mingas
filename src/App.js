@@ -46,6 +46,7 @@ import ResidentsOfTheCapitalRegion from './components/ResidentsOfTheCapitalRegio
 import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
 import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
+import Corruption from './components/Сorruption';
 class App extends Component {
   render() {
     return (
@@ -71,6 +72,7 @@ class App extends Component {
           <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
           <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
           <Route path="/company/management/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
+          <Route path={'/company/corruption'} element={<Corruption />} />
           <Route path="/services/:cardId" element={<NaturalGas />} />
           <Route path="/services/method-payment" element={<MethodPayment />} />
           <Route path="/company/career/" element={<Career />} />

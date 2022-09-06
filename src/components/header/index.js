@@ -165,6 +165,7 @@ export default function Header({ backgroundHeader }) {
                       </NavLink>
                     </span>
                   </ButtonLink>
+                  <ButtonLink to="/company/corruption">Противодействие коррупции</ButtonLink>
                   <ButtonLink to="/company/documentation">
                     Сертификаты, лицензии, свидетельства
                   </ButtonLink>
@@ -234,7 +235,9 @@ export default function Header({ backgroundHeader }) {
                 </PressCenterButtons>
                 <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
-                  {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
+                  <ButtonLink to="/press-center/2">
+                    Корпоротивная газета "Столичный газовик"
+                  </ButtonLink>
                   <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>

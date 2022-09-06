@@ -44,7 +44,7 @@ export default function RegulatoryDocumentsForLegal() {
                   style={{ width: '100%', margin: '0 auto' }}
                   target={'_blank'}
                   href={one}
-                  rel="noreferrer"
+                c
                 >
                   <IoMdDocument style={{ width: '100%', height: '34px', margin: '0 auto' }} />
                 </a>
