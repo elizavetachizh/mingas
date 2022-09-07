@@ -1,9 +1,9 @@
 import { photo } from '../../../assets/data/liveInStyleOfMingas';
 import React, { useEffect, useMemo } from 'react';
 import gsap from 'gsap';
-import useMediaQuery from '../../Home/parallax/useMediaQuery';
+import { Link } from '../../company/styles';
+
 export default function LifeOfMingas() {
-  const medium = useMediaQuery('(max-width: 1200px)');
   useEffect(() => {
     const divs = document.querySelectorAll('.testimonials');
     gsap.set(divs[1], { x: 100, opacity: 1 });
@@ -128,12 +128,18 @@ export default function LifeOfMingas() {
 
   return (
     <>
-      <div>
-        Мы в социальных сетях:{' '}
-        <a href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='} target={'_blank'}>
-          <img src={require('../../../assets/png/instagram.png')} />
-        </a>{' '}
-      </div>
+      <Link className={'social-networks'}>
+        Мы в социальных сетях:
+        <div>
+          <a href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='} target={'_blank'}>
+            <img style={{ width: '54px' }} src={require('../../../assets/png/instagram.png')} />
+          </a>
+          <a href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
+            <img style={{ width: '54px' }} src={require('../../../assets/png/telegram.png')} />
+          </a>
+        </div>
+      </Link>
+
       <div className={'general'} style={{ margin: '0 auto' }}>
         {photo.map((el) => (
           // <div className={'testimonials'}>

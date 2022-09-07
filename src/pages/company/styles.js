@@ -57,6 +57,27 @@ export const Link = styled.div`
   width: 50%;
   font-weight: bold;
   font-size: 20px;
+  &.social-networks {
+    left: 0;
+    margin: 2% 0;
+    text-align: left;
+    &:hover {
+      transform: none;
+    }
+    div {
+      width: 60%;
+      margin: 2% 0;
+      display: flex;
+      justify-content: left;
+      a{
+        margin: 0 4%;
+      }
+      a:hover {
+        transform: scale(1.1);
+        transition: transform 0.8s;
+      }
+    }
+  }
   a {
     color: #0d4475;
   }
