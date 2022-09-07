@@ -1,6 +1,6 @@
 import { Parallax } from 'react-parallax';
 import { Container } from '../../styles';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 import Header from '../../../../components/header';
 import Footer from '../../../../components/footer';
@@ -15,6 +15,7 @@ import { DivText, Text } from '../../../Home/Content/styles';
 import { Main, WindowDiv } from '../../../Home/slider/styles';
 import { Name } from '../../../../components/administrativeServices/Header/styles';
 import { ContainerParallax } from '../styles';
+import { BtnOpenInform } from '../../../../components/MethodPayment/styles';
 
 export default function SchemaOfBranches({
   name,
@@ -34,11 +35,29 @@ export default function SchemaOfBranches({
     }
   };
   const [isClose, setIsClose] = useState(false);
+  const [showTopBtn, setShowTopBtn] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    });
+  }, []);
   const animateClose = () => {
     setIsClose(true);
     if (isClose) {
       setIsClose(false);
     }
+  };
+  const myRef = useRef(null);
+  const scrollEffect = (targetRef) => {
+    targetRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+    setShowTopBtn(true);
   };
   return (
     <Container>
@@ -50,11 +69,12 @@ export default function SchemaOfBranches({
               <DivText>
                 <Text style={{ textAlign: 'center' }}>{name}</Text>
               </DivText>
+              <BtnOpenInform onClick={() => scrollEffect(myRef)}>Подробнее</BtnOpenInform>
             </WindowDiv>
           </Main>
         </Parallax>
       </ContainerParallax>
-      <AdditionalDiv style={{ margin: '0 auto 4%' }}>
+      <AdditionalDiv style={{ margin: '0 auto 4%' }} ref={myRef}>
         <General style={{ width: '60%', margin: '2% auto 4%' }}>
           <BtnIsOpen onClick={animate}>
             <p style={{ textAlign: 'center', fontSize: '18px' }}>{nameDescription}</p>
@@ -66,7 +86,7 @@ export default function SchemaOfBranches({
               )}
             </div>
           </BtnIsOpen>
-          <Div className={isOpen && `shake`}>
+          <Div className={(isOpen || showTopBtn) && `shake`}>
             <DescriptionService>{description}</DescriptionService>
           </Div>
         </General>

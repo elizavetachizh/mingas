@@ -7,10 +7,10 @@ export const AdditionalDiv = styled.div`
   a {
     text-decoration: none;
   }
-  @media(max-width: 900px){
+  @media (max-width: 900px) {
     margin-top: 104px;
   }
-  @media(min-width: 2000px) {
+  @media (min-width: 2000px) {
     margin: 10% auto 4%;
   }
 `;

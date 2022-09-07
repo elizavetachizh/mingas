@@ -37,25 +37,21 @@ export const ContainerBtn = styled.div`
   }
 `;
 export const BtnOpenInform = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
+  color: #0d4475;
+  font-size: 18px;
   font-weight: 500;
-  font-size: 0.9rem;
-  line-height: 1.6875em;
-  color: #3c3838;
-  padding: 0;
-  background: #f6f6f6;
+  width: 220px;
+  text-align: center;
+  border-radius: 7px;
+  text-decoration: none;
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin: 2% auto;
+  z-index: 2;
   cursor: pointer;
-  p {
-    padding: 20px;
-  }
-  img {
-    background: #eeeeee;
-    padding: 35px;
-    margin: 0;
-  }
 `;
 
 export const ContainerText = styled.div`

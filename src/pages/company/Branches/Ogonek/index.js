@@ -8,7 +8,7 @@ import React from 'react';
 export default function Ogonek() {
   return (
     <SchemaOfBranches
-      name={<>Оздровительный комплекс Огонек</>}
+      name={'Оздровительный комплекс Огонек'}
       background={background}
       nameDescription={'О нас'}
       description={
