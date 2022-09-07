@@ -32,7 +32,7 @@ export default function RegulatoryDocumentsForLegal() {
               <th>Документ</th>
             </tr>
           </thead>
-          <Tbody>
+          <Tbody className={'regulatory-docs-for-legal'}>
             <tr>
               <td>
                 «Положение о порядке подготовки и выдачи разрешительной документации на

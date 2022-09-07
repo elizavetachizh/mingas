@@ -45,7 +45,7 @@ export default function Career() {
       <TitleForHome color={'blue'} infoTitle={'Работа в УП “Мингаз”'} />
       <AdditionalDiv style={{margin: '4% auto'}}>
         <DivForm className="form-div">
-          <div style={{ width: '500px' }}>
+          <div style={{ width: '800px' }}>
             {' '}
             <script
               className="hh-script"

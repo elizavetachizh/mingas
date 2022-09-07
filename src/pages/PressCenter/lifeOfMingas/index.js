@@ -128,6 +128,12 @@ export default function LifeOfMingas() {
 
   return (
     <>
+      <div>
+        Мы в социальных сетях:{' '}
+        <a href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='} target={'_blank'}>
+          <img src={require('../../../assets/png/instagram.png')} />
+        </a>{' '}
+      </div>
       <div className={'general'} style={{ margin: '0 auto' }}>
         {photo.map((el) => (
           // <div className={'testimonials'}>
