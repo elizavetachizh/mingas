@@ -4,7 +4,7 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
-  margin-top: 84px;
+  margin-top: 80px;
   @media(max-width: 1600px) {
     box-shadow: none;
     border-radius: 0;
@@ -15,7 +15,7 @@ export const DivContent = styled.div`
   width: 100%;
   //position: absolute;
   height: 608px;
-  margin-top: 160px;
+  margin-top: 154px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -154,6 +154,11 @@ export const DivText = styled.div`
         @media (max-width: 401px) {
           width: 100%;
           margin: 0 auto;
+        }
+        @media (max-width: 1600px) {
+          box-shadow: none;
+          border-radius: 0;
+          margin: 0 auto 0;
         }
       }
     }

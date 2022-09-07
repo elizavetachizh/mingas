@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from '../styles';
+import {DivApplication, Form} from '../styles';
 import {
   Button,
   DivInput,
@@ -30,7 +30,7 @@ export default function ApplicationForVerificationOfGasMeters() {
     form,
   } = useRequestForVerificationOfGasMeters();
   return (
-    <>
+    <DivApplication>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>
@@ -149,6 +149,6 @@ export default function ApplicationForVerificationOfGasMeters() {
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
         )}
       </Form>
-    </>
+    </DivApplication>
   );
 }

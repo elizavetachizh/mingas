@@ -8,6 +8,11 @@ export const Main = styled.div`
   //@media (max-width: 1200px) {
   //  max-height: 600px;
   //}
+  @media (max-width: 1600px) {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0 auto 0;
+  }
   @media (max-width: 800px) {
     width: 100%;
   }
@@ -18,21 +23,10 @@ export const WindowDiv = styled.div`
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-
-  //img {
-  //  left: 50%;
-  //  transition: left 1s;
-  //}
-  //img {
-  //  left: 50%;
-  //  transition: left 1s;
-  //}
-  //@media (max-width: 1200px) {
-  //  max-height: 600px;
-  //}
-  //@media (max-width: 800px) {
-  //  display: none;
-  //} ;
+  @media(max-width: 1600px) {
+    box-shadow: none;
+    border-radius: 0;
+  }
 `;
 
 export const BackgroundContainer = styled.img`

@@ -43,12 +43,18 @@ export const DivButton = styled.div`
   font-size: 16px;
   display: flex;
   flex-direction: row;
-flex-wrap: wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   @media (max-width: 900px) {
     font-size: 14px;
     text-align: center;
+  }
+  &.menu {
+    flex-direction: column;
+    a {
+      color: white;
+    }
   }
 `;
 
@@ -57,12 +63,21 @@ export const HeaderCompanyBtn = styled(NavLink)`
   text-align: center;
   color: #0d4475;
   margin: 2% auto;
-  padding:0 0.5%;
-  @media(max-width: 1340px){
-    padding:0 0.8%;
+  padding: 0 0.5%;
+  @media (max-width: 1340px) {
+    padding: 0 0.8%;
     margin: 2%;
   }
   &.active {
     color: #a69b14;
+  }
+`;
+
+export const HeaderCompanyContainer = styled.div`
+  @media (max-width: 650px) {
+    margin: 20% auto 0;
+  }
+  @media (max-width: 450px) {
+    margin: 30% auto 0;
   }
 `;

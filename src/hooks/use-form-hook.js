@@ -1,7 +1,8 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_FORM_STATE } from '../const/consts';
 import axios from 'axios';
-
+// import service from '../pages/feedback/Requests/ProvidingGasMeterReadings/service'
+// const service = require('../pages/feedback/Requests/ProvidingGasMeterReadings/service')
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
   const url = 'http://localhost:8080/questions/';
@@ -100,13 +101,13 @@ export const useForm = () => {
     (event: { target: { files: FileList } }) => {
       const file = event.target.files[0];
       setFormValues({ ...formValues, fileName: file.name });
-      console.log(file)
+      console.log(file);
     },
     [formValues]
   );
 
   const clearForm = useCallback(() => {
-    document.getElementById('file-input').value = '';
+    document.getElementById('file').value = '';
     setFormValues({ ...INITIAL_FORM_STATE, name: '', date: '', email: '', address: '' });
   }, []);
 

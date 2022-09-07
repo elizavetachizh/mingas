@@ -70,6 +70,11 @@ export const ButtonForms = styled.div`
   }
   &.without-margin {
     margin: 10px auto;
+    @media (max-width: 1600px) {
+      box-shadow: none;
+      border-radius: 0;
+      margin: 0 auto 0;
+    }
   }
 `;
 
@@ -116,12 +121,22 @@ export const DivImage = styled.div`
 export const BlockContainerRequests = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin-top: 0;
-
+  margin: 10px auto;
+  padding: 2% 0;
   @media (max-width: 1600px) {
     box-shadow: none;
     border-radius: 0;
     margin: 0 auto 0;
+    //background-image: linear-gradient(
+    //        -55deg,
+    //        rgba(1, 95, 156, 0.08) 0%,
+    //        rgba(16, 69, 141, 0.3) 0%,
+    //        rgba(15, 89, 141, 0.2) 19%,
+    //        rgba(15, 78, 140, 0.3) 60%,
+    //        rgba(14, 78, 129, 0.3) 70%,
+    //        rgba(13, 68, 117, 0.3) 90%
+    //);
+    background-color:  rgba(14, 78, 129, 0.2);
   }
 `;
 
@@ -129,7 +144,6 @@ export const Text = styled.div`
   position: absolute;
   color: white;
   width: 100%;
-  z-index: 2;
   height: 100%;
   margin: 0 auto;
   text-align: center;

@@ -153,6 +153,7 @@ export default function FormQuestion() {
       {isButtonDisabled && (
         <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
       )}
+      {/*<iframe src="http://docs.google.com/gview?url=http://remote.url.tld/path/to/document.doc&embedded=true"></iframe>*/}
     </Form>
   );
 }

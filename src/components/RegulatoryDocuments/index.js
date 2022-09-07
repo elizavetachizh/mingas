@@ -16,7 +16,7 @@ import Footer from '../footer';
 import { data } from '../../assets/data/regularyDocuments';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
-import { NavLink, useParams } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 

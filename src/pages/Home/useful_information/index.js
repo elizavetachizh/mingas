@@ -9,7 +9,6 @@ import TitleForHome from '../../../components/TitleForHome';
 
 export default function UsefulInform() {
   return (
-    <>
       <DivUsefulInform
       >
         <TitleForHome
@@ -30,6 +29,5 @@ export default function UsefulInform() {
         </DivInform>
         <hr />
       </DivUsefulInform>
-    </>
   );
 }

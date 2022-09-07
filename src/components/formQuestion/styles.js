@@ -11,71 +11,10 @@ export const DivInput = styled.div`
   display: flex;
   width: 90%;
   margin: 2% auto;
+  
   flex-direction: column;
   @media (max-width: 640px) {
     text-align: center;
-  }
-`;
-
-export const TwoColumnTextAndForm = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  @media (max-width: 700px) {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  @media (max-width: 640px) {
-    width: 640px;
-    margin: 6% auto;
-  }
-  @media (max-width: 550px) {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-right: 4%;
-  }
-`;
-
-export const OneColumn = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  h2 {
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #264c6f;
-  }
-  h3 {
-    color: #2d9cdb;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-  }
-  @media (max-width: 700px) {
-    width: 100%;
-    text-align: center;
-  }
-  @media (max-width: 640px) {
-    width: 80%;
-    text-align: center;
-    margin: 0 auto;
-  }
-`;
-
-export const TwoColumn = styled.div`
-  width: 100%;
-  @media (max-width: 700px) {
-    width: 100%;
-    text-align: center;
-  }
-  @media (max-width: 550px) {
-    margin: 0 auto;
   }
 `;
 

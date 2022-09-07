@@ -82,7 +82,12 @@ export default function News() {
           </a>
         </ArticleForHome>
       </DivInform>
-      <ButtonFun href={'/press-center/1'} infoButton={'Показать ещё'} backgroundColor={'blue'} />
+      <ButtonFun
+        href={'/press-center/1'}
+        infoButton={'Показать ещё'}
+        backgroundColor={'blue'}
+        style={{ margin: '0 auto' }}
+      />
     </BlockContainerRequests>
   );
 }

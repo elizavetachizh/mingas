@@ -47,82 +47,78 @@ import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
 import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 import Corruption from './components/Сorruption';
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/company/history" element={<History />} />
-          <Route path="/contacts" element={<GeneralInform />} />
-          <Route path="/press-center/:newsId" element={<PressCenter />} />
-          {/*<Route path="/feedback/question-answer" element={<QuestionAnswer />} />*/}
-          <Route path="/feedback/question-answer/:titleId" element={<Information />} />
-          <Route path={'/feedback/online-application'} element={<Requests />} />
-          <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
-          <Route
-            path={'/feedback/electronic-appeal-for-entity'}
-            element={<ElectronicAppealForEntity />}
-          />
+ // import { useServer } from './pages/feedback/Requests/ProvidingGasMeterReadings/service';
+export default function App() {
+   // useServer()
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/company/history" element={<History />} />
+        <Route path="/contacts" element={<GeneralInform />} />
+        <Route path="/press-center/:newsId" element={<PressCenter />} />
+        {/*<Route path="/feedback/question-answer" element={<QuestionAnswer />} />*/}
+        <Route path="/feedback/question-answer/:titleId" element={<Information />} />
+        <Route path={'/feedback/online-application'} element={<Requests />} />
+        <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
+        <Route
+          path={'/feedback/electronic-appeal-for-entity'}
+          element={<ElectronicAppealForEntity />}
+        />
 
-          <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
-          <Route path="/*" element={<NoMatch />} />
-          <Route path="/company/management" element={<Management />} />
-          <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
-          <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
-          <Route path="/company/management/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
-          <Route path={'/company/corruption'} element={<Corruption />} />
-          <Route path="/services/:cardId" element={<NaturalGas />} />
-          <Route path="/services/method-payment" element={<MethodPayment />} />
-          <Route path="/company/career/" element={<Career />} />
-          <Route path="/company/branches/TBZ" element={<TBZ />} />
-          <Route path="/company/branches/Bubni" element={<Bubni />} />
-          <Route path="/company/branches/ogonek" element={<Ogonek />} />
-          <Route path={'/company/parent-organizations'} element={<ParentOrganizations />} />
-          <Route path="/company/documentation/" element={<Documentation />} />
-          <Route path={'company/gratitude'} element={<Gratitude />} />
-          <Route path="/company/union/" element={<Union />} />
-          <Route
-            path="/company/management/production-technical-management"
-            element={<ProductionTechnicalManagement />}
-          />
-          <Route path={'/services-legal-entities'} element={<ServicesForLegalEntities />} />
-          <Route
-            path={'/services-legal-entities/administrative-services-legal/'}
-            element={<AdministartiveServicesForLegal />}
-          />
-          <Route path={'/services-legal-entities/:cardId'} element={<CardOfServive />} />
-          <Route path={'/contacts/requisites'} element={<Requisites />} />
-          <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
-          <Route
-            path={'/contacts/work-schedule'}
-            element={<SchedulePersonalReceptionOfCitizens />}
-          />
-          <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
-          <Route path={'/SearchPage'} element={<SearchPage />} />
-          <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
-          <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
-          <Route
-            path={'/services/administrative-services/'}
-            element={<InformationAdministrativeService />}
-          />
-          <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />
-          <Route path={'/regulatory-documents/:documentId'} element={<RegulatoryDocuments />} />
-          <Route
-            path={'/regulatory-documents-for-entity'}
-            element={<RegulatoryDocumentsForLegal />}
-          />
-          <Route path={'/tenders'} element={<Tenders />} />
-          <Route
-            path={'/residents-of-the-capital-region'}
-            element={<ResidentsOfTheCapitalRegion />}
-          />
-          <Route path={'/for-business'} element={<ForBusiness />} />
-          <Route path={'/company/branches'} element={<Branches />} />
-        </Routes>
-      </div>
-    );
-  }
+        <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
+        <Route path="/*" element={<NoMatch />} />
+        <Route path="/company/management" element={<Management />} />
+        <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
+        <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
+        <Route path="/company/management/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
+        <Route path={'/company/corruption'} element={<Corruption />} />
+        <Route path="/services/:cardId" element={<NaturalGas />} />
+        <Route path="/services/method-payment" element={<MethodPayment />} />
+        <Route path="/company/career/" element={<Career />} />
+        <Route path="/company/branches/TBZ" element={<TBZ />} />
+        <Route path="/company/branches/Bubni" element={<Bubni />} />
+        <Route path="/company/branches/ogonek" element={<Ogonek />} />
+        <Route path={'/company/parent-organizations'} element={<ParentOrganizations />} />
+        <Route path="/company/documentation/" element={<Documentation />} />
+        <Route path={'company/gratitude'} element={<Gratitude />} />
+        <Route path="/company/union/" element={<Union />} />
+        <Route
+          path="/company/management/production-technical-management"
+          element={<ProductionTechnicalManagement />}
+        />
+        <Route path={'/services-legal-entities'} element={<ServicesForLegalEntities />} />
+        <Route
+          path={'/services-legal-entities/administrative-services-legal/'}
+          element={<AdministartiveServicesForLegal />}
+        />
+        <Route path={'/services-legal-entities/:cardId'} element={<CardOfServive />} />
+        <Route path={'/contacts/requisites'} element={<Requisites />} />
+        <Route path={'/residents/price'} element={<ResidentsOfCapitalRegion />} />
+        <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
+        <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
+        <Route path={'/SearchPage'} element={<SearchPage />} />
+        <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
+        <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
+        <Route
+          path={'/services/administrative-services/'}
+          element={<InformationAdministrativeService />}
+        />
+        <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />
+        <Route path={'/regulatory-documents/:documentId'} element={<RegulatoryDocuments />} />
+        <Route
+          path={'/regulatory-documents-for-entity'}
+          element={<RegulatoryDocumentsForLegal />}
+        />
+        <Route path={'/tenders'} element={<Tenders />} />
+        <Route
+          path={'/residents-of-the-capital-region'}
+          element={<ResidentsOfTheCapitalRegion />}
+        />
+        <Route path={'/for-business'} element={<ForBusiness />} />
+        <Route path={'/company/branches'} element={<Branches />} />
+      </Routes>
+    </div>
+  );
 }
-export default App;

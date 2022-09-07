@@ -8,9 +8,7 @@ import ApplicationForGasificationOfResidentialGardenHouse from '../ApplicationFo
 import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../ApplicationToCallRepresentativeOfGasSupplyOrganization';
 import ProvidingGasMeterReadings from '../ProvidingGasMeterReadings';
 import TitleForHome from '../../../../components/TitleForHome';
-const styledTitle = {
-  margin: '0',
-};
+
 export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForOrderingCylinders');
   return (
@@ -18,8 +16,7 @@ export default function HeaderRequests() {
     >
       <TitleForHome
         fontSize={'m'}
-        margin={'s'}
-        style={styledTitle}
+        style={{margin: '0 auto'}}
         color={'blue'}
         infoTitle={'Оставить онлайн-заявку'}
       />{' '}

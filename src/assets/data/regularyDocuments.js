@@ -6,7 +6,7 @@ export const data = [
       {
         id: 1,
         name: 'Закон Республики Беларусь от 04.01.2003 № 176-3 «О газоснабжении»;',
-        link: '',
+        link: 'http://www.mspbsng.org/upload/iblock/d12/%D0%97%D0%90%D0%9A%D0%9E%D0%9D%20%D0%BE%D1%82%2004.01.2003%20%E2%84%96%20176-%D0%97.pdf',
       },
       {
         id: 2,
