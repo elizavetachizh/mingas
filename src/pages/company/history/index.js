@@ -15,7 +15,7 @@ import { PWithImg, ImgBackground, BlockImage } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
 import { Container } from '../styles';
 import Feedback from '../../feedback';
-
+import minsk from '../../../assets/background/history.jpg';
 export default function History() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
@@ -23,9 +23,8 @@ export default function History() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
-      <Feedback />
+      <Feedback img={minsk} name={'История'} />
       <HeaderCompany />
-
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <TitleForHome
           margin={'s'}

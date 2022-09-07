@@ -8,7 +8,7 @@ export const Div = styled.div`
   padding: 2%;
   display: none;
   border-radius: 20px;
-  margin: 4% auto;
+  margin: 2% auto;
   font-size: 16px;
   p {
     text-align: left;

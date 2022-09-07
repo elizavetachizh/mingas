@@ -52,24 +52,6 @@ export const Button = styled.button`
     border-radius: 30px;
     color: #0d4475;
   }
-  //&:hover {
-  //  border: solid #0d4475;
-  //  color: #fff; /* Цвет текста */
-  //  background: #0d4475; /* Цвет фона */
-  //  padding: 10px;
-  //}
-  //&:focus {
-  //  border: solid #0d4475;
-  //  color: #fff; /* Цвет текста */
-  //  background: #0d4475; /* Цвет фона */
-  //  padding: 10px;
-  //}
-  //&:active {
-  //  border: solid #0d4475;
-  //  color: #fff; /* Цвет текста */
-  //  background: #0d4475; /* Цвет фона */
-  //  padding: 10px;
-  //}
   @media (max-width: 700px) {
     text-align: center;
   }
@@ -95,9 +77,29 @@ export const Divbackground = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  height: auto;
+  overflow: hidden;
+  height: 100%;
   width: 100%;
-  top: 154px;
+  top: 152px;
+  @media (max-width: 900px) {
+    top: 80px;
+  }
+  p {
+    position: absolute;
+  }
+`;
+export const DivImage = styled.div`
+  //height: 470px;
+  transform: translate3d(0px, 0px, 0px);
+  width: 100%;
+  img {
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 400px;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -105,21 +107,9 @@ export const Divbackground = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
+    margin: 0;
+    padding: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-  p {
-    position: absolute;
-  }
-  @media (max-width: 640px) {
-    width: 640px;
-  }
-`;
-export const DivImage = styled.div`
-  //height: 470px;
-  width: 100%;
-  img {
-    width: 100%;
   }
 `;
 
@@ -140,16 +130,12 @@ export const Text = styled.div`
   color: white;
   width: 100%;
   z-index: 2;
-  margin: 10% auto;
+  height: 100%;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   justify-content: center;
-  font-size: 26px;
+  font-size: 1.4rem;
   align-items: center;
   font-weight: bold;
-  p {
-    z-index: 2;
-    margin:  auto;
-    width: 100%;
-  }
 `;

@@ -14,6 +14,8 @@ import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import { Container } from '../styles';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/sertifikacia.jpg";
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -34,6 +36,7 @@ export default function Management() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback img={minsk} name={'Руководство'} />
       <AdditionalDiv>
         <HeaderCompany />
         <DivTextPhoto>
