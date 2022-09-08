@@ -7,34 +7,47 @@ export const DivMap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  iframe{
+  iframe {
     width: 900px;
     height: 500px;
   }
- @media(max-width: 900px) {
-   iframe{
-     width: 700px;
-     height: 600px;
-   }
- }
-  @media(max-width: 700px) {
-    iframe{
+  @media (max-width: 900px) {
+    iframe {
+      width: 700px;
+      height: 600px;
+    }
+  }
+  @media (max-width: 700px) {
+    iframe {
       width: 500px;
       height: 500px;
     }
   }
-  @media(max-width: 645px) {
-    width: 600px;
-    iframe{
-      width: 400px;
-      height: 300px;
+  @media (max-width: 645px) {
+    width: 100%;
+    iframe {
+      width: 450px;
+      height: 500px;
     }
   }
-  @media(max-width: 500px) {
-    width: 600px;
+  @media (max-width: 500px) {
+    width: 100%;
+    margin: 0 2%;
   }
-  @media(max-width: 400px) {
-    width: 500px;
+  @media (max-width: 465px) {
+    width: 100%;
+    iframe {
+      width: 350px;
+      height: 500px;
+    }
+  }
+  @media (max-width: 370px) {
+    width: 100%;
+    margin: 0;
+    iframe {
+      width: 300px;
+      height: 500px;
+    }
   }
 `;
 
@@ -43,7 +56,6 @@ export const ContactsInform = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 `;
 
 export const Row = styled.div`
@@ -51,5 +63,5 @@ export const Row = styled.div`
   flex-direction: row;
   justify-content: space-around;
   margin: 6rem auto;
-  color: #0D4475;
+  color: #0d4475;
 `;

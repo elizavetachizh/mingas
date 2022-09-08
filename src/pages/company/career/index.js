@@ -38,6 +38,7 @@ export default function Career() {
       div.removeChild(script);
     };
   }, []);
+  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <Container>
       <Header backgroundHeader="blue" />

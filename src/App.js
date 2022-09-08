@@ -47,10 +47,11 @@ import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
 import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 import Corruption from './components/Сorruption';
-// import { useServer } from './pages/feedback/Requests/ProvidingGasMeterReadings/service';
+import LifeOfMingas from './pages/PressCenter/lifeOfMingas';
+
 export default function App() {
   useEffect(() => window.scrollTo(0, 0), []);
-  // useServer()
+
   return (
     <div>
       <Routes>
@@ -58,7 +59,7 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/company/history" element={<History />} />
         <Route path="/contacts" element={<GeneralInform />} />
-        <Route path="/press-center/:newsId" element={<PressCenter />} />
+        <Route path="/press-center/:descriptionID" element={<PressCenter />} />
         {/*<Route path="/feedback/question-answer" element={<QuestionAnswer />} />*/}
         <Route path="/feedback/question-answer/:titleId" element={<Information />} />
         <Route path={'/feedback/online-application'} element={<Requests />} />

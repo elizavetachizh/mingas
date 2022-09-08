@@ -1,6 +1,5 @@
 import {
   CompanyButton,
-  ContactButton,
   DivButtonHeader,
   Dropdown,
   LinksContainer,
@@ -21,34 +20,51 @@ import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
-
   const [isOpenBtn, setIsOpenBtn] = useState(false);
   const [isOpenBtnForBusiness, setIsOpenBtnForBusiness] = useState(false);
+  const [isOpenBtnForContacts, setIsOpenBtnForContacts] = useState(false);
+  const [isOpenBtnForPressCenter, setIsOpenBtnForPressCenter] = useState(false);
+
   const animate = () => {
     setIsOpen(true);
     if (isOpen) {
       setIsOpen(false);
     }
   };
+
   const animateOpenBtn = () => {
     setIsOpenBtn(true);
     if (isOpenBtn) {
       setIsOpenBtn(false);
     }
   };
+
   const animateOpenBtnForBusiness = () => {
     setIsOpenBtnForBusiness(true);
     if (isOpenBtnForBusiness) {
       setIsOpenBtnForBusiness(false);
     }
   };
+
+  const animateOpenBtnForContacts = () => {
+    setIsOpenBtnForContacts(true);
+    if (isOpenBtnForContacts) {
+      setIsOpenBtnForContacts(false);
+    }
+  };
+
+  const animateOpenBtnForPressCenter = () => {
+    setIsOpenBtnForPressCenter(true);
+    if (isOpenBtnForPressCenter) {
+      setIsOpenBtnForPressCenter(false);
+    }
+  };
+
   return (
     // <ModalWindow>
     <ContainerAbsolute>
-      {' '}
       <LinksContainer>
         <ContainerElements className={'mobile'}>
-          {' '}
           <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
             {/*{navbar ? (*/}
             {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />*/}
@@ -65,6 +81,7 @@ export default function MobileNavigation() {
             href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
           />
         </ContainerElements>
+
         <Dropdown>
           <DivBlocksHeader>
             {' '}
@@ -101,7 +118,6 @@ export default function MobileNavigation() {
 
         <Dropdown>
           <DivBlocksHeader>
-            {' '}
             <CompanyButton
               className={isOpenBtn && `handleBtn`}
               to="/residents-of-the-capital-region"
@@ -118,7 +134,6 @@ export default function MobileNavigation() {
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtn && `handleBtn`}>
             <div>
-              {' '}
               <ButtonLink to="/services">
                 Услуги <img alt={''} src={next} />
                 <span>
@@ -174,19 +189,47 @@ export default function MobileNavigation() {
         </Dropdown>
 
         <Dropdown>
-          <PressCenterButtons to="/press-center/1">
-            {t('header:PressCenter')}
-            <span />
-          </PressCenterButtons>
-          <DivButtonHeader>
+          <DivBlocksHeader>
+            <PressCenterButtons
+              className={isOpenBtnForPressCenter && `handleBtn`}
+              to="/press-center/1"
+            >
+              {t('header:PressCenter')}
+              <span />
+            </PressCenterButtons>
+            <div>
+              {isOpenBtnForPressCenter ? (
+                <IoIosArrowUp onClick={animateOpenBtnForPressCenter} />
+              ) : (
+                <IoIosArrowDown onClick={animateOpenBtnForPressCenter} />
+              )}
+            </div>
+          </DivBlocksHeader>
+          <DivButtonHeader className={isOpenBtnForPressCenter && `handleBtn`}>
             <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
             {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
+            <ButtonLink to="/press-center/2">Корпоротивная газета "Столичный газовик"</ButtonLink>
             <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
           </DivButtonHeader>
         </Dropdown>
+
         <Dropdown>
-          <ContactButton to="/contacts/phone-services">{t('header:Contacts')}</ContactButton>
-          <DivButtonHeader>
+          <DivBlocksHeader>
+            <CompanyButton
+              className={isOpenBtnForContacts && `handleBtn`}
+              to="/contacts/phone-services"
+            >
+              {t('header:Contacts')}
+            </CompanyButton>
+            <div>
+              {isOpen ? (
+                <IoIosArrowUp onClick={animateOpenBtnForContacts} />
+              ) : (
+                <IoIosArrowDown onClick={animateOpenBtnForContacts} />
+              )}
+            </div>
+          </DivBlocksHeader>
+          <DivButtonHeader className={isOpenBtnForContacts && `handleBtn`}>
             {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
             <ButtonLink to="/contacts/work-schedule">График личного приёма граждан</ButtonLink>
             <ButtonLink to="/contacts/phone-services">
@@ -195,6 +238,7 @@ export default function MobileNavigation() {
             <ButtonLink to="/contacts/requisites">Реквизиты предприятия</ButtonLink>
           </DivButtonHeader>
         </Dropdown>
+
         <ServicesButton to="/company/union">Профсоюз</ServicesButton>
       </LinksContainer>
     </ContainerAbsolute>

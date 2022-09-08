@@ -1,5 +1,5 @@
 import Header from '../../components/header';
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContentHome from './Content';
 import UsefulInform from './useful_information';
 import HomeServices from './services';
@@ -14,6 +14,7 @@ import { BackgroundStyle } from './services/styles';
 import linesOne from '../../assets/background/rig.png';
 import { Container } from '../company/styles';
 export default function Home() {
+  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <Container>
       <Header />

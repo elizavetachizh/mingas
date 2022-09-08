@@ -4,5 +4,9 @@ import LifeOfMingas from '../lifeOfMingas';
 
 export default function ChangeLifeOfMingas() {
   const medium = useMediaQuery('(max-width: 1200px)');
-  return <>{medium ? <MediaQueryOfLifeOfMingas /> : <LifeOfMingas />}</>;
+  return (
+    <>
+      <LifeOfMingas />}
+    </>
+  );
 }

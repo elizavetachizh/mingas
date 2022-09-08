@@ -15,7 +15,6 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalHeader from './DopFunctionalHeader';
-import { BackgroundStyle } from '../../Home/services/styles';
 import linesOne from '../../../assets/background/rig.png';
 import { BackgroundStyleServices } from '../styles';
 import services from '../../../assets/background/uslugi-i-ceny-4.jpg';
@@ -36,7 +35,7 @@ export default function NaturalGas() {
       setServiceID(+cardId);
     }
   }, [cardId, title, inform, currentServiceID]);
-
+  useEffect(() => window.scrollTo(0, 0), []);
   const animate = useCallback(
     (descriptionID) => {
       const current = data.find((element) => element.serviceId === descriptionID);
@@ -54,7 +53,6 @@ export default function NaturalGas() {
       <Header backgroundHeader={'blue'} />
       <Feedback img={services} name={'Услуги'} />
       <BackgroundStyleServices src={linesOne} />
-
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>
