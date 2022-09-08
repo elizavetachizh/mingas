@@ -13,8 +13,8 @@ export default function ParentOrganizations() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <HeaderCompany />
-      <AdditionalDiv style={{margin: '4% auto'}}>
-        <TitleForHome infoTitle={'Вышестоящие организации'} color={'blue'} />
+      <AdditionalDiv style={{ margin: '4% auto' }}>
+        <TitleForHome className={'company'} infoTitle={'Вышестоящие организации'} color={'blue'} />
         <ContainerLinks>
           {data.map((el) => (
             <DopFunctional

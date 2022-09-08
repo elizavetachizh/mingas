@@ -1,5 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { BlockOfGraditude, Container, ContainerGraditude, ContainerOfDocuments, DivButtons } from '../styles';
+import {
+  BlockOfGraditude,
+  Container,
+  ContainerGraditude,
+  ContainerOfDocuments,
+  DivButtons,
+} from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
@@ -94,10 +100,10 @@ export default function Documentation() {
       <Header backgroundHeader="blue" />
       <HeaderCompany currentPage={'documentation'} />
       <TitleForHome infoTitle={'Сертификаты, лицензии, свидетельства'} color={'blue'} />
-      <AdditionalDiv style={{margin: '4% auto'}}>
+      <AdditionalDiv style={{ margin: '4% auto' }}>
         <ContainerOfDocuments>
           {' '}
-          <TitleForHome color={'blue'} infoTitle={certifications[0].name} />
+          <TitleForHome className={'company'} color={'blue'} infoTitle={certifications[0].name} />
           <BlockOfGraditude>
             {certifications.map((element) => (
               <ContainerGraditude onClick={() => openImage(element.GeneralId)}>

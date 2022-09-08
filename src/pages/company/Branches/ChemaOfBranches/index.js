@@ -16,7 +16,6 @@ import { Main, WindowDiv } from '../../../Home/slider/styles';
 import { Name } from '../../../../components/administrativeServices/Header/styles';
 import { ContainerParallax } from '../styles';
 import { BtnOpenInform } from '../../../../components/MethodPayment/styles';
-import HeaderCompany from '../../header_company';
 
 export default function SchemaOfBranches({
   name,

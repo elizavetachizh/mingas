@@ -67,7 +67,7 @@ export const General = styled.div`
   &.menu{
     border: none;
     border-radius: 0;
-    margin: 14% auto;
+    margin: 14% auto 4%;
     padding: 0;
     width: 90%; 
   }

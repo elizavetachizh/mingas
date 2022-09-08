@@ -24,10 +24,10 @@ export default function History() {
     <Container>
       <Header backgroundHeader="blue" />
       <Feedback img={minsk} name={'История'} />
-
-      <AdditionalDiv style={{ margin: '4% auto' }}>
+      <AdditionalDiv>
         <HeaderCompany />
         <TitleForHome
+          className={'company'}
           margin={'s'}
           color={'blue'}
           infoTitle={'Из истории газификации г. Минска и Минского района'}

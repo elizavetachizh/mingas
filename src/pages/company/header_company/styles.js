@@ -7,12 +7,25 @@ export const HeaderCompanyDiv = styled.div`
   width: 100%;
   max-width: 1440px;
   flex-wrap: wrap;
-  margin: 14% auto 0 auto;
-  @media (max-width: 1320px) {
-    margin-top: 16%;
+  margin: 10% auto 0 auto;
+  @media (max-width: 1392px) {
+    width: 60%;
   }
-  @media (max-width: 990px) {
-    margin-top: 18%;
+  @media (max-width: 1340px) {
+    margin-top: 12%;
+    width: 70%;
+  }
+  @media (max-width: 1174px) {
+    margin-top: 14%;
+    width: 80%;
+  }
+  @media (max-width: 1028px) {
+    margin-top: 16%;
+    width: 90%;
+  }
+  @media (max-width: 913px) {
+    margin-top: 14%;
+    width: 100%;
   }
   @media (max-width: 610px) {
     margin-top: 20%;

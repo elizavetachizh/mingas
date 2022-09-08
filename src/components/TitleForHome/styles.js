@@ -18,7 +18,6 @@ const titleMargin = {
   `,
 };
 export const Title = styled.h2`
-  font-style: normal;
   z-index: 2;
   line-height: 37px;
   display: flex;
@@ -26,13 +25,15 @@ export const Title = styled.h2`
   text-transform: uppercase;
   font-size: 32px;
   justify-content: center;
-  letter-spacing: 0.1em;
   margin: 4% auto;
   text-align: center;
   ${({ color }) => titleColor[color]};
   ${({ margin }) => titleMargin[margin]};
   @media (max-width: 700px) {
     margin-top: 14%;
+    &.company {
+      margin-top: 8%;
+    }
   }
   @media (max-width: 640px) {
     font-size: 24px;

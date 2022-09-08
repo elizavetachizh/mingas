@@ -1,8 +1,8 @@
 import React from 'react';
 import { Title } from './styles';
-export default function TitleForHome({ infoTitle, color, fontSize, margin, style }) {
+export default function TitleForHome({ infoTitle, color, fontSize, margin, style, className }) {
   return (
-    <Title style={style} color={color} fontSize={fontSize} margin={margin}>
+    <Title className={className} style={style} color={color} fontSize={fontSize} margin={margin}>
       {infoTitle}
     </Title>
   );

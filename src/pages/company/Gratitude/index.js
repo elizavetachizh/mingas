@@ -36,8 +36,8 @@ export default function Gratitude() {
     <Container>
       <Header backgroundHeader="blue" />
       <HeaderCompany currentPage={'gratitude'} />
-      <TitleForHome infoTitle={'Благодарности и награды'} color={'blue'} />
-      <AdditionalDiv style={{margin: '4% auto'}}>
+      <TitleForHome className={'company'} infoTitle={'Благодарности и награды'} color={'blue'} />
+      <AdditionalDiv style={{ margin: '4% auto' }}>
         <BlockOfGraditude>
           {gratitude.map((element) => (
             <ContainerGraditude onClick={() => openImage(element.id)}>
