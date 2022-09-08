@@ -6,8 +6,26 @@ export const DivCarousel = styled.div`
     content: attr(data-title);
   }
   img {
-    width: 60%;
-    height: 60%;
+    width: 64%;
+    height: 64%;
+    @media (max-width: 1200px) {
+      width: 74%;
+      height: 74%;
+    }
+  }
+  &.isPhone {
+    img {
+      width: 64%;
+      height: 64%;
+      @media (max-width: 600px) {
+        width: 74%;
+        height: 74%;
+      }
+      @media (max-width: 500px) {
+        width: 96%;
+        height: 96%;
+      }
+    }
   }
   figure {
     display: flex;

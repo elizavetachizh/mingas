@@ -10,8 +10,4 @@ export const Input = styled.input`
     width: 90%;
     margin: 0 auto;
   }
-  @media (max-width: 350px) {
-    width: 280px;
-    margin: 0 auto;
-  }
 `;

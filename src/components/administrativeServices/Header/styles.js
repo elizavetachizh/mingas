@@ -7,6 +7,9 @@ export const BlockBtn = styled.div`
   padding: 10px;
   //background-color: #e8f3ff;
   border-color: #0e43af;
+  a {
+    color: #0d4475;
+  }
 `;
 
 export const Button = styled.button`

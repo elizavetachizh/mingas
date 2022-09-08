@@ -1,4 +1,3 @@
-import { Container } from '../footer/styles';
 import type { SelectProps } from '../../const/consts';
 import { Label } from '../formQuestion/styles';
 import { DivSelect, SelectDiv } from './styles';

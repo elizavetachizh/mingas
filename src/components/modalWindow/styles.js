@@ -26,6 +26,9 @@ export const ModalWindowOpenAndClose = styled.div`
   &.gratitude {
     width: 600px;
   }
+  @media (max-width: 530px) {
+    margin: 0 2%;
+  } ;
 `;
 
 export const InformModal = styled.div`
@@ -37,7 +40,7 @@ export const InformModal = styled.div`
   img {
     width: 56%;
     @media (max-width: 555px) {
-      width: 70%;
+      width: 46%;
     }
     &.gratitude {
       width: 70%;

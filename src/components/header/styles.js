@@ -74,6 +74,9 @@ export const MenuClose = styled.div`
   img {
     margin: 10px;
   }
+  @media (min-width: 900px) {
+    display: none;
+  }
 `;
 export const Background = styled.div`
   width: 100%;

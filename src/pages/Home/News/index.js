@@ -58,7 +58,10 @@ export default function News() {
         </ArticleForHome>
         <ArticleForHome className={'quarter'}>
           <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
-            <img src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
+            <img
+              src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'}
+              alt={' Счетчик «не газует» - Газета Беларускi Час'}
+            />
             <p>
               Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
             </p>

@@ -41,7 +41,7 @@ export const LinksContainer = styled.div`
   flex-direction: column;
   top: 80px;
   height: fit-content;
-  width: 500px;
+  width: auto;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
   background-color: rgba(13, 68, 117, 80%);
   backdrop-filter: blur(5px);
@@ -128,4 +128,7 @@ export const ContainerAbsolute = styled.div`
   width: 100%;
   height: fit-content;
   overflow: hidden;
+  @media (min-width: 900px) {
+    display: none;
+  }
 `;

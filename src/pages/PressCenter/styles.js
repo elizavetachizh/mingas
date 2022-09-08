@@ -20,6 +20,10 @@ export const Article = styled.div`
   text-align: center;
   background-repeat: no-repeat;
   background-position: bottom;
+  box-shadow: inset 0 -120px 50px -50px #0d4475;
+  @media (max-width: 600px) {
+    width: 84%;
+  }
   img {
     width: 100%;
     border-radius: 20px;
@@ -33,6 +37,25 @@ export const Article = styled.div`
     color: white;
     font-weight: bold;
     font-size: 18px;
+    @media (max-width: 1120px) {
+      margin: -13% auto 2%;
+    }
+    @media (max-width: 1120px) {
+      margin: -13% auto 2%;
+    }
+    @media (max-width: 820px) {
+      margin: -10% auto 2%;
+    }
+    @media (max-width: 720px) {
+      margin: -13% auto 2%;
+    }
+    @media (max-width: 520px) {
+      margin: -15% auto 2%;
+      font-size: 16px;
+    }
+    @media (max-width: 420px) {
+      margin: -22% auto 2%;
+    }
   }
   //&.general {
   //  width: 50%;

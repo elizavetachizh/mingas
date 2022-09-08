@@ -43,30 +43,30 @@ export default function SMI() {
           </div>
         </BtnIsOpen>
         <Div className={isOpen && `shake`}>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Dd3zsFaCKT8"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/QCBY6awvF-E"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/cBJcdXWlgV4"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Dd3zsFaCKT8"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/QCBY6awvF-E"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/cBJcdXWlgV4"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </Div>
       </General>
       <General>
@@ -82,7 +82,7 @@ export default function SMI() {
         </BtnIsOpen>
         <Div className={isClose && `shake`}>
           <ContainerArticles>
-            <Article style={{ backgroundImage: `url('${gradient}')` }} className={'general'}>
+            <Article className={'general'}>
               <a
                 target={'_blank'}
                 href={
@@ -97,12 +97,7 @@ export default function SMI() {
                 <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
               </a>
             </Article>
-            <Article
-              className={'quarter'}
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article className={'quarter'}>
               <a
                 target={'_blank'}
                 href={
@@ -121,12 +116,7 @@ export default function SMI() {
                 </p>
               </a>
             </Article>
-            <Article
-              className={'quarter'}
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article className={'quarter'}>
               <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
                 <img src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
                 <p>
@@ -134,11 +124,7 @@ export default function SMI() {
                 </p>
               </a>
             </Article>
-            <Article
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article>
               <a
                 target={'_blank'}
                 href={
@@ -157,11 +143,7 @@ export default function SMI() {
                 </p>
               </a>
             </Article>
-            <Article
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article>
               <a
                 target={'_blank'}
                 href={
@@ -170,7 +152,7 @@ export default function SMI() {
               >
                 <img
                   src={
-                    'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-15-of-31-kopiya-1.jpg'
+                    'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-15-of-31-kopiya-1.jpgv'
                   }
                 />
 
@@ -180,11 +162,7 @@ export default function SMI() {
                 </p>
               </a>
             </Article>
-            <Article
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article>
               <a
                 target={'_blank'}
                 href={
@@ -202,11 +180,7 @@ export default function SMI() {
                 </p>
               </a>
             </Article>
-            <Article
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article>
               <a
                 target={'_blank'}
                 href={
@@ -224,11 +198,7 @@ export default function SMI() {
                 </p>
               </a>
             </Article>
-            <Article
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article>
               <a
                 target={'_blank'}
                 href={
@@ -247,11 +217,7 @@ export default function SMI() {
                 </p>
               </a>
             </Article>
-            <Article
-              style={{
-                backgroundImage: `url('${gradient}')`,
-              }}
-            >
+            <Article>
               <a
                 target={'_blank'}
                 href={

@@ -17,7 +17,7 @@ export const DivUsefulInform = styled.div`
   //  rgba(14, 78, 129, 0.28) 70%,
   //  rgba(13, 68, 117, 0.3) 90%
   //);
-  background-color:  rgba(14, 78, 129, 0.2);
+  background-color: rgba(14, 78, 129, 0.2);
   //box-shadow: 0 11px 6px -11px rgba(0, 0, 0, 0.3);
   //@media (max-width: 640px) {
   //  width: 650px;
@@ -38,7 +38,7 @@ export const DivInform = styled.div`
   margin: 2% auto;
 
   @media (max-width: 1100px) {
-    width: 100%;
+    width: 96%;
   }
   @media (max-width: 950px) {
     flex-direction: column;

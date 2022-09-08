@@ -31,7 +31,7 @@ export const links = [
   },
   {
     id: 6,
-    link: '/regulatory-documents-for-entity',
+    link: '/regulatory-documents-for-business/1',
     name: 'Регламентирующие документы',
     cardImg: 5,
   },

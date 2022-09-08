@@ -16,9 +16,10 @@ import Footer from '../footer';
 import { data } from '../../assets/data/regularyDocuments';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
-import {useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
+import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 
 export default function DepartmentInformation() {
   const { documentId } = useParams();
@@ -30,6 +31,7 @@ export default function DepartmentInformation() {
   const [isForm, setIsForm] = useState(false);
   const [message, setMessage] = useState('');
   const result = [];
+  const isPhone = useMediaQuery('(max-width: 820px)');
 
   const infoForSearch = data[0].inform
     .concat(data[1].inform)
@@ -155,16 +157,29 @@ export default function DepartmentInformation() {
               </BlockBtn>
             ))}
           </HeaderCompanyDiv>
-          <ContainerInform>
-            <Name>{name}</Name>
-            {inform.map((el) => (
-              <BlockBtn>
-                <a href={el.link} target={'_blank'}>
-                  {el.name}
-                </a>
-              </BlockBtn>
-            ))}
-          </ContainerInform>
+          {isPhone ? (
+            <ContainerInform>
+              <Name>{name}</Name>
+              {infoForSearch.map((el) => (
+                <BlockBtn>
+                  <a href={el.link} target={'_blank'}>
+                    {el.name}
+                  </a>
+                </BlockBtn>
+              ))}
+            </ContainerInform>
+          ) : (
+            <ContainerInform>
+              <Name>{name}</Name>
+              {inform.map((el) => (
+                <BlockBtn>
+                  <a href={el.link} target={'_blank'}>
+                    {el.name}
+                  </a>
+                </BlockBtn>
+              ))}
+            </ContainerInform>
+          )}
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

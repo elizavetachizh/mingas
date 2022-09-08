@@ -222,7 +222,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                     Административные процедуры
                   </ButtonLink>
-                  <ButtonLink to="/regulatory-documents-for-entity">
+                  <ButtonLink to="/regulatory-documents-for-business/1">
                     Регламентирующие документы
                   </ButtonLink>
                 </DivButtonHeader>

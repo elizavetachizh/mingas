@@ -20,8 +20,10 @@ import { dataAnswer } from '../../../../assets/data/question-answer';
 import DopFunctionService from '../../../services/DopFunction';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
+import useMediaQuery from '../../../Home/parallax/useMediaQuery';
 
 export default function Information() {
+  const isPhone = useMediaQuery('(max-width: 820px)');
   const { titleId } = useParams();
   const [searchParams] = useSearchParams();
   const questionId = searchParams.get('questionId');
@@ -106,7 +108,7 @@ export default function Information() {
         <DivBlocks>
           <div style={{ width: '80%' }}>
             {' '}
-            <BlockSearch style={{ width: '80%' }}>
+            <BlockSearch className={'question-answer'}>
               {isForm ? (
                 <IoIosSearch style={{ display: 'none' }} />
               ) : (
@@ -139,20 +141,34 @@ export default function Information() {
             </BlockSearch>
             <Menu />
           </div>
-
-          <ContainerInform>
-            {titleId && <Name>{currentTheme?.title}</Name>}
-            <>
-              {info.length &&
-                info.map((el) => (
+          {isPhone ? (
+            <ContainerInform>
+              {titleId && <Name>{currentTheme?.title}</Name>}
+              <>
+                {infoForSearch.map((el) => (
                   <DopFunctionService
                     key={el.questionId}
                     inform={el.answer}
                     nameDescription={el.question}
                   />
                 ))}
-            </>
-          </ContainerInform>
+              </>
+            </ContainerInform>
+          ) : (
+            <ContainerInform>
+              {titleId && <Name>{currentTheme?.title}</Name>}
+              <>
+                {info.length &&
+                  info.map((el) => (
+                    <DopFunctionService
+                      key={el.questionId}
+                      inform={el.answer}
+                      nameDescription={el.question}
+                    />
+                  ))}
+              </>
+            </ContainerInform>
+          )}
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>

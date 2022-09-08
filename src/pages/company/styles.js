@@ -69,7 +69,7 @@ export const Link = styled.div`
       margin: 2% 0;
       display: flex;
       justify-content: left;
-      a{
+      a {
         margin: 0 4%;
       }
       a:hover {
@@ -91,5 +91,18 @@ export const Link = styled.div`
   &:hover {
     transform: scale(1.1);
     transition: transform 0.8s;
+  }
+`;
+
+export const Img = styled.img`
+  width: 30%;
+  margin: 0 35%;
+  @media (max-width: 700px) {
+    width: 50%;
+    margin: 0 25%;
+  }
+  @media (max-width: 450px) {
+    width: 60%;
+    margin: 0 20%;
   }
 `;

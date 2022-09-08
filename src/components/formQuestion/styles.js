@@ -11,7 +11,7 @@ export const DivInput = styled.div`
   display: flex;
   width: 90%;
   margin: 2% auto;
-  
+
   flex-direction: column;
   @media (max-width: 640px) {
     text-align: center;
@@ -26,8 +26,7 @@ export const DivInputCheckbox = styled.div`
 
 export const Label = styled.label`
   color: #2d4c6b;
-  opacity: 0.65;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 4px;
   span {
     color: red;

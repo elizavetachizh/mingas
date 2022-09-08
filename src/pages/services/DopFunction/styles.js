@@ -40,4 +40,18 @@ export const DescriptionService = styled.div`
 export const ContainerFunctionService = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 4% auto;
+  @media (max-width: 900px) {
+    margin: 4% 2%;
+  }
+  img {
+    width: 40%;
+    margin: 4% auto;
+    @media (max-width: 600px) {
+      width: 50%;
+    }
+    @media (max-width: 420px) {
+      width: 60%;
+    }
+  }
 `;

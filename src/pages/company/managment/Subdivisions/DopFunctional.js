@@ -4,7 +4,11 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/i
 import {
   General,
   BtnIsOpen,
-  Div, IoIosArrowUps, IoIosArrowDowns, IoMdClocks, IoIosPins,
+  Div,
+  IoIosArrowUps,
+  IoIosArrowDowns,
+  IoMdClocks,
+  IoIosPins,
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
@@ -18,31 +22,21 @@ export default function DopFunctional({ name, photo, chief, description, contact
     }
   };
   return (
-    <ContainerFunctionService style={{ margin: '4% auto' }}>
+    <ContainerFunctionService>
       <Name style={{ color: 'white', textDecoration: 'none' }}>{name}</Name>
       {photo ? (
-        <img
-          style={{ width: '40%', margin: '4% auto' }}
-          src={require(`../../../../assets/management/departaments/${photo}.jpg`)}
-          alt={''}
-        />
+        <img src={require(`../../../../assets/management/departaments/${photo}.jpg`)} alt={''} />
       ) : (
         <></>
       )}
       <div>
-        <TitleForHome color={'blue'} infoTitle={chief} fontSize={'s'} />
+        <TitleForHome className={'company'} color={'blue'} infoTitle={chief} fontSize={'s'} />
       </div>
       {description ? (
         <General>
           <BtnIsOpen style={{ width: '100%' }} onClick={animate}>
             <p>Основные задачи:</p>
-            <div>
-              {isOpen ? (
-                <IoIosArrowUps />
-              ) : (
-                <IoIosArrowDowns />
-              )}
-            </div>
+            <div>{isOpen ? <IoIosArrowUps /> : <IoIosArrowDowns />}</div>
           </BtnIsOpen>
           <Div className={isOpen && `shake`}>
             <DescriptionService>{description}</DescriptionService>
@@ -53,7 +47,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
       )}
       {schedule ? (
         <LinksNetwork>
-          <IoMdClocks  />
+          <IoMdClocks />
           {schedule}
         </LinksNetwork>
       ) : (

@@ -18,18 +18,18 @@ export const Div = styled.div`
     opacity: 0;
     animation: ${opacityAnimation} 2s forwards;
   }
-  &.menu{
+  &.menu {
     border-radius: 0;
-    margin:  0 ;
+    margin: 0;
     padding: 2% 0;
     background-image: linear-gradient(
-            -55deg,
-            rgb(1, 95, 156) 0%,
-            rgb(16, 69, 141) 0%,
-            rgb(15, 89, 141) 19%,
-            rgb(15, 78, 140) 60%,
-            rgb(14, 78, 129) 79%,
-            rgb(13, 68, 117) 100%
+      -55deg,
+      rgb(1, 95, 156) 0%,
+      rgb(16, 69, 141) 0%,
+      rgb(15, 89, 141) 19%,
+      rgb(15, 78, 140) 60%,
+      rgb(14, 78, 129) 79%,
+      rgb(13, 68, 117) 100%
     );
   }
 `;
@@ -39,9 +39,9 @@ export const DivBlocks = styled.div`
   flex-direction: row;
   align-items: baseline;
   justify-content: space-around;
-  //@media(max-width: 820px){
-  //  flex-direction: column;
-  //}
+  @media (max-width: 820px) {
+    flex-direction: column;
+  }
 `;
 export const ContainerInform = styled.div`
   display: flex;
@@ -50,6 +50,10 @@ export const ContainerInform = styled.div`
   max-width: 980px;
   margin: 0 auto;
   width: 100%;
+  @media (max-width: 820px) {
+    margin: 0 2%;
+    width: 96%;
+  }
   div.react-player {
     background-size: 50%;
     background-repeat: no-repeat;
@@ -57,21 +61,20 @@ export const ContainerInform = styled.div`
 `;
 export const General = styled.div`
   border: 1px solid #1b3a91;
-  border-radius: 50px;
+  border-radius: 30px;
   margin: 1rem auto;
   padding: 0;
   width: 90%;
   img {
     text-align: center;
   }
-  &.menu{
+  &.menu {
     border: none;
     border-radius: 0;
     margin: 14% auto 4%;
     padding: 0;
-    width: 90%; 
+    width: 90%;
   }
-
 `;
 export const BtnIsOpen = styled.div`
   display: flex;
@@ -94,11 +97,11 @@ export const BtnIsOpen = styled.div`
   );
   cursor: pointer;
   //margin: 4% auto;
-  border-radius: 50px;
-  &.menu{
+  border-radius: 30px;
+  &.menu {
     border-radius: 0;
     height: 50px;
-    div{
+    div {
       width: 42px;
       height: 80%;
     }
@@ -107,17 +110,16 @@ export const BtnIsOpen = styled.div`
     background: white;
     border-radius: 50%;
     height: 92%;
-    width: 64px;
+    width: 60px;
     text-align: center;
-    @media (max-width: 800px) {
-      height: 84%;
+    @media (max-width: 710px) {
+      height: 86%;
     }
     @media (max-width: 540px) {
       height: 80%;
     }
     @media (max-width: 450px) {
-      height: 80%;
-      width: 80px;
+      width: 64px;
     }
   }
   p {
@@ -167,6 +169,13 @@ export const IoIosPins = styled(IoIosPin)`
 export const BlockSearch = styled.div`
   width: 50%;
   margin: 2% auto 0;
+  &.question-answer {
+    width: 80%;
+    @media (max-width: 820px) {
+      width: 100%;
+      margin: 4% auto;
+    }
+  }
 `;
 export const SearchService = styled.button`
   background: none;
@@ -184,6 +193,7 @@ export const SearchService = styled.button`
 export const ContainerFormSearchForService = styled.div`
   width: 100%;
   margin: 0 auto;
+
   form {
     width: 60%;
     margin: 0 auto;

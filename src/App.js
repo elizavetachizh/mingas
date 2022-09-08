@@ -30,7 +30,7 @@ import LiquefiedGasTariff from './pages/tariff/liquefiedGasTariff';
 import ElectronicAppealForEntity from './pages/feedback/electronicCirculationForEntity';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
-import { Component } from 'react';
+import { Component, useEffect } from 'react';
 import ParentOrganizations from './pages/company/parentOrganizations';
 import LeaveFeedback from './components/leaveFeedback';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
@@ -47,9 +47,10 @@ import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
 import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 import Corruption from './components/Сorruption';
- // import { useServer } from './pages/feedback/Requests/ProvidingGasMeterReadings/service';
+// import { useServer } from './pages/feedback/Requests/ProvidingGasMeterReadings/service';
 export default function App() {
-   // useServer()
+  useEffect(() => window.scrollTo(0, 0), []);
+  // useServer()
   return (
     <div>
       <Routes>
@@ -108,7 +109,7 @@ export default function App() {
         <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />
         <Route path={'/regulatory-documents/:documentId'} element={<RegulatoryDocuments />} />
         <Route
-          path={'/regulatory-documents-for-entity'}
+          path={'/regulatory-documents-for-business/:documentId'}
           element={<RegulatoryDocumentsForLegal />}
         />
         <Route path={'/tenders'} element={<Tenders />} />

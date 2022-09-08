@@ -59,8 +59,14 @@ export const ContainerText = styled.div`
   max-width: 980px;
   margin: 0 auto;
   font-size: 16px;
+  a {
+    color: #0d4475;
+  }
   p {
     text-indent: 25px;
+  }
+  div {
+    margin: 0 2%;
   }
   iframe {
     width: 100%;
@@ -80,10 +86,30 @@ export const ContainerText = styled.div`
 `;
 
 export const ImgERIP = styled.img`
-  margin: 0 auto;
+  margin: 0 30%;
   text-align: center;
-  width: 100%;
-  @media (max-width: 930px) {
-    width: 50%;
+  width: 40%;
+  @media (max-width: 550px) {
+    width: 60%;
+    margin: 0 20%;
   }
+  @media (max-width: 400px) {
+    width: 70%;
+    margin: 0 15%;
+  }
+  &.big {
+    width: 70%;
+    margin: 0 15%;
+    @media (max-width: 900px) {
+      width: 90%;
+      margin: 0 5%;
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  //@media (max-width: 930px) {
+  //  width: 50%;
+  //}
 `;
