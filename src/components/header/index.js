@@ -59,7 +59,6 @@ export default function Header({ backgroundHeader }) {
     } else {
       document.body.classList.add('mobile');
     }
-    // document.body.style.position = 'fixed';
   };
   const openMobile = (
     <Menu onClick={onClick}>
@@ -81,13 +80,6 @@ export default function Header({ backgroundHeader }) {
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}
         <BackgroundText>
-          {/*<LinkLogo to="/">*/}
-          {/*  {navbar ? (*/}
-          {/*    <Logo style={{ width: '80px', height: '80px' }} src={HeaderLogoBlue} />*/}
-          {/*  ) : (*/}
-          {/*    <Logo src={HeaderLogo} />*/}
-          {/*  )}*/}
-          {/*</LinkLogo>*/}
           <DivColumn>
             <DivFirstHeader>
               <DivPhone>
@@ -105,18 +97,21 @@ export default function Header({ backgroundHeader }) {
                   <div>
                     <a href={'tel:104'}>104</a>
                   </div>
-                  <p>Аварийная служба</p>
+                  <p> {t('header:emergencyService')}</p>
                 </Div104>
                 <Div104>
                   <div>
                     <a href={'tel:162'}>162</a>
                   </div>
-                  <p>Контакт-центр</p>
+                  <p>{t('header:contactCenter')}</p>
                 </Div104>
               </DivPhone>
               <ContainerElements>
                 {' '}
-                <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
+                <PersonalAccButton
+                  title={`${t('header:PersonalArea')}`}
+                  href={'https://service.mingas.by:5002/auth/login#login'}
+                >
                   {/*{navbar ? (*/}
                   {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />*/}
                   {/*) : (*/}
@@ -147,11 +142,13 @@ export default function Header({ backgroundHeader }) {
                   <span />
                 </CompanyButton>
                 <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/company/history">История предприятия</ButtonLink>
-                  <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
-                  <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
+                  <ButtonLink to="/company/history">{t('header:history')}</ButtonLink>
+                  <ButtonLink to="/company/management">
+                    {t('header:enterpriseManagement')}
+                  </ButtonLink>
+                  <ButtonLink to="/company/career"> {t('header:work')}</ButtonLink>
                   <ButtonLink to="/company/parent-organizations">
-                    Вышестоящие организации
+                    {t('header:ParentOrganizations')}
                   </ButtonLink>
                   <ButtonLink to="/company/branches" style={{ width: '100%' }}>
                     Филиалы УП "Мингаз" <img alt={''} src={next} />
@@ -208,7 +205,7 @@ export default function Header({ backgroundHeader }) {
 
               <Dropdown>
                 <ServicesButton to="/for-business">
-                  Для бизнеса <span />
+                  {t('header:ForBusiness')} <span />
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
@@ -258,7 +255,7 @@ export default function Header({ backgroundHeader }) {
                 </DivButtonHeader>
               </Dropdown>
               <ServicesButton to="/company/union">
-                Профсоюз
+                {t('header:union')}
                 <span />
               </ServicesButton>
               {/*<MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>*/}

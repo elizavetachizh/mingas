@@ -56,11 +56,16 @@ export default function SearchPage() {
                 return (
                   <div>
                     {(
-                      <NavLink to={`/services-legal-entities/${element.serviceId}`}>
+                      <NavLink
+                        style={{ color: 'black' }}
+                        to={`/services-legal-entities/${element.serviceId}`}
+                      >
                         {element.nameCard}
                       </NavLink>
                     ) && (
-                      <NavLink to={`/services/${element.serviceId}`}>{element.nameCard}</NavLink>
+                      <NavLink style={{ color: 'black' }} to={`/services/${element.serviceId}`}>
+                        {element.nameCard}
+                      </NavLink>
                     )}
                   </div>
                 );
@@ -77,7 +82,7 @@ export default function SearchPage() {
       {isForm && isModalVisible ? (
         <IoIosSearch style={{ display: 'none' }} />
       ) : (
-        <IoIosSearchs onClick={() => handleForm()} type={'submit'} />
+        <IoIosSearchs title={'Поиск'} onClick={() => handleForm()} type={'submit'} />
       )}
       {isForm && (
         <ContainerFormSearch>

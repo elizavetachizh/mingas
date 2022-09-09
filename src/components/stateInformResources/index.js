@@ -5,11 +5,13 @@ import { DivInform } from '../../pages/Home/useful_information/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import React from 'react';
 import { BlockContainerRequests } from '../../pages/feedback/styles';
+import { useTranslation } from 'react-i18next';
 const styledTitle = {
   margin: '0',
 };
 export default function StateInformResources() {
   const isPhone = useMediaQuery('(max-width: 800px)');
+  const { t } = useTranslation();
   return (
     <BlockContainerRequests>
       <TitleForHome
@@ -17,7 +19,7 @@ export default function StateInformResources() {
         fontSize={'m'}
         margin={'s'}
         color={'blue'}
-        infoTitle={'Государственные информационные ресурсы'}
+        infoTitle={`${t('RESOURCES:title')}`}
       />
       <img
         alt={'ornament'}

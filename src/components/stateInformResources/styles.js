@@ -2,15 +2,16 @@ import styled from 'styled-components';
 
 export const DivCarousel = styled.div`
   text-align: center;
-  &:hover::after {
-    content: attr(data-title);
-  }
   img {
     width: 64%;
     height: 64%;
     @media (max-width: 1200px) {
       width: 74%;
       height: 74%;
+    }
+    @media (max-width: 1100px) {
+      width: 94%;
+      height: 94%;
     }
   }
   &.isPhone {

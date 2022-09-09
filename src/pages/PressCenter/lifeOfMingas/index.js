@@ -1,12 +1,11 @@
 import ReactCarousel, { AFTER, CENTER, BEFORE } from 'react-carousel-animated';
 import 'react-carousel-animated/dist/style.css';
 import { photo } from '../../../assets/data/liveInStyleOfMingas';
-import { Link } from '../../company/styles';
+import { Link, ImgCarousel } from '../../company/styles';
 
 function LifeOfMingas() {
   return (
     <>
-      {' '}
       <Link className={'social-networks'}>
         Мы в социальных сетях:
         <div>
@@ -36,13 +35,11 @@ function LifeOfMingas() {
           carouselHeight="350px"
         >
           {photo.map((image, index) => (
-            <img
+            <ImgCarousel
               key={index}
               src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.jpg`)}
               alt="test"
               style={{
-                maxHeight: '300px',
-                maxWidth: '600px',
                 borderRadius: '20px',
                 margin: '.5rem',
               }}

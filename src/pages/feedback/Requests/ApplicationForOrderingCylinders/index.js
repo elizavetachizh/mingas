@@ -14,6 +14,7 @@ import { t } from 'i18next';
 import phone from '../../../../assets/formPng/tel.png';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
 import address from '../../../../assets/formPng/map.png';
+import { useTranslation } from 'react-i18next';
 
 export default function ApplicationForOrderingCylinders() {
   const {
@@ -25,18 +26,19 @@ export default function ApplicationForOrderingCylinders() {
     handleSubmit,
     form,
   } = useForOrderingCylinders();
+  const { t } = useTranslation();
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit}>
         <DivInput>
           <Label>
-            ФИО заявителя полностью: <Span>*</Span>
+            {t('form:name')}: <Span>*</Span>
           </Label>
           <InputName
             inputName={'name'}
             name={'name'}
             type={'text'}
-            placeholder={'Введите ФИО полностью'}
+            placeholder={`Enter ${t('form:name')}`}
             onChange={handleUserInput}
             value={requestValues.name}
             error={name && errors.name}
@@ -46,13 +48,13 @@ export default function ApplicationForOrderingCylinders() {
         </DivInput>
         <DivInput>
           <Label>
-            Номер абонента: <Span>*</Span>
+            {t('form:SubscriberNumber')} <Span>*</Span>
           </Label>
           <InputName
             inputName={'text'}
             name={'text'}
             type={'text'}
-            placeholder={'Введите абонентский номер'}
+            placeholder={`Enter ${t('form:SubscriberNumber')} `}
             onChange={handleUserInput}
             value={requestValues.text}
             error={errors.text}
@@ -67,7 +69,7 @@ export default function ApplicationForOrderingCylinders() {
             inputName={'address'}
             type="text"
             name={'address'}
-            placeholder={'Введите адрес проживания'}
+            placeholder={`Enter ${t('form:address')}`}
             onChange={handleUserInput}
             value={requestValues.address}
             error={address && errors.address}
@@ -100,7 +102,7 @@ export default function ApplicationForOrderingCylinders() {
             error={errors.isAgree}
           />
           <Label>
-            Согласен на обработку данных
+            {t('form:agree')}
             <Span>*</Span>
           </Label>
         </DivInputCheckbox>
@@ -110,12 +112,12 @@ export default function ApplicationForOrderingCylinders() {
           onClick={handleSubmit}
           data-testid="submit-button"
         >
-          Отправить
+          {t('infoButton:send')}
         </Button>
         {isButtonDisabled && (
           <div style={{ width: '100%', margin: '0 auto', textAlign: 'center' }}>
             <span style={{ color: 'red', width: '100%', margin: '0 auto' }}>
-              Заполните, пожалуйста все необходимые поля
+              {t('form:Please')}
             </span>
           </div>
         )}

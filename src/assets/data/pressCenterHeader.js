@@ -1,6 +1,5 @@
 import React from 'react';
 import SMI from '../../pages/PressCenter/SMI';
-import ChangeLifeOfMingas from '../../pages/PressCenter/changeLifeOfMingas';
 import Newspaper from '../../pages/PressCenter/newspaper';
 import LifeOfMingas from '../../pages/PressCenter/lifeOfMingas';
 

@@ -4,30 +4,30 @@ import LinkInform from './components_link_inform';
 import { data } from '../../../assets/data/data';
 import linesOne from '../../../assets/background/rig.png';
 import { BackgroundStyle } from '../services/styles';
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import TitleForHome from '../../../components/TitleForHome';
 
 export default function UsefulInform() {
+  const { t } = useTranslation();
   return (
-      <DivUsefulInform
-      >
-        <TitleForHome
-          margin={'s'}
-          color={'blue'}
-          fontSize={'m'}
-          infoTitle={<Trans i18nKey="usefulInform:usefulInform"></Trans>}
-        ></TitleForHome>
-        <DivInform>
-          {data.map((element) => (
-            <LinkInform
-              key={element.cardDesc}
-              cardImg={element.cardImg}
-              cardDesc={element.cardDesc}
-              link={element.link}
-            />
-          ))}
-        </DivInform>
-        <hr />
-      </DivUsefulInform>
+    <DivUsefulInform>
+      <TitleForHome
+        margin={'s'}
+        color={'blue'}
+        fontSize={'m'}
+        infoTitle={`${t('usefulInform:usefulInform')}`}
+      ></TitleForHome>
+      <DivInform>
+        {data.map((element) => (
+          <LinkInform
+            key={element.cardDesc}
+            cardImg={element.cardImg}
+            cardDesc={element.cardDesc}
+            link={element.link}
+          />
+        ))}
+      </DivInform>
+      <hr />
+    </DivUsefulInform>
   );
 }

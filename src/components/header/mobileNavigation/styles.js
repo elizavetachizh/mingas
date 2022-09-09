@@ -51,6 +51,9 @@ export const LinksContainer = styled.div`
   padding: 10px;
   margin: 0;
   z-index: 2;
+  @media (max-width: 424px) {
+    top: 66px;
+  }
 `;
 
 export const CompanyButton = styled(NavLink)`
@@ -121,7 +124,7 @@ export const Dropdown = styled.div`
 export const ContainerAbsolute = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
   position: absolute;
-  top: 154px;
+  //top: 154px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -131,4 +134,7 @@ export const ContainerAbsolute = styled.div`
   @media (min-width: 900px) {
     display: none;
   }
+  //@media (min-width: 424px) {
+  //  top: 154px;
+  //}
 `;

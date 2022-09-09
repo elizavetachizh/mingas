@@ -67,15 +67,21 @@ export const Menu = styled.div`
   @media (max-width: 900px) {
     display: block;
   }
+  @media (max-width: 424px) {
+    margin-top: 10px;
+  }
 `;
 
 export const MenuClose = styled.div`
-  margin-top: 25px;
+  margin-top: 20px;
   img {
     margin: 10px;
   }
   @media (min-width: 900px) {
     display: none;
+  }
+  @media (max-width: 424px) {
+    margin-top: 14px;
   }
 `;
 export const Background = styled.div`
@@ -109,6 +115,9 @@ export const Background = styled.div`
     display: flex;
     height: 80px;
     flex-direction: row;
+  }
+  @media (max-width: 424px) {
+    height: 66px;
   }
   @media (max-width: 1600px) {
     box-shadow: none;
@@ -144,8 +153,8 @@ export const Logo = styled.img`
     height: 70px;
   }
   @media (max-width: 424px) {
-    width: 46px;
-    height: 46px;
+    width: 60px;
+    height: 60px;
   }
 `;
 
@@ -392,6 +401,7 @@ export const Div104 = styled.div`
     @media (max-width: 424px) {
       margin: 0;
       padding: 0;
+      font-size: 0.5rem;
     }
   }
   div {
@@ -459,6 +469,7 @@ export const IoIosSearchs = styled(IoIosSearch)`
   height: 36px;
   width: 36px;
   color: white;
+  cursor: pointer;
 `;
 export const IoIosMenus = styled(IoIosMenu)`
   color: white;

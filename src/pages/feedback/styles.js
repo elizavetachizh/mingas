@@ -85,9 +85,16 @@ export const Divbackground = styled.div`
   overflow: hidden;
   height: 100%;
   width: 100%;
-  top: 152px;
+  top: 154px;
+  border-radius: 20px;
+  @media (max-width: 1600px) {
+    border-radius: 0;
+  }
   @media (max-width: 900px) {
     top: 80px;
+  }
+  @media (max-width: 424px) {
+    top: 66px;
   }
   p {
     position: absolute;
@@ -136,7 +143,7 @@ export const BlockContainerRequests = styled.div`
     //        rgba(14, 78, 129, 0.3) 70%,
     //        rgba(13, 68, 117, 0.3) 90%
     //);
-    background-color:  rgba(14, 78, 129, 0.2);
+    background-color: rgba(14, 78, 129, 0.2);
   }
 `;
 

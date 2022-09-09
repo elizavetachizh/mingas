@@ -29,7 +29,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
       !requestValues.isAgree ||
       !requestValues.text ||
       !requestValues.address ||
-      !requestValues.reading ||
+      // !requestValues.reading ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -104,7 +104,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const handleFileInput = useCallback(
     (event: { target: { files: FileList } }) => {
       const file = event.target.files;
-      setSelectedFile(file);
+
       console.log(file);
       let reader = new FileReader();
       reader.readAsDataURL(file[0]);
@@ -112,6 +112,8 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
         console.log(e.target.result);
         alert(e.target.result);
         const formData = { file: e.target.result };
+        setSelectedFile(e.target.result);
+        setRequestValues({ ...requestValues, file: e.target.result });
         return axios.post(url, formData).then((response) => console.log('result', response));
       };
     },
@@ -126,7 +128,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     },
     [requestValues]
   );
-
+  console.log(requestValues.file);
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');

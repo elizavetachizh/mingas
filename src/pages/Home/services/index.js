@@ -12,20 +12,17 @@ export default function HomeServices() {
   const { t } = useTranslation();
   return (
     <Container>
-      <TitleForHome
-        fontSize={'m'}
-        infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'}
-      />
+      <TitleForHome fontSize={'m'} infoTitle={`${t('services:title')}`} />
       <ButtonServicesHome>
         <ButtonFun
           href={'/services'}
           backgroundColor={'gray'}
-          infoButton={'Жителям столичного региона'}
+          infoButton={`${t('header:Services')}`}
         />
         <ButtonFun
           href={'/services-legal-entities'}
           backgroundColor={'gray'}
-          infoButton={'Для бизнеса'}
+          infoButton={`${t('header:ForBusiness')}`}
         />
       </ButtonServicesHome>
       <ServicesDiv>

@@ -88,6 +88,7 @@ export const INITIAL_REQUEST_STATE = {
   number: '',
   reading: '',
   marka: '',
+  file: '',
 };
 
 export interface requestValues {

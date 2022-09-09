@@ -18,7 +18,7 @@ import Feedback from '../../feedback';
 import minsk from '../../../assets/background/history.jpg';
 export default function History() {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 3000 });
   }, []);
   return (
     <Container>

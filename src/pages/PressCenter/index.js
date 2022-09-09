@@ -35,7 +35,7 @@ export default function PressCenter() {
     (descriptionID) => {
       const current = pressCenter.find((element) => element.id === descriptionID);
       setInform(current.description);
-      setTitle(current?.name);
+      setTitle(current.name);
       setNewsID(descriptionID);
       navigate(`/press-center/${descriptionID}`);
     },

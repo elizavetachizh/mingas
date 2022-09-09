@@ -7,10 +7,12 @@ import DopFunctionalPressCenter from '../../PressCenter/DopFunctional';
 import { Article, ArticleForHome, ContainerArticles } from '../../PressCenter/styles';
 import gradient from '../../../assets/background/gradient.png';
 import { BlockContainerRequests } from '../../feedback/styles';
+import { useTranslation } from 'react-i18next';
 const styledTitle = {
   margin: '0',
 };
 export default function News() {
+  const { t } = useTranslation();
   return (
     <BlockContainerRequests>
       <TitleForHome
@@ -18,7 +20,7 @@ export default function News() {
         margin={'s'}
         fontSize={'m'}
         color={'blue'}
-        infoTitle={'СМИ о нас'}
+        infoTitle={`${t('smi:title')}`}
       />
 
       <DivInform>
@@ -87,7 +89,7 @@ export default function News() {
       </DivInform>
       <ButtonFun
         href={'/press-center/1'}
-        infoButton={'Показать ещё'}
+        infoButton={`${t('smi:Show')}`}
         backgroundColor={'blue'}
         style={{ margin: '0 auto' }}
       />

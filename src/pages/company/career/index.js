@@ -69,7 +69,7 @@ export default function Career() {
               )}
             </div>
           </BtnIsOpen>
-          <Div style={{ width: '50%', margin: '4% auto' }} className={isOpen && `shake`}>
+          <Div style={{ width: '70%', margin: '4% auto' }} className={isOpen && `shake`}>
             <p>
               При приеме на работу предлагаем заполнить{' '}
               <a download href={anketa}>

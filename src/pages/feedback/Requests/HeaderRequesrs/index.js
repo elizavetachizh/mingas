@@ -8,17 +8,18 @@ import ApplicationForGasificationOfResidentialGardenHouse from '../ApplicationFo
 import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../ApplicationToCallRepresentativeOfGasSupplyOrganization';
 import ProvidingGasMeterReadings from '../ProvidingGasMeterReadings';
 import TitleForHome from '../../../../components/TitleForHome';
+import { useTranslation } from 'react-i18next';
 
 export default function HeaderRequests() {
   const [active, setActive] = useState('ApplicationForOrderingCylinders');
+  const { t } = useTranslation();
   return (
-    <BlockContainerRequests
-    >
+    <BlockContainerRequests>
       <TitleForHome
         fontSize={'m'}
-        style={{margin: '0 auto'}}
+        style={{ margin: '0 auto' }}
         color={'blue'}
-        infoTitle={'Оставить онлайн-заявку'}
+        infoTitle={`${t('request:request')}`}
       />{' '}
       <ButtonForms className={'without-margin'}>
         <HeaderBtnFeedback>
@@ -28,7 +29,7 @@ export default function HeaderRequests() {
               setActive('ApplicationForOrderingCylinders');
             }}
           >
-            Заказать баллон СУГ 50 литров
+            {t('request:cylinder')}
           </Button>
           <Button
             className={active === 'ApplicationForVerificationOfGasMeters' && 'active'}
@@ -36,7 +37,7 @@ export default function HeaderRequests() {
               setActive('ApplicationForVerificationOfGasMeters');
             }}
           >
-            Снятие счётчика в поверку
+            {t('request:verification')}
           </Button>
           <Button
             className={active === 'ApplicationForRepairOfGasUsingEquipment' && 'active'}
@@ -44,7 +45,7 @@ export default function HeaderRequests() {
               setActive('ApplicationForRepairOfGasUsingEquipment');
             }}
           >
-            Ремонт газового оборудования
+            {t('request:Repair')}
           </Button>
           <Button
             className={
@@ -54,7 +55,7 @@ export default function HeaderRequests() {
               setActive('ApplicationToCallRepresentativeOfGasSupplyOrganization');
             }}
           >
-            Вызов представителя газоснабжающей организации
+            {t('request:Calling')}
           </Button>
           <Button
             className={active === 'ProvidingGasMeterReadings' && 'active'}
@@ -62,7 +63,7 @@ export default function HeaderRequests() {
               setActive('ProvidingGasMeterReadings');
             }}
           >
-            Предоставление показаний счётчика газа
+            {t('request:Providing')}
           </Button>
           <Button
             className={active === 'ApplicationForTheIssuanceOfTechnicalSpecifications' && 'active'}
@@ -70,7 +71,7 @@ export default function HeaderRequests() {
               setActive('ApplicationForTheIssuanceOfTechnicalSpecifications');
             }}
           >
-            Техническое обслуживание
+            {t('request:Maintenance')}
           </Button>
         </HeaderBtnFeedback>
         {active === 'ApplicationForOrderingCylinders' && <ApplicationForOrderingCylinders />}

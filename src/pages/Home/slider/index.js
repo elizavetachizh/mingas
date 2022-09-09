@@ -6,6 +6,7 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.png';
 import dayOfGas from '../../../assets/png/dayOfGas2.jpg';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
+import { Trans } from 'react-i18next';
 // export default function CarouselFun() {
 //   const { t, i18n } = useTranslation();
 //   return (
@@ -55,8 +56,6 @@ import imageContent from '../../../assets/background/mingas_background(2).jpg';
 // }
 
 export default class CarouselFun extends React.Component {
-  // const { t, i18n } = useTranslation();
-
   constructor() {
     super();
 
@@ -68,10 +67,7 @@ export default class CarouselFun extends React.Component {
           <DivText className={'phone'}>
             <DivInformAbout>
               <Text>
-                {/*<Trans i18nKey="description:part1"></Trans>*/}
-                Добро пожаловать на сайт <br />
-                производственного республиканского <br />
-                унитарного предприятия “МИНГАЗ”
+                <Trans i18nKey="description:part1" />
               </Text>
             </DivInformAbout>
             <a className={'phone'} href={'tel:162'}>

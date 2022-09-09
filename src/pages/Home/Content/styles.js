@@ -34,9 +34,9 @@ export const DivContent = styled.div`
   @media (max-width: 900px) {
     margin-top: 80px;
   }
-  //@media (max-width: 600px) {
-  //  flex-direction: column;
-  //}
+  @media (max-width: 424px) {
+    margin-top: 66px;
+  }
 `;
 
 export const DivText = styled.div`

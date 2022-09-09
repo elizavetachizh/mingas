@@ -48,7 +48,9 @@ export const ContainerFormSearch = styled.div`
   background-color: white;
   width: 100%;
   left: 0;
-  
+  @media (max-width: 639px) {
+    border-radius: 20px;
+  }
   //&:before {
   //  content: '';
   //  position: absolute;
@@ -70,6 +72,21 @@ export const FormSearch = styled.form`
   margin: 0 auto;
   justify-content: space-around;
   position: relative;
+  @media (max-width: 1100px) {
+    width: 40%;
+  }
+  @media (max-width: 834px) {
+    width: 50%;
+  }
+  @media (max-width: 666px) {
+    width: 55%;
+  }
+  @media (max-width: 639px) {
+    width: 94%;
+  }
+  @media (max-width: 359px) {
+    width: 100%;
+  }
   input {
     border: none;
     font-weight: 400;

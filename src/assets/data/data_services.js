@@ -3,6 +3,7 @@ import MapServiceObmeniePuncti from '../../components/ServiceGoogleMap';
 import MapObenBalons from '../../components/ServiceGoogleMap/mapObenBalons';
 import React from 'react';
 import { BlockGrid } from '../../pages/services/styles';
+import { NavLink } from 'react-router-dom';
 
 export const data = [
   {
@@ -152,7 +153,7 @@ export const data = [
             <p>
               <strong>
                 Оставить заявку на доставку 50-ти литрового баллона СУГ предлагается по короткому
-                номеру 162 или онлайн (клик)
+                номеру 162 или <NavLink to={'/feedback/online-application'}>онлайн</NavLink>
               </strong>
             </p>
             <ul>
@@ -189,25 +190,22 @@ export const data = [
               потребителю требуется пройти инструктаж по безопасному пользованию газом в быту и
               газоиспользующим оборудованием.
             </p>
+            Предлагаем обратиться в один из офисов УП «МИНГАЗ» расположенных по адресам:
             <ul>
-              Предлагаем обратиться в один из офисов УП «МИНГАЗ» расположенных по адресам:
               <li>
-                <p>
-                  <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
-                    г. Минск, ул. Ботаническая, 11/2
-                  </a>
-                  пн-пт с 8 до 20, сб с 8 до 17 без перерывов на обед. Потребители приглашаются по
-                  электронной очереди
-                </p>
+                <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
+                  г. Минск, ул. Ботаническая, 11/2
+                </a>
+                пн-пт с 8 до 20, сб с 8 до 17 без перерывов на обед. Потребители приглашаются по
+                электронной очереди
               </li>
               <li>
-                <p>
-                  <a target="_blank" rel="noreferrer" href={'https://yandex.by/maps/-/CCURbBgb8C'}>
-                    г. Заславль, ул. Советская 79
-                  </a>{' '}
-                  пн-чт с 9 до 18, пт с 9 до 16.45, 3-я суббота месяца с 9 до 18, обеденный перерыв
-                  с 13 до 13.45
-                </p>
+                <a target="_blank" rel="noreferrer" href={'https://yandex.by/maps/-/CCURbBgb8C'}>
+                  г. Заславль, ул. Советская 79
+                </a>{' '}
+                тел. <a href={'tel:80 (017) 544-56-09'}>80 (017) 544-56-09</a> <br />
+                вторник - пятница с 8.00 до 17.00, суббота с 8.00 до 15.45, обеденный перерыв с
+                12.00 до 12.45. Выходные дни: воскресенье, понедельник.
               </li>
             </ul>
           </div>

@@ -106,3 +106,16 @@ export const Img = styled.img`
     margin: 0 20%;
   }
 `;
+
+export const ImgCarousel = styled.img`
+  max-width: 500px;
+  @media (max-width: 900px) {
+    max-width: 400px;
+  }
+  @media (max-width: 530px) {
+    max-width: 300px;
+  }
+  @media (max-width: 370px) {
+    max-width: 250px;
+  }
+`;

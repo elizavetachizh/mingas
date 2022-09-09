@@ -47,11 +47,8 @@ import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
 import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 import Corruption from './components/Сorruption';
-import LifeOfMingas from './pages/PressCenter/lifeOfMingas';
 
 export default function App() {
-  useEffect(() => window.scrollTo(0, 0), []);
-
   return (
     <div>
       <Routes>
