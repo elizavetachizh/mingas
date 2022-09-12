@@ -320,17 +320,17 @@ export const DivPhone = styled.div`
   justify-content: space-around;
   width: 40%;
   @media (max-width: 900px) {
-    width: 50%;
+    width: 60%;
   }
   @media (max-width: 673px) {
-    width: 56%;
+    width: 70%;
   }
-  @media (max-width: 640px) {
-    width: 60%;
-    justify-content: left;
-  }
+  //@media (max-width: 640px) {
+  //  width: 80%;
+  //  justify-content: left;
+  //}
   @media (max-width: 540px) {
-    width: 64%;
+    width: 80%;
   }
 `;
 
@@ -347,13 +347,13 @@ export const ContainerElements = styled.div`
   @media (max-width: 1020px) {
     width: 32%;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 900px) {
     display: none;
   }
   &.mobile {
     display: flex;
     width: 60%;
-    @media (min-width: 640px) {
+    @media (min-width: 900px) {
       display: none;
     }
   }

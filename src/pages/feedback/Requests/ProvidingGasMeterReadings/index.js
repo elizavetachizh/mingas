@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
@@ -29,6 +29,7 @@ export default function ProvidingGasMeterReadings() {
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
+    setRequestValues,
     form,
   } = useProvidingGasMasterReadings();
 
@@ -38,21 +39,28 @@ export default function ProvidingGasMeterReadings() {
     uploadFile(formImage.files[0]);
   });
 
-  function uploadFile(file) {
-    if (!['image/png', 'application/msword'].includes(file.type)) {
-      alert('NOOO');
-      formImage.value = '';
-    }
-    let reader = new FileReader();
-    reader.onload = function (e) {
-      formPreview.innerHTML = `<a download href="${e.target.result}" style={{width: '300px', height: '300px'}}>{e.target.result}</a>`;
-      console.log(e.target.result);
-    };
-    reader.onerror = function (e) {
-      console.log(e);
-    };
-    reader.readAsDataURL(file);
-  }
+  const uploadFile = useCallback(
+    (file) => {
+      if (!['image/png', 'application/msword', 'application/pdf'].includes(file.type)) {
+        alert('NOOO');
+        formImage.value = '';
+      }
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        formPreview.innerHTML = `<img src="${e.target.result}" style={{width: '300px', height: '300px'}} />`;
+      };
+      reader.onerror = function (e) {
+        console.log(e);
+      };
+      reader.readAsDataURL(file);
+      setRequestValues({ ...requestValues, file: file });
+    },
+    [requestValues, setRequestValues]
+  );
+  //
+  // useEffect(() => {
+  //   console.log(requestValues.file);
+  // }, [requestValues]);
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit} id={'form'}>
@@ -149,7 +157,9 @@ export default function ProvidingGasMeterReadings() {
           <Label>Прикрепить фото прибора учёта</Label>
           <InputFile type="file" id="file-input" />
         </DivInputFile>
-        <div id="formPreview" value={requestValues.file} name="file" />
+        <a download id="formPreview" href={requestValues.file} name="file">
+          {requestValues.file}
+        </a>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

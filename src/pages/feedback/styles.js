@@ -128,7 +128,7 @@ export const DivImage = styled.div`
 export const BlockContainerRequests = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin: 10px auto;
+  margin: 10px auto 20px;
   padding: 2% 0;
   @media (max-width: 1600px) {
     box-shadow: none;

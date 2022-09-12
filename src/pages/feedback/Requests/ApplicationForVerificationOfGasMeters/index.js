@@ -1,5 +1,5 @@
 import React from 'react';
-import {DivApplication, Form} from '../styles';
+import { DivApplication, Form } from '../styles';
 import {
   Button,
   DivInput,

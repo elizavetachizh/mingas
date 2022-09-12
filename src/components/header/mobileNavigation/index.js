@@ -18,6 +18,7 @@ import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from '../styles';
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
+import { ModalWindow } from '../../modalWindow/styles';
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBtn, setIsOpenBtn] = useState(false);
@@ -61,7 +62,6 @@ export default function MobileNavigation() {
   };
 
   return (
-    // <ModalWindow>
     <ContainerAbsolute>
       <LinksContainer>
         <ContainerElements className={'mobile'}>
@@ -84,7 +84,6 @@ export default function MobileNavigation() {
 
         <Dropdown>
           <DivBlocksHeader>
-            {' '}
             <CompanyButton className={isOpen && `handleBtn`} to="/company/history">
               <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
             </CompanyButton>
@@ -222,7 +221,7 @@ export default function MobileNavigation() {
               {t('header:Contacts')}
             </CompanyButton>
             <div>
-              {isOpen ? (
+              {isOpenBtnForContacts ? (
                 <IoIosArrowUp onClick={animateOpenBtnForContacts} />
               ) : (
                 <IoIosArrowDown onClick={animateOpenBtnForContacts} />
@@ -242,6 +241,5 @@ export default function MobileNavigation() {
         <ServicesButton to="/company/union">Профсоюз</ServicesButton>
       </LinksContainer>
     </ContainerAbsolute>
-    // </ModalWindow>
   );
 }

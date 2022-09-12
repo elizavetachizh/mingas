@@ -27,6 +27,7 @@ export const DivContent = styled.div`
   }
   @media (min-width: 1600px) {
     margin-top: 164px;
+    height: fit-content;
   }
   @media (max-width: 1700px) {
     height: fit-content;
@@ -134,12 +135,6 @@ export const DivText = styled.div`
   //  }
   //}
   a.day-of-gas {
-    @media (min-width: 2350px) {
-      margin-bottom: -90px;
-    }
-    @media (min-width: 3000px) {
-      margin-bottom: -120px;
-    }
     img.day-of-gas {
       //@media (max-width: 500px) {
       //  height: 190px;

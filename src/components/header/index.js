@@ -107,7 +107,6 @@ export default function Header({ backgroundHeader }) {
                 </Div104>
               </DivPhone>
               <ContainerElements>
-                {' '}
                 <PersonalAccButton
                   title={`${t('header:PersonalArea')}`}
                   href={'https://service.mingas.by:5002/auth/login#login'}

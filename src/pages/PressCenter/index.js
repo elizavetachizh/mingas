@@ -20,16 +20,18 @@ export default function PressCenter() {
   const [inform, setInform] = useState('');
   const [currentNewsID, setNewsID] = useState(null);
   const [title, setTitle] = useState('');
-  const { newsId } = useParams();
+  const { descriptionID } = useParams();
   const navigate = useNavigate();
+  console.log(descriptionID);
   useEffect(() => {
     if (!inform && !currentNewsID && !title) {
-      const current = pressCenter.find((element) => element.id === +newsId);
-      setInform(current?.description);
-      setTitle(current?.name);
-      setNewsID(+newsId);
+      const current = pressCenter.find((element) => element.id === +descriptionID);
+      console.log(current);
+      setInform(current.description);
+      setTitle(current.name);
+      setNewsID(+descriptionID);
     }
-  }, [newsId, inform, currentNewsID, title]);
+  }, [descriptionID, inform, currentNewsID, title]);
 
   const animate = useCallback(
     (descriptionID) => {

@@ -1,6 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-
+const opacityAnimation = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`;
 const HeaderBackgroundColor = {
   gray: `
     background-color: #E9F1F5;
@@ -36,23 +39,15 @@ export const DivBlocksHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 `;
 export const LinksContainer = styled.div`
   flex-direction: column;
-  top: 80px;
-  height: fit-content;
-  width: auto;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
-  background-color: rgba(13, 68, 117, 80%);
-  backdrop-filter: blur(5px);
+  width: 70%;
+  margin: 2% auto;
   display: flex;
-  border-radius: 20px;
-  position: fixed;
-  padding: 10px;
-  margin: 0;
-  z-index: 2;
-  @media (max-width: 424px) {
-    top: 66px;
+  @media (max-width: 500px) {
+    width: 90%;
   }
 `;
 
@@ -76,13 +71,14 @@ export const CompanyButton = styled(NavLink)`
 `;
 
 export const ServicesButton = CompanyButton;
-export const ContactButton = CompanyButton;
 export const PressCenterButtons = CompanyButton;
 
 export const DivButtonHeader = styled.div`
   display: none;
   //position: absolute;
   margin: 0 20px;
+  opacity: 0;
+  animation: ${opacityAnimation} 2s forwards;
   &.shake {
     display: flex;
     width: auto;
@@ -105,7 +101,6 @@ export const DivButtonHeader = styled.div`
     flex-direction: column;
     padding: 10px;
     background-color: transparent;
-    backdrop-filter: blur(5px);
     a {
       margin: 5%;
       color: white;
@@ -122,19 +117,21 @@ export const Dropdown = styled.div`
 `;
 
 export const ContainerAbsolute = styled.div`
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  //top: 154px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  flex-direction: column;
+  top: 80px;
+  height: 100vh;
   width: 100%;
-  height: fit-content;
-  overflow: hidden;
+  background-color: rgba(13, 68, 117, 90%);
+  display: flex;
+  position: fixed;
+  margin: 0;
+  z-index: 2;
+  opacity: 0;
+  animation: ${opacityAnimation} 2s forwards;
   @media (min-width: 900px) {
     display: none;
   }
-  //@media (min-width: 424px) {
-  //  top: 154px;
-  //}
+  @media (max-width: 424px) {
+    top: 66px;
+  }
 `;

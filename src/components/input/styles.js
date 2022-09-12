@@ -10,4 +10,7 @@ export const Input = styled.input`
     width: 90%;
     margin: 0 auto;
   }
+  &.message {
+    height: 100px;
+  }
 `;

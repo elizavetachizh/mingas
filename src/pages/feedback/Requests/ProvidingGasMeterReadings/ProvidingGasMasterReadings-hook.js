@@ -5,7 +5,7 @@ import axios from 'axios';
 import * as emailjs from '@emailjs/browser';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
-  const url = 'http://localhost:5000/users/';
+  const url = 'http://localhost:8080/users/';
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [selectedFile, setSelectedFile] = useState();
   const [errors, setErrors] = useState({});
@@ -80,7 +80,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
         }
         break;
       case 'fileName':
-        if (!requestValues.fileName) {
+        if (!requestValues.file) {
           setErrors({
             ...errors,
             fieldName: 'Отправтьте фото счётчика',
@@ -104,21 +104,21 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const handleFileInput = useCallback(
     (event: { target: { files: FileList } }) => {
       const file = event.target.files;
-
-      console.log(file);
+      const formPreview = document.getElementById('formPreview');
       let reader = new FileReader();
-      reader.readAsDataURL(file[0]);
       reader.onload = (e) => {
-        console.log(e.target.result);
-        alert(e.target.result);
+        formPreview.innerHTML = `<img src="${e.target.result}" style={{width: '300px', height: '300px'}} />`;
         const formData = { file: e.target.result };
         setSelectedFile(e.target.result);
+
         setRequestValues({ ...requestValues, file: e.target.result });
+        reader.readAsDataURL(file);
         return axios.post(url, formData).then((response) => console.log('result', response));
       };
     },
     [setRequestValues]
   );
+  console.log(requestValues.file);
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
@@ -128,7 +128,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     },
     [requestValues]
   );
-  console.log(requestValues.file);
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
@@ -158,25 +157,36 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   //   alert('Форма успешно заполнена');
   // };
 
-  const handleSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
+  // const handleSubmit = useCallback(
+  //   (event) => {
+  //     event.preventDefault();
+  //
+  //     emailjs
+  //       .sendForm('service_9ojlulb', 'template_d6awrvn', form.current, 'Cr7j1nqgFLXsPcHIL')
+  //       .then(
+  //         (result) => {
+  //           console.log(result.text);
+  //         },
+  //         (error) => {
+  //           console.log(error.text);
+  //         }
+  //       );
+  //     clearForm();
+  //     alert('Форма успешно заполнена');
+  //   },
+  //   [requestValues]
+  // );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
+    } catch (err) {
+      console.log('error', err);
+    }
+    clearForm();
+    alert('Форма успешно заполнена');
+  };
 
-      emailjs
-        .sendForm('service_9ojlulb', 'template_d6awrvn', form.current, 'Cr7j1nqgFLXsPcHIL')
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-      clearForm();
-      alert('Форма успешно заполнена');
-    },
-    [requestValues]
-  );
   return {
     handleUserInput,
     requestValues,
@@ -186,6 +196,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     handleCheckBox,
     clearForm,
     isButtonDisabled,
+    setRequestValues,
     handleSubmit,
     form,
     msg,

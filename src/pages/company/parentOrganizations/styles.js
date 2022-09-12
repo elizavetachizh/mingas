@@ -6,11 +6,20 @@ export const ContainerForInform = styled.div`
 export const ContainerLinks = styled.div`
   width: 100%;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin: 0 auto;
   align-items: start;
   display: flex;
   flex-direction: row;
-
+  div.feedback-yandex {
+    width: 500px;
+    @media (max-width: 500px) {
+      width: 400px;
+    }
+    @media (max-width: 405px) {
+      width: 320px;
+    }
+  }
   div {
     a {
       text-decoration: none;
@@ -30,8 +39,9 @@ export const ContainerLinks = styled.div`
   }
   @media (max-width: 700px) {
     flex-direction: column;
-    div {
-      margin: 4% auto;
-    }
+    margin: 0 auto;
+    //div {
+    //  margin: 4% auto;
+    //}
   }
 `;

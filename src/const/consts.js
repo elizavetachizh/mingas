@@ -8,7 +8,6 @@ export const INITIAL_FORM_STATE = {
   text: '',
   isAgree: false,
   message: '',
-  fileName: '',
   male: false,
   index: '',
   organization: '',
@@ -46,14 +45,7 @@ export interface InputPropsText {
   error: string;
   placeholder?: string;
 }
-export interface InputPropsDate {
-  type: 'date' | 'text';
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
-  inputDate: string;
-  error: string;
-  placeholder?: string;
-}
+
 export interface InputPropsInform {
   type: 'date' | 'text';
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -84,11 +76,10 @@ export const INITIAL_REQUEST_STATE = {
   text: '',
   isAgree: false,
   message: '',
-  fileName: '',
   number: '',
   reading: '',
   marka: '',
-  file: '',
+  file: [],
 };
 
 export interface requestValues {

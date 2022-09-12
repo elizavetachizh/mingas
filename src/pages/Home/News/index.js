@@ -8,21 +8,12 @@ import { Article, ArticleForHome, ContainerArticles } from '../../PressCenter/st
 import gradient from '../../../assets/background/gradient.png';
 import { BlockContainerRequests } from '../../feedback/styles';
 import { useTranslation } from 'react-i18next';
-const styledTitle = {
-  margin: '0',
-};
+
 export default function News() {
   const { t } = useTranslation();
   return (
     <BlockContainerRequests>
-      <TitleForHome
-        style={styledTitle}
-        margin={'s'}
-        fontSize={'m'}
-        color={'blue'}
-        infoTitle={`${t('smi:title')}`}
-      />
-
+      <TitleForHome margin={'s'} fontSize={'m'} color={'blue'} infoTitle={`${t('smi:title')}`} />
       <DivInform>
         <ArticleForHome className={'general'}>
           <a
@@ -91,7 +82,7 @@ export default function News() {
         href={'/press-center/1'}
         infoButton={`${t('smi:Show')}`}
         backgroundColor={'blue'}
-        style={{ margin: '0 auto' }}
+        style={{ margin: '0 auto 2%' }}
       />
     </BlockContainerRequests>
   );
