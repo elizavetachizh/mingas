@@ -130,7 +130,7 @@ export const BlockContainerRequests = styled.div`
   border-radius: 20px;
   margin: 10px auto 20px;
   padding: 2% 0;
-  @media (max-width: 1600px) {
+  @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
     margin: 0 auto 0;

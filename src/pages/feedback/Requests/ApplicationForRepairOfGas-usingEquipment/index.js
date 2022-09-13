@@ -9,11 +9,7 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import name from '../../../../assets/formPng/name.png';
 import { t } from 'i18next';
-import email from '../../../../assets/formPng/email.png';
-import phone from '../../../../assets/formPng/tel.png';
-import address from '../../../../assets/formPng/map.png';
 import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';

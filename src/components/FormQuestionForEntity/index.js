@@ -1,7 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import name from '../../assets/formPng/name.png';
-import email from '../../assets/formPng/email.png';
-import address from '../../assets/formPng/map.png';
 import { useTranslation } from 'react-i18next';
 import InputName from '../input';
 import {
@@ -79,7 +76,7 @@ export default function FormQuestionForEntity() {
             placeholder={'Введите юридический адрес'}
             onChange={handleUserInput}
             value={formValues.address}
-            error={address && errors.address}
+            error={errors.address}
           />
         </DivInput>
 
@@ -98,7 +95,7 @@ export default function FormQuestionForEntity() {
             }
             onChange={handleUserInput}
             value={formValues.name}
-            error={name && errors.name}
+            error={errors.name}
           />
         </DivInput>
         <DivInput>
@@ -113,7 +110,7 @@ export default function FormQuestionForEntity() {
             placeholder={'E-mail'}
             onChange={handleUserInput}
             value={formValues.email}
-            error={email && errors.email}
+            error={errors.email}
           />
         </DivInput>
 

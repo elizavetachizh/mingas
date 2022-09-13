@@ -7,12 +7,7 @@ export const pressCenter = [
   {
     id: 1,
     name: 'СМИ о нас',
-    description: (
-      <>
-        <SMI />
-        {/*<Newspaper />*/}
-      </>
-    ),
+    description: <SMI />,
   },
   {
     id: 2,

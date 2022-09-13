@@ -2,10 +2,7 @@ import React from 'react';
 import ButtonFun from '../../../components/button';
 import { DivInform } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
-import { pressCenter } from '../../../assets/data/pressCenterHeader';
-import DopFunctionalPressCenter from '../../PressCenter/DopFunctional';
-import { Article, ArticleForHome, ContainerArticles } from '../../PressCenter/styles';
-import gradient from '../../../assets/background/gradient.png';
+import { ArticleForHome } from '../../PressCenter/styles';
 import { BlockContainerRequests } from '../../feedback/styles';
 import { useTranslation } from 'react-i18next';
 
@@ -23,6 +20,7 @@ export default function News() {
             }
           >
             <img
+              alt={''}
               src={
                 'https://minsknews.by/wp-content/uploads/2022/02/Depositphotos_22540503_S-900x596.jpg'
               }
@@ -38,6 +36,7 @@ export default function News() {
             }
           >
             <img
+              alt={''}
               src={
                 'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
               }
@@ -66,6 +65,7 @@ export default function News() {
             href={'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'}
           >
             <img
+              alt={''}
               src={
                 'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
               }

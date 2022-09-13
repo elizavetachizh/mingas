@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
@@ -11,11 +11,7 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import name from '../../../../assets/formPng/name.png';
 import { t } from 'i18next';
-import email from '../../../../assets/formPng/email.png';
-import phone from '../../../../assets/formPng/tel.png';
-import address from '../../../../assets/formPng/map.png';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
@@ -25,7 +21,6 @@ export default function ProvidingGasMeterReadings() {
     handleUserInput,
     requestValues,
     errors,
-    handleFileInput,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
@@ -39,28 +34,24 @@ export default function ProvidingGasMeterReadings() {
     uploadFile(formImage.files[0]);
   });
 
-  const uploadFile = useCallback(
-    (file) => {
-      if (!['image/png', 'application/msword', 'application/pdf'].includes(file.type)) {
-        alert('NOOO');
-        formImage.value = '';
-      }
-      let reader = new FileReader();
-      reader.onload = function (e) {
-        formPreview.innerHTML = `<img src="${e.target.result}" style={{width: '300px', height: '300px'}} />`;
-      };
-      reader.onerror = function (e) {
-        console.log(e);
-      };
+  function uploadFile(file) {
+    if (!['image/png', 'application/msword', 'application/pdf'].includes(file.type)) {
+      alert('NOOO');
+      formImage.value = '';
+    }
+    let reader = new FileReader();
+    reader.onload = function (e) {
+      formPreview.innerHTML = `<img alt={''} src="${e.target.result}" style={{width: '300px', height: '300px'}} />`;
+
       reader.readAsDataURL(file);
-      setRequestValues({ ...requestValues, file: file });
-    },
-    [requestValues, setRequestValues]
-  );
-  //
-  // useEffect(() => {
-  //   console.log(requestValues.file);
-  // }, [requestValues]);
+    };
+    console.log(file);
+    setRequestValues({ ...requestValues, file: Object.assign({}, file) });
+    reader.onerror = function (e) {
+      console.log(e);
+    };
+  }
+
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit} id={'form'}>

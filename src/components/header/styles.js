@@ -43,21 +43,9 @@ export const Container = styled.div`
   align-items: center;
   font-size: 18px;
   top: 0;
-  z-index: 5;
-  //filter: blur(2px) brightness(0.8);
+  z-index: 3;
   margin: 0 auto;
   ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
-  .opacity {
-    //background-color: rgba(250, 250, 250, 20%);
-    //backdrop-filter: blur(30px);
-    //a,
-    //p,
-    //select,
-    //img,
-    //button {
-    //  color: white;
-    //}
-  }
 `;
 export const Menu = styled.div`
   margin-top: 16px;
@@ -119,16 +107,13 @@ export const Background = styled.div`
   @media (max-width: 424px) {
     height: 66px;
   }
-  @media (max-width: 1600px) {
+  @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
   }
-  @media (min-width: 1600px) {
+  @media (min-width: 2000px) {
     width: 90%;
     margin: 0 auto;
-  }
-  @media (min-width: 2000px) {
-    width: 80%;
   }
 `;
 export const BackgroundText = styled.div`

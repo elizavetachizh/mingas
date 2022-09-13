@@ -57,6 +57,15 @@ export const Link = styled.div`
   width: 50%;
   font-weight: bold;
   font-size: 20px;
+  &.social-networks-union {
+    width: 80%;
+    div {
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
   &.social-networks {
     left: 0;
     margin: 2% 0;

@@ -22,11 +22,10 @@ export default function PressCenter() {
   const [title, setTitle] = useState('');
   const { descriptionID } = useParams();
   const navigate = useNavigate();
-  console.log(descriptionID);
+
   useEffect(() => {
     if (!inform && !currentNewsID && !title) {
       const current = pressCenter.find((element) => element.id === +descriptionID);
-      console.log(current);
       setInform(current.description);
       setTitle(current.name);
       setNewsID(+descriptionID);

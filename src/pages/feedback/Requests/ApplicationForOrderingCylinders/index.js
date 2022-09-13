@@ -9,11 +9,7 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import name from '../../../../assets/formPng/name.png';
-import { t } from 'i18next';
-import phone from '../../../../assets/formPng/tel.png';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
-import address from '../../../../assets/formPng/map.png';
 import { useTranslation } from 'react-i18next';
 
 export default function ApplicationForOrderingCylinders() {
@@ -41,7 +37,7 @@ export default function ApplicationForOrderingCylinders() {
             placeholder={`Enter ${t('form:name')}`}
             onChange={handleUserInput}
             value={requestValues.name}
-            error={name && errors.name}
+            error={errors.name}
             label={t('form:name')}
             span={'*'}
           />
@@ -72,7 +68,7 @@ export default function ApplicationForOrderingCylinders() {
             placeholder={`Enter ${t('form:address')}`}
             onChange={handleUserInput}
             value={requestValues.address}
-            error={address && errors.address}
+            error={errors.address}
           />
         </DivInput>
         <DivInput>
@@ -87,7 +83,7 @@ export default function ApplicationForOrderingCylinders() {
             placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
-            error={phone && errors.phone}
+            error={errors.phone}
             label={t('form:phone')}
             span={'*'}
           />

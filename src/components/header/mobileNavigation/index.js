@@ -18,7 +18,7 @@ import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from '../styles';
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
-import { ModalWindow } from '../../modalWindow/styles';
+
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBtn, setIsOpenBtn] = useState(false);

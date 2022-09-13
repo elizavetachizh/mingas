@@ -53,6 +53,7 @@ app.post('/users', (req, res) => {
       res.json({ status: true, respMesg: 'Форма успешно отправлена' });
     } else {
       res.json({ status: true, respMesg: 'Форма успешно отправлена' });
+      console.log(req.body.file);
     }
   });
 });

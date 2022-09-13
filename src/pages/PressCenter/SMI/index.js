@@ -4,9 +4,7 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { DescriptionService } from '../../services/DopFunction/styles';
 import { Article, ContainerArticles } from '../styles';
-import gradient from '../../../assets/background/gradient.png';
 import React, { useState } from 'react';
 
 export default function SMI() {
@@ -90,6 +88,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/02/Depositphotos_22540503_S-900x596.jpg'
                   }
@@ -105,6 +104,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }
@@ -118,7 +118,7 @@ export default function SMI() {
             </Article>
             <Article className={'quarter'}>
               <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
-                <img src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
+                <img alt={''} src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
                 <p>
                   Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
                 </p>
@@ -132,6 +132,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }
@@ -151,6 +152,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-15-of-31-kopiya-1.jpgv'
                   }
@@ -170,6 +172,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-8-of-31-kopiya.jpg'
                   }
@@ -188,6 +191,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }
@@ -206,6 +210,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }
@@ -225,6 +230,7 @@ export default function SMI() {
                 }
               >
                 <img
+                  alt={''}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }

@@ -8,7 +8,7 @@ import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import Footer from '../../../components/footer';
 import TitleFun from '../../../components/title';
 import TitleForHome from '../../../components/TitleForHome';
-import { Container, Img } from '../styles';
+import { Container, Img, Link } from '../styles';
 
 export default function Union() {
   useEffect(() => {
@@ -99,6 +99,25 @@ export default function Union() {
             <img src={napravlenie} alt={''} />
           </div>
         </div>
+        <Link className={'social-networks-union'}>
+          Мы в социальных сетях:
+          <div>
+            <a href={'https://instagram.com/mingasprof?igshid=YmMyMTA2M2Y='} target={'_blank'}>
+              <img
+                alt={''}
+                style={{ width: '54px' }}
+                src={require('../../../assets/png/instagram.png')}
+              />
+            </a>
+            <a href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
+              <img
+                alt={''}
+                style={{ width: '54px' }}
+                src={require('../../../assets/png/telegram.png')}
+              />
+            </a>
+          </div>
+        </Link>
       </AdditionalDiv>
       <Footer />
     </Container>

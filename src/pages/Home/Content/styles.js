@@ -4,7 +4,7 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
-  @media (max-width: 1600px) {
+  @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
   }
@@ -19,15 +19,12 @@ export const DivContent = styled.div`
   align-items: flex-end;
   justify-content: space-around;
   bottom: 0;
-  @media (min-width: 2500px) {
-    margin-top: 184px;
-  }
-  @media (min-width: 1860px) {
-    margin-top: 174px;
-  }
   @media (min-width: 1600px) {
-    margin-top: 164px;
+    margin-top: 154px;
     height: fit-content;
+  }
+  @media (min-width: 2000px) {
+    margin-top: 164px;
   }
   @media (max-width: 1700px) {
     height: fit-content;
@@ -47,12 +44,7 @@ export const DivText = styled.div`
   width: 100%;
   align-items: end;
   z-index: 5;
-  //a {
-  //  width: 100%;
-  //  //img {
-  //  //  width: 100%;
-  //  //}
-  //}
+
   &.phone {
     @media (max-width: 1100px) {
       width: 80%;
@@ -153,12 +145,11 @@ export const DivText = styled.div`
     margin-top: 80px;
     a {
       img {
-        border-radius: 20px;
         @media (max-width: 401px) {
           width: 100%;
           margin: 0 auto;
         }
-        @media (max-width: 1600px) {
+        @media (max-width: 2000px) {
           box-shadow: none;
           border-radius: 0;
           margin: 0 auto 0;
@@ -171,10 +162,6 @@ export const DivText = styled.div`
 export const DivInformAbout = styled.div`
   display: flex;
   flex-direction: column;
-  //@media (max-width: 800px) {
-  //  flex-direction: column;
-  //  align-items: center;
-  //}
 `;
 
 export const Text = styled.p`
@@ -206,7 +193,6 @@ export const Text = styled.p`
 export const DivPrizes = styled.div`
   display: flex;
   flex-direction: column;
-  //background: rgba(0, 0, 0, 0.25);
   height: 510px;
   @media (max-width: 1200px) {
     max-height: 900px;

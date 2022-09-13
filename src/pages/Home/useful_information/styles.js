@@ -22,7 +22,7 @@ export const DivUsefulInform = styled.div`
   //@media (max-width: 640px) {
   //  width: 650px;
   //}
-  @media (max-width: 1600px) {
+  @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
     margin: 0 auto 0;

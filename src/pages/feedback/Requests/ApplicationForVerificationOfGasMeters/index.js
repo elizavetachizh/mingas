@@ -9,11 +9,7 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import name from '../../../../assets/formPng/name.png';
 import { t } from 'i18next';
-import email from '../../../../assets/formPng/email.png';
-import phone from '../../../../assets/formPng/tel.png';
-import address from '../../../../assets/formPng/map.png';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import { useRequestForVerificationOfGasMeters } from './verificationOfGasMeters-hook';
@@ -43,7 +39,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
             value={requestValues.name}
-            error={name && errors.name}
+            error={errors.name}
           />
         </DivInput>
         <DivInput>
@@ -58,7 +54,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
-            error={email && errors.email}
+            error={errors.email}
           />
         </DivInput>
         <DivInput>
@@ -87,7 +83,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
-            error={phone && errors.phone}
+            error={errors.phone}
           />
         </DivInput>
         <DivInput>
@@ -102,7 +98,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             placeholder={'Введите адрес объекта'}
             onChange={handleUserInput}
             value={requestValues.address}
-            error={address && errors.address}
+            error={errors.address}
           />
         </DivInput>
         <DivInput>

@@ -9,10 +9,7 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import name from '../../../../assets/formPng/name.png';
 import { t } from 'i18next';
-import email from '../../../../assets/formPng/email.png';
-import phone from '../../../../assets/formPng/tel.png';
 import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import InputAddress from '../../../../components/input/inputAddress';
@@ -45,7 +42,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
             value={requestIssuanceValues.name}
-            error={name && errors.name}
+            error={errors.name}
           />
         </DivInput>
         <DivInput>
@@ -60,7 +57,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
             value={requestIssuanceValues.email}
-            error={email && errors.email}
+            error={errors.email}
           />
         </DivInput>
         <DivInput>
@@ -106,7 +103,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
             onChange={handleUserInput}
             value={requestIssuanceValues.phone}
-            error={phone && errors.phone}
+            error={errors.phone}
           />
         </DivInput>
         <Select

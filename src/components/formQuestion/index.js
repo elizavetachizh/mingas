@@ -10,11 +10,6 @@ import {
   InputFile,
   Button,
 } from './styles';
-
-import name from '../../assets/formPng/name.png';
-import phone from '../../assets/formPng/tel.png';
-import email from '../../assets/formPng/email.png';
-import address from '../../assets/formPng/map.png';
 import { useTranslation } from 'react-i18next';
 import { useForm } from '../../hooks/use-form-hook';
 import InputName from '../input';
@@ -49,7 +44,7 @@ export default function FormQuestion() {
           placeholder={'Введите ФИО полностью'}
           onChange={handleUserInput}
           value={formValues.name}
-          error={name && errors.name}
+          error={errors.name}
           label={t('form:name')}
           span={'*'}
         />
@@ -66,7 +61,7 @@ export default function FormQuestion() {
           placeholder={'Введите ваш e-mail'}
           onChange={handleUserInput}
           value={formValues.email}
-          error={email && errors.email}
+          error={errors.email}
           label={t('form:email')}
           span={'*'}
         />
@@ -83,7 +78,7 @@ export default function FormQuestion() {
           placeholder={'Введите адрес проживания'}
           onChange={handleUserInput}
           value={formValues.address}
-          error={address && errors.address}
+          error={errors.address}
           label={t('form:address')}
           span={'*'}
         />
@@ -100,7 +95,7 @@ export default function FormQuestion() {
           placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
           onChange={handleUserInput}
           value={formValues.phone}
-          error={phone && errors.phone}
+          error={errors.phone}
           label={t('form:phone')}
           span={'*'}
         />

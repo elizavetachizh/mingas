@@ -4,6 +4,22 @@ export const BlockPressCenter = styled.div`
     width: 70%;
     margin: 4% 15%;
   }
+  div.video {
+    width: 100%;
+    margin: 0 auto;
+    video {
+      width: 60%;
+      margin: 0 20%;
+      @media (max-width: 900px) {
+        width: 70%;
+        margin: 0 15%;
+      }
+      @media (max-width: 600px) {
+        width: 80%;
+        margin: 0 10%;
+      }
+    }
+  }
 `;
 export const ContainerArticles = styled.div`
   width: 100%;

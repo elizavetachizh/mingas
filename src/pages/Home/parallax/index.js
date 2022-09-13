@@ -6,7 +6,7 @@ import { ParallaxDivInter, ParallaxD } from './styles';
 import useMediaQuery from './useMediaQuery';
 
 export default function ParallaxDiv() {
-  const isMedium = useMediaQuery('(max-width: 1600px)');
+  const isMedium = useMediaQuery('(max-width: 2000px)');
   return (
     <>
       {isMedium ? (

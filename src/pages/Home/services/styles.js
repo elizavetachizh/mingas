@@ -18,7 +18,7 @@ export const Container = styled.div`
     rgb(14, 78, 129) 79%,
     rgb(13, 68, 117) 100%
   );
-  @media (max-width: 1600px) {
+  @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
     margin: 0 auto 0;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GlobalStyle, {
+import {
   Container,
   Background,
   Menu,
@@ -75,7 +75,6 @@ export default function Header({ backgroundHeader }) {
 
   return (
     <Container backgroundHeader={backgroundHeader}>
-      <GlobalStyle />
       <Background backgroundHeader={backgroundHeader}>
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}
