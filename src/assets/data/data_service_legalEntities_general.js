@@ -21,7 +21,7 @@ import messung_3 from '../messung/k-p-3.jpg';
 import messung_4 from '../messung/k-p-4.jpg';
 import messung_5 from '../messung/k-p-5.jpg';
 import messung_6 from '../messung/images-1.jpg';
-import poryadok_podklyuchenia from '../pdf/poryadok_podklyucheniya_k_gazoraspredelitelnoy_sisteme_vnov_vvodimogo_v_ekspluataciyu_mnogokvartirnogo_jilogo_fonda1.pdf';
+import poryadok_podklyuchenia from '../pdf/poryadok_1.pdf';
 import zayavka_na_pusk from '../pdf/zayavka_na_pusk_gaza_v_jilye_doma_do_ih_zaseleniya1.pdf';
 import obrazets_pisma from '../wordFile/Obrazets-pisma-zayavleniya-dlya-yurlits.docx';
 import prilozenie_pismo from '../pdf/Prilozhenie-1.pdf';
