@@ -46,6 +46,13 @@ function LifeOfMingas() {
             />
           ))}
         </ReactCarousel>
+        <div className={'video'}>
+          <video
+            poster={require('../../../assets/png/logo_video.png')}
+            controls
+            src={require('../../../assets/video/фильм.mp4')}
+          />
+        </div>
       </div>
     </>
   );
