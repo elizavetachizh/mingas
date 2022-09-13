@@ -25,12 +25,12 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const isButtonDisabled = useMemo(() => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
-      !isValidateEmail(requestValues.email) ||
-      !requestValues.isAgree ||
-      !requestValues.text ||
-      !requestValues.address ||
-      // !requestValues.reading ||
-      !isValidatePhone(requestValues.phone) ||
+      // !isValidateEmail(requestValues.email) ||
+      // !requestValues.isAgree ||
+      // !requestValues.text ||
+      // !requestValues.address ||
+      // // !requestValues.reading ||
+      // !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
   }, [requestValues, errors]);
@@ -118,7 +118,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     },
     [setRequestValues]
   );
-  console.log(requestValues.file);
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();

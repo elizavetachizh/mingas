@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
@@ -35,23 +35,39 @@ export default function ProvidingGasMeterReadings() {
   });
 
   function uploadFile(file) {
-    if (!['image/png', 'application/msword', 'application/pdf'].includes(file.type)) {
+    if (
+      ![
+        'image/png',
+        'application/msword',
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      ].includes(file.type)
+    ) {
       alert('NOOO');
       formImage.value = '';
     }
     let reader = new FileReader();
     reader.onload = function (e) {
-      formPreview.innerHTML = `<img alt={''} src="${e.target.result}" style={{width: '300px', height: '300px'}} />`;
+      formPreview.innerHTML = `<a id={'image'} alt={''} href="${e.target.result}" style={{width: '300px', height: '300px'}}>{e.target.name}</a>`;
+      console.log(reader.result);
 
-      reader.readAsDataURL(file);
+      setRequestValues({
+        ...requestValues,
+        file: reader.result,
+      });
     };
-    console.log(file);
-    setRequestValues({ ...requestValues, file: Object.assign({}, file) });
+
     reader.onerror = function (e) {
       console.log(e);
     };
+    reader.readAsDataURL(file);
+    setRequestValues({
+      ...requestValues,
+      file: file,
+    });
   }
 
+  console.log(requestValues.file);
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit} id={'form'}>
@@ -148,9 +164,7 @@ export default function ProvidingGasMeterReadings() {
           <Label>Прикрепить фото прибора учёта</Label>
           <InputFile type="file" id="file-input" />
         </DivInputFile>
-        <a download id="formPreview" href={requestValues.file} name="file">
-          {requestValues.file}
-        </a>
+        <div id={'formPreview'}></div>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"

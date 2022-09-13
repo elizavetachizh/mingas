@@ -11,6 +11,7 @@ export const INITIAL_FORM_STATE = {
   male: false,
   index: '',
   organization: '',
+  file: '',
 };
 
 export interface InputProps {
@@ -79,7 +80,7 @@ export const INITIAL_REQUEST_STATE = {
   number: '',
   reading: '',
   marka: '',
-  file: [],
+  file: '',
 };
 
 export interface requestValues {

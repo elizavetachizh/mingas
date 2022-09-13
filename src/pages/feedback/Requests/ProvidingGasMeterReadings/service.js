@@ -3,6 +3,7 @@ const express = require('express');
 
 const nodemailer = require('nodemailer');
 const app = express();
+const inlineBase64 = require('nodemailer-plugin-inline-base64');
 const cors = require('cors');
 const PORT = 8080;
 app.use(cors());
@@ -25,7 +26,8 @@ app.post('/users', (req, res) => {
       rejectUnauthorized: false,
     },
   });
-
+  const file = req.body.file;
+  console.log(file);
   const mailOptions = {
     from: req.body.email, // sender address
     to: 'elizavetka.chizh@gmail.com', // list of receivers
@@ -42,18 +44,30 @@ app.post('/users', (req, res) => {
             <li>Адрес: ${req.body.address}</li>
             <li>Желаемое время для связи: ${req.body.time}</li>
             <li>Лицевой счёт: ${req.body.text}</li>
-            <li>Фото счётчика: <a download href={req.body.file}>документ</a></li>
-           <li> <a href="https://yandex.by/maps/org/mingaz/41119693302/reviews/?ll=27.602678%2C53.906034&utm_content=add_review&utm_medium=reviews&utm_source=maps-reviews-widget&z=17">feedback</a></li>
+<!--             <img src="cid:unique@nodemailer.com"/>-->
+<a href={file}>name</a>
         </ul>
         `,
+    attachments: [
+      // {
+      //   filename: `${file}`,
+      //   path: `${file}`,
+      //   cid: 'unique@nodemailer.com', //same cid value as in the html img src
+      // },
+      {
+        // define custom content type for the attachment
+        filename: `name`,
+        content: `${file}`,
+        contentType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      },
+    ],
   };
-
+  transporter.use('compile', inlineBase64({ cidPrefix: 'somePrefix_' }));
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       res.json({ status: true, respMesg: 'Форма успешно отправлена' });
     } else {
       res.json({ status: true, respMesg: 'Форма успешно отправлена' });
-      console.log(req.body.file);
     }
   });
 });
