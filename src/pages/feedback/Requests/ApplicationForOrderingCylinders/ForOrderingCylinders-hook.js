@@ -1,17 +1,14 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import * as emailjs from '@emailjs/browser';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
+import axios from 'axios';
 
 export const useForOrderingCylinders = (): UseFormReturnValues => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
+  const url = 'http://localhost:8080/cylinders/';
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
+  const [msg, setMsg] = useState('');
   const [errors, setErrors] = useState({});
-  const isValidateEmail = (email: string): boolean => {
-    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
-      email
-    );
-  };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
     return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
@@ -93,25 +90,16 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
     });
   }, []);
 
-  const handleSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-      clearForm();
-      emailjs
-        .sendForm('service_arrn6nn', 'template_t6lcwkw', form.current, 'H62p0yKXfn6OGm_oM')
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-      clearForm();
-      alert('Форма успешно заполнена');
-    },
-    [requestValues]
-  );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
+    } catch (err) {
+      console.log('error', err);
+    }
+    clearForm();
+    alert('Форма успешно заполнена');
+  };
 
   return {
     handleUserInput,

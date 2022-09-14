@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { ContainerFunctionService, DescriptionService } from '../../../services/DopFunction/styles';
-import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
+import {
+  ContainerFunctionService,
+  DescriptionService,
+  BlockClockAndPin,
+} from '../../../services/DopFunction/styles';
 import {
   General,
   BtnIsOpen,
@@ -24,15 +27,13 @@ export default function DopFunctional({ name, photo, chief, description, contact
   return (
     <ContainerFunctionService>
       <Name style={{ color: 'white', textDecoration: 'none' }}>{name}</Name>
-      {photo ? (
+      {photo && (
         <img src={require(`../../../../assets/management/departaments/${photo}.jpg`)} alt={''} />
-      ) : (
-        <></>
       )}
       <div>
         <TitleForHome className={'company'} color={'blue'} infoTitle={chief} fontSize={'s'} />
       </div>
-      {description ? (
+      {description && (
         <General>
           <BtnIsOpen style={{ width: '100%' }} onClick={animate}>
             <p>Основные задачи:</p>
@@ -42,25 +43,21 @@ export default function DopFunctional({ name, photo, chief, description, contact
             <DescriptionService>{description}</DescriptionService>
           </Div>
         </General>
-      ) : (
-        <></>
       )}
-      {schedule ? (
-        <LinksNetwork>
-          <IoMdClocks />
-          {schedule}
-        </LinksNetwork>
-      ) : (
-        <></>
-      )}
-      {contacts ? (
-        <LinksNetwork>
-          <IoIosPins />
-          {contacts}
-        </LinksNetwork>
-      ) : (
-        <></>
-      )}
+      <BlockClockAndPin>
+        {schedule && (
+          <LinksNetwork>
+            <IoMdClocks />
+            {schedule}
+          </LinksNetwork>
+        )}
+        {contacts && (
+          <LinksNetwork>
+            <IoIosPins />
+            {contacts}
+          </LinksNetwork>
+        )}
+      </BlockClockAndPin>
     </ContainerFunctionService>
   );
 }

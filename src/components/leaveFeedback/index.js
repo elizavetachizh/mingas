@@ -1,35 +1,14 @@
 import Header from '../header';
 import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import TitleFun from '../title';
 import { ContainerLinks } from '../../pages/company/parentOrganizations/styles';
 import { Container } from '../../pages/company/styles';
 import LeaveFeedbackMingas from './leaveFeedbackMingas';
+import DopFunctionService from '../../pages/services/DopFunction';
 
 export default function LeaveFeedback() {
-  const [data, setData] = useState([]);
-  async function getUserAsync() {
-    try {
-      let response = await fetch(
-        `http://xn----7sbgfh2alwzdhpc0c.xn--90ais/api/v1/public/profile/33279`,
-        {
-          mode: 'no-cors',
-        }
-      );
-      return await response.json();
-    } catch (err) {
-      console.error(err);
-      // Handle errors here
-    }
-  }
-
-  useEffect(() => {
-    getUserAsync()
-      .then((result) => setData(result))
-      .catch((err) => console.error(err));
-  }, []);
-  console.log(data);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -109,7 +88,11 @@ export default function LeaveFeedback() {
               />
             </a>
           </div>
-          <LeaveFeedbackMingas />
+          <DopFunctionService
+            style={{ width: '70%' }}
+            nameDescription={'Форма обратной связи'}
+            inform={<LeaveFeedbackMingas />}
+          />
         </ContainerLinks>
       </AdditionalDiv>
       <Footer />

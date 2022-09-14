@@ -10,10 +10,11 @@ export const SelectDiv = styled.select`
 `;
 
 export const DivSelect = styled.div`
-  width: 90%;
+  width: 86%;
   display: flex;
   flex-direction: column;
-  margin: 1.5rem auto 0;
+  justify-content: left;
+  margin: 2% auto;
   @media (max-width: 640px) {
     //width: 530px;
   }

@@ -2,9 +2,7 @@ import React from 'react';
 import { DivUsefulInform, DivInform } from './styles';
 import LinkInform from './components_link_inform';
 import { data } from '../../../assets/data/data';
-import linesOne from '../../../assets/background/rig.png';
-import { BackgroundStyle } from '../services/styles';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import TitleForHome from '../../../components/TitleForHome';
 
 export default function UsefulInform() {

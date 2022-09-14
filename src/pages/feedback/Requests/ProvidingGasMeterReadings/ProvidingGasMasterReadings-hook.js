@@ -2,12 +2,10 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
-import * as emailjs from '@emailjs/browser';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const url = 'http://localhost:8080/users/';
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
-  const [selectedFile, setSelectedFile] = useState();
   const [errors, setErrors] = useState({});
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
@@ -25,12 +23,11 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const isButtonDisabled = useMemo(() => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
-      // !isValidateEmail(requestValues.email) ||
-      // !requestValues.isAgree ||
-      // !requestValues.text ||
-      // !requestValues.address ||
-      // // !requestValues.reading ||
-      // !isValidatePhone(requestValues.phone) ||
+      !isValidateEmail(requestValues.email) ||
+      !requestValues.isAgree ||
+      !requestValues.text ||
+      !requestValues.address ||
+      !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
     );
   }, [requestValues, errors]);
@@ -79,14 +76,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
           });
         }
         break;
-      case 'fileName':
-        if (!requestValues.file) {
-          setErrors({
-            ...errors,
-            fieldName: 'Отправтьте фото счётчика',
-          });
-        }
-        break;
       default:
         break;
     }
@@ -101,23 +90,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     },
     [requestValues]
   );
-  const handleFileInput = useCallback(
-    (event: { target: { files: FileList } }) => {
-      const file = event.target.files;
-      const formPreview = document.getElementById('formPreview');
-      let reader = new FileReader();
-      reader.onload = (e) => {
-        formPreview.innerHTML = `<img src="${e.target.result}" style={{width: '300px', height: '300px'}} />`;
-        const formData = { file: e.target.result };
-        setSelectedFile(e.target.result);
 
-        setRequestValues({ ...requestValues, file: e.target.result });
-        reader.readAsDataURL(file);
-        return axios.post(url, formData).then((response) => console.log('result', response));
-      };
-    },
-    [setRequestValues]
-  );
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
       event.preventDefault();
@@ -136,45 +109,13 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     setRequestValues({
       ...INITIAL_REQUEST_STATE,
       name: '',
-      date: '',
       email: '',
       phone: '',
       address: '',
       text: '',
-      reading: '',
     });
   }, []);
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
-  //   } catch (err) {
-  //     console.log('error', err);
-  //   }
-  //   clearForm();
-  //   alert('Форма успешно заполнена');
-  // };
-
-  // const handleSubmit = useCallback(
-  //   (event) => {
-  //     event.preventDefault();
-  //
-  //     emailjs
-  //       .sendForm('service_9ojlulb', 'template_d6awrvn', form.current, 'Cr7j1nqgFLXsPcHIL')
-  //       .then(
-  //         (result) => {
-  //           console.log(result.text);
-  //         },
-  //         (error) => {
-  //           console.log(error.text);
-  //         }
-  //       );
-  //     clearForm();
-  //     alert('Форма успешно заполнена');
-  //   },
-  //   [requestValues]
-  // );
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -183,7 +124,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
       console.log('error', err);
     }
     clearForm();
-    alert('Форма успешно заполнена');
   };
 
   return {
@@ -191,7 +131,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
     requestValues,
     errors,
     handleChangeTime,
-    handleFileInput,
     handleCheckBox,
     clearForm,
     isButtonDisabled,

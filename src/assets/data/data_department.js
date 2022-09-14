@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 import { subdivisions } from './subdivisions';
-import { subdivisionsSUPGN } from './subdivisionsSUPGN';
+
 export const data = [
   {
     idName: 1,
@@ -310,7 +310,7 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-28-64'}>8017-299-28-64</a>,
+            Телефоны: <a href={'tel:8017-299-28-64'}>8017-299-28-64</a>,<br />
             <a href={'tel:8017-299-29-12'}>8017-299-29-12</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
@@ -657,6 +657,7 @@ export const data = [
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
             </a>
+            <br />
             Телефон: <a href={'tel:8017-299-28-29'}>8017-299-28-29</a> <br />
           </div>
         ),

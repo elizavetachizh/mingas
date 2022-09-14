@@ -19,19 +19,66 @@ export default function FormQuestion() {
     handleUserInput,
     formValues,
     errors,
-    handleFileInput,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
     form,
+    setFormValues,
     msg,
   } = useForm();
   const { t } = useTranslation();
+
+  const formImage = document.getElementById('file-input');
+  const formPreview = document.getElementById('formPreview');
+  formImage?.addEventListener('change', () => {
+    uploadFile(formImage.files[0]);
+  });
+
+  function uploadFile(file) {
+    if (
+      ![
+        'image/png',
+        'image/jpeg',
+        'application/msword',
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      ].includes(file.type)
+    ) {
+      alert('Не подходит формат файла');
+      formImage.value = '';
+    }
+    let reader = new FileReader();
+    reader.onload = function (e) {
+      formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;
+      if (['image/png', 'image/jpeg'].includes(file.type)) {
+        setFormValues({
+          ...formValues,
+          file: reader.result,
+        });
+      }
+      if (
+        [
+          'application/msword',
+          'application/pdf',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        ].includes(file.type)
+      ) {
+        setFormValues({
+          ...formValues,
+          document: reader.result,
+        });
+      }
+    };
+
+    reader.onerror = function (e) {
+      console.log(e);
+    };
+
+    reader.readAsDataURL(file);
+  }
+
   return (
     <Form onSubmit={handleSubmit} ref={form}>
-      <p>
-        <b>{msg}</b>
-      </p>
       <DivInput>
         <Label>
           {t('form:name')}
@@ -46,9 +93,9 @@ export default function FormQuestion() {
           value={formValues.name}
           error={errors.name}
           label={t('form:name')}
-          span={'*'}
         />
       </DivInput>
+
       <DivInput>
         <Label>
           {t('form:email')}
@@ -63,9 +110,9 @@ export default function FormQuestion() {
           value={formValues.email}
           error={errors.email}
           label={t('form:email')}
-          span={'*'}
         />
       </DivInput>
+
       <DivInput>
         <Label>
           {t('form:address')}
@@ -80,9 +127,9 @@ export default function FormQuestion() {
           value={formValues.address}
           error={errors.address}
           label={t('form:address')}
-          span={'*'}
         />
       </DivInput>
+
       <DivInput>
         <Label>
           {t('form:phone')}
@@ -97,9 +144,22 @@ export default function FormQuestion() {
           value={formValues.phone}
           error={errors.phone}
           label={t('form:phone')}
-          span={'*'}
         />
       </DivInput>
+
+      <DivInput>
+        <Label>Тема:</Label>
+        <InputName
+          inputName={'text'}
+          name={'text'}
+          type={'text'}
+          placeholder={'Напишите тему'}
+          onChange={handleUserInput}
+          value={formValues.text}
+          error={errors.text}
+        />
+      </DivInput>
+
       <DivInput>
         <Label>
           {t('form:text')}
@@ -107,6 +167,7 @@ export default function FormQuestion() {
         </Label>
         <InputName
           inputName={'message'}
+          className={'message'}
           type="message"
           name="message"
           placeholder={'Текст сообщения'}
@@ -114,15 +175,17 @@ export default function FormQuestion() {
           value={formValues.message}
           error={errors.message}
           label={t('form:text')}
-          span={'*'}
         />
       </DivInput>
+
       <DivInputFile>
         <div>
-          <InputFile name="file" type="file" id="file" onChange={handleFileInput} />
+          <InputFile type="file" id="file-input" name="file" />
           <span>Прекрипите файл</span>
         </div>
+        <div id={'formPreview'}></div>
       </DivInputFile>
+
       <DivInputCheckbox>
         <InputCheckbox
           type="checkbox"
@@ -137,18 +200,18 @@ export default function FormQuestion() {
           <Span>*</Span>
         </Label>
       </DivInputCheckbox>
-      <Button
-        disabled={isButtonDisabled}
-        type="submit"
-        onClick={handleSubmit}
-        data-testid="submit-button"
-      >
+
+      <Button disabled={isButtonDisabled} type="submit" onClick={handleSubmit}>
         Отправить
       </Button>
-      {isButtonDisabled && (
+      {isButtonDisabled ? (
         <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+      ) : (
+        <span style={{ color: 'red' }}>Форма успешно заполнена</span>
       )}
-      {/*<iframe src="http://docs.google.com/gview?url=http://remote.url.tld/path/to/document.doc&embedded=true"></iframe>*/}
+      <p>
+        <b>{msg}</b>
+      </p>
     </Form>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { DivApplication, Form } from '../styles';
 import {
   Button,
@@ -26,6 +26,7 @@ export default function ProvidingGasMeterReadings() {
     handleSubmit,
     setRequestValues,
     form,
+    msg,
   } = useProvidingGasMasterReadings();
 
   const formImage = document.getElementById('file-input');
@@ -35,22 +36,13 @@ export default function ProvidingGasMeterReadings() {
   });
 
   function uploadFile(file) {
-    if (
-      ![
-        'image/png',
-        'application/msword',
-        'application/pdf',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      ].includes(file.type)
-    ) {
-      alert('NOOO');
+    if (!['image/png', 'image/jpeg', 'application/pdf'].includes(file.type)) {
+      alert('Не подходит формат файла, вставьте, пожалуйста картинку/фотографию');
       formImage.value = '';
     }
     let reader = new FileReader();
     reader.onload = function (e) {
-      formPreview.innerHTML = `<a id={'image'} alt={''} href="${e.target.result}" style={{width: '300px', height: '300px'}}>{e.target.name}</a>`;
-      console.log(reader.result);
-
+      formPreview.innerHTML = `<img id={'image'} alt={''} src="${e.target.result}" style={{width: '300px', height: '300px'}}/>`;
       setRequestValues({
         ...requestValues,
         file: reader.result,
@@ -61,13 +53,8 @@ export default function ProvidingGasMeterReadings() {
       console.log(e);
     };
     reader.readAsDataURL(file);
-    setRequestValues({
-      ...requestValues,
-      file: file,
-    });
   }
 
-  console.log(requestValues.file);
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit} id={'form'}>
@@ -145,21 +132,6 @@ export default function ProvidingGasMeterReadings() {
             label={t('form:address')}
           />
         </DivInput>
-        {/*<DivInput>*/}
-        {/*  <Label>*/}
-        {/*    Показания счётчика<Span>*</Span>*/}
-        {/*  </Label>*/}
-        {/*  <InputName*/}
-        {/*    inputName={'reading'}*/}
-        {/*    name={'reading'}*/}
-        {/*    type={'text'}*/}
-        {/*    placeholder={'Введите ваши показания счётчика'}*/}
-        {/*    onChange={handleUserInput}*/}
-        {/*    value={requestValues.reading}*/}
-        {/*    error={errors.reading}*/}
-        {/*    span={'*'}*/}
-        {/*  />*/}
-        {/*</DivInput>*/}
         <DivInputFile>
           <Label>Прикрепить фото прибора учёта</Label>
           <InputFile type="file" id="file-input" />
@@ -187,9 +159,14 @@ export default function ProvidingGasMeterReadings() {
         >
           Отправить
         </Button>
-        {isButtonDisabled && (
+        {isButtonDisabled ? (
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+        ) : (
+          <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </DivApplication>
   );

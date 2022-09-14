@@ -141,8 +141,10 @@ export default function ApplicationForVerificationOfGasMeters() {
         >
           Отправить
         </Button>
-        {isButtonDisabled && (
+        {isButtonDisabled ? (
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+        ) : (
+          <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
       </Form>
     </DivApplication>

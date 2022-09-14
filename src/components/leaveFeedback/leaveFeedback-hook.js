@@ -1,9 +1,10 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { INITIAL_FORM_STATE } from '../const/consts';
 import axios from 'axios';
-export const useForm = () => {
+import { INITIAL_FORM_STATE } from '../../const/consts';
+
+export const useFeedback = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'http://localhost:8080/questions/';
+  const url = 'http://localhost:8080/feedback/';
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
@@ -11,14 +12,12 @@ export const useForm = () => {
     );
   };
   const form = useRef();
-  const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
-  };
-
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);
   };
-
+  const isValidatePhone = (phone: string): boolean => {
+    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+  };
   const [errors, setErrors] = useState({});
   const isButtonDisabled = useMemo(() => {
     return !!(
@@ -26,7 +25,7 @@ export const useForm = () => {
       !isValidateEmail(formValues.email) ||
       !formValues.isAgree ||
       !formValues.message ||
-      !formValues.address ||
+      !formValues.text ||
       !isValidatePhone(formValues.phone) ||
       Object.keys(errors)?.length
     );
@@ -45,11 +44,6 @@ export const useForm = () => {
           setErrors({ ...errors, email: 'Введите верный адрес почты!' });
         }
         break;
-      case 'phone':
-        if (!isValidatePhone(formValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
-        }
-        break;
       case 'isAgree':
         if (!!formValues.isAgree) {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
@@ -60,9 +54,14 @@ export const useForm = () => {
           setErrors({ ...errors, message: 'Заполните, пожалуйста, обращение' });
         }
         break;
+      case 'text':
+        if (!formValues.text.length) {
+          setErrors({ ...errors, text: 'Заполните, пожалуйста, почтовый адрес' });
+        }
+        break;
       case 'address':
         if (!formValues.address.length) {
-          setErrors({ ...errors, address: 'Введите, пожалуйста адрес проживания!' });
+          setErrors({ ...errors, address: 'Введите, пожалуйста юридический адрес предприятия!' });
         }
         break;
       default:
@@ -80,23 +79,21 @@ export const useForm = () => {
     [formValues]
   );
 
-  const handleChangeCountry = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setFormValues({ ...formValues, country: value });
-      validate(name);
-    },
-    [formValues]
-  );
-
   const handleCheckBox = useCallback(() => {
     setFormValues({ ...formValues, isAgree: !formValues.isAgree });
     validate('isAgree');
   }, [formValues]);
 
   const clearForm = useCallback(() => {
-    setFormValues({ ...INITIAL_FORM_STATE, name: '', email: '', address: '' });
+    setFormValues({
+      ...INITIAL_FORM_STATE,
+      name: '',
+      date: '',
+      email: '',
+      address: '',
+      organization: '',
+      index: '',
+    });
   }, []);
 
   const handleSubmit = async (event) => {
@@ -113,7 +110,6 @@ export const useForm = () => {
     handleUserInput,
     formValues,
     errors,
-    handleChangeCountry,
     handleCheckBox,
     setFormValues,
     isButtonDisabled,

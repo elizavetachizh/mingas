@@ -4,7 +4,6 @@ import ApplicationForVerificationOfGasMeters from '../ApplicationForVerification
 import ApplicationForOrderingCylinders from '../ApplicationForOrderingCylinders';
 import ApplicationForRepairOfGasUsingEquipment from '../ApplicationForRepairOfGas-usingEquipment';
 import ApplicationForTheIssuanceOfTechnicalSpecifications from '../ApplicationForTheIssuanceofTechnicalSpecifications';
-import ApplicationForGasificationOfResidentialGardenHouse from '../ApplicationForGasificationOfResidentialGardenHouse';
 import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../ApplicationToCallRepresentativeOfGasSupplyOrganization';
 import ProvidingGasMeterReadings from '../ProvidingGasMeterReadings';
 import TitleForHome from '../../../../components/TitleForHome';

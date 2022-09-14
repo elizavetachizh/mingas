@@ -25,7 +25,7 @@ export default function ApplicationForOrderingCylinders() {
   const { t } = useTranslation();
   return (
     <DivApplication>
-      <Form ref={form} onSubmit={handleSubmit}>
+      <Form ref={form} onSubmit={handleSubmit} id={'form'}>
         <DivInput>
           <Label>
             {t('form:name')}: <Span>*</Span>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import InputName from '../input';
 import {
@@ -17,37 +17,69 @@ export default function FormQuestionForEntity() {
   const {
     handleUserInput,
     formValues,
+    setFormValues,
     errors,
-    handleFileInput,
     handleCheckBox,
     isButtonDisabled,
     handleSubmit,
     form,
+    msg,
   } = useFormForEnity();
   const { t } = useTranslation();
 
-  const [data, setData] = useState([]);
-  const getData = useCallback(async () => {
-    const response = await fetch(
-      'http://www.portal.nalog.gov.by/grp/getData?unp=100582333&charset=UTF-8&type=json',
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-      }
-    );
+  const formImage = document.getElementById('file-input');
+  const formPreview = document.getElementById('formPreview');
+  formImage?.addEventListener('change', () => {
+    uploadFile(formImage.files[0]);
+  });
 
-    return await response.json();
-  }, []);
-  useEffect(() => {
-    getData().then((result) => {
-      setData(result);
-    });
-  }, []);
+  function uploadFile(file) {
+    if (
+      ![
+        'image/png',
+        'image/jpeg',
+        'application/msword',
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      ].includes(file.type)
+    ) {
+      alert('Не подходит формат файла');
+      formImage.value = '';
+    }
+    let reader = new FileReader();
+    reader.onload = function (e) {
+      formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;
+      if (['image/png', 'image/jpeg'].includes(file.type)) {
+        setFormValues({
+          ...formValues,
+          file: reader.result,
+        });
+      }
+      if (
+        [
+          'application/msword',
+          'application/pdf',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        ].includes(file.type)
+      ) {
+        setFormValues({
+          ...formValues,
+          document: reader.result,
+        });
+      }
+    };
+    reader.onerror = function (e) {
+      console.log(e);
+    };
+    reader.readAsDataURL(file);
+  }
+
   return (
     <>
       <Form onSubmit={handleSubmit} ref={form}>
+        <p>
+          <b>{msg}</b>
+        </p>
         <DivInput>
           <Label>
             Наименование юридического лица
@@ -98,6 +130,7 @@ export default function FormQuestionForEntity() {
             error={errors.name}
           />
         </DivInput>
+
         <DivInput>
           <Label>
             {t('form:email')}
@@ -145,12 +178,12 @@ export default function FormQuestionForEntity() {
             error={errors.index}
           />
         </DivInput>
+
         <DivInput>
           <Label>
             Сообщение
             <Span>*</Span>
           </Label>
-
           <InputName
             inputName={'message'}
             type="message"
@@ -161,37 +194,37 @@ export default function FormQuestionForEntity() {
             error={errors.message}
           />
         </DivInput>
+
         <DivInputFile>
-          <InputFile name="file" type="file" id="file-input" onChange={handleFileInput} />
+          <div>
+            <InputFile type="file" id="file-input" name="file" />
+            <span>Прекрипите файл</span>
+          </div>
+          <div id={'formPreview'}></div>
         </DivInputFile>
-        <span>Прекрипите файл</span>
+
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
-            span={'*'}
             onChange={handleCheckBox}
             checked={formValues.isAgree}
             inputName="isAgree"
             error={errors.isAgree}
           />
           <Label>
-            Согласен на обработку персональных данных в соответствии с Политикой оператора
+            Согласен на обработку персональных данных
             <Span>*</Span>
           </Label>
         </DivInputCheckbox>
-        {isButtonDisabled && (
-          <Span>
-            <strong>Заполните, пожалуйста все необходимые поля!</strong>
-          </Span>
-        )}
-        <Button
-          disabled={isButtonDisabled}
-          type="submit"
-          onClick={handleSubmit}
-          data-testid="submit-button"
-        >
+        <Button disabled={isButtonDisabled} type="submit" onClick={handleSubmit}>
           Отправить
         </Button>
+
+        {isButtonDisabled ? (
+          <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+        ) : (
+          <span style={{ color: 'red' }}>Форма успешно заполнена</span>
+        )}
       </Form>
     </>
   );

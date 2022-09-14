@@ -21,7 +21,6 @@ export const ButtonLink = styled(NavLink)`
   margin: 0;
   &.active {
     color: #a69b14;
-    
   }
   span {
     display: none;
@@ -55,11 +54,11 @@ export const ButtonLink = styled(NavLink)`
 export const NavLinkService = styled(NavLink)`
   display: flex;
   flex: 0 0 30%;
-  max-width: 28%;
-
-  padding: 1rem;
-  height: 270px;
-  margin: 1rem;
+  max-width: 20%;
+  padding: 0.8rem;
+  height: 230px;
+  border-radius: 30px;
+  margin: 0.8rem;
   flex-direction: column;
   position: relative;
   text-align: center;
@@ -81,17 +80,14 @@ export const NavLinkService = styled(NavLink)`
   }
 
   @media (max-width: 800px) {
-    height: 300px;
-  }
-  @media (max-width: 800px) {
     margin: 2rem;
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 30%;
+    max-width: 30%;
   }
   @media (max-width: 600px) {
     margin: 1rem;
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 `;
 
@@ -135,7 +131,7 @@ export const BlockGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 25%);
   text-align: center;
-  p{
+  p {
     font-weight: bold;
     text-align: center;
   }

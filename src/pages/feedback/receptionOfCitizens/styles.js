@@ -44,14 +44,27 @@ export const Thead = styled.thead`
 
 export const Tbody = styled.tbody`
   tr {
-    height: 300px;
+    height: 150px;
+    @media (max-width: 1010px) {
+      height: 200px;
+    }
+    @media (max-width: 900px) {
+      height: 150px;
+    }
+    @media (max-width: 491px) {
+      height: 200px;
+    }
     td {
-      @media (max-width: 1390px) {
-        height: 225px;
+      div,
+      p {
+        margin: 0;
       }
     }
-  }
-  &.firstColumn {
+    //td {
+    //  @media (max-width: 1390px) {
+    //    height: 225px;
+    //  }
+    //}
   }
   &.regulatory-docs-for-legal {
     tr {

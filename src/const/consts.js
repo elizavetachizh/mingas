@@ -1,8 +1,6 @@
 export const INITIAL_FORM_STATE = {
   name: '',
-  date: '',
   email: '',
-  work: '',
   phone: '',
   address: '',
   text: '',
@@ -12,6 +10,7 @@ export const INITIAL_FORM_STATE = {
   index: '',
   organization: '',
   file: '',
+  document: '',
 };
 
 export interface InputProps {

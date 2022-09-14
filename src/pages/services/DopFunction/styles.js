@@ -55,3 +55,12 @@ export const ContainerFunctionService = styled.div`
     }
   }
 `;
+
+export const BlockClockAndPin = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+`;

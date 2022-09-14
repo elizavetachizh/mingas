@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const DivServicesList = styled.button`
   display: flex;
   flex: 0 0 30%;
-  max-width: 28%;
+  max-width: 22%;
   border-radius: 30px;
-  padding: 1rem;
-  height: 270px;
-  margin: 1rem;
+  padding: 0.8rem;
+  height: 15rem;
+  margin: 0.8rem;
   flex-direction: column;
   position: relative;
   text-align: center;
@@ -27,19 +27,15 @@ export const DivServicesList = styled.button`
     text-decoration-color: rgba(49, 77, 93, 0.6);
     transform: translateY(-1rem);
   }
-
-  @media (max-width: 800px) {
-    height: 300px;
-  }
   @media (max-width: 800px) {
     margin: 2rem;
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 30%;
+    max-width: 30%;
   }
   @media (max-width: 600px) {
     margin: 1rem;
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 `;
 
@@ -47,8 +43,8 @@ export const Image = styled.img`
   margin: 0 auto;
   color: #314d5c;
   max-width: 100%;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 `;
 
 export const DivInformService = styled.div`
@@ -59,7 +55,7 @@ export const DivInformService = styled.div`
 export const Name = styled.h3`
   text-align: center;
   color: #0d4475;
-  @media(max-width: 848px) {
+  @media (max-width: 848px) {
     font-size: 14px;
   }
 `;

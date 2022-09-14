@@ -20,16 +20,6 @@ export default function Union() {
       <AdditionalDiv>
         <TitleFun color={'blue'} infoTitle={'Первичная профсоюзная организация УП «МИНГАЗ»'} />
         <div className={'grids'}>
-          <Img src={require('../../../assets/management/departaments/Доморацкая.jpg')} />
-          <TitleForHome
-            className={'company'}
-            margin={'s'}
-            color={'blue'}
-            infoTitle={
-              'ПРЕДСЕДАТЕЛЬ ПРОФКОМА ПЕРВИЧНОЙ ПРОФСОЮЗНОЙ ОРГАНИЗАЦИИ УП «МИНГАЗ» - ДОМОРАЦКАЯ МАРИНА АЛЕКСЕЕВНА'
-            }
-            fontSize={'s'}
-          />
           <div className={'text--div'}>
             <div className={'boxes'} data-aos={'fade-up'}>
               Первичная профсоюзная организация УП «МИНГАЗ» входит в состав Белорусского
@@ -95,6 +85,16 @@ export default function Union() {
               сказать: «Я работаю в МИНГАЗе»!
             </div>
           </div>
+          <Img src={require('../../../assets/management/departaments/Доморацкая.jpg')} />
+          <TitleForHome
+            className={'company'}
+            margin={'s'}
+            color={'blue'}
+            infoTitle={
+              'ПРЕДСЕДАТЕЛЬ ПРОФКОМА ПЕРВИЧНОЙ ПРОФСОЮЗНОЙ ОРГАНИЗАЦИИ УП «МИНГАЗ» - ДОМОРАЦКАЯ МАРИНА АЛЕКСЕЕВНА'
+            }
+            fontSize={'s'}
+          />
           <div className={'img--div'} data-aos={'fade-up'}>
             <img src={napravlenie} alt={''} />
           </div>

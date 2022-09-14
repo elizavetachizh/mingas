@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const useFormForEnity = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'http://localhost:5000/question-for-entity/';
+  const url = 'http://localhost:8080/question-for-entity/';
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
@@ -88,35 +88,12 @@ export const useFormForEnity = () => {
     [formValues]
   );
 
-  const handleChangeCountry = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setFormValues({ ...formValues, country: value });
-      validate(name);
-    },
-    [formValues]
-  );
-
   const handleCheckBox = useCallback(() => {
     setFormValues({ ...formValues, isAgree: !formValues.isAgree });
     validate('isAgree');
   }, [formValues]);
 
-  const handleSwitcher = useCallback(() => {
-    setFormValues({ ...formValues, male: !formValues.male });
-  }, [formValues]);
-
-  const handleFileInput = useCallback(
-    (event: { target: { files: FileList } }) => {
-      const file = event.target.files[0];
-      setFormValues({ ...formValues, fileName: file.name });
-    },
-    [formValues]
-  );
-
   const clearForm = useCallback(() => {
-    document.getElementById('file-input').value = '';
     setFormValues({
       ...INITIAL_FORM_STATE,
       name: '',
@@ -136,17 +113,14 @@ export const useFormForEnity = () => {
       console.log('error', err);
     }
     clearForm();
-    alert('Форма успешно заполнена');
   };
 
   return {
     handleUserInput,
     formValues,
+    setFormValues,
     errors,
-    handleChangeCountry,
-    handleFileInput,
     handleCheckBox,
-    handleSwitcher,
     isButtonDisabled,
     handleSubmit,
     form,

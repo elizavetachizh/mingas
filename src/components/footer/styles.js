@@ -17,12 +17,13 @@ export const Contacts = styled.div`
 export const LinksNetwork = styled.div`
   display: flex;
   flex-direction: row;
-  width: 350px;
+  width: 50%;
+  align-items: flex-start;
   margin: 2% 0;
   text-align: left;
-  justify-content: space-around;
-  @media (max-width: 990px) {
-    flex-direction: column;
+  justify-content: left;
+  @media (max-width: 500px) {
+    width: 100%;
   }
 `;
 

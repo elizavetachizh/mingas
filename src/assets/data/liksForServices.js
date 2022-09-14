@@ -1,8 +1,7 @@
-
 export const links = [
   {
     idService: 1,
-    imgService: 4,
+    imgService: 12,
     nameService: 'Административные процедуры',
     linkService: '/services/administrative-services',
   },
@@ -14,7 +13,7 @@ export const links = [
   },
   {
     idService: 3,
-    imgService: 4,
+    imgService: 3,
     nameService: 'Техническое обслуживание',
     linkService: '/services/3',
   },
@@ -27,14 +26,14 @@ export const links = [
   { idService: 5, imgService: 4, nameService: 'Газификация', linkService: '/services/11' },
   {
     idService: 6,
-    imgService: 4,
+    imgService: 6,
     nameService: 'Обмен и покупка баллонов',
     linkService: '/services/2',
   },
   { idService: 7, imgService: 4, nameService: 'Цены на газ и услуги', linkService: '/services/9' },
   {
     idService: 8,
-    imgService: 4,
+    imgService: 16,
     nameService: 'Прейскурант цен',
     linkService: '/residents/price',
   },
