@@ -1,41 +1,5 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const opacityAnimation = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-`;
-
-export const ContainerBtn = styled.div`
-  max-width: 1140px;
-  border: 1px solid #d4d4d4;
-  margin: 2% auto;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.5s;
-  &:hover {
-    transform: translateY(10px); /* Сдвигаем вниз */
-  }
-  img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 4% auto;
-  }
-  div {
-    padding: 2%;
-    display: none;
-    p {
-      text-align: justify;
-    }
-    &.shake {
-      display: block;
-      opacity: 0;
-      animation: ${opacityAnimation} 2s forwards;
-    }
-  }
-`;
 export const BtnOpenInform = styled.button`
   color: #0d4475;
   font-size: 18px;

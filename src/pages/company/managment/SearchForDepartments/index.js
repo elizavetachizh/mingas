@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { ContainerFormSearch, Div, FormSearch } from '../../../SearchPage/styles';
 import { data } from '../../../../assets/data/data_department';
 import { NavLink } from 'react-router-dom';
-import {useLocation} from "react-router";
 
 export default function SearchForDepartments() {
   const [message, setMessage] = useState('');
@@ -38,11 +37,7 @@ export default function SearchForDepartments() {
         {result.map((element) => {
           return (
             <div>
-              {
-                <NavLink to={`/company/management/${element.idName}`}>
-                  {element.fullName}
-                </NavLink>
-              }
+              {<NavLink to={`/company/management/${element.idName}`}>{element.fullName}</NavLink>}
             </div>
           );
         })}

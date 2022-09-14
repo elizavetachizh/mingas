@@ -98,11 +98,6 @@ app.post('/questions', (req, res) => {
         `,
     attachments: [
       {
-        filename: 'Вложение',
-        path: `${file}`,
-        cid: 'image', //same cid value as in the html img src
-      },
-      {
         // define custom content type for the attachment
         href: `${document}`,
         encoding: 'base64',
@@ -153,11 +148,11 @@ app.post('/question-for-entity', (req, res) => {
          <p>Текст сообщения: ${req.body.message}</p>
         `,
     attachments: [
-      {
-        filename: 'Вложение',
-        path: `${file}`,
-        cid: 'image-for-entity', //same cid value as in the html img src
-      },
+      // {
+      //   filename: 'Вложение',
+      //   path: `${file}`,
+      //   cid: 'image-for-entity', //same cid value as in the html img src
+      // },
       {
         // define custom content type for the attachment
         href: `${document}`,

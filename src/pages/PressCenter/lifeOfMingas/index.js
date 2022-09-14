@@ -2,18 +2,28 @@ import ReactCarousel, { AFTER, CENTER, BEFORE } from 'react-carousel-animated';
 import 'react-carousel-animated/dist/style.css';
 import { photo } from '../../../assets/data/liveInStyleOfMingas';
 import { Link, ImgCarousel } from '../../company/styles';
-
+import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 function LifeOfMingas() {
   return (
     <>
       <Link className={'social-networks'}>
         Мы в социальных сетях:
         <div>
-          <a href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='} target={'_blank'}>
-            <img style={{ width: '54px' }} src={require('../../../assets/png/instagram.png')} />
+          <a
+            title={'Наш инстаграм'}
+            href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
+            target={'_blank'}
+          >
+            <IoLogoInstagram
+              style={{ width: '54px', height: '54px' }}
+              src={require('../../../assets/png/instagram.png')}
+            />
           </a>
-          <a href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
-            <img style={{ width: '54px' }} src={require('../../../assets/png/telegram.png')} />
+          <a title={'Наш телеграм'} href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
+            <IoMdPaperPlane
+              style={{ width: '54px', height: '54px' }}
+              src={require('../../../assets/png/telegram.png')}
+            />
           </a>
         </div>
       </Link>

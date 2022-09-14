@@ -88,11 +88,14 @@ export const useFeedback = () => {
     setFormValues({
       ...INITIAL_FORM_STATE,
       name: '',
-      date: '',
       email: '',
       address: '',
-      organization: '',
+      phone: '',
+      text: '',
       index: '',
+      organization: '',
+      file: '',
+      document: '',
     });
   }, []);
 

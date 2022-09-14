@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import up from '../../assets/png/up_arrow_round.png';

@@ -96,7 +96,18 @@ export const useForm = () => {
   }, [formValues]);
 
   const clearForm = useCallback(() => {
-    setFormValues({ ...INITIAL_FORM_STATE, name: '', email: '', address: '' });
+    setFormValues({
+      ...INITIAL_FORM_STATE,
+      name: '',
+      email: '',
+      address: '',
+      phone: '',
+      text: '',
+      index: '',
+      organization: '',
+      file: '',
+      document: '',
+    });
   }, []);
 
   const handleSubmit = async (event) => {

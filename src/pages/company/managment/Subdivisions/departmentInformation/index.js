@@ -62,16 +62,6 @@ export default function DepartmentInformation() {
     }
   }, [currentServiceID, linkId, inform, id, currentSearch]);
 
-  const currentDepartment = useMemo(
-    () =>
-      inform.filter((department) =>
-        id
-          ? department.idNameInform === +currentServiceID && department.id === +id
-          : department.idNameInform === +currentServiceID
-      ),
-
-    [inform, id, currentServiceID]
-  );
   const changeDepartment = useCallback(
     (departamentId) => {
       const current = data.find((element) => element.idName === departamentId);

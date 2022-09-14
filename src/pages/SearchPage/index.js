@@ -6,7 +6,7 @@ import { ContainerFormSearch, Div, FormSearch } from './styles';
 import { NavLink } from 'react-router-dom';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { IoIosSearchs } from '../../components/header/styles';
-import { ModalWindow, ModalWindowOpenAndClose } from '../../components/modalWindow/styles';
+import { ModalWindow } from '../../components/modalWindow/styles';
 export default function SearchPage() {
   const [isForm, setIsForm] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);

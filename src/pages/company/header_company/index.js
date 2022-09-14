@@ -8,7 +8,6 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { DescriptionService } from '../../services/DopFunction/styles';
 
 export default function HeaderCompany() {
   const isPhone = useMediaQuery('(max-width: 720px)');
