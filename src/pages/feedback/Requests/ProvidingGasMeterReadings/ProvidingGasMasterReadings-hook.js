@@ -4,7 +4,7 @@ import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
-  const url = 'http://localhost:8000/users/';
+  const url = 'http://localhost:8080/users/';
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const [msg, setMsg] = useState('');
