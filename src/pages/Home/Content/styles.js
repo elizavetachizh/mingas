@@ -56,29 +56,17 @@ export const DivText = styled.div`
   }
   a.phone {
     margin-bottom: -130px;
-    @media (max-width: 3000px) {
-      margin-bottom: -200px;
+    @media (max-width: 2050px) {
+      margin-bottom: -255px;
     }
-    @media (min-width: 2400px) {
-      margin-bottom: -270px;
+    @media (max-width: 1800px) {
+      margin-bottom: -190px;
     }
-    @media (max-width: 2396px) {
-      margin-bottom: -200px;
-    }
-    @media (max-width: 2150px) {
-      margin-bottom: -176px;
-    }
-    @media (max-width: 1890px) {
-      margin-bottom: -156px;
-    }
-    @media (max-width: 1750px) {
-      margin-bottom: -100px;
-    }
-    @media (max-width: 1550px) {
+    @media (max-width: 1600px) {
       margin-bottom: -108px;
     }
     @media (max-width: 1315px) {
-      margin-bottom: -120px;
+      margin-bottom: -110px;
     }
     @media (max-width: 1060px) {
       margin-bottom: -84px;
@@ -94,6 +82,12 @@ export const DivText = styled.div`
     }
     @media (max-width: 425px) {
       margin-bottom: -8px;
+    }
+    //@media (min-width: 2000px) {
+    //  margin-bottom: -260px;
+    //}
+    @media (min-width: 2000px) {
+      margin-bottom: -270px;
     }
     img {
       width: 80%;

@@ -88,6 +88,7 @@ export const Tbody = styled.tbody`
 
 export const ContainerTable = styled.div`
   display: flex;
+  color: #0d4475;
   flex-direction: row;
   align-items: inherit;
 `;

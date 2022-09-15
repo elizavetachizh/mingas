@@ -9,6 +9,7 @@ import Footer from '../../../components/footer';
 import TitleFun from '../../../components/title';
 import TitleForHome from '../../../components/TitleForHome';
 import { Container, Img, Link } from '../styles';
+import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 
 export default function Union() {
   useEffect(() => {
@@ -84,6 +85,27 @@ export default function Union() {
               профсоюзного комитета делают все возможное, чтобы каждый работник мог с гордостью
               сказать: «Я работаю в МИНГАЗе»!
             </div>
+            <Link style={{ marginLeft: '40px' }} data-aos={'fade-up'} className={'social-networks'}>
+              Мы в социальных сетях:
+              <div>
+                <a
+                  title={'Наш инстаграм'}
+                  href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
+                  target={'_blank'}
+                >
+                  <IoLogoInstagram
+                    style={{ width: '54px', height: '54px' }}
+                    src={require('../../../assets/png/instagram.png')}
+                  />
+                </a>
+                <a title={'Наш телеграм'} href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
+                  <IoMdPaperPlane
+                    style={{ width: '54px', height: '54px' }}
+                    src={require('../../../assets/png/telegram.png')}
+                  />
+                </a>
+              </div>
+            </Link>
           </div>
           <Img src={require('../../../assets/management/departaments/Доморацкая.jpg')} />
           <TitleForHome
@@ -99,25 +121,6 @@ export default function Union() {
             <img src={napravlenie} alt={''} />
           </div>
         </div>
-        <Link className={'social-networks-union'}>
-          Мы в социальных сетях:
-          <div>
-            <a href={'https://instagram.com/mingasprof?igshid=YmMyMTA2M2Y='} target={'_blank'}>
-              <img
-                alt={''}
-                style={{ width: '54px' }}
-                src={require('../../../assets/png/instagram.png')}
-              />
-            </a>
-            <a href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
-              <img
-                alt={''}
-                style={{ width: '54px' }}
-                src={require('../../../assets/png/telegram.png')}
-              />
-            </a>
-          </div>
-        </Link>
       </AdditionalDiv>
       <Footer />
     </Container>

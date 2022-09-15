@@ -42,7 +42,7 @@ export const ContainerFunctionService = styled.div`
   flex-direction: column;
   margin: 4% auto;
   @media (max-width: 900px) {
-    margin: 4% 2%;
+    margin: 4% 2% 12%;
   }
   img {
     width: 40%;

@@ -6,14 +6,14 @@ export const Div = styled.div`
   z-index: 5;
   background: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-  color: black !important;
+  color: #0d4475 !important;
   //width: auto;
   height: fit-content;
   padding: 2%;
   a {
     text-decoration: none;
     text-align: justify;
-    color: black;
+    color: #0d4475;
   }
 `;
 

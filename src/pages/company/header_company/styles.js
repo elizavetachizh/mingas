@@ -67,6 +67,9 @@ export const DivButton = styled.div`
     flex-direction: column;
     a {
       color: white;
+      &.active {
+        color: #a69b14;
+      }
     }
   }
 `;
@@ -82,6 +85,9 @@ export const HeaderCompanyBtn = styled(NavLink)`
     margin: 2%;
   }
   &.active {
+    color: #a69b14;
+  }
+  &:hover {
     color: #a69b14;
   }
 `;

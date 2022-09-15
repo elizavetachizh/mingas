@@ -105,35 +105,38 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/3/2'}> Горбач Марина Владимировна</NavLink>
+              <NavLink to={'/company/management/division/2'}> Горбач Марина Владимировна</NavLink>
               <br />
               Начальник участка № 1 службы эксплуатации объектов газораспредели-тельной системы
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/3/3'}>Канапацкая Юлия Петровна</NavLink>
+              <NavLink to={'/company/management/division/3'}>Канапацкая Юлия Петровна</NavLink>
               <br />
               Начальник участка № 2 службы эксплуатации объектов газораспредели-тельной системы
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/3/4'}>Пашинь Татьяна Владимировна</NavLink>
+              <NavLink to={'/company/management/division/4'}>Пашинь Татьяна Владимировна</NavLink>
               <br /> Начальник участка № 3 службы эксплуатации объектов газораспредели-тельной
               системы
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/3/2'}> Савченко Александр Константинович</NavLink>
+              <NavLink to={'/company/management/division/1'}>
+                {' '}
+                Савченко Александр Константинович
+              </NavLink>
               <br />
               Начальник сервисного центра службы эксплуатации объектов газораспределительной системы
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/4/1'}>Казимирчик Татьяна Евгеньевна</NavLink>
+              <NavLink to={'/company/management/division/6'}>Казимирчик Татьяна Евгеньевна</NavLink>
               <br />
               Начальник участка организации начислений и контроля поступления оплат службы учета
               потребленного газа населением

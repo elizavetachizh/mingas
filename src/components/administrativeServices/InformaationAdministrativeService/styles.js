@@ -196,7 +196,7 @@ export const ContainerFormSearchForService = styled.div`
 
   form {
     width: 60%;
-    margin: 0 auto;
+    margin: 1% auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

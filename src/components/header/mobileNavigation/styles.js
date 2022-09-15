@@ -66,8 +66,6 @@ export const CompanyButton = styled(NavLink)`
   &:hover {
     color: #a69b14;
   }
-  &.handleBtn {
-  }
 `;
 
 export const ServicesButton = CompanyButton;

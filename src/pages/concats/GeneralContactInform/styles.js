@@ -49,7 +49,6 @@ export const Tr = styled.tr`
 
 export const Td = styled.td`
   vertical-align: top;
-  color: #000;
   padding: 0.6rem 0.6rem 1.6rem 1.6rem;
   border: 0.1rem solid #e0e0e0;
 `;

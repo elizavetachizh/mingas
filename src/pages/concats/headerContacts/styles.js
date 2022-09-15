@@ -38,7 +38,7 @@ export const HeaderConcatsBtn = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   text-align: left;
-  color: black;
+  color: #0d4475;
   padding: 0.8rem;
   @media (max-width: 400px) {
     font-size: 14px;

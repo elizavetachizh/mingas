@@ -119,7 +119,7 @@ export default function DepartmentInformation() {
               <IoIosSearch style={{ display: 'none' }} />
             ) : (
               <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
-                <p>Поиск по регламинтирующим услугам</p>
+                <p>Поиск по регламинтирующим документам</p>
                 <IoIosSearch
                   style={{ height: '30px', width: '30px' }}
                   color={'#0d4475'}
@@ -131,7 +131,7 @@ export default function DepartmentInformation() {
               <ContainerFormSearchForService>
                 <form action={'search'}>
                   <input
-                    placeholder="Введите название услуги"
+                    placeholder="Введите название документа"
                     onChange={handleChange}
                     type={'text'}
                   />
@@ -159,7 +159,36 @@ export default function DepartmentInformation() {
           </HeaderCompanyDiv>
           {isPhone ? (
             <ContainerInform>
-              <Name>{name}</Name>
+              <Name>Регламентирующие документы</Name>
+              {isForm ? (
+                <IoIosSearch style={{ display: 'none' }} />
+              ) : (
+                <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
+                  <p>Поиск по регламинтирующим документам</p>
+                  <IoIosSearch
+                    style={{ height: '30px', width: '30px' }}
+                    color={'#0d4475'}
+                    type={'submit'}
+                  />
+                </SearchService>
+              )}
+              {isForm && (
+                <ContainerFormSearchForService>
+                  <form action={'search'}>
+                    <input
+                      placeholder="Введите название документа"
+                      onChange={handleChange}
+                      type={'text'}
+                    />
+                    <IoMdClose
+                      style={{ width: '60px' }}
+                      color={'black'}
+                      onClick={handleInsideClick}
+                    />
+                  </form>
+                </ContainerFormSearchForService>
+              )}
+              {message && renderResult()}
               {infoForSearch.map((el) => (
                 <BlockBtn>
                   <a href={el.link} target={'_blank'}>
