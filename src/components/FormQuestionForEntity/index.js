@@ -72,6 +72,9 @@ export default function FormQuestionForEntity() {
       setFormValues({ ...formValues, document: reader.result });
     };
 
+    reader.onerror = function (e) {
+      console.log(e);
+    };
     reader.readAsDataURL(file);
   }
 
