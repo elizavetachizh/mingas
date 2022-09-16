@@ -89,5 +89,17 @@
   },
   "RESOURCES": {
     "title":"STATE INFORMATION RESOURCES"
+  },
+  "servidesHomeCitizen": {
+    "gasSupply": "Gas supply to consumers",
+    "Maintenance": "Maintenance",
+    "Gasification": "Gasification",
+    "price": "Gas prices and services"
+  } ,
+  "servidesHomeBusiness": {
+    "gasSupply": "Checking measuring instruments",
+    "Maintenance": "Natural gas for legal entities",
+    "Gasification": "Liquefied gas tariffs for legal entities",
+    "price": "Registration of construction objects"
   }
 }

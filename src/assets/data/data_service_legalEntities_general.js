@@ -144,7 +144,7 @@ export const dataLegalEntities = [
     nameCard: 'Природный газ для юридических лиц',
     description: [
       {
-        nameDescription: 'Name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <p>
@@ -246,7 +246,7 @@ export const dataLegalEntities = [
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href={'https://mingas.by/dostup-k-informacii-o-parametrah-rashoda-gaza/'}
+                  href={'http://178.124.164.50:82/'}
                 >
                   Доступ к информации о параметрах расхода газа
                 </a>
@@ -295,7 +295,7 @@ export const dataLegalEntities = [
     nameCard: 'Регистрация объектов строительства',
     description: [
       {
-        nameDescription: 'Name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <p>
@@ -409,11 +409,10 @@ export const dataLegalEntities = [
     nameCard: 'Сжиженный углеводородный газ для юридических лиц',
     description: [
       {
-        nameDescription: 'ОТПУСК СЖИЖЕННОГО ГАЗА В 50-ТИ ЛИТРОВЫХ БАЛЛОНАХ',
+        nameDescription: 'Отпуск сжиженного газа в 50-ти литровых баллонах',
         inform: (
           <div>
             <div>
-              {' '}
               <p>
                 УП «МИНГАЗ» на договорной основе реализует сжиженный углеводородный газ (СУГ) марки
                 СПБТ (СТБ 2262-2012) в 50-ти литровых баллонах коммунально-бытовым и промышленным
@@ -519,7 +518,7 @@ export const dataLegalEntities = [
     nameCard: 'Поверка средств измерений',
     description: [
       {
-        nameDescription: 'Name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <ul>
@@ -575,7 +574,7 @@ export const dataLegalEntities = [
     nameCard: 'Тарифы на сжиженный газ для юридических лиц',
     description: [
       {
-        nameDescription: '',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <p>
@@ -595,7 +594,7 @@ export const dataLegalEntities = [
       'Порядок подключения к газораспределительной системе вновь вводимого в эксплуатацию многоквартирного жилого фонда',
     description: [
       {
-        nameDescription: '',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <ul>
@@ -621,7 +620,7 @@ export const dataLegalEntities = [
     nameCard: 'Проведение электрофизических измерений',
     description: [
       {
-        nameDescription: '',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <ul>
@@ -659,7 +658,7 @@ export const dataLegalEntities = [
     nameCard: 'Проведение неразрушающего контроля и технической диагностики',
     description: [
       {
-        nameDescription: 'Name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <ul>
@@ -698,7 +697,7 @@ export const dataLegalEntities = [
     nameCard: 'Передача на баланс УП «МИНГАЗ» объектов газораспределительной системы',
     description: [
       {
-        nameDescription: 'Name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <p>
@@ -792,7 +791,7 @@ export const dataLegalEntities = [
     nameCard: 'Выдача разрешения на право производства строительных и земляных работ',
     description: [
       {
-        nameDescription: 'Name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <p>
@@ -854,7 +853,7 @@ export const dataLegalEntities = [
       'Перечень документов необходимых для возобновления газоснабжения, в том числе к началу отопительного сезона',
     description: [
       {
-        nameDescription: 'NAme',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <p>
@@ -928,7 +927,7 @@ export const dataLegalEntities = [
     nameCard: 'Техническое обслуживание и ремонт газового и газоиспользующего оборудования',
     description: [
       {
-        nameDescription: 'Name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <ul>
@@ -969,7 +968,7 @@ export const dataLegalEntities = [
     nameCard: 'Услуги, относящиеся к сферам деятельности субъектов естественных монополий',
     description: [
       {
-        nameDescription: 'name',
+        nameDescription: 'Информация',
         inform: (
           <div>
             <h4>
