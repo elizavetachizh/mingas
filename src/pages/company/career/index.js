@@ -16,6 +16,8 @@ import {
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
 import { LinksNetwork } from '../../../components/footer/styles';
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 const div = document.createElement('div');
@@ -42,8 +44,8 @@ export default function Career() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
+      <Feedback className={'none'} img={minsk} name={'Работа в УП "МИНГАЗ"'} />
       <HeaderCompany />
-      <TitleForHome className={'company'} color={'blue'} infoTitle={'Работа в УП “Мингаз”'} />
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <DivForm className="form-div">
           <div className="form-div-career">

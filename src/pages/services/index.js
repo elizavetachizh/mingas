@@ -9,6 +9,8 @@ import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import { DivServices, NavLinkService } from './styles';
 import { links } from '../../assets/data/liksForServices';
 import { Name } from './servicesList/styles';
+import Feedback from "../feedback";
+import minsk from "../../assets/background/phone.jpg";
 
 export default function Services() {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -16,8 +18,8 @@ export default function Services() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+        <Feedback className={'none'} img={minsk} name={'Услуги жителям столичного региона'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Услуги жителям столичного региона'} />
         <DivServices>
           {links.map((element) => (
             <NavLinkService to={element.linkService}>

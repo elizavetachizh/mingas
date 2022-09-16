@@ -20,6 +20,8 @@ import {
   ModalWindowOpenAndClose,
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
+import minsk from '../../../assets/background/phone.jpg';
+import Feedback from '../../feedback';
 
 export default function Documentation() {
   const [numPage, setNumPage] = useState(null);
@@ -98,12 +100,8 @@ export default function Documentation() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
+      <Feedback className={'none'} img={minsk} name={'Сертификаты, лицензии, свидетельства'} />
       <HeaderCompany currentPage={'documentation'} />
-      <TitleForHome
-        className={'company'}
-        infoTitle={'Сертификаты, лицензии, свидетельства'}
-        color={'blue'}
-      />
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <ContainerOfDocuments>
           {' '}

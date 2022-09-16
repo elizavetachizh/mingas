@@ -16,12 +16,12 @@ export default function HomeServices() {
       <ButtonServicesHome>
         <ButtonFun
           href={'/services'}
-          backgroundColor={'gray'}
+          backgrounder={'gray'}
           infoButton={`${t('header:Services')}`}
         />
         <ButtonFun
           href={'/services-legal-entities'}
-          backgroundColor={'gray'}
+          backgrounder={'gray'}
           infoButton={`${t('header:ForBusiness')}`}
         />
       </ButtonServicesHome>

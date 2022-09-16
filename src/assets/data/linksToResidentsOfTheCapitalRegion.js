@@ -33,7 +33,7 @@ export const links = [
     id: 9,
     link: '/feedback/electronic-appeal',
     name: 'Обращение граждан',
-    cardImg: 5,
+    cardImg: 1,
   },
   {
     id: 10,

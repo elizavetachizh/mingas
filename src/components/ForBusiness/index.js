@@ -10,14 +10,16 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import { DivServices } from '../../pages/services/styles';
 import { links } from '../../assets/data/linksForBusines';
 import ServicesList from '../../pages/services/servicesList';
+import Feedback from "../../pages/feedback";
+import minsk from "../../assets/background/phone.jpg";
 
 export default function ForBusiness() {
   const navigate = useNavigate();
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+        <Feedback className={'none'} img={minsk} name={'Для бизнеса'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Для бизнеса'} />
         <DivServices>
           {links.map((element) => (
             <ServicesList

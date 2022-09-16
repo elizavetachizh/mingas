@@ -112,6 +112,10 @@ export const DivImage = styled.div`
     object-fit: cover;
     height: 400px;
   }
+  &.none:after{
+    content: none;
+    background: rgba(0, 0, 0, 0);
+  }
   &:after {
     content: '';
     position: absolute;
@@ -159,4 +163,7 @@ export const Text = styled.div`
   font-size: 1.4rem;
   align-items: center;
   font-weight: bold;
+  @media(max-width: 640px){
+    font-size: 1rem;
+  }
 `;

@@ -9,15 +9,17 @@ import ServicesList from '../../services/servicesList';
 import { useNavigate } from 'react-router';
 import HeaderCompany from '../header_company';
 import TitleForHome from '../../../components/TitleForHome';
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function Branches() {
   const navigate = useNavigate();
   return (
     <Container>
       <Header />
+        <Feedback className={'none'} img={minsk} name={'Филиалы УП "МИНГАЗ"'} />
       <HeaderCompany />
       <AdditionalDiv>
-        <TitleForHome className={'company'} infoTitle={'Филиалы УП "МИНГАЗ"'} color={'blue'} />
         <DivServices>
           {links.map((element) => (
             <ServicesList

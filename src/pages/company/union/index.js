@@ -10,6 +10,8 @@ import TitleFun from '../../../components/title';
 import TitleForHome from '../../../components/TitleForHome';
 import { Container, Img, Link } from '../styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function Union() {
   useEffect(() => {
@@ -18,8 +20,8 @@ export default function Union() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Первичная профсоюзная организация УП «МИНГАЗ»'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Первичная профсоюзная организация УП «МИНГАЗ»'} />
         <div className={'grids'}>
           <div className={'text--div'}>
             <div className={'boxes'} data-aos={'fade-up'}>

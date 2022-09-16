@@ -81,7 +81,7 @@ export default function News() {
       <ButtonFun
         href={'/press-center/1'}
         infoButton={`${t('smi:Show')}`}
-        backgroundColor={'blue'}
+        backgrounder={'blue'}
         style={{ margin: '0 auto 2%' }}
       />
     </BlockContainerRequests>

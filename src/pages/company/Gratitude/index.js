@@ -13,6 +13,8 @@ import {
   ModalWindowOpenAndClose,
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function Gratitude() {
   const [currentServiceID, setServiceID] = useState(null);
@@ -35,8 +37,9 @@ export default function Gratitude() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
+        <Feedback className={'none'} img={minsk} name={'Благодарности и награды'} />
       <HeaderCompany currentPage={'gratitude'} />
-      <TitleForHome className={'company'} infoTitle={'Благодарности и награды'} color={'blue'} />
+
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <BlockOfGraditude>
           {gratitude.map((element) => (

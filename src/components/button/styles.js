@@ -51,5 +51,5 @@ export const Button = styled(NavLink)`
     width: 170px;
     height: 40px;
   }
-  ${({ backgroundColor }) => buttonBackgroundColor[backgroundColor]}
+  ${({ backgrounder }) => buttonBackgroundColor[backgrounder]}
 `;

@@ -15,6 +15,7 @@ import { useNavigate, useParams } from 'react-router';
 import DopFunctionalPressCenter from './DopFunctional';
 import services from '../../assets/background/press.jpg';
 import Feedback from '../feedback';
+import minsk from "../../assets/background/phone.jpg";
 
 export default function PressCenter() {
   const [inform, setInform] = useState('');
@@ -45,7 +46,7 @@ export default function PressCenter() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      <Feedback img={services} name={'Пресс-центр'} />
+        <Feedback className={'none'} img={minsk} name={'Пресс-центр'} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

@@ -8,13 +8,15 @@ import { styleTd } from '../GeneralContactInform';
 import TitleFun from '../../../components/title';
 import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
 import {Container} from "../../company/styles";
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function PhoneLineServices() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Основная информация'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Телефоны служб по работе с клиентами'} />
         <Row>
           <HeaderConcats width={'s'} />
           <PageSection>

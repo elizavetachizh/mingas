@@ -10,14 +10,16 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import { DivServices } from '../../pages/services/styles';
 import { links } from '../../assets/data/linksToResidentsOfTheCapitalRegion';
 import ServicesList from '../../pages/services/servicesList';
+import minsk from "../../assets/background/phone.jpg";
+import Feedback from "../../pages/feedback";
 
 export default function ResidentsOfTheCapitalRegion() {
   const navigate = useNavigate();
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+        <Feedback className={'none'} img={minsk} name={'Жителям столичного региона'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Жителям столичного региона'} />
         <DivServices>
           {links.map((element) => (
             <ServicesList

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export const useForOrderingCylinders = (): UseFormReturnValues => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
-  const url = 'http://localhost:8080/cylinders/';
+  const url = 'http://localhost:3000/cylinders/';
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [msg, setMsg] = useState('');
   const [errors, setErrors] = useState({});
@@ -110,5 +110,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
     isButtonDisabled,
     handleSubmit,
     form,
+    setRequestValues
   };
 };

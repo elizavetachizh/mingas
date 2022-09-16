@@ -3,7 +3,7 @@ import { INITIAL_FORM_STATE } from '../const/consts';
 import axios from 'axios';
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'http://localhost:8080/questions/';
+  const url = 'http://localhost:3000/questions/';
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(

@@ -47,6 +47,10 @@ export default function FormQuestion() {
       alert('Не подходит формат файла');
       formImage.value = '';
     }
+      if (file.size > 60000) {
+          alert('Файл является слишком большим');
+          formImage.value = '';
+      }
     let reader = new FileReader();
     reader.onload = function (e) {
       formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;

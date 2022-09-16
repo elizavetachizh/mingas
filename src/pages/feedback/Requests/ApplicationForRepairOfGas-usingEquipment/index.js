@@ -3,8 +3,8 @@ import { DivApplication, Form } from '../styles';
 import {
   Button,
   DivInput,
-  DivInputCheckbox,
-  InputCheckbox,
+  DivInputCheckbox, DivInputFile,
+  InputCheckbox, InputFile,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
@@ -24,7 +24,9 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
     isButtonDisabled,
     handleSubmit,
     form,
+    setRequestValues,
   } = UseForRepairOfGasUsingEquipment();
+
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit}>
@@ -147,6 +149,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             placeholder={'Введите желаемую дату выполнения работы'}
           />
         </DivInput>
+
         <span style={{ color: 'red' }}>
           *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
         </span>

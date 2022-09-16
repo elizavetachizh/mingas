@@ -40,9 +40,13 @@ export default function ProvidingGasMeterReadings() {
       alert('Не подходит формат файла, вставьте, пожалуйста картинку/фотографию');
       formImage.value = '';
     }
+    if (file.size > 60000) {
+      alert('Файл является слишком большим');
+      formImage.value = '';
+    }
     let reader = new FileReader();
     reader.onload = function (e) {
-      formPreview.innerHTML = `<img id={'image'} alt={''} src="${e.target.result}" style={{width: '300px', height: '300px'}}/>`;
+      formPreview.innerHTML = `<a id={'image'} href="${e.target.result}" style={{width: '300px', height: '300px'}}/>`;
       setRequestValues({
         ...requestValues,
         file: reader.result,
