@@ -24,8 +24,9 @@ export default function History() {
     <Container>
       <Header backgroundHeader="blue" />
       <Feedback className={'none'} img={minsk} name={'История'} />
-      <AdditionalDiv>
-        <HeaderCompany />
+      <HeaderCompany />
+      <AdditionalDiv style={{ margin: '4% auto' }}>
+
         <TitleForHome
           className={'company'}
           margin={'s'}

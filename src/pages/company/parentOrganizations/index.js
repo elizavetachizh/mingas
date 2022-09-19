@@ -8,13 +8,15 @@ import { data } from '../../../assets/data/data_ParentOrganization';
 import DopFunctional from './DopFunctional';
 import { ContainerLinks } from './styles';
 import { Container } from '../styles';
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 export default function ParentOrganizations() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+        <Feedback className={'none'} img={minsk} name={'Вышестоящие организации'} />
       <HeaderCompany />
       <AdditionalDiv style={{ margin: '4% auto' }}>
-        <TitleForHome className={'company'} infoTitle={'Вышестоящие организации'} color={'blue'} />
         <ContainerLinks>
           {data.map((el) => (
             <DopFunctional

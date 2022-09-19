@@ -18,6 +18,8 @@ import up from '../../../assets/png/up_arrow_round.png';
 import { Container } from '../../../pages/company/styles';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { useLocation, useNavigate } from 'react-router';
+import Feedback from "../../../pages/feedback";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function InformationAdministrativeService() {
   const { pathname } = useLocation();
@@ -87,6 +89,7 @@ export default function InformationAdministrativeService() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Административные услуги'} />
       <AdditionalDiv>
         <BlockSearch>
           {isForm ? (

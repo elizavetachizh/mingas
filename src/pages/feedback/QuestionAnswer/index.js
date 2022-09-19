@@ -6,6 +6,8 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import Menu from './Menu';
 import { Container } from '../../company/styles';
+import Feedback from "../index";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function QuestionAnswer() {
   return (

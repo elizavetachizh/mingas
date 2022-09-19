@@ -7,13 +7,15 @@ import HeaderConcats from '../headerContacts';
 import Footer from '../../../components/footer';
 import ReceptionSchedule from '../../../components/ReceptionSchedule';
 import { Container } from '../../company/styles';
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function SchedulePersonalReceptionOfCitizens() {
   return (
     <Container>
-      <Header backgroundHeader={'blue'}></Header>
+      <Header backgroundHeader={'blue'}/>
+        <Feedback className={'none'} img={minsk} name={'График приёма граждан'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'График приёма граждан'} />
         <Row>
           <HeaderConcats />
           <ReceptionSchedule />

@@ -8,12 +8,14 @@ import price_3 from '../../assets/pdf/Prejskurant-11-s-04.10.2019-szhatyj.pdf';
 import { Links } from './styles';
 import TitleFun from '../../components/title';
 import {Container} from "../company/styles";
+import Feedback from "../feedback";
+import minsk from "../../assets/background/phone.jpg";
 export default function ResidentsOfCapitalRegion() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Прейскурант цен'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Прейскуранты цен'} />
         <Links>
           <a href={price_1} download>
             Скачать “Прейскурант №1: Тарифы на работы(услуги) оказываемые населению”

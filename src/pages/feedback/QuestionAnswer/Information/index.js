@@ -21,6 +21,8 @@ import DopFunctionService from '../../../services/DopFunction';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../Home/parallax/useMediaQuery';
+import Feedback from "../../index";
+import minsk from "../../../../assets/background/phone.jpg";
 
 export default function Information() {
   const isPhone = useMediaQuery('(max-width: 820px)');
@@ -104,6 +106,7 @@ export default function Information() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Часто задаваемые вопросы'} />
       <AdditionalDiv>
         <DivBlocks>
           <div style={{ width: '80%' }}>

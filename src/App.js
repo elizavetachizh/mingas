@@ -16,7 +16,6 @@ import GeneralInform from './pages/concats/GeneralContactInform';
 import Union from './pages/company/union';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import Requests from './pages/feedback/Requests';
-import QuestionAnswer from './pages/feedback/QuestionAnswer';
 import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
 import NaturalGas from './pages/services/NaturalGas';
 import './App.css';
@@ -30,7 +29,6 @@ import LiquefiedGasTariff from './pages/tariff/liquefiedGasTariff';
 import ElectronicAppealForEntity from './pages/feedback/electronicCirculationForEntity';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
-import { Component, useEffect } from 'react';
 import ParentOrganizations from './pages/company/parentOrganizations';
 import LeaveFeedback from './components/leaveFeedback';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
@@ -57,7 +55,6 @@ export default function App() {
         <Route path="/company/history" element={<History />} />
         <Route path="/contacts" element={<GeneralInform />} />
         <Route path="/press-center/:descriptionID" element={<PressCenter />} />
-        {/*<Route path="/feedback/question-answer" element={<QuestionAnswer />} />*/}
         <Route path="/feedback/question-answer/:titleId" element={<Information />} />
         <Route path={'/feedback/online-application'} element={<Requests />} />
         <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />

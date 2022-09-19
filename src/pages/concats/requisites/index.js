@@ -7,13 +7,15 @@ import { AdditionalDiv } from '../GeneralContactInform/styles';
 import Footer from '../../../components/footer';
 import TitleFun from '../../../components/title';
 import {Container} from "../../company/styles";
+import Feedback from "../../feedback";
+import minsk from "../../../assets/background/phone.jpg";
 
 export default function Requisites() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Юридическая информация'} />
       <AdditionalDiv>
-        <TitleFun infoTitle={'Юридическая информация'} color={'blue'} />
         <Row>
           <HeaderConcats />
           <PageSection>

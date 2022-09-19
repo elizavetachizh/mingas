@@ -25,6 +25,8 @@ import {
   General,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { Container } from '../../pages/company/styles';
+import Feedback from "../../pages/feedback";
+import minsk from "../../assets/background/phone.jpg";
 export default function MethodPayment() {
   const [open, setOpen] = useState(false);
   const animate = () => {
@@ -44,8 +46,8 @@ export default function MethodPayment() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Способы оплаты'} />
       <AdditionalDiv>
-        <TitleFun infoTitle={'Способы оплаты'} color={'blue'} />
         <General>
           <BtnIsOpen onClick={animate}>
             <p>

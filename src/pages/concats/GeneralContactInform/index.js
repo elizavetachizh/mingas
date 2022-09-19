@@ -16,7 +16,9 @@ export const styleTd = {
 
 export default function GeneralInform() {
   const [center, setCenter] = useState(defaultCenter);
+
   useEffect(() => {
+    window.scrollTo(0, 0);
     GetBrowserLocation()
       .then((curLoc) => {
         setCenter(curLoc);
