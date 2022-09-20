@@ -8,13 +8,13 @@ import { data } from '../../../assets/data/data_ParentOrganization';
 import DopFunctional from './DopFunctional';
 import { ContainerLinks } from './styles';
 import { Container } from '../styles';
-import Feedback from "../../feedback";
-import minsk from "../../../assets/background/phone.jpg";
+import Feedback from '../../feedback';
+import minsk from '../../../assets/background/phone.jpg';
 export default function ParentOrganizations() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-        <Feedback className={'none'} img={minsk} name={'Вышестоящие организации'} />
+      <Feedback className={'none'} img={minsk} name={'Вышестоящие организации'} />
       <HeaderCompany />
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <ContainerLinks>
@@ -31,7 +31,7 @@ export default function ParentOrganizations() {
           ))}
         </ContainerLinks>
       </AdditionalDiv>
-      <Footer />
+      <Footer style={{ height: '50vh' }} />
     </Container>
   );
 }

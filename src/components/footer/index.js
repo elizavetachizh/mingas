@@ -5,10 +5,9 @@ import { Contacts, Telephons, ContactInform, WorkTime, FooterContainer } from '.
 import ButtonFun from '../button';
 
 import { Prizes } from '../../pages/Home/Content/styles';
-export default function Footer() {
+export default function Footer({ style }) {
   return (
-    <FooterContainer
-    >
+    <FooterContainer style={style}>
       <LinksContainer>
         <LinkLogo to="/">
           <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogo} />

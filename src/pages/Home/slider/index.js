@@ -6,6 +6,7 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.png';
 import dayOfGas from '../../../assets/png/dayOfGas2.jpg';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
+import newPost from '../../../assets/background/newPost.jpg';
 import { Trans } from 'react-i18next';
 
 export default class CarouselFun extends React.Component {
@@ -27,11 +28,24 @@ export default class CarouselFun extends React.Component {
             </a>
           </DivText>
         </div>,
-        <DivText>
-          <a className={'day-of-gas'} href={''}>
-            <img className={'day-of-gas'} src={dayOfGas} alt={''} />
-          </a>
-        </DivText>,
+        // <DivText>
+        //   <a className={'day-of-gas'} href={''}>
+        //     <img className={'day-of-gas'} src={dayOfGas} alt={''} />
+        //   </a>
+        // </DivText>,
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <BackgroundContainer className={'post'} src={newPost} />
+          <DivText className={'phone'}>
+            <DivInformAbout>
+              <Text>
+                <Trans i18nKey="description:part1" />
+              </Text>
+            </DivInformAbout>
+            {/*<a className={'phone'} href={'tel:162'}>*/}
+            {/*  <img src={phone} alt={''} />*/}
+            {/*</a>*/}
+          </DivText>
+        </div>,
       ],
     };
     this.onchange = this.onchange.bind(this);
@@ -60,16 +74,6 @@ export default class CarouselFun extends React.Component {
             value={this.state.value}
             slides={this.state.slides}
             onChange={this.onchange}
-            // plugins={[
-            //   'infinite',
-            //   {
-            //     resolve: autoplayPlugin,
-            //     options: {
-            //       interval: 4000,
-            //     },
-            //   },
-            // ]}
-            // animationSpeed={2000}
           ></Carousel>
           <Dots
             value={this.state.value}

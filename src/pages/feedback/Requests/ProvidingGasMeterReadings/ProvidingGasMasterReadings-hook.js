@@ -4,7 +4,12 @@ import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
-  const url = 'https://back.mingas.by/users';
+  //for site
+  // const url = 'https://back.mingas.by/users';
+
+  //for me
+  const url = 'https://mingas.by:9000/users';
+
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const [msg, setMsg] = useState('');

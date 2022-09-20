@@ -4,7 +4,12 @@ import axios from 'axios';
 
 export const useFormForEnity = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'https://back.mingas.by/question-for-entity';
+  //for site
+  // const url = 'https://back.mingas.by/question-for-entity';
+
+  //for me
+  const url = 'https://mingas.by:9000/question-for-entity';
+
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(

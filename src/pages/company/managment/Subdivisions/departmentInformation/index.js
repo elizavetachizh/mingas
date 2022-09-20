@@ -26,6 +26,8 @@ import {
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
+import Feedback from '../../../../feedback';
+import minsk from '../../../../../assets/background/phone.jpg';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
@@ -131,6 +133,7 @@ export default function DepartmentInformation() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Службы УП "МИНГАЗ"'} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

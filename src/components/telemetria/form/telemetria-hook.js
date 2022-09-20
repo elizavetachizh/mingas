@@ -1,13 +1,13 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { INITIAL_FORM_STATE } from '../const/consts';
 import axios from 'axios';
-export const useForm = () => {
+import { INITIAL_FORM_STATE } from '../../../const/consts';
+export const useFormTelemetria = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
   //for site
-  // const url = 'https://back.mingas.by/questions';
+  // const url = 'https://back.mingas.by/telemetria';
 
   //for me
-  const url = 'https://mingas.by:9000/questions';
+  const url = 'https://mingas.by:9000/telemetria';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
@@ -29,10 +29,10 @@ export const useForm = () => {
     return !!(
       stringIncludesNumber(formValues.name) ||
       !isValidateEmail(formValues.email) ||
-      !formValues.isAgree ||
-      !formValues.message ||
+      !formValues.organization ||
       !formValues.address ||
       !isValidatePhone(formValues.phone) ||
+      !formValues.text ||
       Object.keys(errors)?.length
     );
   }, [formValues, errors]);
@@ -45,6 +45,11 @@ export const useForm = () => {
           setErrors({ ...errors, name: 'ФИО может содержать только буквы!' });
         }
         break;
+      case 'organization':
+        if (!formValues.organization.length) {
+          setErrors({ ...errors, organization: 'Заполните, пожалуйста название организации!' });
+        }
+        break;
       case 'email':
         if (!isValidateEmail(formValues.email)) {
           setErrors({ ...errors, email: 'Введите верный адрес почты!' });
@@ -55,14 +60,9 @@ export const useForm = () => {
           setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
         }
         break;
-      case 'isAgree':
-        if (!!formValues.isAgree) {
-          setErrors({ ...errors, isAgree: 'Заполните поле' });
-        }
-        break;
-      case 'message':
-        if (!formValues.message.length) {
-          setErrors({ ...errors, message: 'Заполните, пожалуйста, обращение' });
+      case 'text':
+        if (!formValues.text.length) {
+          setErrors({ ...errors, text: 'Заполните, пожалуйста, поле' });
         }
         break;
       case 'address':
@@ -84,21 +84,6 @@ export const useForm = () => {
     },
     [formValues]
   );
-
-  const handleChangeCountry = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setFormValues({ ...formValues, country: value });
-      validate(name);
-    },
-    [formValues]
-  );
-
-  const handleCheckBox = useCallback(() => {
-    setFormValues({ ...formValues, isAgree: !formValues.isAgree });
-    validate('isAgree');
-  }, [formValues]);
 
   const clearForm = useCallback(() => {
     setFormValues({
@@ -129,8 +114,6 @@ export const useForm = () => {
     handleUserInput,
     formValues,
     errors,
-    handleChangeCountry,
-    handleCheckBox,
     setFormValues,
     isButtonDisabled,
     handleSubmit,

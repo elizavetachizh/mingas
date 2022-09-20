@@ -36,6 +36,10 @@ export const BackgroundContainer = styled.img`
   display: flex;
   margin-top: -370px;
   filter: blur(3px) brightness(0.6);
+  &.post {
+    filter: none;
+    margin-top: 0;
+  }
   @media (min-width: 2000px) {
     margin-top: -470px;
   }
@@ -50,7 +54,6 @@ export const BackgroundContainer = styled.img`
   }
   @media (max-width: 1189px) {
     margin-top: -230px;
-    width: 105%;
   }
   @media (max-width: 750px) {
     width: 100%;

@@ -55,9 +55,11 @@ export const DivText = styled.div`
     width: 100%;
   }
   a.phone {
-    margin-bottom: -130px;
+    //margin-bottom: -130px;
+    margin-bottom: 3px;
     @media (max-width: 2050px) {
-      margin-bottom: -255px;
+      //margin-bottom: -255px;
+      margin-bottom: 3px;
     }
     @media (max-width: 1800px) {
       margin-bottom: -190px;

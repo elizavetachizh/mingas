@@ -26,6 +26,7 @@ import zayavka_na_pusk from '../pdf/zayavka_na_pusk_gaza_v_jilye_doma_do_ih_zase
 import obrazets_pisma from '../wordFile/Obrazets-pisma-zayavleniya-dlya-yurlits.docx';
 import prilozenie_pismo from '../pdf/Prilozhenie-1.pdf';
 import prilozanie_plombi from '../wordFile/Prilozhenie-plombi.docx';
+import { NavLink } from 'react-router-dom';
 const styleImg = {
   width: '400px',
 };
@@ -243,13 +244,12 @@ export const dataLegalEntities = [
                 </a>
               </li>
               <li>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={'http://178.124.164.50:82/'}
-                >
+                <a target="_blank" rel="noopener noreferrer" href={'http://178.124.164.50:82/'}>
                   Доступ к информации о параметрах расхода газа
                 </a>
+              </li>
+              <li>
+                <NavLink to={'/services-legal-entities/2/telemetria'}>Информация</NavLink>
               </li>
             </ul>
             <div>
