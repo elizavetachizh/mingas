@@ -4,7 +4,7 @@ import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
-  const url = 'http://localhost:3000/users/';
+  const url = 'http://localhost:9000/users';
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const [msg, setMsg] = useState('');
@@ -118,6 +118,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(requestValues);
     try {
       await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
     } catch (err) {

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export const useForOrderingCylinders = (): UseFormReturnValues => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
-  const url = 'http://localhost:3000/cylinders/';
+  const url = 'https://mingas.by:9000/cylinders';
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [msg, setMsg] = useState('');
   const [errors, setErrors] = useState({});
@@ -98,7 +98,6 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
       console.log('error', err);
     }
     clearForm();
-    alert('Форма успешно заполнена');
   };
 
   return {
@@ -110,6 +109,7 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
     isButtonDisabled,
     handleSubmit,
     form,
-    setRequestValues
+    msg,
+    setRequestValues,
   };
 };

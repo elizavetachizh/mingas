@@ -13,7 +13,7 @@ import InputName from '../../input';
 import { t } from 'i18next';
 import InputAddress from '../../input/inputAddress';
 import InputPhone from '../../input/inputPhone';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFeedback } from '../leaveFeedback-hook';
 
 export default function LeaveFeedbackMingas() {
@@ -28,7 +28,9 @@ export default function LeaveFeedbackMingas() {
     form,
     msg,
   } = useFeedback();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const formImage = document.getElementById('file-input');
   const formPreview = document.getElementById('formPreview');
   formImage?.addEventListener('change', () => {
@@ -73,9 +75,6 @@ export default function LeaveFeedbackMingas() {
   return (
     <DivApplication>
       <Form onSubmit={handleSubmit} ref={form}>
-        <p>
-          <b>{msg}</b>
-        </p>
         <DivInput>
           <Label>
             ФИО полностью: <Span>*</Span>
@@ -182,6 +181,9 @@ export default function LeaveFeedbackMingas() {
         ) : (
           <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </DivApplication>
   );

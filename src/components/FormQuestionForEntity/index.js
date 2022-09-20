@@ -85,9 +85,6 @@ export default function FormQuestionForEntity() {
   return (
     <>
       <Form onSubmit={handleSubmit} ref={form}>
-        <p>
-          <b>{msg}</b>
-        </p>
         <DivInput>
           <Label>
             Наименование юридического лица
@@ -233,6 +230,9 @@ export default function FormQuestionForEntity() {
         ) : (
           <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </>
   );

@@ -22,6 +22,7 @@ export default function ApplicationForOrderingCylinders() {
     isButtonDisabled,
     handleSubmit,
     form,
+    msg
   } = useForOrderingCylinders();
   const { t } = useTranslation();
 
@@ -36,7 +37,7 @@ export default function ApplicationForOrderingCylinders() {
             inputName={'name'}
             name={'name'}
             type={'text'}
-            placeholder={`Enter ${t('form:name')}`}
+            placeholder={` ${t('form:name')}`}
             onChange={handleUserInput}
             value={requestValues.name}
             error={errors.name}
@@ -52,7 +53,7 @@ export default function ApplicationForOrderingCylinders() {
             inputName={'text'}
             name={'text'}
             type={'text'}
-            placeholder={`Enter ${t('form:SubscriberNumber')} `}
+            placeholder={` ${t('form:SubscriberNumber')} `}
             onChange={handleUserInput}
             value={requestValues.text}
             error={errors.text}
@@ -67,7 +68,7 @@ export default function ApplicationForOrderingCylinders() {
             inputName={'address'}
             type="text"
             name={'address'}
-            placeholder={`Enter ${t('form:address')}`}
+            placeholder={` ${t('form:address')}`}
             onChange={handleUserInput}
             value={requestValues.address}
             error={errors.address}
@@ -120,6 +121,9 @@ export default function ApplicationForOrderingCylinders() {
             </span>
           </div>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </DivApplication>
   );

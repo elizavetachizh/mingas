@@ -177,7 +177,7 @@ export const data = [
         name: 'Производственно-техническое управление (ПТУ)',
         id: 5,
         idNameInform: 2,
-        photo: 'Яскевич',
+        photo: '',
         chief: 'Начальник - Яскевич Виталий Владимирович ',
         description: (
           <div>
@@ -322,7 +322,7 @@ export const data = [
         id: 8,
         idNameInform: 2,
         name: 'Транспортная служба (ТС)',
-        photo: 'Краснощекий',
+        photo: '',
         chief: 'Начальник - Краснощекий Яков Александрович',
         description: (
           <div>
@@ -369,7 +369,7 @@ export const data = [
         id: 9,
         idNameInform: 2,
         name: 'Служба эксплуатации объектов газораспределительной системы (СЭОГС)',
-        photo: 'Веренич',
+        photo: '',
         chief: 'Начальник - Веренич Артем Сергеевич',
         description: (
           <div>
@@ -602,7 +602,7 @@ export const data = [
         id: 13,
         idNameInform: 3,
         name: 'Служба эксплуатации внутридомовых объектов газопотребления (СЭВОГ)',
-        photo: 'Рашев',
+        photo: '',
         chief: 'Начальник - Рашев Евгений Алексеевич',
         description: (
           <div>
@@ -816,7 +816,7 @@ export const data = [
         id: 17,
         idNameInform: 3,
         name: 'Служба учёта потреблённого газа населением (СУПГН)',
-        photo: 'Пятница',
+        photo: '',
         chief: 'Начальник - Пятница Александр Владимирович',
         description: (
           <div>
@@ -882,7 +882,7 @@ export const data = [
         id: 18,
         idNameInform: 3,
         name: 'Контакт центр (КЦ)',
-        photo: 'Безмен',
+        photo: '',
         chief: 'Начальник - Безмен Алексей Валерьевич',
         description: (
           <div>
@@ -1216,7 +1216,7 @@ export const data = [
         id: 24,
         idNameInform: 5,
         name: 'Служба заказчика',
-        photo: 'Курленя',
+        photo: '',
         chief: 'Начальник - Курленя Виталий Алексеевич',
         description: (
           <div>
@@ -1557,7 +1557,7 @@ export const data = [
             Филиал “Торфобрикетный завод “Сергеевичское”
           </NavLink>
         ),
-        photo: 'Молочко',
+        photo: '',
         chief: 'Начальник – Молочко Алексей Александрович',
         description: '',
         schedule: (
@@ -1587,7 +1587,7 @@ export const data = [
             Филиал по производству сельскохозяйственной продукции “Бубны”
           </NavLink>
         ),
-        photo: 'Белокурский',
+        photo: '',
         chief:
           'Руководство филиалом осуществляет первый заместитель директора - главный инженер – Белокурский Владимир Петрович',
         description: '',
