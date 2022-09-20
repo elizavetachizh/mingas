@@ -38,7 +38,7 @@ export const BackgroundContainer = styled.img`
   filter: blur(3px) brightness(0.6);
   &.post {
     filter: none;
-    margin-top: 0;
+    margin-top: -164px;
   }
   @media (min-width: 2000px) {
     margin-top: -470px;
@@ -52,7 +52,7 @@ export const BackgroundContainer = styled.img`
   @media (min-width: 3300px) {
     margin-top: -800px;
   }
-  @media (max-width: 1189px) {
+  @media (max-width: 1410px) {
     margin-top: -230px;
   }
   @media (max-width: 750px) {

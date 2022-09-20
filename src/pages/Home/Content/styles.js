@@ -13,13 +13,15 @@ export const ContainerContent = styled.div`
 export const DivContent = styled.div`
   width: 100%;
   //position: absolute;
-  height: 608px;
-  margin-top: 154px;
+  //height: 608px;
+  //margin-top: 154px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
-  bottom: 0;
-  @media (min-width: 1600px) {
+  //bottom: 0;
+  margin-top: 154px;
+  height: fit-content;
+  @media (min-width: 1500px) {
     margin-top: 154px;
     height: fit-content;
   }
@@ -62,14 +64,14 @@ export const DivText = styled.div`
       margin-bottom: 3px;
     }
     @media (max-width: 1800px) {
-      margin-bottom: -190px;
+      margin-bottom: -5px;
     }
-    @media (max-width: 1600px) {
-      margin-bottom: -108px;
-    }
-    @media (max-width: 1315px) {
-      margin-bottom: -110px;
-    }
+    //@media (max-width: 1600px) {
+    //  margin-bottom: -108px;
+    //}
+    //@media (max-width: 1315px) {
+    //  margin-bottom: -110px;
+    //}
     @media (max-width: 1060px) {
       margin-bottom: -84px;
     }
@@ -89,10 +91,11 @@ export const DivText = styled.div`
     //  margin-bottom: -260px;
     //}
     @media (min-width: 2000px) {
-      margin-bottom: -270px;
+      margin-bottom: -2px;
     }
     img {
       width: 80%;
+      margin-top: 10%;
       @media (max-width: 1300px) {
         width: 64%;
       }
@@ -122,21 +125,6 @@ export const DivText = styled.div`
   //    margin: 0 25%;
   //  }
   //}
-  a.day-of-gas {
-    img.day-of-gas {
-      //@media (max-width: 500px) {
-      //  height: 190px;
-      //  width: auto;
-      //}
-      //@media (max-width: 370px) {
-      //  height: 170px;
-      //  width: auto;
-      //}
-    }
-    //@media (max-width: 2300px) {
-    //  margin-bottom: 0;
-    //}
-  }
   &.media-phone {
     margin-top: 80px;
     a {
@@ -183,15 +171,6 @@ export const Text = styled.p`
   }
   @media (max-width: 380px) {
     font-size: 12px;
-  }
-`;
-
-export const DivPrizes = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 510px;
-  @media (max-width: 1200px) {
-    max-height: 900px;
   }
 `;
 
