@@ -20,7 +20,7 @@ export default function Home() {
   const [items, setItems] = useState('');
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch('http://localhost:9000/')
+    fetch('https://back.mingas.by')
       .then((res) => res.text())
       .then(
         (result) => {

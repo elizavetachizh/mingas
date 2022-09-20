@@ -4,7 +4,7 @@ import { INITIAL_FORM_STATE } from '../../const/consts';
 
 export const useFeedback = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
-  const url = 'http://localhost:9000/feedback';
+  const url = 'https://back.mingas.by/feedback';
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
