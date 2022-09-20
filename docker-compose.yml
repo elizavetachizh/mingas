@@ -5,6 +5,7 @@ services:
   mingaby:
     restart: always
     build:
+      context: ./
       dockerfile: Dockerfile
     networks:
       - mingasby
