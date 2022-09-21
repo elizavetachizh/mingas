@@ -82,23 +82,6 @@ export const INITIAL_REQUEST_STATE = {
   file: '',
 };
 
-export interface requestValues {
-  name?: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  date?: string;
-  time?: string;
-  work?: string;
-  isAgree?: boolean;
-  text?: string;
-  fileName?: string;
-  message: string;
-  number: string;
-  reading: string;
-  marka: string;
-}
-
 export const OPTIONS = [
   {
     value: '',
@@ -134,28 +117,6 @@ export const OPTIONS = [
   },
 ];
 
-export const OPTIONS_TIME = [
-  {
-    value: '',
-    label: 'Выберете желаемое время для связи',
-  },
-  {
-    value: '08:00-11:00',
-    label: '08:00-11:00',
-  },
-  {
-    value: '11:00-14:00',
-    label: '11:00-14:00',
-  },
-  {
-    value: '14:00-17:00',
-    label: '14:00-17:00',
-  },
-  {
-    value: '17:00-20:00',
-    label: '17:00-20:00',
-  },
-];
 export const OPTIONS_EQUIPMENT = [
   {
     value: '',

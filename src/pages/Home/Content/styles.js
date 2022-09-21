@@ -44,7 +44,7 @@ export const DivText = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  align-items: end;
+  align-items: center;
   z-index: 5;
   &.post {
     flex-direction: column;

@@ -11,20 +11,14 @@ function LifeOfMingas() {
         Мы в социальных сетях:
         <div>
           <a
-            title={'Наш инстаграм'}
+            title={'Инстаграм'}
             href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
             target={'_blank'}
           >
-            <IoLogoInstagram
-              style={{ width: '54px', height: '54px' }}
-              src={require('../../../assets/png/instagram.png')}
-            />
+            <IoLogoInstagram style={{ width: '54px', height: '54px' }} />
           </a>
-          <a title={'Наш телеграм'} href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
-            <IoMdPaperPlane
-              style={{ width: '54px', height: '54px' }}
-              src={require('../../../assets/png/telegram.png')}
-            />
+          <a title={'Телеграм'} href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
+            <IoMdPaperPlane style={{ width: '54px', height: '54px' }} />
           </a>
         </div>
       </Link>

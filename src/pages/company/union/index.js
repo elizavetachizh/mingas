@@ -10,8 +10,8 @@ import TitleFun from '../../../components/title';
 import TitleForHome from '../../../components/TitleForHome';
 import { Container, Img, Link } from '../styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
-import Feedback from "../../feedback";
-import minsk from "../../../assets/background/phone.jpg";
+import Feedback from '../../feedback';
+import minsk from '../../../assets/background/phone.jpg';
 
 export default function Union() {
   useEffect(() => {
@@ -20,7 +20,11 @@ export default function Union() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Первичная профсоюзная организация УП «МИНГАЗ»'} />
+      <Feedback
+        className={'none'}
+        img={minsk}
+        name={'Первичная профсоюзная организация УП «МИНГАЗ»'}
+      />
       <AdditionalDiv>
         <div className={'grids'}>
           <div className={'text--div'}>
@@ -95,16 +99,10 @@ export default function Union() {
                   href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
                   target={'_blank'}
                 >
-                  <IoLogoInstagram
-                    style={{ width: '54px', height: '54px' }}
-                    src={require('../../../assets/png/instagram.png')}
-                  />
+                  <IoLogoInstagram style={{ width: '54px', height: '54px' }} />
                 </a>
                 <a title={'Наш телеграм'} href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
-                  <IoMdPaperPlane
-                    style={{ width: '54px', height: '54px' }}
-                    src={require('../../../assets/png/telegram.png')}
-                  />
+                  <IoMdPaperPlane style={{ width: '54px', height: '54px' }} />
                 </a>
               </div>
             </Link>
