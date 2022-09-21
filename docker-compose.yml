@@ -10,7 +10,19 @@ services:
     networks:
       - mingasby
     ports:
-      - 443:3000
+      - 3000:3000
+
+  nginx:
+    restart: always
+    image: nginx:1.23.1
+    networks:
+      - mingasby
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - ./host/:/etc/nginx/conf.d/:ro
+      - ./src/ssl/:/ssl/:ro
 
 networks:
   mingasby:
