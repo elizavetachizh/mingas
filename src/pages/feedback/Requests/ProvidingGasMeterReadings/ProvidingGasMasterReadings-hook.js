@@ -5,10 +5,10 @@ import axios from 'axios';
 
 export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   //for site
-  // const url = 'https://back.mingas.by/users';
+  const url = 'https://back.mingas.by/users';
 
   //for me
-  const url = 'https://mingas.by:9000/users';
+  // const url = 'https://mingas.by:9000/users';
 
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});

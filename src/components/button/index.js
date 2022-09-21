@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from './styles';
-export default function ButtonFun({ href, infoButton, backgrounder, style }) {
+export default function ButtonFun({ href, infoButton, backgrounder, style, classname }) {
   return (
-    <Button style={style} to={href} backgrounder={backgrounder}>
+    <Button className={classname} style={style} to={href} backgrounder={backgrounder}>
       {infoButton}
     </Button>
   );

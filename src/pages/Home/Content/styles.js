@@ -46,7 +46,12 @@ export const DivText = styled.div`
   width: 100%;
   align-items: end;
   z-index: 5;
-
+  &.post {
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    align-items: center;
+  }
   &.phone {
     @media (max-width: 1100px) {
       width: 80%;
@@ -58,10 +63,10 @@ export const DivText = styled.div`
   }
   a.phone {
     //margin-bottom: -130px;
-    margin-bottom: 3px;
+    margin-bottom: 7px;
     @media (max-width: 2050px) {
       //margin-bottom: -255px;
-      margin-bottom: 3px;
+      margin-bottom: -5px;
     }
     @media (max-width: 1800px) {
       margin-bottom: -5px;
@@ -73,16 +78,13 @@ export const DivText = styled.div`
     //  margin-bottom: -110px;
     //}
     @media (max-width: 1060px) {
-      margin-bottom: -84px;
-    }
-    @media (max-width: 850px) {
-      margin-bottom: -50px;
+      margin-bottom: -5px;
     }
     @media (max-width: 740px) {
-      margin-bottom: -40px;
+      margin-bottom: -5px;
     }
     @media (max-width: 630px) {
-      margin-bottom: -22px;
+      margin-bottom: -4px;
     }
     @media (max-width: 425px) {
       margin-bottom: -8px;
@@ -91,7 +93,7 @@ export const DivText = styled.div`
     //  margin-bottom: -260px;
     //}
     @media (min-width: 2000px) {
-      margin-bottom: -2px;
+      margin-bottom: -5px;
     }
     img {
       width: 80%;
@@ -152,6 +154,7 @@ export const Text = styled.p`
   font-weight: bold;
   font-size: 30px;
   color: #ffff;
+  text-align: center;
   text-transform: uppercase;
   @media (max-width: 1200px) {
     font-size: 26px;

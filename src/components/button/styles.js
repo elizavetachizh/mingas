@@ -40,6 +40,26 @@ export const Button = styled(NavLink)`
   margin: 2% auto;
   z-index: 2;
   cursor: pointer;
+  &.post {
+    @media (max-width: 950px) {
+      width: 220px;
+      font-size: 16px;
+      height: 40px;
+    }
+    @media (max-width: 596px) {
+      width: 170px;
+      height: 30px;
+    }
+    @media (max-width: 480px) {
+      width: 140px;
+      font-size: 14px;
+    }
+    @media (max-width: 400px) {
+      width: 120px;
+      height: 30px;
+      font-size: 12px;
+    }
+  }
   @media (max-width: 950px) {
     width: 250px;
     font-size: 16px;
@@ -50,6 +70,10 @@ export const Button = styled(NavLink)`
   @media (max-width: 480px) {
     width: 170px;
     height: 40px;
+  }
+  @media (max-width: 400px) {
+    width: 150px;
+    height: 30px;
   }
   ${({ backgrounder }) => buttonBackgroundColor[backgrounder]}
 `;

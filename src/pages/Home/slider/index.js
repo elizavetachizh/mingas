@@ -8,6 +8,7 @@ import dayOfGas from '../../../assets/png/dayOfGas2.jpg';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
 import newPost from '../../../assets/background/newPost.jpg';
 import { Trans } from 'react-i18next';
+import ButtonFun from '../../../components/button';
 
 export default class CarouselFun extends React.Component {
   constructor() {
@@ -35,15 +36,19 @@ export default class CarouselFun extends React.Component {
         // </DivText>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer className={'post'} src={newPost} />
-          <DivText className={'phone'}>
+          <DivText className={'post'}>
             <DivInformAbout>
-              <Text>
-                <Trans i18nKey="description:part1" />
-              </Text>
+              <Text>Лжегазовики, или внимание, агрессивный маркетинг!</Text>
             </DivInformAbout>
             {/*<a className={'phone'} href={'tel:162'}>*/}
             {/*  <img src={phone} alt={''} />*/}
             {/*</a>*/}
+            <ButtonFun
+              classname={'post'}
+              href={'/'}
+              infoButton={'Подробнее'}
+              backgrounder={'border'}
+            />
           </DivText>
         </div>,
       ],

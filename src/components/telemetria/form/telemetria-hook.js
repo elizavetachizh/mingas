@@ -4,10 +4,10 @@ import { INITIAL_FORM_STATE } from '../../../const/consts';
 export const useFormTelemetria = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
   //for site
-  // const url = 'https://back.mingas.by/telemetria';
+  const url = 'https://back.mingas.by/telemetria';
 
   //for me
-  const url = 'https://mingas.by:9000/telemetria';
+  //const url = 'https://mingas.by:9000/telemetria';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {

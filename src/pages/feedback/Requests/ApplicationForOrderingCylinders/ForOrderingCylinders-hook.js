@@ -6,10 +6,10 @@ import axios from 'axios';
 export const useForOrderingCylinders = (): UseFormReturnValues => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
   //for me
-  const url = 'https://mingas.by:9000/cylinders';
+  //const url = 'https://mingas.by:9000/cylinders';
 
   //for site
-  // const url = 'https://back.mingas.by/cylinders';
+  const url = 'https://back.mingas.by/cylinders';
 
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [msg, setMsg] = useState('');

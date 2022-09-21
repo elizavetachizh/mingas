@@ -39,7 +39,78 @@ export const BackgroundContainer = styled.img`
   &.post {
     filter: none;
     margin-top: -164px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 460px;
+
+    @media (min-width: 1500px) {
+      height: 600px;
+    }
+    @media (min-width: 2200px) {
+      height: 700px;
+    }
+    @media (min-width: 2700px) {
+      height: 1000px;
+    }
+    @media (max-width: 1485px) {
+      margin-top: -136px;
+      height: 490px;
+    }
+    @media (max-width: 1290px) {
+      margin-top: -104px;
+    }
+    @media (max-width: 1207px) {
+      height: 430px;
+    }
+    @media (max-width: 1130px) {
+      height: 430px;
+      margin-top: -104px;
+    }
+    @media (max-width: 1084px) {
+      height: 380px;
+      margin-top: -70px;
+    }
+    @media (max-width: 960px) {
+      height: 335px;
+      margin-top: -75px;
+    }
+    @media (max-width: 860px) {
+      height: 300px;
+      margin-top: -70px;
+    }
+    @media (max-width: 740px) {
+      height: 270px;
+      margin-top: -64px;
+    }
+    @media (max-width: 694px) {
+      height: 250px;
+      margin-top: -60px;
+    }
+    @media (max-width: 648px) {
+      height: 215px;
+      margin-top: -48px;
+    }
+    @media (max-width: 512px) {
+      height: 178px;
+      margin-top: -14px;
+    }
+    @media (max-width: 492px) {
+      height: 180px;
+      margin-top: -30px;
+    }
+    @media (max-width: 414px) {
+      height: 145px;
+      margin-top: -15px;
+    }
+    @media (max-width: 380px) {
+      height: 170px;
+      margin-top: -30px;
+    }
   }
+
   @media (min-width: 2000px) {
     margin-top: -470px;
   }
@@ -53,13 +124,13 @@ export const BackgroundContainer = styled.img`
     margin-top: -800px;
   }
   @media (max-width: 1410px) {
-    margin-top: -230px;
+    margin-top: -210px;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 770px) {
     width: 100%;
     margin: -150px auto 0;
   }
-  @media (max-width: 550px) {
+  @media (max-width: 590px) {
     width: 100%;
     margin: -80px auto 0;
   }

@@ -5,10 +5,10 @@ import { INITIAL_FORM_STATE } from '../../const/consts';
 export const useFeedback = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
   //for site
-  // const url = 'https://back.mingas.by/feedback';
+  const url = 'https://back.mingas.by/feedback';
 
   //for me
-  const url = 'https://mingas.by:9000/feedback';
+  // const url = 'https://mingas.by:9000/feedback';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
