@@ -106,7 +106,6 @@
     "babel-preset-react-app": "^10.0.1",
     "concurrently": "^7.1.0",
     "gulp": "^4.0.2",
-    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.19"
   }
 }
