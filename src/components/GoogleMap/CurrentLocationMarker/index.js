@@ -1,5 +1,5 @@
 import React from 'react';
-import { InfoWindow, Marker } from '@react-google-maps/api';
+import { Marker } from '@react-google-maps/api';
 import marker from '../../../assets/marker/location34.png';
 
 export default function CurrentLocationMarker({ position }) {

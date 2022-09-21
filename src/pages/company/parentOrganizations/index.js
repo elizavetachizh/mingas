@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import TitleForHome from '../../../components/TitleForHome';
 import HeaderCompany from '../header_company';
 import { data } from '../../../assets/data/data_ParentOrganization';
 import DopFunctional from './DopFunctional';
@@ -31,7 +30,7 @@ export default function ParentOrganizations() {
           ))}
         </ContainerLinks>
       </AdditionalDiv>
-      <Footer style={{ height: '50vh' }} />
+      <Footer classname={'height'} />
     </Container>
   );
 }

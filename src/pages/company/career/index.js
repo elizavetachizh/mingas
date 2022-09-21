@@ -16,8 +16,8 @@ import {
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
 import { LinksNetwork } from '../../../components/footer/styles';
-import Feedback from "../../feedback";
-import minsk from "../../../assets/background/phone.jpg";
+import Feedback from '../../feedback';
+import minsk from '../../../assets/background/phone.jpg';
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 const div = document.createElement('div');
@@ -61,7 +61,7 @@ export default function Career() {
               ></script>
             </Helmet>
           </div>
-          <BtnIsOpen style={{ width: '50%', margin: '4% auto' }} onClick={animate}>
+          <BtnIsOpen className={'btn-is-open'} onClick={animate}>
             <p>Полезная информация:</p>
             <div>
               {isOpen ? (

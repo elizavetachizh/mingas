@@ -98,6 +98,16 @@ export const BtnIsOpen = styled.div`
   cursor: pointer;
   //margin: 4% auto;
   border-radius: 30px;
+  &.btn-is-open {
+    width: 50%;
+    margin: 4% auto;
+    @media (max-width: 600px) {
+      width: 70%;
+    }
+    @media (max-width: 400px) {
+      width: 80%;
+    }
+  }
   &.menu {
     border-radius: 0;
     height: 50px;
@@ -112,14 +122,15 @@ export const BtnIsOpen = styled.div`
     height: 92%;
     width: 60px;
     text-align: center;
-    @media (max-width: 710px) {
-      height: 86%;
+    @media (max-width: 720px) {
+      height: 84%;
     }
     @media (max-width: 540px) {
       height: 80%;
     }
     @media (max-width: 450px) {
-      width: 64px;
+      width: 66px;
+      height: 76%;
     }
   }
   p {

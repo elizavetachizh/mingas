@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ModalWindow = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;

@@ -17,12 +17,12 @@ export const links = [
     name: 'Регламентирующие документы',
     cardImg: 9,
   },
-  {
-    id: 7,
-    link: '/feedback/reception-of-citizens',
-    name: 'Приём граждан',
-    cardImg: 13,
-  },
+  // {
+  //   id: 7,
+  //   link: '/feedback/reception-of-citizens',
+  //   name: 'Приём граждан',
+  //   cardImg: 13,
+  // },
   {
     id: 8,
     link: '/feedback/question-answer/1',
