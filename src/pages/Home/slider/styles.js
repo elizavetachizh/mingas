@@ -53,7 +53,11 @@ export const BackgroundContainer = styled.img`
       height: 700px;
     }
     @media (min-width: 2700px) {
-      height: 1000px;
+      height: 900px;
+    }
+    @media (max-width: 1700px) {
+      margin-top: -136px;
+      height: 490px;
     }
     @media (max-width: 1485px) {
       margin-top: -136px;
@@ -61,13 +65,14 @@ export const BackgroundContainer = styled.img`
     }
     @media (max-width: 1290px) {
       margin-top: -104px;
+      height: 450px;
     }
     @media (max-width: 1207px) {
       height: 430px;
     }
     @media (max-width: 1130px) {
-      height: 430px;
-      margin-top: -104px;
+      height: 410px;
+      margin-top: -90px;
     }
     @media (max-width: 1084px) {
       height: 380px;
@@ -90,24 +95,28 @@ export const BackgroundContainer = styled.img`
       margin-top: -60px;
     }
     @media (max-width: 648px) {
-      height: 215px;
-      margin-top: -48px;
+      height: 218px;
+      margin-top: -42px;
     }
     @media (max-width: 512px) {
-      height: 178px;
-      margin-top: -14px;
+      height: 172px;
+      margin-top: -22px;
     }
-    @media (max-width: 492px) {
+    @media (max-width: 500px) {
+      height: 196px;
+      margin-top: -46px;
+    }
+    @media (max-width: 460px) {
       height: 180px;
       margin-top: -30px;
     }
     @media (max-width: 414px) {
-      height: 145px;
-      margin-top: -15px;
+      height: 160px;
+      margin-top: -26px;
     }
-    @media (max-width: 380px) {
-      height: 170px;
-      margin-top: -30px;
+    @media (max-width: 360px) {
+      height: 150px;
+      margin-top: -20px;
     }
   }
 

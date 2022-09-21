@@ -49,9 +49,9 @@ export const ContainerFormSearch = styled.div`
   width: 100%;
   padding: 10px 0;
   left: 0;
-  @media (max-width: 639px) {
-    border-radius: 20px;
-  }
+  //@media (max-width: 639px) {
+  //  border-radius: 20px;
+  //}
   //&:before {
   //  content: '';
   //  position: absolute;

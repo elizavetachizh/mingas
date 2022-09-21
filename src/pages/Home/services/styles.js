@@ -84,10 +84,11 @@ export const BackgroundStyle = styled.img`
     display: none;
   }
   @media (min-width: 1600px) {
-    margin: 4% 5%;
+    margin: 4% 0;
   }
   @media (min-width: 2000px) {
-    margin: 1% 10%;
+    margin: 1% 5%;
+    width: 20%;
   }
 `;
 

@@ -10,15 +10,18 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import { DivServices } from '../../pages/services/styles';
 import { links } from '../../assets/data/linksToResidentsOfTheCapitalRegion';
 import ServicesList from '../../pages/services/servicesList';
-import minsk from "../../assets/background/phone.jpg";
-import Feedback from "../../pages/feedback";
+import minsk from '../../assets/background/phone.jpg';
+import Feedback from '../../pages/feedback';
+import { BackgroundStyle } from '../../pages/Home/services/styles';
+import linesOne from '../../assets/background/rig.png';
 
 export default function ResidentsOfTheCapitalRegion() {
   const navigate = useNavigate();
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-        <Feedback className={'none'} img={minsk} name={'Жителям столичного региона'} />
+      <Feedback className={'none'} img={minsk} name={'Жителям столичного региона'} />
+      <BackgroundStyle src={linesOne} />
       <AdditionalDiv>
         <DivServices>
           {links.map((element) => (
@@ -32,10 +35,11 @@ export default function ResidentsOfTheCapitalRegion() {
           ))}
         </DivServices>
       </AdditionalDiv>
+
       <ScrollToTop showUnder={160}>
         <img src={up} alt={''} />
       </ScrollToTop>
-      <Footer />
+      <Footer classname={'service'} />
     </Container>
   );
 }

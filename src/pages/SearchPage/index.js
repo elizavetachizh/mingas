@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { IoIosSearchs } from '../../components/header/styles';
 import { ModalWindow } from '../../components/modalWindow/styles';
-export default function SearchPage() {
+export default function SearchPage({ classname }) {
   const [isForm, setIsForm] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
 
@@ -48,10 +48,6 @@ export default function SearchPage() {
         }
       });
   }
-  console.log(result);
-  console.log(resultEntities);
-  console.log(resultRouters);
-  console.log(message);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
@@ -60,7 +56,7 @@ export default function SearchPage() {
     return (
       <>
         {isModalVisible && (
-          <ModalWindow onClick={handleCloseCLick}>
+          <ModalWindow className={classname} onClick={handleCloseCLick}>
             <Div onClick={handleInsideClick}>
               <IoMdClose style={{ width: '70px' }} color={'black'} onClick={handleCloseCLick} />
               {result.map((element) => {

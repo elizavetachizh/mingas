@@ -123,7 +123,6 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(requestValues);
     try {
       await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
     } catch (err) {

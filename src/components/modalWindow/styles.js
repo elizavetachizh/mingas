@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ModalWindow = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -13,6 +13,9 @@ export const ModalWindow = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 5;
+  &.header {
+    position: absolute;
+  }
 `;
 
 export const ModalWindowOpenAndClose = styled.div`

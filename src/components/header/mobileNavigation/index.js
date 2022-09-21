@@ -74,7 +74,7 @@ export default function MobileNavigation() {
             <IoMdContacts className={'icon iconMobile'} />
             {/*<DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>*/}
           </PersonalAccButton>
-          <SearchPage />
+          <SearchPage classname={'header'} />
           <Language />
           <IoMdEyeOffs
             className={'icon'}

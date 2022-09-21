@@ -15,7 +15,7 @@ import { useNavigate, useParams } from 'react-router';
 import DopFunctionalPressCenter from './DopFunctional';
 import services from '../../assets/background/press.jpg';
 import Feedback from '../feedback';
-import minsk from "../../assets/background/phone.jpg";
+import minsk from '../../assets/background/phone.jpg';
 
 export default function PressCenter() {
   const [inform, setInform] = useState('');
@@ -25,6 +25,7 @@ export default function PressCenter() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (!inform && !currentNewsID && !title) {
       const current = pressCenter.find((element) => element.id === +descriptionID);
       setInform(current.description);
@@ -46,7 +47,7 @@ export default function PressCenter() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-        <Feedback className={'none'} img={minsk} name={'Пресс-центр'} />
+      <Feedback className={'none'} img={minsk} name={'Пресс-центр'} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

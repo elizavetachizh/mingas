@@ -30,7 +30,6 @@ app.use('/', (req, res, next) => {
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 app.get('/', function (req, res) {
   res.send('hello world');
-  console.log(req.body);
 });
 app.post('/users', (req, res) => {
   const transporter = nodemailer.createTransport({
@@ -46,7 +45,6 @@ app.post('/users', (req, res) => {
     },
   });
   const file = req.body.file;
-  console.log(req.body);
   const mailOptions = {
     from: req.body.email, // sender address
     to: 'elizavetka.chizh@gmail.com', // list of receivers
