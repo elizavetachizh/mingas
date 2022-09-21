@@ -47,6 +47,7 @@ export const ContainerFormSearch = styled.div`
   position: absolute;
   background-color: white;
   width: 100%;
+  padding: 10px 0;
   left: 0;
   @media (max-width: 639px) {
     border-radius: 20px;

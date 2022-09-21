@@ -45,7 +45,7 @@ export default class CarouselFun extends React.Component {
             {/*</a>*/}
             <ButtonFun
               classname={'post'}
-              href={'/'}
+              href={'/posts'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />

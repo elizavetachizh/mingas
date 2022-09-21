@@ -19,7 +19,7 @@ import linesOne from '../../../assets/background/rig.png';
 import { BackgroundStyleServices } from '../styles';
 import services from '../../../assets/background/uslugi-i-ceny-4.jpg';
 import Feedback from '../../feedback';
-import minsk from "../../../assets/background/phone.jpg";
+import minsk from '../../../assets/background/phone.jpg';
 
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
@@ -31,7 +31,7 @@ export default function NaturalGas() {
   useEffect(() => {
     if (!inform.length && !currentServiceID && (!title.length || !title)) {
       const current = data.find((element) => element.serviceId === +cardId);
-      setInform(current.description);
+      setInform(current?.description);
       setTitle(current.nameCard);
       setServiceID(+cardId);
     }
@@ -40,7 +40,7 @@ export default function NaturalGas() {
   const animate = useCallback(
     (descriptionID) => {
       const current = data.find((element) => element.serviceId === descriptionID);
-      setInform(current.description);
+      setInform(current?.description);
       setTitle(current.nameCard);
       setServiceID(descriptionID);
       window.scrollTo(0, 0);
@@ -52,7 +52,7 @@ export default function NaturalGas() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-        <Feedback className={'none'} img={minsk} name={'Услуги'} />
+      <Feedback className={'none'} img={minsk} name={'Услуги'} />
       <BackgroundStyleServices src={linesOne} />
       <AdditionalDiv>
         <DivBlocks>

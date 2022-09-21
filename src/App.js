@@ -46,6 +46,7 @@ import Branches from './pages/company/Branches';
 import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 import Corruption from './components/Сorruption';
 import Telemetria from './components/telemetria';
+import Posts from './components/posts';
 
 export default function App() {
   return (
@@ -116,6 +117,7 @@ export default function App() {
         <Route path={'/for-business'} element={<ForBusiness />} />
         <Route path={'/company/branches'} element={<Branches />} />
         <Route path={'/services-legal-entities/2/telemetria'} element={<Telemetria />} />
+        <Route path={'/posts'} element={<Posts />} />
       </Routes>
     </div>
   );

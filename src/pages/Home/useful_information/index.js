@@ -18,7 +18,7 @@ export default function UsefulInform() {
       <DivInform>
         {data.map((element) => (
           <LinkInform
-            key={element.cardDesc}
+            key={element.id}
             cardImg={element.cardImg}
             cardDesc={element.cardDesc}
             link={element.link}
