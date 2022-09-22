@@ -89,6 +89,10 @@ export const DivText = styled.div`
       align-items: end;
       font-weight: bold;
     }
+    @media(max-width: 430px){
+      flex-direction: column;
+      justify-content: flex-end;
+    }
   }
   img {
     width: 100%;
@@ -142,8 +146,11 @@ export const DivText = styled.div`
       @media (max-width: 600px) {
         width: 76%;
       }
-      @media (max-width: 420px) {
+      @media (max-width: 450px) {
         width: 100%;
+      }
+      @media (max-width: 430px) {
+        width: 60%;
       }
     }
   }
@@ -177,7 +184,6 @@ export const DivText = styled.div`
         }
       }
     }
-  }
 `;
 
 export const DivInformAbout = styled.div`
@@ -195,6 +201,12 @@ export const Text = styled.p`
     @media (max-width: 600px) {
       margin-bottom: 50px;
     }
+    @media (max-width: 430px) {
+      font-size: 14px;
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+    }
   }
   @media (max-width: 1200px) {
     font-size: 26px;
@@ -209,11 +221,11 @@ export const Text = styled.p`
   @media (max-width: 600px) {
     font-size: 16px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 430px) {
     font-size: 14px;
-  }
-  @media (max-width: 380px) {
-    font-size: 12px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
   }
 `;
 
