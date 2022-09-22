@@ -4,13 +4,15 @@ import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import TitleFun from '../title';
 import React from 'react';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function Tenders() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Тендеры и закупки'} />
       <AdditionalDiv>
-        <TitleFun infoTitle={'Тендеры и закупки'} color={'blue'} />{' '}
         <Link>
           <a
             target={'_blank'}

@@ -46,9 +46,10 @@ export const Button = styled(NavLink)`
       font-size: 16px;
       height: 40px;
     }
-    @media (max-width: 596px) {
+    @media (max-width: 600px) {
       width: 170px;
       height: 30px;
+      margin: 2% 0;
     }
     @media (max-width: 480px) {
       width: 140px;

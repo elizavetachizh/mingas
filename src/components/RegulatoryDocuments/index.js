@@ -20,6 +20,8 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function DepartmentInformation() {
   const { documentId } = useParams();
@@ -111,6 +113,7 @@ export default function DepartmentInformation() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Регламинтирующие документы'} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

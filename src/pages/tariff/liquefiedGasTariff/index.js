@@ -4,13 +4,16 @@ import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import TitleFun from '../../../components/title';
 import Footer from '../../../components/footer';
 import { LiquefiedGasBlock } from './styles';
+import minsk from '../../../assets/background/phone.jpg';
+import Feedback from '../../feedback';
+import React from 'react';
 
 export default function LiquefiedGasTariff() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Тарифы на сжиженный газ'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Тарифы на сжиженный газ'} />
         <LiquefiedGasBlock>
           <p>
             Цена на сжиженный газ в газовых баллонах объемом 5л (2,0кг), 12л (5,0кг), 27л (11,4кг),

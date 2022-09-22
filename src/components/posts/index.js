@@ -11,7 +11,11 @@ export default function Posts() {
   return (
     <Container>
       <Header />
-      <Feedback className={'none'} img={minsk} name={'Лжегазовики'} />
+      <Feedback
+        className={'none'}
+        img={minsk}
+        name={'УП «МИНГАЗ» просит своих абонентов быть бдительными'}
+      />
       <AdditionalDiv>
         <DopFunctional />
       </AdditionalDiv>

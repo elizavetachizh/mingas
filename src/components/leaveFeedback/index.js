@@ -7,13 +7,15 @@ import { ContainerLinks } from '../../pages/company/parentOrganizations/styles';
 import { Container } from '../../pages/company/styles';
 import LeaveFeedbackMingas from './leaveFeedbackMingas';
 import DopFunctionService from '../../pages/services/DopFunction';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function LeaveFeedback() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Возможность оставить отзыв'} />
       <AdditionalDiv>
-        <TitleFun infoTitle={'Возможность оставить отзыв'} color={'blue'} />
         <ContainerLinks>
           <div
             style={{

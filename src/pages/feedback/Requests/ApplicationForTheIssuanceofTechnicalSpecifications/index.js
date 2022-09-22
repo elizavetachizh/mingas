@@ -26,6 +26,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
     isButtonDisabled,
     handleSubmit,
     form,
+    msg,
   } = useRequestForIssuance();
 
   return (
@@ -157,6 +158,9 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
         {isButtonDisabled && (
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </DivApplication>
   );

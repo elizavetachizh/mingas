@@ -7,13 +7,15 @@ import { ContainerInform, TextForInformation } from './styles';
 import SubTitleFun from '../../../components/SubTitle';
 import TitleForHome from '../../../components/TitleForHome';
 import { Container } from '../../company/styles';
+import Feedback from '../index';
+import minsk from '../../../assets/background/phone.jpg';
 
 export default function ElectronicAppealForEntity() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
+      <Feedback className={'none'} img={minsk} name={'Электронное обращение юридических лиц'} />
       <AdditionalDiv>
-        <TitleForHome color={'blue'} infoTitle={'Электронное обращение юридических лиц'} />
         <ContainerInform>
           <TextForInformation>
             <SubTitleFun color={'blue'} infoSubTitle={'Уважаемые посетители сайта!'} />

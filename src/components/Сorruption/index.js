@@ -13,6 +13,8 @@ import { DescriptionService } from '../../pages/services/DopFunction/styles';
 import React, { useState } from 'react';
 import { ContanerNewsPape } from '../../pages/PressCenter/newspaper/styles';
 import { data } from './data';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function Corruption() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +27,8 @@ export default function Corruption() {
   return (
     <Container>
       <Header />
+      <Feedback className={'none'} img={minsk} name={'Противодействие коррупции'} />
       <AdditionalDiv>
-        <TitleForHome color={'blue'} infoTitle={'Противодействие коррупции'} />
         <General>
           <BtnIsOpen onClick={animate}>
             <p>Информация</p>

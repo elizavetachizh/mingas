@@ -9,6 +9,8 @@ import TitleFun from '../../../components/title';
 import { AdditionalDiv } from './styles';
 import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
 import { Container } from '../../company/styles';
+import minsk from '../../../assets/background/phone.jpg';
+import Feedback from '../../feedback';
 export const styleTd = {
   width: '50%',
   fontWeight: 'bold',
@@ -30,8 +32,8 @@ export default function GeneralInform() {
   return (
     <Container>
       <Header backgroundHeader="blue" />
+      <Feedback className={'none'} img={minsk} name={'АППАРАТ УПРАВЛЕНИЯ УП "МИНГАЗ"'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'АППАРАТ УПРАВЛЕНИЯ УП "МИНГАЗ"'} />
         <Row>
           <HeaderConcats />
           <ContactsInform>

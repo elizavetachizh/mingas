@@ -2,8 +2,15 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import * as emailjs from '@emailjs/browser';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
+import axios from 'axios';
 
 export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
+  //for me
+  const url = 'https://localhost:3000/verification';
+
+  //for site
+  // const url = 'https://back.mingas.by/verification';
+  const [msg, setMsg] = useState('');
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -104,26 +111,34 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
     });
   }, []);
 
-  const handleSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-
-      emailjs
-        .sendForm('service_xcj1sfw', 'template_e0kvkpl', form.current, 'vZiB8zRYvfVKnIOk7')
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-      clearForm();
-      alert('Форма успешно заполнена');
-    },
-    [requestValues]
-  );
-
+  // const handleSubmit = useCallback(
+  //   (event) => {
+  //     event.preventDefault();
+  //
+  //     emailjs
+  //       .sendForm('service_xcj1sfw', 'template_e0kvkpl', form.current, 'vZiB8zRYvfVKnIOk7')
+  //       .then(
+  //         (result) => {
+  //           console.log(result.text);
+  //         },
+  //         (error) => {
+  //           console.log(error.text);
+  //         }
+  //       );
+  //     clearForm();
+  //     alert('Форма успешно заполнена');
+  //   },
+  //   [requestValues]
+  // );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post(url, requestValues).then((response) => setMsg(response.data.respMesg));
+    } catch (err) {
+      console.log('error', err);
+    }
+    clearForm();
+  };
   return {
     handleUserInput,
     requestValues,
@@ -133,5 +148,6 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
     isButtonDisabled,
     handleSubmit,
     form,
+    msg,
   };
 };

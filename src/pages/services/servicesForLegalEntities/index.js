@@ -9,7 +9,9 @@ import up from '../../../assets/png/up_arrow_round.png';
 import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities_general';
 import ServicesList from './serviceList';
 import { useNavigate } from 'react-router';
-import {Container} from "../../company/styles";
+import { Container } from '../../company/styles';
+import minsk from '../../../assets/background/phone.jpg';
+import Feedback from '../../feedback';
 
 export default function ServicesForLegalEntities() {
   const navigate = useNavigate();
@@ -21,6 +23,7 @@ export default function ServicesForLegalEntities() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Услуги для бизнеса'} />
       <AdditionalDiv>
         <TitleFun color={'blue'} infoTitle={'Услуги для бизнеса'} />
         <DivServices>

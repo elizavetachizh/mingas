@@ -18,6 +18,8 @@ import {
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import { useParams } from 'react-router';
+import minsk from '../../../../assets/background/phone.jpg';
+import Feedback from '../../../feedback';
 
 export default function CardOfService() {
   const [inform, setInform] = useState([]);
@@ -38,7 +40,7 @@ export default function CardOfService() {
       const current = dataLegalEntities.find((element) => element.serviceId === descriptionID);
       setInform(current.description);
       setTitle(current.nameCard);
-        window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
       setServiceID(currentServiceID ? '' : descriptionID);
     },
     [currentServiceID]
@@ -46,6 +48,7 @@ export default function CardOfService() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Услуги для юридических лиц'} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

@@ -3,8 +3,10 @@ import { DivApplication, Form } from '../styles';
 import {
   Button,
   DivInput,
-  DivInputCheckbox, DivInputFile,
-  InputCheckbox, InputFile,
+  DivInputCheckbox,
+  DivInputFile,
+  InputCheckbox,
+  InputFile,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
@@ -18,11 +20,10 @@ export default function ApplicationForOrderingCylinders() {
     requestValues,
     errors,
     handleCheckBox,
-    setRequestValues,
     isButtonDisabled,
     handleSubmit,
     form,
-    msg
+    msg,
   } = useForOrderingCylinders();
   const { t } = useTranslation();
 

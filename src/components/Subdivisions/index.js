@@ -12,11 +12,13 @@ import up from '../../assets/png/up_arrow_round.png';
 import Footer from '../footer';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function Subdivisions() {
-    const subdivisionId = useParams();
+  const subdivisionId = useParams();
   const [info, setInfo] = useState([]);
-    const object = Object.values(subdivisionId)
+  const object = Object.values(subdivisionId);
   useEffect(() => {
     if (+object[0]) {
       const current = subdivisions.filter((element) => element.id === +object[0]);
@@ -26,10 +28,10 @@ export default function Subdivisions() {
     }
     window.scrollTo(0, 0);
   }, [subdivisionId, subdivisions]);
-    console.log(object[0])
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Подразделения'} />
       <AdditionalDiv>
         <DivBlocks>
           <ContainerInform>

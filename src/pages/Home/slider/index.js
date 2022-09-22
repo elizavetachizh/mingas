@@ -35,10 +35,13 @@ export default class CarouselFun extends React.Component {
         //   </a>
         // </DivText>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <BackgroundContainer className={'post'} src={newPost} />
+          <div>
+            {' '}
+            <BackgroundContainer className={'post'} src={newPost} />
+          </div>
           <DivText className={'post'}>
             <DivInformAbout>
-              <Text>Лжегазовики, или внимание, агрессивный маркетинг!</Text>
+              <Text>УП «МИНГАЗ» просит своих абонентов быть бдительными</Text>
             </DivInformAbout>
             {/*<a className={'phone'} href={'tel:162'}>*/}
             {/*  <img src={phone} alt={''} />*/}

@@ -98,26 +98,30 @@ export const BackgroundContainer = styled.img`
       height: 218px;
       margin-top: -42px;
     }
-    @media (max-width: 512px) {
-      height: 172px;
-      margin-top: -22px;
+    @media (max-width: 600px) {
+      height: 400px;
+      //margin-top: -42px;
     }
-    @media (max-width: 500px) {
-      height: 196px;
-      margin-top: -46px;
-    }
-    @media (max-width: 460px) {
-      height: 180px;
-      margin-top: -30px;
-    }
-    @media (max-width: 414px) {
-      height: 160px;
-      margin-top: -26px;
-    }
-    @media (max-width: 360px) {
-      height: 150px;
-      margin-top: -20px;
-    }
+    //@media (max-width: 512px) {
+    //  height: 172px;
+    //  margin-top: -22px;
+    //}
+    //@media (max-width: 500px) {
+    //  height: 196px;
+    //  margin-top: -46px;
+    //}
+    //@media (max-width: 460px) {
+    //  height: 180px;
+    //  margin-top: -30px;
+    //}
+    //@media (max-width: 414px) {
+    //  height: 160px;
+    //  margin-top: -26px;
+    //}
+    //@media (max-width: 360px) {
+    //  height: 150px;
+    //  margin-top: -20px;
+    //}
   }
 
   @media (min-width: 2000px) {
@@ -139,12 +143,17 @@ export const BackgroundContainer = styled.img`
     width: 100%;
     margin: -150px auto 0;
   }
-  @media (max-width: 590px) {
+  @media (max-width: 600px) {
     width: 100%;
-    margin: -80px auto 0;
+    height: 400px;
+    margin: 0 auto 0;
   }
-  @media (max-width: 440px) {
-    width: 100%;
-    margin: -50px auto 0;
-  }
+  //@media (max-width: 590px) {
+  //  width: 100%;
+  //  margin: -80px auto 0;
+  //}
+  //@media (max-width: 440px) {
+  //  width: 100%;
+  //  margin: -50px auto 0;
+  //}
 `;

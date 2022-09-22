@@ -13,6 +13,8 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Table, Tbody, Thead } from '../../pages/feedback/receptionOfCitizens/styles';
 import TitleFun from '../title';
 import { Container } from '../../pages/company/styles';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function AdministartiveServicesForLegal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +34,12 @@ export default function AdministartiveServicesForLegal() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback
+        className={'none'}
+        img={minsk}
+        name={'Административные услуги для юридических лиц'}
+      />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Административные услуги для юридических лиц'} />
         <div style={{ width: '100%', margin: '8% auto' }}>
           <ContainerInformAboutService>
             <h3>

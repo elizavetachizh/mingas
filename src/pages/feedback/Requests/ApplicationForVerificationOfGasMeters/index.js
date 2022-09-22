@@ -24,6 +24,7 @@ export default function ApplicationForVerificationOfGasMeters() {
     isButtonDisabled,
     handleSubmit,
     form,
+    msg,
   } = useRequestForVerificationOfGasMeters();
   return (
     <DivApplication>
@@ -146,6 +147,9 @@ export default function ApplicationForVerificationOfGasMeters() {
         ) : (
           <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </DivApplication>
   );

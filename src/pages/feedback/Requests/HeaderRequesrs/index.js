@@ -9,11 +9,11 @@ import ProvidingGasMeterReadings from '../ProvidingGasMeterReadings';
 import TitleForHome from '../../../../components/TitleForHome';
 import { useTranslation } from 'react-i18next';
 
-export default function HeaderRequests() {
+export default function HeaderRequests({ style }) {
   const [active, setActive] = useState('ApplicationForOrderingCylinders');
   const { t } = useTranslation();
   return (
-    <BlockContainerRequests>
+    <BlockContainerRequests style={style}>
       <TitleForHome
         fontSize={'m'}
         style={{ margin: '0 auto' }}

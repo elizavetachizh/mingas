@@ -14,6 +14,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { useNavigate } from 'react-router';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function RegulatoryDocumentsForLegal() {
   const { documentId } = useParams();
@@ -52,6 +54,7 @@ export default function RegulatoryDocumentsForLegal() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Регламинтирующие документы'} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>
@@ -71,7 +74,6 @@ export default function RegulatoryDocumentsForLegal() {
           </HeaderCompanyDiv>
           {isPhone ? (
             <ContainerInform>
-              <Name>{name}</Name>
               {infoForSearch.map((el) => (
                 <BlockBtn>
                   <a href={el.link} target={'_blank'}>

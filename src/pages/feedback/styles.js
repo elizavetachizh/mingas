@@ -91,10 +91,11 @@ export const Divbackground = styled.div`
     border-radius: 0;
   }
   @media (max-width: 900px) {
-    top: 80px;
+    top: 75px;
+    background: white;
   }
   @media (max-width: 424px) {
-    top: 66px;
+    top: 62px;
   }
   p {
     position: absolute;
@@ -104,6 +105,7 @@ export const DivImage = styled.div`
   //height: 470px;
   transform: translate3d(0px, 0px, 0px);
   width: 100%;
+  height: 98%;
   img {
     width: 100%;
     background-size: cover;
@@ -111,8 +113,25 @@ export const DivImage = styled.div`
     background-repeat: no-repeat;
     object-fit: cover;
     height: 400px;
+    &.post {
+      width: 150%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+      @media (max-width: 490px) {
+        width: 190%;
+      }
+      @media (max-width: 445px) {
+        width: 210%;
+      }
+      @media (max-width: 400px) {
+        width: 230%;
+      }
+    }
   }
-  &.none:after{
+  &.none:after {
     content: none;
     background: rgba(0, 0, 0, 0);
   }
@@ -163,7 +182,7 @@ export const Text = styled.div`
   font-size: 1.4rem;
   align-items: center;
   font-weight: bold;
-  @media(max-width: 640px){
+  @media (max-width: 640px) {
     font-size: 1rem;
   }
 `;

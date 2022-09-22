@@ -3,7 +3,7 @@ import 'react-carousel-animated/dist/style.css';
 import { photo } from '../../../assets/data/liveInStyleOfMingas';
 import { Link, ImgCarousel } from '../../company/styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
-import { IoIosArrowRoundForward } from 'react-icons/io';
+import { IoMdRadioButtonOn } from 'react-icons/io';
 function LifeOfMingas() {
   return (
     <>
@@ -41,7 +41,7 @@ function LifeOfMingas() {
         >
           {photo.map((image, index) => (
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-              {' '}
+              <IoMdRadioButtonOn style={{ width: '24', height: '24' }} />
               <ImgCarousel
                 key={index}
                 src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.jpg`)}
@@ -51,7 +51,6 @@ function LifeOfMingas() {
                   margin: '.5rem',
                 }}
               />
-              <IoIosArrowRoundForward style={{ width: '34px', height: '34px' }} />
             </div>
           ))}
         </ReactCarousel>

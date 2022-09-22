@@ -3,8 +3,10 @@ import { DivApplication, Form } from '../styles';
 import {
   Button,
   DivInput,
-  DivInputCheckbox, DivInputFile,
-  InputCheckbox, InputFile,
+  DivInputCheckbox,
+  DivInputFile,
+  InputCheckbox,
+  InputFile,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
@@ -24,7 +26,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
     isButtonDisabled,
     handleSubmit,
     form,
-    setRequestValues,
+    msg,
   } = UseForRepairOfGasUsingEquipment();
 
   return (
@@ -178,6 +180,9 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         {isButtonDisabled && (
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </DivApplication>
   );

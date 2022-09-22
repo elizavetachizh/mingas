@@ -32,7 +32,7 @@ export default function ParallaxDiv() {
       <ParallaxD style={{ padding: 0, margin: 0, width: '100%' }}>
         <img
           style={{ width: '100%' }}
-          src={'http://localhost:3000/public/images/backgroundCar.jpg'}
+          src={'https://back.mingas.by/public/images/backgroundCar.jpg'}
         />
       </ParallaxD>
     </ContainerContent>

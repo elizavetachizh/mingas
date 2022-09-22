@@ -4,6 +4,7 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
+  height: 100%;
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
@@ -34,6 +35,9 @@ export const DivContent = styled.div`
   @media (max-width: 900px) {
     margin-top: 80px;
   }
+  @media (max-width: 600px) {
+    height: 400px;
+  }
   @media (max-width: 424px) {
     margin-top: 66px;
   }
@@ -51,11 +55,39 @@ export const DivText = styled.div`
     width: 50%;
     margin: 0 auto;
     align-items: center;
+    @media(max-width: 600px){
+        position: absolute;
+        color: white;
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        text-align: center;
+        display: flex;
+      flex-direction: column;
+        justify-content: center;
+        font-size: 1.4rem;
+        align-items: end;
+        font-weight: bold;
+    }
+    }
   }
   &.phone {
     @media (max-width: 1100px) {
       width: 80%;
       margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      position: absolute;
+      color: white;
+      width: 90%;
+      margin: 0 auto;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      align-items: end;
+      font-weight: bold;
     }
   }
   img {
@@ -86,9 +118,12 @@ export const DivText = styled.div`
     @media (max-width: 630px) {
       margin-bottom: -4px;
     }
-    @media (max-width: 425px) {
-      margin-bottom: -8px;
+    @media (max-width: 600px) {
+      margin-bottom: -5px;
     }
+    //@media (max-width: 425px) {
+    //  margin-bottom: -8px;
+    //}
     //@media (min-width: 2000px) {
     //  margin-bottom: -260px;
     //}
@@ -104,11 +139,11 @@ export const DivText = styled.div`
       @media (max-width: 1100px) {
         width: 60%;
       }
-      @media (max-width: 500px) {
-        width: 66%;
+      @media (max-width: 600px) {
+        width: 76%;
       }
-      @media (max-width: 380px) {
-        width: 80%;
+      @media (max-width: 420px) {
+        width: 100%;
       }
     }
   }
@@ -156,6 +191,11 @@ export const Text = styled.p`
   color: #ffff;
   text-align: center;
   text-transform: uppercase;
+  &.phone {
+    @media (max-width: 600px) {
+      margin-bottom: 50px;
+    }
+  }
   @media (max-width: 1200px) {
     font-size: 26px;
   }

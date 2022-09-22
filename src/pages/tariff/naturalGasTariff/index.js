@@ -4,13 +4,16 @@ import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import TitleFun from '../../../components/title';
 import Footer from '../../../components/footer';
 import { BlockNaturalGas } from './styles';
+import Feedback from '../../feedback';
+import minsk from '../../../assets/background/phone.jpg';
+import React from 'react';
 
 export default function NaturalGasTariff() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
+      <Feedback className={'none'} img={minsk} name={'Тарифы на природный газ'} />
       <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Тарифы на природный газ'} />
         <BlockNaturalGas>
           <h4>Уважаемый плательщик!</h4>
           <p>

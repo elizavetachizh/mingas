@@ -2,8 +2,15 @@ import * as emailjs from '@emailjs/browser';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import { useCallback, useMemo, useRef, useState } from 'react';
+import axios from 'axios';
 
 export const useRequestForIssuance = (): UseFormReturnValues => {
+  //for me
+  // const url = 'https://localhost:3000/maintenance';
+
+  //for site
+  const url = 'https://back.mingas.by/maintenance';
+  const [msg, setMsg] = useState('');
   const [requestIssuanceValues, setRequestIssuanceValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const isValidateEmail = (email: string): boolean => {
@@ -119,26 +126,36 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
     });
   }, []);
 
-  const handleSubmit = useCallback(
-    (event) => {
-      event.preventDefault();
-      clearForm();
-      emailjs
-        .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-
-      alert('Форма успешно заполнена');
-    },
-    [requestIssuanceValues]
-  );
-
+  // const handleSubmit = useCallback(
+  //   (event) => {
+  //     event.preventDefault();
+  //     clearForm();
+  //     emailjs
+  //       .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
+  //       .then(
+  //         (result) => {
+  //           console.log(result.text);
+  //         },
+  //         (error) => {
+  //           console.log(error.text);
+  //         }
+  //       );
+  //
+  //     alert('Форма успешно заполнена');
+  //   },
+  //   [requestIssuanceValues]
+  // );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios
+        .post(url, requestIssuanceValues)
+        .then((response) => setMsg(response.data.respMesg));
+    } catch (err) {
+      console.log('error', err);
+    }
+    clearForm();
+  };
   return {
     handleUserInput,
     requestIssuanceValues,
@@ -149,5 +166,6 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
     isButtonDisabled,
     handleSubmit,
     form,
+    msg,
   };
 };
