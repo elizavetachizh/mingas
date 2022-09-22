@@ -10,15 +10,15 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import { DivServices } from '../../pages/services/styles';
 import { links } from '../../assets/data/linksForBusines';
 import ServicesList from '../../pages/services/servicesList';
-import Feedback from "../../pages/feedback";
-import minsk from "../../assets/background/phone.jpg";
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 
 export default function ForBusiness() {
   const navigate = useNavigate();
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-        <Feedback className={'none'} img={minsk} name={'Для бизнеса'} />
+      <Feedback className={'none'} img={minsk} name={'Для бизнеса'} />
       <AdditionalDiv>
         <DivServices>
           {links.map((element) => (
@@ -33,7 +33,7 @@ export default function ForBusiness() {
         </DivServices>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
+        <img src={up} alt={'Вверх'} />
       </ScrollToTop>
       <Footer />
     </Container>

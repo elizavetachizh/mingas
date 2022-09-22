@@ -332,22 +332,22 @@ export const data = [
       {
         id: 1,
         name: 'Правила по обеспечению промышленной безопасности в области газоснабжения Республики Беларусь',
-        link: 'https://pravo.by/document/?guid=3961&p0=C21200156',
+        link: 'https://pravo.by/document/?guid=3961&p0=W209p0013',
       },
       {
         id: 2,
         name: 'Правила пользования газом в быту;',
-        link: 'https://etalonline.by/document/?regnum=c21300384&q_id=5743881',
+        link: 'https://pravo.by/document/?guid=3871&p0=C20701539',
       },
       {
         id: 3,
         name: 'Правила учёта природного газа;',
-        link: 'https://etalonline.by/document/?regnum=c21400571&q_id=5743920',
+        link: 'https://pravo.by/document/?guid=3961&p0=C20801934',
       },
       {
         id: 4,
         name: 'Правила пользования жилыми помещениями, содержания жилых и вспомогательных помещений;',
-        link: 'https://etalonline.by/document/?regnum=c21100716&q_id=5743948',
+        link: 'https://pravo.by/document/?guid=12551&p0=C21300399&p1=1',
       },
     ],
   },

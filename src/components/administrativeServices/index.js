@@ -5,19 +5,19 @@ import HeaderAdministrativeServices from './Header';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import React from 'react';
-import {Container} from "../../pages/company/styles";
-import Feedback from "../../pages/feedback";
-import minsk from "../../assets/background/phone.jpg";
+import { Container } from '../../pages/company/styles';
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 export default function AdministrativeServices() {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-        <Feedback className={'none'} img={minsk} name={'Административные услуги'} />
+      <Feedback className={'none'} img={minsk} name={'Административные услуги'} />
       <AdditionalDiv>
         <HeaderAdministrativeServices />
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
+        <img src={up} alt={'вверх'} />
       </ScrollToTop>
       <Footer />
     </Container>

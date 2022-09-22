@@ -1,7 +1,6 @@
 import { Container } from '../../company/styles';
 import Header from '../../../components/header';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import TitleFun from '../../../components/title';
 import Footer from '../../../components/footer';
 import { LiquefiedGasBlock } from './styles';
 import minsk from '../../../assets/background/phone.jpg';

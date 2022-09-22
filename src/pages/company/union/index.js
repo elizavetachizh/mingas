@@ -107,6 +107,10 @@ export default function Union() {
               </div>
             </Link>
           </div>
+
+          <div className={'img--div'} data-aos={'fade-up'}>
+            <img src={napravlenie} alt={''} />
+          </div>
           <Img src={require('../../../assets/management/departaments/Доморацкая.jpg')} />
           <TitleForHome
             className={'company'}
@@ -117,9 +121,6 @@ export default function Union() {
             }
             fontSize={'s'}
           />
-          <div className={'img--div'} data-aos={'fade-up'}>
-            <img src={napravlenie} alt={''} />
-          </div>
         </div>
       </AdditionalDiv>
       <Footer />

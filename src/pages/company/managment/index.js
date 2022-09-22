@@ -37,8 +37,8 @@ export default function Management() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <Feedback className={'none'} img={minsk} name={'Руководство'} />
-      <AdditionalDiv>
-        <HeaderCompany />
+      <HeaderCompany />
+      <AdditionalDiv style={{ margin: '4% auto' }}>
         <DivTextPhoto>
           <ImageDiv data-aos={'fade-up'} src={photoHistory} />
           <DivText data-aos={'fade-up'}>

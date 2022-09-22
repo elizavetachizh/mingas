@@ -34,6 +34,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
+import { IoIosArrowForward } from 'react-icons/io';
 
 export default function Header({ backgroundHeader }) {
   const [navbar, setNavbar] = useState(false);
@@ -149,7 +150,7 @@ export default function Header({ backgroundHeader }) {
                     {t('header:ParentOrganizations')}
                   </ButtonLink>
                   <ButtonLink to="/company/branches" style={{ width: '100%' }}>
-                    Филиалы УП "Мингаз" <img alt={''} src={next} />
+                    Филиалы УП "Мингаз" <IoIosArrowForward color={'#0d4475'} />{' '}
                     <span style={{ margin: '20% 0 0' }}>
                       <NavLink to="/company/branches/ogonek">
                         Филиал оздоровительный комплекс "Огонёк"
@@ -175,7 +176,7 @@ export default function Header({ backgroundHeader }) {
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/services">
-                    Услуги <img alt={''} src={next} />
+                    Услуги <IoIosArrowForward color={'#0d4475'} />
                     <span>
                       <NavLink to="/services/administrative-services">
                         Административные процедуры

@@ -120,6 +120,9 @@ export const DivImage = styled.div`
       background-repeat: no-repeat;
       object-fit: cover;
       height: 400px;
+      @media (max-width: 540px) {
+        width: 170%;
+      }
       @media (max-width: 490px) {
         width: 190%;
       }

@@ -26,7 +26,6 @@ export default function History() {
       <Feedback className={'none'} img={minsk} name={'История'} />
       <HeaderCompany />
       <AdditionalDiv style={{ margin: '4% auto' }}>
-
         <TitleForHome
           className={'company'}
           margin={'s'}

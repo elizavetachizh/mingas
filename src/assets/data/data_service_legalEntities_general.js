@@ -28,7 +28,8 @@ import prilozenie_pismo from '../pdf/Prilozhenie-1.pdf';
 import prilozanie_plombi from '../wordFile/Prilozhenie-plombi.docx';
 import { NavLink } from 'react-router-dom';
 const styleImg = {
-  width: '400px',
+  width: '300px',
+  margin: '0 auto',
 };
 export const dataLegalEntities = [
   {
@@ -521,23 +522,23 @@ export const dataLegalEntities = [
         nameDescription: 'Информация',
         inform: (
           <div>
+            Поверочная лаборатория УП «МИНГАЗ» оказывает услуги юридическим лицам по поверке
+            следующих средств измерений:
             <ul>
-              Поверочная лаборатория УП «МИНГАЗ» оказывает услуги юридическим лицам по поверке
-              следующих средств измерений:
-              <img style={styleImg} alt={'0'} src={messung_1} />
+              <img style={styleImg} alt={'Манометры'} src={messung_1} />
               <li>Манометры технические с пределом измерений от 0 до 25 МПа;</li>
-              <img style={styleImg} alt={'0'} src={messung_2} />
+              <img style={styleImg} alt={'Манометры'} src={messung_2} />
               <li>Манометры самопишущие МТС, ДСС с пределом измерения от 0 до 25 МПа;</li>
-              <img style={styleImg} alt={'0'} src={messung_3} />
+              <img style={styleImg} alt={'Манометры'} src={messung_3} />
               <li>Манометры электроконтактные ЭКМ с пределом измерений от 0 до 25 МПа;</li>
-              <img style={styleImg} alt={'0'} src={messung_4} />
+              <img style={styleImg} alt={'Манометры'} src={messung_4} />
               <li>Напоромеры, тягонапоромеры с пределом измерений от – 100 до 40 кПа;</li>
-              <img style={styleImg} alt={'0'} src={messung_5} />
+              <img style={styleImg} alt={'Напоромеры'} src={messung_5} />
               <li>
                 Мановакуумметры двухтрубные (U-образные жидкостные манометры) с пределом измерения
                 от 0 до 10 000 Па
               </li>
-              <img style={styleImg} alt={'0'} src={messung_6} />
+              <img style={styleImg} alt={'Мановакуумметры'} src={messung_6} />
               <li>
                 Измерительные преобразователи давления (датчики) с унифицированным электрическим
                 токовым выходным сигналом постоянного тока с пределом измерений от 0 до 2,5 МПа

@@ -25,8 +25,8 @@ import {
   General,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { Container } from '../../pages/company/styles';
-import Feedback from "../../pages/feedback";
-import minsk from "../../assets/background/phone.jpg";
+import Feedback from '../../pages/feedback';
+import minsk from '../../assets/background/phone.jpg';
 export default function MethodPayment() {
   const [open, setOpen] = useState(false);
   const animate = () => {
@@ -74,14 +74,14 @@ export default function MethodPayment() {
             </p>
             <p>1.Выбрать пункт «Система Расчет» (ЕРИП);</p>
             <p>2.Выбрать последовательно вкладки: ЕРИП / Коммунальные платежи /</p>
-            <ImgERIP className={'big'} alt={''} src={payment} />
+            <ImgERIP className={'big'} alt={'Оплата'} src={payment} />
             <p>3.Газоснабжение / Минск / Мингаз / Газоснабжение;</p>
             <p>4.Ввести номер лицевого счета;</p>
-            <ImgERIP className={'big'} src={bankBook} alt={''} />
+            <ImgERIP className={'big'} src={bankBook} alt={'Оплата'} />
             <p>5.Ввести показания счетчика газа;</p>
-            <ImgERIP className={'big'} src={meterReading} alt={''} />
-            <ImgERIP className={'big'} alt={''} src={meterReading_2} />
-            <ImgERIP className={'big'} alt={''} src={paymentDetails} />
+            <ImgERIP className={'big'} src={meterReading} alt={'Оплата'} />
+            <ImgERIP className={'big'} alt={'Оплата'} src={meterReading_2} />
+            <ImgERIP className={'big'} alt={'Оплата'} src={paymentDetails} />
             <p>6.Проверить корректность информации;</p>
             <p>7.Совершить платеж.</p>
           </Div>
@@ -107,20 +107,20 @@ export default function MethodPayment() {
             </p>
             <p>1.Выбрать пункт «Система Расчет» (ЕРИП);</p>
             <p>2.Выбрать вкладку: ЕРИП / Коммунальные платежи /;</p>
-            <ImgERIP alt={''} src={ERIP} />
+            <ImgERIP alt={'Оплата'} src={ERIP} />
             <p>3. Выбрать вкладку: ЕРИП /Газоснабжение/;</p>
-            <ImgERIP alt={''} src={ERIP_2} />
+            <ImgERIP alt={'Оплата'} src={ERIP_2} />
             <p>4. Выбрать вкладку: ЕРИП /Минск/</p>
-            <ImgERIP alt={''} src={ERIP_3} />
+            <ImgERIP alt={'Оплата'} src={ERIP_3} />
             <p>5. Выбрать вкладку: ЕРИП / Мингаз/</p>
-            <ImgERIP alt={''} src={ERIP_4} />
+            <ImgERIP alt={'Оплата'} src={ERIP_4} />
             <p>6. Выбрать вкладку: ЕРИП /Газоснабжение/</p>
-            <ImgERIP alt={''} src={ERIP_5} />
+            <ImgERIP alt={'Оплата'} src={ERIP_5} />
             <p>
               7. В вкладке /Газоснабжение/, необходимо ввести номер лицевого счета (уникальный
               цифровой код присвоенный при заключении договора), выбрать кнопку «ИНФО»;
             </p>
-            <ImgERIP alt={''} src={ERIP_6} />
+            <ImgERIP alt={'Оплата'} src={ERIP_6} />
             <p>
               8. В разделе «Платежи ЕРИП, Мингаз», оплата за потребленный природный газ производится
               следующим образом:

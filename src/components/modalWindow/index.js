@@ -12,7 +12,10 @@ export default function Modal({ handleCloseCLick, currentLeader, nameId }) {
       <ModalWindowOpenAndClose onClick={handleInsideClick}>
         <Close src={close} onClick={handleCloseCLick} />
         <InformModal>
-          <img alt={''} src={require(`../../assets/management/${currentLeader.cardImg}.jpg`)} />
+          <img
+            alt={currentLeader.fullName}
+            src={require(`../../assets/management/${currentLeader.cardImg}.jpg`)}
+          />
           <p>{currentLeader.fullName}</p>
           <p>{currentLeader.position}</p>
           <strong>Курируемые направления:</strong>

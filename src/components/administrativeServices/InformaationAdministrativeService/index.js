@@ -18,8 +18,8 @@ import up from '../../../assets/png/up_arrow_round.png';
 import { Container } from '../../../pages/company/styles';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { useLocation, useNavigate } from 'react-router';
-import Feedback from "../../../pages/feedback";
-import minsk from "../../../assets/background/phone.jpg";
+import Feedback from '../../../pages/feedback';
+import minsk from '../../../assets/background/phone.jpg';
 
 export default function InformationAdministrativeService() {
   const { pathname } = useLocation();
@@ -135,7 +135,7 @@ export default function InformationAdministrativeService() {
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
+        <img src={up} alt={'Вверх'} />
       </ScrollToTop>
       <Footer />
     </Container>

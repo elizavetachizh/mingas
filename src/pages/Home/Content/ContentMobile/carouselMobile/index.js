@@ -4,8 +4,8 @@ import phone from '../../../../../assets/png/PhoneFour.png';
 import imageContent from '../../../../../assets/background/mingas_background(2).jpg';
 import newPost from '../../../../../assets/background/newPost.jpg';
 import { Trans } from 'react-i18next';
-import { BackgroundContainer, Main, WindowDiv } from '../../../slider/styles';
-import { DivInformAbout, DivText, Text } from '../../styles';
+import { Main, WindowDiv } from '../../../slider/styles';
+import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
 import { DivImage } from '../../../../feedback/styles';
 
@@ -17,20 +17,20 @@ export default class CarouselMobile extends React.Component {
       slides: [
         <>
           <DivImage>
-            <img src={imageContent} />
+            <img src={imageContent} alt={'картинка загружается'} />
           </DivImage>
           <DivText className={'phone'}>
             <Text className={'phone'} style={{ position: 'initial' }}>
               <Trans i18nKey="description:part1" />
             </Text>
             <a className={'phone'} href={'tel:162'}>
-              <img src={phone} alt={''} />
+              <img src={phone} alt={'картинка загружается'} />
             </a>
           </DivText>
         </>,
         <>
           <DivImage className={'none'}>
-            <img className={'post'} src={newPost} />
+            <img className={'post'} src={newPost} alt={'картинка загружается'} />
           </DivImage>
           <DivText className={'post'}>
             <Text style={{ position: 'initial', textAlign: 'end' }}>

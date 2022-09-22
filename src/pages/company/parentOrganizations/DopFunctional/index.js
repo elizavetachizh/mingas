@@ -1,10 +1,10 @@
-import {ContainerForInform } from '../styles';
+import { ContainerForInform } from '../styles';
 
-export default function DopFunctional({ link, img }) {
+export default function DopFunctional({ link, img, name }) {
   return (
     <ContainerForInform>
-      <a href={link}>
-        <img src={require(`../../../../assets/png/${img}.png`)} alt={''} />
+      <a target={'_blank'} href={link}>
+        <img src={require(`../../../../assets/png/${img}.png`)} alt={name} />
       </a>
     </ContainerForInform>
   );
