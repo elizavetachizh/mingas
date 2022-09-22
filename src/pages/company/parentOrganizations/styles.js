@@ -13,6 +13,9 @@ export const ContainerLinks = styled.div`
   flex-direction: row;
   div.feedback-yandex {
     width: 500px;
+    @media (max-width: 700px) {
+      margin: 0 auto;
+    }
     @media (max-width: 500px) {
       width: 400px;
     }
