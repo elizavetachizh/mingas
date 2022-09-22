@@ -57,7 +57,7 @@ export default function LeaveFeedbackMingas() {
       formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;
       setFormValues({
         ...formValues,
-        file: reader.result,
+        document: reader.result,
       });
     };
 
@@ -66,10 +66,6 @@ export default function LeaveFeedbackMingas() {
     };
 
     reader.readAsDataURL(file);
-    setFormValues({
-      ...formValues,
-      file: file,
-    });
   }
 
   return (

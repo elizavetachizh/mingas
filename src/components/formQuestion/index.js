@@ -54,24 +54,6 @@ export default function FormQuestion() {
     let reader = new FileReader();
     reader.onload = function (e) {
       formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;
-      // if (['image/png', 'image/jpeg'].includes(file.type)) {
-      //   setFormValues({
-      //     ...formValues,
-      //     file: reader.result,
-      //   });
-      // }
-      // if (
-      //   [
-      //     'application/msword',
-      //     'application/pdf',
-      //     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      //   ].includes(file.type)
-      // ) {
-      //   setFormValues({
-      //     ...formValues,
-      //     document: reader.result,
-      //   });
-      // }
       setFormValues({ ...formValues, file: reader.result });
       setFormValues({ ...formValues, document: reader.result });
     };

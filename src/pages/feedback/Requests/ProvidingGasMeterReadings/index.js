@@ -30,7 +30,6 @@ export default function ProvidingGasMeterReadings() {
   } = useProvidingGasMasterReadings();
 
   const formImage = document.getElementById('file-input');
-  const formPreview = document.getElementById('formPreview');
   formImage?.addEventListener('change', () => {
     uploadFile(formImage.files[0]);
   });
@@ -46,7 +45,7 @@ export default function ProvidingGasMeterReadings() {
     }
     let reader = new FileReader();
     reader.onload = function (e) {
-      formPreview.innerHTML = `<a id={'image'} href="${e.target.result}" style={{width: '300px', height: '300px'}}/>`;
+      // formPreview.innerHTML = `<img id={'image'} src="${e.target.result}" style={{width: '300px', height: '300px'}}/>`;
       setRequestValues({
         ...requestValues,
         file: reader.result,

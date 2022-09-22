@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import * as emailjs from '@emailjs/browser';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import axios from 'axios';
@@ -53,7 +52,7 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
         break;
       case 'phone':
         if (!isValidatePhone(requestValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XX-XXX-XX-XX!' });
         }
         break;
       case 'address':
