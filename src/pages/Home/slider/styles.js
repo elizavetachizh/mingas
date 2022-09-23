@@ -8,6 +8,21 @@ export const Main = styled.div`
   //@media (max-width: 1200px) {
   //  max-height: 600px;
   //}
+  &.branches {
+    margin: 8% auto 0;
+    @media (max-width: 900px) {
+      margin: 12% auto 0;
+    }
+    @media (max-width: 600px) {
+      margin: 16% auto 0;
+    }
+    @media (max-width: 480px) {
+      margin: 22% auto 0;
+    }
+    @media (max-width: 424px) {
+      margin: 30% auto 0;
+    }
+  }
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;

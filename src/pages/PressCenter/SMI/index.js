@@ -42,24 +42,18 @@ export default function SMI() {
         </BtnIsOpen>
         <Div className={isOpen && `shake`}>
           <iframe
-            width="560"
-            height="315"
             src="https://www.youtube.com/embed/Dd3zsFaCKT8"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
           <iframe
-            width="560"
-            height="315"
             src="https://www.youtube.com/embed/QCBY6awvF-E"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
           <iframe
-            width="560"
-            height="315"
             src="https://www.youtube.com/embed/cBJcdXWlgV4"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

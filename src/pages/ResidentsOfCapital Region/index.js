@@ -1,15 +1,14 @@
 import React from 'react';
 import Header from '../../components/header';
 import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
-import Footer from '../../components/footer'
+import Footer from '../../components/footer';
 import price_1 from '../../assets/pdf/Prejskurant-1-s-01.01.2022.pdf';
 import price_2 from '../../assets/pdf/Prejskurant-9-s-23.03.2022.pdf';
-import price_3 from '../../assets/pdf/Prejskurant-11-s-04.10.2019-szhatyj.pdf';
+import price_3 from '../../assets/pdf/Prejskurant-11-s-15.09.2022.pdf';
 import { Links } from './styles';
-import TitleFun from '../../components/title';
-import {Container} from "../company/styles";
-import Feedback from "../feedback";
-import minsk from "../../assets/background/phone.jpg";
+import { Container } from '../company/styles';
+import Feedback from '../feedback';
+import minsk from '../../assets/background/phone.jpg';
 export default function ResidentsOfCapitalRegion() {
   return (
     <Container>

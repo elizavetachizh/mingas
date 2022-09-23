@@ -28,6 +28,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icon
 import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
 import Feedback from '../../../../feedback';
 import minsk from '../../../../../assets/background/phone.jpg';
+import ButtonFun from '../../../../../components/button';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
@@ -51,6 +52,7 @@ export default function DepartmentInformation() {
     .concat(data[7].information);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if ((!inform.length || !inform) && !currentServiceID) {
       const current = data.find((element) => element.idName === +linkId);
       setInform(current.information);
@@ -70,7 +72,6 @@ export default function DepartmentInformation() {
       navigate(`/company/management/${current.idName}`);
       setDepartamentId(departamentId);
       setInform(current.information);
-      window.scrollTo(0, 0);
     },
     [currentServiceID]
   );
@@ -198,9 +199,24 @@ export default function DepartmentInformation() {
             ))}
           </HeaderCompanyDiv>
           <ContainerInform>
-            {isPhone ? (
-              <>
-                {inform.map((el) => (
+            {/*{isPhone ? (*/}
+            {/*  <>*/}
+            {/*    {inform.map((el) => (*/}
+            {/*      <DopFunctional*/}
+            {/*        key={el.name}*/}
+            {/*        name={el.name}*/}
+            {/*        contacts={el.contacts}*/}
+            {/*        schedule={el.schedule}*/}
+            {/*        photo={el.photo}*/}
+            {/*        chief={el.chief}*/}
+            {/*        description={el.description}*/}
+            {/*      />*/}
+            {/*    ))}*/}
+            {/*  </>*/}
+            {/*) : (*/}
+            <>
+              {info.length &&
+                info.map((el) => (
                   <DopFunctional
                     key={el.name}
                     name={el.name}
@@ -211,23 +227,15 @@ export default function DepartmentInformation() {
                     description={el.description}
                   />
                 ))}
-              </>
-            ) : (
-              <>
-                {info.length &&
-                  info.map((el) => (
-                    <DopFunctional
-                      key={el.name}
-                      name={el.name}
-                      contacts={el.contacts}
-                      schedule={el.schedule}
-                      photo={el.photo}
-                      chief={el.chief}
-                      description={el.description}
-                    />
-                  ))}
-              </>
+            </>
+            {isPhone && (
+              <ButtonFun
+                href={'/company/management/all-departments'}
+                infoButton={'Просмотреть все отделы'}
+                backgrounder={'blue'}
+              />
             )}
+            {/*)}*/}
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

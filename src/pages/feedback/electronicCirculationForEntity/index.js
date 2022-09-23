@@ -16,7 +16,7 @@ export default function ElectronicAppealForEntity() {
       <Header backgroundHeader="blue" />
       <Feedback className={'none'} img={minsk} name={'Электронное обращение юридических лиц'} />
       <AdditionalDiv>
-        <ContainerInform>
+        <ContainerInform className={'electronic-appeal-for-entity'}>
           <TextForInformation>
             <SubTitleFun color={'blue'} infoSubTitle={'Уважаемые посетители сайта!'} />
             <p>

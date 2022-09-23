@@ -21,8 +21,8 @@ import DopFunctionService from '../../../services/DopFunction';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../Home/parallax/useMediaQuery';
-import Feedback from "../../index";
-import minsk from "../../../../assets/background/phone.jpg";
+import Feedback from '../../index';
+import minsk from '../../../../assets/background/phone.jpg';
 
 export default function Information() {
   const isPhone = useMediaQuery('(max-width: 820px)');
@@ -103,6 +103,15 @@ export default function Information() {
     setInfo(currentTheme?.blockInform);
     navigate('/feedback/question-answer/1');
   };
+
+  const handleInsideClickPhone = (event: MouseEvent) => {
+    event.stopPropagation();
+    setIsForm(false);
+    setMessage('');
+    setInfo(infoForSearch);
+  };
+  console.log('info', info);
+  console.log('searchInfo', infoForSearch);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -135,7 +144,7 @@ export default function Information() {
                     <IoMdClose
                       style={{ width: '60px' }}
                       color={'black'}
-                      onClick={handleInsideClick}
+                      onClick={isPhone ? handleInsideClickPhone : handleInsideClick}
                     />
                   </form>
                 </ContainerFormSearchForService>
@@ -146,16 +155,23 @@ export default function Information() {
           </div>
           {isPhone ? (
             <ContainerInform>
-              {titleId && <Name>{currentTheme?.title}</Name>}
-              <>
-                {infoForSearch.map((el) => (
-                  <DopFunctionService
-                    key={el.questionId}
-                    inform={el.answer}
-                    nameDescription={el.question}
-                  />
-                ))}
-              </>
+              {info.length
+                ? info.map((el) => (
+                    <DopFunctionService
+                      classname={'question-answer'}
+                      key={el.questionId}
+                      inform={el.answer}
+                      nameDescription={el.question}
+                    />
+                  ))
+                : infoForSearch.map((el) => (
+                    <DopFunctionService
+                      classname={'question-answer'}
+                      key={el.questionId}
+                      inform={el.answer}
+                      nameDescription={el.question}
+                    />
+                  ))}
             </ContainerInform>
           ) : (
             <ContainerInform>

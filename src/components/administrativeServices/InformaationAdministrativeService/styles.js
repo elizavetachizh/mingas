@@ -75,6 +75,12 @@ export const General = styled.div`
     padding: 0;
     width: 90%;
   }
+  &.leave-feedback {
+    width: 70%;
+    @media (max-width: 800px) {
+      width: 90%;
+    }
+  }
 `;
 export const BtnIsOpen = styled.div`
   display: flex;
@@ -98,6 +104,17 @@ export const BtnIsOpen = styled.div`
   cursor: pointer;
   //margin: 4% auto;
   border-radius: 30px;
+  &.question-answer {
+    @media (max-width: 430px) {
+      height: 80px;
+      div {
+        @media (max-width: 430px) {
+          width: 70px;
+          height: 72%;
+        }
+      }
+    }
+  }
   &.btn-is-open {
     width: 50%;
     margin: 4% auto;
@@ -149,6 +166,10 @@ export const BtnIsOpen = styled.div`
 export const ContainerInformAboutService = styled.div`
   margin: 1rem auto;
   max-width: 980px;
+  width: 100%;
+  @media (max-width: 980px) {
+    width: 90%;
+  }
 `;
 
 export const IoIosArrowUps = styled(IoIosArrowUp)`

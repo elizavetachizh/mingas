@@ -12,7 +12,6 @@ import ServicesForLegalEntities from './pages/services/servicesForLegalEntities'
 import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
-import GeneralInform from './pages/concats/GeneralContactInform';
 import Union from './pages/company/union';
 import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import Requests from './pages/feedback/Requests';
@@ -47,6 +46,7 @@ import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 import Corruption from './components/Сorruption';
 import Telemetria from './components/telemetria';
 import Posts from './components/posts';
+import AllSubdivisions from './pages/company/managment/Subdivisions/allSubdivisions';
 
 export default function App() {
   return (
@@ -55,7 +55,6 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/company/history" element={<History />} />
-        <Route path="/contacts" element={<GeneralInform />} />
         <Route path="/press-center/:descriptionID" element={<PressCenter />} />
         <Route path="/feedback/question-answer/:titleId" element={<Information />} />
         <Route path={'/feedback/online-application'} element={<Requests />} />
@@ -71,6 +70,7 @@ export default function App() {
         <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
         <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
         <Route path="/company/management/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
+        <Route path="/company/management/all-departments" element={<AllSubdivisions />} />
         <Route path={'/company/corruption'} element={<Corruption />} />
         <Route path="/services/:cardId" element={<NaturalGas />} />
         <Route path="/services/method-payment" element={<MethodPayment />} />

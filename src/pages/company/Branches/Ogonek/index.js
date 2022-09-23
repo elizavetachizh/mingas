@@ -119,7 +119,8 @@ export default function Ogonek() {
           <TitleForHome
             infoTitle={'Директор: Шаматульский Виталий Леонидович'}
             color={'blue'}
-            fontSize={'s'}
+            fontSize={'name'}
+            className={'branches'}
           />
           <LinksNetwork style={{ fontSize: '18px' }}>
             <IoIosCall style={{ color: '#0e43af', width: '35px', height: '35px' }} />

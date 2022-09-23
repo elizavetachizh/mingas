@@ -3,6 +3,17 @@ export const BlockPressCenter = styled.div`
   iframe {
     width: 70%;
     margin: 4% 15%;
+    height: 315px;
+    @media (max-width: 840px) {
+      width: 80%;
+      margin: 4% 10%;
+      height: 270px;
+    }
+    @media (max-width: 600px) {
+      width: 90%;
+      margin: 4% 5%;
+      height: 260px;
+    }
   }
   div.video {
     width: 100%;
@@ -17,6 +28,10 @@ export const BlockPressCenter = styled.div`
       @media (max-width: 600px) {
         width: 80%;
         margin: 0 10%;
+      }
+      @media (max-width: 450px) {
+        width: 90%;
+        margin: 0 5%;
       }
     }
   }

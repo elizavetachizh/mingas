@@ -17,7 +17,7 @@ import {
   DivBlocks,
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import minsk from '../../../../assets/background/phone.jpg';
 import Feedback from '../../../feedback';
 
@@ -26,6 +26,7 @@ export default function CardOfService() {
   const [currentServiceID, setServiceID] = useState(null);
   const [title, setTitle] = useState([]);
   const { cardId } = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     if (!inform.length && !currentServiceID && (!title.length || !title)) {
       const current = dataLegalEntities.find((element) => element.serviceId === +cardId);
@@ -40,8 +41,8 @@ export default function CardOfService() {
       const current = dataLegalEntities.find((element) => element.serviceId === descriptionID);
       setInform(current.description);
       setTitle(current.nameCard);
-      window.scrollTo(0, 0);
-      setServiceID(currentServiceID ? '' : descriptionID);
+      setServiceID(descriptionID);
+      navigate(`/services-legal-entities/${descriptionID}`);
     },
     [currentServiceID]
   );
@@ -74,7 +75,7 @@ export default function CardOfService() {
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
+        <img src={up} alt={'Вверх'} />
       </ScrollToTop>
       <Footer />
     </Container>

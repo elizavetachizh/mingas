@@ -92,26 +92,29 @@ export default function MobileNavigation() {
             </div>
           </DivBlocksHeader>
           <DivButtonHeader className={isOpen && `handleBtn`}>
-            <ButtonLink to="/company/history">История предприятия</ButtonLink>
-            <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
-            <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
-            <ButtonLink to="/company/parent-organizations">Вышестоящие организации</ButtonLink>
-            <ButtonLink to="/company/branches" style={{ width: '100%' }}>
-              Филиалы УП "Мингаз" <img alt={''} src={next} />
-              <span style={{ margin: '20% 0 0' }}>
-                <NavLink to="/company/branches/ogonek">
-                  Филиал оздоровительный комплекс "Огонёк"
-                </NavLink>
-                <NavLink to="/company/branches/Bubni">Филиал "Бубны"</NavLink>
-                <NavLink to="/company/branches/TBZ">
-                  Филиал "Торфобрикетный завод "Сергеевическое"
-                </NavLink>
-              </span>
-            </ButtonLink>
-            <ButtonLink to="/company/documentation">
-              Сертификаты, лицензии, свидетельства
-            </ButtonLink>
-            <ButtonLink to="/company/gratitude">Благодарности и награды</ButtonLink>
+            <div>
+              {' '}
+              <ButtonLink to="/company/history">История предприятия</ButtonLink>
+              <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
+              <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
+              <ButtonLink to="/company/parent-organizations">Вышестоящие организации</ButtonLink>
+              <ButtonLink to="/company/branches" style={{ width: '100%' }}>
+                Филиалы УП "Мингаз" <img alt={''} src={next} />
+                <span style={{ margin: '20% 0 0' }}>
+                  <NavLink to="/company/branches/ogonek">
+                    Филиал оздоровительный комплекс "Огонёк"
+                  </NavLink>
+                  <NavLink to="/company/branches/Bubni">Филиал "Бубны"</NavLink>
+                  <NavLink to="/company/branches/TBZ">
+                    Филиал "Торфобрикетный завод "Сергеевическое"
+                  </NavLink>
+                </span>
+              </ButtonLink>
+              <ButtonLink to="/company/documentation">
+                Сертификаты, лицензии, свидетельства
+              </ButtonLink>
+              <ButtonLink to="/company/gratitude">Благодарности и награды</ButtonLink>
+            </div>
           </DivButtonHeader>
         </Dropdown>
 
@@ -172,18 +175,20 @@ export default function MobileNavigation() {
             </div>
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtnForBusiness && `handleBtn`}>
-            <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
-            <ButtonLink to="/feedback/electronic-appeal-for-entity">
-              Обращение юридических лиц
-            </ButtonLink>
-            <ButtonLink to="/tenders">Тендеры</ButtonLink>
-            <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
-            <ButtonLink to="/services-legal-entities/administrative-services-legal/">
-              Административные процедуры
-            </ButtonLink>
-            <ButtonLink to="/regulatory-documents-for-business/1">
-              Регламентирующие документы
-            </ButtonLink>
+            <div>
+              <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
+              <ButtonLink to="/feedback/electronic-appeal-for-entity">
+                Обращение юридических лиц
+              </ButtonLink>
+              <ButtonLink to="/tenders">Тендеры</ButtonLink>
+              <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
+              <ButtonLink to="/services-legal-entities/administrative-services-legal/">
+                Административные процедуры
+              </ButtonLink>
+              <ButtonLink to="/regulatory-documents-for-business/1">
+                Регламентирующие документы
+              </ButtonLink>
+            </div>
           </DivButtonHeader>
         </Dropdown>
 
@@ -205,10 +210,13 @@ export default function MobileNavigation() {
             </div>
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtnForPressCenter && `handleBtn`}>
-            <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
-            {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
-            <ButtonLink to="/press-center/2">Корпоротивная газета "Столичный газовик"</ButtonLink>
-            <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
+            <div>
+              {' '}
+              <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
+              {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
+              <ButtonLink to="/press-center/2">Корпоротивная газета "Столичный газовик"</ButtonLink>
+              <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
+            </div>
           </DivButtonHeader>
         </Dropdown>
 
@@ -229,12 +237,15 @@ export default function MobileNavigation() {
             </div>
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtnForContacts && `handleBtn`}>
-            {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
-            <ButtonLink to="/contacts/work-schedule">График личного приёма граждан</ButtonLink>
-            <ButtonLink to="/contacts/phone-services">
-              Телефоны служб по работе с клиентами
-            </ButtonLink>
-            <ButtonLink to="/contacts/requisites">Реквизиты предприятия</ButtonLink>
+            <div>
+              {' '}
+              {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
+              <ButtonLink to="/contacts/work-schedule">График личного приёма граждан</ButtonLink>
+              <ButtonLink to="/contacts/phone-services">
+                Телефоны служб по работе с клиентами
+              </ButtonLink>
+              <ButtonLink to="/contacts/requisites">Реквизиты предприятия</ButtonLink>
+            </div>
           </DivButtonHeader>
         </Dropdown>
 

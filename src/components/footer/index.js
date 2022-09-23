@@ -13,23 +13,37 @@ export default function Footer({ classname }) {
           <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogo} />
         </LinkLogo>
         <Prizes>
-          <img src={require(`../../assets/prizes/1.png`)} />
-          <img src={require(`../../assets/prizes/2.png`)} />
-          <img src={require(`../../assets/prizes/3.png`)} />
-          <img src={require(`../../assets/prizes/4.png`)} />
-          <img src={require(`../../assets/prizes/5.png`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/1.png`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/2.png`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/3.png`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/4.png`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/5.png`)} />
         </Prizes>
       </LinksContainer>
       <Contacts>
         <Telephons>
           <ButtonFun href={'/contacts/phone-services'} infoButton={'Телефоны для связи'} />
-          <p>Контакт-центр УП «МИНГАЗ» тел. 162</p>
+          <p>
+            Контакт-центр УП «МИНГАЗ» тел. <a href={'tel:162'}>162</a>
+          </p>
         </Telephons>
         <ContactInform>
-          <ButtonFun href={'/contacts'} infoButton={'Конкатная информация'} />
-          <p>220037, г.Минск, ул.Ботаническая, 11/1</p>
-          <p>Тел. (017) 299-28-80 (приемная руководителя)</p>
-          <p style={{ margin: '0' }}>Факс (017) 366-36-33 E-mail: root@mingas.by</p>
+          <ButtonFun href={'/contacts/phone-services'} infoButton={'Конкатная информация'} />
+          <p>
+            220037, г.Минск,{' '}
+            <a href={'https://yandex.by/maps/-/CCUVf2cXKC'} target={'_blank'}>
+              ул.Ботаническая, 11/1
+            </a>
+          </p>
+          <p style={{ margin: '0' }}>
+            Факс (017) 366-36-33 E-mail:{' '}
+            <a
+              onClick={() => navigator.clipboard.writeText('root@mingas.by')}
+              // href={'mailto: root@mingas.by'}
+            >
+              root@mingas.by
+            </a>
+          </p>
         </ContactInform>
         <WorkTime>
           <ButtonFun href={'/contacts/work-schedule'} infoButton={'График работы'} />

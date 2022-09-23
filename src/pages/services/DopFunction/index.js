@@ -6,7 +6,13 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-export default function DopFunctionService({ nameDescription, inform, style }) {
+export default function DopFunctionService({
+  nameDescription,
+  inform,
+  style,
+  classname,
+  classnamegeneral,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
     setIsOpen(true);
@@ -16,8 +22,8 @@ export default function DopFunctionService({ nameDescription, inform, style }) {
   };
   return (
     // <ContainerFunctionService>
-    <General style={style}>
-      <BtnIsOpen onClick={animate}>
+    <General className={classnamegeneral} style={style}>
+      <BtnIsOpen className={classname} onClick={animate}>
         <p>{nameDescription}</p>
         <div>
           {isOpen ? (

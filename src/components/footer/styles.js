@@ -22,7 +22,7 @@ export const LinksNetwork = styled.div`
   margin: 2% 0;
   text-align: left;
   justify-content: left;
-  @media (max-width: 500px) {
+  @media (max-width: 720px) {
     width: 100%;
   }
 `;
@@ -37,6 +37,9 @@ export const WorkTime = Telephons;
 export const FooterContainer = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
+  a {
+    color: white;
+  }
   background-image: linear-gradient(
     -55deg,
     rgb(1, 95, 156) 0%,

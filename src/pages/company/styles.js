@@ -96,11 +96,20 @@ export const Link = styled.div`
   img {
     width: 40%;
     margin: 0 auto;
+    @media (max-width: 500px) {
+      width: 60%;
+    }
   }
   &:hover {
     transform: scale(1.1);
     transition: transform 0.8s;
   }
+  @media (max-width: 900px) {
+    width: 70%;
+  }
+  @media (max-width: 650px) {
+    width: 90%;
+  } ;
 `;
 
 export const Img = styled.img`

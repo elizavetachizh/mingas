@@ -13,7 +13,6 @@ import { Container } from '../company/styles';
 import { pressCenter } from '../../assets/data/pressCenterHeader';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalPressCenter from './DopFunctional';
-import services from '../../assets/background/press.jpg';
 import Feedback from '../feedback';
 import minsk from '../../assets/background/phone.jpg';
 
@@ -26,24 +25,22 @@ export default function PressCenter() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (!inform && !currentNewsID && !title) {
-      const current = pressCenter.find((element) => element.id === +descriptionID);
-      setInform(current.description);
-      setTitle(current.name);
-      setNewsID(+descriptionID);
-    }
-  }, [descriptionID, inform, currentNewsID, title]);
+    // if (!inform && !currentNewsID && !title) {
+    const current = pressCenter.find((element) => element.id === +descriptionID);
+    setInform(current.description);
+    setTitle(current.name);
+    setNewsID(+descriptionID);
+    navigate(`/press-center/${descriptionID}`);
+    // }
+  }, []);
 
-  const animate = useCallback(
-    (descriptionID) => {
-      const current = pressCenter.find((element) => element.id === descriptionID);
-      setInform(current.description);
-      setTitle(current.name);
-      setNewsID(descriptionID);
-      navigate(`/press-center/${descriptionID}`);
-    },
-    [currentNewsID]
-  );
+  const animate = useCallback((descriptionID) => {
+    const current = pressCenter.find((element) => element.id === +descriptionID);
+    setInform(current.description);
+    setTitle(current.name);
+    setNewsID(descriptionID);
+    navigate(`/press-center/${descriptionID}`);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -65,7 +62,7 @@ export default function PressCenter() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>
-            <DopFunctionalPressCenter inform={inform} controls />
+            <DopFunctionalPressCenter inform={inform} />
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

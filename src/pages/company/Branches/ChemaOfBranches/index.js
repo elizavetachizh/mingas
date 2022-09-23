@@ -64,7 +64,7 @@ export default function SchemaOfBranches({
       <Header />
       <ContainerParallax>
         <Parallax style={{ height: '450px' }} bgImage={background} strength={-200}>
-          <Main style={{ margin: '8% auto 0' }}>
+          <Main className={'branches'}>
             <WindowDiv>
               <DivText>
                 <Text style={{ textAlign: 'center' }}>{name}</Text>
@@ -75,7 +75,7 @@ export default function SchemaOfBranches({
         </Parallax>
       </ContainerParallax>
       <AdditionalDiv style={{ margin: '0 auto 4%' }} ref={myRef}>
-        <General style={{ width: '60%', margin: '2% auto 4%' }}>
+        <General className={'leave-feedback'}>
           <BtnIsOpen onClick={animate}>
             <p style={{ textAlign: 'center', fontSize: '18px' }}>{nameDescription}</p>
             <div>
@@ -90,8 +90,8 @@ export default function SchemaOfBranches({
             <DescriptionService>{description}</DescriptionService>
           </Div>
         </General>
-        {products ? (
-          <General style={{ width: '60%', margin: '0 auto 4%' }}>
+        {products && (
+          <General className={'leave-feedback'}>
             {' '}
             <BtnIsOpen onClick={animateClose}>
               <p style={{ textAlign: 'center', fontSize: '18px' }}>{nameProducts}</p>
@@ -107,14 +107,12 @@ export default function SchemaOfBranches({
               <DescriptionService>{products}</DescriptionService>
             </Div>
           </General>
-        ) : (
-          <></>
         )}
-        <div style={{ width: '60%', margin: '0 auto' }}>
+        <General style={{ borderRadius: 'none', border: 'none' }} className={'leave-feedback'}>
           <Name>Общая информация</Name>
-          <img style={{ width: '50%', margin: '4% 25%', textAlign: 'center' }} src={photo} />
+          <img style={{ width: '50%', margin: '2% 25% 0', textAlign: 'center' }} src={photo} />
           {inform}
-        </div>
+        </General>
       </AdditionalDiv>
       <Footer />
     </Container>

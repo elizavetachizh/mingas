@@ -4,9 +4,7 @@ import {
   Button,
   DivInput,
   DivInputCheckbox,
-  DivInputFile,
   InputCheckbox,
-  InputFile,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';

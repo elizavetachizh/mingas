@@ -13,7 +13,13 @@ export default function Telemetria() {
       <Header />
       <Feedback className={'none'} img={minsk} name={'Телеметрия'} />
       <AdditionalDiv>
-        <p>Информация</p>
+        <a target="_blank" rel="noopener noreferrer" href={'http://178.124.164.50:82/'}>
+          Доступ к информации о параметрах расхода газа
+        </a>
+        <p>
+          Для просмотра информации о параметрах расхода газа, выведенных по системе телеметрии с
+          узла учета газа, вы можете подать заявку на предоставление персонального логина и пароля:
+        </p>
         <FormTelemetria />
       </AdditionalDiv>
       <Footer />

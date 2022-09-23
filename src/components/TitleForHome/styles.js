@@ -11,10 +11,12 @@ const titleFontSize = {
   font-size: 24px`,
   m: `
   font-size: 28px`,
+  name: `
+   font-size: 20px`,
 };
 const titleMargin = {
   s: `
-  margin: 10px auto;
+  margin: 5px auto;
   `,
 };
 export const Title = styled.h2`
@@ -29,6 +31,13 @@ export const Title = styled.h2`
   text-align: center;
   ${({ color }) => titleColor[color]};
   ${({ margin }) => titleMargin[margin]};
+  &.branches {
+    margin: 2% auto;
+    @media (max-width: 600px) {
+      margin-top: 4%;
+    }
+  }
+
   @media (max-width: 700px) {
     margin-top: 14%;
     &.company {
@@ -36,10 +45,10 @@ export const Title = styled.h2`
     }
   }
   @media (max-width: 640px) {
-    font-size: 24px;
+    font-size: 22px;
   }
   @media (max-width: 500px) {
     margin-top: 20%;
   }
-  // ${({ fontSize }) => titleFontSize[fontSize]}
+  ${({ fontSize }) => titleFontSize[fontSize]}
 `;

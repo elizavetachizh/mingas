@@ -70,7 +70,7 @@ export default function LeaveFeedbackMingas() {
 
   return (
     <DivApplication>
-      <Form onSubmit={handleSubmit} ref={form}>
+      <Form style={{ border: 'none', borderRadius: 'none' }} onSubmit={handleSubmit} ref={form}>
         <DivInput>
           <Label>
             ФИО полностью: <Span>*</Span>

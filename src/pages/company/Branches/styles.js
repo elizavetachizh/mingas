@@ -9,6 +9,9 @@ export const BlockInformOgonek = styled.div`
   justify-content: space-around;
   //border-radius: 20px;
   //border: 1px solid #1b3a91;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
   div {
     width: 50%;
     margin: 0 auto;
@@ -26,11 +29,20 @@ export const BlockInformOgonek = styled.div`
       border-color: transparent;
       border-style: solid;
     }
+    @media (max-width: 800px) {
+      width: 100%;
+    }
   }
 
   img {
     width: 46%;
     border-radius: 20px;
+    @media (max-width: 800px) {
+      width: 80%;
+    }
+    @media (max-width: 590px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -40,10 +52,14 @@ export const ContainerParallax = styled.div`
   @media (max-width: 1400px) {
     height: 500px;
   }
-  @media (max-width: 1000px) {
-    height: 400px;
+  //@media (max-width: 1000px) {
+  //  height: 400px;
+  //}
+  @media (max-width: 900px) {
+    margin-top: 80px;
   }
-  @media (max-width: 700px) {
-    margin-top: 100px;
+  @media (max-width: 424px) {
+    margin-top: 66px;
+    height: 430px;
   }
 `;

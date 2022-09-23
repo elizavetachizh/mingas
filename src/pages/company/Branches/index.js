@@ -8,7 +8,6 @@ import { links } from '../../../assets/data/linksBranches';
 import ServicesList from '../../services/servicesList';
 import { useNavigate } from 'react-router';
 import HeaderCompany from '../header_company';
-import TitleForHome from '../../../components/TitleForHome';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.jpg';
 

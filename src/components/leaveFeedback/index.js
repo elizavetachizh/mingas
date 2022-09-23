@@ -91,7 +91,7 @@ export default function LeaveFeedback() {
             </a>
           </div>
           <DopFunctionService
-            style={{ width: '70%' }}
+            classnamegeneral={'leave-feedback'}
             nameDescription={'Форма обратной связи'}
             inform={<LeaveFeedbackMingas />}
           />

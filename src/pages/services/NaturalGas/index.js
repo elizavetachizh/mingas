@@ -29,6 +29,7 @@ export default function NaturalGas() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (!inform.length && !currentServiceID && (!title.length || !title)) {
       const current = data.find((element) => element.serviceId === +cardId);
       setInform(current?.description);
@@ -36,14 +37,12 @@ export default function NaturalGas() {
       setServiceID(+cardId);
     }
   }, [cardId, title, inform, currentServiceID]);
-  useEffect(() => window.scrollTo(0, 0), []);
   const animate = useCallback(
     (descriptionID) => {
       const current = data.find((element) => element.serviceId === descriptionID);
       setInform(current?.description);
       setTitle(current.nameCard);
       setServiceID(descriptionID);
-      window.scrollTo(0, 0);
       navigate(`/services/${descriptionID}`);
     },
     [currentServiceID]
@@ -78,7 +77,7 @@ export default function NaturalGas() {
         </DivBlocks>
       </AdditionalDiv>
       <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
+        <img src={up} alt={'Вверх'} />
       </ScrollToTop>
       <Footer />
     </Container>
