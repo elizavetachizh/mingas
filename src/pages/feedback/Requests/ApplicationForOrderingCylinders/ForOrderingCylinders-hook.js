@@ -6,7 +6,7 @@ import axios from 'axios';
 export const useForOrderingCylinders = (): UseFormReturnValues => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
   //for me
-  //const url = 'https://localhost:3000/cylinders';
+  // const url = 'https://localhost:3000/cylinders';
 
   //for site
   const url = 'https://back.mingas.by/cylinders';
@@ -42,7 +42,7 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
         break;
       case 'phone':
         if (!isValidatePhone(requestValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XX-XXX-XX-XX!' });
         }
         break;
       case 'isAgree':

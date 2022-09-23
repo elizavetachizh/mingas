@@ -8,7 +8,7 @@ export const useFormForEnity = () => {
   const url = 'https://back.mingas.by/question-for-entity';
 
   //for me
-  // const url = 'https://mingas.by:9000/question-for-entity';
+  // const url = 'https://localhost:3000/question-for-entity';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {

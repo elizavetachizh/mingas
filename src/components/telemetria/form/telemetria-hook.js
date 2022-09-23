@@ -7,7 +7,7 @@ export const useFormTelemetria = () => {
   const url = 'https://back.mingas.by/telemetria';
 
   //for me
-  //const url = 'https://mingas.by:9000/telemetria';
+  // const url = 'https://localhost:3000/telemetria';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
@@ -31,7 +31,7 @@ export const useFormTelemetria = () => {
       !isValidateEmail(formValues.email) ||
       !formValues.organization ||
       !formValues.address ||
-      !isValidatePhone(formValues.phone) ||
+      !formValues.phone ||
       !formValues.text ||
       Object.keys(errors)?.length
     );
@@ -56,13 +56,13 @@ export const useFormTelemetria = () => {
         }
         break;
       case 'phone':
-        if (!isValidatePhone(formValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
+        if (!formValues.phone.length) {
+          setErrors({ ...errors, phone: 'Введите телефон!' });
         }
         break;
       case 'text':
         if (!formValues.text.length) {
-          setErrors({ ...errors, text: 'Заполните, пожалуйста, поле' });
+          setErrors({ ...errors, text: 'Заполните, пожалуйста, поле!' });
         }
         break;
       case 'address':

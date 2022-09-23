@@ -8,7 +8,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const url = 'https://back.mingas.by/users';
 
   //for me
-  // const url = 'https://mingas.by:9000/users';
+  // const url = 'https://localhost:3000/users';
 
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});

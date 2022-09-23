@@ -55,7 +55,7 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
         break;
       case 'phone':
         if (!isValidatePhone(requestValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XX-XXX-XX-XX!' });
         }
         break;
       case 'address':

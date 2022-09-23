@@ -54,7 +54,7 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
         break;
       case 'phone':
         if (!isValidatePhone(requestIssuanceValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XX-XXX-XX-XX!' });
         }
         break;
       case 'isAgree':

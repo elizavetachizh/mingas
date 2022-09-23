@@ -5,10 +5,10 @@ import axios from 'axios';
 
 export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
   //for me
-  const url = 'https://localhost:3000/verification';
+  // const url = 'https://localhost:3000/verification';
 
   //for site
-  // const url = 'https://back.mingas.by/verification';
+  const url = 'https://back.mingas.by/verification';
   const [msg, setMsg] = useState('');
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
