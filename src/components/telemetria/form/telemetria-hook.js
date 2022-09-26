@@ -7,7 +7,7 @@ export const useFormTelemetria = () => {
   const url = 'https://back.mingas.by/telemetria';
 
   //for me
-  // const url = 'https://localhost:3000/telemetria';
+  // const url = 'http://localhost:3000/telemetria';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
@@ -16,9 +16,6 @@ export const useFormTelemetria = () => {
     );
   };
   const form = useRef();
-  const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
-  };
 
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);

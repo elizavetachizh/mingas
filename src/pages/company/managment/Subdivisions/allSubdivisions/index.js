@@ -16,7 +16,6 @@ export default function AllSubdivisions() {
     .concat(data[5].information)
     .concat(data[6].information)
     .concat(data[7].information);
-  console.log(infoForSearch);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

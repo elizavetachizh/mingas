@@ -18,7 +18,7 @@ export default function InputAddress({
         value={value}
         onChange={onChange}
       />
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

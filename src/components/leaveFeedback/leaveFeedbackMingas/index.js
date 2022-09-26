@@ -32,7 +32,6 @@ export default function LeaveFeedbackMingas() {
     window.scrollTo(0, 0);
   }, []);
   const formImage = document.getElementById('file-input');
-  const formPreview = document.getElementById('formPreview');
   formImage?.addEventListener('change', () => {
     uploadFile(formImage.files[0]);
   });
@@ -53,12 +52,9 @@ export default function LeaveFeedbackMingas() {
       formImage.value = '';
     }
     let reader = new FileReader();
-    reader.onload = function (e) {
-      formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;
-      setFormValues({
-        ...formValues,
-        document: reader.result,
-      });
+    reader.onload = function () {
+      setFormValues({ ...formValues, file: reader.result });
+      setFormValues({ ...formValues, document: reader.result });
     };
 
     reader.onerror = function (e) {
@@ -67,7 +63,6 @@ export default function LeaveFeedbackMingas() {
 
     reader.readAsDataURL(file);
   }
-
   return (
     <DivApplication>
       <Form style={{ border: 'none', borderRadius: 'none' }} onSubmit={handleSubmit} ref={form}>
@@ -111,7 +106,7 @@ export default function LeaveFeedbackMingas() {
             type="tel"
             inputPhone={'phone'}
             name="phone"
-            placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
+            placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={formValues.phone}
             error={errors.phone}
@@ -177,9 +172,13 @@ export default function LeaveFeedbackMingas() {
         ) : (
           <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
-        <p>
-          <b>{msg}</b>
-        </p>
+        {msg || formValues ? (
+          <p>
+            <b>{msg}</b>
+          </p>
+        ) : (
+          'Ожидайте'
+        )}
       </Form>
     </DivApplication>
   );

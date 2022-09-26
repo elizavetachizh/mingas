@@ -81,7 +81,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             inputPhone={'phone'}
             type="tel"
             name="phone"
-            placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
+            placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
             error={errors.phone}

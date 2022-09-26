@@ -4,9 +4,7 @@ import {
   Button,
   DivInput,
   DivInputCheckbox,
-  DivInputFile,
   InputCheckbox,
-  InputFile,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
@@ -88,7 +86,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             inputName={'phone'}
             type="tel"
             name="phone"
-            placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
+            placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
             error={errors.phone}
@@ -177,8 +175,10 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         >
           Отправить
         </Button>
-        {isButtonDisabled && (
+        {isButtonDisabled ? (
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+        ) : (
+          <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
         <p>
           <b>{msg}</b>

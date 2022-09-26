@@ -8,7 +8,7 @@ export const useFeedback = () => {
   const url = 'https://back.mingas.by/feedback';
 
   //for me
-  // const url = 'https://localhost:3000/feedback';
+  // const url = 'http://localhost:3000/feedback';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
@@ -21,7 +21,7 @@ export const useFeedback = () => {
     return /\d/.test(string);
   };
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
   const [errors, setErrors] = useState({});
   const isButtonDisabled = useMemo(() => {
@@ -52,6 +52,11 @@ export const useFeedback = () => {
       case 'isAgree':
         if (!!formValues.isAgree) {
           setErrors({ ...errors, isAgree: 'Заполните поле' });
+        }
+        break;
+      case 'phone':
+        if (!isValidatePhone(formValues.phone)) {
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XXXXXXXXX!' });
         }
         break;
       case 'message':

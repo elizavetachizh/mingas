@@ -1,12 +1,11 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import * as emailjs from '@emailjs/browser';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
 
 export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
   //for me
-  // const url = 'https://localhost:3000/repair';
+  // const url = 'http://localhost:3000/repair';
 
   //for site
   const url = 'https://back.mingas.by/repair';
@@ -20,7 +19,7 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);
@@ -55,7 +54,7 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
         break;
       case 'phone':
         if (!isValidatePhone(requestValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в формате +375XX-XXX-XX-XX!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XXXXXXXXX!' });
         }
         break;
       case 'address':

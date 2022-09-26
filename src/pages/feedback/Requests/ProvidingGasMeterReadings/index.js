@@ -44,8 +44,7 @@ export default function ProvidingGasMeterReadings() {
       formImage.value = '';
     }
     let reader = new FileReader();
-    reader.onload = function (e) {
-      // formPreview.innerHTML = `<img id={'image'} src="${e.target.result}" style={{width: '300px', height: '300px'}}/>`;
+    reader.onload = function () {
       setRequestValues({
         ...requestValues,
         file: reader.result,
@@ -113,7 +112,7 @@ export default function ProvidingGasMeterReadings() {
             type="tel"
             inputPhone={'phone'}
             name="phone"
-            placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
+            placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
             error={errors.phone}

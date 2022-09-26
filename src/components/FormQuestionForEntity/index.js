@@ -36,8 +36,6 @@ export default function FormQuestionForEntity() {
   function uploadFile(file) {
     if (
       ![
-        'image/png',
-        'image/jpeg',
         'application/msword',
         'application/pdf',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',

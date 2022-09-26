@@ -8,7 +8,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   const url = 'https://back.mingas.by/users';
 
   //for me
-  // const url = 'https://localhost:3000/users';
+  // const url = 'http://localhost:3000/users';
 
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
@@ -20,7 +20,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);
@@ -52,7 +52,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
         break;
       case 'phone':
         if (!isValidatePhone(requestValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в соответсвующем формате!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XXXXXXXXX!' });
         }
         break;
       case 'address':

@@ -6,7 +6,6 @@ import 'aos/dist/aos.css';
 import napravlenie from '../../../assets/union/napravlenie.jpg';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import Footer from '../../../components/footer';
-import TitleFun from '../../../components/title';
 import TitleForHome from '../../../components/TitleForHome';
 import { Container, Img, Link } from '../styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
@@ -114,10 +113,13 @@ export default function Union() {
           <Img src={require('../../../assets/management/departaments/Доморацкая.jpg')} />
           <TitleForHome
             className={'company'}
-            margin={'s'}
+            margin={'name'}
             color={'blue'}
             infoTitle={
-              'ПРЕДСЕДАТЕЛЬ ПРОФКОМА ПЕРВИЧНОЙ ПРОФСОЮЗНОЙ ОРГАНИЗАЦИИ УП «МИНГАЗ» - ДОМОРАЦКАЯ МАРИНА АЛЕКСЕЕВНА'
+              <>
+                ПРЕДСЕДАТЕЛЬ ПРОФКОМА ПЕРВИЧНОЙ ПРОФСОЮЗНОЙ ОРГАНИЗАЦИИ УП «МИНГАЗ» - <br />
+                ДОМОРАЦКАЯ МАРИНА АЛЕКСЕЕВНА
+              </>
             }
             fontSize={'s'}
           />

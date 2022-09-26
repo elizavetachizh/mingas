@@ -7,7 +7,7 @@ export const useForm = () => {
   const url = 'https://back.mingas.by/questions';
 
   //for me
-  // const url = 'https://localhost:3000/questions';
+  // const url = 'http://localhost:3000/questions';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
@@ -17,7 +17,7 @@ export const useForm = () => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
 
   const stringIncludesNumber = (string: string): boolean => {
@@ -52,7 +52,7 @@ export const useForm = () => {
         break;
       case 'phone':
         if (!isValidatePhone(formValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в формате +375XX-XXX-XX-XX!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XXXXXXXXX!' });
         }
         break;
       case 'isAgree':

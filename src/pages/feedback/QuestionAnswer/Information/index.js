@@ -110,8 +110,6 @@ export default function Information() {
     setMessage('');
     setInfo(infoForSearch);
   };
-  console.log('info', info);
-  console.log('searchInfo', infoForSearch);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

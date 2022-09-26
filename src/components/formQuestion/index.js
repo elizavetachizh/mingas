@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   DivInput,
   DivInputCheckbox,
@@ -27,41 +27,46 @@ export default function FormQuestion() {
     msg,
   } = useForm();
   const { t } = useTranslation();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const formImage = document.getElementById('file-input');
-  const formPreview = document.getElementById('formPreview');
+  // const formPreview = document.getElementById('formPreview');
   formImage?.addEventListener('change', () => {
-    uploadFile(formImage.files[0]);
+    Object.values(formImage.files).forEach((value) => {
+      uploadFile(value);
+    });
+    // uploadFile(formImage.files[0]);
   });
 
   function uploadFile(file) {
-    if (
-      ![
-        'image/png',
-        'image/jpeg',
-        'application/msword',
-        'application/pdf',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      ].includes(file.type)
-    ) {
-      alert('Не подходит формат файла');
-      formImage.value = '';
-    }
+    // if (
+    //   ![
+    //     'image/png',
+    //     'image/jpeg',
+    //     'application/msword',
+    //     'application/pdf',
+    //     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    //   "application/zip",
+    // 'application/octet-stream'
+    //   ].includes(file.type)
+    // ) {
+    //   alert('Не подходит формат файла');
+    //   formImage.value = '';
+    // }
     if (file.size > 60000) {
       alert('Файл является слишком большим');
       formImage.value = '';
     }
     let reader = new FileReader();
-    reader.onload = function (e) {
-      formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;
-      setFormValues({ ...formValues, file: reader.result });
-      setFormValues({ ...formValues, document: reader.result });
+    reader.onload = function () {
+      setFormValues({ ...formValues, file: reader.result[0] });
+      setFormValues({ ...formValues, document: reader.result[1] });
     };
 
     reader.onerror = function (e) {
       console.log(e);
     };
-
     reader.readAsDataURL(file);
   }
 
@@ -127,7 +132,7 @@ export default function FormQuestion() {
           inputName={'phone'}
           type="tel"
           name="phone"
-          placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
+          placeholder={'+375ХХХХХХХХХ'}
           onChange={handleUserInput}
           value={formValues.phone}
           error={errors.phone}
@@ -168,7 +173,7 @@ export default function FormQuestion() {
 
       <DivInputFile>
         <div>
-          <InputFile type="file" id="file-input" name="file" />
+          <InputFile multiple type="file" id="file-input" name="file" />
           <span>Прекрипите файл</span>
         </div>
         <div id={'formPreview'}></div>

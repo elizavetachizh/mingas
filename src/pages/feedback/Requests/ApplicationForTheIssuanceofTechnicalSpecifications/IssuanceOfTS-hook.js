@@ -1,4 +1,3 @@
-import * as emailjs from '@emailjs/browser';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import type { UseFormReturnValues } from '../../../../const/consts';
 import { useCallback, useMemo, useRef, useState } from 'react';
@@ -6,7 +5,7 @@ import axios from 'axios';
 
 export const useRequestForIssuance = (): UseFormReturnValues => {
   //for me
-  // const url = 'https://localhost:3000/maintenance';
+  // const url = 'http://localhost:3000/maintenance';
 
   //for site
   const url = 'https://back.mingas.by/maintenance';
@@ -20,7 +19,7 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);
@@ -54,7 +53,7 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
         break;
       case 'phone':
         if (!isValidatePhone(requestIssuanceValues.phone)) {
-          setErrors({ ...errors, phone: 'Введите телефон в формате +375XX-XXX-XX-XX!' });
+          setErrors({ ...errors, phone: 'Введите телефон в формате +375XXXXXXXXX!' });
         }
         break;
       case 'isAgree':

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
   //for me
-  // const url = 'https://localhost:3000/verification';
+  // const url = 'http://localhost:3000/verification';
 
   //for site
   const url = 'https://back.mingas.by/verification';
@@ -19,7 +19,7 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
   };
   const form = useRef();
   const isValidatePhone = (phone: string): boolean => {
-    return /\+375\d{2}-\d{3}-\d{2}-\d{2}/g.test(phone);
+    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
   const stringIncludesNumber = (string: string): boolean => {
     return /\d/.test(string);

@@ -101,7 +101,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             inputPhone={'phone'}
             type="tel"
             name="phone"
-            placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
+            placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={requestIssuanceValues.phone}
             error={errors.phone}
@@ -155,8 +155,10 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
         >
           Отправить
         </Button>
-        {isButtonDisabled && (
+        {isButtonDisabled ? (
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
+        ) : (
+          <span style={{ color: 'red' }}>Форма успешно заполнена</span>
         )}
         <p>
           <b>{msg}</b>
