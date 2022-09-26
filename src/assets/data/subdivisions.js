@@ -3,7 +3,7 @@ export const subdivisions = [
     id: 1,
     name: 'Сервисный центр',
     link: '/company/management/3/1',
-    photo: 'Савченко',
+    photo: '',
     chief: 'Начальник - Савченко Александр Константинович',
     description: (
       <div>
@@ -37,7 +37,7 @@ export const subdivisions = [
     id: 2,
     name: 'Производственный участок №1',
     link: '/company/management/3/2',
-    photo: 'Горбач',
+    photo: '',
     chief: 'Начальник - Горбач Марина Владимировна',
     description: (
       <div>
@@ -80,7 +80,7 @@ export const subdivisions = [
     id: 3,
     name: 'Производственный участок №2',
     link: '/company/management/3/3',
-    photo: 'Канапацкая',
+    photo: '',
     chief: 'Начальник - Канапацкая Юлия Петровна',
     description: (
       <div>
@@ -123,7 +123,7 @@ export const subdivisions = [
     id: 4,
     name: 'Производственный участок №3',
     link: '/company/management/3/4',
-    photo: 'Пашинь',
+    photo: '',
     chief: 'Начальник - Пашинь Татьяна Владимировна',
     description: (
       <div>
@@ -197,7 +197,7 @@ export const subdivisions = [
     id: 6,
     name: 'Участок организации начислений и контроля поступления оплат службы учета потребленного газа населением ',
     link: '/company/management/4/1',
-    photo: 'Казимирчик',
+    photo: '',
     chief: 'Начальник - Казимирчик Татьяна Евгеньевна',
     description: (
       <div>
@@ -238,7 +238,7 @@ export const subdivisions = [
     id: 7,
     name: 'Участок организации ремонта и поверки бытовых счетчиков газа службы учета потребленного газа населением',
     link: '/company/management/subdivisions/4/2',
-    photo: 'Раковский',
+    photo: '',
     chief: 'Начальник - Раковский Евгений Дмитриевич',
     description: (
       <div>

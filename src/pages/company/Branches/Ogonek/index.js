@@ -113,15 +113,15 @@ export default function Ogonek() {
           </BlockInformOgonek>
         </>
       }
-      photo={require('../../../../assets/management/departaments/Шаматульский.jpg')}
+      photo={''}
       inform={
         <>
-          <TitleForHome
-            infoTitle={'Директор: Шаматульский Виталий Леонидович'}
-            color={'blue'}
-            fontSize={'name'}
-            className={'branches'}
-          />
+          {/*<TitleForHome*/}
+          {/*  infoTitle={'Директор: Шаматульский Виталий Леонидович'}*/}
+          {/*  color={'blue'}*/}
+          {/*  fontSize={'name'}*/}
+          {/*  className={'branches'}*/}
+          {/*/>*/}
           <LinksNetwork style={{ fontSize: '18px' }}>
             <IoIosCall style={{ color: '#0e43af', width: '35px', height: '35px' }} />
             Контактный номер: <a href={'tel:+375175443171'}>+375175443171</a>

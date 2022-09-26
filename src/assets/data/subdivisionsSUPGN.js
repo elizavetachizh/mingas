@@ -3,7 +3,7 @@ export const subdivisionsSUPGN = [
     id: 1,
     name: 'Участок организации начислений и контроля поступления оплат службы учета потребленного газа населением ',
     link: '/company/management/4/1',
-    photo: 'Казимирчик',
+    photo: '',
     chief: 'Начальник - Казимирчик Татьяна Евгеньевна',
     description: (
       <div>
@@ -44,7 +44,7 @@ export const subdivisionsSUPGN = [
     id: 2,
     name: 'Участок организации ремонта и поверки бытовых счетчиков газа службы учета потребленного газа населением',
     link: '/company/management/subdivisions/4/2',
-    photo: 'Раковский',
+    photo: '',
     chief: 'Начальник - Раковский Евгений Дмитриевич',
     description: (
       <div>
