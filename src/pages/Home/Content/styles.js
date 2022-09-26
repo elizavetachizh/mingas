@@ -5,6 +5,7 @@ export const ContainerContent = styled.div`
   border-radius: 20px;
   width: 100%;
   height: 100%;
+  position: relative;
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;

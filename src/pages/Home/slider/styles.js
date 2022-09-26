@@ -63,16 +63,20 @@ export const BackgroundContainer = styled.img`
 
     @media (min-width: 1500px) {
       height: 600px;
+      margin-top: -150px;
+    }
+    @media (min-width: 1700px) {
+      height: 630px;
     }
     @media (min-width: 2200px) {
       height: 700px;
     }
     @media (min-width: 2700px) {
-      height: 900px;
+      height: 850px;
     }
     @media (max-width: 1700px) {
       margin-top: -136px;
-      height: 490px;
+      height: 530px;
     }
     @media (max-width: 1485px) {
       margin-top: -136px;

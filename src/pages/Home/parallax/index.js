@@ -5,7 +5,7 @@ import { ContainerContent } from '../Content/styles';
 export default function ParallaxDiv() {
   return (
     <ContainerContent>
-      <ParallaxD style={{ padding: 0, margin: 0, width: '100%' }}>
+      <ParallaxD>
         <img
           alt={'загрузка картинки'}
           style={{ width: '100%' }}
