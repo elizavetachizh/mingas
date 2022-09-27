@@ -62,8 +62,7 @@ export default function SearchPage({ classname }) {
         }
       }
     });
-  console.log(resultDepartments);
-  console.log(result);
+
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
