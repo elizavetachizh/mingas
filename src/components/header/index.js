@@ -26,7 +26,6 @@ import {
   IoIosCloses,
 } from './styles';
 import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.png';
-import next from '../../assets/png/next.png';
 import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
@@ -83,13 +82,6 @@ export default function Header({ backgroundHeader }) {
           <DivColumn>
             <DivFirstHeader>
               <DivPhone>
-                {/*<LinkLogo to="/">*/}
-                {/*  {navbar ? (*/}
-                {/*    <Logo style={{ width: '80px', height: '80px' }} src={HeaderLogoBlue} />*/}
-                {/*  ) : (*/}
-                {/*    <Logo src={HeaderLogo} />*/}
-                {/*  )}*/}
-                {/*</LinkLogo>*/}
                 <LinkLogo to="/">
                   <Logo src={HeaderLogoBlue} />
                 </LinkLogo>
@@ -111,13 +103,7 @@ export default function Header({ backgroundHeader }) {
                   title={`${t('header:PersonalArea')}`}
                   href={'https://service.mingas.by:5002/auth/login#login'}
                 >
-                  {/*{navbar ? (*/}
-                  {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />*/}
-                  {/*) : (*/}
-                  {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />*/}
-                  {/*)}*/}
                   <IoMdContacts className={'icon'} />
-                  {/*<DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>*/}
                 </PersonalAccButton>
                 <SearchPage />
                 <Language />

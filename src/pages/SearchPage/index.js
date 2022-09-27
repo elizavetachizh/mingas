@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { data } from '../../assets/data/data_services';
+import { data as dataDepartment } from '../../assets/data/data_department';
 import { dataLegalEntities } from '../../assets/data/data_service_legalEntities_general';
 import { routers } from '../../assets/data/routers';
-import search from '../../assets/png/search.svg';
 import { ContainerFormSearch, Div, FormSearch } from './styles';
 import { NavLink } from 'react-router-dom';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
@@ -23,31 +23,47 @@ export default function SearchPage({ classname }) {
   const result = [];
   const resultEntities = [];
   const resultRouters = [];
+  const resultDepartments = [];
+  const infoForSearch = dataDepartment[0].information
+    .concat(dataDepartment[1].information)
+    .concat(dataDepartment[2].information)
+    .concat(dataDepartment[3].information)
+    .concat(dataDepartment[4].information)
+    .concat(dataDepartment[5].information)
+    .concat(dataDepartment[6].information)
+    .concat(dataDepartment[7].information);
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
     setIsForm(false);
   };
   const handleChange = (event) => {
     setMessage(event.target.value);
-    message.toLowerCase();
   };
-  {
-    data.map((card) => {
+
+  data.map((card) => {
+    if (card?.nameCard.includes(message)) {
+      result.push(card);
+    }
+  }) &&
+    dataLegalEntities.map((card) => {
       if (card?.nameCard.includes(message)) {
-        result.push(card);
+        resultEntities.push(card);
       }
     }) &&
-      dataLegalEntities.map((card) => {
-        if (card?.nameCard.includes(message)) {
-          resultEntities.push(card);
+    routers.map((router) => {
+      if (router.name.includes(message)) {
+        resultRouters.push(router);
+      }
+    }) &&
+    infoForSearch.map((element) => {
+      if (typeof element.name === 'string') {
+        if (element.name.includes(message)) {
+          resultDepartments.push(element);
         }
-      }) &&
-      routers.map((router) => {
-        if (router.name.includes(message)) {
-          resultRouters.push(router);
-        }
-      });
-  }
+      }
+    });
+  console.log(resultDepartments);
+  console.log(result);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
@@ -64,7 +80,7 @@ export default function SearchPage({ classname }) {
                   <div>
                     {
                       <NavLink style={{ color: 'black' }} to={`/services/${element.serviceId}`}>
-                        {element.nameCard.toLowerCase()}
+                        {element.nameCard}
                       </NavLink>
                     }
                   </div>
@@ -78,7 +94,7 @@ export default function SearchPage({ classname }) {
                         style={{ color: 'black' }}
                         to={`/services-legal-entities/${element.serviceId}`}
                       >
-                        {element.nameCard.toLowerCase()}
+                        {element.nameCard}
                       </NavLink>
                     }
                   </div>
@@ -89,7 +105,21 @@ export default function SearchPage({ classname }) {
                   <div>
                     {
                       <NavLink style={{ color: 'black' }} to={`/${element.router}`}>
-                        {element.name.toLowerCase()}
+                        {element.name}
+                      </NavLink>
+                    }
+                  </div>
+                );
+              })}
+              {resultDepartments.map((element) => {
+                return (
+                  <div>
+                    {
+                      <NavLink
+                        style={{ color: 'black' }}
+                        to={`company/management/${element.idNameInform}?id=${element.id}`}
+                      >
+                        {element.name}
                       </NavLink>
                     }
                   </div>

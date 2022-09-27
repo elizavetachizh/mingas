@@ -113,11 +113,13 @@ export default function ApplicationForOrderingCylinders() {
         >
           {t('infoButton:send')}
         </Button>
-        {isButtonDisabled ? (
+        {isButtonDisabled && (
           <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
-        ) : (
+        )}
+        {!isButtonDisabled && !msg && (
           <span style={{ color: 'red' }}>
-            Форма успешно заполнена, нажмите кнопку отправить и ожидайте ответа
+            Форма успешно заполнена, нажмите кнопку отправить и ожидайте ответа "Форма успешно
+            отправлена".
           </span>
         )}
         <p>
