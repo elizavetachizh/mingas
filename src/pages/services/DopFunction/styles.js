@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 export const DescriptionService = styled.div`
-  text-align: justify;
   max-width: 1100px;
   margin: 0 auto;
   font-size: 18px;
+  p {
+    text-align: justify;
+    text-indent: 1.5em;
+  }
   a {
     color: #0170b9;
     text-decoration: none;

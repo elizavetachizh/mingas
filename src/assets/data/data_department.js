@@ -56,8 +56,8 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-29-36'}>8017-299-29-36</a>,<br />
-            <a href={'tel:8017-299-28-62'}>8017-299-28-62</a> <br />
+            Телефон: <a href={'tel:+375 (017)-299-29-36'}> +375(017)-299-29-36</a>,<br />
+            <a href={'tel: +375(017)-299-28-62'}> +375(017)-299-28-62</a> <br />
             Адрес:{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
@@ -94,7 +94,7 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-323-29-21'}>8017-323-29-21</a>,
+            Телефон: <a href={'tel: +375 (017)-323-29-21'}> +375 (017)-323-29-21</a>,
             <br />
             Адрес:{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
@@ -136,7 +136,7 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-29-32'}>8017-299-29-32</a>, <br /> Адрес:{' '}
+            Телефон: <a href={'tel: +375 (017)-299-29-32'}> +375 (017)-299-29-32</a>, <br /> Адрес:{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
             </a>
@@ -160,7 +160,7 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-28-80'}>8017-299-28-80</a>, <br />{' '}
+            Телефон: <a href={'tel: +375 (017)-299-28-80'}> +375 (017)-299-28-80</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11 (1 подъезд)
             </a>
@@ -212,9 +212,9 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-28-69'}>8017-299-28-69</a>,
+            Телефон: <a href={'tel: +375 (017)-299-28-69'}> +375 (017)-299-28-69</a>,
             <br />
-            <a href={'tel:8017-299-29-26'}>8017-299-29-26</a> <br />
+            <a href={'tel: +375 (017)-299-29-26'}> +375 (017)-299-29-26</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
             </a>
@@ -270,8 +270,8 @@ export const data = [
         ),
         contacts: (
           <div>
-            Телефон: <a href={'tel:8017-299-28-36'}>8017-299-28-36</a>,<br />
-            <a href={'tel:8017-299-29-38'}>8017-299-29-38</a> <br />
+            Телефон: <a href={'tel: +375 (017)-299-28-36'}> +375 (017) 299-28-36</a>,<br />
+            <a href={'tel: +375 (017) 299-29-38'}> +375 (017) 299-29-38</a> <br />
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
             </a>

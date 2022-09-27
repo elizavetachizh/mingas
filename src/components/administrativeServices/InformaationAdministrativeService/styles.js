@@ -167,6 +167,9 @@ export const ContainerInformAboutService = styled.div`
   margin: 1rem auto;
   max-width: 980px;
   width: 100%;
+  p {
+    text-align: justify;
+  }
   @media (max-width: 980px) {
     width: 90%;
   }

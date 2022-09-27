@@ -37,7 +37,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <p style={{display:"none"}}>{items}</p>
+      <p style={{ display: 'none' }}>{items}</p>
       <Container>
         <Header />
         <>
@@ -50,7 +50,7 @@ export default function Home() {
           <News />
           <StateInformResources />
         </>
-        <ScrollToTop showUnder={160}>
+        <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
           <img src={up} alt={''} />
         </ScrollToTop>
         <Footer />

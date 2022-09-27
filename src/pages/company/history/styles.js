@@ -23,10 +23,10 @@ export const DivText = styled.div`
   width: 50%;
   font-size: 18px;
   color: #0d4475;
-  
+
   p {
-    text-indent: 25px;
-    text-align: left;
+    text-indent: 1.5em;
+    text-align: justify;
   }
   @media (max-width: 850px) {
     width: 90%;
@@ -62,6 +62,10 @@ export const PWithImg = styled.div`
   margin: 4% auto;
   font-size: 18px;
   color: #0d4475;
+  p {
+    text-align: justify;
+    text-indent: 1.5em;
+  }
   &.reverse {
     flex-direction: row-reverse;
   }
