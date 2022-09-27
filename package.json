@@ -36,6 +36,7 @@
     "nodemailer-plugin-inline-base64": "^2.1.1",
     "path": "^0.12.7",
     "prettier": "^2.6.2",
+    "qrcode": "^1.5.1",
     "react": "^17.0.2",
     "react-animated-slider": "^1.1.4",
     "react-carousel-animated": "^0.1.3",

@@ -1,16 +1,22 @@
 import Header from '../header';
 import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import React from 'react';
-import TitleFun from '../title';
+import React, { useEffect, useState } from 'react';
+import QRCode from 'qrcode';
 import { ContainerLinks } from '../../pages/company/parentOrganizations/styles';
 import { Container } from '../../pages/company/styles';
 import LeaveFeedbackMingas from './leaveFeedbackMingas';
 import DopFunctionService from '../../pages/services/DopFunction';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
-
+import quality from '../../assets/png/quality.png';
 export default function LeaveFeedback() {
+  const [src, setSrc] = useState('');
+  useEffect(() => {
+    QRCode.toDataURL('http://xn----7sbgfh2alwzdhpc0c.xn--90ais/organization/33279/org-page').then(
+      setSrc
+    );
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -69,8 +75,8 @@ export default function LeaveFeedback() {
                 rel="noreferrer"
               >
                 <img
-                  style={{ width: '50%', margin: '0 25%' }}
-                  src="https://mingas.by/wp-content/uploads/2019/03/d676007c6bce67133b0ea05bc310ca0e.png"
+                  style={{ width: '30%', margin: '0 35%' }}
+                  src={quality}
                   className="attachment-full size-full"
                   alt=""
                 />
@@ -79,16 +85,11 @@ export default function LeaveFeedback() {
                   Беларусь
                 </p>
               </a>
+              <div style={{ textAlign: 'center' }}>
+                <img style={{ width: '40%', margin: '0 30%' }} src={src} />
+                *QR-код для перехода на страницу УП "МИНГАЗ" <br /> на портале рейтинговой оценки
+              </div>
             </div>
-            <a href="/feedback/leave-feedback">
-              <img
-                src="http://qrcoder.ru/code/?http%3A%2F%2Fxn----7sbgfh2alwzdhpc0c.xn--90ais%2Fpre-auth&4&0"
-                width="280px"
-                height="280px"
-                border="0"
-                title="QR код"
-              />
-            </a>
           </div>
           <DopFunctionService
             classnamegeneral={'leave-feedback'}

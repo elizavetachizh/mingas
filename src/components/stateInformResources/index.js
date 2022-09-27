@@ -6,6 +6,7 @@ import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import React from 'react';
 import { BlockContainerRequests } from '../../pages/feedback/styles';
 import { useTranslation } from 'react-i18next';
+import quality from '../../assets/png/quality.png';
 const styledTitle = {
   margin: '0',
 };
@@ -32,6 +33,7 @@ export default function StateInformResources() {
             plugins={[
               'infinite',
               'arrows',
+              'centered',
               {
                 resolve: slidesToShowPlugin,
                 options: {
@@ -100,18 +102,12 @@ export default function StateInformResources() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img
-                  src="https://mingas.by/wp-content/uploads/2019/03/d676007c6bce67133b0ea05bc310ca0e.png"
-                  alt=""
-                />
+                <img src={quality} alt="" />
               </a>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Национальный правовой интернет-портал'}>
               <a href="https://pravo.by/" target="_blank" rel="noreferrer">
-                <img
-                  src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_208,h_113/https://mingas.by/wp-content/uploads/2018/05/pravo-by.jpg"
-                  alt=""
-                />
+                <img src="https://pravo.by/local/templates/.default/i/logo-main.png" alt="" />
               </a>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Минский городской исполнительный комитет'}>
@@ -209,18 +205,14 @@ export default function StateInformResources() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img
-                  src="https://mingas.by/wp-content/uploads/2019/03/d676007c6bce67133b0ea05bc310ca0e.png"
-                  alt=""
-                  style={{ width: '80%' }}
-                />
+                <img src={quality} alt="" style={{ width: '40%' }} />
               </a>
             </DivCarousel>
             <DivCarousel title={'Национальный правовой интернет-портал'}>
               <a href="https://pravo.by/" target="_blank" rel="noreferrer">
                 <img
                   style={{ width: '100%' }}
-                  src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_208,h_113/https://mingas.by/wp-content/uploads/2018/05/pravo-by.jpg"
+                  src="https://pravo.by/local/templates/.default/i/logo-main.png"
                   alt=""
                 />
               </a>

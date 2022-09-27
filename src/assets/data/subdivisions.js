@@ -27,7 +27,7 @@ export const subdivisions = [
         Телефон:
         <a href={'tel:8017-345-89-56'}>8017-345-89-56</a> <br />
         Адрес:{' '}
-        <a href={'https://yandex.by/maps/-/CCURfIuotD'} target="_blank" rel="noreferrer">
+        <a href={'https://goo.gl/maps/gxxbY2quJ3cZxp6L8'} target="_blank" rel="noreferrer">
           д. Большой Тростенец, ул. Центральная, д.41/1
         </a>
       </div>

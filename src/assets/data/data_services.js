@@ -200,7 +200,7 @@ export const data = [
                 электронной очереди
               </li>
               <li>
-                <a target="_blank" rel="noreferrer" href={'https://yandex.by/maps/-/CCURbBgb8C'}>
+                <a target="_blank" rel="noreferrer" href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}>
                   г. Заславль, ул. Советская 79
                 </a>{' '}
                 тел. <a href={'tel:80 (017) 544-56-09'}>80 (017) 544-56-09</a> <br />
@@ -480,7 +480,11 @@ export const data = [
                   электронной очереди
                 </li>
                 <li>
-                  <a target="_blank" rel="noreferrer" href={'https://yandex.by/maps/-/CCURbBgb8C'}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}
+                  >
                     г. Заславль, ул. Советская 79
                   </a>{' '}
                   пн-чт с 9 до 18, пт с 9 до 16.45, 3-я суббота месяца с 9 до 18, обеденный перерыв
@@ -572,6 +576,16 @@ export const data = [
           </div>
         ),
       },
+      {
+        nameDescription: 'Калькулятор стоимости услуг',
+        inform: (
+          <div>
+            <a target={'_blank'} href={'https://back.mingas.by/public/calculate/index.html'}>
+              Калькулятор стоимости услуг
+            </a>
+          </div>
+        ),
+      },
     ],
   },
   {
@@ -600,7 +614,11 @@ export const data = [
                 Обменные пункты УП «МИНГАЗ», где можно осуществить замену 5-ти, 12-ти и 27-ми
                 литровых баллонов, расположены по следующим адресам:
                 <li>
-                  <a target="_blank" href={'https://yandex.by/maps/-/CCURE2UpGC'} rel="noreferrer">
+                  <a
+                    target="_blank"
+                    href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}
+                    rel="noreferrer"
+                  >
                     г.Заславль, ул.Советская, 79
                   </a>
                   , <a href={'tel:+375 (017) 542-05-86'}>тел.80 (017) 542-05-86.</a>
@@ -1017,7 +1035,11 @@ export const data = [
                   электронной очереди
                 </li>
                 <li>
-                  <a target="_blank" rel="noreferrer" href={'https://yandex.by/maps/-/CCURbBgb8C'}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}
+                  >
                     г. Заславль, ул. Советская 79
                   </a>{' '}
                   <a href={'tel:80 (017) 511-52-44'}>тел. 80 (017) 511-52-44</a>
@@ -1120,7 +1142,7 @@ export const data = [
             <MapObenBalons />
             <ol>
               <li>
-                <a target="_blank" rel="noreferrer" href={'https://yandex.by/maps/-/CCURbBgb8C'}>
+                <a target="_blank" rel="noreferrer" href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}>
                   г. Заславль, ул. Советская 79
                 </a>{' '}
                 тел. (017) 542-05-86.

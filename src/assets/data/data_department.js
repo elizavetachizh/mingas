@@ -466,7 +466,7 @@ export const data = [
           <div>
             Телефон: <a href={'tel:8017-516-52-98'}>8017-516-52-98</a> <br />
             Адрес:
-            <a target="_blank" rel="noreferrer" href={'https://yandex.by/maps/-/CCURbBgb8C'}>
+            <a target="_blank" rel="noreferrer" href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}>
               г. Заславль, ул. Советская 79
             </a>
           </div>
@@ -957,7 +957,7 @@ export const data = [
             </a>
             <br />
             Центр обслуживания населения
-            <a href={'https://yandex.by/maps/-/CCURbBgb8C'} target="_blank" rel="noreferrer">
+            <a href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'} target="_blank" rel="noreferrer">
               г. Заславль, ул. Советская,79
             </a>
           </div>
