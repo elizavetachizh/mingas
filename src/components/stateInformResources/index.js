@@ -3,7 +3,7 @@ import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { DivCarousel } from './styles';
 import { DivInform } from '../../pages/Home/useful_information/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
-import React from 'react';
+import React, { useState } from 'react';
 import { BlockContainerRequests } from '../../pages/feedback/styles';
 import { useTranslation } from 'react-i18next';
 import quality from '../../assets/png/quality.png';
@@ -30,6 +30,7 @@ export default function StateInformResources() {
       <DivInform>
         {isPhone ? (
           <Carousel
+            value={0}
             plugins={[
               'infinite',
               'arrows',
@@ -118,6 +119,7 @@ export default function StateInformResources() {
           </Carousel>
         ) : (
           <Carousel
+            value={1}
             plugins={[
               'infinite',
               'arrows',

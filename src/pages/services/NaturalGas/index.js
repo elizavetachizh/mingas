@@ -17,7 +17,6 @@ import { useNavigate, useParams } from 'react-router';
 import DopFunctionalHeader from './DopFunctionalHeader';
 import linesOne from '../../../assets/background/rig.png';
 import { BackgroundStyleServices } from '../styles';
-import services from '../../../assets/background/uslugi-i-ceny-4.jpg';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.jpg';
 

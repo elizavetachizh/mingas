@@ -76,7 +76,7 @@ export const DivButtonHeader = styled.div`
   //position: absolute;
   margin: 0 20px;
   opacity: 0;
-  animation: ${opacityAnimation} 2s forwards;
+  animation: ${opacityAnimation} 1.2s forwards;
   &.shake {
     display: flex;
     width: auto;

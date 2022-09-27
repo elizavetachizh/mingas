@@ -148,7 +148,7 @@ export default function SMI() {
                 <img
                   alt={''}
                   src={
-                    'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-15-of-31-kopiya-1.jpgv'
+                    'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }
                 />
 
