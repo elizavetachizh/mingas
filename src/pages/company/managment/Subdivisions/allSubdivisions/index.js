@@ -7,12 +7,15 @@ import { data } from '../../../../../assets/data/data_department';
 import DopFunctional from '../DopFunctional';
 import {
   BlockSearchService,
+  ContainerFormSearchForService,
   ContainerInform,
+  SearchService,
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../../../assets/png/up_arrow_round.png';
 import { NavLink } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router';
+import { IoIosSearch, IoMdClose } from 'react-icons/io';
 
 export default function AllSubdivisions() {
   const [isForm, setIsForm] = useState(false);
@@ -74,54 +77,67 @@ export default function AllSubdivisions() {
     setIsForm(false);
     setMessage('');
     setInfo(infoForSearch);
-    navigate('/company/management/1');
+    navigate('company/management/all-departments');
   };
+  console.log(info);
   return (
     <Container>
       <Header />
       <AdditionalDiv>
         <ContainerInform>
           <>
-            {/*{isForm ? (*/}
-            {/*  <IoIosSearch style={{ display: 'none' }} />*/}
-            {/*) : (*/}
-            {/*  <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>*/}
-            {/*    <p>Поиск по отделам</p>*/}
-            {/*    <IoIosSearch*/}
-            {/*      style={{ height: '30px', width: '30px' }}*/}
-            {/*      color={'#0d4475'}*/}
-            {/*      type={'submit'}*/}
-            {/*    />*/}
-            {/*  </SearchService>*/}
-            {/*)}*/}
-            {/*{isForm && (*/}
-            {/*  <ContainerFormSearchForService style={{ margin: '4% auto' }}>*/}
-            {/*    <form action={'search'}>*/}
-            {/*      <input*/}
-            {/*        placeholder="Введите название отдела"*/}
-            {/*        onChange={handleChange}*/}
-            {/*        type={'text'}*/}
-            {/*      />*/}
-            {/*      <IoMdClose*/}
-            {/*        style={{ width: '60px' }}*/}
-            {/*        color={'black'}*/}
-            {/*        onClick={handleInsideClick}*/}
-            {/*      />*/}
-            {/*    </form>*/}
-            {/*  </ContainerFormSearchForService>*/}
-            {/*)}*/}
-            {/*{message && renderResult()}*/}
-            {infoForSearch.map((el) => (
-              <DopFunctional
-                key={el.name}
-                name={el.name}
-                contacts={el.contacts}
-                schedule={el.schedule}
-                photo={el.photo}
-                chief={el.chief}
-                description={el.description}
-              />
-            ))}
+            {isForm ? (
+              <IoIosSearch style={{ display: 'none' }} />
+            ) : (
+              <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>
+                <p>Поиск по отделам</p>
+                <IoIosSearch
+                  style={{ height: '30px', width: '30px' }}
+                  color={'#0d4475'}
+                  type={'submit'}
+                />
+              </SearchService>
+            )}
+            {isForm && (
+              <ContainerFormSearchForService style={{ margin: '4% auto' }}>
+                <form action={'search'}>
+                  <input
+                    placeholder="Введите название отдела"
+                    onChange={handleChange}
+                    type={'text'}
+                  />
+                  <IoMdClose
+                    style={{ width: '60px' }}
+                    color={'black'}
+                    onClick={handleInsideClick}
+                  />
+                </form>
+              </ContainerFormSearchForService>
+            )}
+            {message && renderResult()}
+            {info.length
+              ? info.map((el) => (
+                  <DopFunctional
+                    key={el.id}
+                    name={el.name}
+                    contacts={el.contacts}
+                    schedule={el.schedule}
+                    photo={el.photo}
+                    chief={el.chief}
+                    description={el.description}
+                  />
+                ))
+              : infoForSearch.map((el) => (
+                  <DopFunctional
+                    key={el.name}
+                    name={el.name}
+                    contacts={el.contacts}
+                    schedule={el.schedule}
+                    photo={el.photo}
+                    chief={el.chief}
+                    description={el.description}
+                  />
+                ))}
           </>
         </ContainerInform>
       </AdditionalDiv>

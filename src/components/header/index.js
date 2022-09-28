@@ -51,7 +51,6 @@ export default function Header({ backgroundHeader }) {
     }
   };
   window.addEventListener('scroll', changeBackground);
-  console.log(open);
   const onClick = () => {
     setOpen(!open);
   };
