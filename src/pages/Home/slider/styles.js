@@ -131,11 +131,6 @@ export const BackgroundContainer = styled.img`
     background-repeat: no-repeat;
     object-fit: cover;
     height: 400px;
-
-    //@media (min-width: 1500px) {
-    //  height: 600px;
-    //  margin-top: -150px;
-    //}
     @media (min-width: 1000px) {
       width: 50%;
       margin-top: -40px;
@@ -153,26 +148,6 @@ export const BackgroundContainer = styled.img`
       height: 266px;
       margin-top: -10px;
     }
-    //@media (max-width: 860px) {
-    //  height: 300px;
-    //  margin-top: -70px;
-    //}
-    //@media (max-width: 740px) {
-    //  height: 270px;
-    //  margin-top: -64px;
-    //}
-    //@media (max-width: 694px) {
-    //  height: 250px;
-    //  margin-top: -60px;
-    //}
-    //@media (max-width: 648px) {
-    //  height: 218px;
-    //  margin-top: -42px;
-    //}
-    //@media (max-width: 600px) {
-    //  height: 400px;
-    //  //margin-top: -42px;
-    //}
   }
   @media (min-width: 2000px) {
     margin-top: -470px;
