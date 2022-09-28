@@ -141,7 +141,7 @@ export const BackgroundContainer = styled.img`
       margin-top: -40px;
     }
     @media (min-width: 1500px) {
-      width: 50%;
+      width: 46%;
       margin-top: -80px;
     }
     @media (min-width: 2000px) {
