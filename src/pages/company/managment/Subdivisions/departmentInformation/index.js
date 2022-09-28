@@ -239,7 +239,7 @@ export default function DepartmentInformation() {
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
         <img src={up} alt={''} />
       </ScrollToTop>
       <Footer />

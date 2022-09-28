@@ -6,11 +6,13 @@ import LifeOfMingas from '../../pages/PressCenter/lifeOfMingas';
 export const pressCenter = [
   {
     id: 1,
+    router: 'smi',
     name: 'СМИ о нас',
     description: <SMI />,
   },
   {
     id: 2,
+    router: 'newspaper',
     name: 'Корпоротивная газета "Столичный газовик"',
     description: (
       <>
@@ -20,6 +22,7 @@ export const pressCenter = [
   },
   {
     id: 3,
+    router: 'life-of-mingas',
     name: 'Жизнь в стиле "Мингаз"',
     description: (
       <>

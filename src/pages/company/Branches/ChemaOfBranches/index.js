@@ -16,6 +16,8 @@ import { Main, WindowDiv } from '../../../Home/slider/styles';
 import { Name } from '../../../../components/administrativeServices/Header/styles';
 import { ContainerParallax } from '../styles';
 import { BtnOpenInform } from '../../../../components/MethodPayment/styles';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../../assets/png/up_arrow_round.png';
 
 export default function SchemaOfBranches({
   name,
@@ -114,6 +116,9 @@ export default function SchemaOfBranches({
           {inform}
         </General>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

@@ -28,6 +28,7 @@ export default function CardOfService() {
   const { cardId } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (!inform.length && !currentServiceID && (!title.length || !title)) {
       const current = dataLegalEntities.find((element) => element.serviceId === +cardId);
       setInform(current.description);

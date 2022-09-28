@@ -4,10 +4,15 @@ import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
-import React from 'react';
+import React, { useEffect } from 'react';
 import DopFunctional from './DopFunctional';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../assets/png/up_arrow_round.png';
 
 export default function Posts() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header />
@@ -19,6 +24,9 @@ export default function Posts() {
       <AdditionalDiv>
         <DopFunctional />
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

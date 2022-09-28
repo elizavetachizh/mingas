@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
@@ -19,7 +19,9 @@ export default function ServicesForLegalEntities() {
     const current = dataLegalEntities.find((element) => element.serviceId === descriptionLegalID);
     navigate(`/services-legal-entities/${current.serviceId}`);
   }, []);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

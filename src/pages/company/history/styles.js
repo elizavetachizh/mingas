@@ -84,12 +84,21 @@ export const PWithImg = styled.div`
         float: right;
       }
     }
+    @media (max-width: 382px) {
+      width: 48%;
+    }
+    @media (max-width: 322px) {
+      width: 46%;
+    }
   }
   @media (max-width: 900px) {
     font-size: 16px;
   }
   @media (max-width: 800px) {
     display: block;
+  }
+  @media (max-width: 382px) {
+    font-size: 14px;
   }
 `;
 

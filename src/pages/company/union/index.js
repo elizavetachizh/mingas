@@ -11,10 +11,13 @@ import { Container, Img, Link } from '../styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
 
 export default function Union() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
+    window.scrollTo(0, 0);
   }, []);
   return (
     <Container>
@@ -121,10 +124,12 @@ export default function Union() {
                 ДОМОРАЦКАЯ МАРИНА АЛЕКСЕЕВНА
               </>
             }
-            fontSize={'s'}
           />
         </div>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

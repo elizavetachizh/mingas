@@ -16,9 +16,12 @@ import TitleForHome from '../../../components/TitleForHome';
 import { Container } from '../styles';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
 export default function History() {
   useEffect(() => {
     Aos.init({ duration: 3000 });
+    window.scrollTo(0, 0);
   }, []);
   return (
     <Container>
@@ -214,9 +217,11 @@ export default function History() {
         </div>
       </AdditionalDiv>
       <BlockImage>
-        {' '}
         <ImgBackground alt={''} src={history_6} />
       </BlockImage>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

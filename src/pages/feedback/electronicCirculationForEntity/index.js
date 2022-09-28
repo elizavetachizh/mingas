@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import FormQuestionForEntity from '../../../components/FormQuestionForEntity';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { ContainerInform, TextForInformation } from './styles';
 import SubTitleFun from '../../../components/SubTitle';
-import TitleForHome from '../../../components/TitleForHome';
 import { Container } from '../../company/styles';
 import Feedback from '../index';
 import minsk from '../../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
 
 export default function ElectronicAppealForEntity() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader="blue" />
@@ -85,6 +89,9 @@ export default function ElectronicAppealForEntity() {
           <FormQuestionForEntity />
         </ContainerInform>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

@@ -58,7 +58,7 @@ function LifeOfMingas() {
           <video
             poster={require('../../../assets/png/logo_video.png')}
             controls
-            src={'https://back.mingas.by/public/videos/%D1%84%D0%B8%D0%BB%D1%8C%D0%BC.mp4'}
+            src={'https://back.mingas.by/public/videos/file.mp4'}
           />
         </div>
       </div>

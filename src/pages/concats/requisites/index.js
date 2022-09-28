@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Abbreviated, Certificate, Codbank, NameBank, NumberScore, PageSection } from './styles';
 import Header from '../../../components/header';
 import HeaderConcats from '../headerContacts';
 import { Row } from '../styles';
 import { AdditionalDiv } from '../GeneralContactInform/styles';
 import Footer from '../../../components/footer';
-import TitleFun from '../../../components/title';
-import {Container} from "../../company/styles";
-import Feedback from "../../feedback";
-import minsk from "../../../assets/background/phone.jpg";
+import { Container } from '../../company/styles';
+import Feedback from '../../feedback';
+import minsk from '../../../assets/background/phone.jpg';
 
 export default function Requisites() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -59,6 +61,7 @@ export default function Requisites() {
           </PageSection>
         </Row>
       </AdditionalDiv>
+
       <Footer />
     </Container>
   );

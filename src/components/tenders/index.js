@@ -2,12 +2,14 @@ import { Container, Link } from '../../pages/company/styles';
 import Header from '../header';
 import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import TitleFun from '../title';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
 
 export default function Tenders() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -24,7 +26,7 @@ export default function Tenders() {
               УП «МИНГАЗ» осуществляет проведение процедур закупок товаров (работ, услуг) по
               принципу открытости и прозрачности посредством ресурса www.icetrade.by
             </p>
-            <img src={require('../../assets/png/icetrade.png')} />{' '}
+            <img alt={'картинка грузится'} src={require('../../assets/png/icetrade.png')} />{' '}
           </a>
         </Link>
         {/*<iframe*/}

@@ -22,6 +22,8 @@ import {
 import close from '../../../assets/png/close.png';
 import minsk from '../../../assets/background/phone.jpg';
 import Feedback from '../../feedback';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
 
 export default function Documentation() {
   const [numPage, setNumPage] = useState(null);
@@ -64,6 +66,7 @@ export default function Documentation() {
   );
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const current = documents.find((element) => element.GeneralId === +generalId);
     setInform(current?.inform);
     setGeneralId(current?.GeneralId);
@@ -180,6 +183,9 @@ export default function Documentation() {
           </ModalWindow>
         )}
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

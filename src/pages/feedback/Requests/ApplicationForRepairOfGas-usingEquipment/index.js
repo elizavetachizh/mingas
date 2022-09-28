@@ -175,10 +175,14 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         >
           Отправить
         </Button>
-        {isButtonDisabled ? (
-          <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
-        ) : (
-          <span style={{ color: 'red' }}>Форма успешно заполнена</span>
+        {isButtonDisabled && (
+          <span style={{ color: 'red' }}>Заполните, пожалуйста, все необходимые поля</span>
+        )}
+        {!isButtonDisabled && !msg && (
+          <span style={{ color: 'red' }}>
+            Форма успешно заполнена, нажмите кнопку отправить и ожидайте ответа "Форма успешно
+            отправлена".
+          </span>
         )}
         <p>
           <b>{msg}</b>

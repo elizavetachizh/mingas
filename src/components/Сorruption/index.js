@@ -2,7 +2,6 @@ import { Container } from '../../pages/company/styles';
 import Header from '../header';
 import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import TitleForHome from '../TitleForHome';
 import {
   BtnIsOpen,
   Div,
@@ -10,11 +9,13 @@ import {
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { DescriptionService } from '../../pages/services/DopFunction/styles';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ContanerNewsPape } from '../../pages/PressCenter/newspaper/styles';
 import { data } from './data';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../assets/png/up_arrow_round.png';
 
 export default function Corruption() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,9 @@ export default function Corruption() {
       setIsOpen(false);
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header />
@@ -73,6 +77,9 @@ export default function Corruption() {
           ))}
         </div>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

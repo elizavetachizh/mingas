@@ -74,7 +74,6 @@ export const Button = styled(NavLink)`
   }
   @media (max-width: 400px) {
     width: 150px;
-    height: 30px;
   }
   ${({ backgrounder }) => buttonBackgroundColor[backgrounder]}
 `;

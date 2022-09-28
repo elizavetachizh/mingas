@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/header';
 import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import Footer from '../../components/footer';
@@ -10,7 +10,12 @@ import { Links } from './styles';
 import { Container } from '../company/styles';
 import Feedback from '../feedback';
 import minsk from '../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../assets/png/up_arrow_round.png';
 export default function ResidentsOfCapitalRegion() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -34,6 +39,9 @@ export default function ResidentsOfCapitalRegion() {
           </a>
         </Links>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

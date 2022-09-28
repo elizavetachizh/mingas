@@ -33,6 +33,12 @@ export const ContainerLeaders = styled.a`
 `;
 export const ImageLeader = styled.img`
   width: 70%;
+  @media (max-width: 500px) {
+    width: 80%;
+  }
+  @media (max-width: 400px) {
+    width: 90%;
+  }
 `;
 export const FullNameLeader = styled.p`
   text-align: center;

@@ -40,6 +40,9 @@ export const Table = styled.table`
 export const Tbody = styled.tbody`
   border-top: 0.1rem solid #e0e0e0;
   text-align: left;
+  a {
+    color: #0d4475;
+  }
 `;
 
 export const Tr = styled.tr`
@@ -49,6 +52,6 @@ export const Tr = styled.tr`
 
 export const Td = styled.td`
   vertical-align: top;
-  padding: 0.6rem 0.6rem 1.6rem 1.6rem;
+  padding: 0.2rem 0.2rem 0.6rem 0.6rem;
   border: 0.1rem solid #e0e0e0;
 `;

@@ -71,6 +71,27 @@ export const DivText = styled.div`
         font-weight: bold;
     }
     }
+  &.priem {
+    flex-direction: column;
+    width: 40%;
+    margin: 0 50%;
+    align-items: center;
+    @media(max-width: 1000px){
+      margin: -10px 50%;
+    }
+    @media(max-width: 600px){
+      position: absolute;
+      color: black;
+      width: 90%;
+      margin: 0 auto;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   }
   &.phone {
     @media (max-width: 1100px) {
@@ -155,21 +176,6 @@ export const DivText = styled.div`
       }
     }
   }
-  //@media (max-width: 650px) {
-  //  flex-direction: column;
-  //  justify-content: center;
-  //  align-items: center;
-  //  img {
-  //    width: 70%;
-  //    margin: 0 25%;
-  //  }
-  //}
-  //@media (max-width: 400px) {
-  //  img {
-  //    width: 60%;
-  //    margin: 0 25%;
-  //  }
-  //}
   &.media-phone {
     margin-top: 80px;
     a {
@@ -198,6 +204,27 @@ export const Text = styled.p`
   color: #ffff;
   text-align: center;
   text-transform: uppercase;
+  &.priem {
+    color: black;
+    font-size: 22px;
+    text-align: justify;
+    padding-left: 20px;
+    @media (max-width: 1000px) {
+      font-size: 18px;
+    }
+    @media (max-width: 800px) {
+      font-size: 16px;
+    }
+    @media (max-width: 650px) {
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      color: #ffff;
+      text-align: center;
+      font-size: 16px;
+      padding-left: 0;
+    }
+  }
   &.phone {
     @media (max-width: 600px) {
       margin-bottom: 50px;

@@ -10,7 +10,7 @@ export default function News() {
   const { t } = useTranslation();
   return (
     <BlockContainerRequests>
-      <TitleForHome margin={'s'} fontSize={'m'} color={'blue'} infoTitle={`${t('smi:title')}`} />
+      <TitleForHome margin={'s'} color={'blue'} infoTitle={`${t('smi:title')}`} />
       <DivInform>
         <ArticleForHome className={'general'}>
           <a

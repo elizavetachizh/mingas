@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
 import imageContent from '../../../../assets/Bubni/background1.jpg';
 import TitleForHome from '../../../../components/TitleForHome';
@@ -6,6 +6,9 @@ import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
 
 export default function TBZ() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <SchemaOfBranches
       height={'500px'}

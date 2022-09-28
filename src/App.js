@@ -23,8 +23,6 @@ import SearchPage from './pages/SearchPage';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
 import Gratitude from './pages/company/Gratitude';
 import MethodPayment from './components/MethodPayment';
-import NaturalGasTariff from './pages/tariff/naturalGasTariff';
-import LiquefiedGasTariff from './pages/tariff/liquefiedGasTariff';
 import ElectronicAppealForEntity from './pages/feedback/electronicCirculationForEntity';
 import InformationAdministrativeService from './components/administrativeServices/InformaationAdministrativeService';
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
@@ -42,7 +40,6 @@ import Tenders from './components/tenders';
 import ResidentsOfTheCapitalRegion from './components/ResidentsOfTheCapitalRegion';
 import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
-import SubdivisionsSUPGN from './pages/company/managment/SubdivisionsSUPGN';
 import Corruption from './components/Сorruption';
 import Telemetria from './components/telemetria';
 import Posts from './components/posts';
@@ -63,13 +60,11 @@ export default function App() {
           path={'/feedback/electronic-appeal-for-entity'}
           element={<ElectronicAppealForEntity />}
         />
-
         <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
         <Route path="/*" element={<NoMatch />} />
         <Route path="/company/management" element={<Management />} />
         <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
         <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
-        <Route path="/company/management/:subdivisionSUPGNId" element={<SubdivisionsSUPGN />} />
         <Route path="/company/management/all-departments" element={<AllSubdivisions />} />
         <Route path={'/company/corruption'} element={<Corruption />} />
         <Route path="/services/:cardId" element={<NaturalGas />} />
@@ -97,8 +92,6 @@ export default function App() {
         <Route path={'/contacts/work-schedule'} element={<SchedulePersonalReceptionOfCitizens />} />
         <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
         <Route path={'/SearchPage'} element={<SearchPage />} />
-        <Route path={'/natural-gas-tariff'} element={<NaturalGasTariff />} />
-        <Route path={'/liquefied-gas-tariff'} element={<LiquefiedGasTariff />} />
         <Route
           path={'/services/administrative-services/'}
           element={<InformationAdministrativeService />}

@@ -121,7 +121,7 @@ export default function ReceptionSchedule() {
             <td>
               <NavLink to={'/company/management/division/4'}>Пашинь Татьяна Владимировна</NavLink>
               <br /> Начальник участка № 3 службы эксплуатации внутридомовых объектов
-              газопотребления системы
+              газопотребления
             </td>
           </tr>
           <tr>

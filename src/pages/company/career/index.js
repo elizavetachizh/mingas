@@ -8,7 +8,6 @@ import { DivForm } from './styles';
 import up from '../../../assets/png/up_arrow_round.png';
 import ScrollToTop from 'react-scroll-up';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
-import TitleForHome from '../../../components/TitleForHome';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import {
   BtnIsOpen,
@@ -32,6 +31,7 @@ export default function Career() {
     }
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     const script = document.createElement('script');
     script.src = url;
     script.async = true;
@@ -40,7 +40,6 @@ export default function Career() {
       div.removeChild(script);
     };
   }, []);
-  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <Container>
       <Header backgroundHeader="blue" />

@@ -63,6 +63,7 @@ export default function DepartmentInformation() {
     });
   }
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (!currentDocumentId && !inform.length) {
       const current = data.find((element) => element.idName === +documentId);
       setInform(current.inform);

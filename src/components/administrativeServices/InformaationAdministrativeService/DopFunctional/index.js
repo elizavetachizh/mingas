@@ -57,12 +57,11 @@ export default function DopFunctional({
       ) : (
         <></>
       )}
-      {contactInform ? (
+      {contactInform && (
         <>
           <BtnIsOpen onClick={animateClose}>
             <p>Контактная информация: </p>
             <div>
-              {' '}
               {isClose ? (
                 <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
               ) : (
@@ -72,8 +71,6 @@ export default function DopFunctional({
           </BtnIsOpen>
           <Div className={isClose && `shake`}>{contactInform}</Div>
         </>
-      ) : (
-        <></>
       )}
       <hr />
     </ContainerInformAboutService>

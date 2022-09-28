@@ -1,9 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Container, ContainerGraditude, BlockOfGraditude } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
-import TitleForHome from '../../../components/TitleForHome';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { gratitude } from '../../../assets/data/gratitude';
 import {
@@ -13,8 +12,10 @@ import {
   ModalWindowOpenAndClose,
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
-import Feedback from "../../feedback";
-import minsk from "../../../assets/background/phone.jpg";
+import Feedback from '../../feedback';
+import minsk from '../../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
 
 export default function Gratitude() {
   const [currentServiceID, setServiceID] = useState(null);
@@ -34,10 +35,13 @@ export default function Gratitude() {
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader="blue" />
-        <Feedback className={'none'} img={minsk} name={'Благодарности и награды'} />
+      <Feedback className={'none'} img={minsk} name={'Благодарности и награды'} />
       <HeaderCompany currentPage={'gratitude'} />
 
       <AdditionalDiv style={{ margin: '4% auto' }}>
@@ -63,6 +67,9 @@ export default function Gratitude() {
           </ModalWindow>
         )}
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

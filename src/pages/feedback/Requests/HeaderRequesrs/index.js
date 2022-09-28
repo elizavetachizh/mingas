@@ -15,7 +15,6 @@ export default function HeaderRequests({ style }) {
   return (
     <BlockContainerRequests style={style}>
       <TitleForHome
-        fontSize={'m'}
         style={{ margin: '0 auto' }}
         color={'blue'}
         infoTitle={`${t('request:request')}`}

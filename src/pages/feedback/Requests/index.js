@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeaderRequests from './HeaderRequesrs';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
@@ -7,6 +7,9 @@ import { Container } from '../../company/styles';
 import Feedback from '../index';
 import minsk from '../../../assets/background/phone.jpg';
 export default function Requests() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

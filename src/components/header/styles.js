@@ -62,6 +62,7 @@ export const Menu = styled.div`
 
 export const MenuClose = styled.div`
   margin-top: 20px;
+
   img {
     margin: 10px;
   }

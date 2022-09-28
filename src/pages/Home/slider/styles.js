@@ -121,28 +121,59 @@ export const BackgroundContainer = styled.img`
       height: 400px;
       //margin-top: -42px;
     }
-    //@media (max-width: 512px) {
-    //  height: 172px;
-    //  margin-top: -22px;
+  }
+  &.priem {
+    filter: none;
+    margin-top: -70px;
+    width: 50%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 400px;
+
+    //@media (min-width: 1500px) {
+    //  height: 600px;
+    //  margin-top: -150px;
     //}
-    //@media (max-width: 500px) {
-    //  height: 196px;
-    //  margin-top: -46px;
+    @media (min-width: 1000px) {
+      width: 50%;
+      margin-top: -40px;
+    }
+    @media (min-width: 1500px) {
+      width: 50%;
+      margin-top: -80px;
+    }
+    @media (min-width: 2000px) {
+      width: 40%;
+      margin-top: -85px;
+    }
+
+    @media (max-width: 950px) {
+      height: 266px;
+      margin-top: -10px;
+    }
+    //@media (max-width: 860px) {
+    //  height: 300px;
+    //  margin-top: -70px;
     //}
-    //@media (max-width: 460px) {
-    //  height: 180px;
-    //  margin-top: -30px;
+    //@media (max-width: 740px) {
+    //  height: 270px;
+    //  margin-top: -64px;
     //}
-    //@media (max-width: 414px) {
-    //  height: 160px;
-    //  margin-top: -26px;
+    //@media (max-width: 694px) {
+    //  height: 250px;
+    //  margin-top: -60px;
     //}
-    //@media (max-width: 360px) {
-    //  height: 150px;
-    //  margin-top: -20px;
+    //@media (max-width: 648px) {
+    //  height: 218px;
+    //  margin-top: -42px;
+    //}
+    //@media (max-width: 600px) {
+    //  height: 400px;
+    //  //margin-top: -42px;
     //}
   }
-
   @media (min-width: 2000px) {
     margin-top: -470px;
   }
@@ -167,12 +198,4 @@ export const BackgroundContainer = styled.img`
     height: 400px;
     margin: 0 auto 0;
   }
-  //@media (max-width: 590px) {
-  //  width: 100%;
-  //  margin: -80px auto 0;
-  //}
-  //@media (max-width: 440px) {
-  //  width: 100%;
-  //  margin: -50px auto 0;
-  //}
 `;

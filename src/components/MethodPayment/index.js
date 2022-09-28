@@ -1,9 +1,8 @@
 import Header from '../header';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ContainerText, ImgERIP } from './styles';
-import TitleFun from '../title';
 import payment from '../../assets/payment/1.png';
 import bankBook from '../../assets/payment/2.png';
 import meterReading from '../../assets/payment/3.png';
@@ -27,6 +26,8 @@ import {
 import { Container } from '../../pages/company/styles';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../assets/png/up_arrow_round.png';
 export default function MethodPayment() {
   const [open, setOpen] = useState(false);
   const animate = () => {
@@ -42,7 +43,9 @@ export default function MethodPayment() {
       setClose(false);
     }
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -225,6 +228,9 @@ export default function MethodPayment() {
           </div>
         </ContainerText>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

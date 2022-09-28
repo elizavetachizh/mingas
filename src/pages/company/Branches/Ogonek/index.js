@@ -1,11 +1,13 @@
 import { BlockInformOgonek } from '../styles';
 import SchemaOfBranches from '../ChemaOfBranches';
 import background from '../../../../assets/Ogonek/background1.jpg';
-import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
-import React from 'react';
+import React, { useEffect } from 'react';
 export default function Ogonek() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <SchemaOfBranches
       name={'Оздровительный комплекс Огонек'}
@@ -15,7 +17,7 @@ export default function Ogonek() {
         <>
           {' '}
           <BlockInformOgonek id={'1'}>
-            <img src={require('../../../../assets/Ogonek/2.jpeg')} />
+            <img alt={'картинка грузится'} src={require('../../../../assets/Ogonek/2.jpeg')} />
             <div>
               <h4> Активный отдых</h4>
               <ul>
@@ -43,10 +45,10 @@ export default function Ogonek() {
                 – важный элемент оздоровления!
               </p>
             </div>
-            <img src={require('../../../../assets/Ogonek/3.jpeg')} />
+            <img alt={'картинка грузится'} src={require('../../../../assets/Ogonek/3.jpeg')} />
           </BlockInformOgonek>
           <BlockInformOgonek id={'3'}>
-            <img src={require('../../../../assets/Ogonek/4.JPG')} />
+            <img alt={'картинка грузится'} src={require('../../../../assets/Ogonek/4.JPG')} />
             <div>
               <h4>Занятия по интересам и тренинги</h4>
               <ul>
@@ -84,10 +86,10 @@ export default function Ogonek() {
                 другими настольными играми.
               </p>
             </div>
-            <img src={require('../../../../assets/Ogonek/8.JPG')} />
+            <img alt={'картинка грузится'} src={require('../../../../assets/Ogonek/8.JPG')} />
           </BlockInformOgonek>
           <BlockInformOgonek id={'5'}>
-            <img src={require('../../../../assets/Ogonek/5.JPG')} />
+            <img alt={'картинка грузится'} src={require('../../../../assets/Ogonek/5.JPG')} />
             <div>
               <h4>Смены</h4>
               <ul>
@@ -109,7 +111,7 @@ export default function Ogonek() {
                 <li>Квесты</li>
               </ul>
             </div>
-            <img src={require('../../../../assets/Ogonek/9.JPG')} />
+            <img alt={'картинка грузится'} src={require('../../../../assets/Ogonek/9.JPG')} />
           </BlockInformOgonek>
         </>
       }

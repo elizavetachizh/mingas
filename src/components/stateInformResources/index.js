@@ -3,7 +3,7 @@ import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { DivCarousel } from './styles';
 import { DivInform } from '../../pages/Home/useful_information/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
-import React, { useState } from 'react';
+import React from 'react';
 import { BlockContainerRequests } from '../../pages/feedback/styles';
 import { useTranslation } from 'react-i18next';
 import quality from '../../assets/png/quality.png';
@@ -30,11 +30,9 @@ export default function StateInformResources() {
       <DivInform>
         {isPhone ? (
           <Carousel
-            value={0}
             plugins={[
               'infinite',
               'arrows',
-              'centered',
               {
                 resolve: slidesToShowPlugin,
                 options: {
@@ -46,7 +44,7 @@ export default function StateInformResources() {
           >
             <DivCarousel className={'isPhone'} title={'Портал Президента Республики Беларусь'}>
               <figure>
-                <a href={'https://president.gov.by/ru'}>
+                <a target={'_blank'} href={'https://president.gov.by/ru'}>
                   <img src={require('../../assets/png/portal-prezidenta.png')} alt="" />
                 </a>
               </figure>
@@ -56,33 +54,33 @@ export default function StateInformResources() {
               title={'Администрация Первомайского района г. Минска'}
             >
               <figure>
-                <a href={'https://pervadmin.gov.by/'}>
+                <a target={'_blank'} href={'https://pervadmin.gov.by/'}>
                   <img src={require('../../assets/png/pervoma.png')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Минский областной исполнительный комитет'}>
               <figure>
-                <a href={'https://www.minsk-region.gov.by/'}>
+                <a target={'_blank'} href={'https://www.minsk-region.gov.by/'}>
                   <img src={require('../../assets/png/oblispolcom.png')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'БЕЛТА'}>
               <figure>
-                <a href={'https://www.belta.by/ru'}>
+                <a target={'_blank'} href={'https://www.belta.by/ru'}>
                   <img src={require('../../assets/png/belta.png')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Беларусь сегодня'}>
-              <a href="https://www.sb.by/" target="_blank" rel="noreferrer">
+              <a target={'_blank'} href="https://www.sb.by/" rel="noreferrer">
                 <img src={require('../../assets/png/belarus-today.png')} alt="" />
               </a>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Минская правда'}>
               <figure>
-                <a href={'https://mlyn.by/'}>
+                <a target={'_blank'} href={'https://mlyn.by/'}>
                   <img src={require('../../assets/png/minsk_truth.jpg')} alt="" />
                 </a>
               </figure>
@@ -119,7 +117,6 @@ export default function StateInformResources() {
           </Carousel>
         ) : (
           <Carousel
-            value={1}
             plugins={[
               'infinite',
               'arrows',
@@ -134,14 +131,14 @@ export default function StateInformResources() {
           >
             <DivCarousel title={'Портал Президента Республики Беларусь'}>
               <figure>
-                <a href={'https://president.gov.by/ru'}>
+                <a target={'_blank'} href={'https://president.gov.by/ru'}>
                   <img src={require('../../assets/png/portal-prezidenta.png')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
             <DivCarousel title={'Администрация Первомайского района г. Минска'}>
               <figure>
-                <a href={'https://pervadmin.gov.by/'}>
+                <a target={'_blank'} href={'https://pervadmin.gov.by/'}>
                   <img
                     style={{ width: '80%' }}
                     src={require('../../assets/png/pervoma.png')}
@@ -152,7 +149,7 @@ export default function StateInformResources() {
             </DivCarousel>
             <DivCarousel title={'Минский областной исполнительный комитет'}>
               <figure>
-                <a href={'https://www.minsk-region.gov.by/'}>
+                <a target={'_blank'} href={'https://www.minsk-region.gov.by/'}>
                   <img
                     style={{ width: '30%' }}
                     src={require('../../assets/png/oblispolcom.png')}
@@ -163,7 +160,7 @@ export default function StateInformResources() {
             </DivCarousel>
             <DivCarousel title={'БЕЛТА'}>
               <figure>
-                <a href={'https://www.belta.by/ru'}>
+                <a target={'_blank'} href={'https://www.belta.by/ru'}>
                   <img src={require('../../assets/png/belta.png')} alt="" />
                 </a>
               </figure>
@@ -179,7 +176,7 @@ export default function StateInformResources() {
             </DivCarousel>
             <DivCarousel title={'Минская правда'}>
               <figure>
-                <a href={'https://mlyn.by/'}>
+                <a target={'_blank'} href={'https://mlyn.by/'}>
                   <img
                     style={{ width: '50%' }}
                     src={require('../../assets/png/minsk_truth.jpg')}

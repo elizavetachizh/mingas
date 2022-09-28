@@ -10,7 +10,7 @@ import DopFunctional from '../../pages/company/managment/Subdivisions/DopFunctio
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import Footer from '../footer';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
@@ -48,7 +48,7 @@ export default function Subdivisions() {
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
         <img src={up} alt={'Вверх'} />
       </ScrollToTop>
       <Footer />

@@ -116,7 +116,7 @@ export default function SearchPage({ classname }) {
                     {
                       <NavLink
                         style={{ color: 'black' }}
-                        to={`company/management/${element.idNameInform}?id=${element.id}`}
+                        to={`/company/management/${element.idNameInform}?id=${element.id}`}
                       >
                         {element.name}
                       </NavLink>

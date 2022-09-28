@@ -50,7 +50,7 @@ export default function Information() {
       );
       setInfo(currentBlockInfo);
     } else {
-      setInfo(currentTheme?.blockInform);
+      setInfo(infoForSearch);
     }
     window.scrollTo(0, 0);
   }, [questionId, currentTheme]);
@@ -188,7 +188,7 @@ export default function Information() {
           )}
         </DivBlocks>
       </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
         <img src={up} alt={''} />
       </ScrollToTop>
       <Footer />

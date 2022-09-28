@@ -13,6 +13,7 @@ import quality from '../../assets/png/quality.png';
 export default function LeaveFeedback() {
   const [src, setSrc] = useState('');
   useEffect(() => {
+    window.scrollTo(0, 0);
     QRCode.toDataURL('http://xn----7sbgfh2alwzdhpc0c.xn--90ais/organization/33279/org-page').then(
       setSrc
     );

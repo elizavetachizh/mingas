@@ -3,7 +3,7 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Footer from '../footer';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BtnIsOpen,
   ContainerInformAboutService,
@@ -11,7 +11,6 @@ import {
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Table, Tbody, Thead } from '../../pages/feedback/receptionOfCitizens/styles';
-import TitleFun from '../title';
 import { Container } from '../../pages/company/styles';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
@@ -31,6 +30,9 @@ export default function AdministartiveServicesForLegal() {
       setIsClose(false);
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

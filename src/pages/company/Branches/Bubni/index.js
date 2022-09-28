@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
 import background from '../../../../assets/Bubni/background2.jpg';
 import photo from '../../../../assets/management/departaments/Белокурский.jpg';
@@ -7,6 +7,9 @@ import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
 export default function Bubni() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <SchemaOfBranches
       background={background}

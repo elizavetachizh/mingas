@@ -15,6 +15,8 @@ import { useNavigate, useParams } from 'react-router';
 import DopFunctionalPressCenter from './DopFunctional';
 import Feedback from '../feedback';
 import minsk from '../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../assets/png/up_arrow_round.png';
 
 export default function PressCenter() {
   const [inform, setInform] = useState('');
@@ -25,13 +27,13 @@ export default function PressCenter() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // if (!inform && !currentNewsID && !title) {
-    const current = pressCenter.find((element) => element.id === +descriptionID);
-    setInform(current.description);
-    setTitle(current.name);
-    setNewsID(+descriptionID);
-    navigate(`/press-center/${descriptionID}`);
-    // }
+    if (!inform && !currentNewsID && !title) {
+      const current = pressCenter.find((element) => element.id === +descriptionID);
+      setInform(current.description);
+      setTitle(current.name);
+      setNewsID(+descriptionID);
+      navigate(`/press-center/${descriptionID}`);
+    }
   }, []);
 
   const animate = useCallback((descriptionID) => {
@@ -41,6 +43,7 @@ export default function PressCenter() {
     setNewsID(descriptionID);
     navigate(`/press-center/${descriptionID}`);
   }, []);
+  console.log(inform);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -66,6 +69,9 @@ export default function PressCenter() {
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={''} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

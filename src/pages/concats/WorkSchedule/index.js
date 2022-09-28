@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../../components/header';
 import { AdditionalDiv } from '../GeneralContactInform/styles';
 import { Row } from '../styles';
@@ -8,8 +8,13 @@ import ReceptionSchedule from '../../../components/ReceptionSchedule';
 import { Container } from '../../company/styles';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../../assets/png/up_arrow_round.png';
 
 export default function SchedulePersonalReceptionOfCitizens() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -20,6 +25,9 @@ export default function SchedulePersonalReceptionOfCitizens() {
           <ReceptionSchedule />
         </Row>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

@@ -9,7 +9,7 @@ import {
   ContainerAbsolute,
 } from './styles';
 import { ButtonLink } from '../../../pages/services/styles';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Trans } from 'react-i18next';
 import { t } from 'i18next';
 import next from '../../../assets/png/next.png';
@@ -18,8 +18,11 @@ import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from '../styles';
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
+import { useLocation, useNavigate } from 'react-router';
 
 export default function MobileNavigation() {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBtn, setIsOpenBtn] = useState(false);
   const [isOpenBtnForBusiness, setIsOpenBtnForBusiness] = useState(false);
@@ -60,19 +63,15 @@ export default function MobileNavigation() {
       setIsOpenBtnForPressCenter(false);
     }
   };
-
+  useEffect(() => {
+    navigate(pathname);
+  }, []);
   return (
     <ContainerAbsolute>
       <LinksContainer>
         <ContainerElements className={'mobile'}>
           <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
-            {/*{navbar ? (*/}
-            {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'#0d4475'} />*/}
-            {/*) : (*/}
-            {/*  <IoMdContact style={{ width: '30px', height: '28px' }} color={'white'} />*/}
-            {/*)}*/}
             <IoMdContacts className={'icon iconMobile'} />
-            {/*<DivPersonalAcc>{t('header:PersonalArea')}</DivPersonalAcc>*/}
           </PersonalAccButton>
           <SearchPage classname={'header'} />
           <Language />

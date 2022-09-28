@@ -25,7 +25,7 @@ export const Title = styled.h2`
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 28px;
   justify-content: center;
   margin: 4% auto;
   text-align: center;
@@ -39,16 +39,21 @@ export const Title = styled.h2`
   }
 
   @media (max-width: 700px) {
-    margin-top: 14%;
+    margin-top: 10%;
     &.company {
-      margin-top: 8%;
+      margin-top: 4%;
+      font-size: 18px;
+      @media (max-width: 440px) {
+        font-size: 16px;
+      }
     }
   }
   @media (max-width: 640px) {
     font-size: 22px;
   }
   @media (max-width: 500px) {
-    margin-top: 20%;
+    margin-top: 16%;
+    font-size: 20px;
   }
   ${({ fontSize }) => titleFontSize[fontSize]}
 `;

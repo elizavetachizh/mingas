@@ -15,8 +15,8 @@ const titleFontSize = {
 const titleMargin = {
   s: `
   margin: 6% auto 6% auto;
-  `
-}
+  `,
+};
 export const Title = styled.h2`
   font-style: normal;
   line-height: 37px;
@@ -38,9 +38,11 @@ export const Title = styled.h2`
   }
   @media (max-width: 500px) {
     margin-top: 26%;
+    font-size: 26px;
   }
   @media (max-width: 400px) {
     margin-top: 30%;
+    font-size: 24px;
   }
   //@media (max-width: 500px) {
   //  margin-top: 20%;

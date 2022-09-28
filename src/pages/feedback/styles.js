@@ -113,6 +113,7 @@ export const DivImage = styled.div`
     background-repeat: no-repeat;
     object-fit: cover;
     height: 400px;
+    filter: blur(3px) brightness(0.5);
     &.post {
       width: 150%;
       background-size: cover;
@@ -132,6 +133,26 @@ export const DivImage = styled.div`
       @media (max-width: 400px) {
         width: 230%;
       }
+    }
+    &.priem {
+      width: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+      //@media (max-width: 540px) {
+      //  width: 170%;
+      //}
+      //@media (max-width: 490px) {
+      //  width: 190%;
+      //}
+      //@media (max-width: 445px) {
+      //  width: 210%;
+      //}
+      //@media (max-width: 400px) {
+      //  width: 230%;
+      //}
     }
   }
   &.none:after {

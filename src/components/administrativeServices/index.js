@@ -4,11 +4,14 @@ import Footer from '../footer';
 import HeaderAdministrativeServices from './Header';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from '../../pages/company/styles';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
 export default function AdministrativeServices() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

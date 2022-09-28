@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
@@ -10,6 +10,9 @@ import { Container } from '../styles';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.jpg';
 export default function ParentOrganizations() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

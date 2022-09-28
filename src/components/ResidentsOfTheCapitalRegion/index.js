@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import up from '../../assets/png/up_arrow_round.png';
@@ -15,6 +15,9 @@ import { BackgroundStyle } from '../../pages/Home/services/styles';
 import linesOne from '../../assets/background/rig.png';
 
 export default function ResidentsOfTheCapitalRegion() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   return (
     <Container>

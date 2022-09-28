@@ -16,6 +16,8 @@ import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { useNavigate } from 'react-router';
 import Feedback from '../../pages/feedback';
 import minsk from '../../assets/background/phone.jpg';
+import ScrollToTop from 'react-scroll-up';
+import up from '../../assets/png/up_arrow_round.png';
 
 export default function RegulatoryDocumentsForLegal() {
   const { documentId } = useParams();
@@ -32,6 +34,7 @@ export default function RegulatoryDocumentsForLegal() {
     .concat(data[4].inform);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (!currentDocumentId && !inform.length) {
       const current = data.find((element) => element.idName === +documentId);
       setInform(current.inform);
@@ -45,7 +48,6 @@ export default function RegulatoryDocumentsForLegal() {
       const current = data.find((element) => element.idName === documentId);
       setDocumentId(currentDocumentId && currentDocumentId === documentId ? '' : documentId);
       setInform(current.inform);
-      window.scrollTo(0, 0);
       navigate(`/regulatory-documents-for-business/${current.idName}`);
       setName(current?.separation);
     },
@@ -96,6 +98,9 @@ export default function RegulatoryDocumentsForLegal() {
           )}
         </DivBlocks>
       </AdditionalDiv>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'Вверх'} />
+      </ScrollToTop>
       <Footer />
     </Container>
   );

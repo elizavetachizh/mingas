@@ -2,7 +2,7 @@ import { Container } from '../styles';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DivServices } from '../../services/styles';
 import { links } from '../../../assets/data/linksBranches';
 import ServicesList from '../../services/servicesList';
@@ -12,6 +12,9 @@ import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.jpg';
 
 export default function Branches() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   return (
     <Container>
