@@ -22,18 +22,18 @@ export default function ResidentsOfCapitalRegion() {
       <Feedback className={'none'} img={minsk} name={'Прейскурант цен'} />
       <AdditionalDiv>
         <Links>
-          <a target={'_blank'} href={price_4}>
+          <a target={'_blank'} href={'https://back.mingas.by/public/price/1.pdf'}>
             Скачать “Прейскурант №1-ИМ: Цены на газосипользующее оборудование, материалы,
             комплектующие”{' '}
           </a>
-          <a target={'_blank'} href={price_1}>
+          <a target={'_blank'} href={'https://back.mingas.by/public/price/2.pdf'}>
             Скачать “Прейскурант №1: Тарифы на работы(услуги) оказываемые населению”
           </a>
-          <a target={'_blank'} href={price_2}>
+          <a target={'_blank'} href={'https://back.mingas.by/public/price/3.pdf'}>
             Скачать “Прейскурант №9: Тарифы на работы по техническому обслуживанию газопроводов и
             газоиспользующего оборудования”
           </a>
-          <a target={'_blank'} href={price_3}>
+          <a target={'_blank'} href={'https://back.mingas.by/public/price/4.pdf'}>
             Скачать “Прейскурант №11: на работы по установке приборов индивидуального учета расхода
             газа в существующем жилом фонде (газифицированные жилые дома)”{' '}
           </a>

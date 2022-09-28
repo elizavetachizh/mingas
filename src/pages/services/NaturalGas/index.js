@@ -35,6 +35,7 @@ export default function NaturalGas() {
       setTitle(current.nameCard);
       setServiceID(+cardId);
     }
+    navigate(`/services/${cardId}`);
   }, [cardId, title, inform, currentServiceID]);
   const animate = useCallback(
     (descriptionID) => {

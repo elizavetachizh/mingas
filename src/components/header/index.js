@@ -51,15 +51,15 @@ export default function Header({ backgroundHeader }) {
     }
   };
   window.addEventListener('scroll', changeBackground);
-
+  console.log(open);
   const onClick = () => {
     setOpen(!open);
-    if (open) {
-      document.body.classList.remove('mobile');
-    } else {
-      document.body.classList.add('mobile');
-    }
   };
+  if (!open) {
+    document.body.classList.remove('mobile');
+  } else {
+    document.body.classList.add('mobile');
+  }
   const openMobile = (
     <Menu onClick={onClick}>
       <IoIosMenus />
