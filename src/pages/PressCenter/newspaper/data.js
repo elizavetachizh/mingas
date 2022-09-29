@@ -111,13 +111,13 @@ export const data = [
     id: 21,
     name: 'Столичный Газовик № 25',
     data: 'сентябрь 2016 г.',
-    link: 'gazeta_25.pdf',
+    link: 'gazeta_24.pdf',
   },
   {
     id: 22,
     name: 'Столичный Газовик № 26',
     data: 'декабрь 2016 г.',
-    link: 'gazeta_26.pdf',
+    link: 'gazeta_27.pdf',
   },
   {
     id: 23,

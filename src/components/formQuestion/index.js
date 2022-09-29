@@ -33,10 +33,10 @@ export default function FormQuestion() {
   const formImage = document.getElementById('file-input');
   // const formPreview = document.getElementById('formPreview');
   formImage?.addEventListener('change', () => {
-    Object.values(formImage.files).forEach((value) => {
-      uploadFile(value);
-    });
-    // uploadFile(formImage.files[0]);
+    // Object.values(formImage.files).forEach((value) => {
+    //   uploadFile(value);
+    // });
+    uploadFile(formImage.files[0]);
   });
 
   function uploadFile(file) {
@@ -60,8 +60,8 @@ export default function FormQuestion() {
     }
     let reader = new FileReader();
     reader.onload = function () {
-      setFormValues({ ...formValues, file: reader.result[0] });
-      setFormValues({ ...formValues, document: reader.result[1] });
+      setFormValues({ ...formValues, file: reader.result });
+      setFormValues({ ...formValues, document: reader.result });
     };
 
     reader.onerror = function (e) {
@@ -173,7 +173,7 @@ export default function FormQuestion() {
 
       <DivInputFile>
         <div>
-          <InputFile multiple type="file" id="file-input" name="file" />
+          <InputFile type="file" id="file-input" name="file" />
           <span>Прекрипите файл</span>
         </div>
         <div id={'formPreview'}></div>
