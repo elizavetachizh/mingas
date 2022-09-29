@@ -28,15 +28,11 @@ export default function NaturalGas() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (!inform.length && !currentServiceID && (!title.length || !title)) {
-      const current = data.find((element) => element.serviceId === +cardId);
-      setInform(current?.description);
-      setTitle(current.nameCard);
-      setServiceID(+cardId);
-    }
-    navigate(`/services/${cardId}`);
-  }, [cardId, title, inform, currentServiceID]);
+    const current = data.find((element) => element.serviceId === +cardId);
+    setInform(current?.description);
+    setTitle(current.nameCard);
+    setServiceID(+cardId);
+  }, [cardId]);
   const animate = useCallback(
     (descriptionID) => {
       const current = data.find((element) => element.serviceId === descriptionID);

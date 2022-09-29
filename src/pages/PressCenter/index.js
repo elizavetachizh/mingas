@@ -26,15 +26,11 @@ export default function PressCenter() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (!inform && !currentNewsID && !title) {
-      const current = pressCenter.find((element) => element.id === +descriptionID);
-      setInform(current.description);
-      setTitle(current.name);
-      setNewsID(+descriptionID);
-      navigate(`/press-center/${descriptionID}`);
-    }
-  }, []);
+    const current = pressCenter.find((element) => element.id === +descriptionID);
+    setInform(current.description);
+    setTitle(current.name);
+    setNewsID(+descriptionID);
+  }, [descriptionID]);
 
   const animate = useCallback((descriptionID) => {
     const current = pressCenter.find((element) => element.id === +descriptionID);

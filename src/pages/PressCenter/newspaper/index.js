@@ -22,7 +22,7 @@ export default function Newspaper() {
       <ContanerNewsPape>
         <img alt={''} src={require('../../../assets/png/newspaper.png')} />
         <a
-          href={require('../../../assets/pdf/newspaper/gazeta_last.pdf')}
+          href={require('../../../assets/pdf/newspaper/last.pdf')}
           target={'_blank'}
           rel="noreferrer"
         >
@@ -44,7 +44,11 @@ export default function Newspaper() {
           {dataReverse.map((el) => (
             <ContanerNewsPape>
               <img alt={''} src={require('../../../assets/png/newspaper.png')} />
-              <a href={el.link} target={'_blank'} rel="noreferrer">
+              <a
+                href={require(`../../../assets/pdf/newspaper/${el.link}`)}
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 {el.name}
               </a>
             </ContanerNewsPape>

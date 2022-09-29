@@ -2,10 +2,6 @@ import React, { useEffect } from 'react';
 import Header from '../../components/header';
 import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import Footer from '../../components/footer';
-import price_1 from '../../assets/pdf/Prejskurant-1-s-01.01.2022.pdf';
-import price_2 from '../../assets/pdf/Prejskurant-9-s-23.03.2022.pdf';
-import price_3 from '../../assets/pdf/Prejskurant-11-s-15.09.2022.pdf';
-import price_4 from '../../assets/pdf/Prejeskurant-1-IM-12.07.2022.pdf';
 import { Links } from './styles';
 import { Container } from '../company/styles';
 import Feedback from '../feedback';
@@ -22,18 +18,18 @@ export default function ResidentsOfCapitalRegion() {
       <Feedback className={'none'} img={minsk} name={'Прейскурант цен'} />
       <AdditionalDiv>
         <Links>
-          <a target={'_blank'} href={'https://back.mingas.by/public/price/1.pdf'}>
+          <a target={'_blank'} href={require('../../assets/pdf/price/1.pdf')}>
             Скачать “Прейскурант №1-ИМ: Цены на газосипользующее оборудование, материалы,
             комплектующие”{' '}
           </a>
-          <a target={'_blank'} href={'https://back.mingas.by/public/price/2.pdf'}>
+          <a target={'_blank'} href={require('../../assets/pdf/price/2.pdf')}>
             Скачать “Прейскурант №1: Тарифы на работы(услуги) оказываемые населению”
           </a>
-          <a target={'_blank'} href={'https://back.mingas.by/public/price/3.pdf'}>
+          <a target={'_blank'} href={require('../../assets/pdf/price/3.pdf')}>
             Скачать “Прейскурант №9: Тарифы на работы по техническому обслуживанию газопроводов и
             газоиспользующего оборудования”
           </a>
-          <a target={'_blank'} href={'https://back.mingas.by/public/price/4.pdf'}>
+          <a target={'_blank'} href={require('../../assets/pdf/price/4.pdf')}>
             Скачать “Прейскурант №11: на работы по установке приборов индивидуального учета расхода
             газа в существующем жилом фонде (газифицированные жилые дома)”{' '}
           </a>
