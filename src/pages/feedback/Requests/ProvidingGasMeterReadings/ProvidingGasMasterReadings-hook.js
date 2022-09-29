@@ -103,12 +103,12 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
       setRequestValues({ ...requestValues, time: value });
       validate(name);
     },
-    [requestValues]
+    [requestValues, validate]
   );
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
-  }, [requestValues]);
+  }, [requestValues, validate]);
 
   const clearForm = useCallback(() => {
     setRequestValues({

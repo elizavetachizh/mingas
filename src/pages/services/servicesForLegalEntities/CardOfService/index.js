@@ -45,7 +45,7 @@ export default function CardOfService() {
       setServiceID(descriptionID);
       navigate(`/services-legal-entities/${descriptionID}`);
     },
-    [currentServiceID]
+    [navigate]
   );
   return (
     <Container>

@@ -15,10 +15,13 @@ import Feedback from '../../feedback';
 
 export default function ServicesForLegalEntities() {
   const navigate = useNavigate();
-  const handlerServiceClick = useCallback((descriptionLegalID) => {
-    const current = dataLegalEntities.find((element) => element.serviceId === descriptionLegalID);
-    navigate(`/services-legal-entities/${current.serviceId}`);
-  }, []);
+  const handlerServiceClick = useCallback(
+    (descriptionLegalID) => {
+      const current = dataLegalEntities.find((element) => element.serviceId === descriptionLegalID);
+      navigate(`/services-legal-entities/${current.serviceId}`);
+    },
+    [navigate]
+  );
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

@@ -99,7 +99,7 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
       setRequestIssuanceValues(Object.assign(requestIssuanceValues, { [name]: value }));
       validate(name);
     },
-    [requestIssuanceValues]
+    [requestIssuanceValues, validate]
   );
   const handleChangeTime = useCallback(
     (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -108,13 +108,13 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
       setRequestIssuanceValues({ ...requestIssuanceValues, time: value });
       validate(name);
     },
-    [requestIssuanceValues]
+    [requestIssuanceValues, validate]
   );
 
   const handleCheckBox = useCallback(() => {
     setRequestIssuanceValues({ ...requestIssuanceValues, isAgree: !requestIssuanceValues.isAgree });
     validate('isAgree');
-  }, [requestIssuanceValues]);
+  }, [requestIssuanceValues, validate]);
 
   const clearForm = useCallback(() => {
     setRequestIssuanceValues({
@@ -125,25 +125,6 @@ export const useRequestForIssuance = (): UseFormReturnValues => {
     });
   }, []);
 
-  // const handleSubmit = useCallback(
-  //   (event) => {
-  //     event.preventDefault();
-  //     clearForm();
-  //     emailjs
-  //       .sendForm('service_xcj1sfw', 'template_ve579bg', form.current, 'vZiB8zRYvfVKnIOk7')
-  //       .then(
-  //         (result) => {
-  //           console.log(result.text);
-  //         },
-  //         (error) => {
-  //           console.log(error.text);
-  //         }
-  //       );
-  //
-  //     alert('Форма успешно заполнена');
-  //   },
-  //   [requestIssuanceValues]
-  // );
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

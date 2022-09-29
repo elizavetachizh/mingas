@@ -62,8 +62,6 @@ export const InputFile = styled.input`
 `;
 
 export const Button = styled.button`
-  //color: #0d4475;
-  //background: none;
   border: 1px solid #0d4475;
   color: #fff; /* Цвет текста */
   background-image: linear-gradient(
@@ -90,14 +88,4 @@ export const Button = styled.button`
   margin: 4% auto;
   cursor: pointer;
   transition: 0.8s linear;
-`;
-
-export const Background = styled.img`
-  position: absolute;
-  display: flex;
-  right: 0;
-  width: 50%;
-  align-items: flex-start;
-  margin: 0;
-  padding: 0;
 `;

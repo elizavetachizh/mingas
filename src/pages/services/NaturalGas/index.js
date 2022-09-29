@@ -41,7 +41,7 @@ export default function NaturalGas() {
       setServiceID(descriptionID);
       navigate(`/services/${descriptionID}`);
     },
-    [currentServiceID]
+    [navigate]
   );
 
   return (

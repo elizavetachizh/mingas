@@ -13,7 +13,7 @@ import {
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../../../assets/png/up_arrow_round.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 
@@ -22,6 +22,11 @@ export default function AllSubdivisions() {
   const [info, setInfo] = useState([]);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const [message, setMessage] = useState('');
+  const result = [];
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+
   const infoForSearch = data[0].information
     .concat(data[1].information)
     .concat(data[2].information)
@@ -31,16 +36,21 @@ export default function AllSubdivisions() {
     .concat(data[6].information)
     .concat(data[7].information);
   useEffect(() => {
+    if (id) {
+      const currentBlockInfo = infoForSearch.filter((blockInfo) => blockInfo.id === +id);
+      setInfo(currentBlockInfo);
+    } else {
+      setInfo(infoForSearch);
+    }
     window.scrollTo(0, 0);
-  }, []);
+  }, [id]);
+
   const handleForm = () => {
     setIsForm(true);
     if (isForm) {
       setIsForm(false);
     }
   };
-  const [message, setMessage] = useState('');
-  const result = [];
 
   const handleChange = (event) => {
     setMessage(event.target.value);
@@ -77,9 +87,9 @@ export default function AllSubdivisions() {
     setIsForm(false);
     setMessage('');
     setInfo(infoForSearch);
-    navigate('company/management/all-departments');
+    navigate('/company/management/all-departments');
   };
-  console.log(info);
+
   return (
     <Container>
       <Header />

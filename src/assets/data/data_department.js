@@ -1414,17 +1414,17 @@ export const data = [
           </div>
         ),
       },
+      // <NavLink
+      //     style={{ textDecoration: 'none', transform: 'scale(1.1)' }}
+      //     to={'/company/branches/ogonek'}
+      // >
+      //     Филиал “Оздоровительный комплекс “Огонек”
+      // </NavLink>
       {
         id: 29,
         idNameInform: 6,
-        name: (
-          <NavLink
-            style={{ textDecoration: 'none', transform: 'scale(1.1)' }}
-            to={'/company/branches/ogonek'}
-          >
-            Филиал “Оздоровительный комплекс “Огонек”
-          </NavLink>
-        ),
+        name: 'Филиал “Оздоровительный комплекс “Огонек”',
+
         photo: '',
         chief: '',
         description: (
@@ -1536,17 +1536,17 @@ export const data = [
           </div>
         ),
       },
+      // <NavLink
+      //     style={{ textDecoration: 'none', transform: 'scale(1.1)' }}
+      //     to={'/company/branches/TBZ'}
+      // >
+      //     Филиал “Торфобрикетный завод “Сергеевичское”
+      // </NavLink>
       {
         id: 31,
         idNameInform: 7,
-        name: (
-          <NavLink
-            style={{ textDecoration: 'none', transform: 'scale(1.1)' }}
-            to={'/company/branches/TBZ'}
-          >
-            Филиал “Торфобрикетный завод “Сергеевичское”
-          </NavLink>
-        ),
+        name: 'Филиал “Торфобрикетный завод “Сергеевичское”',
+
         photo: '',
         chief: 'Начальник – Молочко Алексей Александрович',
         description: '',

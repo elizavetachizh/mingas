@@ -138,26 +138,6 @@ export const UseForRepairOfGasUsingEquipment = (): UseFormReturnValues => {
       message: '',
     });
   }, []);
-
-  // const handleSubmit = useCallback(
-  //   (event) => {
-  //     event.preventDefault();
-  //
-  //     emailjs
-  //       .sendForm('service_arrn6nn', 'template_r58vk64', form.current, 'H62p0yKXfn6OGm_oM')
-  //       .then(
-  //         (result) => {
-  //           console.log(result.text);
-  //         },
-  //         (error) => {
-  //           console.log(error.text);
-  //         }
-  //       );
-  //     clearForm();
-  //     alert('Форма успешно заполнена');
-  //   },
-  //   [requestValues]
-  // );
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

@@ -53,7 +53,7 @@ export default function Information() {
       setInfo(infoForSearch);
     }
     window.scrollTo(0, 0);
-  }, [questionId, currentTheme]);
+  }, [questionId]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);

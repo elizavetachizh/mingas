@@ -90,13 +90,13 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
       setRequestValues(Object.assign(requestValues, { [name]: value }));
       validate(name);
     },
-    [requestValues]
+    [requestValues, validate]
   );
 
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
-  }, [requestValues]);
+  }, [requestValues, validate]);
 
   const clearForm = useCallback(() => {
     setRequestValues({
@@ -110,25 +110,6 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
     });
   }, []);
 
-  // const handleSubmit = useCallback(
-  //   (event) => {
-  //     event.preventDefault();
-  //
-  //     emailjs
-  //       .sendForm('service_xcj1sfw', 'template_e0kvkpl', form.current, 'vZiB8zRYvfVKnIOk7')
-  //       .then(
-  //         (result) => {
-  //           console.log(result.text);
-  //         },
-  //         (error) => {
-  //           console.log(error.text);
-  //         }
-  //       );
-  //     clearForm();
-  //     alert('Форма успешно заполнена');
-  //   },
-  //   [requestValues]
-  // );
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

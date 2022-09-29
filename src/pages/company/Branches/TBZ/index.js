@@ -87,6 +87,7 @@ export default function TBZ() {
           </ul>
           <h3>Торф для приготовления компостов</h3>
           <img
+            alt={''}
             style={{ width: '50%', margin: '0 25%' }}
             src={require('../../../../assets/TBZ/3.jpg')}
           />
