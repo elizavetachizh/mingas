@@ -185,7 +185,7 @@ export default function SMI() {
                 }
               >
                 <img
-                  alt={''}
+                  alt={'картинка'}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }
@@ -204,7 +204,7 @@ export default function SMI() {
                 }
               >
                 <img
-                  alt={''}
+                  alt={'картинка'}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }
@@ -224,7 +224,7 @@ export default function SMI() {
                 }
               >
                 <img
-                  alt={''}
+                  alt={'картинка'}
                   src={
                     'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
                   }

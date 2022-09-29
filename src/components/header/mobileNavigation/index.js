@@ -136,7 +136,7 @@ export default function MobileNavigation() {
           <DivButtonHeader className={isOpenBtn && `handleBtn`}>
             <div>
               <ButtonLink to="/services">
-                Услуги <img alt={''} src={next} />
+                Услуги <img alt={'меню'} src={next} />
                 <span>
                   <NavLink to="/services/administrative-services/">
                     Административные процедуры

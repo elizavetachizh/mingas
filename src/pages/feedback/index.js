@@ -5,7 +5,7 @@ export default function Feedback({ img, name, className }) {
   return (
     <Divbackground>
       <DivImage className={className}>
-        <img src={img}></img>
+        <img alt={''} src={img}></img>
       </DivImage>
       <Text>
         <h1>{name}</h1>

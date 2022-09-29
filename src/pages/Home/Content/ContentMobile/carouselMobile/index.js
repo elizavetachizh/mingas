@@ -8,7 +8,6 @@ import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
 import { DivImage } from '../../../../feedback/styles';
-import preim from '../../../../../assets/background/priem-grajdan.jpg';
 export default class CarouselMobile extends React.Component {
   constructor() {
     super();
@@ -42,19 +41,6 @@ export default class CarouselMobile extends React.Component {
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />
-          </DivText>
-        </>,
-        <>
-          <DivImage className={'none'}>
-            <img className={'priem'} src={preim} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'priem'}>
-            <Text className={'priem'} style={{ position: 'initial' }}>
-              29 сентября генеральный директор УП "МИНГАЗ" Вадим Шолоник проведёт выездной приём
-              граждан <br /> Адрес: участок №1 службы эксплуатации внутридомовых объектов
-              газопотребления, <br /> ул. Плеханова, 3<br /> Время: с 08.00 до 09.00
-              <br /> Запись по телефону: +375 (017) 299-28-80
-            </Text>
           </DivText>
         </>,
       ],

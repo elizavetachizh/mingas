@@ -6,7 +6,6 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.png';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
 import newPost from '../../../assets/background/newPost.jpg';
-import preim from '../../../assets/background/priem-grajdan.jpg';
 import { Trans } from 'react-i18next';
 import ButtonFun from '../../../components/button';
 
@@ -25,7 +24,7 @@ export default class CarouselFun extends React.Component {
               </Text>
             </DivInformAbout>
             <a className={'phone'} href={'tel:162'}>
-              <img src={phone} alt={''} />
+              <img src={phone} alt={'картинка'} />
             </a>
           </DivText>
         </div>,
@@ -44,22 +43,6 @@ export default class CarouselFun extends React.Component {
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />
-          </DivText>
-        </div>,
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            {' '}
-            <BackgroundContainer className={'priem'} src={preim} />
-          </div>
-          <DivText className={'priem'}>
-            <DivInformAbout>
-              <Text className={'priem'}>
-                29 сентября генеральный директор УП "МИНГАЗ" Вадим Шолоник проведёт выездной приём
-                граждан <br /> Адрес: участок №1 службы эксплуатации внутридомовых объектов
-                газопотребления, <br /> ул. Плеханова, 3<br /> Время: с 08.00 до 09.00
-                <br /> Запись по телефону: +375 (017) 299-28-80
-              </Text>
-            </DivInformAbout>
           </DivText>
         </div>,
       ],

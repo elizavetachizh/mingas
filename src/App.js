@@ -119,7 +119,7 @@ export default function App() {
           margin: '0 auto',
           justifyContent: 'center',
         }}
-        contentStyle={{ flex: 'none', maxWidth: '1300px', width: '90%' }}
+        contentStyle={{ flex: 'none', maxWidth: '1300px', width: '100%' }}
         buttonStyle={{ background: '#fff', padding: '10px 30px', margin: '20px' }}
         buttonText={'Ок'}
         debug={true}

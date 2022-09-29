@@ -14,7 +14,6 @@ import { BackgroundStyle } from './services/styles';
 import linesOne from '../../assets/background/rig.png';
 import { Container } from '../company/styles';
 export default function Home() {
-  const [apiResponse, setApiResponse] = useState();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState('');
@@ -51,7 +50,7 @@ export default function Home() {
           <StateInformResources />
         </>
         <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-          <img src={up} alt={''} />
+          <img src={up} alt={'up'} />
         </ScrollToTop>
         <Footer />
       </Container>

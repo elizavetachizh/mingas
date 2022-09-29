@@ -3,7 +3,7 @@ import 'react-carousel-animated/dist/style.css';
 import { photo } from '../../../assets/data/liveInStyleOfMingas';
 import { Link, ImgCarousel } from '../../company/styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
-import { IoMdRadioButtonOn } from 'react-icons/io';
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 function LifeOfMingas() {
   return (
     <>
@@ -14,10 +14,16 @@ function LifeOfMingas() {
             title={'Инстаграм'}
             href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
             target={'_blank'}
+            rel="noreferrer"
           >
             <IoLogoInstagram style={{ width: '54px', height: '54px' }} />
           </a>
-          <a title={'Телеграм'} href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
+          <a
+            title={'Телеграм'}
+            href={'https://t.me/+UBzXdk0X5NoyZjJi'}
+            target={'_blank'}
+            rel="noreferrer"
+          >
             <IoMdPaperPlane style={{ width: '54px', height: '54px' }} />
           </a>
         </div>
@@ -41,7 +47,7 @@ function LifeOfMingas() {
         >
           {photo.map((image, index) => (
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-              <IoMdRadioButtonOn style={{ width: '24', height: '24' }} />
+              <IoIosArrowRoundBack style={{ width: '28', height: '28' }} />
               <ImgCarousel
                 key={index}
                 src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.jpg`)}
@@ -51,6 +57,7 @@ function LifeOfMingas() {
                   margin: '.5rem',
                 }}
               />
+              <IoIosArrowRoundForward style={{ width: '28', height: '28' }} />
             </div>
           ))}
         </ReactCarousel>
@@ -58,7 +65,7 @@ function LifeOfMingas() {
           <video
             poster={require('../../../assets/png/logo_video.png')}
             controls
-            src={'https://back.mingas.by/public/videos/file.mp4'}
+            src={require('../../../assets/videos/file.mp4')}
           />
         </div>
       </div>

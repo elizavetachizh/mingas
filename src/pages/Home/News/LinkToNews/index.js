@@ -10,7 +10,7 @@ export default function LinkNews({ cardImg, cardDate, cardLink, cardDesc }) {
       }}
       href={cardLink}
     >
-      <img src={{cardImg}} />
+      <img alt={''} src={{ cardImg }} />
       <DateLink>{cardDate}</DateLink>
       <DescLink>{cardDesc}</DescLink>
     </DivNews>

@@ -15,12 +15,13 @@ export default function News() {
         <ArticleForHome className={'general'}>
           <a
             target={'_blank'}
+            rel="noreferrer"
             href={
               'https://minsknews.by/mozhno-li-samostoyatelno-podklyuchit-gazovuyu-plitu-kommentarij-mingaza/'
             }
           >
             <img
-              alt={''}
+              alt={'новости'}
               src={
                 'https://minsknews.by/wp-content/uploads/2022/02/Depositphotos_22540503_S-900x596.jpg'
               }
@@ -31,12 +32,13 @@ export default function News() {
         <ArticleForHome className={'quarter'}>
           <a
             target={'_blank'}
+            rel="noreferrer"
             href={
               'https://minsknews.by/hozyajke-chastnogo-doma-naschitali-bolee-19-tys-rublej-za-gaz-iz-za-poddelnoj-plomby-na-schetchike/'
             }
           >
             <img
-              alt={''}
+              alt={'новости'}
               src={
                 'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
               }
@@ -65,10 +67,8 @@ export default function News() {
             href={'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'}
           >
             <img
-              alt={''}
-              src={
-                'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-              }
+              alt={'новости'}
+              src={'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-8-of-31-kopiya.jpg'}
             />
 
             <p>

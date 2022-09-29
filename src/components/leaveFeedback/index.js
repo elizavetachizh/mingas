@@ -79,7 +79,7 @@ export default function LeaveFeedback() {
                   style={{ width: '30%', margin: '0 35%' }}
                   src={quality}
                   className="attachment-full size-full"
-                  alt=""
+                  alt="картинка"
                 />
                 <p>
                   Портал рейтинговой оценки качества оказания услуг орагнизациями Республики
@@ -87,7 +87,7 @@ export default function LeaveFeedback() {
                 </p>
               </a>
               <div style={{ textAlign: 'center' }}>
-                <img style={{ width: '40%', margin: '0 30%' }} src={src} />
+                <img alt="картинка" style={{ width: '40%', margin: '0 30%' }} src={src} />
                 *QR-код для перехода на страницу УП "МИНГАЗ" <br /> на портале рейтинговой оценки
               </div>
             </div>

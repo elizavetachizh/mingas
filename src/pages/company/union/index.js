@@ -113,7 +113,7 @@ export default function Union() {
           <div className={'img--div'} data-aos={'fade-up'}>
             <img src={napravlenie} alt={''} />
           </div>
-          <Img src={require('../../../assets/management/departaments/Доморацкая.jpg')} />
+          <Img alt={''} src={require('../../../assets/management/departaments/Доморацкая.jpg')} />
           <TitleForHome
             className={'company'}
             margin={'name'}
