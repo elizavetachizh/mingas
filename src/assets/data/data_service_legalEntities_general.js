@@ -261,7 +261,7 @@ export const dataLegalEntities = [
         ),
       },
       {
-        nameDescription: 'Цены на природный газ для юридичсеких лиц',
+        nameDescription: 'Цены на природный газ для юридических лиц',
         inform: (
           <div>
             <a className={'open-link'} href={tseni_Gas} download>

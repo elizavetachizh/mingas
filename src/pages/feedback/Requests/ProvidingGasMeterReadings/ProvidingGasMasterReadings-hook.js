@@ -93,7 +93,7 @@ export const useProvidingGasMasterReadings = (): UseFormReturnValues => {
       setRequestValues(Object.assign(requestValues, { [name]: value }));
       validate(name);
     },
-    [requestValues]
+    [requestValues, validate]
   );
 
   const handleChangeTime = useCallback(

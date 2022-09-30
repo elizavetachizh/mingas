@@ -11,6 +11,7 @@ export const INITIAL_FORM_STATE = {
   organization: '',
   file: '',
   document: '',
+  information: [],
 };
 
 export interface InputProps {

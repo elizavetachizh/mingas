@@ -74,7 +74,7 @@ export const PWithImg = styled.div`
     margin: 4% auto;
   }
   img {
-    width: 50%;
+    width: 40%;
     margin: 2%;
     @media (max-width: 800px) {
       &.rightImg {

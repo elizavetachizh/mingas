@@ -34,7 +34,7 @@ export default function InformationAdministrativeService() {
     } else {
       setInfo(data);
     }
-  }, [data, linkId]);
+  }, [linkId]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);

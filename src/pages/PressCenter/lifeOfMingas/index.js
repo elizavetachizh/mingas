@@ -64,7 +64,9 @@ function LifeOfMingas() {
         <div className={'video'}>
           <video
             poster={require('../../../assets/png/logo_video.png')}
-            controls
+            controls={'controls'}
+            autoPlay="autoplay"
+            preload="auto"
             src={require('../../../assets/videos/file.mp4')}
           />
         </div>

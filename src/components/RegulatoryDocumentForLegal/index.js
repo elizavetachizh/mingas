@@ -89,7 +89,7 @@ export default function RegulatoryDocumentsForLegal() {
               <Name>{name}</Name>
               {inform.map((el) => (
                 <BlockBtn>
-                  <a href={el.link} target={'_blank'}>
+                  <a rel="noreferrer" href={el.link} target={'_blank'}>
                     {el.name}
                   </a>
                 </BlockBtn>

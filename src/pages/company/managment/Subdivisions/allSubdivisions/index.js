@@ -43,7 +43,7 @@ export default function AllSubdivisions() {
       setInfo(infoForSearch);
     }
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [id, infoForSearch]);
 
   const handleForm = () => {
     setIsForm(true);

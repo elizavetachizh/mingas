@@ -24,6 +24,7 @@ import {
   IoMdContacts,
   IoIosMenus,
   IoIosCloses,
+  ContanerLink,
 } from './styles';
 import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.png';
 import { ButtonLink } from '../../pages/services/styles';
@@ -134,8 +135,12 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/company/parent-organizations">
                     {t('header:ParentOrganizations')}
                   </ButtonLink>
-                  <ButtonLink to="/company/branches" style={{ width: '100%' }}>
-                    Филиалы УП "Мингаз" <IoIosArrowForward color={'#0d4475'} />{' '}
+                  <ContanerLink>
+                    <ButtonLink to="/company/branches" style={{ width: '100%' }}>
+                      {' '}
+                      Филиалы УП "Мингаз" <IoIosArrowForward color={'#0d4475'} />{' '}
+                    </ButtonLink>
+
                     <span style={{ margin: '20% 0 0' }}>
                       <NavLink to="/company/branches/ogonek">
                         Филиал оздоровительный комплекс "Огонёк"
@@ -145,7 +150,8 @@ export default function Header({ backgroundHeader }) {
                         Филиал "Торфобрикетный завод "Сергеевическое"
                       </NavLink>
                     </span>
-                  </ButtonLink>
+                  </ContanerLink>
+                  {/*</ButtonLink>*/}
                   <ButtonLink to="/company/corruption">Противодействие коррупции</ButtonLink>
                   <ButtonLink to="/company/documentation">
                     Сертификаты, лицензии, свидетельства
@@ -160,8 +166,10 @@ export default function Header({ backgroundHeader }) {
                   <span />
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/services">
-                    Услуги <IoIosArrowForward color={'#0d4475'} />
+                  <ContanerLink>
+                    <ButtonLink to="/services">
+                      Услуги <IoIosArrowForward color={'#0d4475'} />
+                    </ButtonLink>
                     <span>
                       <NavLink to="/services/administrative-services">
                         Административные процедуры
@@ -174,7 +182,7 @@ export default function Header({ backgroundHeader }) {
                       <NavLink to="/services/9">Цены на газ и услуги</NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
                     </span>
-                  </ButtonLink>
+                  </ContanerLink>
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
                   <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>

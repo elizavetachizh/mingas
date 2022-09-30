@@ -470,3 +470,34 @@ export const IoIosCloses = styled(IoIosClose)`
   height: 44px;
   //margin-top: 6px;
 `;
+
+export const ContanerLink = styled.div`
+  box-shadow: none;
+  background-image: none;
+  border-radius: 0;
+  border: none !important;
+  padding: 0 14px 0 0 !important;
+  span {
+    display: none;
+    position: absolute;
+  }
+  &:hover span {
+    display: flex;
+    min-width: 200px;
+    height: fit-content;
+    left: 100%;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 30px;
+    border: 1px solid #0d4475;
+    //box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 0 24px;
+    margin: 0 auto;
+    top: 0;
+    a {
+      color: #0d4475;
+      text-decoration: none;
+    }
+  }
+`;

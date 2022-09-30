@@ -24,7 +24,7 @@ export default function Menu() {
       setServiceID(currentServiceID && currentServiceID === titleId ? '' : titleId);
       setLinks(current.blockInform);
     },
-    [currentServiceID]
+    [currentServiceID, navigate]
   );
 
   const handlerLinkClickUniqueName = useCallback(
@@ -32,7 +32,7 @@ export default function Menu() {
       navigate(`${pathname}?questionId=${questionId}`);
       window.scrollTo(0, 0);
     },
-    [pathname]
+    [pathname, navigate]
   );
 
   return (

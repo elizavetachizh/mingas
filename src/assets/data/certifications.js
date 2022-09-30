@@ -5,11 +5,6 @@ export const documents = [
     inform: [{ id: 1, img: '16' }],
   },
   {
-    GeneralId: 2,
-    name: 'Сертификаты',
-    inform: [{ id: 1, img: '17' }],
-  },
-  {
     GeneralId: 3,
     name: 'Сертификаты',
     inform: [{ id: 1, img: '18' }],

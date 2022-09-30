@@ -65,7 +65,7 @@ export default function MobileNavigation() {
   };
   useEffect(() => {
     navigate(pathname);
-  }, []);
+  }, [navigate, pathname]);
   return (
     <ContainerAbsolute>
       <LinksContainer>

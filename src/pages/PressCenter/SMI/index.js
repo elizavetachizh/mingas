@@ -140,6 +140,7 @@ export default function SMI() {
             </Article>
             <Article>
               <a
+                rel="noreferrer"
                 target={'_blank'}
                 href={
                   'https://minsknews.by/nyuansy-obsluzhivaniya-mnogokvartirnyh-gazificzirovannyh-domov-obsudili-na-seminare-v-minke/'

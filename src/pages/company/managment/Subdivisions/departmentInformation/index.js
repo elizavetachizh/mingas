@@ -64,7 +64,7 @@ export default function DepartmentInformation() {
     } else {
       setInfo(currentSearch?.information);
     }
-  }, [currentServiceID, linkId, inform, id, currentSearch]);
+  }, [id, currentSearch, infoForSearch]);
 
   const changeDepartment = useCallback(
     (departamentId) => {
@@ -73,7 +73,7 @@ export default function DepartmentInformation() {
       setDepartamentId(departamentId);
       setInform(current.information);
     },
-    [currentServiceID]
+    [currentServiceID, navigate]
   );
 
   const handlerLinkClickUniqueName = useCallback(
@@ -81,7 +81,7 @@ export default function DepartmentInformation() {
       navigate(`${pathname}?id=${id}`);
       window.scrollTo(0, 0);
     },
-    [pathname]
+    [pathname, navigate]
   );
 
   const [isForm, setIsForm] = useState(false);

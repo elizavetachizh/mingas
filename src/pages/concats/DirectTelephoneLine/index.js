@@ -65,6 +65,7 @@ export default function PhoneLineServices() {
               Коммунальная служба в Минске
             </a>
             <iframe
+              title={'карта'}
               src="https://yandex.by/map-widget/v1/-/CCURMME-DA"
               allowFullScreen="true"
               style={{ position: 'relative' }}

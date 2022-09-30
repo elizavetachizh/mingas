@@ -97,13 +97,19 @@ export default function Union() {
               Мы в социальных сетях:
               <div>
                 <a
+                  rel="noreferrer"
                   title={'Наш инстаграм'}
                   href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
                   target={'_blank'}
                 >
                   <IoLogoInstagram style={{ width: '54px', height: '54px' }} />
                 </a>
-                <a title={'Наш телеграм'} href={'https://t.me/+UBzXdk0X5NoyZjJi'} target={'_blank'}>
+                <a
+                  rel="noreferrer"
+                  title={'Наш телеграм'}
+                  href={'https://t.me/+UBzXdk0X5NoyZjJi'}
+                  target={'_blank'}
+                >
                   <IoMdPaperPlane style={{ width: '54px', height: '54px' }} />
                 </a>
               </div>

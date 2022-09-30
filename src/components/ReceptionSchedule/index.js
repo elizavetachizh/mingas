@@ -373,7 +373,7 @@ export default function ReceptionSchedule() {
               <br />
               4-й понедельник месяца 16.00-20.00
               <br />
-              <a href={'https://goo.gl/maps/gxxbY2quJ3cZxp6L8'} target={'_blank'}>
+              <a href={'https://goo.gl/maps/gxxbY2quJ3cZxp6L8'} target={'_blank'} rel="noreferrer">
                 д.Большой Тростенец, ул.Центральная, 41/1
               </a>
             </td>
