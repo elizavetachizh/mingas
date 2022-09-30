@@ -19,7 +19,7 @@ export default class CarouselMobile extends React.Component {
           <DivImage className={'none'}>
             <img className={'none'} src={post} alt={'картинка загружается'} />
           </DivImage>
-          <DivText className={'phone'}>
+          <DivText style={{ justifyContent: 'center' }} className={'phone'}>
             <Text>
               УП «МИНГАЗ» информирует! <br />
               По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
