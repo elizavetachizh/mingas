@@ -142,10 +142,11 @@ export default function Ogonek() {
               Санаторий в Минской области
             </a>
             <iframe
+              title={'map'}
               src="https://yandex.by/map-widget/v1/-/CCURZDF7-D"
               width="100%"
               height="400"
-              allowFullScreen="true"
+              allowFullScreen={true}
               style={{ position: 'relative' }}
             />
           </div>

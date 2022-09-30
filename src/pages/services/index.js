@@ -21,7 +21,7 @@ export default function Services() {
       <AdditionalDiv>
         <DivServices>
           {links.map((element) => (
-            <NavLinkService to={element.linkService}>
+            <NavLinkService key={element.idService} to={element.linkService}>
               <img
                 alt={''}
                 src={require(`../../assets/icons_services/${element.imgService}.png`)}

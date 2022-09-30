@@ -33,6 +33,7 @@ export default function LeaveFeedback() {
             className={'feedback-yandex'}
           >
             <iframe
+              title={'iframe'}
               style={{
                 width: '100%',
                 height: '100%',

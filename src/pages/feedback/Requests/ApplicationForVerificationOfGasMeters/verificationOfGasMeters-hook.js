@@ -90,13 +90,13 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
       setRequestValues(Object.assign(requestValues, { [name]: value }));
       validate(name);
     },
-    [requestValues, validate]
+    [requestValues]
   );
 
   const handleCheckBox = useCallback(() => {
     setRequestValues({ ...requestValues, isAgree: !requestValues.isAgree });
     validate('isAgree');
-  }, [requestValues, validate]);
+  }, [requestValues]);
 
   const clearForm = useCallback(() => {
     setRequestValues({

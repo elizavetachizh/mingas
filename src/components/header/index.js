@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Container,
   Background,
@@ -55,11 +55,13 @@ export default function Header({ backgroundHeader }) {
   const onClick = () => {
     setOpen(!open);
   };
-  if (!open) {
-    document.body.classList.remove('mobile');
-  } else {
-    document.body.classList.add('mobile');
-  }
+  useEffect(() => {
+    if (!open) {
+      document.body.classList.remove('mobile');
+    } else {
+      document.body.classList.add('mobile');
+    }
+  }, [open]);
   const openMobile = (
     <Menu onClick={onClick}>
       <IoIosMenus />

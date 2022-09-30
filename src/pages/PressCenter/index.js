@@ -22,6 +22,7 @@ export default function PressCenter() {
   const [inform, setInform] = useState('');
   const [currentNewsID, setNewsID] = useState(null);
   const [title, setTitle] = useState('');
+  const [key, setKeys] = useState(null);
   const { descriptionID } = useParams();
   const navigate = useNavigate();
 
@@ -29,17 +30,20 @@ export default function PressCenter() {
     const current = pressCenter.find((element) => element.id === +descriptionID);
     setInform(current.description);
     setTitle(current.name);
+    setKeys(current.id);
     setNewsID(+descriptionID);
   }, [descriptionID]);
 
-  const animate = useCallback((descriptionID) => {
-    const current = pressCenter.find((element) => element.id === +descriptionID);
-    setInform(current.description);
-    setTitle(current.name);
-    setNewsID(descriptionID);
-    navigate(`/press-center/${descriptionID}`);
-  }, []);
-  console.log(inform);
+  const animate = useCallback(
+    (descriptionID) => {
+      const current = pressCenter.find((element) => element.id === +descriptionID);
+      setInform(current.description);
+      setTitle(current.name);
+      setNewsID(descriptionID);
+      navigate(`/press-center/${descriptionID}`);
+    },
+    [navigate]
+  );
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -51,17 +55,17 @@ export default function PressCenter() {
             {pressCenter.map((element) => (
               <BlockBtn>
                 <DopFunctionalHeader
+                  key={element.id}
                   nameCard={element.name}
                   className={currentNewsID === element.id ? 'background' : ''}
                   onClick={() => animate(element.id)}
-                  key={element.id}
                 />
               </BlockBtn>
             ))}
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>
-            <DopFunctionalPressCenter inform={inform} />
+            <DopFunctionalPressCenter key={key} inform={inform} />
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

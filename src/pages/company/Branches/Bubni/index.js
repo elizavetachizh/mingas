@@ -120,7 +120,7 @@ export default function Bubni() {
                 src="https://yandex.by/map-widget/v1/-/CCURZLF3OD"
                 width="100%"
                 height="400"
-                allowFullScreen="true"
+                allowFullScreen={true}
                 style={{ position: 'relative' }}
               />
             </div>

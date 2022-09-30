@@ -6,6 +6,7 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.png';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
 import newPost from '../../../assets/background/newPost.jpg';
+import post from '../../../assets/background/phone.jpg';
 import { Trans } from 'react-i18next';
 import ButtonFun from '../../../components/button';
 
@@ -15,6 +16,21 @@ export default class CarouselFun extends React.Component {
     this.state = {
       value: 0,
       slides: [
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            {' '}
+            <BackgroundContainer className={'newPost'} src={post} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text>
+                УП «МИНГАЗ» информирует! <br />
+                По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
+                осуществляться ежедневно, время приема 8.00-20.00.
+              </Text>
+            </DivInformAbout>
+          </DivText>
+        </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
@@ -57,7 +73,7 @@ export default class CarouselFun extends React.Component {
   render() {
     return (
       <Main>
-        <WindowDiv style={{ backgroundColor: 'rgba(14,78,129,0.2)' }}>
+        <WindowDiv>
           <Carousel
             plugins={[
               'centered',

@@ -67,7 +67,11 @@ export default function NaturalGas() {
           <ContainerInform>
             <Name>{title}</Name>
             {inform.map((el) => (
-              <DopFunctionService nameDescription={el.nameDescription} inform={el.inform} />
+              <DopFunctionService
+                key={el.nameDescription}
+                nameDescription={el.nameDescription}
+                inform={el.inform}
+              />
             ))}
           </ContainerInform>
         </DivBlocks>

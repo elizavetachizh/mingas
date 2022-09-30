@@ -12,6 +12,7 @@ export default function DopFunctionService({
   style,
   classname,
   classnamegeneral,
+  key,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
@@ -22,7 +23,7 @@ export default function DopFunctionService({
   };
   return (
     // <ContainerFunctionService>
-    <General className={classnamegeneral} style={style}>
+    <General key={key} className={classnamegeneral} style={style}>
       <BtnIsOpen className={classname} onClick={animate}>
         <p>{nameDescription}</p>
         <div>

@@ -3,6 +3,7 @@ import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import phone from '../../../../../assets/png/PhoneFour.png';
 import imageContent from '../../../../../assets/background/mingas_background(2).jpg';
 import newPost from '../../../../../assets/background/newPost.jpg';
+import post from '../../../../../assets/background/phone.jpg';
 import { Trans } from 'react-i18next';
 import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
@@ -14,6 +15,18 @@ export default class CarouselMobile extends React.Component {
     this.state = {
       value: 0,
       slides: [
+        <>
+          <DivImage className={'none'}>
+            <img className={'none'} src={post} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText className={'phone'}>
+            <Text>
+              УП «МИНГАЗ» информирует! <br />
+              По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
+              осуществляться ежедневно, время приема 8.00-20.00.
+            </Text>
+          </DivText>
+        </>,
         <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
