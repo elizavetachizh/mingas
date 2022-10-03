@@ -15,7 +15,7 @@ import { useParams } from 'react-router-dom';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { useNavigate } from 'react-router';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 

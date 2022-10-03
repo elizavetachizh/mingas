@@ -11,7 +11,7 @@ import up from '../../assets/png/up_arrow_round.png';
 import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
 import StateInformResources from '../../components/stateInformResources';
 import { BackgroundStyle } from './services/styles';
-import linesOne from '../../assets/background/rig.png';
+import linesOne from '../../assets/background/rig.webp';
 import { Container } from '../company/styles';
 export default function Home() {
   const [error, setError] = useState(null);

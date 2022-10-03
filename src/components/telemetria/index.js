@@ -4,7 +4,7 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import FormTelemetria from './form';
 import Header from '../header';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import React from 'react';
 
 export default function Telemetria() {

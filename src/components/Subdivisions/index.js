@@ -13,7 +13,7 @@ import Footer from '../footer';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 
 export default function Subdivisions() {
   const subdivisionId = useParams();

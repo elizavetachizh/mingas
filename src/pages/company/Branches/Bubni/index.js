@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
-import background from '../../../../assets/Bubni/background2.jpg';
+import background from '../../../../assets/Bubni/background2.webp';
 import photo from '../../../../assets/management/departaments/Белокурский.jpg';
 import { DivInform } from '../../../Home/News/styles';
 import TitleForHome from '../../../../components/TitleForHome';
@@ -67,19 +67,19 @@ export default function Bubni() {
       products={
         <DivInform style={{ textAlign: 'center', color: '#0d4475' }}>
           <div>
-            <img src={require('../../../../assets/Bubni/zerno.png')} />
+            <img alt={''} src={require('../../../../assets/Bubni/zerno.png')} />
             <p>Зерновые и зернобобовые</p>
           </div>
           <div>
-            <img src={require('../../../../assets/Bubni/flowers.png')} />
+            <img alt={''} src={require('../../../../assets/Bubni/flowers.png')} />
             <p>Рапс</p>
           </div>
           <div>
-            <img src={require('../../../../assets/Bubni/milk.png')} />
+            <img alt={''} src={require('../../../../assets/Bubni/milk.png')} />
             <p>Молоко</p>
           </div>
           <div>
-            <img src={require('../../../../assets/Bubni/meet.png')} />
+            <img alt={''} src={require('../../../../assets/Bubni/meet.png')} />
             <p>Мясо КРС</p>
           </div>
         </DivInform>

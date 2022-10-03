@@ -9,7 +9,7 @@ import { DivServices, NavLinkService } from './styles';
 import { links } from '../../assets/data/liksForServices';
 import { Name } from './servicesList/styles';
 import Feedback from '../feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 
 export default function Services() {
   useEffect(() => window.scrollTo(0, 0), []);

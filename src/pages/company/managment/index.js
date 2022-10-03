@@ -15,7 +15,7 @@ import Aos from 'aos';
 import { Container } from '../styles';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});

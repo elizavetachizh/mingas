@@ -16,7 +16,7 @@ import {
 import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
 import { LinksNetwork } from '../../../components/footer/styles';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 const div = document.createElement('div');

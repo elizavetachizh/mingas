@@ -1,6 +1,6 @@
 import { BlockInformOgonek } from '../styles';
 import SchemaOfBranches from '../ChemaOfBranches';
-import background from '../../../../assets/Ogonek/background1.jpg';
+import background from '../../../../assets/Ogonek/background.webp';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
 import React, { useEffect } from 'react';

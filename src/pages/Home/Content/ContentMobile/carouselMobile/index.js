@@ -3,7 +3,7 @@ import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import phone from '../../../../../assets/png/PhoneFour.png';
 import imageContent from '../../../../../assets/background/mingas_background(2).jpg';
 import newPost from '../../../../../assets/background/newPost.jpg';
-import post from '../../../../../assets/background/phone.jpg';
+import post from '../../../../../assets/background/phone.webp';
 import { Trans } from 'react-i18next';
 import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';

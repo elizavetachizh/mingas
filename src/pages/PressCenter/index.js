@@ -14,7 +14,7 @@ import { pressCenter } from '../../assets/data/pressCenterHeader';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalPressCenter from './DopFunctional';
 import Feedback from '../feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 

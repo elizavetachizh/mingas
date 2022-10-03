@@ -8,7 +8,7 @@ import { Container } from '../../pages/company/styles';
 import LeaveFeedbackMingas from './leaveFeedbackMingas';
 import DopFunctionService from '../../pages/services/DopFunction';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import quality from '../../assets/png/quality.png';
 export default function LeaveFeedback() {
   const [src, setSrc] = useState('');

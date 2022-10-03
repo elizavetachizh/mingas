@@ -7,7 +7,7 @@ import { AdditionalDiv } from '../GeneralContactInform/styles';
 import Footer from '../../../components/footer';
 import { Container } from '../../company/styles';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 
 export default function Requisites() {
   useEffect(() => {

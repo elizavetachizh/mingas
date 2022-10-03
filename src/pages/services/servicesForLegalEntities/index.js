@@ -10,7 +10,7 @@ import { dataLegalEntities } from '../../../assets/data/data_service_legalEntiti
 import ServicesList from './serviceList';
 import { useNavigate } from 'react-router';
 import { Container } from '../../company/styles';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 import Feedback from '../../feedback';
 
 export default function ServicesForLegalEntities() {

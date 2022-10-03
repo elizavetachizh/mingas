@@ -9,10 +9,10 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import { DivServices } from '../../pages/services/styles';
 import { links } from '../../assets/data/linksToResidentsOfTheCapitalRegion';
 import ServicesList from '../../pages/services/servicesList';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import Feedback from '../../pages/feedback';
 import { BackgroundStyle } from '../../pages/Home/services/styles';
-import linesOne from '../../assets/background/rig.png';
+import linesOne from '../../assets/background/rig.webp';
 
 export default function ResidentsOfTheCapitalRegion() {
   useEffect(() => {

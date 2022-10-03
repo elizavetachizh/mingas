@@ -10,7 +10,7 @@ import TitleForHome from '../../../components/TitleForHome';
 import { Container, Img, Link } from '../styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 

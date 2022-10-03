@@ -9,7 +9,7 @@ import ServicesList from '../../services/servicesList';
 import { useNavigate } from 'react-router';
 import HeaderCompany from '../header_company';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 
 export default function Branches() {
   useEffect(() => {

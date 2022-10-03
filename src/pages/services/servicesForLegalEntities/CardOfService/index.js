@@ -18,7 +18,7 @@ import {
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import { useNavigate, useParams } from 'react-router';
-import minsk from '../../../../assets/background/phone.jpg';
+import minsk from '../../../../assets/background/phone.webp';
 import Feedback from '../../../feedback';
 
 export default function CardOfService() {

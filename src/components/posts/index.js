@@ -3,7 +3,7 @@ import Header from '../header';
 import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import React, { useEffect } from 'react';
 import DopFunctional from './DopFunctional';
 import ScrollToTop from 'react-scroll-up';

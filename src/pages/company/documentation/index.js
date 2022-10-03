@@ -20,7 +20,7 @@ import {
   ModalWindowOpenAndClose,
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 import Feedback from '../../feedback';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
@@ -113,7 +113,7 @@ export default function Documentation() {
             {certifications.map((element) => (
               <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
                 <img
-                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.png`)}
+                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
                 />
               </ContainerGraditude>
@@ -126,7 +126,7 @@ export default function Documentation() {
             {licenses.map((element) => (
               <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
                 <img
-                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.png`)}
+                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
                 />
               </ContainerGraditude>
@@ -139,7 +139,7 @@ export default function Documentation() {
             {evidence.map((element) => (
               <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
                 <img
-                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.png`)}
+                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
                 />
               </ContainerGraditude>
@@ -153,7 +153,7 @@ export default function Documentation() {
             {chits.map((element) => (
               <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
                 <img
-                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.png`)}
+                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
                 />
               </ContainerGraditude>
@@ -167,7 +167,7 @@ export default function Documentation() {
               <InformModal>
                 <img
                   className={'gratitude'}
-                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${image}.png`)}
+                  src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${image}.webp`)}
                   alt={''}
                 />
                 <DivButtons>

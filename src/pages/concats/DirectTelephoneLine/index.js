@@ -7,7 +7,7 @@ import Footer from '../../../components/footer';
 import { Table, Tbody } from '../../feedback/receptionOfCitizens/styles';
 import { Container } from '../../company/styles';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 
 export default function PhoneLineServices() {
   return (

@@ -13,7 +13,7 @@ import React, { useEffect, useState } from 'react';
 import { ContanerNewsPape } from '../../pages/PressCenter/newspaper/styles';
 import { data } from './data';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 

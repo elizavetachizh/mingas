@@ -13,11 +13,11 @@ export default function Footer({ classname }) {
           <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogo} />
         </LinkLogo>
         <Prizes>
-          <img alt={'image'} src={require(`../../assets/prizes/1.png`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/2.png`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/3.png`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/4.png`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/5.png`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/1.webp`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/2.webp`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/3.webp`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/4.webp`)} />
+          <img alt={'image'} src={require(`../../assets/prizes/5.webp`)} />
         </Prizes>
       </LinksContainer>
       <Contacts>

@@ -4,7 +4,7 @@ import Footer from '../footer';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import React, { useEffect } from 'react';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 
 export default function Tenders() {
   useEffect(() => {

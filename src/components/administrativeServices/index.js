@@ -7,7 +7,7 @@ import up from '../../assets/png/up_arrow_round.png';
 import React, { useEffect } from 'react';
 import { Container } from '../../pages/company/styles';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 export default function AdministrativeServices() {
   useEffect(() => {
     window.scrollTo(0, 0);

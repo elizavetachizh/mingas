@@ -13,7 +13,7 @@ import {
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 

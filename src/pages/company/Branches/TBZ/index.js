@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
-import imageContent from '../../../../assets/Bubni/background1.jpg';
+import imageContent from '../../../../assets/Bubni/background1.webp';
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
@@ -75,6 +75,7 @@ export default function TBZ() {
         <>
           <h3>Топливные брикеты марки БТ-1 </h3>
           <img
+            alt={''}
             style={{ width: '40%', margin: '0 25%' }}
             src={require('../../../../assets/TBZ/1.jpg')}
           />

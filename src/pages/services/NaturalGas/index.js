@@ -15,10 +15,10 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalHeader from './DopFunctionalHeader';
-import linesOne from '../../../assets/background/rig.png';
+import linesOne from '../../../assets/background/rig.webp';
 import { BackgroundStyleServices } from '../styles';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);

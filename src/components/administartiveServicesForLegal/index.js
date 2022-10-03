@@ -13,7 +13,7 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Table, Tbody, Thead } from '../../pages/feedback/receptionOfCitizens/styles';
 import { Container } from '../../pages/company/styles';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 
 export default function AdministartiveServicesForLegal() {
   const [isOpen, setIsOpen] = useState(false);

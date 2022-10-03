@@ -10,7 +10,7 @@ import { DivServices } from '../../pages/services/styles';
 import { links } from '../../assets/data/linksForBusines';
 import ServicesList from '../../pages/services/servicesList';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 
 export default function ForBusiness() {
   useEffect(() => {

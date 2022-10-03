@@ -21,7 +21,7 @@ import { useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 
 export default function DepartmentInformation() {
   const { documentId } = useParams();

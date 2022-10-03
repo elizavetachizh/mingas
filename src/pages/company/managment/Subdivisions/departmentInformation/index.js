@@ -27,7 +27,7 @@ import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
 import Feedback from '../../../../feedback';
-import minsk from '../../../../../assets/background/phone.jpg';
+import minsk from '../../../../../assets/background/phone.webp';
 import ButtonFun from '../../../../../components/button';
 
 export default function DepartmentInformation() {

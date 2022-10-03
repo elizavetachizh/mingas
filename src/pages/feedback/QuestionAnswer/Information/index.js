@@ -22,7 +22,7 @@ import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../Home/parallax/useMediaQuery';
 import Feedback from '../../index';
-import minsk from '../../../../assets/background/phone.jpg';
+import minsk from '../../../../assets/background/phone.webp';
 
 export default function Information() {
   const isPhone = useMediaQuery('(max-width: 820px)');

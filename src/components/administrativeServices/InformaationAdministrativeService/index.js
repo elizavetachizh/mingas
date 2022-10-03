@@ -19,7 +19,7 @@ import { Container } from '../../../pages/company/styles';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { useLocation, useNavigate } from 'react-router';
 import Feedback from '../../../pages/feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 
 export default function InformationAdministrativeService() {
   const { pathname } = useLocation();

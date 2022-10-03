@@ -8,7 +8,7 @@ import DopFunctional from './DopFunctional';
 import { ContainerLinks } from './styles';
 import { Container } from '../styles';
 import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 export default function ParentOrganizations() {
   useEffect(() => {
     window.scrollTo(0, 0);

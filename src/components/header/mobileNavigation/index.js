@@ -13,7 +13,6 @@ import React, { useEffect, useState } from 'react';
 import { Trans } from 'react-i18next';
 import { t } from 'i18next';
 import next from '../../../assets/png/next.png';
-import { NavLink } from 'react-router-dom';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from '../styles';
 import SearchPage from '../../../pages/SearchPage';
@@ -99,15 +98,6 @@ export default function MobileNavigation() {
               <ButtonLink to="/company/parent-organizations">Вышестоящие организации</ButtonLink>
               <ButtonLink to="/company/branches" style={{ width: '100%' }}>
                 Филиалы УП "Мингаз" <img alt={''} src={next} />
-                <span style={{ margin: '20% 0 0' }}>
-                  <NavLink to="/company/branches/ogonek">
-                    Филиал оздоровительный комплекс "Огонёк"
-                  </NavLink>
-                  <NavLink to="/company/branches/Bubni">Филиал "Бубны"</NavLink>
-                  <NavLink to="/company/branches/TBZ">
-                    Филиал "Торфобрикетный завод "Сергеевическое"
-                  </NavLink>
-                </span>
               </ButtonLink>
               <ButtonLink to="/company/documentation">
                 Сертификаты, лицензии, свидетельства
@@ -137,18 +127,6 @@ export default function MobileNavigation() {
             <div>
               <ButtonLink to="/services">
                 Услуги <img alt={'меню'} src={next} />
-                <span>
-                  <NavLink to="/services/administrative-services/">
-                    Административные процедуры
-                  </NavLink>
-                  <NavLink to="/services/1">Газоснабжение потребителей</NavLink>
-                  <NavLink to="/services/3">Техническое обслуживание</NavLink>
-                  <NavLink to="/services/10">Реконструкция</NavLink>
-                  <NavLink to="/services/11">Газификация</NavLink>
-                  <NavLink to="/services/2">Обмен и покупка баллонов</NavLink>
-                  <NavLink to="/services/9">Цены на газ и услуги</NavLink>
-                  <NavLink to="/residents/price">Прейскурант цен</NavLink>
-                </span>
               </ButtonLink>
               <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
               <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>

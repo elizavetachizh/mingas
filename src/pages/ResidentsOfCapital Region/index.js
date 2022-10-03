@@ -5,7 +5,7 @@ import Footer from '../../components/footer';
 import { Links } from './styles';
 import { Container } from '../company/styles';
 import Feedback from '../feedback';
-import minsk from '../../assets/background/phone.jpg';
+import minsk from '../../assets/background/phone.webp';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 export default function ResidentsOfCapitalRegion() {

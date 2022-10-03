@@ -5,7 +5,7 @@ import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { Container } from '../../company/styles';
 import Feedback from '../index';
-import minsk from '../../../assets/background/phone.jpg';
+import minsk from '../../../assets/background/phone.webp';
 export default function Requests() {
   useEffect(() => {
     window.scrollTo(0, 0);
