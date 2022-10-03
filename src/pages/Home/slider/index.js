@@ -19,7 +19,7 @@ export default class CarouselFun extends React.Component {
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <div>
             {' '}
-            <BackgroundContainer className={'newPost'} src={post} />
+            <BackgroundContainer src={imageContent} />
           </div>
           <DivText className={'post'}>
             <DivInformAbout>

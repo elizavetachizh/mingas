@@ -45,6 +45,7 @@ import Telemetria from './components/telemetria';
 import Posts from './components/posts';
 import AllSubdivisions from './pages/company/managment/Subdivisions/allSubdivisions';
 import CookieConsent from 'react-cookie-consent';
+import Test from './pages/test';
 export default function App() {
   return (
     <div>
@@ -61,7 +62,7 @@ export default function App() {
           element={<ElectronicAppealForEntity />}
         />
         <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
-        <Route path="/*" element={<NoMatch />} />
+        {/*<Route path="/*" element={<NoMatch />} />*/}
         <Route path="/company/management" element={<Management />} />
         <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
         <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
@@ -111,15 +112,16 @@ export default function App() {
         <Route path={'/company/branches'} element={<Branches />} />
         <Route path={'/services-legal-entities/2/telemetria'} element={<Telemetria />} />
         <Route path={'/posts'} element={<Posts />} />
+        <Route path={'/test'} element={<Test />} />
       </Routes>
       <CookieConsent
         style={{
           backgroundColor: 'rgba(14,78,129,1)',
           width: '100%',
           margin: '0 auto',
-          justifyContent: 'center',
+          justifyContent: 'left',
         }}
-        contentStyle={{ flex: 'none', maxWidth: '1300px', width: '100%' }}
+        contentStyle={{ flex: 'none', maxWidth: '1100px', width: '100%' }}
         buttonStyle={{ background: '#fff', padding: '10px 30px', margin: '20px' }}
         buttonText={'Ок'}
         debug={true}

@@ -4,10 +4,10 @@ import axios from 'axios';
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
   //for site
-  const url = 'https://back.mingas.by/questions';
+  // const url = 'https://back.mingas.by/questions';
 
   //for me
-  // const url = 'http://localhost:3000/questions';
+  const url = 'http://localhost:3000/questions';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email: string): boolean => {
@@ -85,16 +85,6 @@ export const useForm = () => {
     [formValues]
   );
 
-  const handleChangeCountry = useCallback(
-    (event: React.ChangeEvent<HTMLSelectElement>) => {
-      event.preventDefault();
-      const { name, value } = event.target;
-      setFormValues({ ...formValues, country: value });
-      validate(name);
-    },
-    [formValues]
-  );
-
   const handleCheckBox = useCallback(() => {
     setFormValues({ ...formValues, isAgree: !formValues.isAgree });
     validate('isAgree');
@@ -129,7 +119,6 @@ export const useForm = () => {
     handleUserInput,
     formValues,
     errors,
-    handleChangeCountry,
     handleCheckBox,
     setFormValues,
     isButtonDisabled,
