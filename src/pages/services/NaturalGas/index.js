@@ -54,12 +54,11 @@ export default function NaturalGas() {
           <HeaderCompanyDiv>
             <Name>Услуги для физических лиц</Name>
             {data.map((element) => (
-              <BlockBtn>
+              <BlockBtn key={element.serviceId}>
                 <DopFunctionalHeader
                   nameCard={element.nameCard}
                   className={currentServiceID === element.serviceId ? 'background' : ''}
                   onClick={() => animate(element.serviceId)}
-                  key={element.serviceId}
                 />
               </BlockBtn>
             ))}

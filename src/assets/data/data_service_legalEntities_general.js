@@ -11,7 +11,7 @@ import passport from '../wordFile/Passport.docx';
 import haracteristica from '../wordFile/HARAKTERISTIKA-OBEKTA.doc';
 import GMK from '../pdf/GMK-PTU-o-vnesenii-izmenenij-na-sajt-21.08.2020-stranitsy-2-szhatyj.pdf';
 import obrazets_acta from '../pdf/AKT-RASHODA-dlya-sajta.pdf';
-import tseni_Gas from '../wordFile/TSeny-na-gaz.docx';
+import tseni_Gas from '../wordFile/price_gas.doc';
 import teh_zadanie from '../wordFile/teh_zadanie.doc';
 import varianty_schem from '../wordFile/varianty_shem.doc';
 import prilozhenie_1 from '../wordFile/Prilozhenie-1.docx';
@@ -265,7 +265,8 @@ export const dataLegalEntities = [
         inform: (
           <div>
             <a className={'open-link'} href={tseni_Gas} download>
-              Постановление МАРТ Республики Беларусь от 20.01.2022 №9 «О ценах на природный газ»
+              ПОСТАНОВЛЕНИЕ МИНИСТЕРСТВА АНТИМОНОПОЛЬНОГО РЕГУЛИРОВАНИЯ И ТОРГОВЛИ РЕСПУБЛИКИ
+              БЕЛАРУСЬ 29 июля 2022 г. N 49 «О ценах на природный газ»
             </a>
           </div>
         ),

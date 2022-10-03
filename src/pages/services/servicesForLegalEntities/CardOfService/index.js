@@ -56,11 +56,10 @@ export default function CardOfService() {
           <HeaderCompanyDiv>
             <Name>Услуги для юридических лиц</Name>
             {dataLegalEntities.map((element) => (
-              <BlockBtn>
+              <BlockBtn key={element.serviceId}>
                 <Button
                   className={currentServiceID === element.serviceId ? 'background' : ''}
                   onClick={() => animate(element.serviceId)}
-                  key={element.serviceId}
                 >
                   {element.nameCard}
                 </Button>
@@ -70,7 +69,11 @@ export default function CardOfService() {
           <ContainerInform>
             <Name>{title}</Name>
             {inform.map((el) => (
-              <DopFunctionService nameDescription={el.nameDescription} inform={el.inform} />
+              <DopFunctionService
+                keys={el.nameDescription}
+                nameDescription={el.nameDescription}
+                inform={el.inform}
+              />
             ))}
           </ContainerInform>
         </DivBlocks>

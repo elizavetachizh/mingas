@@ -30,14 +30,13 @@ export default function FormQuestion() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  // const formImage = document.getElementById('file-input');
-  // formImage?.addEventListener('change', () => {
-  //   uploadFile(formImage.files[0]);
-  // });
+  const formImage = document.getElementById('file-input');
+  formImage?.addEventListener('change', () => {
+    uploadFile(formImage.files[0]);
+  });
 
   const uploadFile = useCallback(
     (file) => {
-      console.log(file);
       // if (
       //   ![
       //     'image/png',
@@ -52,10 +51,10 @@ export default function FormQuestion() {
       //   alert('Не подходит формат файла');
       //   formImage.value = '';
       // }
-      // if (file.size > 60000) {
-      //   alert('Файл является слишком большим');
-      //   formImage.value = '';
-      // }
+      if (file.size > 60000) {
+        alert('Файл является слишком большим');
+        formImage.value = '';
+      }
       let reader = new FileReader();
       const arr = [...formValues.information];
       reader.onload = function () {
@@ -193,30 +192,30 @@ export default function FormQuestion() {
         />
       </DivInput>
 
-      {/*<DivInputFile>*/}
-      {/*  <div>*/}
-      {/*    <InputFile type="file" id="file-input" name="file" />*/}
-      {/*    <span>Прекрипите файл</span>*/}
-      {/*  </div>*/}
-      {/*  <div id={'formPreview'}></div>*/}
-      {/*</DivInputFile>*/}
+      <DivInputFile>
+        <div>
+          <InputFile type="file" id="file-input" name="file" />
+          <span>Прекрипите файл</span>
+        </div>
+        <div id={'formPreview'}></div>
+      </DivInputFile>
 
-      <input type="file" multiple onChange={changeHAnder} />
+      {/*<input type="file" multiple onChange={changeHAnder} />*/}
 
-      <div>
-        <ol>
-          {' '}
-          {documentq.length
-            ? documentq.map((element) => (
-                <li key={getFileURL(element)}>
-                  <a href={getFileURL(element)} download>
-                    {element.name}
-                  </a>
-                </li>
-              ))
-            : null}
-        </ol>
-      </div>
+      {/*<div>*/}
+      {/*  <ol>*/}
+      {/*    {' '}*/}
+      {/*    {documentq.length*/}
+      {/*      ? documentq.map((element) => (*/}
+      {/*          <li key={getFileURL(element)}>*/}
+      {/*            <a href={getFileURL(element)} download>*/}
+      {/*              {element.name}*/}
+      {/*            </a>*/}
+      {/*          </li>*/}
+      {/*        ))*/}
+      {/*      : null}*/}
+      {/*  </ol>*/}
+      {/*</div>*/}
 
       <DivInputCheckbox>
         <InputCheckbox
