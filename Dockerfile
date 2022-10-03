@@ -6,5 +6,4 @@ COPY package*.json ./
 RUN npm install --force
 COPY . .
 
-#CMD ["npm", "run", "start"]
-CMD ["serve", "-s", "build"]
+CMD ["npm", "run", "start"]
