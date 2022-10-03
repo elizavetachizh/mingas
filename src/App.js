@@ -62,7 +62,7 @@ export default function App() {
           element={<ElectronicAppealForEntity />}
         />
         <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
-        {/*<Route path="/*" element={<NoMatch />} />*/}
+        <Route path="/*" element={<NoMatch />} />
         <Route path="/company/management" element={<Management />} />
         <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
         <Route path="/company/management/division/:subdivisionId" element={<Subdivisions />} />
