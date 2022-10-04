@@ -50,7 +50,7 @@ function LifeOfMingas() {
               <IoIosArrowRoundBack style={{ width: '28', height: '28' }} />
               <ImgCarousel
                 key={index}
-                src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.jpg`)}
+                src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.webp`)}
                 alt="test"
                 style={{
                   borderRadius: '20px',

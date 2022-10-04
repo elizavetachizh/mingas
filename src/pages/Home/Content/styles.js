@@ -14,9 +14,6 @@ export const ContainerContent = styled.div`
 
 export const DivContent = styled.div`
   width: 100%;
-  //position: absolute;
-  //height: 608px;
-  //margin-top: 154px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -129,12 +126,6 @@ export const DivText = styled.div`
     @media (max-width: 1800px) {
       margin-bottom: -5px;
     }
-    //@media (max-width: 1600px) {
-    //  margin-bottom: -108px;
-    //}
-    //@media (max-width: 1315px) {
-    //  margin-bottom: -110px;
-    //}
     @media (max-width: 1060px) {
       margin-bottom: -5px;
     }
@@ -147,12 +138,6 @@ export const DivText = styled.div`
     @media (max-width: 600px) {
       margin-bottom: -5px;
     }
-    //@media (max-width: 425px) {
-    //  margin-bottom: -8px;
-    //}
-    //@media (min-width: 2000px) {
-    //  margin-bottom: -260px;
-    //}
     @media (min-width: 2000px) {
       margin-bottom: -5px;
     }

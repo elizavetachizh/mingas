@@ -88,14 +88,6 @@ export const Article = styled.div`
       margin: -22% auto 2%;
     }
   }
-  //&.general {
-  //  width: 50%;
-  //  left: 0;
-  //  margin: 0;
-  //}
-  //&.quarter {
-  //  width: 25%;
-  //}
 `;
 
 export const ArticleForHome = styled.div`
@@ -174,9 +166,7 @@ export const ArticleForHome = styled.div`
       width: 22%;
       font-size: 14px;
     }
-    //@media (min-width: 1490px) {
-    //  width: 22%;
-    //}
+
     @media (min-width: 1500px) {
       width: 18%;
     }

@@ -170,15 +170,6 @@ export const BlockContainerRequests = styled.div`
     box-shadow: none;
     border-radius: 0;
     margin: 0 auto 0;
-    //background-image: linear-gradient(
-    //        -55deg,
-    //        rgba(1, 95, 156, 0.08) 0%,
-    //        rgba(16, 69, 141, 0.3) 0%,
-    //        rgba(15, 89, 141, 0.2) 19%,
-    //        rgba(15, 78, 140, 0.3) 60%,
-    //        rgba(14, 78, 129, 0.3) 70%,
-    //        rgba(13, 68, 117, 0.3) 90%
-    //);
     background-color: rgba(14, 78, 129, 0.2);
   }
 `;

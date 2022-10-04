@@ -6,7 +6,7 @@ export const data = [
       {
         id: 1,
         name: 'Закон Республики Беларусь от 4 января 2003 г. N 176-3 (ред. 24.05.2021) «О газоснабжении»',
-        link: 'https://mingas.by/wp-content/uploads/2021/06/Zakon-Respubliki-Belarus-O-gazosnabzhenii.pdf',
+        link: 'https://etalonline.by/document/?regnum=h10300176&q_id=5959755',
       },
       {
         id: 2,

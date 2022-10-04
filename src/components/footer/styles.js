@@ -57,11 +57,6 @@ export const FooterContainer = styled.div`
       height: 67vh;
     }
   }
-  //&.service {
-  //  @media (min-width: 990px) {
-  //    height: 40vh;
-  //  }
-  //}
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;

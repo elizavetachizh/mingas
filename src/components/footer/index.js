@@ -37,12 +37,7 @@ export default function Footer({ classname }) {
           </p>
           <p style={{ margin: '0' }}>
             Факс (017) 366-36-33 E-mail:{' '}
-            <a
-              onClick={() => navigator.clipboard.writeText('root@mingas.by')}
-              // href={'mailto: root@mingas.by'}
-            >
-              root@mingas.by
-            </a>
+            <a onClick={() => navigator.clipboard.writeText('root@mingas.by')}>root@mingas.by</a>
           </p>
         </ContactInform>
         <WorkTime>
@@ -52,7 +47,6 @@ export default function Footer({ classname }) {
           <p>Обед с 12:00 до 12:45</p>
         </WorkTime>
       </Contacts>
-      {/*</LinksNetwork>*/}
     </FooterContainer>
   );
 }

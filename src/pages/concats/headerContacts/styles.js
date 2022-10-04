@@ -5,20 +5,6 @@ const MenuWidth = {
     width: 30%;
   
     `,
-  //  blue: `
-  //    background-color: #0d4475;
-  //    `,
-  //  border: `
-  // a,
-  //  p,
-  //  select,
-  //  img,
-  //  button {
-  //    color: #0d4475;
-  // }
-  //    border: 1px solid white;
-  //    background-color: white;
-  //    `,
 };
 export const HeaderCompanyDiv = styled.div`
   margin: 4% 2% 0;

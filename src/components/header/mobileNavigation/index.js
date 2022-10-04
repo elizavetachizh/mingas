@@ -99,6 +99,7 @@ export default function MobileNavigation() {
               <ButtonLink to="/company/branches" style={{ width: '100%' }}>
                 Филиалы УП "Мингаз" <img alt={''} src={next} />
               </ButtonLink>
+              <ButtonLink to="/company/corruption">Противодействие коррупции</ButtonLink>
               <ButtonLink to="/company/documentation">
                 Сертификаты, лицензии, свидетельства
               </ButtonLink>

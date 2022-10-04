@@ -21,15 +21,6 @@ export const Form = styled.form`
   width: 250px;
   max-width: 100%;
   position: relative;
-  //@media (max-width: 1600px) {
-  //  width: 200px;
-  //}
-  //@media (max-width: 1000px) {
-  //  width: 130px;
-  //}
-  //@media (max-width: 800px) {
-  //  width: auto;
-  //}
 `;
 
 export const Button = styled.button`

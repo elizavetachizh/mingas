@@ -48,7 +48,7 @@ export default function Gratitude() {
         <BlockOfGraditude>
           {gratitude.map((element) => (
             <ContainerGraditude onClick={() => openImage(element.id)}>
-              <img src={require(`../../../assets/pdf/gratitude/${element.img}.png`)} alt={''} />
+              <img src={require(`../../../assets/pdf/gratitude/${element.img}.webp`)} alt={''} />
             </ContainerGraditude>
           ))}
         </BlockOfGraditude>

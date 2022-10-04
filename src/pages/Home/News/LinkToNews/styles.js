@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 export const DivNews = styled.a`
   display: flex;
@@ -22,13 +21,8 @@ export const DivNews = styled.a`
     border-radius: 20px;
     z-index: -1;
     position: relative;
-    //@media (max-width: 640px) {
-    //  width: 70%;
-    //}
   }
   &:hover {
-    //text-decoration: underline;
-    //text-decoration-color: rgba(49, 77, 93, 0.6);
     transform: scale(1.1);
     background-repeat: no-repeat;
     width: 100%;

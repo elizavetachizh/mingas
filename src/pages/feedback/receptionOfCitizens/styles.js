@@ -60,11 +60,6 @@ export const Tbody = styled.tbody`
         margin: 0;
       }
     }
-    //td {
-    //  @media (max-width: 1390px) {
-    //    height: 225px;
-    //  }
-    //}
   }
   &.regulatory-docs-for-legal {
     tr {

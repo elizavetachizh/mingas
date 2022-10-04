@@ -199,21 +199,6 @@ export default function DepartmentInformation() {
             ))}
           </HeaderCompanyDiv>
           <ContainerInform>
-            {/*{isPhone ? (*/}
-            {/*  <>*/}
-            {/*    {inform.map((el) => (*/}
-            {/*      <DopFunctional*/}
-            {/*        key={el.name}*/}
-            {/*        name={el.name}*/}
-            {/*        contacts={el.contacts}*/}
-            {/*        schedule={el.schedule}*/}
-            {/*        photo={el.photo}*/}
-            {/*        chief={el.chief}*/}
-            {/*        description={el.description}*/}
-            {/*      />*/}
-            {/*    ))}*/}
-            {/*  </>*/}
-            {/*) : (*/}
             <>
               {info.length &&
                 info.map((el) => (
