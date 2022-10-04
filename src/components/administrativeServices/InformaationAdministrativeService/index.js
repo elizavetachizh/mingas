@@ -122,7 +122,7 @@ export default function InformationAdministrativeService() {
           <ContainerInform>
             {info.map((el) => (
               <DopFunctional
-                key={el.uniqueName}
+                key={el.linkId}
                 uniqueName={el.uniqueName}
                 maximumImplementationPeriod={el.maximumImplementationPeriod}
                 certificateValidityPeriod={el.certificateValidityPeriod}

@@ -439,7 +439,7 @@ export const dataLegalEntities = [
             СУГ:
             <ul>
               <li>
-                <a target={'_blank'} href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}>
+                <a rel="noopener" target={'_blank'} href={'https://goo.gl/maps/qH67ongjFxeQ2qrD9'}>
                   г.Заславль, ул.Советская, 79
                 </a>
                 , тел.(017) 542-05-86. Режим работы: вторник — пятница с 8.00 до 17.00, суббота с
@@ -1011,7 +1011,11 @@ export const dataLegalEntities = [
             <p>
               Постановление Министерства антимонопольного регулирования и торговли Республики
               Беларусь от 30 сентября 2016г. №31{' '}
-              <a target={'_blank'} href={'https://pravo.by/document/?guid=3961&p0=W21631316'}>
+              <a
+                rel="noopener"
+                target={'_blank'}
+                href={'https://pravo.by/document/?guid=3961&p0=W21631316'}
+              >
                 «О тарифе на услугу по транспортировке природного газа по системе распределительных
                 трубопроводов» (с изменениями и дополнениями)
               </a>
