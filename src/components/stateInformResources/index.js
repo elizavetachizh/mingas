@@ -1,5 +1,5 @@
 import TitleForHome from '../TitleForHome';
-import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import Carousel, { autoplayPlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { DivCarousel } from './styles';
 import { DivInform } from '../../pages/Home/useful_information/styles';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
@@ -37,6 +37,12 @@ export default function StateInformResources() {
                 resolve: slidesToShowPlugin,
                 options: {
                   numberOfSlides: 2,
+                },
+              },
+              {
+                resolve: autoplayPlugin,
+                options: {
+                  interval: 6000,
                 },
               },
             ]}
@@ -126,6 +132,12 @@ export default function StateInformResources() {
                   numberOfSlides: 3,
                 },
               },
+              {
+                resolve: autoplayPlugin,
+                options: {
+                  interval: 6000,
+                },
+              },
             ]}
             animationSpeed={1000}
           >
@@ -176,7 +188,7 @@ export default function StateInformResources() {
             </DivCarousel>
             <DivCarousel title={'Минская правда'}>
               <figure>
-                <a target={'_blank'} href={'https://mlyn.by/'}>
+                <a rel="noreferrer" target={'_blank'} href={'https://mlyn.by/'}>
                   <img
                     style={{ width: '50%' }}
                     src={require('../../assets/png/minsk_truth.jpg')}
@@ -219,6 +231,7 @@ export default function StateInformResources() {
             <DivCarousel title={'Минский городской исполнительный комитет'}>
               <a href="https://minsk.gov.by/ru/" target="_blank" rel="noreferrer">
                 <img
+                  alt={''}
                   src={require('../../assets/png/comitet-ispolkom.jpg')}
                   style={{ width: '70%' }}
                 />

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { t } from 'i18next';
-import photoHistory from '../../../assets/management/0.jpg';
+import photoHistory from '../../../assets/management/0.webp';
 import { DivLeadersPhotoPosition } from './styles';
 import Header from '../../../components/header';
 import HeaderCompany from '../header_company';

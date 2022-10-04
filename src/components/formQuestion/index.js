@@ -13,6 +13,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useForm } from '../../hooks/use-form-hook';
 import InputName from '../input';
+import InputText from '../input/inputText';
 
 export default function FormQuestion() {
   const {
@@ -179,8 +180,9 @@ export default function FormQuestion() {
           {t('form:text')}
           <Span>*</Span>
         </Label>
-        <InputName
-          inputName={'message'}
+        <InputText
+          wrap={'soft'}
+          text={'message'}
           className={'message'}
           type="message"
           name="message"
@@ -189,15 +191,15 @@ export default function FormQuestion() {
           value={formValues.message}
           error={errors.message}
           label={t('form:text')}
+          inputText={''}
         />
       </DivInput>
 
       <DivInputFile>
-        <div>
-          <InputFile type="file" id="file-input" name="file" />
-          <span>Прекрипите файл</span>
-        </div>
-        <div id={'formPreview'}></div>
+        <InputFile type="file" id="file-input" name="file" />
+        <label>
+          <span>Прикрепите файл</span>
+        </label>
       </DivInputFile>
 
       {/*<input type="file" multiple onChange={changeHAnder} />*/}

@@ -67,7 +67,7 @@ export default function PhoneLineServices() {
             <iframe
               title={'карта'}
               src="https://yandex.by/map-widget/v1/-/CCURMME-DA"
-              allowFullScreen="true"
+              allowFullScreen={true}
               style={{ position: 'relative' }}
             />
           </div>

@@ -10,6 +10,9 @@ export const Div = styled.div`
   border-radius: 20px;
   margin: 1% auto;
   font-size: 16px;
+  a {
+    color: #0d4475;
+  }
   p {
     text-align: left;
   }

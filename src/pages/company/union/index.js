@@ -17,7 +17,6 @@ import up from '../../../assets/png/up_arrow_round.png';
 export default function Union() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
-    window.scrollTo(0, 0);
   }, []);
   return (
     <Container>

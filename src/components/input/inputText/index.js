@@ -1,5 +1,5 @@
 import { InputPropsText } from '../../../const/consts';
-import { Input } from '../styles';
+import { TextArea } from '../styles';
 
 const divStyle = {
   margin: '0',
@@ -8,22 +8,28 @@ const divStyle = {
 };
 export default function InputText({
   error,
-  inputText,
+  text,
   onChange,
   type,
   value,
   placeholder,
+  style,
+  className,
+  wrap,
 }: InputPropsText): JSX.Element {
   return (
     <div style={divStyle}>
-      <Input
+      <TextArea
+        style={style}
         type={type}
-        name={inputText}
+        name={text}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        className={className}
+        wrap={wrap}
       />
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }

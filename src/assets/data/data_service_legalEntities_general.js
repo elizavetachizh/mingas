@@ -618,13 +618,13 @@ export const dataLegalEntities = [
             <ul>
               УП «Мингаз» оказывает услуги:
               <li>
-                <a download href={poryadok_podklyuchenia}>
+                <a target={'_blank'} rel="noreferrer" href={poryadok_podklyuchenia}>
                   Порядок подключения к газораспределительной системе вновь вводимого в эксплуатацию
                   многоквартирного жилого фонда (выдается без оплаты)
                 </a>
               </li>
               <li>
-                <a download href={zayavka_na_pusk}>
+                <a target={'_blank'} rel="noreferrer" href={zayavka_na_pusk}>
                   Заявка на пуск газа в жилые дома до их заселения
                 </a>
               </li>

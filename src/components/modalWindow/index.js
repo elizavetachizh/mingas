@@ -14,7 +14,7 @@ export default function Modal({ handleCloseCLick, currentLeader, nameId }) {
         <InformModal>
           <img
             alt={currentLeader.fullName}
-            src={require(`../../assets/management/${currentLeader.cardImg}.jpg`)}
+            src={require(`../../assets/management/${currentLeader.cardImg}.webp`)}
           />
           <p>{currentLeader.fullName}</p>
           <p>{currentLeader.position}</p>

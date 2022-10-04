@@ -59,7 +59,7 @@ export default function Gratitude() {
               <InformModal>
                 <img
                   className={'gratitude'}
-                  src={require(`../../../assets/pdf/gratitude/${image}.png`)}
+                  src={require(`../../../assets/pdf/gratitude/${image}.webp`)}
                   alt={''}
                 />
               </InformModal>

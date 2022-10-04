@@ -13,6 +13,7 @@ import {
   DivInput,
 } from '../formQuestion/styles';
 import { useFormForEnity } from '../../hooks/use-form-for-enity-hook';
+import InputText from '../input/inputText';
 export default function FormQuestionForEntity() {
   const {
     handleUserInput,
@@ -184,26 +185,29 @@ export default function FormQuestionForEntity() {
 
         <DivInput>
           <Label>
-            Сообщение
+            {t('form:text')}
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'message'}
+          <InputText
+            wrap={'soft'}
+            text={'message'}
+            className={'message'}
             type="message"
             name="message"
             placeholder={'Текст сообщения'}
             onChange={handleUserInput}
             value={formValues.message}
             error={errors.message}
+            label={t('form:text')}
+            inputText={''}
           />
         </DivInput>
 
         <DivInputFile>
-          <div>
-            <InputFile type="file" id="file-input" name="file" />
-            <span>Прекрипите файл</span>
-          </div>
-          <div id={'formPreview'}></div>
+          <InputFile type="file" id="file-input" name="file" />
+          <label>
+            <span>Прикрепите файл</span>
+          </label>
         </DivInputFile>
 
         <DivInputCheckbox>

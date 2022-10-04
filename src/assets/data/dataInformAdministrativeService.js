@@ -450,7 +450,7 @@ export const data = [
     serviceID: 3,
     serviceName: 'Газоснабжение',
     linkId: 3,
-    uniqueName: 'выдача технических условий на газификацию одноквартирного жилого дома (п.10.4.1)',
+    uniqueName: 'Выдача технических условий на газификацию одноквартирного жилого дома (п.10.4.1)',
     maximumImplementationPeriod: '10 дней со дня подачи заявления',
     certificateValidityPeriod: 'действительно 2 года',
     boardSize: 'бесплатно',

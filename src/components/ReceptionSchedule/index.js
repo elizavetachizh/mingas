@@ -28,7 +28,7 @@ export default function ReceptionSchedule() {
         </thead>
         <Tbody className={'firstColumn'}>
           {admissionSchedule.map((el) => (
-            <tr>
+            <tr key={el.id}>
               <td>
                 <DopFunctionalForColumn
                   handlerLeaderClick={handlerLeaderClick}

@@ -42,7 +42,7 @@ export default function Newspaper() {
         </BtnIsOpen>
         <Div className={isOpen && `shake`}>
           {dataReverse.map((el) => (
-            <ContanerNewsPape>
+            <ContanerNewsPape key={el.id}>
               <img alt={''} src={require('../../../assets/png/newspaper.png')} />
               <a
                 href={require(`../../../assets/pdf/newspaper/${el.link}`)}

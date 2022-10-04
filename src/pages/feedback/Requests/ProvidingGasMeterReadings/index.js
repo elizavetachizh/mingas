@@ -135,8 +135,8 @@ export default function ProvidingGasMeterReadings() {
           />
         </DivInput>
         <DivInputFile>
-          <Label>Прикрепить фото прибора учёта</Label>
           <InputFile type="file" id="file-input" />
+          <label>Прикрепить фото прибора учёта</label>
         </DivInputFile>
         <div id={'formPreview'}></div>
         <DivInputCheckbox>

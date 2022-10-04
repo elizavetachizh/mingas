@@ -15,7 +15,7 @@ export default function Leaders({
   return (
     <ContainerLeaders onClick={onClick}>
       <div>
-        <ImageLeader src={require(`../../../../assets/management/${cardImg}.jpg`)} key={cardImg} />
+        <ImageLeader src={require(`../../../../assets/management/${cardImg}.webp`)} key={cardImg} />
       </div>
       <p style={{ display: 'none' }}>{idName}</p>
       <FullNameLeader>{fullName}</FullNameLeader>
