@@ -476,7 +476,7 @@ export const ContanerLink = styled.div`
   background-image: none;
   border-radius: 0;
   border: none !important;
-  padding: 0 14px 0 0 !important;
+  padding: 0 10px 0 0 !important;
   span {
     display: none;
     position: absolute;
