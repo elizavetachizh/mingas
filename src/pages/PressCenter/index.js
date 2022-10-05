@@ -64,7 +64,7 @@ export default function PressCenter() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>
-            <DopFunctionalPressCenter key={key} inform={inform} />
+            <DopFunctionalPressCenter index={key} inform={inform} />
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>

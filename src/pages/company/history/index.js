@@ -28,10 +28,9 @@ export default function History() {
       <Header backgroundHeader="blue" />
       <Feedback className={'none'} img={minsk} name={'История'} />
       <HeaderCompany />
-      <AdditionalDiv style={{ margin: '4% auto' }}>
+      <AdditionalDiv style={{ margin: '2% auto' }}>
         <TitleForHome
           className={'company'}
-          margin={'s'}
           color={'blue'}
           infoTitle={'Из истории газификации г. Минска и Минского района'}
         />

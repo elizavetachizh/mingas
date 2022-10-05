@@ -110,19 +110,18 @@ export const BackgroundStyleServices = styled.img`
     display: none;
   }
   @media (min-width: 901px) {
-    margin: 50% 10%;
+    margin: 8% 0;
     width: 44%;
   }
   @media (min-width: 1200px) {
-    margin: 26% 10%;
     width: 36%;
   }
   @media (min-width: 1600px) {
-    margin: 20% 10%;
+    margin: 5% 0;
     width: 28%;
   }
   @media (min-width: 2000px) {
-    margin: 10% 10%;
+    margin: 0 5%;
     width: 25%;
   }
 `;

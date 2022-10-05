@@ -39,7 +39,7 @@ export default function Management() {
       <Header backgroundHeader={'blue'} />
       <Feedback className={'none'} img={minsk} name={'Руководство'} />
       <HeaderCompany />
-      <AdditionalDiv style={{ margin: '4% auto' }}>
+      <AdditionalDiv style={{ margin: '2% auto' }}>
         <DivTextPhoto>
           <ImageDiv data-aos={'fade-up'} src={photoHistory} />
           <DivText data-aos={'fade-up'}>

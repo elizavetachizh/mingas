@@ -20,6 +20,8 @@ import ScrollToTop from 'react-scroll-up';
 import { useNavigate, useParams } from 'react-router';
 import minsk from '../../../../assets/background/phone.webp';
 import Feedback from '../../../feedback';
+import { BackgroundStyleServices } from '../../styles';
+import linesOne from '../../../../assets/background/rig.webp';
 
 export default function CardOfService() {
   const [inform, setInform] = useState([]);
@@ -51,6 +53,7 @@ export default function CardOfService() {
     <Container>
       <Header backgroundHeader={'blue'} />
       <Feedback className={'none'} img={minsk} name={'Услуги для юридических лиц'} />
+      <BackgroundStyleServices src={linesOne} />
       <AdditionalDiv>
         <DivBlocks>
           <HeaderCompanyDiv>

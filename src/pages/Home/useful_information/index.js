@@ -9,7 +9,7 @@ export default function UsefulInform() {
   const { t } = useTranslation();
   return (
     <DivUsefulInform>
-      <TitleForHome color={'blue'} infoTitle={`${t('usefulInform:usefulInform')}`}></TitleForHome>
+      <TitleForHome color={'blue'} infoTitle={`${t('usefulInform:usefulInform')}`} />
       <DivInform>
         {data.map((element) => (
           <LinkInform

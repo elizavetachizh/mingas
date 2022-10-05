@@ -10,9 +10,9 @@ export default function News() {
   const { t } = useTranslation();
   return (
     <BlockContainerRequests>
-      <TitleForHome margin={'s'} color={'blue'} infoTitle={`${t('smi:title')}`} />
+      <TitleForHome color={'blue'} infoTitle={`${t('smi:title')}`} />
       <DivInform>
-        <ArticleForHome className={'general'}>
+        <ArticleForHome>
           <a
             target={'_blank'}
             rel="noreferrer"
@@ -51,7 +51,11 @@ export default function News() {
           </a>
         </ArticleForHome>
         <ArticleForHome className={'quarter'}>
-          <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
+          <a
+            rel="noopener"
+            target={'_blank'}
+            href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}
+          >
             <img
               src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'}
               alt={' Счетчик «не газует» - Газета Беларускi Час'}
@@ -63,6 +67,7 @@ export default function News() {
         </ArticleForHome>
         <ArticleForHome>
           <a
+            rel="noopener"
             target={'_blank'}
             href={'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'}
           >

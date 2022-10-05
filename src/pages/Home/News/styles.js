@@ -7,7 +7,7 @@ export const DivInform = styled.div`
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
-  margin: 10px auto;
+  margin: 6px auto;
   div {
     p {
       text-indent: 0;
