@@ -6,7 +6,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const libraries = ['places'];
 
 function Map() {
-  const [activeMarker, setActiveMarker] = useState(null);
+  const [activeMarker, setActiveMarker] = useState('');
+  console.log(activeMarker);
   return (
     <GoogleMap defaultZoom={10} defaultCenter={{ lat: 53.905812, lng: 27.602552 }}>
       {obmenie_puncti.map((el) => (
@@ -23,14 +24,15 @@ function Map() {
           }}
         >
           <div>
-            <p>{activeMarker.title}</p>
-            {activeMarker.inform}
+            <p>{activeMarker?.title}</p>
+            {activeMarker?.inform}
           </div>
         </InfoWindow>
       )}
     </GoogleMap>
   );
 }
+
 const WrapperMap = withScriptjs(withGoogleMap(Map));
 export default function MapServiceObmeniePuncti() {
   const { isLoaded, loadError } = useLoadScript({

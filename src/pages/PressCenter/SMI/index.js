@@ -7,6 +7,7 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Article, ContainerArticles } from '../styles';
 import React, { useState } from 'react';
 import rolic from '../../../assets/videos/mingaz-rolik-1-opasnost-gaza.mp4';
+import rolic_gaz from '../../../assets/videos/mingaz-rolik-2-zakryvaite-gaz_VmTcldSf.mp4';
 export default function SMI() {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
@@ -65,6 +66,12 @@ export default function SMI() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          <iframe
+            src={rolic_gaz}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </Div>
       </General>
       <General>
@@ -82,6 +89,7 @@ export default function SMI() {
           <ContainerArticles>
             <Article className={'general'}>
               <a
+                rel="noopener"
                 target={'_blank'}
                 href={
                   'https://minsknews.by/mozhno-li-samostoyatelno-podklyuchit-gazovuyu-plitu-kommentarij-mingaza/'
@@ -98,6 +106,7 @@ export default function SMI() {
             </Article>
             <Article className={'quarter'}>
               <a
+                rel="noopener"
                 target={'_blank'}
                 href={
                   'https://minsknews.by/hozyajke-chastnogo-doma-naschitali-bolee-19-tys-rublej-za-gaz-iz-za-poddelnoj-plomby-na-schetchike/'
@@ -117,7 +126,11 @@ export default function SMI() {
               </a>
             </Article>
             <Article className={'quarter'}>
-              <a target={'_blank'} href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}>
+              <a
+                rel="noopener"
+                target={'_blank'}
+                href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}
+              >
                 <img alt={''} src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
                 <p>
                   Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
@@ -126,6 +139,7 @@ export default function SMI() {
             </Article>
             <Article>
               <a
+                rel="noopener"
                 target={'_blank'}
                 href={
                   'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'
@@ -167,6 +181,7 @@ export default function SMI() {
             </Article>
             <Article>
               <a
+                rel="noopener"
                 target={'_blank'}
                 href={
                   'https://minsknews.by/novye-pravila-polzovaniya-gazom-v-bytu-v-minske-prohodit-seminar-dlya-speczialistov-so-vsej-strany/'
@@ -186,6 +201,7 @@ export default function SMI() {
             </Article>
             <Article>
               <a
+                rel="noopener"
                 target={'_blank'}
                 href={
                   'https://minsknews.by/kommunalnyj-likbez-kak-podvesti-gaz-k-chastnomu-domu-i-skolko-eto-stoit/'
@@ -205,6 +221,7 @@ export default function SMI() {
             </Article>
             <Article>
               <a
+                rel="noopener"
                 target={'_blank'}
                 href={
                   'https://minsknews.by/novye-dogovory-za-polzovanie-gazom-5-populyarnyh-voprosov-i-otvety-speczialista/'
@@ -225,6 +242,7 @@ export default function SMI() {
             </Article>
             <Article>
               <a
+                rel="noopener"
                 target={'_blank'}
                 href={
                   'https://minsknews.by/v-2022-g-rabotniki-up-mingaz-provedut-tehobsluzhivanie-bolee-chem-46-tys-plit-chto-nuzhno-znat-potrebitelyam/'

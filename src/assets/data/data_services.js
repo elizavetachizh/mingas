@@ -671,10 +671,11 @@ export const data = [
               </li>
 
               <li>
+                Карта:{' '}
                 <a href={'https://yandex.by/maps/-/CCURM2e81C'} target={'_blank'} rel="noreferrer">
                   АЗС №4, г.Минск, пр.Партизанский, 156
                 </a>
-                , <a href={'tel:+375 (017) 373-20-74'}>тел. +375 (017) 373-20-74</a>;
+                ; Телефон: <a href={'tel:+375 (017) 373-20-74'}>тел. +375 (017) 373-20-74</a>;
               </li>
               <li>
                 <a href={'https://yandex.by/maps/-/CCURM2u53B'} target={'_blank'} rel="noreferrer">
