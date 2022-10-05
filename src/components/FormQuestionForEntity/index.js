@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import InputName from '../input';
 import {
   Form,
   Label,
   Span,
-  DivInputFile,
   DivInputCheckbox,
   InputCheckbox,
-  InputFile,
   Button,
   DivInput,
 } from '../formQuestion/styles';
@@ -29,12 +27,7 @@ export default function FormQuestionForEntity() {
   const { t } = useTranslation();
 
   const formImage = document.getElementById('file-input');
-  const formPreview = document.getElementById('formPreview');
-  formImage?.addEventListener('change', () => {
-    uploadFile(formImage.files[0]);
-  });
-
-  function uploadFile(file) {
+  const handleFileChosen = async (file) => {
     if (
       ![
         'application/msword',
@@ -49,37 +42,41 @@ export default function FormQuestionForEntity() {
       alert('Файл является слишком большим');
       formImage.value = '';
     }
-    let reader = new FileReader();
-    reader.onload = function (e) {
-      formPreview.innerHTML = `<a id={'image'} href="${e.target.result}">Документ</a>`;
-      // if (['image/png', 'image/jpeg'].includes(file.type)) {
-      //   setFormValues({
-      //     ...formValues,
-      //     file: reader.result,
-      //   });
-      // }
-      // if (
-      //   [
-      //     'application/msword',
-      //     'application/pdf',
-      //     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      //   ].includes(file.type)
-      // ) {
-      //   setFormValues({
-      //     ...formValues,
-      //     document: reader.result,
-      //   });
-      // }
+    return new Promise((resolve, reject) => {
+      let fileReader = new FileReader();
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = reject;
+      fileReader.readAsDataURL(file);
+    });
+  };
 
-      setFormValues({ ...formValues, file: reader.result });
-      setFormValues({ ...formValues, document: reader.result });
-    };
+  const readAllFiles = async (AllFiles) => {
+    return await Promise.all(
+      AllFiles.map(async (file) => {
+        return await handleFileChosen(file);
+      })
+    );
+  };
 
-    reader.onerror = function (e) {
-      console.log(e);
-    };
-    reader.readAsDataURL(file);
-  }
+  const [documentq, setDocumentq] = useState([]);
+  const getFileURL = (file) => {
+    const blob = new Blob([file], {
+      type: 'application/octetstream, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    });
+
+    return URL.createObjectURL(blob);
+  };
+  const changeHAnder = useCallback(
+    (event) => {
+      setDocumentq(Object.values(event.target.files));
+      readAllFiles(Object.values(event.target.files)).then((r) =>
+        setFormValues({ ...formValues, information: r })
+      );
+    },
+    [formValues]
+  );
 
   return (
     <>
@@ -203,12 +200,21 @@ export default function FormQuestionForEntity() {
           />
         </DivInput>
 
-        <DivInputFile>
-          <InputFile type="file" id="file-input" name="file" />
-          <label>
-            <span>Прикрепите файл</span>
-          </label>
-        </DivInputFile>
+        <input type="file" multiple onChange={changeHAnder} id="file-input" />
+
+        <div>
+          <ol>
+            {documentq.length
+              ? documentq.map((element) => (
+                  <li key={getFileURL(element)}>
+                    <a href={getFileURL(element)} download>
+                      {element.name}
+                    </a>
+                  </li>
+                ))
+              : null}
+          </ol>
+        </div>
 
         <DivInputCheckbox>
           <InputCheckbox

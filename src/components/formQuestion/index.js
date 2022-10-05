@@ -1,15 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import {
-  DivInput,
-  DivInputCheckbox,
-  DivInputFile,
-  Form,
-  Label,
-  Span,
-  InputCheckbox,
-  InputFile,
-  Button,
-} from './styles';
+import { Button, DivInput, DivInputCheckbox, Form, InputCheckbox, Label, Span } from './styles';
 import { useTranslation } from 'react-i18next';
 import { useForm } from '../../hooks/use-form-hook';
 import InputName from '../input';
@@ -31,47 +21,41 @@ export default function FormQuestion() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  // const formImage = document.getElementById('file-input');
-  // formImage?.addEventListener('change', () => {
-  //   uploadFile(formImage.files[0]);
-  // });
 
-  const uploadFile = useCallback(
-    (file) => {
-      // if (
-      //   ![
-      //     'image/png',
-      //     'image/jpeg',
-      //     'application/msword',
-      //     'application/pdf',
-      //     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      //   "application/zip",
-      // 'application/octet-stream'
-      //   ].includes(file.type)
-      // ) {
-      //   alert('Не подходит формат файла');
-      //   formImage.value = '';
-      // }
-      // if (file.size > 60000) {
-      //   alert('Файл является слишком большим');
-      //   formImage.value = '';
-      // }
-      let reader = new FileReader();
-      const arr = [...formValues.information];
-      reader.onload = function () {
-        arr.push(reader.result);
-        console.log(arr);
-        // setFormValues({ ...formValues, file: reader.result });
-        // setFormValues({ ...formValues, document: reader.result });
-        setFormValues({ formValues, information: arr });
+  const formImage = document.getElementById('file-input');
+  const handleFileChosen = async (file) => {
+    if (
+      ![
+        'application/msword',
+        'application/pdf',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      ].includes(file.type)
+    ) {
+      alert('Не подходит формат файла');
+      formImage.value = '';
+    }
+    if (file.size > 60000) {
+      alert('Файл является слишком большим');
+      formImage.value = '';
+    }
+    return new Promise((resolve, reject) => {
+      let fileReader = new FileReader();
+      fileReader.onload = () => {
+        resolve(fileReader.result);
       };
-      reader.onerror = function (e) {
-        console.log(e);
-      };
-      reader.readAsDataURL(file);
-    },
-    [formValues]
-  );
+      fileReader.onerror = reject;
+      fileReader.readAsDataURL(file);
+    });
+  };
+
+  const readAllFiles = async (AllFiles) => {
+    return await Promise.all(
+      AllFiles.map(async (file) => {
+        return await handleFileChosen(file);
+      })
+    );
+  };
+
   const [documentq, setDocumentq] = useState([]);
   const getFileURL = (file) => {
     const blob = new Blob([file], {
@@ -83,16 +67,13 @@ export default function FormQuestion() {
   const changeHAnder = useCallback(
     (event) => {
       setDocumentq(Object.values(event.target.files));
-      const arr = Object.values(event.target.files).map((el) => el.name);
-      Object.values(Object.values(event.target.files)).forEach((value) => {
-        uploadFile(value);
-        console.log(value);
-      });
-      // setFormValues({ ...formValues, information: arr });
+      readAllFiles(Object.values(event.target.files)).then((r) =>
+        setFormValues({ ...formValues, information: r })
+      );
     },
     [formValues]
   );
-  console.log(formValues.information);
+
   return (
     <Form autocomplete="on" onSubmit={handleSubmit} ref={form}>
       <DivInput>
@@ -196,18 +177,10 @@ export default function FormQuestion() {
         />
       </DivInput>
 
-      {/*<DivInputFile>*/}
-      {/*  <InputFile type="file" id="file-input" name="file" />*/}
-      {/*  <label>*/}
-      {/*    <span>Прикрепите файл</span>*/}
-      {/*  </label>*/}
-      {/*</DivInputFile>*/}
-
-      <input type="file" multiple onChange={changeHAnder} />
+      <input type="file" multiple onChange={changeHAnder} id="file-input" />
 
       <div>
         <ol>
-          {' '}
           {documentq.length
             ? documentq.map((element) => (
                 <li key={getFileURL(element)}>

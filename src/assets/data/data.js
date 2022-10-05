@@ -1,6 +1,5 @@
 import { Trans } from 'react-i18next';
 
-// const { t } = useTranslation();
 export const data = [
   {
     id: 1,

@@ -42,7 +42,7 @@ export default function StateInformResources() {
               {
                 resolve: autoplayPlugin,
                 options: {
-                  interval: 6000,
+                  interval: 4000,
                 },
               },
             ]}
@@ -117,7 +117,7 @@ export default function StateInformResources() {
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Минский городской исполнительный комитет'}>
               <a href="https://minsk.gov.by/ru/" target="_blank" rel="noreferrer">
-                <img src={require('../../assets/png/comitet-ispolkom.jpg')} />
+                <img alt={''} src={require('../../assets/png/comitet-ispolkom.jpg')} />
               </a>
             </DivCarousel>
           </Carousel>
@@ -135,7 +135,7 @@ export default function StateInformResources() {
               {
                 resolve: autoplayPlugin,
                 options: {
-                  interval: 6000,
+                  interval: 4000,
                 },
               },
             ]}

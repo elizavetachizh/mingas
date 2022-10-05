@@ -26,8 +26,6 @@ export default function Home() {
           setIsLoaded(true);
           setItems(result);
         },
-        // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-        // чтобы не перехватывать исключения из ошибок в самих компонентах.
         (error) => {
           setIsLoaded(true);
           setError(error);
