@@ -6,7 +6,7 @@ import {
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Article, ContainerArticles } from '../styles';
 import React, { useState } from 'react';
-import rolic from '../../../assets/videos/rolic_1.mp4';
+import rolic from '../../../assets/videos/mingaz-rolik-1-opasnost-gaza.mp4';
 export default function SMI() {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
