@@ -6,7 +6,7 @@ import {
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Article, ContainerArticles } from '../styles';
 import React, { useState } from 'react';
-
+import rolic from '../../../assets/videos/rolic_1.mp4';
 export default function SMI() {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
@@ -55,6 +55,12 @@ export default function SMI() {
           ></iframe>
           <iframe
             src="https://www.youtube.com/embed/cBJcdXWlgV4"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <iframe
+            src={rolic}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

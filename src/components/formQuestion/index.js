@@ -31,10 +31,10 @@ export default function FormQuestion() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const formImage = document.getElementById('file-input');
-  formImage?.addEventListener('change', () => {
-    uploadFile(formImage.files[0]);
-  });
+  // const formImage = document.getElementById('file-input');
+  // formImage?.addEventListener('change', () => {
+  //   uploadFile(formImage.files[0]);
+  // });
 
   const uploadFile = useCallback(
     (file) => {
@@ -52,19 +52,19 @@ export default function FormQuestion() {
       //   alert('Не подходит формат файла');
       //   formImage.value = '';
       // }
-      if (file.size > 60000) {
-        alert('Файл является слишком большим');
-        formImage.value = '';
-      }
+      // if (file.size > 60000) {
+      //   alert('Файл является слишком большим');
+      //   formImage.value = '';
+      // }
       let reader = new FileReader();
       const arr = [...formValues.information];
       reader.onload = function () {
         arr.push(reader.result);
-        setFormValues({ ...formValues, file: reader.result });
-        setFormValues({ ...formValues, document: reader.result });
-        setFormValues({ ...formValues, information: arr });
+        console.log(arr);
+        // setFormValues({ ...formValues, file: reader.result });
+        // setFormValues({ ...formValues, document: reader.result });
+        setFormValues({ formValues, information: arr });
       };
-
       reader.onerror = function (e) {
         console.log(e);
       };
@@ -86,12 +86,13 @@ export default function FormQuestion() {
       const arr = Object.values(event.target.files).map((el) => el.name);
       Object.values(Object.values(event.target.files)).forEach((value) => {
         uploadFile(value);
+        console.log(value);
       });
-      setFormValues({ ...formValues, information: arr });
+      // setFormValues({ ...formValues, information: arr });
     },
     [formValues]
   );
-
+  console.log(formValues.information);
   return (
     <Form autocomplete="on" onSubmit={handleSubmit} ref={form}>
       <DivInput>
@@ -195,29 +196,29 @@ export default function FormQuestion() {
         />
       </DivInput>
 
-      <DivInputFile>
-        <InputFile type="file" id="file-input" name="file" />
-        <label>
-          <span>Прикрепите файл</span>
-        </label>
-      </DivInputFile>
+      {/*<DivInputFile>*/}
+      {/*  <InputFile type="file" id="file-input" name="file" />*/}
+      {/*  <label>*/}
+      {/*    <span>Прикрепите файл</span>*/}
+      {/*  </label>*/}
+      {/*</DivInputFile>*/}
 
-      {/*<input type="file" multiple onChange={changeHAnder} />*/}
+      <input type="file" multiple onChange={changeHAnder} />
 
-      {/*<div>*/}
-      {/*  <ol>*/}
-      {/*    {' '}*/}
-      {/*    {documentq.length*/}
-      {/*      ? documentq.map((element) => (*/}
-      {/*          <li key={getFileURL(element)}>*/}
-      {/*            <a href={getFileURL(element)} download>*/}
-      {/*              {element.name}*/}
-      {/*            </a>*/}
-      {/*          </li>*/}
-      {/*        ))*/}
-      {/*      : null}*/}
-      {/*  </ol>*/}
-      {/*</div>*/}
+      <div>
+        <ol>
+          {' '}
+          {documentq.length
+            ? documentq.map((element) => (
+                <li key={getFileURL(element)}>
+                  <a href={getFileURL(element)} download>
+                    {element.name}
+                  </a>
+                </li>
+              ))
+            : null}
+        </ol>
+      </div>
 
       <DivInputCheckbox>
         <InputCheckbox

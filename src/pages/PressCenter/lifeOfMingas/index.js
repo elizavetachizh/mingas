@@ -4,6 +4,7 @@ import { photo } from '../../../assets/data/liveInStyleOfMingas';
 import { Link, ImgCarousel } from '../../company/styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+import video from '../../../assets/videos/file.mp4';
 function LifeOfMingas() {
   return (
     <>
@@ -67,7 +68,7 @@ function LifeOfMingas() {
             controls={'controls'}
             autoPlay="autoplay"
             preload="auto"
-            src={require('../../../assets/videos/file.mp4')}
+            src={video}
           />
         </div>
       </div>
