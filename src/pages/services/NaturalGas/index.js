@@ -1,24 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { data } from '../../../assets/data/data_services';
 import DopFunctionService from '../DopFunction';
-import { Container } from '../../company/styles';
-import Header from '../../../components/header';
-import Footer from '../../../components/footer';
 import { BlockBtn, Name } from '../../../components/administrativeServices/Header/styles';
 import { HeaderCompanyDiv } from '../../concats/headerContacts/styles';
-import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import {
   ContainerInform,
   DivBlocks,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../assets/png/up_arrow_round.png';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalHeader from './DopFunctionalHeader';
-import linesOne from '../../../assets/background/rig.webp';
-import { BackgroundStyleServices } from '../styles';
-import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.webp';
+import ContainerContent from '../../../components/Container';
 
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
@@ -45,11 +36,9 @@ export default function NaturalGas() {
   );
 
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Услуги'} />
-      <BackgroundStyleServices src={linesOne} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Услуги'}
+      content={
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Услуги для физических лиц</Name>
@@ -74,11 +63,7 @@ export default function NaturalGas() {
             ))}
           </ContainerInform>
         </DivBlocks>
-      </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

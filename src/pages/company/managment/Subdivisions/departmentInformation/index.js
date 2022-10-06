@@ -1,13 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import Header from '../../../../../components/header';
 import { data } from '../../../../../assets/data/data_department';
 import DopFunctional from '../DopFunctional';
 import { NavLink, useParams, useSearchParams } from 'react-router-dom';
-import { Container } from '../../../styles';
-import { AdditionalDiv } from '../../../../concats/GeneralContactInform/styles';
-import Footer from '../../../../../components/footer';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../../../assets/png/up_arrow_round.png';
 import {
   DivBlocks,
   ContainerInform,
@@ -26,9 +20,8 @@ import {
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
-import Feedback from '../../../../feedback';
-import minsk from '../../../../../assets/background/phone.webp';
 import ButtonFun from '../../../../../components/button';
+import ContainerContent from '../../../../../components/Container';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
@@ -52,19 +45,16 @@ export default function DepartmentInformation() {
     .concat(data[7].information);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if ((!inform.length || !inform) && !currentServiceID) {
-      const current = data.find((element) => element.idName === +linkId);
-      setInform(current.information);
-      setDepartamentId(+linkId);
-    }
+    const current = data.find((element) => element.idName === +linkId);
+    setInform(current?.information);
+    setDepartamentId(+linkId);
     if (id) {
       const currentBlockInfo = infoForSearch.filter((information) => information.id === +id);
       setInfo(currentBlockInfo);
     } else {
       setInfo(currentSearch?.information);
     }
-  }, [id, currentSearch, infoForSearch]);
+  }, [linkId, id]);
 
   const changeDepartment = useCallback(
     (departamentId) => {
@@ -73,7 +63,7 @@ export default function DepartmentInformation() {
       setDepartamentId(departamentId);
       setInform(current.information);
     },
-    [currentServiceID, navigate]
+    [navigate]
   );
 
   const handlerLinkClickUniqueName = useCallback(
@@ -132,10 +122,9 @@ export default function DepartmentInformation() {
     navigate('/company/management/1');
   };
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Службы УП "МИНГАЗ"'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Службы УП "МИНГАЗ"'}
+      content={
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Наименования подразделений</Name>
@@ -220,14 +209,9 @@ export default function DepartmentInformation() {
                 backgrounder={'blue'}
               />
             )}
-            {/*)}*/}
           </ContainerInform>
         </DivBlocks>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

@@ -1,7 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Container } from '../../pages/company/styles';
-import Header from '../header';
-import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import {
   BlockSearchService,
   ContainerFormSearchForService,
@@ -12,23 +9,18 @@ import {
 import { HeaderCompanyDiv } from '../../pages/concats/headerContacts/styles';
 import { BlockBtn, ContainerBtnIcon, Name } from '../administrativeServices/Header/styles';
 import DopFunctionalHeader from '../../pages/services/NaturalGas/DopFunctionalHeader';
-import Footer from '../footer';
 import { data } from '../../assets/data/regularyDocuments';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../assets/png/up_arrow_round.png';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
-import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.webp';
+import ContainerContent from '../Container';
 
 export default function DepartmentInformation() {
   const { documentId } = useParams();
   const [currentDocumentId, setDocumentId] = useState(null);
   const [inform, setInform] = useState([]);
   const navigate = useNavigate();
-  const [info, setInfo] = useState([]);
   const [name, setName] = useState('');
   const [isForm, setIsForm] = useState(false);
   const [message, setMessage] = useState('');
@@ -63,13 +55,10 @@ export default function DepartmentInformation() {
     });
   }
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (!currentDocumentId && !inform.length) {
-      const current = data.find((element) => element.idName === +documentId);
-      setInform(current.inform);
-      setDocumentId(+documentId);
-      setName(current?.separation);
-    }
+    const current = data.find((element) => element.idName === +documentId);
+    setInform(current.inform);
+    setDocumentId(+documentId);
+    setName(current?.separation);
   }, [currentDocumentId, documentId, inform]);
 
   const renderResult = () => {
@@ -91,11 +80,10 @@ export default function DepartmentInformation() {
       </BlockSearchService>
     );
   };
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    setInfo(data);
     navigate('/regulatory-documents/1');
   };
 
@@ -104,7 +92,6 @@ export default function DepartmentInformation() {
       const current = data.find((element) => element.idName === documentId);
       setDocumentId(currentDocumentId && currentDocumentId === documentId ? '' : documentId);
       setInform(current.inform);
-      window.scrollTo(0, 0);
       navigate(`/regulatory-documents/${current.idName}`);
       setName(current?.separation);
     },
@@ -112,10 +99,9 @@ export default function DepartmentInformation() {
   );
 
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Регламинтирующие документы'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Регламинтирующие документы'}
+      content={
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Регламинтирующие документы</Name>
@@ -214,11 +200,7 @@ export default function DepartmentInformation() {
             </ContainerInform>
           )}
         </DivBlocks>
-      </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

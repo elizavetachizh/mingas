@@ -1,7 +1,3 @@
-import { Container } from '../../../styles';
-import Header from '../../../../../components/header';
-import Footer from '../../../../../components/footer';
-import { AdditionalDiv } from '../../../../concats/GeneralContactInform/styles';
 import React, { useEffect, useState } from 'react';
 import { data } from '../../../../../assets/data/data_department';
 import DopFunctional from '../DopFunctional';
@@ -11,11 +7,10 @@ import {
   ContainerInform,
   SearchService,
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../../../assets/png/up_arrow_round.png';
 import { NavLink, useSearchParams } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
+import ContainerContent from '../../../../../components/Container';
 
 export default function AllSubdivisions() {
   const [isForm, setIsForm] = useState(false);
@@ -42,8 +37,7 @@ export default function AllSubdivisions() {
     } else {
       setInfo(infoForSearch);
     }
-    window.scrollTo(0, 0);
-  }, [id, infoForSearch]);
+  }, [id]);
 
   const handleForm = () => {
     setIsForm(true);
@@ -91,9 +85,9 @@ export default function AllSubdivisions() {
   };
 
   return (
-    <Container>
-      <Header />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Службы УП "МИНГАЗ"'}
+      content={
         <ContainerInform>
           <>
             {isForm ? (
@@ -150,11 +144,7 @@ export default function AllSubdivisions() {
                 ))}
           </>
         </ContainerInform>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

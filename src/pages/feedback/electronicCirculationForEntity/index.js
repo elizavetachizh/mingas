@@ -1,25 +1,14 @@
-import React, { useEffect } from 'react';
-import Header from '../../../components/header';
-import Footer from '../../../components/footer';
+import React from 'react';
 import FormQuestionForEntity from '../../../components/FormQuestionForEntity';
-import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { ContainerInform, TextForInformation } from './styles';
 import SubTitleFun from '../../../components/SubTitle';
-import { Container } from '../../company/styles';
-import Feedback from '../index';
-import minsk from '../../../assets/background/phone.webp';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../assets/png/up_arrow_round.png';
+import ContainerContent from '../../../components/Container';
 
 export default function ElectronicAppealForEntity() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
-    <Container>
-      <Header backgroundHeader="blue" />
-      <Feedback className={'none'} img={minsk} name={'Электронное обращение юридических лиц'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Электронное обращение юридических лиц'}
+      content={
         <ContainerInform className={'electronic-appeal-for-entity'}>
           <TextForInformation>
             <SubTitleFun color={'blue'} infoSubTitle={'Уважаемые посетители сайта!'} />
@@ -88,11 +77,7 @@ export default function ElectronicAppealForEntity() {
           </TextForInformation>
           <FormQuestionForEntity />
         </ContainerInform>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

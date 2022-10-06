@@ -46,6 +46,7 @@ export default function SchemaOfBranches({
         setShowTopBtn(false);
       }
     });
+    window.scrollTo(0, 0);
   }, []);
   const animateClose = () => {
     setIsClose(true);
@@ -112,7 +113,11 @@ export default function SchemaOfBranches({
         )}
         <General style={{ borderRadius: 'none', border: 'none' }} className={'leave-feedback'}>
           <Name>Общая информация</Name>
-          <img style={{ width: '50%', margin: '2% 25% 0', textAlign: 'center' }} src={photo} />
+          <img
+            alt={''}
+            style={{ width: '50%', margin: '2% 25% 0', textAlign: 'center' }}
+            src={photo}
+          />
           {inform}
         </General>
       </AdditionalDiv>

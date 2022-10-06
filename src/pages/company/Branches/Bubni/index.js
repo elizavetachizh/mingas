@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
 import background from '../../../../assets/Bubni/background2.webp';
 import photo from '../../../../assets/management/departaments/Белокурский.jpg';
@@ -7,9 +7,6 @@ import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
 export default function Bubni() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <SchemaOfBranches
       background={background}
@@ -117,6 +114,7 @@ export default function Bubni() {
                 Сельскохозяйственное предприятие в Минской области
               </a>
               <iframe
+                title={'file'}
                 src="https://yandex.by/map-widget/v1/-/CCURZLF3OD"
                 width="100%"
                 height="400"

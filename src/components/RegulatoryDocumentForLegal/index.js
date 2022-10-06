@@ -1,7 +1,3 @@
-import Header from '../header';
-import Footer from '../footer';
-import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
-import { Container } from '../../pages/company/styles';
 import {
   ContainerInform,
   DivBlocks,
@@ -14,10 +10,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { useNavigate } from 'react-router';
-import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.webp';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../assets/png/up_arrow_round.png';
+import ContainerContent from '../Container';
 
 export default function RegulatoryDocumentsForLegal() {
   const { documentId } = useParams();
@@ -34,13 +27,10 @@ export default function RegulatoryDocumentsForLegal() {
     .concat(data[4].inform);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (!currentDocumentId && !inform.length) {
-      const current = data.find((element) => element.idName === +documentId);
-      setInform(current.inform);
-      setDocumentId(+documentId);
-      setName(current?.separation);
-    }
+    const current = data.find((element) => element.idName === +documentId);
+    setInform(current.inform);
+    setDocumentId(+documentId);
+    setName(current?.separation);
   }, [currentDocumentId, documentId, inform]);
 
   const changeDocument = useCallback(
@@ -54,10 +44,9 @@ export default function RegulatoryDocumentsForLegal() {
     [currentDocumentId, inform, name]
   );
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Регламинтирующие документы'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Регламинтирующие документы'}
+      content={
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Регламинтирующие документы</Name>
@@ -97,11 +86,7 @@ export default function RegulatoryDocumentsForLegal() {
             </ContainerInform>
           )}
         </DivBlocks>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

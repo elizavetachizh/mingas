@@ -1,7 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
-import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
 import {
   ContainerInform,
   DivBlocks,
@@ -9,14 +6,10 @@ import {
 import { HeaderCompanyDiv } from '../concats/headerContacts/styles';
 import { BlockBtn, Name } from '../../components/administrativeServices/Header/styles';
 import DopFunctionalHeader from '../services/NaturalGas/DopFunctionalHeader';
-import { Container } from '../company/styles';
 import { pressCenter } from '../../assets/data/pressCenterHeader';
 import { useNavigate, useParams } from 'react-router';
 import DopFunctionalPressCenter from './DopFunctional';
-import Feedback from '../feedback';
-import minsk from '../../assets/background/phone.webp';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../assets/png/up_arrow_round.png';
+import ContainerContent from '../../components/Container';
 
 export default function PressCenter() {
   const [inform, setInform] = useState('');
@@ -45,10 +38,9 @@ export default function PressCenter() {
     [navigate]
   );
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Пресс-центр'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Пресс-центр'}
+      content={
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Пресс-центр</Name>
@@ -67,11 +59,7 @@ export default function PressCenter() {
             <DopFunctionalPressCenter index={key} inform={inform} />
           </ContainerInform>
         </DivBlocks>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

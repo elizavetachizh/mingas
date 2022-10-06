@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
@@ -9,9 +9,6 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 
 export default function ReceptionOfCitizens() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

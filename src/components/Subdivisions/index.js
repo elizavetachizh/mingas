@@ -1,19 +1,12 @@
-import { Container } from '../../pages/company/styles';
-import Header from '../header';
-import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import {
   ContainerInform,
   DivBlocks,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { subdivisions } from '../../assets/data/subdivisions';
 import DopFunctional from '../../pages/company/managment/Subdivisions/DopFunctional';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../assets/png/up_arrow_round.png';
-import Footer from '../footer';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.webp';
+import ContainerContent from '../Container';
 
 export default function Subdivisions() {
   const subdivisionId = useParams();
@@ -26,13 +19,11 @@ export default function Subdivisions() {
     } else {
       setInfo(subdivisions);
     }
-    window.scrollTo(0, 0);
-  }, [subdivisionId, subdivisions]);
+  }, [subdivisionId, object]);
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Подразделения'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Подразделения'}
+      content={
         <DivBlocks>
           <ContainerInform>
             {info.map((el) => (
@@ -47,11 +38,7 @@ export default function Subdivisions() {
             ))}
           </ContainerInform>
         </DivBlocks>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

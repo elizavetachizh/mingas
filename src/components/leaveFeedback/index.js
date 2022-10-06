@@ -1,28 +1,21 @@
-import Header from '../header';
-import Footer from '../footer';
-import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import React, { useEffect, useState } from 'react';
 import QRCode from 'qrcode';
 import { ContainerLinks } from '../../pages/company/parentOrganizations/styles';
-import { Container } from '../../pages/company/styles';
 import LeaveFeedbackMingas from './leaveFeedbackMingas';
 import DopFunctionService from '../../pages/services/DopFunction';
-import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.webp';
 import quality from '../../assets/png/quality.png';
+import ContainerContent from '../Container';
 export default function LeaveFeedback() {
   const [src, setSrc] = useState('');
   useEffect(() => {
-    window.scrollTo(0, 0);
     QRCode.toDataURL('http://xn----7sbgfh2alwzdhpc0c.xn--90ais/organization/33279/org-page').then(
       setSrc
     );
   }, []);
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Возможность оставить отзыв'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Возможность оставить отзыв'}
+      content={
         <ContainerLinks>
           <div
             style={{
@@ -99,8 +92,7 @@ export default function LeaveFeedback() {
             inform={<LeaveFeedbackMingas />}
           />
         </ContainerLinks>
-      </AdditionalDiv>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

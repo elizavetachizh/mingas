@@ -1,31 +1,16 @@
-import React, { useEffect } from 'react';
-import Header from '../../../components/header';
-import Footer from '../../../components/footer';
+import React from 'react';
 import FormQuestion from '../../../components/formQuestion';
-import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import { ContainerInform } from '../electronicCirculationForEntity/styles';
-import { Container } from '../../company/styles';
-import Feedback from '../index';
-import minsk from '../../../assets/background/phone.webp';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../assets/png/up_arrow_round.png';
+import ContainerContent from '../../../components/Container';
 export default function ElectronicAppeal() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
-    <Container>
-      <Header backgroundHeader="blue" />
-      <Feedback className={'none'} img={minsk} name={'Электронное обращение физических лиц'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Электронное обращение физических лиц'}
+      content={
         <ContainerInform>
           <FormQuestion />
         </ContainerInform>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

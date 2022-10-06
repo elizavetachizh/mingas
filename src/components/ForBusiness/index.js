@@ -1,27 +1,16 @@
-import React, { useEffect } from 'react';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
-import up from '../../assets/png/up_arrow_round.png';
-import ScrollToTop from 'react-scroll-up';
+import React from 'react';
 import { useNavigate } from 'react-router';
-import { Container } from '../../pages/company/styles';
-import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import { DivServices } from '../../pages/services/styles';
 import { links } from '../../assets/data/linksForBusines';
 import ServicesList from '../../pages/services/servicesList';
-import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.webp';
+import ContainerContent from '../Container';
 
 export default function ForBusiness() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const navigate = useNavigate();
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Для бизнеса'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Для бизнеса'}
+      content={
         <DivServices>
           {links.map((element) => (
             <ServicesList
@@ -33,11 +22,7 @@ export default function ForBusiness() {
             />
           ))}
         </DivServices>
-      </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

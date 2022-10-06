@@ -1,23 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Abbreviated, Certificate, Codbank, NameBank, NumberScore, PageSection } from './styles';
-import Header from '../../../components/header';
 import HeaderConcats from '../headerContacts';
 import { Row } from '../styles';
-import { AdditionalDiv } from '../GeneralContactInform/styles';
-import Footer from '../../../components/footer';
-import { Container } from '../../company/styles';
-import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.webp';
+import ContainerContent from '../../../components/Container';
 
 export default function Requisites() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Юридическая информация'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Юридическая информация'}
+      content={
         <Row>
           <HeaderConcats />
           <PageSection>
@@ -60,9 +51,7 @@ export default function Requisites() {
             </Codbank>
           </PageSection>
         </Row>
-      </AdditionalDiv>
-
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

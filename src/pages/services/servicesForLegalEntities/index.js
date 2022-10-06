@@ -1,17 +1,9 @@
-import React, { useCallback, useEffect } from 'react';
-import Header from '../../../components/header';
-import Footer from '../../../components/footer';
-import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import TitleFun from '../../../components/title';
+import React, { useCallback } from 'react';
 import { DivServices } from '../styles';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../assets/png/up_arrow_round.png';
 import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities_general';
 import ServicesList from './serviceList';
 import { useNavigate } from 'react-router';
-import { Container } from '../../company/styles';
-import minsk from '../../../assets/background/phone.webp';
-import Feedback from '../../feedback';
+import ContainerContent from '../../../components/Container';
 
 export default function ServicesForLegalEntities() {
   const navigate = useNavigate();
@@ -22,15 +14,10 @@ export default function ServicesForLegalEntities() {
     },
     [navigate]
   );
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Услуги для бизнеса'} />
-      <AdditionalDiv>
-        <TitleFun color={'blue'} infoTitle={'Услуги для бизнеса'} />
+    <ContainerContent
+      name={'Услуги для бизнеса'}
+      content={
         <DivServices>
           {dataLegalEntities.map((element) => (
             <ServicesList
@@ -45,11 +32,7 @@ export default function ServicesForLegalEntities() {
             />
           ))}
         </DivServices>
-      </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

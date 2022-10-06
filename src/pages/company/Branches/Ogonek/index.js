@@ -3,11 +3,8 @@ import SchemaOfBranches from '../ChemaOfBranches';
 import background from '../../../../assets/Ogonek/background.webp';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
-import React, { useEffect } from 'react';
+import React from 'react';
 export default function Ogonek() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <SchemaOfBranches
       name={'Оздровительный комплекс Огонек'}

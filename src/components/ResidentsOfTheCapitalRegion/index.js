@@ -37,7 +37,6 @@ export default function ResidentsOfTheCapitalRegion() {
           ))}
         </DivServices>
       </AdditionalDiv>
-
       <ScrollToTop showUnder={160}>
         <img src={up} alt={'Вверх'} />
       </ScrollToTop>

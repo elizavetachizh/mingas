@@ -3,12 +3,12 @@ import { ModalWindow, ModalWindowOpenAndClose, InformModal, Close } from './styl
 import close from '../../assets/png/close.png';
 import ModalSubdivision from './modalSubdivision';
 
-export default function Modal({ handleCloseCLick, currentLeader, nameId }) {
+export default function Modal({ handleCloseCLick, currentLeader, nameId, index }) {
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
   };
   return (
-    <ModalWindow onClick={handleCloseCLick}>
+    <ModalWindow key={index} onClick={handleCloseCLick}>
       <ModalWindowOpenAndClose onClick={handleInsideClick}>
         <Close src={close} onClick={handleCloseCLick} />
         <InformModal>

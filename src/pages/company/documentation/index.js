@@ -104,7 +104,7 @@ export default function Documentation() {
     <Container>
       <Header backgroundHeader="blue" />
       <Feedback className={'none'} img={minsk} name={'Сертификаты, лицензии, свидетельства'} />
-      <HeaderCompany currentPage={'documentation'} />
+      <HeaderCompany />
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <ContainerOfDocuments>
           {' '}

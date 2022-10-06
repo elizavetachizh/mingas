@@ -13,7 +13,6 @@ import Requisites from './pages/concats/requisites';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
 import Union from './pages/company/union';
-import ReceptionOfCitizens from './pages/feedback/receptionOfCitizens';
 import Requests from './pages/feedback/Requests';
 import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
 import NaturalGas from './pages/services/NaturalGas';
@@ -45,7 +44,6 @@ import Telemetria from './components/telemetria';
 import Posts from './components/posts';
 import AllSubdivisions from './pages/company/managment/Subdivisions/allSubdivisions';
 import CookieConsent from 'react-cookie-consent';
-import Test from './pages/test';
 export default function App() {
   return (
     <div>
@@ -61,7 +59,6 @@ export default function App() {
           path={'/feedback/electronic-appeal-for-entity'}
           element={<ElectronicAppealForEntity />}
         />
-        <Route path={'/feedback/reception-of-citizens'} element={<ReceptionOfCitizens />} />
         <Route path="/*" element={<NoMatch />} />
         <Route path="/company/management" element={<Management />} />
         <Route path="/company/management/:linkId" element={<DepartmentInformation />} />
@@ -112,7 +109,6 @@ export default function App() {
         <Route path={'/company/branches'} element={<Branches />} />
         <Route path={'/services-legal-entities/2/telemetria'} element={<Telemetria />} />
         <Route path={'/posts'} element={<Posts />} />
-        <Route path={'/test'} element={<Test />} />
       </Routes>
       <CookieConsent
         style={{

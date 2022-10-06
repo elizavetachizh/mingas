@@ -69,6 +69,7 @@ export default function Management() {
         </DivLeadersPhotoPosition>
         {isModalVisible && (
           <Modal
+            index={nameId}
             handleCloseCLick={handleCloseCLick}
             currentLeader={currentLeader}
             nameId={nameId}

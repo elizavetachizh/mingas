@@ -1,6 +1,3 @@
-import { Container } from '../../../company/styles';
-import Header from '../../../../components/header';
-import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 import {
   BlockSearch,
   BlockSearchService,
@@ -10,9 +7,6 @@ import {
   SearchService,
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { Name } from '../../../../components/administrativeServices/Header/styles';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../../assets/png/up_arrow_round.png';
-import Footer from '../../../../components/footer';
 import React, { useEffect, useMemo, useState } from 'react';
 import Menu from '../Menu';
 import { NavLink, useParams, useSearchParams } from 'react-router-dom';
@@ -21,8 +15,7 @@ import DopFunctionService from '../../../services/DopFunction';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../Home/parallax/useMediaQuery';
-import Feedback from '../../index';
-import minsk from '../../../../assets/background/phone.webp';
+import ContainerContent from '../../../../components/Container';
 
 export default function Information() {
   const isPhone = useMediaQuery('(max-width: 820px)');
@@ -52,8 +45,7 @@ export default function Information() {
     } else {
       setInfo(infoForSearch);
     }
-    window.scrollTo(0, 0);
-  }, [questionId]);
+  }, [questionId, infoForSearch]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);
@@ -111,10 +103,9 @@ export default function Information() {
     setInfo(infoForSearch);
   };
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Часто задаваемые вопросы'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Часто задаваемые вопросы'}
+      content={
         <DivBlocks>
           <div style={{ width: '80%' }}>
             {' '}
@@ -187,11 +178,7 @@ export default function Information() {
             </ContainerInform>
           )}
         </DivBlocks>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

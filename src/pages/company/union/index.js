@@ -1,32 +1,21 @@
 import React, { useEffect } from 'react';
-import Header from '../../../components/header';
 import './styles.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import napravlenie from '../../../assets/union/napravlenie.jpg';
-import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import Footer from '../../../components/footer';
 import TitleForHome from '../../../components/TitleForHome';
-import { Container, Img, Link } from '../styles';
+import { Img, Link } from '../styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
-import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.webp';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../assets/png/up_arrow_round.png';
+import ContainerContent from '../../../components/Container';
 
 export default function Union() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback
-        className={'none'}
-        img={minsk}
-        name={'Первичная профсоюзная организация УП «МИНГАЗ»'}
-      />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Первичная профсоюзная организация УП «МИНГАЗ»'}
+      content={
         <div className={'grids'}>
           <div className={'text--div'}>
             <div className={'boxes'} data-aos={'fade-up'}>
@@ -131,11 +120,7 @@ export default function Union() {
             }
           />
         </div>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }

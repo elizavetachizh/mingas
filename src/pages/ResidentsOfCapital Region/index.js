@@ -1,22 +1,11 @@
-import React, { useEffect } from 'react';
-import Header from '../../components/header';
-import { AdditionalDiv } from '../concats/GeneralContactInform/styles';
-import Footer from '../../components/footer';
+import React from 'react';
 import { Links } from './styles';
-import { Container } from '../company/styles';
-import Feedback from '../feedback';
-import minsk from '../../assets/background/phone.webp';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../assets/png/up_arrow_round.png';
+import ContainerContent from '../../components/Container';
 export default function ResidentsOfCapitalRegion() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Прейскурант цен'} />
-      <AdditionalDiv>
+    <ContainerContent
+      name={'Прейскурант цен'}
+      content={
         <Links>
           <a target={'_blank'} href={require('../../assets/pdf/price/1.pdf')}>
             Скачать “Прейскурант №1-ИМ: Цены на газосипользующее оборудование, материалы,
@@ -34,11 +23,7 @@ export default function ResidentsOfCapitalRegion() {
             газа в существующем жилом фонде (газифицированные жилые дома)”{' '}
           </a>
         </Links>
-      </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+      }
+    />
   );
 }
