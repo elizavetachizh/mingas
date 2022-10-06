@@ -54,10 +54,10 @@ export default function RegulatoryDocumentsForLegal() {
               <BlockBtn>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
+                    index={element.idName}
                     nameCard={element.separation}
                     className={currentDocumentId === element.idName ? 'background' : ''}
                     onClick={() => changeDocument(element.idName)}
-                    key={element.idName}
                   />
                 </ContainerBtnIcon>
               </BlockBtn>
@@ -67,7 +67,7 @@ export default function RegulatoryDocumentsForLegal() {
             <ContainerInform>
               {infoForSearch.map((el) => (
                 <BlockBtn>
-                  <a href={el.link} target={'_blank'}>
+                  <a href={el.link} target={'_blank'} rel="noopener">
                     {el.name}
                   </a>
                 </BlockBtn>

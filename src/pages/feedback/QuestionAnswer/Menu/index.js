@@ -42,10 +42,10 @@ export default function Menu() {
         <BlockBtn>
           <ContainerBtnIcon>
             <DopFunctionalHeader
+              index={element.titleId}
               nameCard={element.title}
               className={currentServiceID === element.titleId ? 'background' : ''}
               onClick={() => handlerLinkClick(element.titleId)}
-              key={element.titleId}
             />
             {currentServiceID === element.titleId ? (
               <IoIosArrowUp onClick={() => handlerLinkClick(element.titleId)} />

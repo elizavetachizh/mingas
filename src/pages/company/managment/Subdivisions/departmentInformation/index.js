@@ -161,10 +161,10 @@ export default function DepartmentInformation() {
               <BlockBtn>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
+                    index={element.idName}
                     nameCard={element.fullName}
                     className={currentServiceID === element.idName ? 'background' : ''}
                     onClick={() => changeDepartment(element.idName)}
-                    key={element.idName}
                   />
                   {currentServiceID === element.idName ? (
                     <IoIosArrowUp onClick={() => changeDepartment(element.idName)} />

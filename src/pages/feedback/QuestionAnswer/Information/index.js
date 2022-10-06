@@ -45,7 +45,7 @@ export default function Information() {
     } else {
       setInfo(infoForSearch);
     }
-  }, [questionId, infoForSearch]);
+  }, [questionId]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);

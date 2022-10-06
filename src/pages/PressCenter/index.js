@@ -47,6 +47,7 @@ export default function PressCenter() {
             {pressCenter.map((element) => (
               <BlockBtn key={element.id}>
                 <DopFunctionalHeader
+                  index={element.id}
                   nameCard={element.name}
                   className={currentNewsID === element.id ? 'background' : ''}
                   onClick={() => animate(element.id)}

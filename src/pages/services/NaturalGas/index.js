@@ -45,6 +45,7 @@ export default function NaturalGas() {
             {data.map((element) => (
               <BlockBtn key={element.serviceId}>
                 <DopFunctionalHeader
+                  index={element.serviceId}
                   nameCard={element.nameCard}
                   className={currentServiceID === element.serviceId ? 'background' : ''}
                   onClick={() => animate(element.serviceId)}

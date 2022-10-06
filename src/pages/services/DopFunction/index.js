@@ -22,7 +22,6 @@ export default function DopFunctionService({
     }
   };
   return (
-    // <ContainerFunctionService>
     <General key={keys} className={classnamegeneral} style={style}>
       <BtnIsOpen className={classname} onClick={animate}>
         <p>{nameDescription}</p>
@@ -38,6 +37,5 @@ export default function DopFunctionService({
         <DescriptionService>{inform}</DescriptionService>
       </Div>
     </General>
-    // </ContainerFunctionService>
   );
 }

@@ -68,7 +68,12 @@ export default function DepartmentInformation() {
           result.map((element) => {
             return (
               <div>
-                <a style={{ margin: '20px auto' }} href={`${element.link}`} target={'_blank'}>
+                <a
+                  rel="noopener"
+                  style={{ margin: '20px auto' }}
+                  href={`${element.link}`}
+                  target={'_blank'}
+                >
                   {element.name}
                 </a>
               </div>
@@ -138,10 +143,10 @@ export default function DepartmentInformation() {
               <BlockBtn>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
+                    index={element.idName}
                     nameCard={element.separation}
                     className={currentDocumentId === element.idName ? 'background' : ''}
                     onClick={() => changeDocument(element.idName)}
-                    key={element.idName}
                   />
                 </ContainerBtnIcon>
               </BlockBtn>
@@ -192,7 +197,7 @@ export default function DepartmentInformation() {
               <Name>{name}</Name>
               {inform.map((el) => (
                 <BlockBtn>
-                  <a href={el.link} target={'_blank'}>
+                  <a href={el.link} target={'_blank'} rel="noopener">
                     {el.name}
                   </a>
                 </BlockBtn>

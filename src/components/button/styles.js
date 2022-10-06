@@ -19,6 +19,10 @@ const buttonBackgroundColor = {
     color: #FFF;
     border: 1px solid white;
     background-color: rgba(0,0,0,0);
+      &:hover {
+    background-color: white;
+    color: #0d4475;
+  }
     `,
   white: `
     background-color: #FFF;

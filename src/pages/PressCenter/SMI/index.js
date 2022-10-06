@@ -124,6 +124,7 @@ export default function SMI() {
                   Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
                 </p>
               </a>
+              G
             </Article>
             <Article>
               <a
@@ -252,12 +253,9 @@ export default function SMI() {
           </ContainerArticles>
         </Div>
       </General>
-      <iframe
-        src={rolic}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
+      <video style={{ width: '300px' }} autoPlay loop muted controls>
+        <source src={rolic} type="video/mp4" />
+      </video>
       <iframe
         src={rolic_gaz}
         title="YouTube video player"

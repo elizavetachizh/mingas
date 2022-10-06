@@ -7,7 +7,6 @@ const libraries = ['places'];
 
 function Map() {
   const [activeMarker, setActiveMarker] = useState('');
-  console.log(activeMarker);
   return (
     <GoogleMap defaultZoom={10} defaultCenter={{ lat: 53.905812, lng: 27.602552 }}>
       {obmenie_puncti.map((el) => (
