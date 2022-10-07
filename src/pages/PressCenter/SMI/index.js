@@ -6,8 +6,6 @@ import {
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Article, ContainerArticles } from '../styles';
 import React, { useState } from 'react';
-import rolic from '../../../assets/videos/mingaz-rolik-1-opasnost-gaza.mp4';
-import rolic_gaz from '../../../assets/videos/mingaz-rolik-2-zakryvaite-gaz_VmTcldSf.mp4';
 export default function SMI() {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
@@ -253,11 +251,18 @@ export default function SMI() {
           </ContainerArticles>
         </Div>
       </General>
-      <video style={{ width: '300px' }} autoPlay loop muted controls>
-        <source src={rolic} type="video/mp4" />
-      </video>
       <iframe
-        src={rolic_gaz}
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/2ZdJV1isCWo"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/skA0lmHdR7I"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

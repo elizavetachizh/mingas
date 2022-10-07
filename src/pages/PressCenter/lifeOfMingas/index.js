@@ -4,7 +4,6 @@ import { photo } from '../../../assets/data/liveInStyleOfMingas';
 import { Link, ImgCarousel } from '../../company/styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
-import video from '../../../assets/videos/file.mp4';
 function LifeOfMingas() {
   return (
     <>
@@ -63,13 +62,14 @@ function LifeOfMingas() {
           ))}
         </ReactCarousel>
         <div className={'video'}>
-          <video
-            poster={require('../../../assets/png/logo_video.png')}
-            controls={'controls'}
-            autoPlay="autoplay"
-            preload="auto"
-            src={video}
-          />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/K0XX5F8COro"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </>
