@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Links = styled.div`
   display: flex;
   flex-direction: column;
-  a {
+  a,
+  button {
     text-decoration: none;
     display: flex;
     flex-direction: row;

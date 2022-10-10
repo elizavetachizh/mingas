@@ -57,10 +57,6 @@ export const ContainerInform = styled.div`
     margin: 0 2%;
     width: 96%;
   }
-  div.react-player {
-    background-size: 50%;
-    background-repeat: no-repeat;
-  }
 `;
 export const General = styled.div`
   border: 1px solid #1b3a91;
