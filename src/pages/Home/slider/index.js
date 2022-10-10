@@ -18,7 +18,6 @@ export default class CarouselFun extends React.Component {
       slides: [
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <div>
-            {' '}
             <BackgroundContainer src={imageContent} />
           </div>
           <DivText className={'post'}>
@@ -51,11 +50,31 @@ export default class CarouselFun extends React.Component {
           </div>
           <DivText className={'post'}>
             <DivInformAbout>
+              <Text>
+                Уважаемый потребитель! <br />
+                УП «МИНГАЗ» информирует о начале отопительного сезона!
+              </Text>
+            </DivInformAbout>
+            <ButtonFun
+              classname={'post'}
+              href={'/posts/2'}
+              infoButton={'Подробнее'}
+              backgrounder={'border'}
+            />
+          </DivText>
+        </div>,
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            {' '}
+            <BackgroundContainer className={'post'} src={newPost} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
               <Text>УП «МИНГАЗ» просит своих абонентов быть бдительными</Text>
             </DivInformAbout>
             <ButtonFun
               classname={'post'}
-              href={'/posts'}
+              href={'/posts/1'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />

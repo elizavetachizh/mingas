@@ -110,15 +110,13 @@ export default function Header({ backgroundHeader }) {
                 <SearchPage />
                 <Language />
                 {navbar ? (
-                  <a href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}>
-                    {' '}
+                  <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
                     <IoMdEyeOffs className={'icon'} />
                   </a>
                 ) : (
-                  <IoMdEyeOffs
-                    className={'icon'}
-                    href={'http://finevision.ru/?hostname=mingas.netlify.app&path=/'}
-                  />
+                  <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
+                    <IoMdEyeOffs className={'icon'} />
+                  </a>
                 )}
               </ContainerElements>
             </DivFirstHeader>
