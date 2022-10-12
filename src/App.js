@@ -67,21 +67,21 @@ export default function App() {
         <Route path={'/company/corruption'} element={<Corruption />} />
         <Route path="/services/:cardId" element={<NaturalGas />} />
         <Route path="/services/method-payment" element={<MethodPayment />} />
-        <Route path="/company/career/" element={<Career />} />
+        <Route path="/company/career" element={<Career />} />
         <Route path="/company/branches/TBZ" element={<TBZ />} />
         <Route path="/company/branches/Bubni" element={<Bubni />} />
         <Route path="/company/branches/ogonek" element={<Ogonek />} />
         <Route path={'/company/parent-organizations'} element={<ParentOrganizations />} />
-        <Route path="/company/documentation/" element={<Documentation />} />
+        <Route path="/company/documentation" element={<Documentation />} />
         <Route path={'company/gratitude'} element={<Gratitude />} />
-        <Route path="/company/union/" element={<Union />} />
+        <Route path="/company/union" element={<Union />} />
         <Route
           path="/company/management/production-technical-management"
           element={<ProductionTechnicalManagement />}
         />
         <Route path={'/services-legal-entities'} element={<ServicesForLegalEntities />} />
         <Route
-          path={'/services-legal-entities/administrative-services-legal/'}
+          path={'/services-legal-entities/administrative-services-legal'}
           element={<AdministartiveServicesForLegal />}
         />
         <Route path={'/services-legal-entities/:cardId'} element={<CardOfServive />} />
