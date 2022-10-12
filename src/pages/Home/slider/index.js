@@ -17,20 +17,6 @@ export default class CarouselFun extends React.Component {
       value: 0,
       slides: [
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            <BackgroundContainer src={imageContent} />
-          </div>
-          <DivText className={'post'}>
-            <DivInformAbout>
-              <Text>
-                УП «МИНГАЗ» информирует! <br />
-                По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
-                осуществляться ежедневно, время приема 8.00-20.00.
-              </Text>
-            </DivInformAbout>
-          </DivText>
-        </div>,
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
             <DivInformAbout>
@@ -45,22 +31,16 @@ export default class CarouselFun extends React.Component {
         </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <div>
-            {' '}
-            <BackgroundContainer className={'post'} src={newPost} />
+            <BackgroundContainer src={imageContent} />
           </div>
           <DivText className={'post'}>
             <DivInformAbout>
               <Text>
-                Уважаемый потребитель! <br />
-                УП «МИНГАЗ» информирует о начале отопительного сезона!
+                УП «МИНГАЗ» информирует! <br />
+                По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
+                осуществляться ежедневно, время приема 8.00-20.00.
               </Text>
             </DivInformAbout>
-            <ButtonFun
-              classname={'post'}
-              href={'/posts/2'}
-              infoButton={'Подробнее'}
-              backgrounder={'border'}
-            />
           </DivText>
         </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
@@ -74,7 +54,7 @@ export default class CarouselFun extends React.Component {
             </DivInformAbout>
             <ButtonFun
               classname={'post'}
-              href={'/posts/1'}
+              href={'/posts'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />

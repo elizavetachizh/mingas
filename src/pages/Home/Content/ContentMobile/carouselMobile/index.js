@@ -19,18 +19,6 @@ export default class CarouselMobile extends React.Component {
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
           </DivImage>
-          <DivText style={{ justifyContent: 'center', alignItems: 'center' }} className={'phone'}>
-            <Text>
-              УП «МИНГАЗ» информирует! <br />
-              По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
-              осуществляться ежедневно, время приема 8.00-20.00.
-            </Text>
-          </DivText>
-        </>,
-        <>
-          <DivImage>
-            <img src={imageContent} alt={'картинка загружается'} />
-          </DivImage>
           <DivText className={'phone'}>
             <Text className={'phone'} style={{ position: 'initial' }}>
               <Trans i18nKey="description:part1" />
@@ -40,6 +28,19 @@ export default class CarouselMobile extends React.Component {
             </a>
           </DivText>
         </>,
+        <>
+          <DivImage>
+            <img src={imageContent} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText style={{ justifyContent: 'center', alignItems: 'center' }} className={'phone'}>
+            <Text>
+              УП «МИНГАЗ» информирует! <br />
+              По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
+              осуществляться ежедневно, время приема 8.00-20.00.
+            </Text>
+          </DivText>
+        </>,
+
         <>
           <DivImage className={'none'}>
             <img className={'post'} src={newPost} alt={'картинка загружается'} />
