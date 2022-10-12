@@ -6,11 +6,11 @@ import prilozhenia_B from '../wordFile/Prilozhenie-B.docx';
 import pismo from '../wordFile/Pismo-o-zaklyuchenii-dogovora-tehnicheskogo-obluzhivaniya-vvodnyh-i-vnutridomovyh-gazoprovodov.doc';
 import perechen_doc from '../wordFile/Perechen-dokumentov-neobhodimyh-dlya-zaklyucheniya-dogovora-tehnicheskogo-obsluzhivaniya-vvodnyh-i-vnutridomovyh-gazoprovodov.doc';
 import ispolnitelnaya_documentov from '../wordFile/Ispolnitelnaya-dokumentatsiya-dolzhna-soderzhat.doc';
-import akt_vvoda from '../pdf/akt_vvoda_po_uchetu_gaza.pdf';
+import akt_vvoda from '../pdf/akt_vvoda.pdf';
 import passport from '../wordFile/Passport.docx';
 import haracteristica from '../wordFile/HARAKTERISTIKA-OBEKTA.doc';
-import GMK from '../pdf/GMK-PTU-o-vnesenii-izmenenij-na-sajt-21.08.2020-stranitsy-2-szhatyj.pdf';
-import obrazets_acta from '../pdf/AKT-RASHODA-dlya-sajta.pdf';
+import GMK from '../pdf/GMK.pdf';
+import obrazets_acta from '../pdf/act_rashoda.pdf';
 import tseni_Gas from '../wordFile/price_gas.doc';
 import teh_zadanie from '../wordFile/teh_zadanie.doc';
 import varianty_schem from '../wordFile/varianty_shem.doc';
@@ -21,10 +21,10 @@ import messung_3 from '../messung/k-p-3.jpg';
 import messung_4 from '../messung/k-p-4.jpg';
 import messung_5 from '../messung/k-p-5.jpg';
 import messung_6 from '../messung/images-1.jpg';
-import poryadok_podklyuchenia from '../pdf/poryadok_1.pdf';
-import zayavka_na_pusk from '../pdf/zayavka_na_pusk_gaza_v_jilye_doma_do_ih_zaseleniya1.pdf';
+import poryadok_podklyuchenia from '../pdf/poryadok_podkluchenia.pdf';
+import zayavka_na_pusk from '../pdf/zayavka_na_pusk_gaza.pdf';
 import obrazets_pisma from '../wordFile/Obrazets-pisma-zayavleniya-dlya-yurlits.docx';
-import prilozenie_pismo from '../pdf/Prilozhenie-1.pdf';
+import prilozenie_pismo from '../wordFile/Prilozhenie-2.docx';
 import prilozanie_plombi from '../wordFile/Prilozhenie-plombi.docx';
 import { NavLink } from 'react-router-dom';
 import zayavleniya from '../wordFile/Zayavleniya-na-vydachu-TU-yurlitsa-2022.docx';
@@ -922,14 +922,22 @@ export const dataLegalEntities = [
                 Для организаций, объекты газопотребления которых находятся на техническом
                 обслуживании УП МИНГАЗ»» (факс +37517 224-41-00, тел. +37517 299-28-63):
                 <p>
-                  Образец письма в <a href={prilozenie_pismo}>Приложение№1</a>.
+                  Образец письма в{' '}
+                  <a download href={prilozenie_pismo}>
+                    Приложение№1
+                  </a>
+                  .
                 </p>
               </li>
               <li>
                 Для организаций, объекты газопотребления которых находятся на техническом
                 обслуживании сторонней организации (факс +37517 272-75-12, e-mail: seug@mingas.by ):
                 <p>
-                  Образец письма в <a href={prilozanie_plombi}>Приложение№2</a>.
+                  Образец письма в{' '}
+                  <a download href={prilozanie_plombi}>
+                    Приложение№2
+                  </a>
+                  .
                 </p>
               </li>
               <li>
