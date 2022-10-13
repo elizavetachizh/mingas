@@ -70,10 +70,7 @@ export default function SearchPage({ classname }) {
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
-  console.log(result);
-  console.log(resultRouters);
-  console.log(resultDepartments);
-  console.log(resultEntities);
+
   const renderResult = () => {
     return (
       <>

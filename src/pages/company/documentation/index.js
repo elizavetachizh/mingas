@@ -92,7 +92,7 @@ export default function Documentation() {
     }
   };
 
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
   };
 
@@ -107,11 +107,13 @@ export default function Documentation() {
       <HeaderCompany />
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <ContainerOfDocuments>
-          {' '}
           <TitleForHome className={'company'} color={'blue'} infoTitle={certifications[0].name} />
           <BlockOfGraditude>
             {certifications.map((element) => (
-              <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
+              <ContainerGraditude
+                key={element.GeneralId}
+                onClick={() => openImage(element.GeneralId)}
+              >
                 <img
                   src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
@@ -124,7 +126,10 @@ export default function Documentation() {
           <TitleForHome color={'blue'} infoTitle={licenses[0].name} />
           <BlockOfGraditude>
             {licenses.map((element) => (
-              <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
+              <ContainerGraditude
+                key={element.GeneralId}
+                onClick={() => openImage(element.GeneralId)}
+              >
                 <img
                   src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
@@ -137,7 +142,10 @@ export default function Documentation() {
           <TitleForHome color={'blue'} infoTitle={evidence[0].name} />
           <BlockOfGraditude>
             {evidence.map((element) => (
-              <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
+              <ContainerGraditude
+                key={element.GeneralId}
+                onClick={() => openImage(element.GeneralId)}
+              >
                 <img
                   src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
@@ -151,7 +159,10 @@ export default function Documentation() {
           <TitleForHome color={'blue'} infoTitle={chits[0].name} />
           <BlockOfGraditude>
             {chits.map((element) => (
-              <ContainerGraditude onClick={() => openImage(element.GeneralId)}>
+              <ContainerGraditude
+                key={element.GeneralId}
+                onClick={() => openImage(element.GeneralId)}
+              >
                 <img
                   src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
                   alt={''}
@@ -171,7 +182,6 @@ export default function Documentation() {
                   alt={''}
                 />
                 <DivButtons>
-                  {' '}
                   {pageNumber > 1 && <button onClick={changePageBAck}>Предыдущая</button>}
                   <p>
                     Страница {pageNumber} из {numPage}

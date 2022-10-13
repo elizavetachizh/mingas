@@ -67,32 +67,32 @@ export default function StateInformResources() {
             <DivCarousel className={'isPhone'} title={'Минский областной исполнительный комитет'}>
               <figure>
                 <a rel="noopener" target={'_blank'} href={'https://www.minsk-region.gov.by/'}>
-                  <img src={require('../../assets/png/oblispolcom.png')} alt="" />
+                  <img src={require('../../assets/png/oblispolcom.webp')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'БЕЛТА'}>
               <figure>
                 <a rel="noopener" target={'_blank'} href={'https://www.belta.by/ru'}>
-                  <img src={require('../../assets/png/belta.png')} alt="" />
+                  <img src={require('../../assets/png/belta.webp')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Беларусь сегодня'}>
               <a target={'_blank'} href="https://www.sb.by/" rel="noreferrer">
-                <img src={require('../../assets/png/belarus-today.png')} alt="" />
+                <img src={require('../../assets/png/belarus-today.webp')} alt="" />
               </a>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Минская правда'}>
               <figure>
                 <a rel="noopener" target={'_blank'} href={'https://mlyn.by/'}>
-                  <img src={require('../../assets/png/minsk_truth.jpg')} alt="" />
+                  <img src={require('../../assets/png/minsk_truth.webp')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
             <DivCarousel className={'isPhone'} title={'Минск-Сегодня'}>
               <a href="https://minsknews.by/" target="_blank" rel="noreferrer">
-                <img src={require('../../assets/png/minsk-today.jpg')} alt="" />
+                <img src={require('../../assets/png/minsk-today.webp')} alt="" />
               </a>
             </DivCarousel>
             <DivCarousel
@@ -163,7 +163,7 @@ export default function StateInformResources() {
                 <a rel="noopener" target={'_blank'} href={'https://www.minsk-region.gov.by/'}>
                   <img
                     style={{ width: '30%' }}
-                    src={require('../../assets/png/oblispolcom.png')}
+                    src={require('../../assets/png/oblispolcom.webp')}
                     alt=""
                   />
                 </a>
@@ -172,7 +172,7 @@ export default function StateInformResources() {
             <DivCarousel title={'БЕЛТА'}>
               <figure>
                 <a rel="noopener" target={'_blank'} href={'https://www.belta.by/ru'}>
-                  <img src={require('../../assets/png/belta.png')} alt="" />
+                  <img src={require('../../assets/png/belta.webp')} alt="" />
                 </a>
               </figure>
             </DivCarousel>
@@ -180,7 +180,7 @@ export default function StateInformResources() {
               <a href="https://www.sb.by/" target="_blank" rel="noreferrer">
                 <img
                   style={{ width: '44%' }}
-                  src={require('../../assets/png/belarus-today.png')}
+                  src={require('../../assets/png/belarus-today.webp')}
                   alt=""
                 />
               </a>
@@ -190,7 +190,7 @@ export default function StateInformResources() {
                 <a rel="noreferrer" target={'_blank'} href={'https://mlyn.by/'}>
                   <img
                     style={{ width: '50%' }}
-                    src={require('../../assets/png/minsk_truth.jpg')}
+                    src={require('../../assets/png/minsk_truth.webp')}
                     alt=""
                   />
                 </a>
@@ -200,7 +200,7 @@ export default function StateInformResources() {
               <a href="https://minsknews.by/" target="_blank" rel="noreferrer">
                 <img
                   style={{ width: '40%' }}
-                  src={require('../../assets/png/minsk-today.jpg')}
+                  src={require('../../assets/png/minsk-today.webp')}
                   alt=""
                 />
               </a>

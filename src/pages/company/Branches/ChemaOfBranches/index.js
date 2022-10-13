@@ -46,7 +46,6 @@ export default function SchemaOfBranches({
         setShowTopBtn(false);
       }
     });
-    window.scrollTo(0, 0);
   }, []);
   const animateClose = () => {
     setIsClose(true);

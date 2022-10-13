@@ -31,27 +31,13 @@ import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
 import { Trans, useTranslation } from 'react-i18next';
-import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
 import { IoIosArrowForward } from 'react-icons/io';
 
 export default function Header({ backgroundHeader }) {
-  const [navbar, setNavbar] = useState(false);
   const [open, setOpen] = useState(false);
-  const isPhone = useMediaQuery('(max-width: 900px)');
-  const changeBackground = () => {
-    if (!isPhone) {
-      if (window.scrollY >= 80) {
-        setNavbar(true);
-      } else {
-        setNavbar(false);
-      }
-    } else {
-      setNavbar(false);
-    }
-  };
-  window.addEventListener('scroll', changeBackground);
+
   const onClick = () => {
     setOpen(!open);
   };
@@ -109,15 +95,9 @@ export default function Header({ backgroundHeader }) {
                 </PersonalAccButton>
                 <SearchPage />
                 <Language />
-                {navbar ? (
-                  <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
-                    <IoMdEyeOffs className={'icon'} />
-                  </a>
-                ) : (
-                  <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
-                    <IoMdEyeOffs className={'icon'} />
-                  </a>
-                )}
+                <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
+                  <IoMdEyeOffs className={'icon'} />
+                </a>
               </ContainerElements>
             </DivFirstHeader>
             <ButtonsContainer>

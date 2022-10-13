@@ -22,7 +22,7 @@ export const Button = styled.button`
   cursor: pointer;
   transition: 1s;
   outline: none;
-
+  color: #0d4475;
   &.background {
     background-image: linear-gradient(
       -55deg,

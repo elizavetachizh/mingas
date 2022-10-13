@@ -69,7 +69,6 @@ export default function DepartmentInformation() {
   const handlerLinkClickUniqueName = useCallback(
     (id) => {
       navigate(`${pathname}?id=${id}`);
-      window.scrollTo(0, 0);
     },
     [pathname, navigate]
   );
@@ -94,6 +93,7 @@ export default function DepartmentInformation() {
         result.push(card);
       }
     }
+    return null;
   });
   const renderResult = () => {
     return (
@@ -102,7 +102,11 @@ export default function DepartmentInformation() {
           result.map((element) => {
             return (
               <div>
-                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
+                <NavLink
+                  key={element.key}
+                  style={{ margin: '20px auto' }}
+                  to={`${pathname}?id=${element.id}`}
+                >
                   {element.name}
                 </NavLink>
               </div>
@@ -161,7 +165,7 @@ export default function DepartmentInformation() {
               <BlockBtn>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
-                    index={element.idName}
+                    key={element.idName}
                     nameCard={element.fullName}
                     className={currentServiceID === element.idName ? 'background' : ''}
                     onClick={() => changeDepartment(element.idName)}

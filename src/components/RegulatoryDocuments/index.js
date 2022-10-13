@@ -69,6 +69,7 @@ export default function DepartmentInformation() {
             return (
               <div>
                 <a
+                  key={element.id}
                   rel="noopener"
                   style={{ margin: '20px auto' }}
                   href={`${element.link}`}
@@ -186,7 +187,7 @@ export default function DepartmentInformation() {
               {message && renderResult()}
               {infoForSearch.map((el) => (
                 <BlockBtn>
-                  <a href={el.link} target={'_blank'}>
+                  <a key={el.id} href={el.link} target={'_blank'}>
                     {el.name}
                   </a>
                 </BlockBtn>
@@ -197,7 +198,7 @@ export default function DepartmentInformation() {
               <Name>{name}</Name>
               {inform.map((el) => (
                 <BlockBtn>
-                  <a href={el.link} target={'_blank'} rel="noopener">
+                  <a key={el.id} href={el.link} target={'_blank'} rel="noopener">
                     {el.name}
                   </a>
                 </BlockBtn>

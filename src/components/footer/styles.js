@@ -22,6 +22,9 @@ export const LinksNetwork = styled.div`
   margin: 2% 0;
   text-align: left;
   justify-content: left;
+  a {
+    color: #0d4475;
+  }
   @media (max-width: 720px) {
     width: 100%;
   }

@@ -11,12 +11,14 @@ export default function ModalSubdivision({ links, linksId }) {
         window.scrollTo(0, 0);
       }
     },
-    [links, linksId]
+    [links, linksId, navigate]
   );
   return (
     <Container>
       {links.map((link) => (
-        <Name onClick={() => handlerLinkClick(link.id)}>{link.name}</Name>
+        <Name key={link.id} onClick={() => handlerLinkClick(link.id)}>
+          {link.name}
+        </Name>
       ))}
     </Container>
   );

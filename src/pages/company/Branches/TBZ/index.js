@@ -106,12 +106,12 @@ export default function TBZ() {
             fontSize={'name'}
             className={'branches'}
           />
-          <p>
+          <>
             <LinksNetwork style={{ fontSize: '18px' }}>
               <IoIosCall style={{ color: '#0e43af', width: '35px', height: '35px' }} />
               Контактный номер: <a href={'tel:8017-13-20-151'}> 8017-13-20-151</a>
             </LinksNetwork>
-          </p>
+          </>
           <div style={{ position: 'relative', overflow: 'hidden' }}>
             <a
               href="https://yandex.by/maps/org/sergeyevichskoye_filial_up_mingaz/124704103181/?utm_medium=mapframe&utm_source=maps"
