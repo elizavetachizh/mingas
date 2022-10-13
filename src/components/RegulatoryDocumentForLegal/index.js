@@ -51,10 +51,9 @@ export default function RegulatoryDocumentsForLegal() {
           <HeaderCompanyDiv>
             <Name>Регламинтирующие документы</Name>
             {data.map((element) => (
-              <BlockBtn>
+              <BlockBtn key={element.idName}>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
-                    index={element.idName}
                     nameCard={element.separation}
                     className={currentDocumentId === element.idName ? 'background' : ''}
                     onClick={() => changeDocument(element.idName)}
@@ -77,7 +76,7 @@ export default function RegulatoryDocumentsForLegal() {
             <ContainerInform>
               <Name>{name}</Name>
               {inform.map((el) => (
-                <BlockBtn>
+                <BlockBtn key={el.id}>
                   <a rel="noreferrer" href={el.link} target={'_blank'}>
                     {el.name}
                   </a>

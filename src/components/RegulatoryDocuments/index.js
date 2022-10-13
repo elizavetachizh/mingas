@@ -141,10 +141,9 @@ export default function DepartmentInformation() {
             )}
             {message && renderResult()}
             {data.map((element) => (
-              <BlockBtn>
+              <BlockBtn key={element.idName}>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
-                    index={element.idName}
                     nameCard={element.separation}
                     className={currentDocumentId === element.idName ? 'background' : ''}
                     onClick={() => changeDocument(element.idName)}
@@ -186,8 +185,8 @@ export default function DepartmentInformation() {
               )}
               {message && renderResult()}
               {infoForSearch.map((el) => (
-                <BlockBtn>
-                  <a key={el.id} href={el.link} target={'_blank'}>
+                <BlockBtn key={el.id}>
+                  <a href={el.link} target={'_blank'}>
                     {el.name}
                   </a>
                 </BlockBtn>
@@ -197,8 +196,8 @@ export default function DepartmentInformation() {
             <ContainerInform>
               <Name>{name}</Name>
               {inform.map((el) => (
-                <BlockBtn>
-                  <a key={el.id} href={el.link} target={'_blank'} rel="noopener">
+                <BlockBtn key={el.id}>
+                  <a href={el.link} target={'_blank'} rel="noopener">
                     {el.name}
                   </a>
                 </BlockBtn>

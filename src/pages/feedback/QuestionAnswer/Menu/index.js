@@ -30,7 +30,6 @@ export default function Menu() {
   const handlerLinkClickUniqueName = useCallback(
     (questionId) => {
       navigate(`${pathname}?questionId=${questionId}`);
-      window.scrollTo(0, 0);
     },
     [pathname, navigate]
   );
@@ -39,10 +38,9 @@ export default function Menu() {
     <HeaderCompanyDiv style={{ width: '80%', margin: '0 auto' }}>
       <Name>Тема</Name>
       {dataAnswer.map((element) => (
-        <BlockBtn>
+        <BlockBtn key={element.titleId}>
           <ContainerBtnIcon>
             <DopFunctionalHeader
-              index={element.titleId}
               nameCard={element.title}
               className={currentServiceID === element.titleId ? 'background' : ''}
               onClick={() => handlerLinkClick(element.titleId)}

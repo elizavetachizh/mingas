@@ -45,13 +45,15 @@ function LifeOfMingas() {
           itemMaxWidth={50}
           carouselHeight="350px"
         >
-          {photo.map((image, index) => (
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+          {photo.map((image) => (
+            <div
+              key={image.id}
+              style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}
+            >
               <IoIosArrowRoundBack style={{ width: '28', height: '28' }} />
               <ImgCarousel
-                key={index}
                 src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.webp`)}
-                alt="test"
+                alt="image"
                 style={{
                   borderRadius: '20px',
                   margin: '.5rem',
