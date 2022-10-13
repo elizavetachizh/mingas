@@ -165,7 +165,7 @@ export const BlockContainerRequests = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin: 10px auto 20px;
-  padding: 2% 0;
+  padding: 1% 0;
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;

@@ -37,4 +37,43 @@ export const Links = styled.div`
       font-size: 14px;
     }
   }
+  div {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    align-items: flex-start;
+    height: fit-content;
+    width: 80%;
+    color: white;
+    padding: 0 0.8rem;
+    background-image: linear-gradient(
+      -55deg,
+      rgb(1, 95, 156) 0%,
+      rgb(16, 69, 141) 0%,
+      rgb(15, 89, 141) 19%,
+      rgb(15, 78, 140) 60%,
+      rgb(14, 78, 129) 79%,
+      rgb(13, 68, 117) 100%
+    );
+    cursor: pointer;
+    margin: 2% auto;
+    border-radius: 30px;
+    a {
+      background: none;
+      padding: 0 0.2rem;
+      height: fit-content;
+      width: 100%;
+      margin: 1% 0;
+    }
+    @media (max-width: 800px) {
+      width: 90%;
+    }
+    @media (max-width: 670px) {
+      font-size: 16px;
+    }
+    @media (max-width: 520px) {
+      font-size: 14px;
+    }
+  }
 `;

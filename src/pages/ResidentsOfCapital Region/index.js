@@ -1,8 +1,6 @@
 import React from 'react';
 import { Links } from './styles';
 import ContainerContent from '../../components/Container';
-import price from '../../assets/pdf/price/one.pdf';
-import price_2 from '../../assets/pdf/price/two.pdf';
 export default function ResidentsOfCapitalRegion() {
   return (
     <ContainerContent
@@ -13,16 +11,19 @@ export default function ResidentsOfCapitalRegion() {
             Скачать “Прейскурант №1-ИМ: Цены на газосипользующее оборудование, материалы,
             комплектующие”{' '}
           </a>
-          {/*<button onClick={onButtonClick}>*/}
-          {/*  Скачать “Прейскурант №1-ИМ: Цены на газосипользующее оборудование, материалы,*/}
-          {/*  комплектующие*/}
-          {/*</button>*/}
-          {/*<button onClick={onButtonClickPRice}>*/}
-          {/*  Скачать “Прейскурант №1: Тарифы на работы(услуги) оказываемые населению”*/}
-          {/*</button>*/}
           <a target={'_blank'} rel="opener" href={require('../../assets/pdf/price/two.pdf')}>
             Скачать “Прейскурант №1: Тарифы на работы(услуги) оказываемые населению”
           </a>
+          <div>
+            {' '}
+            <a target={'_blank'} rel="opener" href={require('../../assets/pdf/price/seven.pdf')}>
+              Скачать “Прейскурант №7: Тарифы на работы по ведению технического надзора за
+              строительством систем газоснабжения и приемке объектов в эксплуатацию”
+            </a>
+            <a download href={require('../../assets/wordFile/dogovor_opertsionni_control.doc')}>
+              Договор операционный контроль
+            </a>
+          </div>
           <a target={'_blank'} rel="opener" href={require('../../assets/pdf/price/three.pdf')}>
             Скачать “Прейскурант №9: Тарифы на работы по техническому обслуживанию газопроводов и
             газоиспользующего оборудования”

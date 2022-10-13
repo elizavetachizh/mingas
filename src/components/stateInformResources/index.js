@@ -18,7 +18,6 @@ export default function StateInformResources() {
       <TitleForHome
         style={styledTitle}
         fontSize={'m'}
-        margin={'s'}
         color={'blue'}
         infoTitle={`${t('RESOURCES:title')}`}
       />

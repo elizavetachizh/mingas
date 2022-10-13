@@ -167,7 +167,7 @@ export default function Header({ backgroundHeader }) {
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
                   <ContanerLink>
-                    <ButtonLink to="/services">
+                    <ButtonLink rel="canonical" to="/services">
                       Услуги <IoIosArrowForward color={'#0d4475'} />
                     </ButtonLink>
                     <span>
@@ -196,7 +196,7 @@ export default function Header({ backgroundHeader }) {
               </Dropdown>
 
               <Dropdown>
-                <ServicesButton to="/for-business">
+                <ServicesButton rel="canonical" to="/for-business">
                   {t('header:ForBusiness')} <span />
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
@@ -231,7 +231,7 @@ export default function Header({ backgroundHeader }) {
                 </DivButtonHeader>
               </Dropdown>
               <Dropdown>
-                <ContactButton to="/contacts/phone-services">
+                <ContactButton rel="canonical" to="/contacts/phone-services">
                   {t('header:Contacts')}
                   <span />
                 </ContactButton>
