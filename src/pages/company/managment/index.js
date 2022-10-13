@@ -43,15 +43,10 @@ export default function Management() {
         <DivTextPhoto>
           <ImageDiv data-aos={'fade-up'} src={photoHistory} />
           <DivText data-aos={'fade-up'}>
-            <p>{t('history:text1')}</p>
+            <p>{t('history:text1')}.</p>
             <p>{t('history:text2')}</p>
-            <p>{t('history:text3')}</p>
-            <p>{t('history:text4')}</p>
-            <p>
-              Руководство текущей деятельностью УП "Мингаз" согласно уставу осуществляет генеральный
-              директор, избираемый Общим собранием акционеров сроком на три года. Генеральный
-              директор подотчетен Общему собранию акционеров и Совету директоров Общества.
-            </p>
+            <p>{t('history:text3')}.</p>
+            <p>{t('history:text4')}.</p>
           </DivText>
         </DivTextPhoto>
         <DivLeadersPhotoPosition>
