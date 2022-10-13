@@ -91,7 +91,7 @@ export default function App() {
         <Route path={'/contacts/phone-services'} element={<PhoneLineServices />} />
         <Route path={'/SearchPage'} element={<SearchPage />} />
         <Route
-          path={'/services/administrative-services/'}
+          path={'/services/administrative-services'}
           element={<InformationAdministrativeService />}
         />
         <Route path={'/feedback/leave-feedback'} element={<LeaveFeedback />} />

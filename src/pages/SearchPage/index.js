@@ -32,7 +32,7 @@ export default function SearchPage({ classname }) {
     .concat(dataDepartment[5].information)
     .concat(dataDepartment[6].information)
     .concat(dataDepartment[7].information);
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
   };
@@ -66,7 +66,10 @@ export default function SearchPage({ classname }) {
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
-
+  console.log(result);
+  console.log(resultRouters);
+  console.log(resultDepartments);
+  console.log(resultEntities);
   const renderResult = () => {
     return (
       <>
@@ -146,7 +149,7 @@ export default function SearchPage({ classname }) {
           </FormSearch>
         </ContainerFormSearch>
       )}
-      {message && result.length && renderResult()}
+      {message && renderResult()}
     </>
   );
 }
