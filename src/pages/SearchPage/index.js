@@ -44,16 +44,19 @@ export default function SearchPage({ classname }) {
     if (card?.nameCard.includes(message)) {
       result.push(card);
     }
+    return null;
   }) &&
     dataLegalEntities.map((card) => {
       if (card?.nameCard.includes(message)) {
         resultEntities.push(card);
       }
+      return null;
     }) &&
     routers.map((router) => {
       if (router.name.includes(message)) {
         resultRouters.push(router);
       }
+      return null;
     }) &&
     infoForSearch.map((element) => {
       if (typeof element.name === 'string') {
@@ -61,6 +64,7 @@ export default function SearchPage({ classname }) {
           resultDepartments.push(element);
         }
       }
+      return null;
     });
 
   const handleCloseCLick = useCallback(() => {
