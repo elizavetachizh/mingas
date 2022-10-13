@@ -46,6 +46,7 @@ export default function InformationAdministrativeService() {
       if (card.uniqueName.includes(message)) {
         result.push(card);
       }
+      return null;
     });
   }
 
@@ -55,7 +56,7 @@ export default function InformationAdministrativeService() {
         {result.length ? (
           result.map((element) => {
             return (
-              <div>
+              <div key={element.linkId}>
                 {' '}
                 <NavLink
                   style={{ margin: '20px auto' }}

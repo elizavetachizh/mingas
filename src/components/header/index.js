@@ -26,7 +26,7 @@ import {
   IoIosCloses,
   ContanerLink,
 } from './styles';
-import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.png';
+import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.webp';
 import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';

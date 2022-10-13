@@ -65,7 +65,7 @@ export default function RegulatoryDocumentsForLegal() {
           {isPhone ? (
             <ContainerInform>
               {infoForSearch.map((el) => (
-                <BlockBtn>
+                <BlockBtn key={el.id}>
                   <a href={el.link} target={'_blank'} rel="noopener">
                     {el.name}
                   </a>

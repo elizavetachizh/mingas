@@ -126,6 +126,7 @@ export default function TBZ() {
               Служба газового хозяйства в Минской области
             </a>
             <iframe
+              title={'name'}
               src="https://yandex.by/map-widget/v1/-/CCURZ-WzpC"
               width="100%"
               height="400"

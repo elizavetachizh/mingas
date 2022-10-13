@@ -6,7 +6,7 @@ export default function LinkServices({ img, nameCard, cardId }) {
   const navigate = useNavigate();
   const handlerLinkClick = useCallback(() => {
     navigate(`/services/${cardId}`);
-  }, []);
+  }, [cardId, navigate]);
 
   return (
     <ContainerServices onClick={() => handlerLinkClick(nameCard)}>

@@ -45,6 +45,7 @@ export default function Information() {
     } else {
       setInfo(infoForSearch);
     }
+    //not add infoForSearch!!
   }, [questionId]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
@@ -64,6 +65,7 @@ export default function Information() {
     if (card.question.includes(message)) {
       result.push(card);
     }
+    return null;
   });
 
   const renderResult = () => {
@@ -72,7 +74,7 @@ export default function Information() {
         {result.length ? (
           result.map((element) => {
             return (
-              <div>
+              <div key={element.questionId}>
                 <NavLink
                   style={{ margin: '20px auto' }}
                   to={`${pathname}?questionId=${element.questionId}`}

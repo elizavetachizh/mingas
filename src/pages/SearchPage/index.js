@@ -80,7 +80,7 @@ export default function SearchPage({ classname }) {
               <IoMdClose style={{ width: '70px' }} color={'black'} onClick={handleCloseCLick} />
               {result.map((element) => {
                 return (
-                  <div>
+                  <div key={element.cardImg}>
                     {
                       <NavLink style={{ color: 'black' }} to={`/services/${element.serviceId}`}>
                         {element.nameCard}
@@ -91,7 +91,7 @@ export default function SearchPage({ classname }) {
               })}
               {resultEntities.map((element) => {
                 return (
-                  <div>
+                  <div key={element.cardImg}>
                     {
                       <NavLink
                         style={{ color: 'black' }}
@@ -105,7 +105,7 @@ export default function SearchPage({ classname }) {
               })}
               {resultRouters.map((element) => {
                 return (
-                  <div>
+                  <div key={element.id}>
                     {
                       <NavLink style={{ color: 'black' }} to={`/${element.router}`}>
                         {element.name}
@@ -116,7 +116,7 @@ export default function SearchPage({ classname }) {
               })}
               {resultDepartments.map((element) => {
                 return (
-                  <div>
+                  <div key={element.id}>
                     {
                       <NavLink
                         style={{ color: 'black' }}

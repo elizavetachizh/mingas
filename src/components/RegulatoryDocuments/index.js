@@ -52,6 +52,7 @@ export default function DepartmentInformation() {
       if (cardInform.name.includes(message)) {
         result.push(cardInform);
       }
+      return null;
     });
   }
   useEffect(() => {
@@ -67,9 +68,8 @@ export default function DepartmentInformation() {
         {result.length ? (
           result.map((element) => {
             return (
-              <div>
+              <div key={element.id}>
                 <a
-                  key={element.id}
                   rel="noopener"
                   style={{ margin: '20px auto' }}
                   href={`${element.link}`}

@@ -28,6 +28,7 @@ export default function SearchForDepartments() {
       if (card.fullName.includes(message)) {
         result.push(card);
       }
+      return null;
     });
   }
 
@@ -36,8 +37,8 @@ export default function SearchForDepartments() {
       <Div>
         {result.map((element) => {
           return (
-            <div>
-              {<NavLink to={`/company/management/${element.idName}`}>{element.fullName}</NavLink>}
+            <div key={element.idName}>
+              <NavLink to={`/company/management/${element.idName}`}>{element.fullName}</NavLink>
             </div>
           );
         })}

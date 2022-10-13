@@ -4,7 +4,7 @@ import { data } from '../../../assets/data/dataNavLinkAdministrativeServices';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, DivOpen, ContainerBtnIcon, BlockBtn, Name } from './styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import SearchForDepartments from "../../../pages/company/managment/SearchForDepartments";
+import SearchForDepartments from '../../../pages/company/managment/SearchForDepartments';
 
 export default function HeaderAdministrativeServices() {
   const navigate = useNavigate();
@@ -32,14 +32,13 @@ export default function HeaderAdministrativeServices() {
   return (
     <HeaderCompanyDiv>
       <Name>Административные процедуры</Name>
-        <SearchForDepartments />
+      <SearchForDepartments />
       {data.map((el) => (
-        <BlockBtn>
+        <BlockBtn key={el.serviceID}>
           <ContainerBtnIcon>
             <Button
               className={currentServiceID === el.serviceID ? 'background' : ''}
               onClick={() => handlerLinkClick(el.serviceID)}
-              key={el.serviceID}
             >
               {el.serviceName}
             </Button>

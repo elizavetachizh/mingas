@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Container, ContainerGraditude, BlockOfGraditude } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
@@ -18,25 +18,17 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../../assets/png/up_arrow_round.png';
 
 export default function Gratitude() {
-  const [currentServiceID, setServiceID] = useState(null);
   const [isModalVisible, setModalVisible] = useState(false);
   const [image, setImage] = useState('');
-  const openImage = useCallback(
-    (id) => {
-      setServiceID(id);
-      setImage(gratitude[id - 1].img);
-      setModalVisible(true);
-    },
-    [currentServiceID]
-  );
+  const openImage = useCallback((id) => {
+    setImage(gratitude[id - 1].img);
+    setModalVisible(true);
+  }, []);
   const handleInsideClick = (event: MouseEvent) => {
     event.stopPropagation();
   };
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
-  }, []);
-  useEffect(() => {
-    window.scrollTo(0, 0);
   }, []);
   return (
     <Container>

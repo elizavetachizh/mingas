@@ -56,6 +56,7 @@ export default function AllSubdivisions() {
         result.push(card);
       }
     }
+    return null;
   });
   const renderResult = () => {
     return (
@@ -63,7 +64,7 @@ export default function AllSubdivisions() {
         {result.length ? (
           result.map((element) => {
             return (
-              <div>
+              <div key={element.id}>
                 <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
                   {element.name}
                 </NavLink>

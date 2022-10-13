@@ -101,12 +101,8 @@ export default function DepartmentInformation() {
         {result.length ? (
           result.map((element) => {
             return (
-              <div>
-                <NavLink
-                  key={element.key}
-                  style={{ margin: '20px auto' }}
-                  to={`${pathname}?id=${element.id}`}
-                >
+              <div key={element.key}>
+                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
                   {element.name}
                 </NavLink>
               </div>
@@ -162,10 +158,9 @@ export default function DepartmentInformation() {
             )}
             {message && renderResult()}
             {data.map((element) => (
-              <BlockBtn>
+              <BlockBtn key={element.idName}>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
-                    key={element.idName}
                     nameCard={element.fullName}
                     className={currentServiceID === element.idName ? 'background' : ''}
                     onClick={() => changeDepartment(element.idName)}

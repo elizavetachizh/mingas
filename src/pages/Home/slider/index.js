@@ -6,7 +6,6 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.png';
 import imageContent from '../../../assets/background/mingas_background(2).jpg';
 import newPost from '../../../assets/background/newPost.jpg';
-import post from '../../../assets/background/phone.webp';
 import { Trans } from 'react-i18next';
 import ButtonFun from '../../../components/button';
 

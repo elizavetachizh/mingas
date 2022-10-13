@@ -67,8 +67,8 @@ export default function FormQuestion() {
   const changeHAnder = useCallback(
     (event) => {
       setDocumentq(Object.values(event.target.files));
-      readAllFiles(Object.values(event.target.files)).then((r) =>
-        setFormValues({ ...formValues, information: r })
+      readAllFiles(Object.values(event.target.files)).then((result) =>
+        setFormValues({ ...formValues, information: result })
       );
     },
     [formValues]
