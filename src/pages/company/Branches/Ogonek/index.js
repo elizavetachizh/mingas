@@ -12,7 +12,6 @@ export default function Ogonek() {
       nameDescription={'О нас'}
       description={
         <>
-          {' '}
           <BlockInformOgonek id={'1'}>
             <img alt={'картинка грузится'} src={require('../../../../assets/Ogonek/2.jpeg')} />
             <div>

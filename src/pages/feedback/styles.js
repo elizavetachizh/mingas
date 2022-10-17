@@ -87,6 +87,9 @@ export const Divbackground = styled.div`
   width: 100%;
   top: 154px;
   border-radius: 20px;
+  @media (min-width: 2000px) {
+    top: 174px;
+  }
   @media (max-width: 2000px) {
     border-radius: 0;
   }
@@ -105,7 +108,7 @@ export const DivImage = styled.div`
   //height: 470px;
   transform: translate3d(0px, 0px, 0px);
   width: 100%;
-  height: 98%;
+  height: 100%;
   img {
     width: 100%;
     background-size: cover;
@@ -166,11 +169,11 @@ export const BlockContainerRequests = styled.div`
   border-radius: 20px;
   margin: 10px auto 20px;
   padding: 1% 0;
+  background-color: rgba(14, 78, 129, 0.2);
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
     margin: 0 auto 0;
-    background-color: rgba(14, 78, 129, 0.2);
   }
 `;
 

@@ -138,6 +138,7 @@ export const ArticleForHome = styled.div`
   }
   img {
     width: 100%;
+    height: auto;
     border-radius: 20px;
     z-index: -1;
     position: relative;

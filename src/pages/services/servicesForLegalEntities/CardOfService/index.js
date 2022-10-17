@@ -73,7 +73,7 @@ export default function CardOfService() {
             <Name>{title}</Name>
             {inform.map((el) => (
               <DopFunctionService
-                keys={el.nameDescription}
+                key={el.nameDescription}
                 nameDescription={el.nameDescription}
                 inform={el.inform}
               />

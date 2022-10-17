@@ -16,6 +16,8 @@ export const ContentLink = styled(NavLink)`
   }
   div {
     img {
+      width: 100%;
+      height: auto;
       @media (max-width: 646px) {
         width: 46px;
         height: 46px;

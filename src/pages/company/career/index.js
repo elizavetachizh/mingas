@@ -19,8 +19,6 @@ import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.webp';
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
-const div = document.createElement('div');
-document.body.appendChild(div);
 
 export default function Career() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,16 +28,19 @@ export default function Career() {
       setIsOpen(false);
     }
   };
+
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+  const script = document.createElement('script');
   useEffect(() => {
     window.scrollTo(0, 0);
-    const script = document.createElement('script');
     script.src = url;
     script.async = true;
     div.appendChild(script);
     return () => {
       div.removeChild(script);
     };
-  }, []);
+  }, [div, script]);
   return (
     <Container>
       <Header backgroundHeader="blue" />

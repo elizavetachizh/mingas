@@ -1,6 +1,6 @@
 import React from 'react';
 import { LinkLogo, LinksContainer, Logo } from '../header/styles';
-import HeaderLogo from '../../assets/png/mingaz_logo_white.png';
+import HeaderLogo from '../../assets/png/mingaz_logo_white.webp';
 import { Contacts, Telephons, ContactInform, WorkTime, FooterContainer } from './styles';
 import ButtonFun from '../button';
 
@@ -36,8 +36,7 @@ export default function Footer({ classname }) {
             </a>
           </p>
           <p style={{ margin: '0' }}>
-            Факс (017) 366-36-33 E-mail:{' '}
-            <a onClick={() => navigator.clipboard.writeText('root@mingas.by')}>root@mingas.by</a>
+            Факс (017) 366-36-33 E-mail: <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
           </p>
         </ContactInform>
         <WorkTime>

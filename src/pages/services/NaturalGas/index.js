@@ -56,6 +56,7 @@ export default function NaturalGas() {
             <Name>{title}</Name>
             {inform.map((el) => (
               <DopFunctionService
+                classname={'question-answer'}
                 key={el.nameDescription}
                 nameDescription={el.nameDescription}
                 inform={el.inform}

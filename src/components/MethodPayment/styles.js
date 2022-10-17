@@ -73,7 +73,4 @@ export const ImgERIP = styled.img`
       margin: 0 auto;
     }
   }
-  //@media (max-width: 930px) {
-  //  width: 50%;
-  //}
 `;

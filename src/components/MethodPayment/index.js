@@ -13,7 +13,7 @@ import ERIP_5 from '../../assets/payment/5-1.png';
 import ERIP_6 from '../../assets/payment/6-1.png';
 import results from '../../assets/payment/7.png';
 import results_2 from '../../assets/payment/8.png';
-import pamyatka from '../../assets/pdf/Pamyatka-ob-oplate-za-potreblennyj-prirodnyj-gaz-v-perehodnyj-period-2022-goda.pdf';
+import pamyatka from '../../assets/pdf/pamyatka.pdf';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import {
   BtnIsOpen,

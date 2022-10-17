@@ -16,6 +16,7 @@ body {
   body {
     width: 90%;
     margin: 0 auto;
+    /*background-color: rgba(14, 78, 129, 0.2);*/
   }
 }
 @media (max-width: 320px) {
@@ -25,7 +26,6 @@ body {
   }
 }
 
-  body.mobile {
-    overflow: hidden;
-  }
-
+body.mobile {
+  overflow: hidden;
+}

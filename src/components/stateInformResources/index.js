@@ -23,7 +23,7 @@ export default function StateInformResources() {
       />
       <img
         alt={'ornament'}
-        style={{ width: '100%' }}
+        style={{ width: '100%', height: 'auto' }}
         src={require('../../assets/background/ornament.png')}
       />
       <DivInform>
@@ -241,7 +241,7 @@ export default function StateInformResources() {
       </DivInform>
       <img
         alt={'ornament'}
-        style={{ width: '100%', marginBottom: '2%' }}
+        style={{ width: '100%', marginBottom: '2%', height: 'auto' }}
         src={require('../../assets/background/ornament.png')}
       />
     </BlockContainerRequests>
