@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { IoIosSearchs } from '../../components/header/styles';
 import { ModalWindow } from '../../components/modalWindow/styles';
+import { searchDocuments } from '../../assets/data/searchDocuments';
 export default function SearchPage({ classname }) {
   const [isForm, setIsForm] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
@@ -24,6 +25,7 @@ export default function SearchPage({ classname }) {
   const resultEntities = [];
   const resultRouters = [];
   const resultDepartments = [];
+  const resultDocuments = [];
   const infoForSearch = dataDepartment[0].information
     .concat(dataDepartment[1].information)
     .concat(dataDepartment[2].information)
@@ -44,13 +46,13 @@ export default function SearchPage({ classname }) {
     if (card?.nameCard.includes(message)) {
       result.push(card);
     }
-    return null;
+    return <p>К сожалению, ничего не было найдено</p>;
   }) &&
     dataLegalEntities.map((card) => {
       if (card?.nameCard.includes(message)) {
         resultEntities.push(card);
       }
-      return null;
+      return <p>К сожалению, ничего не было найдено</p>;
     }) &&
     routers.map((router) => {
       if (router.name.includes(message)) {
@@ -64,7 +66,13 @@ export default function SearchPage({ classname }) {
           resultDepartments.push(element);
         }
       }
-      return null;
+      return <p>К сожалению, ничего не было найдено</p>;
+    }) &&
+    searchDocuments.map((doc) => {
+      if (doc.name.includes(message)) {
+        resultDocuments.push(doc);
+      }
+      return <p>К сожалению, ничего не было найдено</p>;
     });
 
   const handleCloseCLick = useCallback(() => {
@@ -77,7 +85,11 @@ export default function SearchPage({ classname }) {
         {isModalVisible && (
           <ModalWindow className={classname} onClick={handleCloseCLick}>
             <Div onClick={handleInsideClick}>
-              <IoMdClose style={{ width: '70px' }} color={'black'} onClick={handleCloseCLick} />
+              <IoMdClose
+                style={{ width: '90%', margin: '0 50%' }}
+                color={'black'}
+                onClick={handleCloseCLick}
+              />
               {result.map((element) => {
                 return (
                   <div key={element.cardImg}>
@@ -124,6 +136,17 @@ export default function SearchPage({ classname }) {
                       >
                         {element.name}
                       </NavLink>
+                    }
+                  </div>
+                );
+              })}
+              {resultDocuments.map((doc) => {
+                return (
+                  <div key={doc.id}>
+                    {
+                      <a download style={{ color: 'black' }} href={doc.path}>
+                        {doc.name}
+                      </a>
                     }
                   </div>
                 );

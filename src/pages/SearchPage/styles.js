@@ -8,8 +8,10 @@ export const Div = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   color: #0d4475 !important;
   //width: auto;
+  border-radius: 20px;
   height: fit-content;
   padding: 2%;
+  margin: 0 6%;
   a {
     text-decoration: none;
     text-align: justify;

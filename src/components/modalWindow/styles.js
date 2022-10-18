@@ -23,9 +23,9 @@ export const ModalWindowOpenAndClose = styled.div`
   height: fit-content;
   background: rgba(255, 255, 255, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-  border-radius: 10px;
   padding: 2%;
   text-align: center;
+  border-radius: 20px;
   &.gratitude {
     width: 600px;
   }
