@@ -73,7 +73,7 @@
     "start": "set PORT=3000&&set NODE_OPTIONS=--max-old-space-size=1024&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts gh-pages -d build"
+    "eject": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
