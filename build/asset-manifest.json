@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0193078b.css",
-    "main.js": "/static/js/main.8232a6ae.js",
+    "main.js": "/static/js/main.84a6673b.js",
     "static/media/gazeta_26.pdf": "/static/media/gazeta_26.c8e20e4f0f4e2d3531cc.pdf",
     "static/media/gazeta_25.pdf": "/static/media/gazeta_25.1882643db4217d0735cf.pdf",
     "static/media/file.mp4": "/static/media/file.a226bc4da7b6cae124ce.mp4",
@@ -135,7 +135,6 @@
     "static/media/27.webp": "/static/media/27.6a01bdf437a20076bb2d.webp",
     "static/media/64.png": "/static/media/64.1b29ebfbef270f3e1250.png",
     "static/media/21.webp": "/static/media/21.20dd6dc0c414a86b0093.webp",
-    "static/media/akt_vvoda_po_uchetu_gaza.pdf": "/static/media/akt_vvoda_po_uchetu_gaza.5dd2b40e99112b3b31f4.pdf",
     "static/media/4.webp": "/static/media/4.a5b1f47ffee975b1ef06.webp",
     "static/media/polojenie_conflict.pdf": "/static/media/polojenie_conflict.a7ed6139f1db07807413.pdf",
     "static/media/3.webp": "/static/media/3.c2b98d97d5fa69da1026.webp",
@@ -145,7 +144,6 @@
     "static/media/comitet-ispolkom.jpg": "/static/media/comitet-ispolkom.d21764a5be0111748ec0.jpg",
     "static/media/28.webp": "/static/media/28.a0724601b4a8418279b4.webp",
     "static/media/22.webp": "/static/media/22.ae91fb05d941eb692d46.webp",
-    "static/media/GMK-PTU-o-vnesenii-izmenenij-na-sajt-21.08.2020-stranitsy-2-szhatyj.pdf": "/static/media/GMK-PTU-o-vnesenii-izmenenij-na-sajt-21.08.2020-stranitsy-2-szhatyj.d5b10fab67d7d7bab15a.pdf",
     "static/media/minsk-today.jpg": "/static/media/minsk-today.e08ee97c3318ad0a21f0.jpg",
     "static/media/23.webp": "/static/media/23.46d475fe62f72746965b.webp",
     "static/media/29.webp": "/static/media/29.a23a51fa6b7019e480e1.webp",
@@ -155,7 +153,6 @@
     "static/media/8.webp": "/static/media/8.5fe461100cd5bb9c3915.webp",
     "static/media/2.webp": "/static/media/2.97f44995596533897c2a.webp",
     "static/media/3.pdf": "/static/media/3.1dd8ad50f45f93f9c289.pdf",
-    "static/media/Prilozhenie-1.pdf": "/static/media/Prilozhenie-1.e5e78e0117afe6b2f91d.pdf",
     "static/media/mingaz_logo_color.png": "/static/media/mingaz_logo_color.671f38e260088227222d.png",
     "static/media/phone.webp": "/static/media/phone.1b6c9cdb82cbe45d081f.webp",
     "static/media/PhoneFour.png": "/static/media/PhoneFour.5ed1988176dc206d68cd.png",
@@ -164,12 +161,9 @@
     "static/media/35.webp": "/static/media/35.5fbea22340b0978397dd.webp",
     "static/media/napravlenie.jpg": "/static/media/napravlenie.266bd1ec3fb2cf971a89.jpg",
     "static/media/1-1.png": "/static/media/1-1.42757b8d9d74e796796a.png",
-    "static/media/zayavka_na_pusk_gaza_v_jilye_doma_do_ih_zaseleniya1.pdf": "/static/media/zayavka_na_pusk_gaza_v_jilye_doma_do_ih_zaseleniya1.709902ca805436e214c2.pdf",
     "static/media/4.pdf": "/static/media/4.69f831ef77b8a4bfce2e.pdf",
     "static/media/37.webp": "/static/media/37.c1f30fd0549de01bd36a.webp",
     "static/media/minsk_truth.jpg": "/static/media/minsk_truth.bade10cd5a690f496742.jpg",
-    "static/media/Pamyatka-ob-oplate-za-potreblennyj-prirodnyj-gaz-v-perehodnyj-period-2022-goda.pdf": "/static/media/Pamyatka-ob-oplate-za-potreblennyj-prirodnyj-gaz-v-perehodnyj-period-2022-goda.53e9c0a68fd533fe89e2.pdf",
-    "static/media/poryadok_1.pdf": "/static/media/poryadok_1.990a49f4f4532043e5a3.pdf",
     "static/media/control.png": "/static/media/control.5d8d356c3f4465bcb209.png",
     "static/media/k-p-3.jpg": "/static/media/k-p-3.516eab09b78b3bdfd60c.jpg",
     "static/media/3-1.png": "/static/media/3-1.41a058872d9f63e4fc59.png",
@@ -178,7 +172,6 @@
     "static/media/6-1.png": "/static/media/6-1.6bde01eed79f5336d31f.png",
     "static/media/quality.png": "/static/media/quality.9db3ec28fb32e798c3d1.png",
     "static/media/pamyatka.docx": "/static/media/pamyatka.07be8ac4885a06f2f507.docx",
-    "static/media/AKT-RASHODA-dlya-sajta.pdf": "/static/media/AKT-RASHODA-dlya-sajta.552c360abbae86b75690.pdf",
     "static/media/HARAKTERISTIKA-OBEKTA.doc": "/static/media/HARAKTERISTIKA-OBEKTA.7b4c9e2dfd648ad1ff49.doc",
     "static/media/4-1.png": "/static/media/4-1.0e49183caf70aaa7edc9.png",
     "static/media/belta.png": "/static/media/belta.289fe49079a0e3aae948.png",
@@ -212,11 +205,18 @@
     "static/media/Svedeniya-ob-osushhestvlyaemyh-vidah-deyatelnosti.xlsx": "/static/media/Svedeniya-ob-osushhestvlyaemyh-vidah-deyatelnosti.1d7f99373e47dc7db774.xlsx",
     "static/media/beltopgas.png": "/static/media/beltopgas.af08f5c4ec6dc97b575b.png",
     "index.html": "/index.html",
+    "static/media/GMK-PTU-o-vnesenii-izmenenij-na-sajt-21.08.2020-stranitsy-2-szhatyj.pdf": "/static/media/GMK-PTU-o-vnesenii-izmenenij-na-sajt-21.08.2020-stranitsy-2-szhatyj.a82a1af99c5a8826e4e5.pdf",
+    "static/media/Prilozhenie-1.pdf": "/static/media/Prilozhenie-1.82e52059785661b99194.pdf",
+    "static/media/akt_vvoda_po_uchetu_gaza.pdf": "/static/media/akt_vvoda_po_uchetu_gaza.d81c6ebe039ff87b1217.pdf",
+    "static/media/zayavka_na_pusk_gaza_v_jilye_doma_do_ih_zaseleniya1.pdf": "/static/media/zayavka_na_pusk_gaza_v_jilye_doma_do_ih_zaseleniya1.f89732270c372b959e15.pdf",
+    "static/media/AKT-RASHODA-dlya-sajta.pdf": "/static/media/AKT-RASHODA-dlya-sajta.aa63791c81024300040e.pdf",
+    "static/media/Pamyatka-ob-oplate-za-potreblennyj-prirodnyj-gaz-v-perehodnyj-period-2022-goda.pdf": "/static/media/Pamyatka-ob-oplate-za-potreblennyj-prirodnyj-gaz-v-perehodnyj-period-2022-goda.a4bc6140555bdacfce87.pdf",
+    "static/media/poryadok_1.pdf": "/static/media/poryadok_1.dda87f23ecda2eb474aa.pdf",
     "main.0193078b.css.map": "/static/css/main.0193078b.css.map",
-    "main.8232a6ae.js.map": "/static/js/main.8232a6ae.js.map"
+    "main.84a6673b.js.map": "/static/js/main.84a6673b.js.map"
   },
   "entrypoints": [
     "static/css/main.0193078b.css",
-    "static/js/main.8232a6ae.js"
+    "static/js/main.84a6673b.js"
   ]
 }
