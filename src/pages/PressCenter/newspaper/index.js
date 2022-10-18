@@ -31,7 +31,7 @@ export default function Newspaper() {
       </ContanerNewsPape>
       <General>
         <BtnIsOpen onClick={animate}>
-          <p>Архив новостей</p>
+          <p>Архив газет</p>
           <div>
             {isOpen ? (
               <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />

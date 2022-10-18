@@ -1,21 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, lazy, Suspense } from 'react';
 import { t } from 'i18next';
 import photoHistory from '../../../assets/management/0.webp';
 import { DivLeadersPhotoPosition } from './styles';
-import Header from '../../../components/header';
-import HeaderCompany from '../header_company';
 import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
 import { management } from '../../../assets/data/data_management';
-import ScrollToTop from 'react-scroll-up';
-import Footer from '../../../components/footer';
-import up from '../../../assets/png/up_arrow_round.png';
-import Leaders from './divmagement';
 import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
-import { Container } from '../styles';
-import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import Feedback from '../../feedback';
-import minsk from '../../../assets/background/phone.webp';
+import SchemaCompany from '../SchemaCompany';
+const renderLoader = () => <p>Загрузка данных...</p>;
+const Leaders = lazy(() => import('./divmagement'));
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -35,46 +28,45 @@ export default function Management() {
   }, []);
 
   return (
-    <Container>
-      <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={'Руководство'} />
-      <HeaderCompany />
-      <AdditionalDiv style={{ margin: '2% auto' }}>
-        <DivTextPhoto>
-          <ImageDiv data-aos={'fade-up'} src={photoHistory} />
-          <DivText data-aos={'fade-up'}>
-            <p>{t('history:text1')}.</p>
-            <p>{t('history:text2')}</p>
-            <p>{t('history:text3')}.</p>
-            <p>{t('history:text4')}.</p>
-          </DivText>
-        </DivTextPhoto>
-        <DivLeadersPhotoPosition>
-          {management.map((element) => (
-            <Leaders
-              idName={element.id}
-              handlerLeaderClick={handlerLeaderClick}
-              cardImg={element.cardImg}
-              leader={element}
-              key={element.id}
-              fullName={element.fullName}
-              position={element.position}
+    <SchemaCompany
+      name={'Руководство'}
+      content={
+        <>
+          {' '}
+          <DivTextPhoto>
+            <ImageDiv data-aos={'fade-up'} src={photoHistory} />
+            <DivText data-aos={'fade-up'}>
+              <p>{t('management:text1')}.</p>
+              <p>{t('management:text2')}</p>
+              <p>{t('management:text3')}.</p>
+              <p>{t('management:text4')}.</p>
+            </DivText>
+          </DivTextPhoto>
+          <DivLeadersPhotoPosition>
+            <Suspense fallback={renderLoader()}>
+              {management.map((element) => (
+                <Leaders
+                  idName={element.id}
+                  handlerLeaderClick={handlerLeaderClick}
+                  cardImg={element.cardImg}
+                  leader={element}
+                  key={element.id}
+                  fullName={element.fullName}
+                  position={element.position}
+                />
+              ))}
+            </Suspense>
+          </DivLeadersPhotoPosition>
+          {isModalVisible && (
+            <Modal
+              index={nameId}
+              handleCloseCLick={handleCloseCLick}
+              currentLeader={currentLeader}
+              nameId={nameId}
             />
-          ))}
-        </DivLeadersPhotoPosition>
-        {isModalVisible && (
-          <Modal
-            index={nameId}
-            handleCloseCLick={handleCloseCLick}
-            currentLeader={currentLeader}
-            nameId={nameId}
-          />
-        )}
-      </AdditionalDiv>
-      <ScrollToTop showUnder={160}>
-        <img src={up} alt={''} />
-      </ScrollToTop>
-      <Footer />
-    </Container>
+          )}
+        </>
+      }
+    />
   );
 }

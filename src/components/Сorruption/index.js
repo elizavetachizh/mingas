@@ -8,7 +8,7 @@ import { DescriptionService } from '../../pages/services/DopFunction/styles';
 import React, { useState } from 'react';
 import { ContanerNewsPape } from '../../pages/PressCenter/newspaper/styles';
 import { data } from './data';
-import ContainerContent from '../Container';
+import SchemaCompany from '../../pages/company/SchemaCompany';
 
 export default function Corruption() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function Corruption() {
     }
   };
   return (
-    <ContainerContent
+    <SchemaCompany
       name={'Противодействие коррупции'}
       content={
         <>

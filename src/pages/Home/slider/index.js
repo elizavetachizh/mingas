@@ -23,7 +23,7 @@ export default class CarouselFun extends React.Component {
                 <Trans i18nKey="description:part1" />
               </Text>
             </DivInformAbout>
-            <a className={'phone'} href={'tel:162'}>
+            <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
               <img src={phone} alt={'картинка'} />
             </a>
           </DivText>

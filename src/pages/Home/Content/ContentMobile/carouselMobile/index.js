@@ -22,7 +22,7 @@ export default class CarouselMobile extends React.Component {
             <Text className={'phone'} style={{ position: 'initial' }}>
               <Trans i18nKey="description:part1" />
             </Text>
-            <a className={'phone'} href={'tel:162'}>
+            <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
               <img src={phone} alt={'картинка загружается'} />
             </a>
           </DivText>

@@ -44,7 +44,8 @@ export default function HeaderCompany() {
               <HeaderCompanyBtn to="/company/parent-organizations">
                 Вышестоящие организации
               </HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/branches/">Филиалы УП "Мингаз"</HeaderCompanyBtn>
+              <HeaderCompanyBtn to="/company/branches">Филиалы УП "Мингаз"</HeaderCompanyBtn>
+              <HeaderCompanyBtn to="company/corruption">Противодействие коррупции</HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/documentation">
                 {t('headerCompany:documentation')}
               </HeaderCompanyBtn>
@@ -66,6 +67,7 @@ export default function HeaderCompany() {
               Вышестоящие организации
             </HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/branches/">Филиалы УП "Мингаз"</HeaderCompanyBtn>
+            <HeaderCompanyBtn to="/company/corruption">Противодействие коррупции</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/documentation">
               {t('headerCompany:documentation')}
             </HeaderCompanyBtn>

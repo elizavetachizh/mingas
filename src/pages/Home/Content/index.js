@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { ContainerContent, DivContent } from './styles';
-import CarouselFun from '../slider';
 import useMediaQuery from '../parallax/useMediaQuery';
 import ContentMobile from './ContentMobile';
-
+const CarouselFun = lazy(() => import('../slider'));
+const renderLoader = () => <p>Loading</p>;
 export default function ContentHome() {
   const isPhone = useMediaQuery('(max-width: 600px)');
   return (
@@ -13,7 +13,9 @@ export default function ContentHome() {
       ) : (
         <ContainerContent>
           <DivContent>
-            <CarouselFun />
+            <Suspense fallback={renderLoader()}>
+              <CarouselFun />
+            </Suspense>
           </DivContent>
         </ContainerContent>
       )}
