@@ -28,7 +28,7 @@ export default function Footer({ classname }) {
           </p>
         </Telephons>
         <ContactInform>
-          <ButtonFun href={'/contacts/phone-services'} infoButton={'Конкатная информация'} />
+          <ButtonFun href={'/contacts/phone-services'} infoButton={'Контактная информация'} />
           <p>
             220037, г.Минск,{' '}
             <a href={'https://yandex.by/maps/-/CCUVf2cXKC'} target={'_blank'}>
@@ -36,7 +36,8 @@ export default function Footer({ classname }) {
             </a>
           </p>
           <p style={{ margin: '0' }}>
-            Факс (017) 366-36-33 E-mail: <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
+            Факс: <a>+375 (017) 366-36-33</a> E-mail:
+            <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
           </p>
         </ContactInform>
         <WorkTime>
