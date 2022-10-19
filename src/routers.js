@@ -29,7 +29,7 @@ import ServicesForLegalEntities from './pages/services/servicesForLegalEntities'
 import AdministartiveServicesForLegal from './components/administartiveServicesForLegal';
 import CardOfServive from './pages/services/servicesForLegalEntities/CardOfService';
 import Requisites from './pages/concats/requisites';
-import ResidentsOfCapitalRegion from './pages/ResidentsOfCapital Region';
+import ResidentsOfCapitalRegion from './components/Price';
 import SchedulePersonalReceptionOfCitizens from './pages/concats/WorkSchedule';
 import PhoneLineServices from './pages/concats/DirectTelephoneLine';
 import SearchPage from './pages/SearchPage';

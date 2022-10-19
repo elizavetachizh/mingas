@@ -1,6 +1,6 @@
 import React from 'react';
 import { Links } from './styles';
-import ContainerContent from '../../components/Container';
+import ContainerContent from '../Container';
 export default function ResidentsOfCapitalRegion() {
   return (
     <ContainerContent
@@ -28,7 +28,7 @@ export default function ResidentsOfCapitalRegion() {
             Скачать “Прейскурант №9: Тарифы на работы по техническому обслуживанию газопроводов и
             газоиспользующего оборудования”
           </a>
-          <a target={'_blank'} rel="noopener" href={require('../../assets/pdf/price/four.pdf')}>
+          <a target={'_blank'} rel="opener" href={require('../../assets/pdf/price/four.pdf')}>
             Скачать “Прейскурант №11: на работы по установке приборов индивидуального учета расхода
             газа в существующем жилом фонде (газифицированные жилые дома)”{' '}
           </a>

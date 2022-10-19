@@ -6,19 +6,19 @@
 </url>
 
 <url>
-  <loc>https://mingas.by/company/history/</loc>
+  <loc>https://mingas.by/company/history</loc>
   <lastmod>2022-10-04T08:24:45+00:00</lastmod>
 </url>
 <url>
-  <loc>https://mingas.by/services/</loc>
+  <loc>https://mingas.by/services</loc>
   <lastmod>2022-10-04T08:24:45+00:00</lastmod>
 </url>
 <url>
-  <loc>https://mingas.by/for-business/</loc>
+  <loc>https://mingas.by/for-business</loc>
   <lastmod>2022-10-04T08:24:45+00:00</lastmod>
 </url>
 <url>
-  <loc>https://mingas.by/contacts/phone-services/</loc>
+  <loc>https://mingas.by/contacts/phone-services</loc>
   <lastmod>2022-10-04T08:24:45+00:00</lastmod>
 </url>
   <url>
@@ -35,6 +35,14 @@
   </url>
   <url>
     <loc>https://mingas.by/tenders</loc>
+    <lastmod>2022-10-04T08:24:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mingas.by/residents-of-the-capital-region</loc>
+    <lastmod>2022-10-04T08:24:45+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://mingas.by/press-center/1</loc>
     <lastmod>2022-10-04T08:24:45+00:00</lastmod>
   </url>
 </urlset>

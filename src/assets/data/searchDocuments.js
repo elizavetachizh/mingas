@@ -10,6 +10,11 @@ import passport from '../wordFile/Passport.docx';
 import haracteristica from '../wordFile/HARAKTERISTIKA-OBEKTA.doc';
 import tseni_Gas from '../wordFile/price_gas.doc';
 import teh_zadanie from '../wordFile/teh_zadanie.doc';
+import price from '../pdf/price/one.pdf';
+import price_2 from '../pdf/price/two.pdf';
+import price_7 from '../pdf/price/three.pdf';
+import price_9 from '../pdf/price/four.pdf';
+import price_11 from '../pdf/price/seven.pdf';
 export const searchDocuments = [
   {
     id: 1,
@@ -70,5 +75,30 @@ export const searchDocuments = [
     id: 12,
     name: 'Техническое задание на  замену прибора учета газа',
     path: `${teh_zadanie}`,
+  },
+  {
+    id: 13,
+    name: 'Прейскурант №1-ИМ: Цены на газосипользующее оборудование, материалы, комплектующие',
+    path: `${price}`,
+  },
+  {
+    id: 14,
+    name: 'Прейскурант №1: Тарифы на работы(услуги) оказываемые населению',
+    path: `${price_2}`,
+  },
+  {
+    id: 15,
+    name: 'Прейскурант №7: Тарифы на работы по ведению технического надзора за строительством систем газоснабжения и приемке объектов в эксплуатацию',
+    path: `${price_7}`,
+  },
+  {
+    id: 16,
+    name: 'Прейскурант №9: Тарифы на работы по техническому обслуживанию газопроводов и газоиспользующего оборудования',
+    path: `${price_9}`,
+  },
+  {
+    id: 17,
+    name: 'Прейскурант №11: на работы по установке приборов индивидуального учета расхода газа в существующем жилом фонде (газифицированные жилые дома)',
+    path: `${price_11}`,
   },
 ];
