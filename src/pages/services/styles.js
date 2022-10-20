@@ -134,4 +134,7 @@ export const BlockGrid = styled.div`
     font-weight: bold;
     text-align: center;
   }
+  @media(max-width: 600px){
+    grid-template-columns: repeat(3, 34%);
+  }
 `;

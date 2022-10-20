@@ -138,7 +138,6 @@ export default function ProvidingGasMeterReadings() {
           <InputFile type="file" id="file-input" />
           <label>Прикрепить фото прибора учёта</label>
         </DivInputFile>
-        <div id={'formPreview'}></div>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
@@ -162,10 +161,10 @@ export default function ProvidingGasMeterReadings() {
           Отправить
         </Button>
         {isButtonDisabled && (
-          <span style={{ color: 'red' }}>Заполните, пожалуйста, все необходимые поля</span>
+            <span style={{ color: 'red' }}>Заполните, пожалуйста, все необходимые поля</span>
         )}
         {!isButtonDisabled && !msg && (
-          <span style={{ color: 'red' }}>
+            <span style={{ color: 'red' }}>
             Форма успешно заполнена, нажмите кнопку отправить и ожидайте ответа "Форма успешно
             отправлена".
           </span>

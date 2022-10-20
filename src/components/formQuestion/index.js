@@ -211,14 +211,18 @@ export default function FormQuestion() {
       <Button disabled={isButtonDisabled} type="submit" onClick={handleSubmit}>
         Отправить
       </Button>
-      {isButtonDisabled ? (
-        <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
-      ) : (
-        <span style={{ color: 'red' }}>Форма успешно заполнена</span>
-      )}
-      <p>
-        <b>{msg}</b>
-      </p>
+        {isButtonDisabled && (
+            <span style={{ color: 'red' }}>Заполните, пожалуйста, все необходимые поля</span>
+        )}
+        {!isButtonDisabled && !msg && (
+            <span style={{ color: 'red' }}>
+            Форма успешно заполнена, нажмите кнопку отправить и ожидайте ответа "Форма успешно
+            отправлена".
+          </span>
+        )}
+        <p>
+            <b>{msg}</b>
+        </p>
     </Form>
   );
 }
