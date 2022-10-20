@@ -288,18 +288,23 @@ export const data = [
               указанных торговых марок в Республике Беларусь
             </p>
             <BlockGrid>
+              <p>ARISTON</p>
+              <p>BOSCH</p>
+              <p>JUNKERS</p>
+              <p>BUDERUS</p>
+              <p>FERROLI</p>
               <p>NAVIEN</p>
-              <p>Viessmann</p>
               <p>DAEWOO</p>
-              <p>BAXI</p>
-              <p>Bosch</p>
-              <p>Junkers</p>
-              <p>Buderus</p>
-              <p>Ferroli</p>
-              <p>Ariston</p>
-              <p>Mora</p>
+              <p>MORA</p>
               <p>TERMICA</p>
               <p>CHAFFOTEAUX</p>
+              <p>VIESSMANN</p>
+              <p>BAXI</p>
+                <p>ЖИТОМИР</p>
+                <p>НЕВА</p>
+                <p>ЛЕМАКС</p>
+                <p>VATTI</p>
+                <p>VILTERM</p>
             </BlockGrid>
             <p>
               Перечень торговых марок бытовых газовых плит, которые УП «МИНГАЗ» обслуживает по
