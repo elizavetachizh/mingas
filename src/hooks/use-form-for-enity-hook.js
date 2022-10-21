@@ -11,13 +11,13 @@ export const useFormForEnity = () => {
   // const url = 'http://localhost:3000/question-for-entity';
 
   const [msg, setMsg] = useState('');
-  const isValidateEmail = (email: string): boolean => {
+  const isValidateEmail = (email) => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
       email
     );
   };
   const form = useRef();
-  const stringIncludesNumber = (string: string): boolean => {
+  const stringIncludesNumber = (string) => {
     return /\d/.test(string);
   };
   const [errors, setErrors] = useState({});
@@ -35,7 +35,7 @@ export const useFormForEnity = () => {
     );
   }, [formValues, errors]);
 
-  const validate = (fieldName: string): void => {
+  const validate = (fieldName) => {
     setErrors({});
     switch (fieldName) {
       case 'name':
@@ -84,7 +84,7 @@ export const useFormForEnity = () => {
   };
 
   const handleUserInput = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    (event) => {
       event.preventDefault();
       const { name, value } = event.target;
       setFormValues(Object.assign(formValues, { [name]: value }));

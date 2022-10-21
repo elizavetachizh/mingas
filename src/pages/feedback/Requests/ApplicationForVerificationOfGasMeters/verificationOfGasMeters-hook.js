@@ -1,9 +1,8 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import type { UseFormReturnValues } from '../../../../const/consts';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import axios from 'axios';
 
-export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
+export const useRequestForVerificationOfGasMeters = () => {
   //for me
   // const url = 'http://localhost:3000/verification';
 
@@ -12,16 +11,16 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
   const [msg, setMsg] = useState('');
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
-  const isValidateEmail = (email: string): boolean => {
+  const isValidateEmail = (email) => {
     return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
       email
     );
   };
   const form = useRef();
-  const isValidatePhone = (phone: string): boolean => {
+  const isValidatePhone = (phone) => {
     return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
-  const stringIncludesNumber = (string: string): boolean => {
+  const stringIncludesNumber = (string) => {
     return /\d/.test(string);
   };
   const isButtonDisabled = useMemo(() => {
@@ -37,7 +36,7 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
     );
   }, [requestValues, errors]);
 
-  const validate = (fieldName: string): void => {
+  const validate = (fieldName) => {
     setErrors({});
     switch (fieldName) {
       case 'name':
@@ -84,7 +83,7 @@ export const useRequestForVerificationOfGasMeters = (): UseFormReturnValues => {
   };
 
   const handleUserInput = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    (event) => {
       event.preventDefault();
       const { name, value } = event.target;
       setRequestValues(Object.assign(requestValues, { [name]: value }));

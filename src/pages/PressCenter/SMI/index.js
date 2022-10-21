@@ -78,6 +78,40 @@ export default function SMI() {
                 rel="noopener"
                 target={'_blank'}
                 href={
+                  'https://minsknews.by/kak-podvesti-gaz-v-chastnyj-dom-razyasnyaet-speczialist/'
+                }
+              >
+                <img
+                  alt={''}
+                  src={'https://minsknews.by/wp-content/uploads/2022/03/Pavel-Rusak-52-of-53.jpg'}
+                />
+                <p>Как подвести газ в частный дом, разъясняет специалист <br/> {''} <span style={{color: "transparent"}}>1</span></p>
+                {/*<p>{''}</p>*/}
+              </a>
+            </Article>
+            <Article className={'general'}>
+              <a
+                rel="noopener"
+                target={'_blank'}
+                href={
+                  'https://minsknews.by/videonablyudenie-obespechivaet-bezopasnost-gorozhan-v-kuharev-vstretilsya-s-trudovym-kollektivom-mingaza/'
+                }
+              >
+                <img
+                  alt={''}
+                  src={'https://minsknews.by/wp-content/uploads/2022/10/1DX_0068-kopiya.jpg'}
+                />
+                <p>
+                  «Видеонаблюдение обеспечивает безопасность горожан». В. Кухарев встретился с
+                  трудовым коллективом «МИНГАЗа»
+                </p>
+              </a>
+            </Article>
+            <Article className={'general'}>
+              <a
+                rel="noopener"
+                target={'_blank'}
+                href={
                   'https://minsknews.by/mozhno-li-samostoyatelno-podklyuchit-gazovuyu-plitu-kommentarij-mingaza/'
                 }
               >

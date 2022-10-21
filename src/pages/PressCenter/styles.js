@@ -51,7 +51,7 @@ export const Article = styled.div`
   text-align: center;
   background-repeat: no-repeat;
   background-position: bottom;
-  box-shadow: inset 0 -120px 50px -50px #0d4475;
+  box-shadow: inset 0 -124px 50px -44px #0d4475;
   @media (max-width: 600px) {
     width: 84%;
   }

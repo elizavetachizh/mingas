@@ -1,9 +1,8 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
-import type { UseFormReturnValues } from '../../../../const/consts';
 import axios from 'axios';
 
-export const useForOrderingCylinders = (): UseFormReturnValues => {
+export const useForOrderingCylinders = () => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
   //for me
   // const url = 'http://localhost:3000/cylinders';
@@ -15,10 +14,10 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
   const [msg, setMsg] = useState('');
   const [errors, setErrors] = useState({});
   const form = useRef();
-  const isValidatePhone = (phone: string): boolean => {
+  const isValidatePhone = (phone) => {
     return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
   };
-  const stringIncludesNumber = (string: string): boolean => {
+  const stringIncludesNumber = (string) => {
     return /\d/.test(string);
   };
   const isButtonDisabled = useMemo(() => {
@@ -32,7 +31,7 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
     );
   }, [requestValues, errors]);
 
-  const validate = (fieldName: string): void => {
+  const validate = (fieldName) => {
     setErrors({});
     switch (fieldName) {
       case 'name':
@@ -69,7 +68,7 @@ export const useForOrderingCylinders = (): UseFormReturnValues => {
   };
 
   const handleUserInput = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    (event) => {
       event.preventDefault();
       const { name, value } = event.target;
       setRequestValues(Object.assign(requestValues, { [name]: value }));
