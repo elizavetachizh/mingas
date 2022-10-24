@@ -64,6 +64,9 @@ export const General = styled.div`
   margin: 1rem auto;
   padding: 0;
   width: 90%;
+  p {
+    text-align: justify;
+  }
   img {
     text-align: center;
   }

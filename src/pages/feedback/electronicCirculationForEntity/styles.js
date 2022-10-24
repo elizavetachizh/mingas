@@ -10,6 +10,7 @@ export const ContainerInform = styled.div`
   width: 50%;
   border-radius: 20px;
   margin: 0 auto;
+  text-align: justify;
   &.electronic-appeal-for-entity {
     @media (max-width: 900px) {
       width: 70%;

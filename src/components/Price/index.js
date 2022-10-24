@@ -24,6 +24,10 @@ export default function ResidentsOfCapitalRegion() {
               Договор операционный контроль
             </a>
           </div>
+          <a target={'_blank'} rel="opener" href={require('../../assets/pdf/price/new.pdf')}>
+            Скачать “Прейскурант №2: Тарифы на работы (услуги), оказываемые предприятиям и
+            организациям”
+          </a>
           <a target={'_blank'} rel="opener" href={require('../../assets/pdf/price/three.pdf')}>
             Скачать “Прейскурант №9: Тарифы на работы по техническому обслуживанию газопроводов и
             газоиспользующего оборудования”

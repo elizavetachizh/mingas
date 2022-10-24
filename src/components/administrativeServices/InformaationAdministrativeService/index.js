@@ -73,7 +73,7 @@ export default function InformationAdministrativeService() {
       </BlockSearchService>
     );
   };
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');

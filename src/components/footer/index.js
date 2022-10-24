@@ -5,6 +5,7 @@ import { Contacts, Telephons, ContactInform, WorkTime, FooterContainer } from '.
 import ButtonFun from '../button';
 
 import { Prizes } from '../../pages/Home/Content/styles';
+import { IoLogoInstagram } from 'react-icons/io';
 export default function Footer({ classname }) {
   return (
     <FooterContainer className={classname}>
@@ -22,6 +23,24 @@ export default function Footer({ classname }) {
       </LinksContainer>
       <Contacts>
         <Telephons>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <p>Смотри нас в </p>
+            <a
+              title={'Инстаграм'}
+              href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              <IoLogoInstagram style={{ width: '46px', height: '46px' }} />
+            </a>
+          </div>
           <ButtonFun href={'/contacts/phone-services'} infoButton={'Телефоны для связи'} />
           <p>
             Контакт-центр УП «МИНГАЗ» тел. <a href={'tel:162'}>162</a>
@@ -36,7 +55,7 @@ export default function Footer({ classname }) {
             </a>
           </p>
           <p style={{ margin: '0' }}>
-            Факс: <a>+375 (017) 366-36-33</a> E-mail:
+            Факс: <a href={"tel:+375 (017) 366-36-33"}>+375 (017) 366-36-33</a> E-mail:
             <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
           </p>
         </ContactInform>

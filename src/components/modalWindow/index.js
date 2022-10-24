@@ -4,7 +4,7 @@ import close from '../../assets/png/close.png';
 import ModalSubdivision from './modalSubdivision';
 
 export default function Modal({ handleCloseCLick, currentLeader, nameId, index }) {
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
   };
   return (

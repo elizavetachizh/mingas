@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from '../../hooks/use-form-hook';
 import InputName from '../input';
 import InputText from '../input/inputText';
+import PopUp from '../popUp';
 
 export default function FormQuestion() {
   const {
@@ -21,23 +22,20 @@ export default function FormQuestion() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVarningVisible, setModalVarningVisible] = useState(false);
+  const [documentq, setDocumentq] = useState([]);
   const formImage = document.getElementById('file-input');
+
+  const handleCloseCLick = useCallback(() => {
+    setModalVisible(false);
+  }, []);
+
+  const handlewoCloseCLick = useCallback(() => {
+    setModalVarningVisible(false);
+  }, []);
+
   const handleFileChosen = async (file) => {
-    if (
-      ![
-        'application/msword',
-        'application/pdf',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      ].includes(file.type)
-    ) {
-      alert('Не подходит формат файла');
-      formImage.value = '';
-    }
-    if (file.size > 60000) {
-      alert('Файл является слишком большим');
-      formImage.value = '';
-    }
     return new Promise((resolve, reject) => {
       let fileReader = new FileReader();
       fileReader.onload = () => {
@@ -56,7 +54,6 @@ export default function FormQuestion() {
     );
   };
 
-  const [documentq, setDocumentq] = useState([]);
   const getFileURL = (file) => {
     const blob = new Blob([file], {
       type: 'application/octetstream, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -66,14 +63,39 @@ export default function FormQuestion() {
   };
   const changeHAnder = useCallback(
     (event) => {
-      setDocumentq(Object.values(event.target.files));
+      if (Object.values(event.target.files)[0].size > 120000) {
+        // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
+        setModalVisible(true);
+        console.log(isModalVisible);
+        formImage.value = '';
+        setDocumentq([]);
+      } else if (
+        ![
+          'application/msword',
+          'application/pdf',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          'application/vnd.ms-excel',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          'application/zip',
+          'text/plain',
+          'image/jpeg',
+          'image/png',
+        ].includes(Object.values(event.target.files)[0].type)
+      ) {
+        // alert('Не подходит формат файла');
+        setModalVarningVisible(true);
+        formImage.value = '';
+        setDocumentq([]);
+      } else {
+        setDocumentq(Object.values(event.target.files));
+      }
+
       readAllFiles(Object.values(event.target.files)).then((result) =>
         setFormValues({ ...formValues, information: result })
       );
     },
     [formValues]
   );
-
   return (
     <Form autocomplete="on" onSubmit={handleSubmit} ref={form}>
       <DivInput>
@@ -92,7 +114,6 @@ export default function FormQuestion() {
           label={t('form:name')}
         />
       </DivInput>
-
       <DivInput>
         <Label>
           {t('form:email')}
@@ -109,7 +130,6 @@ export default function FormQuestion() {
           label={t('form:email')}
         />
       </DivInput>
-
       <DivInput>
         <Label>
           {t('form:address')}
@@ -126,7 +146,6 @@ export default function FormQuestion() {
           label={t('form:address')}
         />
       </DivInput>
-
       <DivInput>
         <Label>
           {t('form:phone')}
@@ -143,7 +162,6 @@ export default function FormQuestion() {
           label={t('form:phone')}
         />
       </DivInput>
-
       <DivInput>
         <Label>Тема:</Label>
         <InputName
@@ -156,7 +174,6 @@ export default function FormQuestion() {
           error={errors.text}
         />
       </DivInput>
-
       <DivInput>
         <Label>
           {t('form:text')}
@@ -176,9 +193,20 @@ export default function FormQuestion() {
           inputText={''}
         />
       </DivInput>
-
       <input type="file" multiple onChange={changeHAnder} id="file-input" />
-
+      <p style={{ fontSize: '12px' }}>
+        Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip; файлов
+        изображений: jpg, jpeg, png; табличных файлов: xls, xlsx.
+      </p>
+      {isModalVisible && (
+        <PopUp
+          text={' Файл является слишком большим, пожалуйста уменьшите размер файла'}
+          handleCloseCLick={handleCloseCLick}
+        />
+      )}
+      {isModalVarningVisible && (
+        <PopUp text={'Не подходит формат файла'} handleCloseCLick={handlewoCloseCLick} />
+      )}
       <div>
         <ol>
           {documentq.length
@@ -192,7 +220,6 @@ export default function FormQuestion() {
             : null}
         </ol>
       </div>
-
       <DivInputCheckbox>
         <InputCheckbox
           type="checkbox"
@@ -207,7 +234,6 @@ export default function FormQuestion() {
           <Span>*</Span>
         </Label>
       </DivInputCheckbox>
-
       <Button disabled={isButtonDisabled} type="submit" onClick={handleSubmit}>
         Отправить
       </Button>
@@ -216,8 +242,7 @@ export default function FormQuestion() {
       )}
       {!isButtonDisabled && !msg && (
         <span style={{ color: 'red' }}>
-          Форма успешно заполнена, нажмите кнопку отправить и ожидайте ответа "Форма успешно
-          отправлена".
+          Форма успешно заполнена, нажмите кнопку отправить и ожидайте, когда форма очистится.
         </span>
       )}
       <p>

@@ -33,6 +33,7 @@ export const Table = styled.table`
   margin-bottom: 30px;
   border-collapse: collapse;
   th {
+    border: 1px solid black;
     padding: 1rem 0.5rem;
   }
 `;
@@ -54,4 +55,39 @@ export const Td = styled.td`
   vertical-align: top;
   padding: 0.2rem 0.2rem 0.6rem 0.6rem;
   border: 0.1rem solid #e0e0e0;
+`;
+
+export const TableServices = styled.table`
+  width: 94%;
+  margin: 0 auto 30px;
+  background-color: transparent;
+  border-collapse: collapse;
+  overflow-x: auto;
+  td {
+    border: 1px solid #ccc;
+    background: #fff;
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    font-size: 14px;
+    @media (max-width: 1152px) {
+      font-size: 11px;
+    }
+    @media (max-width: 880px) {
+      font-size: 9px;
+    }
+    @media (max-width: 500px) {
+      padding: 0;
+    }
+    @media (max-width: 380px) {
+      font-size: 6px;
+    }
+  }
+  tr {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 `;

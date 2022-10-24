@@ -37,4 +37,10 @@ export const links = [
     nameService: 'Прейскурант цен',
     linkService: '/residents/price',
   },
+  {
+    idService: 9,
+    imgService: 16,
+    nameService: 'Заключение договоров',
+    linkService: '/services/8',
+  },
 ];

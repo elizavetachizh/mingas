@@ -1,4 +1,3 @@
-import { InputPropsPhone } from '../../../const/consts';
 import { Input } from '../styles';
 
 export default function InputPhone({
@@ -8,7 +7,8 @@ export default function InputPhone({
   type,
   value,
   placeholder,
-}: InputPropsPhone): JSX.Element {
+  maxlength,
+}) {
   return (
     <div>
       <Input
@@ -17,6 +17,7 @@ export default function InputPhone({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        maxlength={maxlength}
       />
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>

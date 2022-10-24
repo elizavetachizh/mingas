@@ -44,12 +44,18 @@ export const Thead = styled.thead`
 
 export const Tbody = styled.tbody`
   tr {
-    height: 170px;
+    height: 193px;
     @media (max-width: 1010px) {
-      height: 200px;
+      height: 265px;
     }
     @media (max-width: 900px) {
-      height: 150px;
+      height: 197px;
+    }
+    @media (max-width: 800px) {
+      height: 160px;
+    }
+    @media (max-width: 530px) {
+      height: 197px;
     }
     @media (max-width: 491px) {
       height: 230px;
@@ -86,4 +92,5 @@ export const ContainerTable = styled.div`
   color: #0d4475;
   flex-direction: row;
   align-items: inherit;
+  margin: 0 2%;
 `;

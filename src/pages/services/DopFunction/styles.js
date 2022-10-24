@@ -18,25 +18,16 @@ export const DescriptionService = styled.div`
     max-width: 600px;
     font-size: 14px;
   }
-  @media (max-width: 600px) {
-    max-width: 400px;
-  }
   table {
     width: 100%;
     margin: 0;
     text-align: center;
     border-collapse: collapse;
-    font-size: 1em;
     border: 1px solid #ccc;
-    table-layout: auto;
     p {
       text-indent: 0;
     }
-    td {
-      padding: 0.5em 1em;
-      border: 1px solid #ccc;
-      background: #fff;
-    }
+ 
   }
 `;
 
