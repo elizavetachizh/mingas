@@ -1,4 +1,4 @@
-import type { InputPropsAddress } from '../../../const/consts';
+
 import { Input } from '../styles';
 
 export default function InputAddress({
@@ -8,7 +8,7 @@ export default function InputAddress({
   type,
   value,
   placeholder,
-}: InputPropsAddress): JSX.Element {
+}) {
   return (
     <div>
       <Input

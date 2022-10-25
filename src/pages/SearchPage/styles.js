@@ -42,18 +42,6 @@ export const ContainerFormSearch = styled.div`
   width: 100%;
   padding: 10px 0;
   left: 0;
-  //@media (max-width: 639px) {
-  //  border-radius: 20px;
-  //}
-  //&:before {
-  //  content: '';
-  //  position: absolute;
-  //  //left: -1500px;
-  //  //right: -1500px;
-  //  top: 0;
-  //  height: 154px;
-  //  background: rgba(255, 255, 255, 1);
-  //}
 `;
 export const FormSearch = styled.form`
   display: flex;

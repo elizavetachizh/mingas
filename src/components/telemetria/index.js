@@ -7,7 +7,7 @@ export default function Telemetria() {
     <ContainerContent
       name={'Телеметрия'}
       content={
-        <>
+        <div style={{ width: '90%', margin: '0 5%' }}>
           <a target="_blank" rel="noopener noreferrer" href={'http://178.124.164.50:82/'}>
             Доступ к информации о параметрах расхода газа
           </a>
@@ -17,7 +17,7 @@ export default function Telemetria() {
             пароля:
           </p>
           <FormTelemetria />
-        </>
+        </div>
       }
     />
   );

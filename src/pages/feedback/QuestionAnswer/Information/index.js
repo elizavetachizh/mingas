@@ -90,7 +90,7 @@ export default function Information() {
       </BlockSearchService>
     );
   };
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
@@ -98,7 +98,7 @@ export default function Information() {
     navigate('/feedback/question-answer/1');
   };
 
-  const handleInsideClickPhone = (event: MouseEvent) => {
+  const handleInsideClickPhone = (event) => {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');

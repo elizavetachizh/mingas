@@ -1,4 +1,3 @@
-import type { InputProps } from '../../const/consts';
 import { Input } from './styles';
 
 export default function InputName({
@@ -10,7 +9,7 @@ export default function InputName({
   placeholder,
   style,
   className,
-}: InputProps): JSX.Element {
+}) {
   return (
     <div>
       <Input

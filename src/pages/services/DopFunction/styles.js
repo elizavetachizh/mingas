@@ -19,15 +19,9 @@ export const DescriptionService = styled.div`
     font-size: 14px;
   }
   table {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    border-collapse: collapse;
-    border: 1px solid #ccc;
     p {
       text-indent: 0;
     }
- 
   }
 `;
 

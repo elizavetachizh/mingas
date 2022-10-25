@@ -24,7 +24,7 @@ export default function Gratitude() {
     setImage(gratitude[id - 1].img);
     setModalVisible(true);
   }, []);
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
   };
   const handleCloseCLick = useCallback(() => {

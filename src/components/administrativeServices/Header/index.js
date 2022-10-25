@@ -23,7 +23,6 @@ export default function HeaderAdministrativeServices() {
   const handlerLinkClickUniqueName = useCallback(
     (linkId) => {
       navigate(`${pathname}?linkId=${linkId}`);
-      window.scrollTo(0, 0);
     },
 
     [pathname]

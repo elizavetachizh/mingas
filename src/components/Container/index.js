@@ -5,13 +5,11 @@ import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import Footer from '../footer';
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { Container } from '../../pages/company/styles';
 
 export default function ContainerContent({ name, content }) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
   return (
     <Container>
       <Header backgroundHeader={'blue'} />

@@ -1,4 +1,3 @@
-import { InputPropsText } from '../../../const/consts';
 import { TextArea } from '../styles';
 
 const divStyle = {
@@ -16,7 +15,7 @@ export default function InputText({
   style,
   className,
   wrap,
-}: InputPropsText): JSX.Element {
+}) {
   return (
     <div style={divStyle}>
       <TextArea

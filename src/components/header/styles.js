@@ -311,10 +311,6 @@ export const DivPhone = styled.div`
   @media (max-width: 673px) {
     width: 70%;
   }
-  //@media (max-width: 640px) {
-  //  width: 80%;
-  //  justify-content: left;
-  //}
   @media (max-width: 540px) {
     width: 80%;
   }

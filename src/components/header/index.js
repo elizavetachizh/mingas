@@ -161,6 +161,7 @@ export default function Header({ backgroundHeader }) {
                       <NavLink to="/services/2">Обмен и покупка баллонов</NavLink>
                       <NavLink to="/services/9">Цены на газ и услуги</NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
+                       <NavLink to="/services/8">Заключение договоров</NavLink>
                     </span>
                   </ContanerLink>
 

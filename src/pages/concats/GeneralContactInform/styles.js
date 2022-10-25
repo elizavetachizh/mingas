@@ -58,36 +58,26 @@ export const Td = styled.td`
 `;
 
 export const TableServices = styled.table`
-  width: 94%;
-  margin: 0 auto 30px;
-  background-color: transparent;
+  width: 96%;
+  margin: 30px auto;
   border-collapse: collapse;
-  overflow-x: auto;
   td {
     border: 1px solid #ccc;
-    background: #fff;
     text-align: center;
     padding: 0.2rem 0.5rem;
     font-size: 14px;
     @media (max-width: 1152px) {
-      font-size: 11px;
+      font-size: 12px;
     }
     @media (max-width: 880px) {
+      font-size: 10px;
+    }
+    @media (max-width: 540px) {
+      padding: 0;
       font-size: 9px;
     }
-    @media (max-width: 500px) {
-      padding: 0;
+    @media (max-width: 418px) {
+      font-size: 7px;
     }
-    @media (max-width: 380px) {
-      font-size: 6px;
-    }
-  }
-  tr {
-    border: 1px solid black;
-    text-align: center;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
   }
 `;
