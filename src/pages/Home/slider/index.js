@@ -15,6 +15,20 @@ export default class CarouselFun extends React.Component {
       value: 0,
       slides: [
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            <BackgroundContainer src={imageContent} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text>
+                28.10.2022 с 11.00 до 12.00 в УП «МИНГАЗ» будет проводиться прямая телефонная линия!
+                Ответим на все интересующие вас вопросы входящие в компетенцию предприятия. <br />
+                Тел. для связи 299 28 80
+              </Text>
+            </DivInformAbout>
+          </DivText>
+        </div>,
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
             <DivInformAbout>

@@ -17,6 +17,18 @@ export default class CarouselMobile extends React.Component {
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
           </DivImage>
+          <DivText style={{ justifyContent: 'center', alignItems: 'center' }} className={'phone'}>
+            <Text>
+              28.10.2022 с 11.00 до 12.00 в УП «МИНГАЗ» будет проводиться прямая телефонная линия!
+              Ответим на все интересующие вас вопросы входящие в компетенцию предприятия.
+              <br /> Тел. для связи 299 28 80
+            </Text>
+          </DivText>
+        </>,
+        <>
+          <DivImage>
+            <img src={imageContent} alt={'картинка загружается'} />
+          </DivImage>
           <DivText className={'phone'}>
             <Text className={'phone'} style={{ position: 'initial' }}>
               Добро пожаловать на сайт <br />
