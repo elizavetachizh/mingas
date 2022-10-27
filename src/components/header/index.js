@@ -30,7 +30,6 @@ import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.webp';
 import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
 import Language from './language';
-import { Trans, useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
 import { IoIosArrowForward } from 'react-icons/io';
@@ -59,7 +58,6 @@ export default function Header({ backgroundHeader }) {
       <IoIosCloses />
     </MenuClose>
   );
-  const { t } = useTranslation();
 
   return (
     <Container backgroundHeader={backgroundHeader}>
@@ -77,18 +75,18 @@ export default function Header({ backgroundHeader }) {
                   <div>
                     <a href={'tel:104'}>104</a>
                   </div>
-                  <p> {t('header:emergencyService')}</p>
+                  <p>Аварийная служба</p>
                 </Div104>
                 <Div104>
                   <div>
                     <a href={'tel:162'}>162</a>
                   </div>
-                  <p>{t('header:contactCenter')}</p>
+                  <p>Контакт-центр</p>
                 </Div104>
               </DivPhone>
               <ContainerElements>
                 <PersonalAccButton
-                  title={`${t('header:PersonalArea')}`}
+                  title="Контакт-центр"
                   href={'https://service.mingas.by:5002/auth/login#login'}
                 >
                   <IoMdContacts className={'icon'} />
@@ -103,17 +101,15 @@ export default function Header({ backgroundHeader }) {
             <ButtonsContainer>
               <Dropdown className={'header-btns'}>
                 <CompanyButton to="/company/history">
-                  <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
+                  Мингаз сегодня
                   <span />
                 </CompanyButton>
                 <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/company/history">{t('header:history')}</ButtonLink>
-                  <ButtonLink to="/company/management">
-                    {t('header:enterpriseManagement')}
-                  </ButtonLink>
-                  <ButtonLink to="/company/career"> {t('header:work')}</ButtonLink>
+                  <ButtonLink to="/company/history">История предприятия"</ButtonLink>
+                  <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
+                  <ButtonLink to="/company/career"> Работа в УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/parent-organizations">
-                    {t('header:ParentOrganizations')}
+                    Вышестоящие организации
                   </ButtonLink>
                   <ContanerLink>
                     <ButtonLink to="/company/branches" style={{ width: '100%' }}>
@@ -142,7 +138,7 @@ export default function Header({ backgroundHeader }) {
 
               <Dropdown>
                 <ServicesButton to="/residents-of-the-capital-region">
-                  {t('header:Services')}
+                  Жителям столичного региона
                   <span />
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
@@ -161,7 +157,7 @@ export default function Header({ backgroundHeader }) {
                       <NavLink to="/services/2">Обмен и покупка баллонов</NavLink>
                       <NavLink to="/services/9">Цены на газ и услуги</NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
-                       <NavLink to="/services/8">Заключение договоров</NavLink>
+                      <NavLink to="/services/8">Заключение договоров</NavLink>
                     </span>
                   </ContanerLink>
 
@@ -178,7 +174,7 @@ export default function Header({ backgroundHeader }) {
 
               <Dropdown>
                 <ServicesButton rel="canonical" to="/for-business">
-                  {t('header:ForBusiness')} <span />
+                  Для бизнеса <span />
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
@@ -200,7 +196,7 @@ export default function Header({ backgroundHeader }) {
 
               <Dropdown>
                 <PressCenterButtons to="/press-center/1">
-                  {t('header:PressCenter')}
+                  Пресс-центр
                   <span />
                 </PressCenterButtons>
                 <DivButtonHeader className={'header-btns'}>
@@ -213,7 +209,7 @@ export default function Header({ backgroundHeader }) {
               </Dropdown>
               <Dropdown>
                 <ContactButton rel="canonical" to="/contacts/phone-services">
-                  {t('header:Contacts')}
+                  Контакты
                   <span />
                 </ContactButton>
                 <DivButtonHeader className={'header-btns'}>
@@ -228,7 +224,7 @@ export default function Header({ backgroundHeader }) {
                 </DivButtonHeader>
               </Dropdown>
               <ServicesButton to="/company/union">
-                {t('header:union')}
+                Профсоюз
                 <span />
               </ServicesButton>
               {/*<MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>*/}

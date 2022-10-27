@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Button, DivInput, DivInputCheckbox, Form, InputCheckbox, Label, Span } from './styles';
-import { useTranslation } from 'react-i18next';
 import { useForm } from '../../hooks/use-form-hook';
 import InputName from '../input';
 import InputText from '../input/inputText';
@@ -18,10 +17,11 @@ export default function FormQuestion() {
     setFormValues,
     msg,
   } = useForm();
-  const { t } = useTranslation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const [isModalVisible, setModalVisible] = useState(false);
   const [isModalVarningVisible, setModalVarningVisible] = useState(false);
   const [documentq, setDocumentq] = useState([]);
@@ -56,7 +56,7 @@ export default function FormQuestion() {
 
   const getFileURL = (file) => {
     const blob = new Blob([file], {
-      type: 'application/octetstream, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      type: 'application/octetstream, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf, application/vnd.ms-excel, text/plain, image/jpeg, image/png, application/zip',
     });
 
     return URL.createObjectURL(blob);
@@ -100,7 +100,7 @@ export default function FormQuestion() {
     <Form autocomplete="on" onSubmit={handleSubmit} ref={form}>
       <DivInput>
         <Label>
-          {t('form:name')}
+          ФИО заявителя полностью
           <Span>*</Span>
         </Label>
         <InputName
@@ -111,12 +111,12 @@ export default function FormQuestion() {
           onChange={handleUserInput}
           value={formValues.name}
           error={errors.name}
-          label={t('form:name')}
+          label={' ФИО заявителя полностью'}
         />
       </DivInput>
       <DivInput>
         <Label>
-          {t('form:email')}
+          Введите ваш e-mail
           <Span>*</Span>
         </Label>
         <InputName
@@ -127,12 +127,12 @@ export default function FormQuestion() {
           onChange={handleUserInput}
           value={formValues.email}
           error={errors.email}
-          label={t('form:email')}
+          label={'Введите ваш e-mail'}
         />
       </DivInput>
       <DivInput>
         <Label>
-          {t('form:address')}
+          Введите адрес проживания
           <Span>*</Span>
         </Label>
         <InputName
@@ -143,12 +143,12 @@ export default function FormQuestion() {
           onChange={handleUserInput}
           value={formValues.address}
           error={errors.address}
-          label={t('form:address')}
+          label={'Введите адрес проживания'}
         />
       </DivInput>
       <DivInput>
         <Label>
-          {t('form:phone')}
+          Контактный телефон
           <Span>*</Span>
         </Label>
         <InputName
@@ -159,7 +159,7 @@ export default function FormQuestion() {
           onChange={handleUserInput}
           value={formValues.phone}
           error={errors.phone}
-          label={t('form:phone')}
+          label={'Контактный телефон'}
         />
       </DivInput>
       <DivInput>
@@ -176,7 +176,7 @@ export default function FormQuestion() {
       </DivInput>
       <DivInput>
         <Label>
-          {t('form:text')}
+          Текст сообщения
           <Span>*</Span>
         </Label>
         <InputText
@@ -189,8 +189,6 @@ export default function FormQuestion() {
           onChange={handleUserInput}
           value={formValues.message}
           error={errors.message}
-          label={t('form:text')}
-          inputText={''}
         />
       </DivInput>
       <input type="file" multiple onChange={changeHAnder} id="file-input" />
@@ -220,6 +218,7 @@ export default function FormQuestion() {
             : null}
         </ol>
       </div>
+
       <DivInputCheckbox>
         <InputCheckbox
           type="checkbox"

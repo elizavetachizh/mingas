@@ -9,7 +9,6 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import { t } from 'i18next';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
 import { useRequestForVerificationOfGasMeters } from './verificationOfGasMeters-hook';
@@ -35,7 +34,6 @@ export default function ApplicationForVerificationOfGasMeters() {
           </Label>
           <InputName
             type={'text'}
-            name={'name'}
             inputName={'name'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
@@ -45,14 +43,13 @@ export default function ApplicationForVerificationOfGasMeters() {
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:email')}
+            Введите ваш e-mail:
             <Span>*</Span>
           </Label>
           <InputAddress
             inputAddress={'email'}
             type="email"
-            name="email"
-            placeholder={'Введите ваш e-mail'}
+            placeholder={'ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
             error={errors.email}
@@ -64,7 +61,6 @@ export default function ApplicationForVerificationOfGasMeters() {
           </Label>
           <InputName
             inputName={'text'}
-            name={'text'}
             type={'text'}
             placeholder={'Введите абонентский номер'}
             onChange={handleUserInput}
@@ -74,7 +70,7 @@ export default function ApplicationForVerificationOfGasMeters() {
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:phone')}
+            Контактный телефон:
             <Span>*</Span>
           </Label>
           <InputPhone
@@ -89,40 +85,36 @@ export default function ApplicationForVerificationOfGasMeters() {
         </DivInput>
         <DivInput>
           <Label>
-            Адрес объекта
+            Адрес объекта:
             <Span>*</Span>
           </Label>
           <InputName
             inputName={'address'}
             type="text"
-            name={'address'}
             placeholder={'Введите адрес объекта'}
             onChange={handleUserInput}
             value={requestValues.address}
             error={errors.address}
           />
         </DivInput>
-        <DivInput>
-          <Label>
-            Желаемая дата выполнения работы <Span>*</Span>
-          </Label>
-          <InputDate
-            error={errors.date}
-            inputDate={'date'}
-            onChange={handleUserInput}
-            type={'date'}
-            name={'date'}
-            value={requestValues.date}
-            placeholder={'Введите желаемую дату выполнения работы'}
-          />
-        </DivInput>
+
+        <InputDate
+          span={'*'}
+          label={'Желаемая дата выполнения работы'}
+          error={errors.date}
+          inputDate={'date'}
+          onChange={handleUserInput}
+          type={'date'}
+          value={requestValues.date}
+          placeholder={'Введите желаемую дату выполнения работы'}
+        />
+
         <span style={{ color: 'red' }}>
           *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
         </span>
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
-            span={'*'}
             onChange={handleCheckBox}
             checked={requestValues.isAgree}
             inputName="isAgree"

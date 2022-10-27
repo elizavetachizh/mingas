@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import InputName from '../input';
 import {
   Form,
@@ -25,7 +24,6 @@ export default function FormQuestionForEntity() {
     form,
     msg,
   } = useFormForEnity();
-  const { t } = useTranslation();
 
   const formImage = document.getElementById('file-input');
   const [isModalVisible, setModalVisible] = useState(false);
@@ -158,7 +156,7 @@ export default function FormQuestionForEntity() {
 
         <DivInput>
           <Label>
-            {t('form:email')}
+            Адрес электронной почты
             <Span>*</Span>
           </Label>
           <InputName
@@ -206,7 +204,7 @@ export default function FormQuestionForEntity() {
 
         <DivInput>
           <Label>
-            {t('form:text')}
+            Текст сообщения
             <Span>*</Span>
           </Label>
           <InputText
@@ -219,7 +217,7 @@ export default function FormQuestionForEntity() {
             onChange={handleUserInput}
             value={formValues.message}
             error={errors.message}
-            label={t('form:text')}
+            label={'Текст сообщения'}
             inputText={''}
           />
         </DivInput>

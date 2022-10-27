@@ -77,7 +77,7 @@ export default function AllSubdivisions() {
       </BlockSearchService>
     );
   };
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');

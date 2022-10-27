@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { HeaderCompanyDiv, DivButton, HeaderCompanyBtn, HeaderCompanyContainer } from './styles';
-import { t } from 'i18next';
 import useMediaQuery from '../../Home/parallax/useMediaQuery';
 import {
   BtnIsOpen,
@@ -34,20 +33,18 @@ export default function HeaderCompany() {
           </BtnIsOpen>
           <Div className={isOpen && `shake menu`}>
             <DivButton className={'menu'}>
-              <HeaderCompanyBtn to="/company/history">
-                {t('headerCompany:companyHistory')}
-              </HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/management">
-                {t('headerCompany:management')}
-              </HeaderCompanyBtn>
+              <HeaderCompanyBtn to="/company/history">История предприятия</HeaderCompanyBtn>
+              <HeaderCompanyBtn to="/company/management">Руководство</HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/career">Работа в УП "МИНГАЗ"</HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/parent-organizations">
                 Вышестоящие организации
               </HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/branches">Филиалы УП "Мингаз"</HeaderCompanyBtn>
-              <HeaderCompanyBtn to="company/corruption">Противодействие коррупции</HeaderCompanyBtn>
+              <HeaderCompanyBtn to="/company/corruption">
+                Противодействие коррупции
+              </HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/documentation">
-                {t('headerCompany:documentation')}
+                Сертификаты, лицензии, свидетельства
               </HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/gratitude">Благодарности и награды</HeaderCompanyBtn>
             </DivButton>
@@ -56,12 +53,8 @@ export default function HeaderCompany() {
       ) : (
         <HeaderCompanyDiv>
           <DivButton>
-            <HeaderCompanyBtn to="/company/history">
-              {t('headerCompany:companyHistory')}
-            </HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/management">
-              {t('headerCompany:management')}
-            </HeaderCompanyBtn>
+            <HeaderCompanyBtn to="/company/history">История предприятия</HeaderCompanyBtn>
+            <HeaderCompanyBtn to="/company/management">Руководство</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/career">Работа в УП "МИНГАЗ"</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/parent-organizations">
               Вышестоящие организации
@@ -69,7 +62,7 @@ export default function HeaderCompany() {
             <HeaderCompanyBtn to="/company/branches/">Филиалы УП "Мингаз"</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/corruption">Противодействие коррупции</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/documentation">
-              {t('headerCompany:documentation')}
+              Сертификаты, лицензии, свидетельства
             </HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/gratitude">Благодарности и награды</HeaderCompanyBtn>
           </DivButton>

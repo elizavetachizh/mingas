@@ -18,7 +18,7 @@ export default function SearchForDepartments() {
     }
   };
 
-  const handleInsideClick = (event: MouseEvent) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
   };

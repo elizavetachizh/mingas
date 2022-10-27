@@ -251,11 +251,6 @@ export const dataLegalEntities = [
                   Образец акта приемки – передачи природного газа
                 </a>
               </li>
-              <li>
-                <NavLink to={'/services-legal-entities/2/telemetria'}>
-                  Доступ к информации о параметрах расхода газа (телеметрия)
-                </NavLink>
-              </li>
             </ul>
           </div>
         ),
@@ -302,6 +297,17 @@ export const dataLegalEntities = [
               <a href={'tel:+375(17) 299-28-77'}>+375(17) 299-28-77</a>.
             </p>
           </div>
+        ),
+      },
+      {
+        nameDescription: 'Телеметрия',
+        inform: (
+          <>
+            <NavLink to={'/services-legal-entities/2/telemetria'}>
+              Доступ к информации о параметрах расхода газа, выведенных по системе телеметрии с узла
+              учёта газа
+            </NavLink>
+          </>
         ),
       },
     ],

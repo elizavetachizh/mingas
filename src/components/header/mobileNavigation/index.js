@@ -10,8 +10,6 @@ import {
 } from './styles';
 import { ButtonLink } from '../../../pages/services/styles';
 import React, { useEffect, useState } from 'react';
-import { Trans } from 'react-i18next';
-import { t } from 'i18next';
 import next from '../../../assets/png/next.png';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from '../styles';
@@ -83,7 +81,7 @@ export default function MobileNavigation() {
         <Dropdown>
           <DivBlocksHeader>
             <CompanyButton className={isOpen && `handleBtn`} to="/company/history">
-              <Trans i18nKey="header:ABOUTTHEENTERPRISE" />
+              Мингаз сегодня
             </CompanyButton>
             <div>
               {isOpen ? <IoIosArrowUp onClick={animate} /> : <IoIosArrowDown onClick={animate} />}
@@ -114,7 +112,7 @@ export default function MobileNavigation() {
               className={isOpenBtn && `handleBtn`}
               to="/residents-of-the-capital-region"
             >
-              {t('header:Services')}
+              Жителям столичного региона
             </CompanyButton>
             <div>
               {isOpenBtn ? (
@@ -176,7 +174,7 @@ export default function MobileNavigation() {
               className={isOpenBtnForPressCenter && `handleBtn`}
               to="/press-center/1"
             >
-              {t('header:PressCenter')}
+              Пресс-центр
               <span />
             </PressCenterButtons>
             <div>
@@ -204,7 +202,7 @@ export default function MobileNavigation() {
               className={isOpenBtnForContacts && `handleBtn`}
               to="/contacts/phone-services"
             >
-              {t('header:Contacts')}
+              Контакты
             </CompanyButton>
             <div>
               {isOpenBtnForContacts ? (

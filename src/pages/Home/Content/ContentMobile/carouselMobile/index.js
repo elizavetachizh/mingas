@@ -3,7 +3,6 @@ import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import phone from '../../../../../assets/png/PhoneFour.png';
 import imageContent from '../../../../../assets/background/mingas_background.webp';
 import newPost from '../../../../../assets/background/newPost.jpg';
-import { Trans } from 'react-i18next';
 import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
@@ -20,7 +19,9 @@ export default class CarouselMobile extends React.Component {
           </DivImage>
           <DivText className={'phone'}>
             <Text className={'phone'} style={{ position: 'initial' }}>
-              <Trans i18nKey="description:part1" />
+              Добро пожаловать на сайт <br />
+              производственного республиканского <br />
+              унитарного предприятия “МИНГАЗ”
             </Text>
             <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
               <img src={phone} alt={'картинка загружается'} />

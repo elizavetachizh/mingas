@@ -14,9 +14,9 @@ export const DivSelect = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin: 2% auto;
-  @media (max-width: 640px) {
-    //width: 530px;
+  margin: 2% 5%;
+  @media (max-width: 900px) {
+    width: 88%;
   }
   @media (max-width: 350px) {
     width: 280px;

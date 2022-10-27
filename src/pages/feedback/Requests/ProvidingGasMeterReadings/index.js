@@ -11,7 +11,6 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import { t } from 'i18next';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 import InputAddress from '../../../../components/input/inputAddress';
 import InputPhone from '../../../../components/input/inputPhone';
@@ -65,7 +64,6 @@ export default function ProvidingGasMeterReadings() {
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
           <InputName
-            name={'name'}
             type={'text'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
@@ -76,14 +74,13 @@ export default function ProvidingGasMeterReadings() {
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:email')}
+            Введите ваш e-mail:
             <Span>*</Span>
           </Label>
           <InputAddress
             type="email"
             inputAddress={'email'}
-            name="email"
-            placeholder={'Введите ваш e-mail'}
+            placeholder={'ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
             error={errors.email}
@@ -95,7 +92,6 @@ export default function ProvidingGasMeterReadings() {
           </Label>
           <InputName
             inputName={'text'}
-            name={'text'}
             type={'text'}
             placeholder={'Введите абонентский номер'}
             onChange={handleUserInput}
@@ -105,14 +101,13 @@ export default function ProvidingGasMeterReadings() {
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:phone')}
+            Контактный телефон:
             <Span>*</Span>
           </Label>
           <InputPhone
-            maxlength='13'
+            maxlength="13"
             type="tel"
             inputPhone={'phone'}
-            name="phone"
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
@@ -121,18 +116,16 @@ export default function ProvidingGasMeterReadings() {
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:address')}
+            Адрес объекта:
             <Span>*</Span>
           </Label>
           <InputName
             inputName={'address'}
             type="text"
-            name={'address'}
             placeholder={'Введите адрес проживания'}
             onChange={handleUserInput}
             value={requestValues.address}
             error={errors.address}
-            label={t('form:address')}
           />
         </DivInput>
         <DivInputFile>
@@ -142,7 +135,6 @@ export default function ProvidingGasMeterReadings() {
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
-            span={'*'}
             onChange={handleCheckBox}
             checked={requestValues.isAgree}
             inputName="isAgree"

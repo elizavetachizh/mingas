@@ -1,16 +1,25 @@
-import React from 'react';
-import { Select } from './styles';
-import i18n from 'i18next';
-import { availableLanguages } from '../../../i18n';
+import React, { useEffect } from 'react';
+import { Div } from './styles';
 
 export default function Language() {
-  return (
-    <Select>
-      <select defaultValue={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
-        {availableLanguages.map((language) => (
-          <option key={language}>{language}</option>
-        ))}
-      </select>
-    </Select>
-  );
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: 'ru',
+        autoDisplay: false,
+        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+      },
+      'google_translate_element'
+    );
+  };
+  useEffect(() => {
+    var addScript = document.createElement('script');
+    addScript.setAttribute(
+      'src',
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
+  return <Div id="google_translate_element" />;
 }

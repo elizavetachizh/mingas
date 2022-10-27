@@ -2,14 +2,12 @@ import React from 'react';
 import { DivUsefulInform, DivInform } from './styles';
 import LinkInform from './components_link_inform';
 import { data } from '../../../assets/data/data';
-import { useTranslation } from 'react-i18next';
 import TitleForHome from '../../../components/TitleForHome';
 
 export default function UsefulInform() {
-  const { t } = useTranslation();
   return (
     <DivUsefulInform>
-      <TitleForHome color={'blue'} infoTitle={`${t('usefulInform:usefulInform')}`} />
+      <TitleForHome color={'blue'} infoTitle={'Полезная информация'} />
       <DivInform>
         {data.map((element) => (
           <LinkInform

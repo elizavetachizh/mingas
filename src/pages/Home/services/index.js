@@ -4,25 +4,26 @@ import { data } from '../../../assets/data/data_service_individuals';
 import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities';
 import { Container, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
-import { useTranslation } from 'react-i18next';
 import TitleForHome from '../../../components/TitleForHome';
 import LinkServicesForLegalEntities from './dataComponentsForLEgalEntities';
 
 export default function HomeServices() {
-  const { t } = useTranslation();
   return (
     <Container>
-      <TitleForHome fontSize={'m'} infoTitle={`${t('services:title')}`} />
+      <TitleForHome
+        fontSize={'m'}
+        infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'}
+      />
       <ButtonServicesHome>
         <ButtonFun
           href={'/services'}
           backgrounder={'gray'}
-          infoButton={`${t('header:Services')}`}
+          infoButton={'Жителям столичного региона'}
         />
         <ButtonFun
           href={'/services-legal-entities'}
           backgrounder={'gray'}
-          infoButton={`${t('header:ForBusiness')}`}
+          infoButton={'Для бизнеса'}
         />
       </ButtonServicesHome>
       <ServicesDiv>

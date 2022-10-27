@@ -6,7 +6,6 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.png';
 import imageContent from '../../../assets/background/mingas_background.webp';
 import newPost from '../../../assets/background/newPost.jpg';
-import { Trans } from 'react-i18next';
 import ButtonFun from '../../../components/button';
 
 export default class CarouselFun extends React.Component {
@@ -20,7 +19,9 @@ export default class CarouselFun extends React.Component {
           <DivText className={'phone'}>
             <DivInformAbout>
               <Text>
-                <Trans i18nKey="description:part1" />
+                Добро пожаловать на сайт <br />
+                производственного республиканского <br />
+                унитарного предприятия “МИНГАЗ”
               </Text>
             </DivInformAbout>
             <a rel={'preconnect'} className={'phone'} href={'tel:162'}>

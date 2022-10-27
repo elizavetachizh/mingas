@@ -3,18 +3,17 @@ import {
   Button,
   DivInput,
   DivInputCheckbox,
-  DivInputFile,
   InputCheckbox,
-  InputFile,
   Label,
   Span,
 } from '../../formQuestion/styles';
 import InputName from '../../input';
-import { t } from 'i18next';
 import InputAddress from '../../input/inputAddress';
 import InputPhone from '../../input/inputPhone';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useFeedback } from '../leaveFeedback-hook';
+import PopUp from '../../popUp';
+import InputText from '../../input/inputText';
 
 export default function LeaveFeedbackMingas() {
   const {
@@ -31,38 +30,79 @@ export default function LeaveFeedbackMingas() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVarningVisible, setModalVarningVisible] = useState(false);
+  const [documentq, setDocumentq] = useState([]);
   const formImage = document.getElementById('file-input');
-  formImage?.addEventListener('change', () => {
-    uploadFile(formImage.files[0]);
-  });
 
-  function uploadFile(file) {
-    if (
-      ![
-        'application/msword',
-        'application/pdf',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      ].includes(file.type)
-    ) {
-      alert('Не подходит формат файла');
-      formImage.value = '';
-    }
-    if (file.size > 60000) {
-      alert('Файл является слишком большим');
-      formImage.value = '';
-    }
-    let reader = new FileReader();
-    reader.onload = function () {
-      setFormValues({ ...formValues, file: reader.result });
-      setFormValues({ ...formValues, document: reader.result });
-    };
+  const handleCloseCLick = useCallback(() => {
+    setModalVisible(false);
+  }, []);
 
-    reader.onerror = function (e) {
-      console.log(e);
-    };
+  const handlewoCloseCLick = useCallback(() => {
+    setModalVarningVisible(false);
+  }, []);
 
-    reader.readAsDataURL(file);
-  }
+  const handleFileChosen = async (file) => {
+    return new Promise((resolve, reject) => {
+      let fileReader = new FileReader();
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = reject;
+      fileReader.readAsDataURL(file);
+    });
+  };
+
+  const readAllFiles = async (AllFiles) => {
+    return await Promise.all(
+      AllFiles.map(async (file) => {
+        return await handleFileChosen(file);
+      })
+    );
+  };
+
+  const getFileURL = (file) => {
+    const blob = new Blob([file], {
+      type: 'application/octetstream, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf, application/vnd.ms-excel, text/plain',
+    });
+
+    return URL.createObjectURL(blob);
+  };
+  const changeHAnder = useCallback(
+    (event) => {
+      if (Object.values(event.target.files)[0].size > 120000) {
+        // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
+        setModalVisible(true);
+        formImage.value = '';
+        setDocumentq([]);
+      } else if (
+        ![
+          'application/msword',
+          'application/pdf',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          'application/vnd.ms-excel',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          'application/zip',
+          'text/plain',
+        ].includes(Object.values(event.target.files)[0].type)
+      ) {
+        // alert('Не подходит формат файла');
+        setModalVarningVisible(true);
+        formImage.value = '';
+        setDocumentq([]);
+      } else {
+        setDocumentq(Object.values(event.target.files));
+      }
+
+      readAllFiles(Object.values(event.target.files)).then((result) =>
+        setFormValues({ ...formValues, information: result })
+      );
+    },
+    [formValues]
+  );
+
   return (
     <DivApplication>
       <Form style={{ border: 'none', borderRadius: 'none' }} onSubmit={handleSubmit} ref={form}>
@@ -71,7 +111,6 @@ export default function LeaveFeedbackMingas() {
             ФИО полностью: <Span>*</Span>
           </Label>
           <InputName
-            name={'name'}
             type={'text'}
             placeholder={'Введите ФИО полностью'}
             inputName={'name'}
@@ -83,13 +122,12 @@ export default function LeaveFeedbackMingas() {
 
         <DivInput>
           <Label>
-            {t('form:email')}
+            Адрес электронной почты
             <Span>*</Span>
           </Label>
           <InputAddress
             type="email"
             inputAddress={'email'}
-            name="email"
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
             value={formValues.email}
@@ -99,13 +137,12 @@ export default function LeaveFeedbackMingas() {
 
         <DivInput>
           <Label>
-            {t('form:phone')}
+            Контактный телефон
             <Span>*</Span>
           </Label>
           <InputPhone
             type="tel"
             inputPhone={'phone'}
-            name="phone"
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={formValues.phone}
@@ -117,7 +154,6 @@ export default function LeaveFeedbackMingas() {
           <Label>Тема:</Label>
           <InputName
             inputName={'text'}
-            name={'text'}
             type={'text'}
             placeholder={'Напишите тему'}
             onChange={handleUserInput}
@@ -128,27 +164,49 @@ export default function LeaveFeedbackMingas() {
 
         <DivInput>
           <Label>
-            Сообщение<Span>*</Span>
+            Текст сообщения
+            <Span>*</Span>
           </Label>
-          <InputName
+          <InputText
+            wrap={'soft'}
+            text={'message'}
             className={'message'}
-            inputName={'message'}
-            name={'message'}
-            type={'text'}
-            placeholder={'Введите ваше сообщение'}
+            type="message"
+            name="message"
+            placeholder={'Текст сообщения'}
             onChange={handleUserInput}
             value={formValues.message}
             error={errors.message}
           />
         </DivInput>
 
-        <DivInputFile>
-          <div>
-            <InputFile type="file" id="file-input" name="file" />
-            <span>Прекрипите файл</span>
-          </div>
-          <div id={'formPreview'}></div>
-        </DivInputFile>
+        <input type="file" multiple onChange={changeHAnder} id="file-input" />
+        <p style={{ fontSize: '12px' }}>
+          Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip;
+          табличных файлов: xls, xlsx.
+        </p>
+        {isModalVisible && (
+          <PopUp
+            text={' Файл является слишком большим, пожалуйста уменьшите размер файла'}
+            handleCloseCLick={handleCloseCLick}
+          />
+        )}
+        {isModalVarningVisible && (
+          <PopUp text={'Не подходит формат файла'} handleCloseCLick={handlewoCloseCLick} />
+        )}
+        <div>
+          <ol>
+            {documentq.length
+              ? documentq.map((element) => (
+                  <li key={getFileURL(element)}>
+                    <a href={getFileURL(element)} download>
+                      {element.name}
+                    </a>
+                  </li>
+                ))
+              : null}
+          </ol>
+        </div>
 
         <DivInputCheckbox>
           <InputCheckbox

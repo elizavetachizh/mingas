@@ -9,7 +9,6 @@ import {
   Span,
 } from '../../../../components/formQuestion/styles';
 import InputName from '../../../../components/input';
-import { t } from 'i18next';
 import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';
@@ -36,31 +35,25 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           </Label>
           <InputName
             inputName={'name'}
-            name={'name'}
             type={'text'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
             value={requestValues.name}
             error={errors.name}
-            label={t('form:name')}
-            span={'*'}
           />
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:email')}
+            Введите ваш e-mail:
             <Span>*</Span>
           </Label>
           <InputName
             inputName={'email'}
             type="email"
-            name="email"
-            placeholder={'Введите ваш e-mail'}
+            placeholder={'ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
             error={errors.email}
-            label={t('form:email')}
-            span={'*'}
           />
         </DivInput>
         <DivInput>
@@ -69,7 +62,6 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           </Label>
           <InputName
             inputName={'text'}
-            name={'text'}
             type={'text'}
             placeholder={'Введите абонентский номер'}
             onChange={handleUserInput}
@@ -79,19 +71,16 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         </DivInput>
         <DivInput>
           <Label>
-            {t('form:phone')}
+            Контактный телефон:
             <Span>*</Span>
           </Label>
           <InputName
             inputName={'phone'}
             type="tel"
-            name="phone"
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
             error={errors.phone}
-            label={t('form:phone')}
-            span={'*'}
           />
         </DivInput>
         <DivInput>
@@ -102,17 +91,15 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           <InputName
             inputName={'address'}
             type="text"
-            name={'address'}
             placeholder={'Введите ваш адрес'}
             onChange={handleUserInput}
             value={requestValues.address}
             error={errors.address}
-            label={t('form:address')}
-            span={'*'}
           />
         </DivInput>
+
         <Select
-          label={'Тип оборудования'}
+          label={'Тип оборудования:'}
           span={'*'}
           onChange={handleChangeTime}
           value={requestValues.time}
@@ -120,9 +107,10 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           error={errors.time}
           options={OPTIONS_EQUIPMENT}
         ></Select>
+
         <DivInput style={{ margin: '30px auto' }}>
           <Label>
-            Опишите неисправность <Span>*</Span>
+            Опишите неисправность: <Span>*</Span>
           </Label>
           <InputName
             style={{ height: '100px', padding: '0 18px' }}
@@ -130,21 +118,19 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             inputName={'message'}
             onChange={handleUserInput}
             type={'text'}
-            name={'message'}
             value={requestValues.message}
             placeholder={'Опишите неисправность'}
           />
         </DivInput>
         <DivInput>
           <Label>
-            Желаемая дата выполнения работы <Span>*</Span>
+            Желаемая дата выполнения работы: <Span>*</Span>
           </Label>
           <InputName
             error={errors.date}
             inputName={'date'}
             onChange={handleUserInput}
             type={'date'}
-            name={'date'}
             value={requestValues.date}
             placeholder={'Введите желаемую дату выполнения работы'}
           />
@@ -156,7 +142,6 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         <DivInputCheckbox>
           <InputCheckbox
             type="checkbox"
-            span={'*'}
             onChange={handleCheckBox}
             checked={requestValues.isAgree}
             inputName="isAgree"

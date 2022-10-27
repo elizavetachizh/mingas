@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Button, DivInput, Form, Label, Span } from '../../formQuestion/styles';
 import InputName from '../../input';
 import React from 'react';
@@ -7,7 +6,6 @@ import { useFormTelemetria } from './telemetria-hook';
 export default function FormTelemetria() {
   const { handleUserInput, formValues, errors, isButtonDisabled, handleSubmit, form, msg } =
     useFormTelemetria();
-  const { t } = useTranslation();
   return (
     <Form onSubmit={handleSubmit} ref={form}>
       <DivInput>
@@ -38,12 +36,12 @@ export default function FormTelemetria() {
           onChange={handleUserInput}
           value={formValues.name}
           error={errors.name}
-          label={t('form:name')}
+          label={'ФИО заявителя полностью'}
         />
       </DivInput>
       <DivInput>
         <Label>
-          {t('form:email')}
+          Адрес электронной почты
           <Span>*</Span>
         </Label>
         <InputName
@@ -54,7 +52,7 @@ export default function FormTelemetria() {
           onChange={handleUserInput}
           value={formValues.email}
           error={errors.email}
-          label={t('form:email')}
+          label={'Адрес электронной почты'}
         />
       </DivInput>
       <DivInput>
@@ -70,7 +68,7 @@ export default function FormTelemetria() {
           onChange={handleUserInput}
           value={formValues.address}
           error={errors.address}
-          label={t('form:address')}
+          label={'Адрес объекта'}
         />
       </DivInput>
       <DivInput>
@@ -86,7 +84,7 @@ export default function FormTelemetria() {
           onChange={handleUserInput}
           value={formValues.phone}
           error={errors.phone}
-          label={t('form:phone')}
+          label={'Телефон контактного лица'}
         />
       </DivInput>
       <DivInput>

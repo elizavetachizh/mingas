@@ -4,13 +4,11 @@ import { DivInform } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
 import { ArticleForHome } from '../../PressCenter/styles';
 import { BlockContainerRequests } from '../../feedback/styles';
-import { useTranslation } from 'react-i18next';
 
 export default function News() {
-  const { t } = useTranslation();
   return (
     <BlockContainerRequests>
-      <TitleForHome color={'blue'} infoTitle={`${t('smi:title')}`} />
+      <TitleForHome color={'blue'} infoTitle={'СМИ о нас'} />
       <DivInform>
         <ArticleForHome>
           <a
@@ -85,7 +83,7 @@ export default function News() {
       </DivInform>
       <ButtonFun
         href={'/press-center/1'}
-        infoButton={`${t('smi:Show')}`}
+        infoButton={'Показать ещё'}
         backgrounder={'blue'}
         style={{ margin: '0 auto 1%' }}
       />
