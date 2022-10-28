@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
-import phone from '../../../../../assets/png/PhoneFour.png';
+import phone from '../../../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../../../assets/background/mingas_background.webp';
 import newPost from '../../../../../assets/background/newPost.jpg';
 import { Main, WindowDiv } from '../../../slider/styles';
@@ -13,18 +13,6 @@ export default class CarouselMobile extends React.Component {
     this.state = {
       value: 0,
       slides: [
-        <>
-          <DivImage>
-            <img src={imageContent} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText style={{ justifyContent: 'center', alignItems: 'center' }} className={'phone'}>
-            <Text>
-              28.10.2022 с 11.00 до 12.00 в УП «МИНГАЗ» будет проводиться прямая телефонная линия!
-              Ответим на все интересующие вас вопросы входящие в компетенцию предприятия.
-              <br /> Тел. для связи 299 28 80
-            </Text>
-          </DivText>
-        </>,
         <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />

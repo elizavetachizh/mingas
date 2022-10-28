@@ -125,6 +125,7 @@ export const ContainerAbsolute = styled.div`
   margin: 0;
   z-index: 2;
   opacity: 0;
+  overflow-y: scroll;
   animation: ${opacityAnimation} 2s forwards;
   @media (min-width: 900px) {
     display: none;

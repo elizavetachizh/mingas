@@ -7,12 +7,12 @@ export default function LinkServicesForLegalEntities({ img, nameCard,cardId }) {
   const handlerLinkClick = useCallback(() => {
     navigate(`/services-legal-entities/${cardId}`);
 
-  }, []);
+  }, [cardId, navigate]);
 
 
   return (
     <ContainerServices onClick={() => handlerLinkClick(nameCard)}>
-      <Imagecard src={require(`../../../../assets/icons_services/${img}.png`)} />
+      <Imagecard alt={''} src={require(`../../../../assets/icons_services/${img}.png`)} />
       <Textcard>{nameCard}</Textcard>
     </ContainerServices>
   );

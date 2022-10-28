@@ -85,7 +85,10 @@ export default function SMI() {
                   alt={''}
                   src={'https://minsknews.by/wp-content/uploads/2022/03/Pavel-Rusak-52-of-53.jpg'}
                 />
-                <p>Как подвести газ в частный дом, разъясняет специалист <br/> {''} <span style={{color: "transparent"}}>1</span></p>
+                <p>
+                  Как подвести газ в частный дом, разъясняет специалист <br /> {''}{' '}
+                  <span style={{ color: 'transparent' }}>1</span>
+                </p>
                 {/*<p>{''}</p>*/}
               </a>
             </Article>
@@ -257,6 +260,7 @@ export default function SMI() {
 
                 <p>
                   Новые договоры за пользование газом: 5 популярных вопросов и ответы специалиста{' '}
+                  <br /> {''} <span style={{ color: 'transparent' }}>1</span>
                   <br /> {''}
                 </p>
               </a>

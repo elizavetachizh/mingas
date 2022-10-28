@@ -116,6 +116,15 @@ export const BtnIsOpen = styled.div`
         }
       }
     }
+    @media (max-width: 400px) {
+      height: 94px;
+      div {
+        @media (max-width: 400px) {
+          width: 70px;
+          height: 62%;
+        }
+      }
+    }
   }
   &.btn-is-open {
     width: 50%;
