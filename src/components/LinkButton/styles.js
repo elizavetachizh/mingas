@@ -24,4 +24,11 @@ export const LinkAsButton = styled.a`
   margin: 4% auto;
   cursor: pointer;
   transition: 0.8s linear;
+  @media (max-width: 700px) {
+    font-size: 14px;
+    width: 280px;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
 `;

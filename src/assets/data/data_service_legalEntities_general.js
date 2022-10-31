@@ -28,6 +28,7 @@ import prilozenie_pismo from '../wordFile/Prilozhenie-2.docx';
 import prilozanie_plombi from '../wordFile/Prilozhenie-plombi.docx';
 import { NavLink } from 'react-router-dom';
 import zayavleniya from '../wordFile/Zayavleniya-na-vydachu-TU-yurlitsa-2022.docx';
+import telemetria from '../wordFile/telemetria.DOCX';
 const styleImg = {
   width: '300px',
   margin: '0 auto',
@@ -307,6 +308,8 @@ export const dataLegalEntities = [
               Доступ к информации о параметрах расхода газа, выведенных по системе телеметрии с узла
               учёта газа
             </NavLink>
+            <br />
+            Получение SIM-карты для работы телеметрии {''}<a href={telemetria}>(скачать форму)</a>
           </>
         ),
       },
