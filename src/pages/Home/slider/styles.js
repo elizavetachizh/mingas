@@ -50,7 +50,7 @@ export const BackgroundContainer = styled.img`
   width: 100%;
   display: flex;
   margin-top: -370px;
-  filter: blur(3px) brightness(0.6);
+  filter: blur(3px) brightness(0.5);
   &.post {
     filter: none;
     margin-top: -164px;

@@ -3,6 +3,7 @@ import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import phone from '../../../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../../../assets/background/mingas_background.webp';
 import newPost from '../../../../../assets/background/newPost.jpg';
+import background from '../../../../../assets/background/background_new.webp'
 import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
@@ -30,7 +31,7 @@ export default class CarouselMobile extends React.Component {
         </>,
         <>
           <DivImage>
-            <img src={imageContent} alt={'картинка загружается'} />
+            <img src={background} alt={'картинка загружается'} />
           </DivImage>
           <DivText style={{ justifyContent: 'center', alignItems: 'center' }} className={'phone'}>
             <Text>

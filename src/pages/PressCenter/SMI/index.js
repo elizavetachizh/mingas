@@ -78,6 +78,25 @@ export default function SMI() {
                 rel="noopener"
                 target={'_blank'}
                 href={
+                  'https://minsknews.by/v-srednem-za-sutki-v-mingaz-postupaet-okolo-80-izveshhenij-o-nepoladkah-kak-rabotaet-avarijka/'
+                }
+              >
+                <img
+                  alt={''}
+                  src={'https://minsknews.by/wp-content/uploads/2022/10/MK4_0282-kopiya.jpg'}
+                />
+                <p>
+                  В среднем за сутки в «МИНГАЗ» поступает около 80 извещений о неполадках. Как
+                  работает «аварийка»
+                </p>
+                {/*<p>{''}</p>*/}
+              </a>
+            </Article>
+            <Article className={'general'}>
+              <a
+                rel="noopener"
+                target={'_blank'}
+                href={
                   'https://minsknews.by/kak-podvesti-gaz-v-chastnyj-dom-razyasnyaet-speczialist/'
                 }
               >

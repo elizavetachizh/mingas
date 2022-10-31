@@ -105,7 +105,7 @@ export default function Header({ backgroundHeader }) {
                   <span />
                 </CompanyButton>
                 <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/company/history">История предприятия"</ButtonLink>
+                  <ButtonLink to="/company/history">История предприятия</ButtonLink>
                   <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
                   <ButtonLink to="/company/career"> Работа в УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/parent-organizations">

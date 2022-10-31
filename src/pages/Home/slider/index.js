@@ -6,6 +6,7 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../assets/background/mingas_background.webp';
 import newPost from '../../../assets/background/newPost.jpg';
+import background from '../../../assets/background/background_new.webp';
 import ButtonFun from '../../../components/button';
 
 export default class CarouselFun extends React.Component {
@@ -31,7 +32,7 @@ export default class CarouselFun extends React.Component {
         </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <div>
-            <BackgroundContainer src={imageContent} />
+            <BackgroundContainer src={background} />
           </div>
           <DivText className={'post'}>
             <DivInformAbout>

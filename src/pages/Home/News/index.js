@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonFun from '../../../components/button';
 import { DivInform } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
-import { ArticleForHome } from '../../PressCenter/styles';
+import {ArticleForHome} from '../../PressCenter/styles';
 import { BlockContainerRequests } from '../../feedback/styles';
 
 export default function News() {
@@ -10,56 +10,59 @@ export default function News() {
     <BlockContainerRequests>
       <TitleForHome color={'blue'} infoTitle={'СМИ о нас'} />
       <DivInform>
-        <ArticleForHome>
+        <ArticleForHome className={'general'}>
           <a
-            target={'_blank'}
-            rel="noreferrer"
-            href={
-              'https://minsknews.by/mozhno-li-samostoyatelno-podklyuchit-gazovuyu-plitu-kommentarij-mingaza/'
-            }
+              rel="noopener"
+              target={'_blank'}
+              href={
+                'https://minsknews.by/v-srednem-za-sutki-v-mingaz-postupaet-okolo-80-izveshhenij-o-nepoladkah-kak-rabotaet-avarijka/'
+              }
           >
             <img
-              alt={'новости'}
-              src={
-                'https://minsknews.by/wp-content/uploads/2022/02/Depositphotos_22540503_S-900x596.jpg'
-              }
+                alt={''}
+                src={'https://minsknews.by/wp-content/uploads/2022/10/MK4_0282-kopiya.jpg'}
             />
-            <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
-          </a>
-        </ArticleForHome>
-        <ArticleForHome className={'quarter'}>
-          <a
-            target={'_blank'}
-            rel="noreferrer"
-            href={
-              'https://minsknews.by/hozyajke-chastnogo-doma-naschitali-bolee-19-tys-rublej-za-gaz-iz-za-poddelnoj-plomby-na-schetchike/'
-            }
-          >
-            <img
-              alt={'новости'}
-              src={
-                'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-              }
-            />
-
             <p>
-              Хозяйке частного дома насчитали более 19 тыс. рублей за газ из-за поддельной пломбы на
-              счетчике
+              В среднем за сутки в «МИНГАЗ» поступает около 80 извещений о неполадках. Как
+              работает «аварийка»
             </p>
+            {/*<p>{''}</p>*/}
           </a>
         </ArticleForHome>
-        <ArticleForHome className={'quarter'}>
+        <ArticleForHome className={'general'}>
           <a
-            rel="noopener"
-            target={'_blank'}
-            href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}
+              rel="noopener"
+              target={'_blank'}
+              href={
+                'https://minsknews.by/kak-podvesti-gaz-v-chastnyj-dom-razyasnyaet-speczialist/'
+              }
           >
             <img
-              src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'}
-              alt={' Счетчик «не газует» - Газета Беларускi Час'}
+                alt={''}
+                src={'https://minsknews.by/wp-content/uploads/2022/03/Pavel-Rusak-52-of-53.jpg'}
             />
             <p>
-              Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
+              Как подвести газ в частный дом, разъясняет специалист <br /> {''}{' '}
+              <span style={{ color: 'transparent' }}>1</span>
+            </p>
+            {/*<p>{''}</p>*/}
+          </a>
+        </ArticleForHome>
+        <ArticleForHome className={'general'}>
+          <a
+              rel="noopener"
+              target={'_blank'}
+              href={
+                'https://minsknews.by/videonablyudenie-obespechivaet-bezopasnost-gorozhan-v-kuharev-vstretilsya-s-trudovym-kollektivom-mingaza/'
+              }
+          >
+            <img
+                alt={''}
+                src={'https://minsknews.by/wp-content/uploads/2022/10/1DX_0068-kopiya.jpg'}
+            />
+            <p>
+              «Видеонаблюдение обеспечивает безопасность горожан». В. Кухарев встретился с
+              трудовым коллективом «МИНГАЗа»
             </p>
           </a>
         </ArticleForHome>

@@ -9,7 +9,7 @@ export default function ParallaxDiv() {
         <img
           alt={'загрузка картинки'}
           style={{ width: '100%' }}
-          src={'https://back.mingas.by/public/images/backgroundCar.webp'}
+          src={'https://back.mingas.by/public/images/backgroundCar.jpg'}
         />
       </ParallaxD>
     </ContainerContent>

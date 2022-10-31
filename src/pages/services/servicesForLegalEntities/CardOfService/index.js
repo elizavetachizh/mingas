@@ -18,7 +18,7 @@ import {
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import ScrollToTop from 'react-scroll-up';
 import { useNavigate, useParams } from 'react-router';
-import minsk from '../../../../assets/background/phone.webp';
+import minsk from '../../../../assets/background/background_new.webp';
 import Feedback from '../../../feedback';
 import { BackgroundStyleServices } from '../../styles';
 import linesOne from '../../../../assets/background/rig.webp';
