@@ -5,7 +5,7 @@ import './styles.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../assets/background/mingas_background.webp';
-import newPost from '../../../assets/background/newPost.jpg';
+import newPost from '../../../assets/background/newPost.webp';
 import background from '../../../assets/background/background_new.webp';
 import ButtonFun from '../../../components/button';
 

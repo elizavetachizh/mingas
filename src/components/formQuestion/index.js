@@ -56,7 +56,7 @@ export default function FormQuestion() {
 
   const getFileURL = (file) => {
     const blob = new Blob([file], {
-      type: 'application/octetstream, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf, application/vnd.ms-excel, text/plain, image/jpeg, image/png, application/zip',
+      type: 'application/octet-stream',
     });
 
     return URL.createObjectURL(blob);
@@ -66,7 +66,6 @@ export default function FormQuestion() {
       if (Object.values(event.target.files)[0].size > 120000) {
         // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
         setModalVisible(true);
-        console.log(isModalVisible);
         formImage.value = '';
         setDocumentq([]);
       } else if (

@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import phone from '../../../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../../../assets/background/mingas_background.webp';
-import newPost from '../../../../../assets/background/newPost.jpg';
+import newPost from '../../../../../assets/background/newPost.webp';
 import background from '../../../../../assets/background/background_new.webp'
 import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
