@@ -12,6 +12,10 @@ export const ContainerInform = styled.div`
   margin: 0 auto;
   text-align: justify;
   &.electronic-appeal-for-entity {
+    p{
+      text-align: justify;
+      text-indent: 25px;
+    }
     @media (max-width: 900px) {
       width: 70%;
     }

@@ -9,6 +9,7 @@ export default function InputName({
   placeholder,
   style,
   className,
+  id,
 }) {
   return (
     <div>
@@ -20,6 +21,7 @@ export default function InputName({
         value={value}
         onChange={onChange}
         className={className}
+        id={id}
       />
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
