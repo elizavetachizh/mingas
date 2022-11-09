@@ -6,6 +6,7 @@ import { DivInformAbout, DivText, Text } from '../Content/styles';
 import phone from '../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../assets/background/mingas_background.webp';
 import newPost from '../../../assets/background/newPost.webp';
+import post from '../../../assets/background/phone.webp';
 import background from '../../../assets/background/background_new.webp';
 import ButtonFun from '../../../components/button';
 
@@ -15,6 +16,26 @@ export default class CarouselFun extends React.Component {
     this.state = {
       value: 0,
       slides: [
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            {' '}
+            <BackgroundContainer className={'post'} src={post} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text>
+                Беларусь - энергоэффективная страна! <br />
+                11 ноября международный День энергосбережения
+              </Text>
+            </DivInformAbout>
+            <ButtonFun
+                classname={'post'}
+                href={'/new-post'}
+                infoButton={'Подробнее'}
+                backgrounder={'border'}
+            />
+          </DivText>
+        </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
@@ -55,7 +76,7 @@ export default class CarouselFun extends React.Component {
             </DivInformAbout>
             <ButtonFun
               classname={'post'}
-              href={'/posts'}
+              href={'/posts/'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />

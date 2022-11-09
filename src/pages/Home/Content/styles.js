@@ -68,6 +68,26 @@ export const DivText = styled.div`
         font-weight: bold;
     }
     }
+  &.newpost {
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    @media(max-width: 600px){
+      position: absolute;
+      color: white;
+      width: 90%;
+      margin: 0 auto;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 1.4rem;
+      align-items: center;
+      font-weight: bold;
+    }
+  }
   &.priem {
     flex-direction: column;
     width: 40%;

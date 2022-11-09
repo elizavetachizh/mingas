@@ -137,6 +137,26 @@ export const DivImage = styled.div`
         width: 230%;
       }
     }
+    &.post {
+      width: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+      //@media (max-width: 540px) {
+      //  width: 170%;
+      //}
+      //@media (max-width: 490px) {
+      //  width: 190%;
+      //}
+      //@media (max-width: 445px) {
+      //  width: 210%;
+      //}
+      //@media (max-width: 400px) {
+      //  width: 230%;
+      //}
+    }
     &.priem {
       filter: blur(3px) brightness(0.5);
       width: 100%;

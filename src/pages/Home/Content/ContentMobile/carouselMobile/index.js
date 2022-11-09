@@ -3,6 +3,7 @@ import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import phone from '../../../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../../../assets/background/mingas_background.webp';
 import newPost from '../../../../../assets/background/newPost.webp';
+import post from '../../../../../assets/background/phone.webp';
 import background from '../../../../../assets/background/background_new.webp'
 import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
@@ -14,6 +15,24 @@ export default class CarouselMobile extends React.Component {
     this.state = {
       value: 0,
       slides: [
+        <>
+          <DivImage className={'none'}>
+            <img className={'newpost'} src={post} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText className={'newpost'}>
+            <Text style={{ position: 'initial', textAlign: 'center' }}>
+              Беларусь - энергоэффективная страна! <br />
+              11 ноября международный День энергосбережения
+            </Text>
+            <ButtonFun
+                classname={'post'}
+                href={'/new-post'}
+                infoButton={'Подробнее'}
+                backgrounder={'border'}
+            />
+          </DivText>
+        </>,
+
         <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
@@ -29,6 +48,7 @@ export default class CarouselMobile extends React.Component {
             </a>
           </DivText>
         </>,
+
         <>
           <DivImage>
             <img src={background} alt={'картинка загружается'} />
