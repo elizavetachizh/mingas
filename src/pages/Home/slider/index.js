@@ -29,10 +29,10 @@ export default class CarouselFun extends React.Component {
               </Text>
             </DivInformAbout>
             <ButtonFun
-                classname={'post'}
-                href={'/new-post'}
-                infoButton={'Подробнее'}
-                backgrounder={'border'}
+              classname={'post'}
+              href={'/posts/2'}
+              infoButton={'Подробнее'}
+              backgrounder={'border'}
             />
           </DivText>
         </div>,
@@ -76,7 +76,7 @@ export default class CarouselFun extends React.Component {
             </DivInformAbout>
             <ButtonFun
               classname={'post'}
-              href={'/posts/'}
+              href={'/posts/1'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />

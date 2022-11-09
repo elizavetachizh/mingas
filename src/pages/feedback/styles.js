@@ -137,7 +137,7 @@ export const DivImage = styled.div`
         width: 230%;
       }
     }
-    &.post {
+    &.newpost {
       width: 100%;
       background-size: cover;
       background-position: 50% 50%;

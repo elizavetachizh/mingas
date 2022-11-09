@@ -4,7 +4,7 @@ import phone from '../../../../../assets/png/PhoneFour.webp';
 import imageContent from '../../../../../assets/background/mingas_background.webp';
 import newPost from '../../../../../assets/background/newPost.webp';
 import post from '../../../../../assets/background/phone.webp';
-import background from '../../../../../assets/background/background_new.webp'
+import background from '../../../../../assets/background/background_new.webp';
 import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
@@ -25,10 +25,10 @@ export default class CarouselMobile extends React.Component {
               11 ноября международный День энергосбережения
             </Text>
             <ButtonFun
-                classname={'post'}
-                href={'/new-post'}
-                infoButton={'Подробнее'}
-                backgrounder={'border'}
+              classname={'post'}
+              href={'/posts/2'}
+              infoButton={'Подробнее'}
+              backgrounder={'border'}
             />
           </DivText>
         </>,
@@ -72,7 +72,7 @@ export default class CarouselMobile extends React.Component {
             </Text>
             <ButtonFun
               classname={'post'}
-              href={'/posts'}
+              href={'/posts/1'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
             />
