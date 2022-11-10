@@ -58,9 +58,12 @@ export const Td = styled.td`
 `;
 
 export const TableServices = styled.table`
-  width: 96%;
+  width: 90%;
   margin: 30px auto;
   border-collapse: collapse;
+  @media(max-width: 700px) {
+    width: 96%;
+  }
   td {
     border: 1px solid #ccc;
     text-align: center;

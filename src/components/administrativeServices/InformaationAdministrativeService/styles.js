@@ -5,7 +5,7 @@ const opacityAnimation = keyframes`
   100% { opacity: 1; }
 `;
 export const Div = styled.div`
-  padding: 1%;
+  padding: 1% 2%;
   display: none;
   border-radius: 20px;
   margin: 1% auto;
