@@ -22,7 +22,7 @@ export default class CarouselMobile extends React.Component {
           <DivText className={'newpost'}>
             <Text style={{ position: 'initial', textAlign: 'center' }}>
               Беларусь - энергоэффективная страна! <br />
-              11 ноября международный День энергосбережения
+              Международный День энергосбережения
             </Text>
             <ButtonFun
               classname={'post'}

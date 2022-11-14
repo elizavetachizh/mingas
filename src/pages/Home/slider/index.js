@@ -25,7 +25,7 @@ export default class CarouselFun extends React.Component {
             <DivInformAbout>
               <Text>
                 Беларусь - энергоэффективная страна! <br />
-                11 ноября международный День энергосбережения
+                Международный День энергосбережения
               </Text>
             </DivInformAbout>
             <ButtonFun
