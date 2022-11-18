@@ -1426,7 +1426,7 @@ export const data = [
         name: 'Филиал “Оздоровительный комплекс “Огонек”',
 
         photo: '',
-        chief: '',
+        chief: 'Директор - Калачик Михаил Игоревич',
         description: (
           <div>
             <ul>

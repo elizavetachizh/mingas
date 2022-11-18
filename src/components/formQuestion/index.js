@@ -63,7 +63,7 @@ export default function FormQuestion() {
   };
   const changeHAnder = useCallback(
     (event) => {
-      if (Object.values(event.target.files)[0].size > 120000) {
+      if (Object.values(event.target.files)[0].size > 8000000) {
         // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
         setModalVisible(true);
         formImage.value = '';
@@ -193,7 +193,8 @@ export default function FormQuestion() {
       <input type="file" multiple onChange={changeHAnder} id="file-input" />
       <p style={{ fontSize: '12px' }}>
         Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip; файлов
-        изображений: jpg, jpeg, png; табличных файлов: xls, xlsx.
+        изображений: jpg, jpeg, png; табличных файлов: xls, xlsx. Размер вложенного файла не может
+        превышать 8 Мб.
       </p>
       {isModalVisible && (
         <PopUp

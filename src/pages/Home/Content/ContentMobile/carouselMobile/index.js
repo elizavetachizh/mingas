@@ -15,23 +15,23 @@ export default class CarouselMobile extends React.Component {
     this.state = {
       value: 0,
       slides: [
-        <>
-          <DivImage className={'none'}>
-            <img className={'newpost'} src={post} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'newpost'}>
-            <Text style={{ position: 'initial', textAlign: 'center' }}>
-              Беларусь - энергоэффективная страна! <br />
-              Международный День энергосбережения
-            </Text>
-            <ButtonFun
-              classname={'post'}
-              href={'/posts/2'}
-              infoButton={'Подробнее'}
-              backgrounder={'border'}
-            />
-          </DivText>
-        </>,
+        // <>
+        //   <DivImage className={'none'}>
+        //     <img className={'newpost'} src={post} alt={'картинка загружается'} />
+        //   </DivImage>
+        //   <DivText className={'newpost'}>
+        //     <Text style={{ position: 'initial', textAlign: 'center' }}>
+        //       Беларусь - энергоэффективная страна! <br />
+        //       Международный День энергосбережения
+        //     </Text>
+        //     <ButtonFun
+        //       classname={'post'}
+        //       href={'/posts/2'}
+        //       infoButton={'Подробнее'}
+        //       backgrounder={'border'}
+        //     />
+        //   </DivText>
+        // </>,
 
         <>
           <DivImage>

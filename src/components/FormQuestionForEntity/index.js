@@ -66,7 +66,7 @@ export default function FormQuestionForEntity() {
   };
   const changeHAnder = useCallback(
     (event) => {
-      if (Object.values(event.target.files)[0].size > 120000) {
+      if (Object.values(event.target.files)[0].size > 8000000) {
         // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
         setModalVisible(true);
         console.log(isModalVisible);
@@ -80,6 +80,7 @@ export default function FormQuestionForEntity() {
           'application/vnd.ms-excel',
           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
           'application/zip',
+          'application/octet-stream',
           'text/plain',
           'image/jpeg',
           'image/png',
@@ -225,7 +226,8 @@ export default function FormQuestionForEntity() {
         <input type="file" multiple onChange={changeHAnder} id="file-input" />
         <p style={{ fontSize: '12px' }}>
           Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip;
-          файлов изображений: jpg, jpeg, png; табличных файлов: xls, xlsx.
+          файлов изображений: jpg, jpeg, png; табличных файлов: xls, xlsx. Размер вложенного файла не может
+          превышать 8 Мб.
         </p>
         {isModalVisible && (
           <PopUp

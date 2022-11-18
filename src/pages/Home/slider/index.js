@@ -16,26 +16,26 @@ export default class CarouselFun extends React.Component {
     this.state = {
       value: 0,
       slides: [
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            {' '}
-            <BackgroundContainer className={'post'} src={post} />
-          </div>
-          <DivText className={'post'}>
-            <DivInformAbout>
-              <Text>
-                Беларусь - энергоэффективная страна! <br />
-                Международный День энергосбережения
-              </Text>
-            </DivInformAbout>
-            <ButtonFun
-              classname={'post'}
-              href={'/posts/2'}
-              infoButton={'Подробнее'}
-              backgrounder={'border'}
-            />
-          </DivText>
-        </div>,
+        // <div style={{ padding: 0, margin: 0, width: '100%' }}>
+        //   <div>
+        //     {' '}
+        //     <BackgroundContainer className={'post'} src={post} />
+        //   </div>
+        //   <DivText className={'post'}>
+        //     <DivInformAbout>
+        //       <Text>
+        //         Беларусь - энергоэффективная страна! <br />
+        //         Международный День энергосбережения
+        //       </Text>
+        //     </DivInformAbout>
+        //     <ButtonFun
+        //       classname={'post'}
+        //       href={'/posts/2'}
+        //       infoButton={'Подробнее'}
+        //       backgrounder={'border'}
+        //     />
+        //   </DivText>
+        // </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>

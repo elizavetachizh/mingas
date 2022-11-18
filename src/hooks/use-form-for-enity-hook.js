@@ -5,10 +5,10 @@ import axios from 'axios';
 export const useFormForEnity = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
   //for site
-  const url = 'https://back.mingas.by/question-for-entity';
+   const url = 'https://back.mingas.by/question-for-entity';
 
   //for me
-  // const url = 'http://localhost:3000/question-for-entity';
+  //  const url = 'http://localhost/question-for-entity';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email) => {
@@ -120,6 +120,7 @@ export const useFormForEnity = () => {
     } catch (err) {
       console.log('error', err);
     }
+
     clearForm();
   };
 

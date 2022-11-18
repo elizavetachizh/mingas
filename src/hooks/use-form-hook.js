@@ -4,10 +4,10 @@ import axios from 'axios';
 export const useForm = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
   //for site
-  const url = 'https://back.mingas.by/questions';
+    const url = 'https://back.mingas.by/questions';
 
   //for me
-  // const url = 'http://localhost:3000/questions';
+  // const url = 'http://localhost/questions';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email) => {
@@ -108,10 +108,13 @@ export const useForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(url, formValues).then((response) => setMsg(response.data.respMesg));
+      await axios
+        .post(url, formValues)
+        .then((response) => setMsg(response.data.respMesg));
     } catch (err) {
       console.log('error', err);
     }
+    console.log(formValues.information)
     clearForm();
   };
 

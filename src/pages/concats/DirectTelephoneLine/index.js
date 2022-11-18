@@ -23,6 +23,12 @@ export default function PhoneLineServices() {
                     </td>
                   </tr>
                   <tr>
+                    <td>E-mail УП «МИНГАЗ» </td>
+                    <td>
+                      <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
+                    </td>
+                  </tr>
+                  <tr>
                     <td>График работы</td>
                     <td>с 8.00 до 20.00, кроме праздничных дней</td>
                   </tr>

@@ -4,6 +4,7 @@ import background from '../../../../assets/Ogonek/background.webp';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { IoIosCall } from 'react-icons/io';
 import React from 'react';
+import TitleForHome from "../../../../components/TitleForHome";
 export default function Ogonek() {
   return (
     <SchemaOfBranches
@@ -114,12 +115,12 @@ export default function Ogonek() {
       photo={''}
       inform={
         <>
-          {/*<TitleForHome*/}
-          {/*  infoTitle={'Директор: Шаматульский Виталий Леонидович'}*/}
-          {/*  color={'blue'}*/}
-          {/*  fontSize={'name'}*/}
-          {/*  className={'branches'}*/}
-          {/*/>*/}
+          <TitleForHome
+            infoTitle={'Директор: Калачик Михаил Игоревич'}
+            color={'blue'}
+            fontSize={'name'}
+            className={'branches'}
+          />
           <LinksNetwork style={{ fontSize: '18px' }}>
             <IoIosCall style={{ color: '#0e43af', width: '35px', height: '35px' }} />
             Контактный номер: <a href={'tel:+375175443171'}>+375175443171</a>

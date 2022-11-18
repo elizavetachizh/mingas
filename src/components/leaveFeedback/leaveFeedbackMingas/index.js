@@ -72,7 +72,7 @@ export default function LeaveFeedbackMingas() {
   };
   const changeHAnder = useCallback(
     (event) => {
-      if (Object.values(event.target.files)[0].size > 120000) {
+      if (Object.values(event.target.files)[0].size > 8000000) {
         // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
         setModalVisible(true);
         formImage.value = '';
@@ -86,6 +86,9 @@ export default function LeaveFeedbackMingas() {
           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
           'application/zip',
           'text/plain',
+          'text/plain',
+          'image/jpeg',
+          'image/png',
         ].includes(Object.values(event.target.files)[0].type)
       ) {
         // alert('Не подходит формат файла');
@@ -183,7 +186,7 @@ export default function LeaveFeedbackMingas() {
         <input type="file" multiple onChange={changeHAnder} id="file-input" />
         <p style={{ fontSize: '12px' }}>
           Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip;
-          табличных файлов: xls, xlsx.
+          файлов изображений: jpg, jpeg, png; табличных файлов: xls, xlsx.
         </p>
         {isModalVisible && (
           <PopUp
@@ -225,18 +228,17 @@ export default function LeaveFeedbackMingas() {
         <Button disabled={isButtonDisabled} type="submit" onClick={handleSubmit}>
           Отправить
         </Button>
-        {isButtonDisabled ? (
-          <span style={{ color: 'red' }}>Заполните, пожалуйста все необходимые поля</span>
-        ) : (
-          <span style={{ color: 'red' }}>Форма успешно заполнена</span>
+        {isButtonDisabled && (
+          <span style={{ color: 'red' }}>Заполните, пожалуйста, все необходимые поля</span>
         )}
-        {msg || formValues ? (
-          <p>
-            <b>{msg}</b>
-          </p>
-        ) : (
-          'Ожидайте'
+        {!isButtonDisabled && !msg && (
+          <span style={{ color: 'red' }}>
+            Форма успешно заполнена, нажмите кнопку отправить и ожидайте, когда форма очистится.
+          </span>
         )}
+        <p>
+          <b>{msg}</b>
+        </p>
       </Form>
     </DivApplication>
   );

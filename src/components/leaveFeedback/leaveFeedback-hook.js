@@ -8,7 +8,7 @@ export const useFeedback = () => {
   const url = 'https://back.mingas.by/feedback';
 
   //for me
-  // const url = 'http://localhost:3000/feedback';
+  //const url = 'http://localhost/feedback';
 
   const [msg, setMsg] = useState('');
   const isValidateEmail = (email) => {
