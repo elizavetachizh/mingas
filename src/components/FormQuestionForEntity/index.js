@@ -81,6 +81,8 @@ export default function FormQuestionForEntity() {
           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
           'application/zip',
           'application/octet-stream',
+          'application/x-zip-compressed',
+          'multipart/x-zip',
           'text/plain',
           'image/jpeg',
           'image/png',

@@ -76,6 +76,9 @@ export default function FormQuestion() {
           'application/vnd.ms-excel',
           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
           'application/zip',
+          'application/octet-stream',
+          'application/x-zip-compressed',
+          'multipart/x-zip',
           'text/plain',
           'image/jpeg',
           'image/png',
@@ -118,6 +121,7 @@ export default function FormQuestion() {
           Введите ваш e-mail
           <Span>*</Span>
         </Label>
+
         <InputName
           inputName={'email'}
           type="email"
