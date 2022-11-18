@@ -189,7 +189,9 @@ export default function LeaveFeedbackMingas() {
         <input type="file" multiple onChange={changeHAnder} id="file-input" />
         <p style={{ fontSize: '12px' }}>
           Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip;
-          файлов изображений: jpg, jpeg, png; табличных файлов: xls, xlsx.
+          файлов изображений: jpg, jpeg, png; табличных файлов: xls, xlsx. Размер вложенного файла
+          не может превышать 8 Мб. Для отправки нескольких документов, необходимо их поместить в
+          архив формата .zip
         </p>
         {isModalVisible && (
           <PopUp
