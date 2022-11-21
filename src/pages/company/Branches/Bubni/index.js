@@ -5,7 +5,7 @@ import photo from '../../../../assets/management/departaments/Белокурск
 import { DivInform } from '../../../Home/News/styles';
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
-import { IoIosCall } from 'react-icons/io';
+import { IoIosCall, IoLogoInstagram } from 'react-icons/io';
 export default function Bubni() {
   return (
     <SchemaOfBranches
@@ -94,34 +94,39 @@ export default function Bubni() {
           />
           <LinksNetwork style={{ fontSize: '18px' }}>
             <IoIosCall style={{ color: '#0e43af', width: '35px', height: '35px' }} />
-            Контактный телефон<a href={'tel:8017-712-36-07'}> 8017-712-36-07</a>
+            Контактный телефон: <a href={'tel:8017-712-36-07'}> 8017-712-36-07</a>
           </LinksNetwork>
-
-          <div style={{ width: '100%', height: '500px', margin: '0 auto' }}>
-            {' '}
-            <div style={{ width: '80%', height: '500px', margin: '0 auto' }}>
-              <a
-                href="https://yandex.by/maps/org/proizvodstvennoye_respublikanskoye_predpriyatiye_mingaz_filial_bubny_po_proizvodstvu_selskokhozyaystvennoy_produktsii/1038334797/?utm_medium=mapframe&utm_source=maps"
-                style={{ color: '#eee', fontSize: '12px', position: 'absolute', top: '0px' }}
-              >
-                Производственное республиканское предприятие Мингаз филиал Бубны по производству
-                сельскохозяйственной продукции
-              </a>
-              <a
-                href="https://yandex.by/maps/29630/minsk-district/category/agricultural_enterprise/184106458/?utm_medium=mapframe&utm_source=maps"
-                style={{ color: '#eee', fontSize: '12px', position: 'absolute', top: '14px' }}
-              >
-                Сельскохозяйственное предприятие в Минской области
-              </a>
-              <iframe
-                title={'file'}
-                src="https://yandex.by/map-widget/v1/-/CCURZLF3OD"
-                width="100%"
-                height="400"
-                allowFullScreen={true}
-                style={{ position: 'relative' }}
-              />
-            </div>
+          <LinksNetwork style={{ fontSize: '18px' }}>
+            <a
+              style={{ display: 'flex', alignItems: 'center' }}
+              target={"_blank"}
+              href={'https://instagram.com/filial.bubny?igshid=YTY2NzY3YTc='}
+            >
+              <IoLogoInstagram style={{ width: '46px', height: '46px' }} /> Мы в инстаграме
+            </a>
+          </LinksNetwork>
+          <div style={{ width: '80%', height: '500px', margin: '0 auto' }}>
+            <a
+              href="https://yandex.by/maps/org/proizvodstvennoye_respublikanskoye_predpriyatiye_mingaz_filial_bubny_po_proizvodstvu_selskokhozyaystvennoy_produktsii/1038334797/?utm_medium=mapframe&utm_source=maps"
+              style={{ color: '#eee', fontSize: '12px', position: 'absolute', top: '0px' }}
+            >
+              Производственное республиканское предприятие Мингаз филиал Бубны по производству
+              сельскохозяйственной продукции
+            </a>
+            <a
+              href="https://yandex.by/maps/29630/minsk-district/category/agricultural_enterprise/184106458/?utm_medium=mapframe&utm_source=maps"
+              style={{ color: '#eee', fontSize: '12px', position: 'absolute', top: '14px' }}
+            >
+              Сельскохозяйственное предприятие в Минской области
+            </a>
+            <iframe
+              title={'file'}
+              src="https://yandex.by/map-widget/v1/-/CCURZLF3OD"
+              width="100%"
+              height="400"
+              allowFullScreen={true}
+              style={{ position: 'relative' }}
+            />
           </div>
         </>
       }

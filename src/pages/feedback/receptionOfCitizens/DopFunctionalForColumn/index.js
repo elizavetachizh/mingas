@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { BlockForAdmissionSchedule } from './styles';
+import {BlockForAdmissionSchedule} from "../styles";
 
 export default function DopFunctionalForColumn({
   fullName,

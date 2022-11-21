@@ -464,6 +464,7 @@ export default function ReceptionSchedule() {
       {isModalVisible && (
         <Modal handleCloseCLick={handleCloseCLick} currentLeader={currentLeader} nameId={nameId} />
       )}
+
     </ContainerTable>
   );
 }

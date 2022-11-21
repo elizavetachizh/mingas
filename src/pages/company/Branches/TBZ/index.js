@@ -3,7 +3,7 @@ import SchemaOfBranches from '../ChemaOfBranches';
 import imageContent from '../../../../assets/Bubni/background1.webp';
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
-import { IoIosCall } from 'react-icons/io';
+import {IoIosCall, IoLogoInstagram} from 'react-icons/io';
 
 export default function TBZ() {
   return (
@@ -110,6 +110,15 @@ export default function TBZ() {
             <LinksNetwork style={{ fontSize: '18px' }}>
               <IoIosCall style={{ color: '#0e43af', width: '35px', height: '35px' }} />
               Контактный номер: <a href={'tel:8017-13-20-151'}> 8017-13-20-151</a>
+            </LinksNetwork>
+            <LinksNetwork style={{ fontSize: '18px' }}>
+              <a
+                  style={{ display: 'flex', alignItems: 'center' }}
+                  target={"_blank"}
+                  href={'https://instagram.com/tbz.sergeevichskoe?igshid=YTY2NzY3YTc='}
+              >
+                <IoLogoInstagram style={{ width: '46px', height: '46px' }} /> Мы в инстаграме
+              </a>
             </LinksNetwork>
           </>
           <div style={{ position: 'relative', overflow: 'hidden' }}>

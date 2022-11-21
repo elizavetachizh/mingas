@@ -94,3 +94,11 @@ export const ContainerTable = styled.div`
   align-items: inherit;
   margin: 0 2%;
 `;
+
+export const BlockForAdmissionSchedule = styled.div`
+  cursor: pointer;
+  &:hover {
+    text-decoration-line: underline;
+  }
+`;
+

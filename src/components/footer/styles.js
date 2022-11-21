@@ -18,7 +18,7 @@ export const LinksNetwork = styled.div`
   display: flex;
   flex-direction: row;
   width: 50%;
-  align-items: flex-start;
+  align-items: center;
   margin: 2% 0;
   text-align: left;
   justify-content: left;

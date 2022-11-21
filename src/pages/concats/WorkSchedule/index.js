@@ -9,10 +9,15 @@ export default function SchedulePersonalReceptionOfCitizens() {
     <ContainerContent
       name={'График приёма граждан'}
       content={
-        <Row>
-          <HeaderConcats />
-          <ReceptionSchedule />
-        </Row>
+        <>
+          <Row>
+            <HeaderConcats />
+            <ReceptionSchedule />
+          </Row>
+          <h4>
+            Прямая телефонная линия проводится каждую последнюю пятницу месяца с 11.00 до 12.00.
+          </h4>
+        </>
       }
     />
   );

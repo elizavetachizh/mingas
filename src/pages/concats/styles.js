@@ -55,6 +55,6 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 6rem auto;
+  margin: 3rem auto;
   color: #0d4475;
 `;

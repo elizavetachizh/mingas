@@ -1,18 +1,14 @@
 import React from 'react';
-import { DivNews, DateLink, DescLink } from './styles';
-import gradient from '../../../../assets/background/gradient.png';
+import { ArticleForHome } from '../../../PressCenter/styles';
 
-export default function LinkNews({ cardImg, cardDate, cardLink, cardDesc }) {
+export default function LinkNews({ href, src, cardDesc }) {
   return (
-    <DivNews
-      style={{
-        backgroundImage: `url('${gradient}')`,
-      }}
-      href={cardLink}
-    >
-      <img alt={''} src={{ cardImg }} />
-      <DateLink>{cardDate}</DateLink>
-      <DescLink>{cardDesc}</DescLink>
-    </DivNews>
+    <ArticleForHome>
+      <a rel="noopener" target={'_blank'} href={href}>
+        <img alt={''} src={src} />
+        <p>{cardDesc}</p>
+        {/*<p>{''}</p>*/}
+      </a>
+    </ArticleForHome>
   );
 }

@@ -89,7 +89,6 @@ export default function MobileNavigation() {
           </DivBlocksHeader>
           <DivButtonHeader className={isOpen && `handleBtn`}>
             <div>
-              {' '}
               <ButtonLink to="/company/history">История предприятия</ButtonLink>
               <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
               <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
@@ -129,7 +128,6 @@ export default function MobileNavigation() {
               </ButtonLink>
               <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
               <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>
-              <ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>
               <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
               <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
               <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
