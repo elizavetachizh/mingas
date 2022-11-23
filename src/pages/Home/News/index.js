@@ -6,35 +6,29 @@ import { ArticleForHome } from '../../PressCenter/styles';
 import { BlockContainerRequests } from '../../feedback/styles';
 import axios from 'axios';
 import LinkNews from './LinkToNews';
-
+import {APInews} from '../../../backend';
 export default function News() {
-  const [info, setInfo] = useState(null);
-  useEffect(() => {
-    const apiUrl = 'http://localhost:5000/posts';
-    console.log(apiUrl);
-    axios
-      .get(apiUrl)
-      .then((res) => {
-        setInfo(res.data);
-        console.log(res.data);
-      })
-      .catch((e) => {
-        {
-          console.log(e);
-        }
-      });
-  }, [setInfo]);
-  const [arr, setArr] = useState([]);
-  useEffect(() => {
-    info && info.map((el) => console.log(el));
-    info && info.map((el) => Object.entries(el).map(([key, value]) => console.log(key, value)));
-    // console.log(arr);
-  }, [info]);
+  // const [info, setInfo] = useState(null);
+  // useEffect(() => {
+  //   const apiUrl = `${APInews}`;
+  //   axios
+  //     .get(apiUrl)
+  //     .then((res) => {
+  //       setInfo(res.data);
+  //     })
+  //     .catch((e) => {
+  //       {
+  //         console.log(e);
+  //       }
+  //     });
+  // }, [setInfo]);
+  // const arr = info && info.slice(0, 4);
+
   return (
     <BlockContainerRequests>
       <TitleForHome color={'blue'} infoTitle={'СМИ о нас'} />
       <DivInform>
-        {/*{info && info.map((el) => <LinkNews href={el.link} src={el.image} cardDesc={el.content} />)}*/}
+        {/*{info && arr.map((el) => <LinkNews href={el.link} src={el.image} cardDesc={el.content} />)}*/}
         <ArticleForHome className={'general'}>
           <a
             rel="noopener"

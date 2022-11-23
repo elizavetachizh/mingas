@@ -1,5 +1,5 @@
 import { Link } from '../../pages/company/styles';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ContainerContent from '../Container';
 import SubTitleFun from '../SubTitle';
 import {
@@ -7,76 +7,54 @@ import {
   TextForInformation,
 } from '../../pages/feedback/electronicCirculationForEntity/styles';
 import axios from 'axios';
+import { APItenders } from '../../backend';
 
 export default function Tenders() {
-  const [info, setInfo] = useState(null);
-  useEffect(() => {
-    const apiUrl = 'http://localhost:5000/page/qwerty';
-    console.log(apiUrl);
-    axios
-      .get(apiUrl)
-      .then((res) => {
-        setInfo(res.data);
-        console.log(res.data);
-      })
-      .catch((e) => {
-        {
-          console.log(e);
-        }
-      });
-  }, [setInfo]);
-  useEffect(() => console.log(info), [info]);
+  // const [info, setInfo] = useState([]);
+  // const divs = document.getElementById('electronic-appeal');
+  // console.log(divs);
+  // useEffect(() => {
+  //   axios
+  //     .get('http://localhost:5000/tenders')
+  //     .then((res) => {
+  //       setInfo(res.data);
+  //       console.log(res.data);
+  //     })
+  //     .catch((e) => {
+  //       {
+  //         console.log(e);
+  //       }
+  //     });
+  // }, [setInfo]);
+  // const getElement = useCallback((id) => {
+  //   return document.getElementById(`electronic-appeal-${id}`);
+  // }, []);
+  // useEffect(() => {
+  //   info.forEach((el) => {
+  //     const element = getElement(el._id);
+  //     if (element) {
+  //       element.innerHTML += el.content;
+  //     }
+  //   });
+  // }, [getElement, info]);
   return (
     <ContainerContent
       name={'Тендеры и закупки'}
       content={
         <>
+          {/*<div>*/}
+          {/*  {!!info.length &&*/}
+          {/*    info.map((el) => (*/}
+          {/*      <ContainerInform style={{ marginBottom: '50px' }}>*/}
+          {/*        <SubTitleFun*/}
+          {/*          color={'blue'}*/}
+          {/*          infoSubTitle={'Приглашение на участие в процедуре переговоров'}*/}
+          {/*        />*/}
+          {/*        <TextForInformation id={`electronic-appeal-${el._id}`} />*/}
+          {/*      </ContainerInform>*/}
+          {/*    ))}*/}
+          {/*</div>*/}
 
-          {/*<>{info}</>*/}
-          {/*<ContainerInform*/}
-          {/*  className={'electronic-appeal-for-entity'}*/}
-          {/*  style={{ marginBottom: '50px' }}*/}
-          {/*>*/}
-          {/*  {' '}*/}
-          {/*  <TextForInformation>*/}
-          {/*    <SubTitleFun*/}
-          {/*      color={'blue'}*/}
-          {/*      infoSubTitle={'Приглашение на участие в процедуре переговоров'}*/}
-          {/*    />*/}
-          {/*    <p>*/}
-          {/*      УП «МИНГАЗ» приглашает принять участие в переговорах по выбору генпроектировщика для*/}
-          {/*      выполнения строительно-монтажных работ по объекту:*/}
-          {/*    </p>*/}
-          {/*    <p>*/}
-          {/*      «Реконструкция помещений в здании неустановленного назначения по ул. Ботаническая,*/}
-          {/*      11/4 (1-й, 5-й пусковой комплекс)».*/}
-          {/*    </p>*/}
-          {/*    <p>*/}
-          {/*      Без предварительного квалификационного отбора, с проведением процедуры улучшения*/}
-          {/*      предложения для переговоров.*/}
-          {/*    </p>*/}
-          {/*    <p>*/}
-          {/*      Документацию для переговоров можно получить безвозмездно: с понедельника по четверг*/}
-          {/*      с 08-00 до 17-00 и в пятницу с 8-00 до 15-45, по адресу: 220037, г.Минск,*/}
-          {/*      ул.Ботаническая, 11, к.408, тел: (017) 299-29-04, обеденный перерыв с 12.00 до*/}
-          {/*      12.45, в электронной форме не позднее двух рабочих дней со дня письменного обращения*/}
-          {/*      участника.*/}
-          {/*    </p>*/}
-          {/*    <p>*/}
-          {/*      Заседание конкурсной комиссии по вскрытию конвертов с предложениями участников по*/}
-          {/*      всем переговорам состоится{' '}*/}
-          {/*      <strong style={{ color: 'red' }}>17.11.2022 г. в 13.00</strong> по адресу: г.Минск,*/}
-          {/*      ул.Ботаническая, 11/1, конференц-зал.*/}
-          {/*    </p>*/}
-          {/*    <p>*/}
-          {/*      Организатор переговоров УП «МИНГАЗ». Р/с BY17AKBB30121087600145300000 в ЦБУ №514 ОАО*/}
-          {/*      «АСБ «Беларусбанк», БИК AKBBBY2Х, УНП 100308563, ОКПО 03000992. Е-mail:*/}
-          {/*      ogm@mingas.by Ответственный исполнитель (контактное лицо): заместитель начальника*/}
-          {/*      службы главного энергетика, метрологического обеспечения и охраны окружающей среды*/}
-          {/*      (СГЭМОиООС) – Михнюк Виталий Анатольевич. Тел: (017)299-29-04, факс: (017)299-29-31.*/}
-          {/*    </p>*/}
-          {/*  </TextForInformation>*/}
-          {/*</ContainerInform>*/}
           <ContainerInform
             className={'electronic-appeal-for-entity'}
             style={{ marginBottom: '50px' }}
@@ -130,7 +108,6 @@ export default function Tenders() {
               </p>
             </TextForInformation>
           </ContainerInform>
-
           <ContainerInform
             className={'electronic-appeal-for-entity'}
             style={{ marginBottom: '50px' }}
@@ -181,7 +158,6 @@ export default function Tenders() {
               </p>
             </TextForInformation>
           </ContainerInform>
-
           <ContainerInform
             className={'electronic-appeal-for-entity'}
             style={{ marginBottom: '50px' }}
@@ -231,7 +207,6 @@ export default function Tenders() {
               </p>
             </TextForInformation>
           </ContainerInform>
-
           <Link>
             <a
               rel={'noreferrer'}
