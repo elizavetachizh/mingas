@@ -71,7 +71,7 @@ export default class CarouselMobile extends React.Component {
               ВСЕМИРНЫЙ ДЕНЬ НЕКУРЕНИЯ
             </Text>
             <LinkAsButtonFun
-              name={'Подробнее'}
+              name={'Подробнее'} info={''}
               // classname={'post'}
               href={'https://rcheph.by/news/vsemirnyy-den-nekureniya.html'}
               stylesLink={'border'}

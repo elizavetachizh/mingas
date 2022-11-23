@@ -3,6 +3,7 @@ import React from 'react';
 import ContainerContent from '../Container';
 import LinkAsButtonFun from '../LinkButton';
 import { ContainerInform } from '../../pages/feedback/electronicCirculationForEntity/styles';
+import {IoMdContacts} from "../header/styles";
 
 export default function Telemetria() {
   return (
@@ -11,7 +12,7 @@ export default function Telemetria() {
       content={
         <>
           {' '}
-          <LinkAsButtonFun stylesLink={"blue"}
+          <LinkAsButtonFun stylesLink={"blue"} info={<IoMdContacts className={'icon'} />}
             href={'http://178.124.164.50:82/'}
             name={'Личный кабинет учёта газа INDEL'}
           />
