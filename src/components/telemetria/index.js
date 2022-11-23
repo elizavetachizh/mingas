@@ -11,7 +11,7 @@ export default function Telemetria() {
       content={
         <>
           {' '}
-          <LinkAsButtonFun
+          <LinkAsButtonFun stylesLink={"blue"}
             href={'http://178.124.164.50:82/'}
             name={'Личный кабинет учёта газа INDEL'}
           />

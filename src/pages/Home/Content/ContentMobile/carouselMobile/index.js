@@ -9,30 +9,13 @@ import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
 import { DivImage } from '../../../../feedback/styles';
+import LinkAsButtonFun from '../../../../../components/LinkButton';
 export default class CarouselMobile extends React.Component {
   constructor() {
     super();
     this.state = {
       value: 0,
       slides: [
-        // <>
-        //   <DivImage className={'none'}>
-        //     <img className={'newpost'} src={post} alt={'картинка загружается'} />
-        //   </DivImage>
-        //   <DivText className={'newpost'}>
-        //     <Text style={{ position: 'initial', textAlign: 'center' }}>
-        //       Беларусь - энергоэффективная страна! <br />
-        //       Международный День энергосбережения
-        //     </Text>
-        //     <ButtonFun
-        //       classname={'post'}
-        //       href={'/posts/2'}
-        //       infoButton={'Подробнее'}
-        //       backgrounder={'border'}
-        //     />
-        //   </DivText>
-        // </>,
-
         <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
@@ -75,6 +58,23 @@ export default class CarouselMobile extends React.Component {
               href={'/posts/1'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
+            />
+          </DivText>
+        </>,
+
+        <>
+          <DivImage className={'none'}>
+            <img className={'newpost'} src={post} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText className={'newpost'}>
+            <Text style={{ position: 'initial', textAlign: 'center' }}>
+              ВСЕМИРНЫЙ ДЕНЬ НЕКУРЕНИЯ
+            </Text>
+            <LinkAsButtonFun
+              name={'Подробнее'}
+              // classname={'post'}
+              href={'https://rcheph.by/news/vsemirnyy-den-nekureniya.html'}
+              stylesLink={'border'}
             />
           </DivText>
         </>,

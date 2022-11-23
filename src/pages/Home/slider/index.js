@@ -9,6 +9,7 @@ import newPost from '../../../assets/background/newPost.webp';
 import post from '../../../assets/background/phone.webp';
 import background from '../../../assets/background/background_new.webp';
 import ButtonFun from '../../../components/button';
+import LinkAsButtonFun from '../../../components/LinkButton';
 
 export default class CarouselFun extends React.Component {
   constructor() {
@@ -16,26 +17,6 @@ export default class CarouselFun extends React.Component {
     this.state = {
       value: 0,
       slides: [
-        // <div style={{ padding: 0, margin: 0, width: '100%' }}>
-        //   <div>
-        //     {' '}
-        //     <BackgroundContainer className={'post'} src={post} />
-        //   </div>
-        //   <DivText className={'post'}>
-        //     <DivInformAbout>
-        //       <Text>
-        //         Беларусь - энергоэффективная страна! <br />
-        //         Международный День энергосбережения
-        //       </Text>
-        //     </DivInformAbout>
-        //     <ButtonFun
-        //       classname={'post'}
-        //       href={'/posts/2'}
-        //       infoButton={'Подробнее'}
-        //       backgrounder={'border'}
-        //     />
-        //   </DivText>
-        // </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
@@ -79,6 +60,23 @@ export default class CarouselFun extends React.Component {
               href={'/posts/1'}
               infoButton={'Подробнее'}
               backgrounder={'border'}
+            />
+          </DivText>
+        </div>,
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            {' '}
+            <BackgroundContainer className={'post'} src={post} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text>ВСЕМИРНЫЙ ДЕНЬ НЕКУРЕНИЯ</Text>
+            </DivInformAbout>
+            <LinkAsButtonFun
+              name={'Подробнее'}
+              // classname={'post'}
+              href={'https://rcheph.by/news/vsemirnyy-den-nekureniya.html'}
+              stylesLink={'border'}
             />
           </DivText>
         </div>,
