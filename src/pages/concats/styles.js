@@ -58,3 +58,8 @@ export const Row = styled.div`
   margin: 3rem auto;
   color: #0d4475;
 `;
+export const Text = styled.div`
+display: flex;
+  justify-content: center;
+  width: 100%;
+`
