@@ -18,6 +18,30 @@ export default class CarouselFun extends React.Component {
       value: 0,
       slides: [
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            {' '}
+            <BackgroundContainer className={'new-post'} src={post} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text className={'new-post'}>
+                Уважаемые граждане! Обращаем внимание на то, что 2 января 2023 г. вступают в силу
+                изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и
+                юридических лиц». В связи с этим подача электронных обращений будет возможна только
+                с помощью государственной единой (интегрированной) республиканской информационной
+                системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса {''}
+                <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>обращения.бел.</a>
+              </Text>
+            </DivInformAbout>
+            {/*<LinkAsButtonFun*/}
+            {/*  name={'Подробнее'}*/}
+            {/*  // classname={'post'}*/}
+            {/*  href={'https://rcheph.by/news/vsemirnyy-den-nekureniya.html'}*/}
+            {/*  stylesLink={'border'}*/}
+            {/*/>*/}
+          </DivText>
+        </div>,
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
             <DivInformAbout>
@@ -63,30 +87,7 @@ export default class CarouselFun extends React.Component {
             />
           </DivText>
         </div>,
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            {' '}
-            <BackgroundContainer className={'new-post'} src={post} />
-          </div>
-          <DivText className={'post'}>
-            <DivInformAbout>
-              <Text className={'new-post'}>
-                Уважаемые граждане! Обращаем внимание на то, что 2 января 2023 г. вступают в силу
-                изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и
-                юридических лиц». В связи с этим подача электронных обращений будет возможна только
-                с помощью государственной единой (интегрированной) республиканской информационной
-                системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса {''}
-                <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>обращения.бел.</a>
-              </Text>
-            </DivInformAbout>
-            {/*<LinkAsButtonFun*/}
-            {/*  name={'Подробнее'}*/}
-            {/*  // classname={'post'}*/}
-            {/*  href={'https://rcheph.by/news/vsemirnyy-den-nekureniya.html'}*/}
-            {/*  stylesLink={'border'}*/}
-            {/*/>*/}
-          </DivText>
-        </div>,
+
       ],
     };
     this.onchange = this.onchange.bind(this);
