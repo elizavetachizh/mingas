@@ -6,6 +6,8 @@ import { management } from '../../../assets/data/data_management';
 import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import SchemaCompany from '../SchemaCompany';
+import axios from 'axios';
+import { APImanagement } from '../../../backend';
 const renderLoader = () => <p>Загрузка данных...</p>;
 const Leaders = lazy(() => import('./divmagement'));
 export default function Management() {
@@ -15,7 +17,7 @@ export default function Management() {
   const handlerLeaderClick = useCallback((leader) => {
     setModalVisible(true);
     setCurrentLeader(leader);
-    setNameId(leader.id);
+    setNameId(leader._id);
   }, []);
 
   const handleCloseCLick = useCallback(() => {
@@ -25,6 +27,26 @@ export default function Management() {
     Aos.init({ duration: 2000 });
     window.scrollTo(0, 0);
   }, []);
+
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/management')
+      .then((res) => {
+        console.log(res.data);
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setInfo]);
+
+  useEffect(() => {
+    info.map((el) => console.log(el.department));
+  }, [info]);
 
   return (
     <SchemaCompany
@@ -60,14 +82,27 @@ export default function Management() {
             </DivText>
           </DivTextPhoto>
           <DivLeadersPhotoPosition>
+            {/*<Suspense fallback={renderLoader()}>*/}
+            {/*  {management.map((element) => (*/}
+            {/*    <Leaders*/}
+            {/*      idName={element.id}*/}
+            {/*      handlerLeaderClick={handlerLeaderClick}*/}
+            {/*      cardImg={element.cardImg}*/}
+            {/*      leader={element}*/}
+            {/*      key={element.id}*/}
+            {/*      fullName={element.fullName}*/}
+            {/*      position={element.position}*/}
+            {/*    />*/}
+            {/*  ))}*/}
+            {/*</Suspense>*/}
             <Suspense fallback={renderLoader()}>
-              {management.map((element) => (
+              {info.map((element) => (
                 <Leaders
-                  idName={element.id}
+                  idName={element._id}
                   handlerLeaderClick={handlerLeaderClick}
-                  cardImg={element.cardImg}
+                  cardImg={element.image}
                   leader={element}
-                  key={element.id}
+                  key={element._id}
                   fullName={element.fullName}
                   position={element.position}
                 />

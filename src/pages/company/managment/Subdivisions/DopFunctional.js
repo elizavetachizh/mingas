@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ContainerFunctionService,
   DescriptionService,
@@ -24,12 +24,26 @@ export default function DopFunctional({ name, photo, chief, description, contact
       setIsOpen(false);
     }
   };
+  // const element = ;
+  useEffect(() => {
+    if (schedule) {
+      document.getElementById('schedule').innerHTML += `${schedule}`;
+    } else {
+      return null;
+    }
+    if (description) {
+      document.getElementById('description').innerHTML += `${description}`;
+    } else {
+      return null;
+    }
+  }, [schedule]);
+
   return (
     <ContainerFunctionService>
       <Name style={{ color: 'white', textDecoration: 'none' }}>{name}</Name>
-      {photo && (
-        <img src={require(`../../../../assets/management/departaments/${photo}.jpg`)} alt={''} />
-      )}
+      {/*{photo && (*/}
+      {/*  <img src={require(`../../../../assets/management/departaments/${photo}.jpg`)} alt={''} />*/}
+      {/*)}*/}
       <div>
         <TitleForHome className={'company'} color={'blue'} infoTitle={chief} fontSize={'s'} />
       </div>
@@ -40,15 +54,14 @@ export default function DopFunctional({ name, photo, chief, description, contact
             <div>{isOpen ? <IoIosArrowUps /> : <IoIosArrowDowns />}</div>
           </BtnIsOpen>
           <Div className={isOpen && `shake`}>
-            <DescriptionService>{description}</DescriptionService>
+            <DescriptionService id={'description'}></DescriptionService>
           </Div>
         </General>
       )}
       <BlockClockAndPin>
         {schedule && (
-          <LinksNetwork>
+          <LinksNetwork id={'schedule'}>
             <IoMdClocks />
-            {schedule}
           </LinksNetwork>
         )}
         {contacts && (

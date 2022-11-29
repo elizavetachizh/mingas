@@ -22,6 +22,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icon
 import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
 import ButtonFun from '../../../../../components/button';
 import ContainerContent from '../../../../../components/Container';
+import axios from 'axios';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
@@ -33,7 +34,45 @@ export default function DepartmentInformation() {
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
   const [info, setInfo] = useState([]);
-  const currentSearch = useMemo(() => data.find((element) => element.idName === +linkId), [linkId]);
+  const [infoDep, setInfoDep] = useState([]);
+  const [content, setContent] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/management')
+      .then((res) => {
+        setInfoDep(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setInfoDep]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/departament')
+      .then((res) => {
+        setContent(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setContent]);
+
+  useEffect(() => {
+    console.log(infoDep);
+    console.log(content);
+  }, [infoDep, content]);
+
+  const currentSearch = useMemo(
+    () => content.find((element) => element.nameMen === linkId),
+    [linkId]
+  );
+  console.log(currentSearch);
 
   const infoForSearch = data[0].information
     .concat(data[1].information)
@@ -45,23 +84,27 @@ export default function DepartmentInformation() {
     .concat(data[7].information);
 
   useEffect(() => {
-    const current = data.find((element) => element.idName === +linkId);
-    setInform(current?.information);
-    setDepartamentId(+linkId);
+     const current = infoDep.find((element) => element._id === linkId);
+     setInform(current);
+    setDepartamentId(linkId);
     if (id) {
-      const currentBlockInfo = infoForSearch.filter((information) => information.id === +id);
-      setInfo(currentBlockInfo);
+      const currentBlockInfo = content.filter((information) => information.name === id);
+      setInform(currentBlockInfo);
     } else {
-      setInfo(currentSearch?.information);
+      setInform(currentSearch);
     }
   }, [linkId, id]);
 
   const changeDepartment = useCallback(
     (departamentId) => {
-      const current = data.find((element) => element.idName === departamentId);
-      navigate(`/company/management/${current.idName}`);
+      const current = content.find((element) => element.nameMen === departamentId);
+      console.log(departamentId);
+
+      console.log(current);
+      navigate(`/company/management/${current._id}`);
       setDepartamentId(departamentId);
-      setInform(current.information);
+      console.log(departamentId);
+       setInform(current);
     },
     [navigate]
   );
@@ -87,7 +130,7 @@ export default function DepartmentInformation() {
     setMessage(event.target.value);
   };
 
-  infoForSearch.map((card) => {
+  content.map((card) => {
     if (typeof card.name === 'string') {
       if (card.name.includes(message)) {
         result.push(card);
@@ -102,7 +145,7 @@ export default function DepartmentInformation() {
           result.map((element) => {
             return (
               <div key={element.key}>
-                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
+                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.name}`}>
                   {element.name}
                 </NavLink>
               </div>
@@ -121,6 +164,7 @@ export default function DepartmentInformation() {
     setInfo(currentSearch?.information);
     navigate('/company/management/1');
   };
+
   return (
     <ContainerContent
       name={'Службы УП "МИНГАЗ"'}
@@ -157,29 +201,29 @@ export default function DepartmentInformation() {
               </ContainerFormSearchForService>
             )}
             {message && renderResult()}
-            {data.map((element) => (
-              <BlockBtn key={element.idName}>
+            {infoDep.map((element) => (
+              <BlockBtn key={element._id}>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
                     nameCard={element.fullName}
-                    className={currentServiceID === element.idName ? 'background' : ''}
-                    onClick={() => changeDepartment(element.idName)}
+                    className={currentServiceID === element._id ? 'background' : ''}
+                    onClick={() => changeDepartment(element._id)}
                   />
-                  {currentServiceID === element.idName ? (
-                    <IoIosArrowUp onClick={() => changeDepartment(element.idName)} />
+                  {currentServiceID === element._id ? (
+                    <IoIosArrowUp onClick={() => changeDepartment(element._id)} />
                   ) : (
-                    <IoIosArrowDown onClick={() => changeDepartment(element.idName)} />
+                    <IoIosArrowDown onClick={() => changeDepartment(element._id)} />
                   )}
                 </ContainerBtnIcon>
 
-                <DivOpen className={currentServiceID === element.idName && `shake`}>
-                  {inform.map((link) => (
+                <DivOpen className={currentServiceID === element._id && `shake`}>
+                  {element.department.map((link) => (
                     <button
-                      onClick={() => handlerLinkClickUniqueName(link.id)}
-                      key={link.id}
-                      className={+id === +link.id ? 'shake' : ''}
+                      onClick={() => handlerLinkClickUniqueName(link)}
+                      key={link}
+                      className={id === link ? 'shake' : ''}
                     >
-                      {link.name}
+                      {link}
                     </button>
                   ))}
                 </DivOpen>
@@ -188,14 +232,14 @@ export default function DepartmentInformation() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <>
-              {info.length &&
-                info.map((el) => (
+              {inform.length &&
+                inform.map((el) => (
                   <DopFunctional
                     key={el.name}
                     name={el.name}
                     contacts={el.contacts}
                     schedule={el.schedule}
-                    photo={el.photo}
+                    // photo={el.photo}
                     chief={el.chief}
                     description={el.description}
                   />
