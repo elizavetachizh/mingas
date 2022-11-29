@@ -209,6 +209,9 @@ export const Text = styled.p`
   color: #ffff;
   text-align: center;
   text-transform: uppercase;
+  a{
+    color: white;
+  }
   &.priem {
     color: black;
     font-size: 22px;
@@ -259,6 +262,19 @@ export const Text = styled.p`
     text-align: center;
     margin: 0 auto;
     width: 100%;
+  }
+  &.new-post{
+    font-size: 20px;
+    text-align: center;
+    @media(max-width: 1062px){
+      font-size: 16px;
+    }
+    @media(max-width: 835px){
+      font-size: 14px;
+    }
+    @media(max-width: 694px){
+      font-size: 12px;
+    }
   }
 `;
 

@@ -122,6 +122,77 @@ export const BackgroundContainer = styled.img`
       //margin-top: -42px;
     }
   }
+  &.new-post {
+    filter: none;
+    margin-top: -164px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 460px;
+
+    @media (min-width: 1500px) {
+      height: 600px;
+      margin-top: -150px;
+    }
+    @media (min-width: 1700px) {
+      height: 630px;
+    }
+    @media (min-width: 2200px) {
+      height: 700px;
+    }
+    @media (min-width: 2700px) {
+      height: 850px;
+    }
+    @media (max-width: 1700px) {
+      margin-top: -136px;
+      height: 530px;
+    }
+    @media (max-width: 1485px) {
+      margin-top: -136px;
+      height: 490px;
+    }
+    @media (max-width: 1290px) {
+      margin-top: -104px;
+      height: 450px;
+    }
+    @media (max-width: 1207px) {
+      height: 430px;
+    }
+    @media (max-width: 1140px) {
+      height: 410px;
+      margin-top: -70px;
+    }
+    @media (max-width: 1084px) {
+      height: 380px;
+      margin-top: -70px;
+    }
+    @media (max-width: 960px) {
+      height: 335px;
+      margin-top: -75px;
+    }
+    @media (max-width: 860px) {
+      height: 300px;
+      margin-top: -48px;
+    }
+    @media (max-width: 740px) {
+      height: 270px;
+      margin-top: -28px;
+    }
+    @media (max-width: 694px) {
+      height: 250px;
+      margin-top: -30px;
+    }
+    @media (max-width: 648px) {
+      height: 218px;
+      margin-top: -6px;
+    }
+    @media (max-width: 600px) {
+      height: 400px;
+      //margin-top: -42px;
+    }
+  }
   &.newPost {
     margin-top: -150px;
     width: 110%;
