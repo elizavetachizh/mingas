@@ -62,6 +62,7 @@
     "react-slick": "^0.28.1",
     "react-translate-component": "^0.15.1",
     "react-yandex-maps": "^4.6.0",
+    "serve": "^14.1.2",
     "serve-build": "^0.1.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
