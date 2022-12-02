@@ -68,11 +68,11 @@ export default function DepartmentInformation() {
     console.log(content);
   }, [infoDep, content]);
 
-  const currentSearch = useMemo(
-    () => content.find((element) => element.nameMen === linkId),
-    [linkId]
-  );
-  console.log(currentSearch);
+  // const currentSearch = useMemo(
+  //   () => content.find((element) => element.nameMen === linkId),
+  //   [linkId]
+  // );
+  // console.log(currentSearch);
 
   const infoForSearch = data[0].information
     .concat(data[1].information)
@@ -84,27 +84,30 @@ export default function DepartmentInformation() {
     .concat(data[7].information);
 
   useEffect(() => {
-     const current = infoDep.find((element) => element._id === linkId);
-     setInform(current);
-    setDepartamentId(linkId);
+    // const current = content.find((element) => element.nameMen === linkId);
+    // setInform(current);
+    // setDepartamentId(linkId);
+    // console.log(current)
+    // console.log(linkId)
     if (id) {
       const currentBlockInfo = content.filter((information) => information.name === id);
       setInform(currentBlockInfo);
-    } else {
-      setInform(currentSearch);
     }
-  }, [linkId, id]);
+    // } else {
+    //   setInform(content);
+    // }
+  }, [linkId, id, content]);
 
   const changeDepartment = useCallback(
     (departamentId) => {
-      const current = content.find((element) => element.nameMen === departamentId);
+      const current = content.filter((element) => element.nameMen == departamentId);
       console.log(departamentId);
 
       console.log(current);
-      navigate(`/company/management/${current._id}`);
+      navigate(`/company/management/${departamentId}`);
       setDepartamentId(departamentId);
       console.log(departamentId);
-       setInform(current);
+      setInform(current);
     },
     [navigate]
   );
@@ -161,7 +164,7 @@ export default function DepartmentInformation() {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    setInfo(currentSearch?.information);
+    setInfo(content);
     navigate('/company/management/1');
   };
 

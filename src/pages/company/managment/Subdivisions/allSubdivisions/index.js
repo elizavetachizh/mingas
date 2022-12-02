@@ -11,10 +11,12 @@ import { NavLink, useSearchParams } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import ContainerContent from '../../../../../components/Container';
+import axios from 'axios';
 
 export default function AllSubdivisions() {
   const [isForm, setIsForm] = useState(false);
   const [info, setInfo] = useState([]);
+  const [content, setContent] = useState([])
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [message, setMessage] = useState('');
@@ -22,20 +24,34 @@ export default function AllSubdivisions() {
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
 
-  const infoForSearch = data[0].information
-    .concat(data[1].information)
-    .concat(data[2].information)
-    .concat(data[3].information)
-    .concat(data[4].information)
-    .concat(data[5].information)
-    .concat(data[6].information)
-    .concat(data[7].information);
   useEffect(() => {
-    if (id) {
-      const currentBlockInfo = infoForSearch.filter((blockInfo) => blockInfo.id === +id);
+    axios
+      .get('http://localhost:5000/departament')
+      .then((res) => {
+        setInfo(res.data);
+        setContent(res.data)
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setInfo]);
+
+  // const infoForSearch = data[0].information
+  //   .concat(data[1].information)
+  //   .concat(data[2].information)
+  //   .concat(data[3].information)
+  //   .concat(data[4].information)
+  //   .concat(data[5].information)
+  //   .concat(data[6].information)
+  //   .concat(data[7].information);
+  useEffect(() => {
+    if (id !== null) {
+      const currentBlockInfo = info.filter((blockInfo) => blockInfo.name === id);
       setInfo(currentBlockInfo);
     } else {
-      setInfo(infoForSearch);
+      setInfo(content);
     }
   }, [id]);
 
@@ -50,7 +66,7 @@ export default function AllSubdivisions() {
     setMessage(event.target.value);
   };
 
-  infoForSearch.map((card) => {
+  info.map((card) => {
     if (typeof card.name === 'string') {
       if (card.name.includes(message)) {
         result.push(card);
@@ -65,7 +81,7 @@ export default function AllSubdivisions() {
           result.map((element) => {
             return (
               <div key={element.id}>
-                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
+                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.name}`}>
                   {element.name}
                 </NavLink>
               </div>
@@ -81,7 +97,8 @@ export default function AllSubdivisions() {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    setInfo(infoForSearch);
+    setInfo(content);
+    console.log(info)
     navigate('/company/management/all-departments');
   };
 
@@ -120,29 +137,18 @@ export default function AllSubdivisions() {
               </ContainerFormSearchForService>
             )}
             {message && renderResult()}
-            {info.length
-              ? info.map((el) => (
-                  <DopFunctional
-                    key={el.id}
-                    name={el.name}
-                    contacts={el.contacts}
-                    schedule={el.schedule}
-                    photo={el.photo}
-                    chief={el.chief}
-                    description={el.description}
-                  />
-                ))
-              : infoForSearch.map((el) => (
-                  <DopFunctional
-                    key={el.name}
-                    name={el.name}
-                    contacts={el.contacts}
-                    schedule={el.schedule}
-                    photo={el.photo}
-                    chief={el.chief}
-                    description={el.description}
-                  />
-                ))}
+            {!!info.length &&
+              info.map((el) => (
+                <DopFunctional
+                  key={el.id}
+                  name={el.name}
+                  contacts={el.contacts}
+                  schedule={el.schedule}
+                  photo={el.photo}
+                  chief={el.chief}
+                  description={el.description}
+                />
+              ))}
           </>
         </ContainerInform>
       }

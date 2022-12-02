@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   ContainerFunctionService,
   DescriptionService,
@@ -25,18 +25,25 @@ export default function DopFunctional({ name, photo, chief, description, contact
     }
   };
   // const element = ;
+  const getElement = useCallback((name) => {
+    return document.getElementById(`description-${name}`);
+  }, []);
   useEffect(() => {
-    if (schedule) {
-      document.getElementById('schedule').innerHTML += `${schedule}`;
-    } else {
-      return null;
+    // if (schedule) {
+    //   document.getElementById('schedule').innerHTML += `${schedule}`;
+    // } else {
+    //   return null;
+    // }
+    const element = getElement(name);
+    if (element) {
+      element.innerHTML += description;
     }
-    if (description) {
-      document.getElementById('description').innerHTML += `${description}`;
-    } else {
-      return null;
-    }
-  }, [schedule]);
+    // if (description) {
+    //   document.getElementById(`description-${name}`).innerHTML += `${description}`;
+    // } else {
+    //   return null;
+    // }
+  }, [name, getElement, description]);
 
   return (
     <ContainerFunctionService>
@@ -54,7 +61,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
             <div>{isOpen ? <IoIosArrowUps /> : <IoIosArrowDowns />}</div>
           </BtnIsOpen>
           <Div className={isOpen && `shake`}>
-            <DescriptionService id={'description'}></DescriptionService>
+            <DescriptionService id={`description-${name}`}></DescriptionService>
           </Div>
         </General>
       )}
@@ -62,6 +69,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
         {schedule && (
           <LinksNetwork id={'schedule'}>
             <IoMdClocks />
+            {schedule}
           </LinksNetwork>
         )}
         {contacts && (
