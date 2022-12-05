@@ -17,22 +17,6 @@ export default class CarouselMobile extends React.Component {
       value: 0,
       slides: [
         <>
-          <DivImage className={'none'}>
-            <img className={'newpost'} src={post} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'newpost'}>
-            <Text style={{ position: 'initial', textAlign: 'center' }}>
-              Уважаемые граждане! Обращаем внимание на то, что 2 января 2023 г. вступают в силу
-              изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и
-              юридических лиц». В связи с этим подача электронных обращений будет возможна только с
-              помощью государственной единой (интегрированной) республиканской информационной
-              системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса {''}
-              <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>обращения.бел.</a>
-            </Text>
-          </DivText>
-        </>,
-
-        <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
           </DivImage>
@@ -45,6 +29,40 @@ export default class CarouselMobile extends React.Component {
             <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
               <img src={phone} alt={'картинка загружается'} />
             </a>
+          </DivText>
+        </>,
+        <>
+          <DivImage className={'none'}>
+            <img className={'newpost'} src={post} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText className={'post'}>
+            <Text style={{ position: 'initial', textAlign: 'end' }}>
+              Памяти Михаила Васильевича Попова
+            </Text>
+            <ButtonFun
+              classname={'post'}
+              href={'/posts/3'}
+              infoButton={'Подробнее'}
+              backgrounder={'border'}
+            />
+          </DivText>
+        </>,
+
+        <>
+          <DivImage className={'none'}>
+            <img className={'newpost'} src={post} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText className={'newpost'}>
+            <Text style={{ position: 'initial', textAlign: 'center' }}>
+              Уважаемые граждане! Обращаем внимание на то, что 2 января 2023 г. вступают в силу
+              изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и
+              юридических лиц». В связи с этим подача электронных обращений будет возможна только с
+              помощью государственной единой (интегрированной) республиканской информационной
+              системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса {''}
+              <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>
+                обращения.бел.
+              </a>
+            </Text>
           </DivText>
         </>,
 
@@ -77,7 +95,6 @@ export default class CarouselMobile extends React.Component {
             />
           </DivText>
         </>,
-
       ],
     };
     this.onchange = this.onchange.bind(this);
