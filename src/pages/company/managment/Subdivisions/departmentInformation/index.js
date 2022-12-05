@@ -23,6 +23,7 @@ import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
 import ButtonFun from '../../../../../components/button';
 import ContainerContent from '../../../../../components/Container';
 import axios from 'axios';
+import { API } from '../../../../../backend';
 
 export default function DepartmentInformation() {
   const { linkId } = useParams();
@@ -39,7 +40,7 @@ export default function DepartmentInformation() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/management')
+      .get(`${API}/management`)
       .then((res) => {
         setInfoDep(res.data);
       })
@@ -52,7 +53,7 @@ export default function DepartmentInformation() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/departament')
+      .get(`${API}/departament`)
       .then((res) => {
         setContent(res.data);
       })

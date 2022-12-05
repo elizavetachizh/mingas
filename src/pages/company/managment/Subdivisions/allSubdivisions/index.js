@@ -12,11 +12,12 @@ import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import ContainerContent from '../../../../../components/Container';
 import axios from 'axios';
+import { API } from '../../../../../backend';
 
 export default function AllSubdivisions() {
   const [isForm, setIsForm] = useState(false);
   const [info, setInfo] = useState([]);
-  const [content, setContent] = useState([])
+  const [content, setContent] = useState([]);
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [message, setMessage] = useState('');
@@ -26,10 +27,10 @@ export default function AllSubdivisions() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/departament')
+      .get(`${API}/departament`)
       .then((res) => {
         setInfo(res.data);
-        setContent(res.data)
+        setContent(res.data);
       })
       .catch((e) => {
         {
@@ -98,7 +99,7 @@ export default function AllSubdivisions() {
     setIsForm(false);
     setMessage('');
     setInfo(content);
-    console.log(info)
+    console.log(info);
     navigate('/company/management/all-departments');
   };
 

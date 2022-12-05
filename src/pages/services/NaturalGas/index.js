@@ -10,6 +10,7 @@ import DopFunctionalHeader from './DopFunctionalHeader';
 import ContainerContent from '../../../components/Container';
 import DopFunctionService from '../DopFunction';
 import axios from 'axios';
+import {API} from "../../../backend";
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
   const [currentServiceID, setServiceID] = useState(null);
@@ -19,10 +20,9 @@ export default function NaturalGas() {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get('http://localhost:5000/services')
+      .get(`${API}/services`)
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
       })
       .catch((e) => {
         {
@@ -32,15 +32,9 @@ export default function NaturalGas() {
   }, [setData]);
   useEffect(() => {
     console.log(data);
-      data.map((el) => {
-          console.log(el._id);
-      });
   }, [data]);
   useEffect(() => {
     const current = data.find((element) => element._id === cardId);
-      data.map((el) => {
-          console.log(el._id);
-      });
     setInform(current?.description);
     setTitle(current?.name);
     setServiceID(cardId);
@@ -75,15 +69,19 @@ export default function NaturalGas() {
             ))}
           </HeaderCompanyDiv>
           <ContainerInform>
-            {/*<Name>{title}</Name>*/}
-            {inform.map((el) => (
-              <DopFunctionService
-                classname={'question-answer'}
-                key={el.nameDescription}
-                nameDescription={el.nameDescription}
-                inform={el.inform}
-              />
-            ))}
+            <Name>{title}</Name>
+            {inform ? (
+              inform.map((el) => (
+                <DopFunctionService
+                  classname={'question-answer'}
+                  key={el.nameDescription}
+                  nameDescription={el.nameDescription}
+                  inform={el.inform}
+                />
+              ))
+            ) : (
+              <p>Loading...</p>
+            )}
           </ContainerInform>
         </DivBlocks>
       }

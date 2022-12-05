@@ -7,7 +7,7 @@ import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import SchemaCompany from '../SchemaCompany';
 import axios from 'axios';
-import { APImanagement } from '../../../backend';
+import { API } from '../../../backend';
 const renderLoader = () => <p>Загрузка данных...</p>;
 const Leaders = lazy(() => import('./divmagement'));
 export default function Management() {
@@ -32,7 +32,7 @@ export default function Management() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/management')
+      .get(`${API}/management`)
       .then((res) => {
         console.log(res.data);
         setInfo(res.data);

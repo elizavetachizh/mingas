@@ -7,53 +7,53 @@ import {
   TextForInformation,
 } from '../../pages/feedback/electronicCirculationForEntity/styles';
 import axios from 'axios';
-import { APItenders } from '../../backend';
+import { API } from '../../backend';
 
 export default function Tenders() {
-  // const [info, setInfo] = useState([]);
-  // const divs = document.getElementById('electronic-appeal');
-  // console.log(divs);
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:5000/tenders')
-  //     .then((res) => {
-  //       setInfo(res.data);
-  //       console.log(res.data);
-  //     })
-  //     .catch((e) => {
-  //       {
-  //         console.log(e);
-  //       }
-  //     });
-  // }, [setInfo]);
-  // const getElement = useCallback((id) => {
-  //   return document.getElementById(`electronic-appeal-${id}`);
-  // }, []);
-  // useEffect(() => {
-  //   info.forEach((el) => {
-  //     const element = getElement(el._id);
-  //     if (element) {
-  //       element.innerHTML += el.content;
-  //     }
-  //   });
-  // }, [getElement, info]);
+  const [info, setInfo] = useState([]);
+  const divs = document.getElementById('electronic-appeal');
+  console.log(divs);
+  useEffect(() => {
+    axios
+      .get(`${API}/tenders`)
+      .then((res) => {
+        setInfo(res.data);
+        console.log(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setInfo]);
+  const getElement = useCallback((id) => {
+    return document.getElementById(`electronic-appeal-${id}`);
+  }, []);
+  useEffect(() => {
+    info.forEach((el) => {
+      const element = getElement(el._id);
+      if (element) {
+        element.innerHTML += el.content;
+      }
+    });
+  }, [getElement, info]);
   return (
     <ContainerContent
       name={'Тендеры и закупки'}
       content={
         <>
-          {/*<div>*/}
-          {/*  {!!info.length &&*/}
-          {/*    info.map((el) => (*/}
-          {/*      <ContainerInform style={{ marginBottom: '50px' }}>*/}
-          {/*        <SubTitleFun*/}
-          {/*          color={'blue'}*/}
-          {/*          infoSubTitle={'Приглашение на участие в процедуре переговоров'}*/}
-          {/*        />*/}
-          {/*        <TextForInformation id={`electronic-appeal-${el._id}`} />*/}
-          {/*      </ContainerInform>*/}
-          {/*    ))}*/}
-          {/*</div>*/}
+          <div>
+            {!!info.length &&
+              info.map((el) => (
+                <ContainerInform style={{ marginBottom: '50px' }}>
+                  <SubTitleFun
+                    color={'blue'}
+                    infoSubTitle={'Приглашение на участие в процедуре переговоров'}
+                  />
+                  <TextForInformation id={`electronic-appeal-${el._id}`} />
+                </ContainerInform>
+              ))}
+          </div>
 
           <ContainerInform
             className={'electronic-appeal-for-entity'}

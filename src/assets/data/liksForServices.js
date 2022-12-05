@@ -9,7 +9,7 @@ export const links = [
     idService: 2,
     imgService: 4,
     nameService: 'Газоснабжение потребителей',
-    linkService: '/services/638884ebee14e572e3102217',
+    linkService: '/services/63888f88f546e787c21ed73e',
   },
   {
     idService: 3,

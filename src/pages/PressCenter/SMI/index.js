@@ -6,7 +6,7 @@ import {
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Article, ContainerArticles } from '../styles';
 import React, { useEffect, useState } from 'react';
-import { APInews } from '../../../backend';
+import { API } from '../../../backend';
 import axios from 'axios';
 import LinkNews from '../../Home/News/LinkToNews';
 import SchemaSMI from './schema';
@@ -25,21 +25,21 @@ export default function SMI() {
       setIsClose(false);
     }
   };
-  //
-  // const [info, setInfo] = useState(null);
-  // useEffect(() => {
-  //   const apiUrl = `${APInews}`;
-  //   axios
-  //     .get(apiUrl)
-  //     .then((res) => {
-  //       setInfo(res.data);
-  //     })
-  //     .catch((e) => {
-  //       {
-  //         console.log(e);
-  //       }
-  //     });
-  // }, [setInfo]);
+
+  const [info, setInfo] = useState(null);
+  useEffect(() => {
+    const apiUrl = `${API}/posts`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setInfo]);
 
   return (
     <div>
@@ -93,8 +93,8 @@ export default function SMI() {
         </BtnIsOpen>
         <Div className={isClose && `shake`}>
           <ContainerArticles>
-            {/*{info &&*/}
-            {/*  info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} />)}*/}
+            {info &&
+              info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} />)}
             <Article >
               <a
                 rel="noopener"
@@ -200,7 +200,6 @@ export default function SMI() {
                   Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
                 </p>
               </a>
-              G
             </Article>
             <Article>
               <a
