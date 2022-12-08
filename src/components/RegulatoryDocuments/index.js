@@ -15,6 +15,9 @@ import { useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import ContainerContent from '../Container';
+import { API } from '../../backend';
+import axios from 'axios';
+import { go } from 'connected-react-router';
 
 export default function DepartmentInformation() {
   const { documentId } = useParams();
@@ -26,6 +29,21 @@ export default function DepartmentInformation() {
   const [message, setMessage] = useState('');
   const result = [];
   const isPhone = useMediaQuery('(max-width: 820px)');
+  const [title, setTitle] = useState([]);
+  const [info, setInfo] = useState(null);
+  useEffect(() => {
+    const apiUrl = `${API}/documents_separation`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setInfo]);
 
   const infoForSearch = data[0].inform
     .concat(data[1].inform)
@@ -56,11 +74,15 @@ export default function DepartmentInformation() {
     });
   }
   useEffect(() => {
-    const current = data.find((element) => element.idName === +documentId);
-    setInform(current.inform);
-    setDocumentId(+documentId);
+    console.log(info);
+    const current = info && info.find((element) => element.separation === documentId);
+    setInform(current?.documents);
+    console.log(current);
+    console.log(inform);
+
+    setDocumentId(documentId);
     setName(current?.separation);
-  }, [currentDocumentId, documentId, inform]);
+  }, [currentDocumentId, documentId, info]);
 
   const renderResult = () => {
     return (
@@ -95,10 +117,10 @@ export default function DepartmentInformation() {
 
   const changeDocument = useCallback(
     (documentId) => {
-      const current = data.find((element) => element.idName === documentId);
+      const current = info.find((element) => element.separation === documentId);
       setDocumentId(currentDocumentId && currentDocumentId === documentId ? '' : documentId);
-      setInform(current.inform);
-      navigate(`/regulatory-documents/${current.idName}`);
+      // setInform(current.inform);
+      navigate(`/regulatory-documents/${current.separation}`);
       setName(current?.separation);
     },
     [currentDocumentId, inform, name]
@@ -140,17 +162,18 @@ export default function DepartmentInformation() {
               </ContainerFormSearchForService>
             )}
             {message && renderResult()}
-            {data.map((element) => (
-              <BlockBtn key={element.idName}>
-                <ContainerBtnIcon>
-                  <DopFunctionalHeader
-                    nameCard={element.separation}
-                    className={currentDocumentId === element.idName ? 'background' : ''}
-                    onClick={() => changeDocument(element.idName)}
-                  />
-                </ContainerBtnIcon>
-              </BlockBtn>
-            ))}
+            {info &&
+              info.map((element) => (
+                <BlockBtn key={element._id}>
+                  <ContainerBtnIcon>
+                    <DopFunctionalHeader
+                      nameCard={element.separation}
+                      className={currentDocumentId === element.separation ? 'background' : ''}
+                      onClick={() => changeDocument(element.separation)}
+                    />
+                  </ContainerBtnIcon>
+                </BlockBtn>
+              ))}
           </HeaderCompanyDiv>
           {isPhone ? (
             <ContainerInform>
@@ -184,24 +207,26 @@ export default function DepartmentInformation() {
                 </ContainerFormSearchForService>
               )}
               {message && renderResult()}
-              {infoForSearch.map((el) => (
-                <BlockBtn key={el.id}>
-                  <a href={el.link} target={'_blank'}>
-                    {el.name}
-                  </a>
-                </BlockBtn>
-              ))}
+              {inform &&
+                  inform.map((el) => (
+                  <BlockBtn key={el._id}>
+                    <a href={el.link} target={'_blank'}>
+                      {el.name}
+                    </a>
+                  </BlockBtn>
+                ))}
             </ContainerInform>
           ) : (
             <ContainerInform>
               <Name>{name}</Name>
-              {inform.map((el) => (
-                <BlockBtn key={el.id}>
-                  <a href={el.link} target={'_blank'} rel="noopener">
-                    {el.name}
-                  </a>
-                </BlockBtn>
-              ))}
+              {inform &&
+                inform.map((el) => (
+                  <BlockBtn key={el._id}>
+                    <a href={el.link} target={'_blank'} rel="noopener">
+                      {el.name}
+                    </a>
+                  </BlockBtn>
+                ))}
             </ContainerInform>
           )}
         </DivBlocks>

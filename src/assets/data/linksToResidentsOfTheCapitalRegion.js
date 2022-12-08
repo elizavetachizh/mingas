@@ -13,7 +13,7 @@ export const links = [
   },
   {
     id: 6,
-    link: '/regulatory-documents/1',
+    link: '/regulatory-documents/ЗАКОНЫ',
     name: 'Регламентирующие документы',
     cardImg: 9,
   },

@@ -10,6 +10,8 @@ import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
 import { DivImage } from '../../../../feedback/styles';
 import LinkAsButtonFun from '../../../../../components/LinkButton';
+import axios from 'axios';
+import DopFunctional from '../../DopFunctional';
 export default class CarouselMobile extends React.Component {
   constructor() {
     super();
@@ -27,60 +29,42 @@ export default class CarouselMobile extends React.Component {
               юридических лиц». В связи с этим подача электронных обращений будет возможна только с
               помощью государственной единой (интегрированной) республиканской информационной
               системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса {''}
-              <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>обращения.бел.</a>
+              <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'} rel="noreferrer">
+                обращения.бел.
+              </a>
             </Text>
           </DivText>
         </>,
-
-        <>
-          <DivImage>
-            <img src={imageContent} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'phone'}>
-            <Text className={'phone'} style={{ position: 'initial' }}>
-              Добро пожаловать на сайт <br />
-              производственного республиканского <br />
-              унитарного предприятия “МИНГАЗ”
-            </Text>
-            <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
-              <img src={phone} alt={'картинка загружается'} />
-            </a>
-          </DivText>
-        </>,
-
-        <>
-          <DivImage>
-            <img src={background} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText style={{ justifyContent: 'center', alignItems: 'center' }} className={'phone'}>
-            <Text>
-              УП «МИНГАЗ» информирует! <br />
-              По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
-              осуществляться ежедневно, время приема 8.00-20.00.
-            </Text>
-          </DivText>
-        </>,
-
-        <>
-          <DivImage className={'none'}>
-            <img className={'post'} src={newPost} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'post'}>
-            <Text style={{ position: 'initial', textAlign: 'end' }}>
-              УП «МИНГАЗ» просит своих абонентов быть бдительными
-            </Text>
-            <ButtonFun
-              classname={'post'}
-              href={'/posts/1'}
-              infoButton={'Подробнее'}
-              backgrounder={'border'}
-            />
-          </DivText>
-        </>,
-
       ],
     };
     this.onchange = this.onchange.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ ...this.state, isFetching: true });
+    axios
+      .get('http://localhost/admin/articles')
+      .then((response) => {
+        this.setState({
+          isFetching: false,
+          slides: response.data.map((el) => (
+            <DopFunctional
+              onclick={() => console.log(el.content)}
+              content={el.content}
+              button={el.button}
+              image={el.image}
+              link={el.link}
+              href={el.href}
+            />
+          )),
+        });
+
+        console.log(this.state);
+      })
+      .catch((e) => {
+        console.log(e);
+        this.setState({ ...this.state, isFetching: false });
+      });
   }
 
   onchange(value) {

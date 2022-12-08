@@ -100,9 +100,9 @@ export const Divbackground = styled.div`
   @media (max-width: 424px) {
     top: 62px;
   }
-  p {
-    position: absolute;
-  }
+  //p {
+  //  position: absolute;
+  //}
 `;
 export const DivImage = styled.div`
   //height: 470px;

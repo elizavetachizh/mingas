@@ -10,7 +10,7 @@ import DopFunctionalHeader from './DopFunctionalHeader';
 import ContainerContent from '../../../components/Container';
 import DopFunctionService from '../DopFunction';
 import axios from 'axios';
-import {API} from "../../../backend";
+import { API } from '../../../backend';
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
   const [currentServiceID, setServiceID] = useState(null);

@@ -7,18 +7,12 @@ const renderLoader = () => <p>Loading</p>;
 export default function ContentHome() {
   const isPhone = useMediaQuery('(max-width: 600px)');
   return (
-    <>
-      {isPhone ? (
-        <ContentMobile />
-      ) : (
-        <ContainerContent>
-          <DivContent>
-            <Suspense fallback={renderLoader()}>
-              <CarouselFun />
-            </Suspense>
-          </DivContent>
-        </ContainerContent>
-      )}
-    </>
+    <ContainerContent>
+      <DivContent>
+        <Suspense fallback={renderLoader()}>
+          <CarouselFun />
+        </Suspense>
+      </DivContent>
+    </ContainerContent>
   );
 }

@@ -42,160 +42,24 @@ export const DivContent = styled.div`
 `;
 
 export const DivText = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  position: absolute;
+  color: white;
   width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
   align-items: center;
-  z-index: 5;
-  &.post {
-    flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-    align-items: center;
-    @media(max-width: 600px){
-        position: absolute;
-        color: white;
-        width: 90%;
-        margin: 0 auto;
-        height: 100%;
-        text-align: center;
-        display: flex;
-      flex-direction: column;
-        justify-content: center;
-        font-size: 1.4rem;
-        align-items: end;
-        font-weight: bold;
-    }
-    }
-  &.newpost {
-    flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-    align-items: center;
-    @media(max-width: 600px){
-      position: absolute;
-      color: white;
-      width: 90%;
-      margin: 0 auto;
-      height: 100%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      font-size: 1.4rem;
-      align-items: center;
-      font-weight: bold;
-    }
-  }
-  &.priem {
-    flex-direction: column;
-    width: 40%;
-    margin: 0 50%;
-    align-items: center;
-    @media(max-width: 1000px){
-      margin: -10px 50%;
-    }
-    @media(max-width: 600px){
-      position: absolute;
-      color: black;
-      width: 90%;
-      margin: 0 auto;
-      height: 100%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  }
-  &.phone {
-    @media (max-width: 1100px) {
-      width: 80%;
-      margin: 0 auto;
-    }
-    @media (max-width: 600px) {
-      position: absolute;
-      color: white;
-      width: 90%;
-      margin: 0 auto;
-      height: 100%;
-      text-align: center;
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.4rem;
-      align-items: end;
-      font-weight: bold;
-    }
-    @media(max-width: 430px){
-      flex-direction: column;
-      justify-content: flex-end;
-    }
+  font-weight: bold;
+  flex-direction: column;
+  @media (max-width: 640px) {
+    font-size: 1rem;
   }
   img {
     width: 100%;
   }
-  a.phone {
-    //margin-bottom: -130px;
-    margin-bottom: 7px;
-    @media (max-width: 2050px) {
-      //margin-bottom: -255px;
-      margin-bottom: -5px;
-    }
-    @media (max-width: 1800px) {
-      margin-bottom: -5px;
-    }
-    @media (max-width: 1060px) {
-      margin-bottom: -5px;
-    }
-    @media (max-width: 740px) {
-      margin-bottom: -5px;
-    }
-    @media (max-width: 630px) {
-      margin-bottom: -4px;
-    }
-    @media (max-width: 600px) {
-      margin-bottom: -5px;
-    }
-    @media (min-width: 2000px) {
-      margin-bottom: -5px;
-    }
-    img {
-      width: 80%;
-      margin-top: 10%;
-      @media (max-width: 1300px) {
-        width: 64%;
-      }
-      @media (max-width: 1100px) {
-        width: 60%;
-      }
-      @media (max-width: 600px) {
-        width: 76%;
-      }
-      @media (max-width: 450px) {
-        width: 100%;
-      }
-      @media (max-width: 430px) {
-        width: 60%;
-      }
-    }
-  }
-  &.media-phone {
-    margin-top: 80px;
-    a {
-      img {
-        @media (max-width: 401px) {
-          width: 100%;
-          margin: 0 auto;
-        }
-        @media (max-width: 2000px) {
-          box-shadow: none;
-          border-radius: 0;
-          margin: 0 auto 0;
-        }
-      }
-    }
 `;
 
 export const DivInformAbout = styled.div`
@@ -203,79 +67,31 @@ export const DivInformAbout = styled.div`
   flex-direction: column;
 `;
 
-export const Text = styled.p`
+export const Text = styled.div`
   font-weight: bold;
-  font-size: 30px;
+  font-size: 28px;
   color: #ffff;
   text-align: center;
   text-transform: uppercase;
-  a{
-    color: white;
-  }
-  &.priem {
-    color: black;
-    font-size: 22px;
-    text-align: justify;
-    padding-left: 20px;
-    @media (max-width: 1000px) {
-      font-size: 18px;
-    }
-    @media (max-width: 800px) {
-      font-size: 16px;
-    }
-    @media (max-width: 650px) {
-      font-size: 14px;
-    }
-    @media (max-width: 600px) {
-      color: #ffff;
-      text-align: center;
-      font-size: 16px;
-      padding-left: 0;
-    }
-  }
-  &.phone {
-    @media (max-width: 600px) {
-      margin-bottom: 50px;
-    }
-    @media (max-width: 430px) {
-      font-size: 14px;
-      text-align: center;
-      margin: 0 auto;
-      width: 100%;
-    }
-  }
-  @media (max-width: 1200px) {
-    font-size: 26px;
-  }
   @media (max-width: 1000px) {
-    font-size: 22px;
-    text-align: left;
-  }
-  @media (max-width: 850px) {
     font-size: 18px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     font-size: 16px;
   }
-  @media (max-width: 430px) {
+  @media (max-width: 650px) {
     font-size: 14px;
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
   }
-  &.new-post{
-    font-size: 20px;
+  @media (max-width: 600px) {
+    color: #ffff;
     text-align: center;
-    @media(max-width: 1062px){
-      font-size: 16px;
-    }
-    @media(max-width: 835px){
-      font-size: 14px;
-    }
-    @media(max-width: 694px){
-      font-size: 12px;
-    }
+    font-size: 16px;
+    padding-left: 0;
   }
+  a {
+    color: white;
+  }
+
 `;
 
 export const Prizes = styled.div`
@@ -298,5 +114,108 @@ export const Prizes = styled.div`
       width: 34px;
       height: 34px;
     }
+  }
+`;
+
+export const Divbackground = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  border-radius: 20px;
+  @media (min-width: 2000px) {
+    top: 174px;
+  }
+  @media (max-width: 2000px) {
+    border-radius: 0;
+  }
+  @media (max-width: 424px) {
+    top: 62px;
+  }
+  //p {
+  //  position: absolute;
+  //}
+`;
+
+export const DivImage = styled.div`
+  //height: 470px;
+  transform: translate3d(0px, 0px, 0px);
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 500px;
+
+    &.post {
+      width: 150%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+      @media (max-width: 540px) {
+        width: 170%;
+      }
+      @media (max-width: 490px) {
+        width: 190%;
+      }
+      @media (max-width: 445px) {
+        width: 210%;
+      }
+      @media (max-width: 400px) {
+        width: 230%;
+      }
+    }
+    &.newpost {
+      width: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+      //@media (max-width: 540px) {
+      //  width: 170%;
+      //}
+      //@media (max-width: 490px) {
+      //  width: 190%;
+      //}
+      //@media (max-width: 445px) {
+      //  width: 210%;
+      //}
+      //@media (max-width: 400px) {
+      //  width: 230%;
+      //}
+    }
+    &.priem {
+      filter: blur(3px) brightness(0.5);
+      width: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+    }
+  }
+  &.none:after {
+    content: none;
+    background: rgba(0, 0, 0, 0);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
   }
 `;

@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState, lazy, Suspense } from 'react';
 import photoHistory from '../../../assets/management/0.webp';
 import { DivLeadersPhotoPosition } from './styles';
 import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
-import { management } from '../../../assets/data/data_management';
 import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import SchemaCompany from '../SchemaCompany';
@@ -82,19 +81,6 @@ export default function Management() {
             </DivText>
           </DivTextPhoto>
           <DivLeadersPhotoPosition>
-            {/*<Suspense fallback={renderLoader()}>*/}
-            {/*  {management.map((element) => (*/}
-            {/*    <Leaders*/}
-            {/*      idName={element.id}*/}
-            {/*      handlerLeaderClick={handlerLeaderClick}*/}
-            {/*      cardImg={element.cardImg}*/}
-            {/*      leader={element}*/}
-            {/*      key={element.id}*/}
-            {/*      fullName={element.fullName}*/}
-            {/*      position={element.position}*/}
-            {/*    />*/}
-            {/*  ))}*/}
-            {/*</Suspense>*/}
             <Suspense fallback={renderLoader()}>
               {info.map((element) => (
                 <Leaders

@@ -69,39 +69,16 @@ export default function DepartmentInformation() {
     console.log(content);
   }, [infoDep, content]);
 
-  // const currentSearch = useMemo(
-  //   () => content.find((element) => element.nameMen === linkId),
-  //   [linkId]
-  // );
-  // console.log(currentSearch);
-
-  const infoForSearch = data[0].information
-    .concat(data[1].information)
-    .concat(data[2].information)
-    .concat(data[3].information)
-    .concat(data[4].information)
-    .concat(data[5].information)
-    .concat(data[6].information)
-    .concat(data[7].information);
-
   useEffect(() => {
-    // const current = content.find((element) => element.nameMen === linkId);
-    // setInform(current);
-    // setDepartamentId(linkId);
-    // console.log(current)
-    // console.log(linkId)
     if (id) {
       const currentBlockInfo = content.filter((information) => information.name === id);
       setInform(currentBlockInfo);
     }
-    // } else {
-    //   setInform(content);
-    // }
   }, [linkId, id, content]);
 
   const changeDepartment = useCallback(
     (departamentId) => {
-      const current = content.filter((element) => element.nameMen == departamentId);
+      const current = content.filter((element) => element.nameMen === departamentId);
       console.log(departamentId);
 
       console.log(current);
@@ -236,7 +213,7 @@ export default function DepartmentInformation() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <>
-              {inform.length &&
+              {inform.length ? (
                 inform.map((el) => (
                   <DopFunctional
                     key={el.name}
@@ -247,7 +224,10 @@ export default function DepartmentInformation() {
                     chief={el.chief}
                     description={el.description}
                   />
-                ))}
+                ))
+              ) : (
+                <p>Данные загружаются...</p>
+              )}
             </>
             {isPhone && (
               <ButtonFun

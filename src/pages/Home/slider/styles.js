@@ -5,6 +5,7 @@ export const Main = styled.div`
   display: flex;
   align-items: center;
   border-radius: 10px;
+  //max-height: 600px;
   //@media (max-width: 1200px) {
   //  max-height: 600px;
   //}

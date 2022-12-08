@@ -10,6 +10,8 @@ import post from '../../../assets/background/phone.webp';
 import background from '../../../assets/background/background_new.webp';
 import ButtonFun from '../../../components/button';
 import LinkAsButtonFun from '../../../components/LinkButton';
+import DopFunctional from '../Content/DopFunctional';
+import axios from 'axios';
 
 export default class CarouselFun extends React.Component {
   constructor() {
@@ -29,70 +31,45 @@ export default class CarouselFun extends React.Component {
                 изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и
                 юридических лиц». В связи с этим подача электронных обращений будет возможна только
                 с помощью государственной единой (интегрированной) республиканской информационной
-                системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса {''}
-                <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>обращения.бел.</a>
-              </Text>
-            </DivInformAbout>
-            {/*<LinkAsButtonFun*/}
-            {/*  name={'Подробнее'}*/}
-            {/*  // classname={'post'}*/}
-            {/*  href={'https://rcheph.by/news/vsemirnyy-den-nekureniya.html'}*/}
-            {/*  stylesLink={'border'}*/}
-            {/*/>*/}
-          </DivText>
-        </div>,
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <BackgroundContainer src={imageContent} />
-          <DivText className={'phone'}>
-            <DivInformAbout>
-              <Text>
-                Добро пожаловать на сайт <br />
-                производственного республиканского <br />
-                унитарного предприятия “МИНГАЗ”
-              </Text>
-            </DivInformAbout>
-            <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
-              <img src={phone} alt={'картинка'} />
-            </a>
-          </DivText>
-        </div>,
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            <BackgroundContainer src={background} />
-          </div>
-          <DivText className={'post'}>
-            <DivInformAbout>
-              <Text>
-                УП «МИНГАЗ» информирует! <br />
-                По адресу г. Минск, ул. Ботаническая 11 (подъезд 2) с 01.10.2022 приём граждан будет
-                осуществляться ежедневно, время приема 8.00-20.00.
+                системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса{' '}
+                {''}
+                <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>
+                  обращения.бел.
+                </a>
               </Text>
             </DivInformAbout>
           </DivText>
         </div>,
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            {' '}
-            <BackgroundContainer className={'post'} src={newPost} />
-          </div>
-          <DivText className={'post'}>
-            <DivInformAbout>
-              <Text>УП «МИНГАЗ» просит своих абонентов быть бдительными</Text>
-            </DivInformAbout>
-            <ButtonFun
-              classname={'post'}
-              href={'/posts/1'}
-              infoButton={'Подробнее'}
-              backgrounder={'border'}
-            />
-          </DivText>
-        </div>,
-
       ],
     };
     this.onchange = this.onchange.bind(this);
   }
+  componentDidMount() {
+    this.setState({ ...this.state, isFetching: true });
+    axios
+      .get('http://localhost/admin/articles')
+      .then((response) => {
+        this.setState({
+          isFetching: false,
+          slides: response.data.map((el) => (
+            <DopFunctional
+              onclick={() => console.log(el.content)}
+              content={el.content}
+              button={el.button}
+              image={el.image}
+              href={el.href}
+              link={el.link}
+            />
+          )),
+        });
 
+        console.log(this.state);
+      })
+      .catch((e) => {
+        console.log(e);
+        this.setState({ ...this.state, isFetching: false });
+      });
+  }
   onchange(value) {
     this.setState({ value });
   }
@@ -108,7 +85,7 @@ export default class CarouselFun extends React.Component {
               {
                 resolve: autoplayPlugin,
                 options: {
-                  interval: 6000,
+                  interval: 9000,
                 },
               },
             ]}
@@ -117,6 +94,7 @@ export default class CarouselFun extends React.Component {
             slides={this.state.slides}
             onChange={this.onchange}
           ></Carousel>
+
           <Dots
             value={this.state.value}
             onChange={this.onchange}
