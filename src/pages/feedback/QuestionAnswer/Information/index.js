@@ -29,7 +29,8 @@ export default function Information() {
     () => dataAnswer.find((element) => element.titleId === +titleId),
     [titleId]
   );
-
+  console.log(titleId)
+  console.log(currentTheme);
   const infoForSearch = dataAnswer[0].blockInform
     .concat(dataAnswer[1].blockInform)
     .concat(dataAnswer[2].blockInform)
@@ -37,13 +38,17 @@ export default function Information() {
     .concat(dataAnswer[4].blockInform);
 
   useEffect(() => {
+    const current = dataAnswer.find((element) => element.titleId === +titleId);
+    console.log(current?.blockInform);
+    setInfo(current?.blockInform);
     if (questionId) {
       const currentBlockInfo = infoForSearch.filter(
         (blockInfo) => blockInfo.questionId === +questionId
       );
       setInfo(currentBlockInfo);
-    } else {
-      setInfo(infoForSearch);
+      console.log(info);
+    } else{
+      setInfo(current.blockInform)
     }
     //not add infoForSearch!!
   }, [questionId]);
