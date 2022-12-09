@@ -16,6 +16,8 @@ import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../Home/parallax/useMediaQuery';
 import ContainerContent from '../../../../components/Container';
+import { API } from '../../../../backend';
+import axios from 'axios';
 
 export default function Information() {
   const isPhone = useMediaQuery('(max-width: 820px)');
@@ -25,29 +27,46 @@ export default function Information() {
   const [info, setInfo] = useState([]);
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const currentTheme = useMemo(
-    () => dataAnswer.find((element) => element.titleId === +titleId),
-    [titleId]
-  );
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const apiUrl = 'http://localhost/admin/themes';
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setData]);
+
+  const currentTheme = useMemo(() => data.find((element) => element._id === titleId), [titleId]);
 
   const infoForSearch = dataAnswer[0].blockInform
     .concat(dataAnswer[1].blockInform)
     .concat(dataAnswer[2].blockInform)
     .concat(dataAnswer[3].blockInform)
     .concat(dataAnswer[4].blockInform);
-  console.log(infoForSearch)
+
+  const formsearch = data.map((el) => el?.questionAnswer);
+  console.log(formsearch);
   useEffect(() => {
     if (questionId) {
-      const currentBlockInfo = infoForSearch.filter(
-        (blockInfo) => blockInfo.questionId === +questionId
+      const currentBlockInfo = formsearch.filter(
+        (questionAnswer) => questionAnswer._id === questionId
       );
       setInfo(currentBlockInfo);
-
-    } else {
-      setInfo(infoForSearch);
+      console.log(info);
+      console.log(currentBlockInfo);
     }
     //not add infoForSearch!!
-  }, [ infoForSearch, questionId]);
+  }, [data, setInfo]);
+  useEffect(() => {
+    console.log(info);
+  }, [info]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);
@@ -75,10 +94,10 @@ export default function Information() {
         {result.length ? (
           result.map((element) => {
             return (
-              <div key={element.questionId}>
+              <div key={element._id}>
                 <NavLink
                   style={{ margin: '20px auto' }}
-                  to={`${pathname}?questionId=${element.questionId}`}
+                  to={`${pathname}?questionId=${element._id}`}
                 >
                   {element.question}
                 </NavLink>
@@ -95,7 +114,7 @@ export default function Information() {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    setInfo(currentTheme?.blockInform);
+    setInfo(currentTheme?.questionAnswer);
     navigate('/feedback/question-answer/1');
   };
 
@@ -145,41 +164,19 @@ export default function Information() {
             </BlockSearch>
             <Menu />
           </div>
-          {isPhone ? (
-            <ContainerInform>
-              {info.length
-                ? info.map((el) => (
-                    <DopFunctionService
-                      classname={'question-answer'}
-                      key={el.questionId}
-                      inform={el.answer}
-                      nameDescription={el.question}
-                    />
-                  ))
-                : infoForSearch.map((el) => (
-                    <DopFunctionService
-                      classname={'question-answer'}
-                      key={el.questionId}
-                      inform={el.answer}
-                      nameDescription={el.question}
-                    />
-                  ))}
-            </ContainerInform>
-          ) : (
-            <ContainerInform>
-              {titleId && <Name>{currentTheme?.title}</Name>}
-              <>
-                {info.length &&
-                  info.map((el) => (
-                    <DopFunctionService
-                      key={el.questionId}
-                      inform={el.answer}
-                      nameDescription={el.question}
-                    />
-                  ))}
-              </>
-            </ContainerInform>
-          )}
+          <ContainerInform>
+            {titleId && <Name>{currentTheme?.title}</Name>}
+            <>
+              {info.length &&
+                info.map((el) => (
+                  <DopFunctionService
+                    key={el._id}
+                    inform={el.answer}
+                    nameDescription={el.question}
+                  />
+                ))}
+            </>
+          </ContainerInform>
         </DivBlocks>
       }
     />
