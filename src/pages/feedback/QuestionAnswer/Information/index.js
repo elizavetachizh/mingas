@@ -35,18 +35,19 @@ export default function Information() {
     .concat(dataAnswer[2].blockInform)
     .concat(dataAnswer[3].blockInform)
     .concat(dataAnswer[4].blockInform);
-
+  console.log(infoForSearch)
   useEffect(() => {
     if (questionId) {
       const currentBlockInfo = infoForSearch.filter(
         (blockInfo) => blockInfo.questionId === +questionId
       );
       setInfo(currentBlockInfo);
+
     } else {
       setInfo(infoForSearch);
     }
     //not add infoForSearch!!
-  }, [questionId]);
+  }, [ infoForSearch, questionId]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);
