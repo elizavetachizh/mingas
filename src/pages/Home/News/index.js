@@ -6,7 +6,8 @@ import { ArticleForHome } from '../../PressCenter/styles';
 import { BlockContainerRequests } from '../../feedback/styles';
 import axios from 'axios';
 import LinkNews from './LinkToNews';
-import {APInews} from '../../../backend';
+import { APInews } from '../../../backend';
+import smi from '../../../assets/png/smi.jpg';
 export default function News() {
   // const [info, setInfo] = useState(null);
   // useEffect(() => {
@@ -34,6 +35,19 @@ export default function News() {
             rel="noopener"
             target={'_blank'}
             href={
+              'https://www.belta.by/economics/view/sistema-gaz-40-up-mingaz-obespechivaet-polnoe-obsluzhivanie-potrebitelej-538989-2022/'
+            }
+          >
+            <img alt={''} src={smi} />
+            <p>Система "ГАЗ 4.0" УП "МИНГАЗ" обеспечивает полное обслуживание потребителей</p>
+            {/*<p>{''}</p>*/}
+          </a>
+        </ArticleForHome>
+        <ArticleForHome className={'general'}>
+          <a
+            rel="noopener"
+            target={'_blank'}
+            href={
               'https://minsknews.by/v-srednem-za-sutki-v-mingaz-postupaet-okolo-80-izveshhenij-o-nepoladkah-kak-rabotaet-avarijka/'
             }
           >
@@ -45,7 +59,6 @@ export default function News() {
               В среднем за сутки в «МИНГАЗ» поступает около 80 извещений о неполадках. Как работает
               «аварийка»
             </p>
-            {/*<p>{''}</p>*/}
           </a>
         </ArticleForHome>
         <ArticleForHome className={'general'}>
@@ -80,23 +93,6 @@ export default function News() {
             <p>
               «Видеонаблюдение обеспечивает безопасность горожан». В. Кухарев встретился с трудовым
               коллективом «МИНГАЗа»
-            </p>
-          </a>
-        </ArticleForHome>
-        <ArticleForHome>
-          <a
-            rel="noopener"
-            target={'_blank'}
-            href={'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'}
-          >
-            <img
-              alt={'новости'}
-              src={'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-8-of-31-kopiya.jpg'}
-            />
-
-            <p>
-              О реальном положении дел на ТБЗ «Сергеевичское» — Пухавiцкiя навiны. Пуховичские
-              новости. Марьина Горка. Новости Марьиной Горки
             </p>
           </a>
         </ArticleForHome>

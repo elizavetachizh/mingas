@@ -41,6 +41,20 @@ export default function ApplicationForOrderingCylinders() {
         </DivInput>
         <DivInput>
           <Label>
+            Введите ваш e-mail:
+            <Span>*</Span>
+          </Label>
+          <InputName
+              inputName={'email'}
+              type="email"
+              placeholder={'ваш e-mail'}
+              onChange={handleUserInput}
+              value={requestValues.email}
+              error={errors.email}
+          />
+        </DivInput>
+        <DivInput>
+          <Label>
             Номер абонента: <Span>*</Span>
           </Label>
           <InputName

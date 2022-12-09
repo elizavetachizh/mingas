@@ -10,6 +10,7 @@ import { APInews } from '../../../backend';
 import axios from 'axios';
 import LinkNews from '../../Home/News/LinkToNews';
 import SchemaSMI from './schema';
+import smi from '../../../assets/png/smi.jpg';
 export default function SMI() {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
@@ -95,7 +96,19 @@ export default function SMI() {
           <ContainerArticles>
             {/*{info &&*/}
             {/*  info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} />)}*/}
-            <Article >
+            <Article>
+              <a
+                rel="noopener"
+                target={'_blank'}
+                href={
+                  'https://www.belta.by/economics/view/sistema-gaz-40-up-mingaz-obespechivaet-polnoe-obsluzhivanie-potrebitelej-538989-2022/'
+                }
+              >
+                <img alt={''} src={smi} />
+                <p>Система "ГАЗ 4.0" УП "МИНГАЗ" обеспечивает полное обслуживание потребителей</p>
+              </a>
+            </Article>
+            <Article>
               <a
                 rel="noopener"
                 target={'_blank'}

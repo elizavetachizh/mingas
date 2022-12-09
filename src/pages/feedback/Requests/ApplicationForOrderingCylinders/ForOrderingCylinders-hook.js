@@ -5,7 +5,7 @@ import axios from 'axios';
 export const useForOrderingCylinders = () => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
   //for me
-  // const url = 'http://localhost:3000/cylinders';
+  // const url = 'http://localhost/cylinders';
 
   //for site
   const url = 'https://back.mingas.by/cylinders';
@@ -20,11 +20,17 @@ export const useForOrderingCylinders = () => {
   const stringIncludesNumber = (string) => {
     return /\d/.test(string);
   };
+  const isValidateEmail = (email) => {
+    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
+      email
+    );
+  };
   const isButtonDisabled = useMemo(() => {
     return !!(
       stringIncludesNumber(requestValues.name) ||
       !requestValues.isAgree ||
       !requestValues.text ||
+      !isValidateEmail(requestValues.email) ||
       !requestValues.address ||
       !isValidatePhone(requestValues.phone) ||
       Object.keys(errors)?.length
@@ -42,6 +48,11 @@ export const useForOrderingCylinders = () => {
       case 'phone':
         if (!isValidatePhone(requestValues.phone)) {
           setErrors({ ...errors, phone: 'Введите телефон в формате +375XXXXXXXXX!' });
+        }
+        break;
+      case 'email':
+        if (!isValidateEmail(requestValues.email)) {
+          setErrors({ ...errors, email: 'Введите верный адрес почты!' });
         }
         break;
       case 'isAgree':
