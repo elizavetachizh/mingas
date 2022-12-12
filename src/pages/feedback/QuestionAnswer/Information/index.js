@@ -6,18 +6,25 @@ import {
   DivBlocks,
   SearchService,
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
-import { Name } from '../../../../components/administrativeServices/Header/styles';
-import React, { useEffect, useMemo, useState } from 'react';
+import {
+  BlockBtn,
+  ContainerBtnIcon,
+  DivOpen,
+  Name,
+} from '../../../../components/administrativeServices/Header/styles';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Menu from '../Menu';
 import { NavLink, useParams, useSearchParams } from 'react-router-dom';
 import { dataAnswer } from '../../../../assets/data/question-answer';
 import DopFunctionService from '../../../services/DopFunction';
 import { useLocation, useNavigate } from 'react-router';
-import { IoIosSearch, IoMdClose } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../Home/parallax/useMediaQuery';
 import ContainerContent from '../../../../components/Container';
 import { API } from '../../../../backend';
 import axios from 'axios';
+import { HeaderCompanyDiv } from '../../../concats/headerContacts/styles';
+import DopFunctionalHeader from '../../../services/NaturalGas/DopFunctionalHeader';
 
 export default function Information() {
   const isPhone = useMediaQuery('(max-width: 820px)');
@@ -27,6 +34,8 @@ export default function Information() {
   const [info, setInfo] = useState([]);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [currentServiceID, setServiceID] = useState(null);
+  const [links, setLinks] = useState([]);
 
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -64,6 +73,28 @@ export default function Information() {
     }
     //not add infoForSearch!!
   }, [data, setInfo]);
+
+  const handlerLinkClick = useCallback(
+    (titleId) => {
+      const current = data.find((element) => element._id === titleId);
+      console.log(current.questionAnswer)
+      navigate(`/feedback/question-answer/${current._id}`);
+      setServiceID(currentServiceID && currentServiceID === titleId ? '' : titleId);
+      setLinks(current.questionAnswer);
+    },
+    [currentServiceID, data, navigate]
+  );
+  // useEffect(() => {
+  //   data.map((el) => {
+  //     console.log(el.questionAnswer);
+  //   });
+  // }, [data]);
+  const handlerLinkClickUniqueName = useCallback(
+    (questionId) => {
+      navigate(`${pathname}?questionId=${questionId}`);
+    },
+    [pathname, navigate]
+  );
   useEffect(() => {
     console.log(info);
   }, [info]);
@@ -162,7 +193,32 @@ export default function Information() {
               )}
               {message && renderResult()}
             </BlockSearch>
-            <Menu />
+            <HeaderCompanyDiv style={{ width: '80%', margin: '0 auto' }}>
+              <Name>Тема</Name>
+              {data.map((element) => (
+                <BlockBtn key={element._id}>
+                  <ContainerBtnIcon>
+                    <DopFunctionalHeader
+                      nameCard={element.title}
+                      className={currentServiceID === element._id ? 'background' : ''}
+                      onClick={() => handlerLinkClick(element._id)}
+                    />
+                    {currentServiceID === element._id ? (
+                      <IoIosArrowUp onClick={() => handlerLinkClick(element._id)} />
+                    ) : (
+                      <IoIosArrowDown onClick={() => handlerLinkClick(element._id)} />
+                    )}
+                  </ContainerBtnIcon>
+                  <DivOpen className={currentServiceID === element._id && `shake`}>
+                    {links.map((link) => (
+                      <button onClick={() => handlerLinkClickUniqueName(link._id)} key={link._id}>
+                        {link.question}
+                      </button>
+                    ))}
+                  </DivOpen>
+                </BlockBtn>
+              ))}
+            </HeaderCompanyDiv>
           </div>
           <ContainerInform>
             {titleId && <Name>{currentTheme?.title}</Name>}
