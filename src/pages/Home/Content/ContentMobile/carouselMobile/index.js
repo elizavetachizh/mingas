@@ -31,22 +31,6 @@ export default class CarouselMobile extends React.Component {
             </a>
           </DivText>
         </>,
-        <>
-          <DivImage className={'none'}>
-            <img className={'newpost'} src={post} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'post'}>
-            <Text style={{ position: 'initial', textAlign: 'end' }}>
-              Памяти Михаила Васильевича Попова
-            </Text>
-            <ButtonFun
-              classname={'post'}
-              href={'/posts/3'}
-              infoButton={'Подробнее'}
-              backgrounder={'border'}
-            />
-          </DivText>
-        </>,
 
         <>
           <DivImage className={'none'}>

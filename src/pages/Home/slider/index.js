@@ -40,24 +40,6 @@ export default class CarouselFun extends React.Component {
           </div>
           <DivText className={'post'}>
             <DivInformAbout>
-              <Text>Памяти Михаила Васильевича Попова</Text>
-            </DivInformAbout>
-            <ButtonFun
-              classname={'post'}
-              href={'/posts/3'}
-              infoButton={'Подробнее'}
-              backgrounder={'border'}
-            />
-          </DivText>
-        </div>,
-
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            {' '}
-            <BackgroundContainer className={'new-post'} src={post} />
-          </div>
-          <DivText className={'post'}>
-            <DivInformAbout>
               <Text className={'new-post'}>
                 Уважаемые граждане! Обращаем внимание на то, что 2 января 2023 г. вступают в силу
                 изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и

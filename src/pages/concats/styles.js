@@ -60,6 +60,6 @@ export const Row = styled.div`
 `;
 export const Text = styled.div`
 display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: end;
+  width: 97%;
 `
