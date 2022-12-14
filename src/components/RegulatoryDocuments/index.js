@@ -117,9 +117,10 @@ export default function DepartmentInformation() {
 
   const changeDocument = useCallback(
     (documentId) => {
-      const current = info.find((element) => element.separation === documentId);
+      const current = info && info.find((element) => element.separation === documentId);
       setDocumentId(currentDocumentId && currentDocumentId === documentId ? '' : documentId);
       // setInform(current.inform);
+      console.log(current)
       navigate(`/regulatory-documents/${current.separation}`);
       setName(current?.separation);
     },
@@ -219,14 +220,14 @@ export default function DepartmentInformation() {
           ) : (
             <ContainerInform>
               <Name>{name}</Name>
-              {inform &&
+              {inform ?
                 inform.map((el) => (
                   <BlockBtn key={el._id}>
                     <a href={el.link} target={'_blank'} rel="noopener">
                       {el.name}
                     </a>
                   </BlockBtn>
-                ))}
+                )) : <p>Loading</p>}
             </ContainerInform>
           )}
         </DivBlocks>
