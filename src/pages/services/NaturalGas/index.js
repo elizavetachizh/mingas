@@ -58,15 +58,19 @@ export default function NaturalGas() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Наименование услуги</Name>
-            {data.map((element) => (
-              <BlockBtn key={element._id}>
-                <DopFunctionalHeader
-                  nameCard={element.name}
-                  className={currentServiceID === element._id ? 'background' : ''}
-                  onClick={() => animate(element._id)}
-                />
-              </BlockBtn>
-            ))}
+            {data.map((element) => {
+              if (element.type === '1') {
+                return (
+                  <BlockBtn key={element._id}>
+                    <DopFunctionalHeader
+                      nameCard={element.name}
+                      className={currentServiceID === element._id ? 'background' : ''}
+                      onClick={() => animate(element._id)}
+                    />
+                  </BlockBtn>
+                );
+              }
+            })}
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>

@@ -25,7 +25,7 @@ export const links = [
   // },
   {
     id: 8,
-    link: '/feedback/question-answer/1',
+    link: '/feedback/question-answer/63930a954fe167e2981cc2e1',
     name: 'Часто задаваемые вопросы',
     cardImg: 14,
   },

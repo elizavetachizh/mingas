@@ -13,7 +13,6 @@ import {
   Name,
 } from '../../../../components/administrativeServices/Header/styles';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import Menu from '../Menu';
 import { NavLink, useParams, useSearchParams } from 'react-router-dom';
 import { dataAnswer } from '../../../../assets/data/question-answer';
 import DopFunctionService from '../../../services/DopFunction';
@@ -29,8 +28,6 @@ import DopFunctionalHeader from '../../../services/NaturalGas/DopFunctionalHeade
 export default function Information() {
   const isPhone = useMediaQuery('(max-width: 820px)');
   const { titleId } = useParams();
-  const [searchParams] = useSearchParams();
-  const questionId = searchParams.get('questionId');
   const [info, setInfo] = useState([]);
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -39,9 +36,8 @@ export default function Information() {
 
   const [data, setData] = useState([]);
   useEffect(() => {
-    const apiUrl = 'http://localhost/admin/themes';
     axios
-      .get(apiUrl)
+      .get(`${API}/themes`)
       .then((res) => {
         setData(res.data);
       })
@@ -54,50 +50,33 @@ export default function Information() {
 
   const currentTheme = useMemo(() => data.find((element) => element._id === titleId), [titleId]);
 
-  const infoForSearch = dataAnswer[0].blockInform
-    .concat(dataAnswer[1].blockInform)
-    .concat(dataAnswer[2].blockInform)
-    .concat(dataAnswer[3].blockInform)
-    .concat(dataAnswer[4].blockInform);
-
   const formsearch = data.map((el) => el?.questionAnswer);
-  console.log(formsearch);
-  useEffect(() => {
-    if (questionId) {
-      const currentBlockInfo = formsearch.filter(
-        (questionAnswer) => questionAnswer._id === questionId
-      );
-      setInfo(currentBlockInfo);
-      console.log(info);
-      console.log(currentBlockInfo);
-    }
-    //not add infoForSearch!!
-  }, [data, setInfo]);
+  formsearch.map((el) => {
+    console.log(el);
+  });
 
   const handlerLinkClick = useCallback(
     (titleId) => {
       const current = data.find((element) => element._id === titleId);
-      console.log(current.questionAnswer)
+      console.log(current.questionAnswer);
       navigate(`/feedback/question-answer/${current._id}`);
       setServiceID(currentServiceID && currentServiceID === titleId ? '' : titleId);
       setLinks(current.questionAnswer);
+      setInfo(current.questionAnswer);
     },
     [currentServiceID, data, navigate]
   );
-  // useEffect(() => {
-  //   data.map((el) => {
-  //     console.log(el.questionAnswer);
-  //   });
-  // }, [data]);
+
   const handlerLinkClickUniqueName = useCallback(
     (questionId) => {
       navigate(`${pathname}?questionId=${questionId}`);
+      const currentBlockInfo = links.filter((questionAnswer) => questionAnswer._id === questionId);
+      console.log(currentBlockInfo);
+      setInfo(currentBlockInfo);
     },
-    [pathname, navigate]
+    [navigate, pathname, data]
   );
-  useEffect(() => {
-    console.log(info);
-  }, [info]);
+
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);
@@ -112,7 +91,7 @@ export default function Information() {
     setMessage(event.target.value);
   };
 
-  infoForSearch.map((card) => {
+  links.map((card) => {
     if (card.question.includes(message)) {
       result.push(card);
     }
@@ -153,7 +132,7 @@ export default function Information() {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    setInfo(infoForSearch);
+    setInfo(formsearch);
   };
   return (
     <ContainerContent

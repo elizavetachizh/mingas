@@ -17,7 +17,6 @@ import useMediaQuery from '../../pages/Home/parallax/useMediaQuery';
 import ContainerContent from '../Container';
 import { API } from '../../backend';
 import axios from 'axios';
-import { go } from 'connected-react-router';
 
 export default function DepartmentInformation() {
   const { documentId } = useParams();
@@ -29,7 +28,6 @@ export default function DepartmentInformation() {
   const [message, setMessage] = useState('');
   const result = [];
   const isPhone = useMediaQuery('(max-width: 820px)');
-  const [title, setTitle] = useState([]);
   const [info, setInfo] = useState(null);
   useEffect(() => {
     const apiUrl = `${API}/documents_separation`;
@@ -92,7 +90,7 @@ export default function DepartmentInformation() {
             return (
               <div key={element.id}>
                 <a
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   style={{ margin: '20px auto' }}
                   href={`${element.link}`}
                   target={'_blank'}
@@ -120,7 +118,7 @@ export default function DepartmentInformation() {
       const current = info && info.find((element) => element.separation === documentId);
       setDocumentId(currentDocumentId && currentDocumentId === documentId ? '' : documentId);
       // setInform(current.inform);
-      console.log(current)
+      console.log(current);
       navigate(`/regulatory-documents/${current.separation}`);
       setName(current?.separation);
     },
@@ -209,25 +207,36 @@ export default function DepartmentInformation() {
               )}
               {message && renderResult()}
               {inform &&
-                  inform.map((el) => (
-                  <BlockBtn key={el._id}>
-                    <a href={el.link} target={'_blank'}>
-                      {el.name}
-                    </a>
-                  </BlockBtn>
-                ))}
+                inform.map((el) => {
+                  if (el.type === '1') {
+                    return (
+                      <BlockBtn key={el._id}>
+                        <a href={el.link} target={'_blank'} rel="noreferrer">
+                          {el.name}
+                        </a>
+                      </BlockBtn>
+                    );
+                  }
+                })}
             </ContainerInform>
           ) : (
             <ContainerInform>
               <Name>{name}</Name>
-              {inform ?
-                inform.map((el) => (
-                  <BlockBtn key={el._id}>
-                    <a href={el.link} target={'_blank'} rel="noopener">
-                      {el.name}
-                    </a>
-                  </BlockBtn>
-                )) : <p>Loading</p>}
+              {inform ? (
+                inform.map((el) => {
+                  if (el.type === '1') {
+                    return (
+                      <BlockBtn key={el._id}>
+                        <a href={el.link} target={'_blank'} rel="noreferrer">
+                          {el.name}
+                        </a>
+                      </BlockBtn>
+                    );
+                  }
+                })
+              ) : (
+                <p>Loading</p>
+              )}
             </ContainerInform>
           )}
         </DivBlocks>

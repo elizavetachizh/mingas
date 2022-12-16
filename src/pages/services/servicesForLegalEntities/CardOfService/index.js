@@ -22,6 +22,9 @@ import minsk from '../../../../assets/background/phone.webp';
 import Feedback from '../../../feedback';
 import { BackgroundStyleServices } from '../../styles';
 import linesOne from '../../../../assets/background/rig.webp';
+import axios from 'axios';
+import { API } from '../../../../backend';
+import DopFunctionalHeader from '../../NaturalGas/DopFunctionalHeader';
 
 export default function CardOfService() {
   const [inform, setInform] = useState([]);
@@ -29,26 +32,41 @@ export default function CardOfService() {
   const [title, setTitle] = useState([]);
   const { cardId } = useParams();
   const navigate = useNavigate();
+  const [data, setData] = useState([]);
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (!inform.length && !currentServiceID && (!title.length || !title)) {
-      const current = dataLegalEntities.find((element) => element.serviceId === +cardId);
-      setInform(current.description);
-      setTitle(current.nameCard);
-      setServiceID(+cardId);
-    }
-  }, [cardId, title, inform, currentServiceID]);
+    axios
+      .get(`${API}/services`)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setData]);
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+  useEffect(() => {
+    const current = data.find((element) => element._id === cardId);
+    setInform(current?.description);
+    setTitle(current?.name);
+    setServiceID(cardId);
+    console.log(inform);
+  }, [cardId, data, inform]);
 
   const animate = useCallback(
     (descriptionID) => {
-      const current = dataLegalEntities.find((element) => element.serviceId === descriptionID);
-      setInform(current.description);
-      setTitle(current.nameCard);
+      const current = data.find((element) => element._id === descriptionID);
+      setInform(current?.description);
+      setTitle(current?.name);
       setServiceID(descriptionID);
       navigate(`/services-legal-entities/${descriptionID}`);
     },
     [navigate]
   );
+
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
@@ -58,26 +76,30 @@ export default function CardOfService() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Услуги для юридических лиц</Name>
-            {dataLegalEntities.map((element) => (
-              <BlockBtn key={element.serviceId}>
-                <Button
-                  className={currentServiceID === element.serviceId ? 'background' : ''}
-                  onClick={() => animate(element.serviceId)}
-                >
-                  {element.nameCard}
-                </Button>
-              </BlockBtn>
-            ))}
+            {data.map((element) => {
+              if (element.type === '2') {
+                return (
+                  <BlockBtn key={element._id}>
+                    <DopFunctionalHeader
+                      nameCard={element.name}
+                      className={currentServiceID === element._id ? 'background' : ''}
+                      onClick={() => animate(element._id)}
+                    />
+                  </BlockBtn>
+                );
+              }
+            })}
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>
-            {inform.map((el) => (
-              <DopFunctionService
-                key={el.nameDescription}
-                nameDescription={el.nameDescription}
-                inform={el.inform}
-              />
-            ))}
+            {inform &&
+              inform.map((el) => (
+                <DopFunctionService
+                  key={el.nameDescription}
+                  nameDescription={el.nameDescription}
+                  inform={el.inform}
+                />
+              ))}
           </ContainerInform>
         </DivBlocks>
       </AdditionalDiv>
