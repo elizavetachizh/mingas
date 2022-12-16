@@ -22,6 +22,16 @@ export default function Newspaper() {
       <ContanerNewsPape>
         <img alt={''} src={require('../../../assets/png/newspaper.png')} />
         <a
+            href={require('../../../assets/pdf/newspaper/last.pdf')}
+            target={'_blank'}
+            rel="opener"
+        >
+          Последний выпуск от 05.12.2022
+        </a>
+      </ContanerNewsPape>
+      <ContanerNewsPape>
+        <img alt={''} src={require('../../../assets/png/newspaper.png')} />
+        <a
           href={require('../../../assets/pdf/newspaper/last_gazeta.pdf')}
           target={'_blank'}
           rel="opener"

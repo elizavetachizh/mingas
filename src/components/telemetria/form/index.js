@@ -88,12 +88,12 @@ export default function FormTelemetria() {
         />
       </DivInput>
       <DivInput>
-        <Label>Номер sim-карты:</Label>
+        <Label>Номер sim-карт(ы), через запятую, если их несколько:</Label>
         <InputName
           inputName={'text'}
           name={'text'}
           type={'text'}
-          placeholder={'Напишите тему'}
+          placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
           onChange={handleUserInput}
           value={formValues.text}
           error={errors.text}
