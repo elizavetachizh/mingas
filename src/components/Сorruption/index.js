@@ -58,12 +58,6 @@ export default function Corruption() {
             </Div>
           </General>
           <div style={{ width: '80%', margin: '0 auto' }}>
-            <p>
-              <strong>
-                20.12.2022 СОСТОИТСЯ ЗАСЕДАНИЕ КОМИССИИ ПО ПРОТИВОДЕЙСТВИЮ КОРРУПЦИИ В УП «МИНГАЗ» В
-                КОНФЕРЕНЦ-ЗАЛЕ ПО УЛ. БОТАНИЧЕСКАЯ, 11, 3 ЭТАЖ (в 13-00){' '}
-              </strong>
-            </p>
             {data.map((el) => (
               <ContanerNewsPape>
                 <a href={el.link} target={'_blank'} rel="noreferrer">
