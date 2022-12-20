@@ -18,6 +18,21 @@ export default class CarouselFun extends React.Component {
       value: 0,
       slides: [
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            <BackgroundContainer src={background} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text>
+                УВАЖАЕМЫЕ ГРАЖДАНЕ! УП "МИНГАЗ" ИНФОРМИРУЕТ. 21.12.2022 БУДУТ ПРОВОДИТЬСЯ
+                ТЕХНИЧЕСКИЕ РАБОТЫ, В СВЯЗИ С ЧЕМ МОГУТ БЫТЬ СБОИ В РАБОТЕ КОНТАКТ ЦЕНТРА ПО НОМЕРУ
+                162. ПРИНОСИМ СВОИ ИЗВЕНЕНИЯ ЗА НЕУДОБСТВА.
+              </Text>
+            </DivInformAbout>
+          </DivText>
+        </div>,
+
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
             <DivInformAbout>
@@ -52,12 +67,6 @@ export default class CarouselFun extends React.Component {
                 </a>
               </Text>
             </DivInformAbout>
-            {/*<LinkAsButtonFun*/}
-            {/*  name={'Подробнее'}*/}
-            {/*  // classname={'post'}*/}
-            {/*  href={'https://rcheph.by/news/vsemirnyy-den-nekureniya.html'}*/}
-            {/*  stylesLink={'border'}*/}
-            {/*/>*/}
           </DivText>
         </div>,
 
