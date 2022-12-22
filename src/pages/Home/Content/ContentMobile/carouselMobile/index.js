@@ -16,18 +16,6 @@ export default class CarouselMobile extends React.Component {
     this.state = {
       value: 0,
       slides: [
-        <>
-          <DivImage>
-            <img src={background} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText style={{ justifyContent: 'center', alignItems: 'center' }} className={'phone'}>
-            <Text>
-              УВАЖАЕМЫЕ ГРАЖДАНЕ! УП "МИНГАЗ" ИНФОРМИРУЕТ. 20.12.2022 БУДУТ ПРОВОДИТЬСЯ ТЕХНИЧЕСКИЕ
-              РАБОТЫ, В СВЯЗИ С ЧЕМ МОГУТ БЫТЬ СБОИ В РАБОТЕ КОНТАКТ ЦЕНТРА ПО НОМЕРУ 162. ПРИНОСИМ
-              СВОИ ИЗВИНЕНИЯ ЗА НЕУДОБСТВА.
-            </Text>
-          </DivText>
-        </>,
 
         <>
           <DivImage>
