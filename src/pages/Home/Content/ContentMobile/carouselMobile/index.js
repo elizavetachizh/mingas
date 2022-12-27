@@ -16,7 +16,21 @@ export default class CarouselMobile extends React.Component {
     this.state = {
       value: 0,
       slides: [
-
+        <>
+          <DivImage className={'none'}>
+            <img className={'newpost'} src={post} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText className={'newpost'}>
+            <Text style={{ position: 'initial', textAlign: 'center' }}>
+              Объявление! 28 декабря 2022 года с 17.00 до 18.00 по адресу: Вилейский р-н, д.Бубны,
+              ул. Молодежная,34 (административное здание) генеральным директором Шолоником Вадимом
+              Евгеньевичем будет проведён выездной прием граждан. Справки по телефону:
+              <a href={'tel:80172992880'}>
+                80172992880
+              </a>
+            </Text>
+          </DivText>
+        </>,
         <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />

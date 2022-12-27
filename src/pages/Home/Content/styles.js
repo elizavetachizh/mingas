@@ -264,12 +264,15 @@ export const Text = styled.p`
     width: 100%;
   }
   &.new-post{
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     @media(max-width: 1062px){
+      font-size: 18px;
+    }
+    @media(max-width: 980px){
       font-size: 16px;
     }
-    @media(max-width: 835px){
+    @media(max-width: 840px){
       font-size: 14px;
     }
     @media(max-width: 694px){

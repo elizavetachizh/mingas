@@ -17,7 +17,21 @@ export default class CarouselFun extends React.Component {
     this.state = {
       value: 0,
       slides: [
-
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            <BackgroundContainer className={'new-post'} src={post} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text className={'new-post'}>
+                Объявление! 28 декабря 2022 года с 17.00 до 18.00 по адресу: Вилейский р-н, д.Бубны,
+                ул. Молодежная,34 (административное здание) генеральным директором Шолоником Вадимом
+                Евгеньевичем будет проведён выездной прием граждан. Справки по телефону:
+                <a href={'tel:80172992880'}>80172992880</a>
+              </Text>
+            </DivInformAbout>
+          </DivText>
+        </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
