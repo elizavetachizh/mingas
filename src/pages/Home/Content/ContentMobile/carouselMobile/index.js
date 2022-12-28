@@ -16,21 +16,7 @@ export default class CarouselMobile extends React.Component {
     this.state = {
       value: 0,
       slides: [
-        <>
-          <DivImage className={'none'}>
-            <img className={'newpost'} src={post} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'newpost'}>
-            <Text style={{ position: 'initial', textAlign: 'center' }}>
-              Объявление! 28 декабря 2022 года с 17.00 до 18.00 по адресу: Вилейский р-н, д.Бубны,
-              ул. Молодежная,34 (административное здание) генеральным директором Шолоником Вадимом
-              Евгеньевичем будет проведён выездной прием граждан. Справки по телефону:
-              <a href={'tel:80172992880'}>
-                80172992880
-              </a>
-            </Text>
-          </DivText>
-        </>,
+
         <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
@@ -46,14 +32,28 @@ export default class CarouselMobile extends React.Component {
             </a>
           </DivText>
         </>,
-
         <>
           <DivImage className={'none'}>
             <img className={'newpost'} src={post} alt={'картинка загружается'} />
           </DivImage>
           <DivText className={'newpost'}>
             <Text style={{ position: 'initial', textAlign: 'center' }}>
-              Уважаемые граждане! Обращаем внимание на то, что 2 января 2023 г. вступают в силу
+              Объявление! <br/>28 декабря 2022 года с 17.00 до 18.00 по адресу: Вилейский р-н, д.Бубны,
+              ул. Молодежная,34 (административное здание) генеральным директором Шолоником Вадимом
+              Евгеньевичем будет проведён выездной прием граждан. Справки по телефону:
+              <a href={'tel:80172992880'}>
+                80172992880
+              </a>
+            </Text>
+          </DivText>
+        </>,
+        <>
+          <DivImage className={'none'}>
+            <img className={'newpost'} src={post} alt={'картинка загружается'} />
+          </DivImage>
+          <DivText className={'newpost'}>
+            <Text style={{ position: 'initial', textAlign: 'center' }}>
+              Уважаемые граждане! <br/>Обращаем внимание на то, что 2 января 2023 г. вступают в силу
               изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и
               юридических лиц». В связи с этим подача электронных обращений будет возможна только с
               помощью государственной единой (интегрированной) республиканской информационной
