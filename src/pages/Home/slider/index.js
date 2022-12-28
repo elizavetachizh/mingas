@@ -53,7 +53,6 @@ export default class CarouselFun extends React.Component {
           isFetching: false,
           slides: response.data.map((el) => (
             <DopFunctional
-              onclick={() => console.log(el.content)}
               content={el.content}
               button={el.button}
               image={el.image}
@@ -91,7 +90,7 @@ export default class CarouselFun extends React.Component {
             ]}
             animationSpeed={2000}
             value={this.state.value}
-            slides={this.state.slides}
+             slides={this.state.slides}
             onChange={this.onchange}
           ></Carousel>
 

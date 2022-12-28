@@ -1,19 +1,30 @@
-import {Divbackground, DivImage, DivInformAbout, DivText, Text} from '../styles';
-import React from 'react';
+import { Divbackground, DivImage, DivInformAbout, DivText, Text } from '../styles';
+import React, { useCallback, useEffect } from 'react';
 import ButtonFun from '../../../../components/button';
+import { APImage } from '../../../../backend';
 
 export default function DopFunctional({ image, content, button, link, href }) {
+  const getElement = useCallback((content) => {
+    return document.getElementById(`content-${content}`);
+  }, []);
+  useEffect(() => {
+    const element = getElement(content);
+    if (element) {
+      element.innerHTML += content;
+    }
+  }, [getElement, content]);
+
   return (
-    <Divbackground >
+    <Divbackground>
       <DivImage>
         {' '}
-        <img src={image} alt={''} />
+        <img src={`${APImage}/public/images/${image}`} alt={''} />
       </DivImage>
 
       <DivText>
         <DivInformAbout>
           {' '}
-          <Text>
+          <Text id={`content-${content}`}>
             {content}{' '}
             {link && (
               <a href={link} target={'_blank'}>

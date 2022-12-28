@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { data } from '../../../../../assets/data/data_department';
+import React, { useCallback, useEffect, useState } from 'react';
 import DopFunctional from '../DopFunctional';
 import { NavLink, useParams, useSearchParams } from 'react-router-dom';
 import {
