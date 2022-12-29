@@ -31,7 +31,6 @@ export default function Management() {
       name={'Руководство'}
       content={
         <>
-          {' '}
           <DivTextPhoto>
             <ImageDiv data-aos={'fade-up'} src={photoHistory} />
             <DivText data-aos={'fade-up'}>

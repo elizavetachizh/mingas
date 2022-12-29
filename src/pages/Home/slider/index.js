@@ -9,7 +9,6 @@ import newPost from '../../../assets/background/newPost.webp';
 import post from '../../../assets/background/phone.webp';
 import background from '../../../assets/background/background_new.webp';
 import ButtonFun from '../../../components/button';
-import LinkAsButtonFun from '../../../components/LinkButton';
 
 export default class CarouselFun extends React.Component {
   constructor() {
@@ -35,22 +34,6 @@ export default class CarouselFun extends React.Component {
         </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <div>
-            <BackgroundContainer className={'new-post'} src={post} />
-          </div>
-          <DivText className={'post'}>
-            <DivInformAbout>
-              <Text className={'new-post'}>
-                Объявление! <br/> 28 декабря 2022 года с 17.00 до 18.00 по адресу: Вилейский р-н, д.Бубны,
-                ул. Молодежная,34 (административное здание) генеральным директором Шолоником Вадимом
-                Евгеньевичем будет проведён выездной прием граждан. Справки по телефону:
-                <a href={'tel:80172992880'}>80172992880</a>
-              </Text>
-            </DivInformAbout>
-          </DivText>
-        </div>,
-        <div style={{ padding: 0, margin: 0, width: '100%' }}>
-          <div>
-            {' '}
             <BackgroundContainer className={'new-post'} src={post} />
           </div>
           <DivText className={'post'}>

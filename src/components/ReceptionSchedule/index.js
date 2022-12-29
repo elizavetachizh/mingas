@@ -70,10 +70,7 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/2?id=8'}>
-                Краснощекий Яков <br />
-                Александрович
-              </NavLink>
+              <NavLink to={'/company/management/2?id=8'}>Боровой Михаил Эдуардович</NavLink>
               <br />
               <p>Начальник транспортной службы</p>
             </td>
@@ -94,11 +91,9 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/7?id=32'}>Белокурский Владимир Петрович</NavLink>
+              <NavLink to={'/company/management/7?id=32'}>Романюк Алексей Николавеич</NavLink>
               <br />
-              <p>
-                Первый заместитель директора - главный инженер сельскохозяйственного филиала «Бубны»
-              </p>
+              <p>Директор сельскохозяйственного филиала «Бубны»</p>
             </td>
           </tr>
           <tr>
@@ -464,7 +459,6 @@ export default function ReceptionSchedule() {
       {isModalVisible && (
         <Modal handleCloseCLick={handleCloseCLick} currentLeader={currentLeader} nameId={nameId} />
       )}
-
     </ContainerTable>
   );
 }

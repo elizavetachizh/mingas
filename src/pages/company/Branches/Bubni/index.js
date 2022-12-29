@@ -1,7 +1,6 @@
 import React from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
 import background from '../../../../assets/Bubni/background2.webp';
-import photo from '../../../../assets/management/departaments/Белокурский.jpg';
 import { DivInform } from '../../../Home/News/styles';
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
@@ -81,13 +80,11 @@ export default function Bubni() {
           </div>
         </DivInform>
       }
-      photo={photo}
+      photo={""}
       inform={
         <>
           <TitleForHome
-            infoTitle={
-              'Руководство филиалом осуществляет первый заместитель директора - главный инженер Белокурский Владимир Петрович'
-            }
+            infoTitle={'Директор : Романюк Алексей Николавеич'}
             color={'blue'}
             fontSize={'name'}
             className={'branches'}
@@ -99,7 +96,7 @@ export default function Bubni() {
           <LinksNetwork style={{ fontSize: '18px' }}>
             <a
               style={{ display: 'flex', alignItems: 'center' }}
-              target={"_blank"}
+              target={'_blank'}
               href={'https://instagram.com/filial.bubny?igshid=YTY2NzY3YTc='}
             >
               <IoLogoInstagram style={{ width: '46px', height: '46px' }} /> Мы в инстаграме

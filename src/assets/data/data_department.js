@@ -323,7 +323,7 @@ export const data = [
         idNameInform: 2,
         name: 'Транспортная служба (ТС)',
         photo: '',
-        chief: 'Начальник - Краснощекий Яков Александрович',
+        chief: 'Начальник - Боровой Михаил Эдуардович',
         description: (
           <div>
             <ol>

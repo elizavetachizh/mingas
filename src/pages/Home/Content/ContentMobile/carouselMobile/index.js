@@ -9,7 +9,7 @@ import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
 import { DivImage } from '../../../../feedback/styles';
-import LinkAsButtonFun from '../../../../../components/LinkButton';
+
 export default class CarouselMobile extends React.Component {
   constructor() {
     super();
@@ -30,21 +30,6 @@ export default class CarouselMobile extends React.Component {
             <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
               <img src={phone} alt={'картинка загружается'} />
             </a>
-          </DivText>
-        </>,
-        <>
-          <DivImage className={'none'}>
-            <img className={'newpost'} src={post} alt={'картинка загружается'} />
-          </DivImage>
-          <DivText className={'newpost'}>
-            <Text style={{ position: 'initial', textAlign: 'center' }}>
-              Объявление! <br/>28 декабря 2022 года с 17.00 до 18.00 по адресу: Вилейский р-н, д.Бубны,
-              ул. Молодежная,34 (административное здание) генеральным директором Шолоником Вадимом
-              Евгеньевичем будет проведён выездной прием граждан. Справки по телефону:
-              <a href={'tel:80172992880'}>
-                80172992880
-              </a>
-            </Text>
           </DivText>
         </>,
         <>
