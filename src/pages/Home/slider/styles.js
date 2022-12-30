@@ -122,6 +122,78 @@ export const BackgroundContainer = styled.img`
       //margin-top: -42px;
     }
   }
+  &.new-year {
+    
+    filter: none;
+    margin-top: -164px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 460px;
+
+    @media (min-width: 1500px) {
+      height: 600px;
+      margin-top: -230px;
+    }
+    @media (min-width: 1700px) {
+      height: 630px;
+    }
+    @media (min-width: 2200px) {
+      height: 700px;
+    }
+    @media (min-width: 2700px) {
+      height: 850px;
+    }
+    @media (max-width: 1700px) {
+      margin-top: -220px;
+      height: 530px;
+    }
+    @media (max-width: 1485px) {
+      margin-top: -200px;
+      height: 490px;
+    }
+    @media (max-width: 1290px) {
+      margin-top: -180px;
+      height: 450px;
+    }
+    @media (max-width: 1207px) {
+      height: 430px;
+    }
+    @media (max-width: 1130px) {
+      height: 410px;
+      margin-top: -180px;
+    }
+    @media (max-width: 1084px) {
+      height: 380px;
+      margin-top: -180px;
+    }
+    @media (max-width: 960px) {
+      height: 335px;
+      margin-top: -130px;
+    }
+    @media (max-width: 860px) {
+      height: 300px;
+      margin-top: -120px;
+    }
+    @media (max-width: 740px) {
+      height: 270px;
+      margin-top: -110px;
+    }
+    @media (max-width: 694px) {
+      height: 250px;
+      margin-top: -100px;
+    }
+    @media (max-width: 648px) {
+      height: 218px;
+      margin-top: -90px;
+    }
+    @media (max-width: 600px) {
+      height: 400px;
+      //margin-top: -42px;
+    }
+  }
   &.new-post {
     filter: none;
     margin-top: -164px;

@@ -8,6 +8,7 @@ import imageContent from '../../../assets/background/mingas_background.webp';
 import newPost from '../../../assets/background/newPost.webp';
 import post from '../../../assets/background/phone.webp';
 import background from '../../../assets/background/background_new.webp';
+import newYear from '../../../assets/background/12512.jpg';
 import ButtonFun from '../../../components/button';
 
 export default class CarouselFun extends React.Component {
@@ -16,7 +17,17 @@ export default class CarouselFun extends React.Component {
     this.state = {
       value: 0,
       slides: [
-
+        <div style={{ padding: 0, margin: 0, width: '100%' }}>
+          <div>
+            <BackgroundContainer className={'new-year'} src={newYear} />
+          </div>
+          <DivText className={'post'}>
+            <DivInformAbout>
+              <Text>
+              </Text>
+            </DivInformAbout>
+          </DivText>
+        </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>
           <BackgroundContainer src={imageContent} />
           <DivText className={'phone'}>
@@ -39,12 +50,12 @@ export default class CarouselFun extends React.Component {
           <DivText className={'post'}>
             <DivInformAbout>
               <Text className={'new-post'}>
-                Уважаемые граждане! <br/> Обращаем внимание на то, что 2 января 2023 г. вступают в силу
-                изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях граждан и
-                юридических лиц». В связи с этим подача электронных обращений будет возможна только
-                с помощью государственной единой (интегрированной) республиканской информационной
-                системы учета и обработки обращений граждан и юридических лиц - интернет-ресурса{' '}
-                {''}
+                Уважаемые граждане! <br /> Обращаем внимание на то, что 2 января 2023 г. вступают в
+                силу изменения, внесенные в статью 25 Закона Республики Беларусь «Об обращениях
+                граждан и юридических лиц». В связи с этим подача электронных обращений будет
+                возможна только с помощью государственной единой (интегрированной) республиканской
+                информационной системы учета и обработки обращений граждан и юридических лиц -
+                интернет-ресурса {''}
                 <a target={'_blank'} href={'https://xn--80abnmycp7evc.xn--90ais./'}>
                   обращения.бел.
                 </a>
