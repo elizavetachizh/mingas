@@ -1,9 +1,11 @@
 import pamyatka from '../../assets/pdf/corruption/pamyatka.docx';
-import carta_corruption_risk from '../../assets/pdf/corruption/carta_corruption_riskov.pdf';
-import carta_corruption_risk_2 from '../../assets/pdf/corruption/carta_corruption_risk_2.pdf';
+import carta_corruption_risk from '../../assets/pdf/corruption/carta.docx';
+import carta_corruption_risk_2 from '../../assets/pdf/corruption/cartazacupki.docx';
 import meroprtiatia from '../../assets/pdf/corruption/Meropriatia.pdf';
 import polojenie_conflict from '../../assets/pdf/corruption/polojenie_conflict.pdf';
 import recomendation from '../../assets/pdf/corruption/Recomendation_ME.pdf';
+import plan_zasedanii_2023 from '../../assets/pdf/corruption/planzasedanii.xlsx';
+import plan_word_2023 from '../../assets/pdf/corruption/planwork.docx';
 export const data = [
   {
     id: 1,
@@ -12,13 +14,13 @@ export const data = [
   },
   {
     id: 2,
-    name: 'План проведения заседаний комиссии по противодействию коррупции УП "МИНГАЗ" на 2022 год',
-    link: 'https://mingas.by/wp-content/uploads/2021/12/plan-zasedanij-na-2022.pdf',
+    name: 'План проведения заседаний комиссии по противодействию коррупции УП "МИНГАЗ" на 2023 год',
+    link: plan_zasedanii_2023,
   },
   {
     id: 3,
-    name: 'План работы комиссии по противодействию коррупции УП «МИНГАЗ» на 2022 год',
-    link: 'https://mingas.by/wp-content/uploads/2021/12/PLAN-NA-2022.pdf',
+    name: 'План работы комиссии по противодействию коррупции УП «МИНГАЗ» на 2023 год',
+    link: plan_word_2023,
   },
   {
     id: 4,
@@ -32,7 +34,7 @@ export const data = [
   },
   {
     id: 6,
-    name: 'Карта коррупционных рисков',
+    name: 'Карта коррупционных рисков УП «МИНГАЗ» для лиц, непосредственно реализующих в соответствии с правовыми актами, контрактами (трудовыми договорами) функции в сфере закупок товаров (работ, услуг)',
     link: carta_corruption_risk_2,
   },
   {
