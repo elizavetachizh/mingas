@@ -18,10 +18,6 @@ export default function FormQuestion() {
     msg,
   } = useForm();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const [isModalVisible, setModalVisible] = useState(false);
   const [isModalVarningVisible, setModalVarningVisible] = useState(false);
   const [documentq, setDocumentq] = useState([]);

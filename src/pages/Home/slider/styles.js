@@ -123,7 +123,6 @@ export const BackgroundContainer = styled.img`
     }
   }
   &.new-year {
-    
     filter: none;
     margin-top: -164px;
     width: 100%;
@@ -137,21 +136,18 @@ export const BackgroundContainer = styled.img`
       height: 600px;
       margin-top: -230px;
     }
-    @media (min-width: 1700px) {
-      height: 630px;
-    }
     @media (min-width: 2200px) {
-      height: 700px;
+      height: 600px;
     }
     @media (min-width: 2700px) {
       height: 850px;
     }
     @media (max-width: 1700px) {
-      margin-top: -220px;
-      height: 530px;
+      margin-top: -216px;
+      height: 510px;
     }
     @media (max-width: 1485px) {
-      margin-top: -200px;
+      margin-top: -210px;
       height: 490px;
     }
     @media (max-width: 1290px) {
@@ -162,15 +158,11 @@ export const BackgroundContainer = styled.img`
       height: 430px;
     }
     @media (max-width: 1130px) {
-      height: 410px;
-      margin-top: -180px;
-    }
-    @media (max-width: 1084px) {
-      height: 380px;
-      margin-top: -180px;
+      height: 360px;
+      margin-top: -150px;
     }
     @media (max-width: 960px) {
-      height: 335px;
+      height: 300px;
       margin-top: -130px;
     }
     @media (max-width: 860px) {

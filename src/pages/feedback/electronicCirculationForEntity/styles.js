@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 export const TextForInformation = styled.div`
-  font-size: 16px;
-  text-align: start;
+  font-size: 18px;
+  text-align: justify;
+  margin-bottom: 20px;
+  a{
+    text-transform: uppercase;
+  }
 `;
 export const ContainerInform = styled.div`
   padding: 10px 15px 0;
@@ -11,6 +15,7 @@ export const ContainerInform = styled.div`
   border-radius: 20px;
   margin: 0 auto;
   text-align: justify;
+  
   &.electronic-appeal-for-entity {
     p{
       text-align: justify;

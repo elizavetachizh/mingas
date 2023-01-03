@@ -9,14 +9,13 @@ import { Main, WindowDiv } from '../../../slider/styles';
 import { DivText, Text } from '../../styles';
 import ButtonFun from '../../../../../components/button';
 import { DivImage } from '../../../../feedback/styles';
-
+import newYear from "../../../../../assets/background/12512.jpg"
 export default class CarouselMobile extends React.Component {
   constructor() {
     super();
     this.state = {
       value: 0,
       slides: [
-
         <>
           <DivImage>
             <img src={imageContent} alt={'картинка загружается'} />
