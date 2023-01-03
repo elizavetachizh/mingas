@@ -4,18 +4,12 @@ import carta_corruption_risk_2 from '../../assets/pdf/corruption/cartazacupki.do
 import meroprtiatia from '../../assets/pdf/corruption/Meropriatia.pdf';
 import polojenie_conflict from '../../assets/pdf/corruption/polojenie_conflict.pdf';
 import recomendation from '../../assets/pdf/corruption/Recomendation_ME.pdf';
-import plan_zasedanii_2023 from '../../assets/pdf/corruption/planzasedanii.xlsx';
 import plan_word_2023 from '../../assets/pdf/corruption/planwork.docx';
 export const data = [
   {
     id: 1,
     name: 'Положение о комиссии по противодействию коррупции УП «МИНГАЗ»',
     link: 'https://mingas.by/wp-content/uploads/2021/11/P-52-2021-O-komissii-po-protivodejstviyu-korruptsii-UP-MINGAZ.pdf',
-  },
-  {
-    id: 2,
-    name: 'План проведения заседаний комиссии по противодействию коррупции УП "МИНГАЗ" на 2023 год',
-    link: plan_zasedanii_2023,
   },
   {
     id: 3,
