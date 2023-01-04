@@ -1,15 +1,16 @@
 import pamyatka from '../../assets/pdf/corruption/pamyatka.docx';
 import carta_corruption_risk from '../../assets/pdf/corruption/carta.docx';
 import carta_corruption_risk_2 from '../../assets/pdf/corruption/cartazacupki.docx';
-import meroprtiatia from '../../assets/pdf/corruption/Meropriatia.pdf';
+import meroprtiatia from '../../assets/pdf/corruption/Meropriatia.docx';
 import polojenie_conflict from '../../assets/pdf/corruption/polojenie_conflict.pdf';
-import recomendation from '../../assets/pdf/corruption/Recomendation_ME.pdf';
+import recomendation from '../../assets/pdf/corruption/recomendations.pdf';
 import plan_word_2023 from '../../assets/pdf/corruption/planwork.docx';
+import polojenie_corruption from '../../assets/pdf/corruption/polojenie_corruption.pdf';
 export const data = [
   {
     id: 1,
     name: 'Положение о комиссии по противодействию коррупции УП «МИНГАЗ»',
-    link: 'https://mingas.by/wp-content/uploads/2021/11/P-52-2021-O-komissii-po-protivodejstviyu-korruptsii-UP-MINGAZ.pdf',
+    link: polojenie_corruption,
   },
   {
     id: 3,

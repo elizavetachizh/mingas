@@ -178,7 +178,7 @@ export default function Header({ backgroundHeader }) {
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
-                  <ButtonLink to="/feedback/electronic-appeal-for-entity">
+                  <ButtonLink to="/feedback/electronic-appeal">
                     Обращение юридических лиц
                   </ButtonLink>
                   <ButtonLink to="/tenders">Тендеры</ButtonLink>

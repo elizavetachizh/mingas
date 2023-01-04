@@ -3,8 +3,7 @@ import { Main, WindowDiv, BackgroundContainer } from './styles';
 import Carousel, { Dots, autoplayPlugin } from '@brainhubeu/react-carousel';
 import './styles.css';
 import { DivInformAbout, DivText, Text } from '../Content/styles';
-import phone from '../../../assets/png/PhoneFour.webp';
-import imageContent from '../../../assets/background/mingas_background.webp';
+import imageContent from '../../../assets/background/one.png';
 import newPost from '../../../assets/background/newPost.webp';
 import post from '../../../assets/background/phone.webp';
 import background from '../../../assets/background/background_new.webp';
@@ -23,8 +22,7 @@ export default class CarouselFun extends React.Component {
           </div>
           <DivText className={'post'}>
             <DivInformAbout>
-              <Text>
-              </Text>
+              <Text></Text>
             </DivInformAbout>
           </DivText>
         </div>,
@@ -38,9 +36,9 @@ export default class CarouselFun extends React.Component {
                 унитарного предприятия “МИНГАЗ”
               </Text>
             </DivInformAbout>
-            <a rel={'preconnect'} className={'phone'} href={'tel:162'}>
-              <img src={phone} alt={'картинка'} />
-            </a>
+            {/*<a rel={'preconnect'} className={'phone'} href={'tel:162'}>*/}
+            {/*  <img src={phone} alt={'картинка'} />*/}
+            {/*</a>*/}
           </DivText>
         </div>,
         <div style={{ padding: 0, margin: 0, width: '100%' }}>

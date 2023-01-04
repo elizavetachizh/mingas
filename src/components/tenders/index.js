@@ -21,9 +21,7 @@ export default function Tenders() {
         console.log(res.data);
       })
       .catch((e) => {
-        {
           console.log(e);
-        }
       });
   }, [setInfo]);
   const getElement = useCallback((id) => {

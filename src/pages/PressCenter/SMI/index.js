@@ -4,13 +4,11 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { Article, ContainerArticles } from '../styles';
+import { ContainerArticles } from '../styles';
 import React, { useEffect, useState } from 'react';
-import { APInews } from '../../../backend';
+import { API } from '../../../backend';
 import axios from 'axios';
-import LinkNews from '../../Home/News/LinkToNews';
 import SchemaSMI from './schema';
-import smi from '../../../assets/png/smi.jpg';
 export default function SMI() {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
@@ -27,20 +25,18 @@ export default function SMI() {
     }
   };
   //
-  // const [info, setInfo] = useState(null);
-  // useEffect(() => {
-  //   const apiUrl = `${APInews}`;
-  //   axios
-  //     .get(apiUrl)
-  //     .then((res) => {
-  //       setInfo(res.data);
-  //     })
-  //     .catch((e) => {
-  //       {
-  //         console.log(e);
-  //       }
-  //     });
-  // }, [setInfo]);
+  const [info, setInfo] = useState(null);
+  useEffect(() => {
+    const apiUrl = `${API}/posts`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+          console.log(e);
+      });
+  }, [setInfo]);
 
   return (
     <div>
@@ -94,252 +90,8 @@ export default function SMI() {
         </BtnIsOpen>
         <Div className={isClose && `shake`}>
           <ContainerArticles>
-            {/*{info &&*/}
-            {/*  info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} />)}*/}
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://www.belta.by/economics/view/sistema-gaz-40-up-mingaz-obespechivaet-polnoe-obsluzhivanie-potrebitelej-538989-2022/'
-                }
-              >
-                <img alt={''} src={smi} />
-                <p>Система "ГАЗ 4.0" УП "МИНГАЗ" обеспечивает полное обслуживание потребителей</p>
-              </a>
-            </Article>
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/v-srednem-za-sutki-v-mingaz-postupaet-okolo-80-izveshhenij-o-nepoladkah-kak-rabotaet-avarijka/'
-                }
-              >
-                <img
-                  alt={''}
-                  src={'https://minsknews.by/wp-content/uploads/2022/10/MK4_0282-kopiya.jpg'}
-                />
-                <p>
-                  В среднем за сутки в «МИНГАЗ» поступает около 80 извещений о неполадках. Как
-                  работает «аварийка»
-                </p>
-                {/*<p>{''}</p>*/}
-              </a>
-            </Article>
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/kak-podvesti-gaz-v-chastnyj-dom-razyasnyaet-speczialist/'
-                }
-              >
-                <img
-                  alt={''}
-                  src={'https://minsknews.by/wp-content/uploads/2022/03/Pavel-Rusak-52-of-53.jpg'}
-                />
-                <p>
-                  Как подвести газ в частный дом, разъясняет специалист <br /> {''}{' '}
-                  <span style={{ color: 'transparent' }}>1</span>
-                </p>
-                {/*<p>{''}</p>*/}
-              </a>
-            </Article>
-            <Article className={'general'}>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/videonablyudenie-obespechivaet-bezopasnost-gorozhan-v-kuharev-vstretilsya-s-trudovym-kollektivom-mingaza/'
-                }
-              >
-                <img
-                  alt={''}
-                  src={'https://minsknews.by/wp-content/uploads/2022/10/1DX_0068-kopiya.jpg'}
-                />
-                <p>
-                  «Видеонаблюдение обеспечивает безопасность горожан». В. Кухарев встретился с
-                  трудовым коллективом «МИНГАЗа»
-                </p>
-              </a>
-            </Article>
-            <Article className={'general'}>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/mozhno-li-samostoyatelno-podklyuchit-gazovuyu-plitu-kommentarij-mingaza/'
-                }
-              >
-                <img
-                  alt={''}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/02/Depositphotos_22540503_S-900x596.jpg'
-                  }
-                />
-                <p>Можно ли самостоятельно подключить газовую плиту – комментарий «МИНГАЗа»</p>
-              </a>
-            </Article>
-            <Article className={'quarter'}>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/hozyajke-chastnogo-doma-naschitali-bolee-19-tys-rublej-za-gaz-iz-za-poddelnoj-plomby-na-schetchike/'
-                }
-              >
-                <img
-                  alt={''}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                  }
-                />
-
-                <p>
-                  Хозяйке частного дома насчитали более 19 тыс. рублей за газ из-за поддельной
-                  пломбы на счетчике
-                </p>
-              </a>
-            </Article>
-            <Article className={'quarter'}>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={'https://belchas.1prof.by/news/schetchik-ne-gazuet/'}
-              >
-                <img alt={''} src={'https://belchas.1prof.by/file/2022/04/19-1-490x310.jpg'} />
-                <p>
-                  Счетчик «не газует» - Газета Беларускi Час. <br /> Новости профсоюзов Беларуси
-                </p>
-              </a>
-              G
-            </Article>
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'http://www.gorka.by/o-realnom-polozhenii-del-na-tbz-sergeevichskoe/?_utl_t=tm'
-                }
-              >
-                <img
-                  alt={''}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                  }
-                />
-
-                <p>
-                  О реальном положении дел на ТБЗ «Сергеевичское» — Пухавiцкiя навiны. Пуховичские
-                  новости. Марьина Горка. Новости Марьиной Горки
-                </p>
-              </a>
-            </Article>
-            <Article>
-              <a
-                rel="noreferrer"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/nyuansy-obsluzhivaniya-mnogokvartirnyh-gazificzirovannyh-domov-obsudili-na-seminare-v-minke/'
-                }
-              >
-                <img
-                  alt={''}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                  }
-                />
-
-                <p>
-                  Нюансы обслуживания многоквартирных газифицированных домов обсудили на семинаре в
-                  Минске
-                </p>
-              </a>
-            </Article>
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/novye-pravila-polzovaniya-gazom-v-bytu-v-minske-prohodit-seminar-dlya-speczialistov-so-vsej-strany/'
-                }
-              >
-                <img
-                  alt={''}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/04/Pavel-Rusak-8-of-31-kopiya.jpg'
-                  }
-                />
-
-                <p>
-                  Новые правила пользования газом в быту: в Минске проходит семинар для специалистов
-                </p>
-              </a>
-            </Article>
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/kommunalnyj-likbez-kak-podvesti-gaz-k-chastnomu-domu-i-skolko-eto-stoit/'
-                }
-              >
-                <img
-                  alt={'картинка'}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                  }
-                />
-
-                <p>
-                  Коммунальный ликбез: <br /> как подвести газ к частному дому, и сколько это стоит{' '}
-                </p>
-              </a>
-            </Article>
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/novye-dogovory-za-polzovanie-gazom-5-populyarnyh-voprosov-i-otvety-speczialista/'
-                }
-              >
-                <img
-                  alt={'картинка'}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                  }
-                />
-
-                <p>
-                  Новые договоры за пользование газом: 5 популярных вопросов и ответы специалиста{' '}
-                  <br /> {''} <span style={{ color: 'transparent' }}>1</span>
-                  <br /> {''}
-                </p>
-              </a>
-            </Article>
-            <Article>
-              <a
-                rel="noopener"
-                target={'_blank'}
-                href={
-                  'https://minsknews.by/v-2022-g-rabotniki-up-mingaz-provedut-tehobsluzhivanie-bolee-chem-46-tys-plit-chto-nuzhno-znat-potrebitelyam/'
-                }
-              >
-                <img
-                  alt={'картинка'}
-                  src={
-                    'https://minsknews.by/wp-content/uploads/2022/01/Depositphotos_330503392_S-900x601.jpg'
-                  }
-                />
-
-                <p>
-                  В 2022 г. работники УП «МИНГАЗ» проведут техобслуживание более чем 46 тыс. плит.
-                  Что нужно знать потребителям
-                </p>
-              </a>
-            </Article>
+            {info &&
+              info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} />)}
           </ContainerArticles>
         </Div>
       </General>

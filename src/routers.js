@@ -7,7 +7,6 @@ import PressCenter from './pages/PressCenter';
 import Information from './pages/feedback/QuestionAnswer/Information';
 import Requests from './pages/feedback/Requests';
 import ElectronicAppeal from './pages/feedback/electronicСirculation';
-import ElectronicAppealForEntity from './pages/feedback/electronicCirculationForEntity';
 import NoMatch from './pages/noMatch';
 import Management from './pages/company/managment';
 import DepartmentInformation from './pages/company/managment/Subdivisions/departmentInformation';
@@ -54,10 +53,6 @@ export default function Routers() {
       <Route path="/feedback/question-answer/:titleId" element={<Information />} />
       <Route path={'/feedback/online-application'} element={<Requests />} />
       <Route path={'/feedback/electronic-appeal'} element={<ElectronicAppeal />} />
-      <Route
-        path={'/feedback/electronic-appeal-for-entity'}
-        element={<ElectronicAppealForEntity />}
-      />
       <Route path="/*" element={<NoMatch />} />
       <Route path="/company/management" element={<Management />} />
       <Route path="/company/management/:linkId" element={<DepartmentInformation />} />

@@ -4,6 +4,7 @@ export const TextForInformation = styled.div`
   font-size: 18px;
   text-align: justify;
   margin-bottom: 20px;
+  text-indent: 25px;
   a{
     text-transform: uppercase;
   }

@@ -173,6 +173,102 @@ export const DivImage = styled.div`
   }
 `;
 
+
+export const DivbackgroundNew = styled.div`
+  display: flex;
+  flex-direction: row;
+  //position: inherit;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin : 154px 0 0 0;
+  border-radius: 20px;
+  @media (min-width: 2000px) {
+    margin : 154px 0 0 0;
+  }
+  @media (max-width: 2000px) {
+    border-radius: 0;
+  }
+  @media (max-width: 900px) {
+    margin : 80px 0 0 0;
+    background: white;
+  }
+  @media (max-width: 424px) {
+    margin : 65px 0 0 0;
+  }
+  p {
+    position: absolute;
+  }
+`;
+export const DivImageNew = styled.div`
+  //height: 470px;
+  transform: translate3d(0px, 0px, 0px);
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 470px;
+
+    &.post {
+      width: 150%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+      @media (max-width: 540px) {
+        width: 170%;
+      }
+      @media (max-width: 490px) {
+        width: 190%;
+      }
+      @media (max-width: 445px) {
+        width: 210%;
+      }
+      @media (max-width: 400px) {
+        width: 230%;
+      }
+    }
+
+    &.newpost {
+      width: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+    }
+    &.priem {
+      filter: blur(3px) brightness(0.5);
+      width: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      height: 400px;
+    }
+  }
+  &.none:after {
+    content: none;
+    background: rgba(0, 0, 0, 0);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+`;
+
 export const BlockContainerRequests = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
@@ -194,6 +290,7 @@ export const Text = styled.div`
   margin: 0 auto;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   font-size: 1.4rem;
   align-items: center;

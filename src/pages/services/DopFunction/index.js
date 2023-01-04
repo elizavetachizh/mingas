@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { DescriptionService } from './styles';
 import {
   BtnIsOpen,
@@ -21,6 +21,16 @@ export default function DopFunctionService({
       setIsOpen(false);
     }
   };
+  // const element = ;
+  const getElement = useCallback((inform) => {
+    return document.getElementById(`description-${inform}`);
+  }, []);
+  useEffect(() => {
+    const element = getElement(inform);
+    if (element) {
+      element.innerHTML += inform;
+    }
+  }, [ getElement]);
   return (
     <General key={keys} className={classnamegeneral} style={style}>
       <BtnIsOpen className={classname} onClick={animate}>
@@ -34,7 +44,7 @@ export default function DopFunctionService({
         </div>
       </BtnIsOpen>
       <Div className={isOpen && `shake`}>
-        <DescriptionService>{inform}</DescriptionService>
+        <DescriptionService id={`description-${inform}`} />
       </Div>
     </General>
   );

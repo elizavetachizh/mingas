@@ -1,5 +1,5 @@
 import Header from '../../components/header';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ContentHome from './Content';
 import UsefulInform from './useful_information';
 import HomeServices from './services';
@@ -14,44 +14,23 @@ import { BackgroundStyle } from './services/styles';
 import linesOne from '../../assets/background/rig.webp';
 import { Container } from '../company/styles';
 export default function Home() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState('');
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    fetch('https://back.mingas.by')
-      .then((res) => res.text())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, []);
   return (
-    <>
-      <p style={{ display: 'none' }}>{items}</p>
-      <Container>
-        <Header />
-        <>
-          <ContentHome />
-          <UsefulInform />
-          <BackgroundStyle src={linesOne} />
-          <HeaderRequests />
-          <ParallaxDiv />
-          <HomeServices />
-          <News />
-          <StateInformResources />
-        </>
-        <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-          <img src={up} alt={'up'} />
-        </ScrollToTop>
-        <Footer />
-      </Container>
-    </>
+    <Container>
+      <Header />
+      <>
+        <ContentHome />
+        <UsefulInform />
+        <BackgroundStyle src={linesOne} />
+        <HeaderRequests />
+        <ParallaxDiv />
+        <HomeServices />
+        <News />
+        <StateInformResources />
+      </>
+      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
+        <img src={up} alt={'up'} />
+      </ScrollToTop>
+      <Footer />
+    </Container>
   );
 }
