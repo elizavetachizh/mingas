@@ -1,19 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import DopFunctional from './DopFunctional';
 import ContainerContent from '../Container';
-import { posts } from '../../assets/data/posts';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { API } from '../../backend';
 export default function Posts() {
   const { id } = useParams();
   const [inform, setInform] = useState('');
-  const [currentDocumentId, setDocumentId] = useState(null);
   const [name, setName] = useState('');
+  const [info, setInfo] = useState([]);
   useEffect(() => {
-    const current = posts.find((element) => element.id === +id);
-    setInform(current.description);
-    setDocumentId(+id);
+    const apiUrl = `${API}/mainposts`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+        console.log(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setInfo]);
+
+  useEffect(() => {
+    const current = info.find((element) => element._id === id);
+    setInform(current?.description);
     setName(current?.name);
-  }, [currentDocumentId, id, inform]);
-  console.log(inform);
+  }, [id, info, setInform]);
+
   return <ContainerContent name={name} content={<DopFunctional description={inform} />} />;
 }

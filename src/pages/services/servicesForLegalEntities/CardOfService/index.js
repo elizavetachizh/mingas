@@ -46,15 +46,11 @@ export default function CardOfService() {
       });
   }, [setData]);
   useEffect(() => {
-    console.log(data);
-  }, [data]);
-  useEffect(() => {
     const current = data.find((element) => element._id === cardId);
     setInform(current?.description);
     setTitle(current?.name);
     setServiceID(cardId);
-    console.log(inform);
-  }, [cardId, data, inform]);
+  }, [cardId, data]);
 
   const animate = useCallback(
     (descriptionID) => {

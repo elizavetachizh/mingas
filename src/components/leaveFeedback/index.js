@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import QRCode from 'qrcode';
 import { ContainerLinks } from '../../pages/company/parentOrganizations/styles';
 import LeaveFeedbackMingas from './leaveFeedbackMingas';
-import DopFunctionService from '../../pages/services/DopFunction';
 import quality from '../../assets/png/quality.png';
 import ContainerContent from '../Container';
+import { ContainerInform } from '../../pages/feedback/electronicСirculation/styles';
+import SubTitleFun from '../SubTitle';
 export default function LeaveFeedback() {
   const [src, setSrc] = useState('');
   useEffect(() => {
@@ -86,11 +87,10 @@ export default function LeaveFeedback() {
               </div>
             </div>
           </div>
-          <DopFunctionService
-            classnamegeneral={'leave-feedback'}
-            nameDescription={'Форма обратной связи'}
-            inform={<LeaveFeedbackMingas />}
-          />
+          <ContainerInform style={{ margin: '2% auto' }}>
+            <SubTitleFun color={'blue'} infoSubTitle={'Форма обратной связи'} />
+            <LeaveFeedbackMingas />
+          </ContainerInform>
         </ContainerLinks>
       }
     />

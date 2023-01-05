@@ -2,7 +2,7 @@ import FormTelemetria from './form';
 import React from 'react';
 import ContainerContent from '../Container';
 import LinkAsButtonFun from '../LinkButton';
-import { ContainerInform } from '../../pages/feedback/electronicCirculationForEntity/styles';
+import { ContainerInform } from '../../pages/feedback/electronicСirculation/styles';
 import {IoMdContacts} from "../header/styles";
 
 export default function Telemetria() {

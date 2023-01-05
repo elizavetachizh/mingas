@@ -67,7 +67,7 @@
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  border: 4px solid #314d5c;
+  border: 4px solid black;
   border-left-color: transparent;
   -webkit-animation: loader 1s infinite linear;
   animation: loader 1s infinite linear;
@@ -97,7 +97,7 @@
   line-height: 0;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 40px;
-  border: solid #314d5c;
+  border: solid black;
 }
 .BrainhubCarousel__arrows span {
   display: block;
@@ -105,7 +105,7 @@
   top: 50%;
   left: 50%;
   border-style: solid;
-  border-color: #314d5c !important;
+  border-color: black !important;
   border-width: 3px 3px 0 0;
   padding: 5px;
   transition: 0.3s;
@@ -120,17 +120,17 @@
   top: 50%;
   left: 50%;
   border-style: solid;
-  border-color: #0d4475;
+  border-color: black !important;
   border-width: 3px 3px 0 0;
   padding: 5px;
   transition: 0.3s;
   font-size: 0;
 }
 .BrainhubCarousel__arrows:hover:enabled {
-  /*background-color: #314D5C;*/
+  background-color: black !important;
 }
 .BrainhubCarousel__arrows:hover:enabled span {
-  border-color: #0d4475 !important;
+  border-color: black !important;
   margin: 0;
   /*background-color: #314D5C;*/
 }
@@ -173,7 +173,7 @@
   padding: 0;
   font-size: 0;
   line-height: 0;
-  background-color: rgba(14,78,129,0.2);
+  background-color: rgba(14, 78, 129, 0.2);
 }
 .BrainhubCarousel__dots.BrainhubCarousel__dots--isRTL {
   direction: rtl;

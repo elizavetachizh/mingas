@@ -5,26 +5,26 @@ import {
   DivOpen,
   Name,
 } from '../../../../components/administrativeServices/Header/styles';
-import { dataAnswer } from '../../../../assets/data/question-answer';
 import DopFunctionalHeader from '../../../services/NaturalGas/DopFunctionalHeader';
 import React, { useCallback, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
-export default function Menu() {
+export default function Menu({ dataAnswer }) {
   const navigate = useNavigate();
-  const [currentServiceID, setServiceID] = useState(null);
+  const [currentServiceID, setServiceID] = useState();
   const [links, setLinks] = useState([]);
   const { pathname } = useLocation();
 
   const handlerLinkClick = useCallback(
     (titleId) => {
-      const current = dataAnswer.find((element) => element.titleId === titleId);
-      navigate(`/feedback/question-answer/${current.titleId}`);
+      const current = dataAnswer.find((element) => element._id === titleId);
+        console.log(current.questionAnswer)
+      navigate(`/feedback/question-answer/${current._id}`);
       setServiceID(currentServiceID && currentServiceID === titleId ? '' : titleId);
-      setLinks(current.blockInform);
+      setLinks(current.questionAnswer);
     },
-    [currentServiceID, navigate]
+    [currentServiceID, dataAnswer, navigate]
   );
 
   const handlerLinkClickUniqueName = useCallback(
@@ -37,26 +37,23 @@ export default function Menu() {
   return (
     <HeaderCompanyDiv style={{ width: '80%', margin: '0 auto' }}>
       <Name>Тема</Name>
-      {dataAnswer.map((element) => (
-        <BlockBtn key={element.titleId}>
+      {dataAnswer.map((element, index) => (
+        <BlockBtn key={index}>
           <ContainerBtnIcon>
             <DopFunctionalHeader
               nameCard={element.title}
-              className={currentServiceID === element.titleId ? 'background' : ''}
-              onClick={() => handlerLinkClick(element.titleId)}
+              className={currentServiceID === element._id ? 'background' : ''}
+              onClick={() => handlerLinkClick(element._id)}
             />
-            {currentServiceID === element.titleId ? (
-              <IoIosArrowUp onClick={() => handlerLinkClick(element.titleId)} />
+            {currentServiceID === element._id ? (
+              <IoIosArrowUp onClick={() => handlerLinkClick(element._id)} />
             ) : (
-              <IoIosArrowDown onClick={() => handlerLinkClick(element.titleId)} />
+              <IoIosArrowDown onClick={() => handlerLinkClick(element._id)} />
             )}
           </ContainerBtnIcon>
-          <DivOpen className={currentServiceID === element.titleId && `shake`}>
-            {links.map((link) => (
-              <button
-                onClick={() => handlerLinkClickUniqueName(link.questionId)}
-                key={link.questionId}
-              >
+          <DivOpen className={currentServiceID === element._id && `shake`}>
+            {links.map((link, index) => (
+              <button onClick={() => handlerLinkClickUniqueName(link._id)} key={index}>
                 {link.question}
               </button>
             ))}

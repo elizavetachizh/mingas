@@ -6,96 +6,30 @@ import { ArticleForHome } from '../../PressCenter/styles';
 import { BlockContainerRequests } from '../../feedback/styles';
 import axios from 'axios';
 import LinkNews from './LinkToNews';
-import { APInews } from '../../../backend';
+import { API, APInews } from '../../../backend';
 import smi from '../../../assets/png/smi.jpg';
 export default function News() {
-  // const [info, setInfo] = useState(null);
-  // useEffect(() => {
-  //   const apiUrl = `${APInews}`;
-  //   axios
-  //     .get(apiUrl)
-  //     .then((res) => {
-  //       setInfo(res.data);
-  //     })
-  //     .catch((e) => {
-  //       {
-  //         console.log(e);
-  //       }
-  //     });
-  // }, [setInfo]);
-  // const arr = info && info.slice(0, 4);
+  const [info, setInfo] = useState(null);
+  useEffect(() => {
+    const apiUrl = `${API}/posts`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        {
+          console.log(e);
+        }
+      });
+  }, [setInfo]);
+  const arr = info && info.slice(0, 4);
 
   return (
     <BlockContainerRequests>
       <TitleForHome color={'blue'} infoTitle={'СМИ о нас'} />
       <DivInform>
-        {/*{info && arr.map((el) => <LinkNews href={el.link} src={el.image} cardDesc={el.content} />)}*/}
-        <ArticleForHome className={'general'}>
-          <a
-            rel="noopener"
-            target={'_blank'}
-            href={
-              'https://www.belta.by/economics/view/sistema-gaz-40-up-mingaz-obespechivaet-polnoe-obsluzhivanie-potrebitelej-538989-2022/'
-            }
-          >
-            <img alt={''} src={smi} />
-            <p>Система "ГАЗ 4.0" УП "МИНГАЗ" обеспечивает полное обслуживание потребителей</p>
-            {/*<p>{''}</p>*/}
-          </a>
-        </ArticleForHome>
-        <ArticleForHome className={'general'}>
-          <a
-            rel="noopener"
-            target={'_blank'}
-            href={
-              'https://minsknews.by/v-srednem-za-sutki-v-mingaz-postupaet-okolo-80-izveshhenij-o-nepoladkah-kak-rabotaet-avarijka/'
-            }
-          >
-            <img
-              alt={''}
-              src={'https://minsknews.by/wp-content/uploads/2022/10/MK4_0282-kopiya.jpg'}
-            />
-            <p>
-              В среднем за сутки в «МИНГАЗ» поступает около 80 извещений о неполадках. Как работает
-              «аварийка»
-            </p>
-          </a>
-        </ArticleForHome>
-        <ArticleForHome className={'general'}>
-          <a
-            rel="noopener"
-            target={'_blank'}
-            href={'https://minsknews.by/kak-podvesti-gaz-v-chastnyj-dom-razyasnyaet-speczialist/'}
-          >
-            <img
-              alt={''}
-              src={'https://minsknews.by/wp-content/uploads/2022/03/Pavel-Rusak-52-of-53.jpg'}
-            />
-            <p>
-              Как подвести газ в частный дом, разъясняет специалист <br /> {''}{' '}
-              <span style={{ color: 'transparent' }}>1</span>
-            </p>
-            {/*<p>{''}</p>*/}
-          </a>
-        </ArticleForHome>
-        <ArticleForHome className={'general'}>
-          <a
-            rel="noopener"
-            target={'_blank'}
-            href={
-              'https://minsknews.by/videonablyudenie-obespechivaet-bezopasnost-gorozhan-v-kuharev-vstretilsya-s-trudovym-kollektivom-mingaza/'
-            }
-          >
-            <img
-              alt={''}
-              src={'https://minsknews.by/wp-content/uploads/2022/10/1DX_0068-kopiya.jpg'}
-            />
-            <p>
-              «Видеонаблюдение обеспечивает безопасность горожан». В. Кухарев встретился с трудовым
-              коллективом «МИНГАЗа»
-            </p>
-          </a>
-        </ArticleForHome>
+        {info && arr.map((el) => <LinkNews href={el.link} src={el.image} cardDesc={el.content} />)}
       </DivInform>
       <ButtonFun
         href={'/press-center/1'}

@@ -114,7 +114,6 @@ export const useForm = () => {
     } catch (err) {
       console.log('error', err);
     }
-    console.log(formValues.information)
     clearForm();
   };
 

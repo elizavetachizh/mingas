@@ -4,21 +4,18 @@ import ContainerContent from '../Container';
 import {
   ContainerInform,
   TextForInformation,
-} from '../../pages/feedback/electronicCirculationForEntity/styles';
+} from '../../pages/feedback/electronicСirculation/styles';
 import SubTitleFun from '../SubTitle';
 import { API } from '../../backend';
 import axios from 'axios';
 
 export default function Tenders() {
   const [info, setInfo] = useState([]);
-  const divs = document.getElementById('electronic-appeal');
-  console.log(divs);
   useEffect(() => {
     axios
       .get(`${API}/tenders`)
       .then((res) => {
         setInfo(res.data);
-        console.log(res.data);
       })
       .catch((e) => {
           console.log(e);

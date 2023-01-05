@@ -14,12 +14,9 @@ export default function Services() {
       .get(`${API}/services`)
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
       })
       .catch((e) => {
-        {
-          console.log(e);
-        }
+        console.log(e);
       });
   }, [setData]);
   return (
@@ -27,16 +24,15 @@ export default function Services() {
       name={'Услуги жителям столичного региона'}
       content={
         <DivServices>
-          {/*{links.map((element) => (*/}
-          {/*  <NavLinkService key={element.idService} to={element.linkService}>*/}
-          {/*    <img*/}
-          {/*      alt={''}*/}
-          {/*      src={require(`../../assets/icons_services/${element.imgService}.png`)}*/}
-          {/*    />*/}
-          {/*    <Name>{element.nameService}</Name>*/}
-          {/*  </NavLinkService>*/}
-          {/*))}*/}
-            {/* eslint-disable-next-line array-callback-return */}
+          {links.map((element) => (
+            <NavLinkService key={element.idService} to={element.linkService}>
+              <img
+                alt={''}
+                src={require(`../../assets/icons_services/${element.imgService}.png`)}
+              />
+              <Name>{element.nameService}</Name>
+            </NavLinkService>
+          ))}
           {data.map((element) => {
             if (element.type === '1') {
               return (

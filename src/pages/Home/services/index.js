@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ButtonFun from '../../../components/button';
-import { data } from '../../../assets/data/data_service_individuals';
-import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities';
 import { Container, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
 import TitleForHome from '../../../components/TitleForHome';
 import LinkServicesForLegalEntities from './dataComponentsForLEgalEntities';
+import axios from 'axios';
+import { API } from '../../../backend';
 
 export default function HomeServices() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${API}/services`)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setData]);
   return (
     <Container>
       <TitleForHome
@@ -28,24 +39,32 @@ export default function HomeServices() {
       </ButtonServicesHome>
       <ServicesDiv>
         <DivDown>
-          {data.map((element) => (
-            <LinkServices
-              key={element.cardId}
-              img={element.cardImg}
-              nameCard={element.nameCard}
-              cardId={element.cardId}
-            />
-          ))}
+          {data.slice(0, 4).map((element) => {
+            if (element.type === '1') {
+              return (
+                <LinkServices
+                  key={element._id}
+                  cardId={element._id}
+                  img={element.image}
+                  nameCard={element.name}
+                />
+              );
+            }
+          })}
         </DivDown>
         <DivDown>
-          {dataLegalEntities.map((element) => (
-            <LinkServicesForLegalEntities
-              key={element.cardId}
-              cardId={element.cardId}
-              img={element.cardImg}
-              nameCard={element.nameCard}
-            />
-          ))}
+          {data.slice(0, 11).map((element) => {
+            if (element.type === '2') {
+              return (
+                <LinkServicesForLegalEntities
+                  key={element._id}
+                  cardId={element._id}
+                  img={element.image}
+                  nameCard={element.name}
+                />
+              );
+            }
+          })}
         </DivDown>
       </ServicesDiv>
     </Container>

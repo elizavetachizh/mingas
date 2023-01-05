@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContainerInform, TextForInformation } from '../electronicCirculationForEntity/styles';
+import { ContainerInform, TextForInformation } from './styles';
 import ContainerContent from '../../../components/Container';
 import SubTitleFun from '../../../components/SubTitle';
 export default function ElectronicAppeal() {

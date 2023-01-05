@@ -9,14 +9,14 @@ export const data = [
     id: 2,
     cardImg: 2,
     cardDesc: 'Техническое обслуживание',
-    link: 'services/3',
+    link: 'services/6391be07e9cc88452c22bee8',
   },
   { id: 3, cardImg: 3, cardDesc: 'Вакансии', link: 'company/career' },
   {
     id: 4,
     cardImg: 7,
     cardDesc: 'Обмен баллонов',
-    link: 'services/2',
+    link: 'services/639ab8d8d48d019c9596ee9b',
   },
   { id: 5, cardImg: 5, cardDesc: 'Прейскурант', link: 'residents/price' },
   {

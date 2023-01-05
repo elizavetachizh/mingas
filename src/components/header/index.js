@@ -164,7 +164,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
                   <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>
                   {/*<ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>*/}
-                  <ButtonLink to={'/feedback/question-answer/1'}>
+                  <ButtonLink to={'/feedback/question-answer/63930a954fe167e2981cc2e1'}>
                     Часто задаваемые вопросы
                   </ButtonLink>
                   <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
@@ -182,7 +182,7 @@ export default function Header({ backgroundHeader }) {
                     Обращение юридических лиц
                   </ButtonLink>
                   <ButtonLink to="/tenders">Тендеры</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer/1'}>
+                  <ButtonLink to={'/feedback/question-answer/63930a954fe167e2981cc2e1'}>
                     Часто задаваемые вопросы
                   </ButtonLink>
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">

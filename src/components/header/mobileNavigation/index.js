@@ -151,7 +151,7 @@ export default function MobileNavigation() {
           <DivButtonHeader className={isOpenBtnForBusiness && `handleBtn`}>
             <div>
               <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
-              <ButtonLink to="/feedback/electronic-appeal-for-entity">
+              <ButtonLink to="/feedback/electronic-appeal">
                 Обращение юридических лиц
               </ButtonLink>
               <ButtonLink to="/tenders">Тендеры</ButtonLink>

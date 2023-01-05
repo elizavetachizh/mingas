@@ -22,13 +22,14 @@ function SliderContent({ activeIndex, sliderImage }) {
         <div key={index} className={index === activeIndex ? 'slides active' : 'inactive'}>
           <img className="slide-image" src={`${APIimage}/${slide.image}`} alt="" />
           <h2 id={`content-${slide._id}`} className="slide-title" />
-          <ButtonFun
-            classname={'post'}
-            href={`${slide.href}`}
-            infoButton={`${slide.button}`}
-            backgrounder={'border'}
-            className="slide-text"
-          />
+          {slide.link !== '' && (
+            <ButtonFun
+              classname={'slide-text'}
+              href={`${slide.link}`}
+              infoButton={`${slide.button}`}
+              backgrounder={'border'}
+            />
+          )}
         </div>
       ))}
     </section>

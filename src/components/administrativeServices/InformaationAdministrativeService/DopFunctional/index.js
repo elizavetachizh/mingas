@@ -27,14 +27,18 @@ export default function DopFunctional({
   return (
     <ContainerInformAboutService>
       <h3>{uniqueName}</h3>
-      <p>
-        Максимальный срок осуществления административной процедуры:
-        <strong>{maximumImplementationPeriod}</strong>
-      </p>
-      <p>
-        Срок действия справки, другого документа (решения), выдаваемых (принимаемого) при
-        осуществлении административной процедуры: <strong>{certificateValidityPeriod}</strong>
-      </p>
+      {maximumImplementationPeriod && (
+        <p>
+          Максимальный срок осуществления административной процедуры:
+          <strong>{maximumImplementationPeriod}</strong>
+        </p>
+      )}
+      {certificateValidityPeriod && (
+        <p>
+          Срок действия справки, другого документа (решения), выдаваемых (принимаемого) при
+          осуществлении административной процедуры: <strong>{certificateValidityPeriod}</strong>
+        </p>
+      )}
       <p>
         Размер платы, взимаемой при осуществлении административной процедуры:
         <strong>{boardSize}</strong>

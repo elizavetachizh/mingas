@@ -5,7 +5,6 @@ import SliderContent from '../../../components/Content/SliderContent';
 import Arrows from '../../../components/Content/Arrows';
 import axios from 'axios';
 import { API } from '../../../backend';
-import ButtonFun from '../../../components/button';
 
 export default function ContentHome() {
   const [activeIndex, setActiveIndex] = useState(0);

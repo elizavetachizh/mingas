@@ -124,7 +124,7 @@ export default function InformationAdministrativeService() {
                   key={el.linkId}
                   uniqueName={el.uniqueName}
                   maximumImplementationPeriod={el.maximumImplementationPeriod}
-                  certificateValidityPeriod={el.certificateValidityPeriod}
+                  certificateValidityPeriod={ el.certificateValidityPeriod}
                   boardSize={el.boardSize}
                   documents={el.documents}
                   contactInform={el.contactInform}

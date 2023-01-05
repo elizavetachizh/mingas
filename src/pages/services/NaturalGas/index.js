@@ -26,21 +26,15 @@ export default function NaturalGas() {
         setData(res.data);
       })
       .catch((e) => {
-        {
-          console.log(e);
-        }
+        console.log(e);
       });
   }, [setData]);
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
   useEffect(() => {
     const current = data.find((element) => element._id === cardId);
     setInform(current?.description);
     setTitle(current?.name);
     setServiceID(cardId);
-    console.log(inform);
-  }, [cardId, data, inform]);
+  }, [cardId, data]);
   const animate = useCallback(
     (descriptionID) => {
       const current = data.find((element) => element._id === descriptionID);

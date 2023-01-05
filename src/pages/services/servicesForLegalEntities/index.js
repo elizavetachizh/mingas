@@ -16,12 +16,9 @@ export default function ServicesForLegalEntities() {
       .get(`${API}/services`)
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
       })
       .catch((e) => {
-        {
           console.log(e);
-        }
       });
   }, [setData]);
 
