@@ -9,10 +9,9 @@ import four from '../../assets/pdf/price/seven.pdf';
 import five from '../../assets/pdf/price/three.pdf';
 import six from '../../assets/pdf/price/two.pdf';
 import dogovor from '../../assets/wordFile/dogovor_opertsionni_control.doc';
-import { API, APIimage } from '../../backend';
+import { API } from '../../backend';
 export default function ResidentsOfCapitalRegion() {
   const [info, setInfo] = useState([]);
-  const [pdfFile, setPdfFile] = useState([]);
   useEffect(() => {
     axios(`${API}/prices`)
       .then((res) => {
@@ -22,34 +21,15 @@ export default function ResidentsOfCapitalRegion() {
         console.log(e);
       });
   }, [setInfo]);
-  const allowedFiles = ['application/pdf'];
-  useEffect(() => {
-    info.map((el) => {
-      console.log(el.description.type);
-      if (allowedFiles.includes(el.description.type)) {
-        let reader = new FileReader();
-        reader.readAsDataURL(el.description);
-        reader.onload = (e) => {
-          setPdfFile(el.description);
-        };
-      }
-    });
-  }, [allowedFiles, info]);
+
   useEffect(() => {
     console.log(info);
-    console.log(pdfFile);
-  }, [info, pdfFile]);
+  }, [info]);
   return (
     <ContainerContent
       name={'Прейскурант цен'}
       content={
         <Links>
-          {/*{!!info.length &&*/}
-          {/*  info.map((el) => (*/}
-          {/*    <a href={`${APIimage}/${el.description}`} target={'_blank'} rel="opener noreferrer">*/}
-          {/*      {el.name}*/}
-          {/*    </a>*/}
-          {/*  ))}*/}
           <a href={six} target={'_blank'} rel="opener noreferrer">
             {' '}
             Скачать “Прейскурант №1: Тарифы на работы(услуги) оказываемые населению”
@@ -77,6 +57,18 @@ export default function ResidentsOfCapitalRegion() {
             Скачать “Прейскурант №2: Тарифы на работы (услуги), оказываемые предприятиям и
             организациям”
           </a>
+
+          {!!info.length &&
+            info.map((el) => (
+              <a
+                href={`${API}/prices/${el.description}`}
+                id={'href'}
+                target={'_blank'}
+                rel="opener noreferrer"
+              >
+                {el.name}
+              </a>
+            ))}
         </Links>
       }
     />

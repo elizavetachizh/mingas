@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   ContainerFunctionService,
   DescriptionService,
@@ -16,7 +16,7 @@ import {
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { Name } from '../../../../components/administrativeServices/Header/styles';
-export default function DopFunctional({ name, photo, chief, description, contacts, schedule }) {
+export default function DopFunctional({ id, name, photo, chief, description, contacts, schedule }) {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
     setIsOpen(true);
@@ -24,6 +24,20 @@ export default function DopFunctional({ name, photo, chief, description, contact
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    const element = document.getElementById(`description-${id}`);
+    if (element) {
+      element.innerHTML += description;
+    }
+    const elementSchedule = document.getElementById(`schedule-${id}`);
+    if (elementSchedule) {
+      elementSchedule.innerHTML += schedule;
+    }
+    console.log(element);
+    console.log(elementSchedule);
+  }, []);
+
   return (
     <ContainerFunctionService>
       <Name style={{ color: 'white', textDecoration: 'none' }}>{name}</Name>
@@ -40,7 +54,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
             <div>{isOpen ? <IoIosArrowUps /> : <IoIosArrowDowns />}</div>
           </BtnIsOpen>
           <Div className={isOpen && `shake`}>
-            <DescriptionService>{description}</DescriptionService>
+            <DescriptionService id={`description-${id}`} />
           </Div>
         </General>
       )}
@@ -48,7 +62,7 @@ export default function DopFunctional({ name, photo, chief, description, contact
         {schedule && (
           <LinksNetwork>
             <IoMdClocks />
-            {schedule}
+            <p id={`schedule-${id}`} />
           </LinksNetwork>
         )}
         {contacts && (

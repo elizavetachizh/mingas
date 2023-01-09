@@ -19,7 +19,7 @@ export default function Menu({ dataAnswer }) {
   const handlerLinkClick = useCallback(
     (titleId) => {
       const current = dataAnswer.find((element) => element._id === titleId);
-        console.log(current.questionAnswer)
+      console.log(current.questionAnswer);
       navigate(`/feedback/question-answer/${current._id}`);
       setServiceID(currentServiceID && currentServiceID === titleId ? '' : titleId);
       setLinks(current.questionAnswer);

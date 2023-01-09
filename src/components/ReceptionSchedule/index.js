@@ -1,9 +1,10 @@
 import { Table, Tbody, ContainerTable } from '../../pages/feedback/receptionOfCitizens/styles';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Modal from '../modalWindow';
-import { admissionSchedule } from '../../assets/data/admissionSchedule';
 import DopFunctionalForColumn from '../../pages/feedback/receptionOfCitizens/DopFunctionalForColumn';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import { API } from '../../backend';
 
 export default function ReceptionSchedule() {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -12,11 +13,23 @@ export default function ReceptionSchedule() {
   const handlerLeaderClick = useCallback((leader) => {
     setModalVisible(true);
     setCurrentLeader(leader);
-    setNameId(leader.id);
+    setNameId(leader._id);
   }, []);
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
+
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${API}/management`)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setInfo]);
 
   return (
     <ContainerTable>
@@ -27,13 +40,13 @@ export default function ReceptionSchedule() {
           </tr>
         </thead>
         <Tbody className={'firstColumn'}>
-          {admissionSchedule.map((el) => (
+          {info.map((el) => (
             <tr key={el.id}>
               <td>
                 <DopFunctionalForColumn
                   handlerLeaderClick={handlerLeaderClick}
                   fullName={el.fullName}
-                  idName={el.id}
+                  idName={el._id}
                   leader={el}
                   position={el.position}
                 />
@@ -42,28 +55,46 @@ export default function ReceptionSchedule() {
           ))}
           <tr>
             <td>
-              <NavLink to={'/company/management/2?id=5'}> Яскевич Виталий Владимирович</NavLink>
+              <NavLink
+                to={
+                  '/company/management/6384589d39dd2976eec5c13b?id=Производственно-техническое%20управление%20(ПТУ)'
+                }
+              >
+                Яскевич Виталий Владимирович
+              </NavLink>
               <br />
               <p>Начальник производственно-технического управления</p>
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/5?id=24'}>Курленя Виталий Алексеевич</NavLink>
+              <NavLink to={'/company/management/638458ac39dd2976eec5c14e?id=Служба%20заказчика'}>
+                Курленя Виталий Алексеевич
+              </NavLink>
               <br />
               <p>Начальник службы заказчика</p>
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/3?id=18'}>Безмен Алексей Валерьевич</NavLink>
+              <NavLink
+                to={'/company/management/638458ac39dd2976eec5c14e?id=Контакт%20центр%20(КЦ)'}
+              >
+                Безмен Алексей Валерьевич
+              </NavLink>
               <br />
               <p>Начальник Контакт центра</p>
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/3?id=13'}>Рашев Евгений Алексеевич</NavLink>
+              <NavLink
+                to={
+                  '/company/management/638458ac39dd2976eec5c14e?id=Служба%20эксплуатации%20внутридомовых%20объектов%20газопотребления%20(СЭВОГ)'
+                }
+              >
+                Рашев Евгений Алексеевич
+              </NavLink>
               <br />
               <p>Начальник службы эксплуатации внутридомовых объектов газопотребления</p>
             </td>
@@ -84,21 +115,39 @@ export default function ReceptionSchedule() {
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/3?id=17'}>Пятница Александр Владимирович</NavLink>
+              <NavLink
+                to={
+                  '/company/management/63845ae4db3ae3ea77af1656?id=Служба%20учёта%20потреблённого%20газа%20населением%20(СУПГН)'
+                }
+              >
+                Пятница Александр Владимирович
+              </NavLink>
               <br />
               <p>Начальник службы учета потребленного газа населением</p>
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/7?id=32'}>Романюк Алексей Николавеич</NavLink>
+              <NavLink
+                to={
+                  '/company/management/63845ae4db3ae3ea77af1656?id=Филиал%20по%20производству%20сельскохозяйственной%20продукции%20“Бубны”'
+                }
+              >
+                Романюк Алексей Николавеич
+              </NavLink>
               <br />
               <p>Директор сельскохозяйственного филиала «Бубны»</p>
             </td>
           </tr>
           <tr>
             <td>
-              <NavLink to={'/company/management/7?id=31'}>Молочко Алексей Александрович</NavLink>
+              <NavLink
+                to={
+                  '/company/management/63845ae4db3ae3ea77af1656?id=Филиал%20«Торфобрикетный%20завод%20«Сергеевичское»'
+                }
+              >
+                Молочко Алексей Александрович
+              </NavLink>
               <br />
               <p>Директор филиала «Торфобрикетный завод «Сергеевичское»</p>
             </td>

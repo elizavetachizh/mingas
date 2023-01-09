@@ -173,7 +173,6 @@ export const DivImage = styled.div`
   }
 `;
 
-
 export const DivbackgroundNew = styled.div`
   display: flex;
   flex-direction: row;
@@ -181,20 +180,20 @@ export const DivbackgroundNew = styled.div`
   overflow: hidden;
   height: 100%;
   width: 100%;
-  margin : 154px 0 0 0;
+  margin: 154px 0 0 0;
   border-radius: 20px;
   @media (min-width: 2000px) {
-    margin : 154px 0 0 0;
+    margin: 154px 0 0 0;
   }
   @media (max-width: 2000px) {
     border-radius: 0;
   }
   @media (max-width: 900px) {
-    margin : 80px 0 0 0;
+    margin: 80px 0 0 0;
     background: white;
   }
   @media (max-width: 424px) {
-    margin : 65px 0 0 0;
+    margin: 65px 0 0 0;
   }
   p {
     position: absolute;

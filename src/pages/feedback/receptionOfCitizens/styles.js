@@ -97,8 +97,9 @@ export const ContainerTable = styled.div`
 
 export const BlockForAdmissionSchedule = styled.div`
   cursor: pointer;
+  margin: 0;
+  padding: 0;
   &:hover {
     text-decoration-line: underline;
   }
 `;
-

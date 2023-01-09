@@ -162,7 +162,7 @@ export default function Header({ backgroundHeader }) {
                   </ContanerLink>
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-                  <ButtonLink to="/regulatory-documents/1">Регламентирующие документы</ButtonLink>
+                  <ButtonLink to="/regulatory-documents/Законы">Регламентирующие документы</ButtonLink>
                   {/*<ButtonLink to={'/feedback/reception-of-citizens'}>Приём граждан</ButtonLink>*/}
                   <ButtonLink to={'/feedback/question-answer/63930a954fe167e2981cc2e1'}>
                     Часто задаваемые вопросы
@@ -188,7 +188,7 @@ export default function Header({ backgroundHeader }) {
                   <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                     Административные процедуры
                   </ButtonLink>
-                  <ButtonLink to="/regulatory-documents-for-business/1">
+                  <ButtonLink to="/regulatory-documents-for-business/Законы">
                     Регламентирующие документы
                   </ButtonLink>
                 </DivButtonHeader>

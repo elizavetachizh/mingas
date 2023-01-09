@@ -14,12 +14,12 @@ export default function Modal({ handleCloseCLick, currentLeader, nameId, index }
         <InformModal>
           <img
             alt={currentLeader.fullName}
-            src={require(`../../assets/management/${currentLeader.cardImg}.webp`)}
+            src={`${currentLeader.image}`}
           />
           <p>{currentLeader.fullName}</p>
           <p>{currentLeader.position}</p>
           <strong>Курируемые направления:</strong>
-          <ModalSubdivision linksId={nameId} links={currentLeader.links} />
+          <ModalSubdivision linksId={nameId} links={currentLeader.department} />
         </InformModal>
       </ModalWindowOpenAndClose>
     </ModalWindow>
