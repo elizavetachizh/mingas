@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import DopFunctional from '../DopFunctional';
-import { NavLink, useParams, useSearchParams } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import {
   DivBlocks,
   ContainerInform,
@@ -25,7 +25,6 @@ import axios from 'axios';
 import { API } from '../../../../../backend';
 
 export default function DepartmentInformation() {
-  const { linkId } = useParams();
   const isPhone = useMediaQuery('(max-width: 800px)');
   const [currentServiceID, setDepartamentId] = useState(null);
   const [inform, setInform] = useState([]);
@@ -43,7 +42,7 @@ export default function DepartmentInformation() {
         setInfoDep(res.data);
       })
       .catch((e) => {
-          console.log(e);
+        console.log(e);
       });
   }, [setInfoDep]);
 
@@ -63,7 +62,7 @@ export default function DepartmentInformation() {
       const currentBlockInfo = content.filter((information) => information.name === id);
       setInform(currentBlockInfo);
     }
-  }, [linkId, id, content]);
+  }, [id, content]);
 
   const changeDepartment = useCallback(
     (departamentId) => {

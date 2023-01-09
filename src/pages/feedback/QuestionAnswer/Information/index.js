@@ -32,7 +32,6 @@ export default function Information() {
   const navigate = useNavigate();
   const [currentServiceID, setServiceID] = useState(null);
   const [links, setLinks] = useState([]);
-
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
@@ -44,8 +43,6 @@ export default function Information() {
         console.log(e);
       });
   }, [setData]);
-
-  
 
   const currentTheme = useMemo(() => data.find((element) => element._id === titleId), [titleId]);
 
