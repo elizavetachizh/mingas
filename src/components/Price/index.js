@@ -9,7 +9,7 @@ import four from '../../assets/pdf/price/seven.pdf';
 import five from '../../assets/pdf/price/three.pdf';
 import six from '../../assets/pdf/price/two.pdf';
 import dogovor from '../../assets/wordFile/dogovor_opertsionni_control.doc';
-import { API } from '../../backend';
+import {API, APIimage} from '../../backend';
 export default function ResidentsOfCapitalRegion() {
   const [info, setInfo] = useState([]);
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function ResidentsOfCapitalRegion() {
           {!!info.length &&
             info.map((el) => (
               <a
-                href={`${API}/prices/${el.description}`}
+                href={`${APIimage}/${el.description}`}
                 id={'href'}
                 target={'_blank'}
                 rel="opener noreferrer"

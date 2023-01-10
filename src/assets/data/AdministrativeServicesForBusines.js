@@ -10,12 +10,36 @@ export const AdministrativeServicesForBusines = [
     uniqueName:
       'Выдача разрешения на право производства ремонтных, строительных и земляных работ в охранной зоне объектов газораспределительной системы (п. 3.15.1), доступна на едином портале электронных услуг',
     maximumImplementationPeriod: '5 рабочих дней',
-    certificateValidityPeriod: ' действует бессрочно',
+    certificateValidityPeriod:
+      'действует до даты окончания производства ремонтных, строительных и земляных работ в охранной зане объектов газораспределительной системы, указанной заинтересованным лицом в заявлении о получении разрешения на право производства ремонтных, строительных и земляных работ в охранной зоне объекта газораспределительной системы, но не более трех месяцев',
     boardSize: 'бесплатно',
     documents: (
       <ul>
-        <li>заявление</li>
-        <li>проект плана производства работ</li>
+        Для получения разрешения на право производства ремонтных, строительных и земляных работ в
+        охранной зоне объектов газораспределительной системы рекомендуем воспользоваться{' '}
+        <a
+          href={
+            'https://portal.gov.by/PortalGovBy/faces/wcnav_defaultSelection?_afrLoop=27796491789714&_afrWindowMode=0&_afrWindowId=null#%40%3F_afrWindowId%3Dnull%26_afrLoop%3D27796491789714%26_afrWindowMode%3D0%26_adf.ctrl-state%3Dtipubvmml_22'
+          }
+        >
+          Единым порталом электронных услуг
+        </a>
+        (код{' '}
+        <a
+          href={
+            'https://portal.gov.by/PortalGovBy/faces/oracle/webcenter/portalapp/pages/main/search.jspx?searchText=156.3.13&_adf.ctrl-state=1d8flotpsm_26&_afrLoop=27827140305902&_afrWindowMode=0&_afrWindowId=null#%40%3F_afrWindowId%3Dnull%26_afrLoop%3D27827140305902%26searchText%3D156.3.13%26_afrWindowMode%3D0%26_adf.ctrl-state%3Dtipubvmml_40'
+          }
+        >
+          ОАИС 156.3.13
+        </a>
+        ).
+        <li>
+          <a href={'https://pravo.by/document/?guid=12551&p0=W22239193&p1=1'}>
+            Заявление (стр. 30 постановления Министерства Энергетики Республики Беларусь от 29
+            ноября 2022 г. № 39){' '}
+          </a>
+        </li>
+        <li>проект производства работ </li>
       </ul>
     ),
     contactInform: (
@@ -118,6 +142,56 @@ export const AdministrativeServicesForBusines = [
                 обед: 12:00-12:45
               </Td>
             </Tr>
+          </Tbody>
+        </Table>
+      </div>
+    ),
+  },
+  {
+    serviceID: 1,
+    serviceName: 'Труд и социальная защита',
+    uniqueName:
+      'Получение разрешения на право производства работ в охранной зоне электрических и (или) тепловых сетей (п. 3.15.2)',
+    maximumImplementationPeriod: '5 рабочих дней',
+    certificateValidityPeriod:
+      'действует до даты окончания производства ремонтных работ, но не более трех месяцев',
+    boardSize: 'бесплатно',
+    documents: (
+      <ul>
+        <li>заявление о производстве работ</li>
+        <li>проект производства работ и (или) технологическая карта</li>
+      </ul>
+    ),
+    contactInform: (
+      <div>
+        <h4>УП «Мингаз»</h4>
+        <Table>
+          <Thead>
+            <Tr>
+              <th>Должность, ФИО лица ответственного за прием заявлений</th>
+              <th>Номер телефона </th>
+              <th>Время приема</th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <tr>
+              <td>
+                мастер Тагунов К.В.,
+                <br />
+                начальник УТЭХ Фёдоров А.Ю.
+              </td>
+              <td>
+                тел. 299-29-44,
+                <br />
+                каб. 9 РМЦ.
+              </td>
+              <td>
+                8:30-16:30 (пн.-чт.) <br />
+                8:30-15:15 (пт.)
+                <br />
+                обед: 12:00-12:45
+              </td>
+            </tr>
           </Tbody>
         </Table>
       </div>

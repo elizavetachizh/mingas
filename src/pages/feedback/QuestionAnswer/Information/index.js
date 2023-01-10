@@ -205,7 +205,7 @@ export default function Information() {
             <ContainerInform>
               {titleId && <Name>{currentTheme?.title}</Name>}
               <>
-                {info.length &&
+                {!!info.length &&
                   info.map((el) => (
                     <DopFunctionService
                       key={el._id}

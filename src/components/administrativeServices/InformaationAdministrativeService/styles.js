@@ -5,10 +5,10 @@ const opacityAnimation = keyframes`
   100% { opacity: 1; }
 `;
 export const Div = styled.div`
-  padding: 1% 2%;
+  padding: 0.5% 2%;
   display: none;
   border-radius: 20px;
-  margin: 1% auto;
+  margin: 0.5% auto;
   font-size: 16px;
   a {
     color: #0d4475;

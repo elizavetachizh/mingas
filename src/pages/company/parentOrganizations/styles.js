@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 export const ContainerForInform = styled.div`
   margin: 0 auto;
+  width: 40%;
+  div {
+    width: 100%;
+    margin: 2% auto;
+    text-align: center;
+  }
 `;
 
 export const ContainerLinks = styled.div`
@@ -31,7 +37,7 @@ export const ContainerLinks = styled.div`
       text-align: center;
       img {
         margin: 0 auto;
-        width: 330px;
+        height: 80px;
       }
       p {
         text-align: center;

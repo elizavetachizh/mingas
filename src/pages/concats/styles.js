@@ -62,4 +62,7 @@ export const Text = styled.div`
 display: flex;
   justify-content: end;
   width: 97%;
+  h4{
+    margin: 0;
+  }
 `

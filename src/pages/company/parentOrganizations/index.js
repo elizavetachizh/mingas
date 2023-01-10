@@ -21,7 +21,13 @@ export default function ParentOrganizations() {
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <ContainerLinks>
           {data.map((el) => (
-            <DopFunctional key={el.cardId} img={el.img} link={el.link} name={el.name} />
+            <DopFunctional
+              key={el.cardId}
+              img={el.img}
+              link={el.link}
+              name={el.name}
+              info={el.info}
+            />
           ))}
         </ContainerLinks>
       </AdditionalDiv>
