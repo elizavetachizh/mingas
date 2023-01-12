@@ -78,7 +78,7 @@ export default function NaturalGas() {
                 />
               ))
             ) : (
-              <p>Loading...</p>
+              <p>Загрузка данных...</p>
             )}
           </ContainerInform>
         </DivBlocks>

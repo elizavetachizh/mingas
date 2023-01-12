@@ -71,7 +71,7 @@ export default function DepartmentInformation() {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    navigate('/regulatory-documents/1');
+    navigate('/regulatory-documents/Законы');
   };
 
   const changeDocument = useCallback(
@@ -165,18 +165,23 @@ export default function DepartmentInformation() {
                 </ContainerFormSearchForService>
               )}
               {message && <BlockSerach result={result} />}
-              {inform &&
-                inform.map((el) => {
-                  if (el.type === '1') {
-                    return (
-                      <BlockBtn key={el._id}>
-                        <a href={el.link} target={'_blank'} rel="noreferrer">
-                          {el.name}
-                        </a>
-                      </BlockBtn>
-                    );
-                  }
-                })}
+              {info ? (
+                info.map((el) =>
+                  el.documents.map((el) => {
+                    if (el.type === '1') {
+                      return (
+                        <BlockBtn key={el._id}>
+                          <a href={el.link} target={'_blank'} rel="noreferrer">
+                            {el.name}
+                          </a>
+                        </BlockBtn>
+                      );
+                    }
+                  })
+                )
+              ) : (
+                <p>Загрузка данных...</p>
+              )}
             </ContainerInform>
           ) : (
             <ContainerInform>
@@ -194,7 +199,7 @@ export default function DepartmentInformation() {
                   }
                 })
               ) : (
-                <p>Loading</p>
+                <p>Загрузка данных...</p>
               )}
             </ContainerInform>
           )}

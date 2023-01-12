@@ -20,7 +20,7 @@ export const links = [
   {
     id: 4,
     link: '/feedback/question-answer/63930a954fe167e2981cc2e1',
-    name: 'Вопрос-ответ',
+    name: 'Часто задаваемые вопросы',
     cardImg: 14,
   },
   {

@@ -13,6 +13,7 @@ import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { useLocation, useNavigate } from 'react-router';
 import ContainerContent from '../../Container';
 import axios from 'axios';
+import { API } from '../../../backend';
 
 export default function InformationAdministrativeService() {
   const { pathname } = useLocation();
@@ -23,7 +24,7 @@ export default function InformationAdministrativeService() {
   const [fullData, setFullData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost/admin/administration`)
+      .get(`${API}/administration`)
       .then((res) => {
         setInfo(res.data);
         setFullData(res.data);

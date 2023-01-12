@@ -208,6 +208,7 @@ export default function Information() {
                 {!!info.length &&
                   info.map((el) => (
                     <DopFunctionService
+                      classname={'question-answer'}
                       key={el._id}
                       inform={el.answer}
                       nameDescription={el.question}

@@ -155,7 +155,7 @@ export default function MobileNavigation() {
               <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
               <ButtonLink to="/feedback/electronic-appeal">Обращение юридических лиц</ButtonLink>
               <ButtonLink to="/tenders">Тендеры</ButtonLink>
-              <ButtonLink to={'/feedback/question-answer/1'}>Вопрос-ответ</ButtonLink>
+              <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
               <ButtonLink to="/services-legal-entities/administrative-services-legal/">
                 Административные процедуры
               </ButtonLink>

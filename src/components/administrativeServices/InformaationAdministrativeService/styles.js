@@ -106,6 +106,9 @@ export const BtnIsOpen = styled.div`
   cursor: pointer;
   //margin: 4% auto;
   border-radius: 30px;
+  @media (max-width: 430px) {
+    height: 80px;
+  }
   &.question-answer {
     @media (max-width: 430px) {
       height: 80px;
@@ -156,9 +159,9 @@ export const BtnIsOpen = styled.div`
     @media (max-width: 540px) {
       height: 80%;
     }
-    @media (max-width: 450px) {
-      width: 66px;
-      height: 76%;
+    @media (max-width: 430px) {
+      width: 50px;
+      height: 50%;
     }
   }
   p {

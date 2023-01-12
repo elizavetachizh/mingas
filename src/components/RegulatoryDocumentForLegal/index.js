@@ -163,18 +163,23 @@ export default function RegulatoryDocumentsForLegal() {
                 </ContainerFormSearchForService>
               )}
               {message && <BlockSerach result={result} />}
-              {inform &&
-                inform.map((el) => {
-                  if (el.type === '1') {
-                    return (
-                      <BlockBtn key={el._id}>
-                        <a href={el.link} target={'_blank'} rel="noreferrer">
-                          {el.name}
-                        </a>
-                      </BlockBtn>
-                    );
-                  }
-                })}
+              {info ? (
+                info.map((el) =>
+                  el.documents.map((el) => {
+                    if (el.type === '2') {
+                      return (
+                        <BlockBtn key={el._id}>
+                          <a href={el.link} target={'_blank'} rel="noreferrer">
+                            {el.name}
+                          </a>
+                        </BlockBtn>
+                      );
+                    }
+                  })
+                )
+              ) : (
+                <p>Загрузка данных...</p>
+              )}
             </ContainerInform>
           ) : (
             <ContainerInform>

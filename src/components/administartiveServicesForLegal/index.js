@@ -3,12 +3,13 @@ import { ContainerInform } from '../administrativeServices/InformaationAdministr
 import DopFunctional from '../administrativeServices/InformaationAdministrativeService/DopFunctional';
 import ContainerContent from '../Container';
 import axios from 'axios';
+import { API } from '../../backend';
 
 export default function AdministartiveServicesForLegal() {
   const [info, setInfo] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost/admin/administration`)
+      .get(`${API}/administration`)
       .then((res) => {
         setInfo(res.data);
       })
