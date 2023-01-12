@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Div, BtnIsOpen, ContainerInformAboutService } from '../styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 export default function DopFunctional({
   uniqueName,
+  id,
   maximumImplementationPeriod,
   certificateValidityPeriod,
   boardSize,
@@ -24,9 +25,25 @@ export default function DopFunctional({
       setIsClose(false);
     }
   };
+
+  useEffect(() => {
+    const documentInform = document.getElementById(`documents-${id}`);
+    if (documentInform && !documentInform.innerHTML) {
+      documentInform.innerHTML += documents;
+    }
+    const contacts = document.getElementById(`contactInform-${id}`);
+    if (contacts && !contacts.innerHTML) {
+      contacts.innerHTML += contactInform;
+    }
+    const uniqueNames = document.getElementById(`uniqueName-${id}`);
+    if (uniqueNames && !uniqueNames.innerHTML) {
+      uniqueNames.innerHTML += uniqueName;
+    }
+  }, []);
+
   return (
     <ContainerInformAboutService>
-      <h3>{uniqueName}</h3>
+      <h3 id={`uniqueName-${id}`} />
       {maximumImplementationPeriod && (
         <p>
           Максимальный срок осуществления административной процедуры:
@@ -56,7 +73,7 @@ export default function DopFunctional({
               )}
             </div>
           </BtnIsOpen>
-          <Div className={isOpen && `shake`}>{documents}</Div>
+          <Div id={`documents-${id}`} className={isOpen && `shake`} />
         </>
       ) : (
         <></>
@@ -73,7 +90,7 @@ export default function DopFunctional({
               )}
             </div>
           </BtnIsOpen>
-          <Div className={isClose && `shake`}>{contactInform}</Div>
+          <Div id={`contactInform-${id}`} className={isClose && `shake`} />
         </>
       )}
       <hr />

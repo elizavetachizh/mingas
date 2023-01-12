@@ -7,6 +7,9 @@ export const ContainerForInform = styled.div`
     margin: 2% auto;
     text-align: center;
   }
+  @media (max-width: 700px) {
+    width: 70%;
+  }
 `;
 
 export const ContainerLinks = styled.div`
@@ -38,6 +41,9 @@ export const ContainerLinks = styled.div`
       img {
         margin: 0 auto;
         height: 80px;
+        @media (max-width: 520px) {
+          height: 56px;
+        }
       }
       p {
         text-align: center;

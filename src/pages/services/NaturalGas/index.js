@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { data } from '../../../assets/data/data_services';
 import { BlockBtn, Name } from '../../../components/administrativeServices/Header/styles';
 import { HeaderCompanyDiv } from '../../concats/headerContacts/styles';
 import {

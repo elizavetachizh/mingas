@@ -1,6 +1,5 @@
 import { NavLink, useSearchParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { data } from '../../../assets/data/dataInformAdministrativeService';
 import DopFunctional from './DopFunctional';
 import {
   DivBlocks,
@@ -13,6 +12,7 @@ import {
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { useLocation, useNavigate } from 'react-router';
 import ContainerContent from '../../Container';
+import axios from 'axios';
 
 export default function InformationAdministrativeService() {
   const { pathname } = useLocation();
@@ -20,12 +20,27 @@ export default function InformationAdministrativeService() {
   const linkId = searchParams.get('linkId');
   const [info, setInfo] = useState([]);
   const navigate = useNavigate();
+  const [fullData, setFullData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost/admin/administration`)
+      .then((res) => {
+        setInfo(res.data);
+        setFullData(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setInfo]);
+  useEffect(() => {
+    console.log(info);
+  }, [info]);
   useEffect(() => {
     if (linkId) {
-      const currentBlockInfo = data?.filter((blockInfo) => blockInfo.linkId === +linkId);
+      const currentBlockInfo = info?.filter((blockInfo) => blockInfo._id === linkId);
       setInfo(currentBlockInfo);
     } else {
-      setInfo(data);
+      setInfo(fullData);
     }
   }, [linkId]);
   const [isForm, setIsForm] = useState(false);
@@ -42,7 +57,7 @@ export default function InformationAdministrativeService() {
     setMessage(event.target.value);
   };
   {
-    data.map((card) => {
+    info.map((card) => {
       if (card.uniqueName.includes(message)) {
         result.push(card);
       }
@@ -56,12 +71,8 @@ export default function InformationAdministrativeService() {
         {result.length ? (
           result.map((element) => {
             return (
-              <div key={element.linkId}>
-                {' '}
-                <NavLink
-                  style={{ margin: '20px auto' }}
-                  to={`${pathname}?linkId=${element.linkId}`}
-                >
+              <div key={element._id}>
+                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?linkId=${element._id}`}>
                   {element.uniqueName}
                 </NavLink>
               </div>
@@ -77,7 +88,7 @@ export default function InformationAdministrativeService() {
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    setInfo(data);
+    setInfo(info);
     navigate('/services/administrative-services');
   };
   return (
@@ -119,17 +130,22 @@ export default function InformationAdministrativeService() {
           </BlockSearch>
           <DivBlocks>
             <ContainerInform>
-              {info.map((el) => (
-                <DopFunctional
-                  key={el.linkId}
-                  uniqueName={el.uniqueName}
-                  maximumImplementationPeriod={el.maximumImplementationPeriod}
-                  certificateValidityPeriod={ el.certificateValidityPeriod}
-                  boardSize={el.boardSize}
-                  documents={el.documents}
-                  contactInform={el.contactInform}
-                />
-              ))}
+              {info.map((el) => {
+                if (el.type === '1') {
+                  return (
+                    <DopFunctional
+                      id={el._id}
+                      key={el._id}
+                      uniqueName={el.uniqueName}
+                      maximumImplementationPeriod={el.maximumImplementationPeriod}
+                      certificateValidityPeriod={el.certificateValidityPeriod}
+                      boardSize={el.boardSize}
+                      documents={el.documents}
+                      contactInform={el.contactInform}
+                    />
+                  );
+                }
+              })}
             </ContainerInform>
           </DivBlocks>
         </>

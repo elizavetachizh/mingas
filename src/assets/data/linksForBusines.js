@@ -19,7 +19,7 @@ export const links = [
   },
   {
     id: 4,
-    link: '/feedback/question-answer/1',
+    link: '/feedback/question-answer/63930a954fe167e2981cc2e1',
     name: 'Вопрос-ответ',
     cardImg: 14,
   },
@@ -31,7 +31,7 @@ export const links = [
   },
   {
     id: 6,
-    link: '/regulatory-documents-for-business/1',
+    link: '/regulatory-documents-for-business/Законы',
     name: 'Регламентирующие документы',
     cardImg: 9,
   },

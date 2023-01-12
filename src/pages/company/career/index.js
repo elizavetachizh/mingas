@@ -49,7 +49,6 @@ export default function Career() {
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <DivForm className="form-div">
           <div className="form-div-career">
-            {' '}
             <script
               className="hh-script"
               src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
@@ -72,6 +71,11 @@ export default function Career() {
             </div>
           </BtnIsOpen>
           <Div style={{ width: '70%', margin: '4% auto' }} className={isOpen && `shake`}>
+            <p>
+              УП «МИНГАЗ» приглашает кандидатов для направления на обучение по целевой подготовке.
+              Обращаться по телефонам <a href={'tel:+375 (017) 299 28 30'}>+375 (017) 299 28 30</a>{' '}
+              и <a href={'tel:+375 (017) 299 29 36'}>+375 (017) 299 29 36</a>.
+            </p>
             <p>
               При приеме на работу предлагаем заполнить{' '}
               <a download href={anketa}>

@@ -91,7 +91,7 @@ export default function SMI() {
         <Div className={isClose && `shake`}>
           <ContainerArticles>
             {info &&
-              info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} />)}
+              info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} date={el.date} />)}
           </ContainerArticles>
         </Div>
       </General>

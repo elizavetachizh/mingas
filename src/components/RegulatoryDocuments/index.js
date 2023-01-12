@@ -27,7 +27,7 @@ export default function DepartmentInformation() {
   const [message, setMessage] = useState('');
   const result = [];
   const isPhone = useMediaQuery('(max-width: 820px)');
-  const [info, setInfo] = useState(null);
+  const [info, setInfo] = useState([]);
   useEffect(() => {
     const apiUrl = `${API}/documents_separation`;
     axios
@@ -121,7 +121,7 @@ export default function DepartmentInformation() {
               </ContainerFormSearchForService>
             )}
             {message && <BlockSerach result={result} />}
-            {info &&
+            {!!info.length &&
               info.map((element) => (
                 <BlockBtn key={element._id}>
                   <ContainerBtnIcon>

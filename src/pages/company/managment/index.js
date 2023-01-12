@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState, lazy, Suspense } from 'react';
 import photoHistory from '../../../assets/management/0.webp';
 import { DivLeadersPhotoPosition } from './styles';
 import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
-import { management } from '../../../assets/data/data_management';
 import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import SchemaCompany from '../SchemaCompany';
