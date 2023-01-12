@@ -11,6 +11,8 @@ import { NavLink, useSearchParams } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import ContainerContent from '../../../../../components/Container';
+import axios from "axios";
+import {API} from "../../../../../backend";
 
 export default function AllSubdivisions() {
   const [isForm, setIsForm] = useState(false);
@@ -21,7 +23,7 @@ export default function AllSubdivisions() {
   const result = [];
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
-
+const [fullDate, setFullDate] = useState([])
   const infoForSearch = data[0].information
     .concat(data[1].information)
     .concat(data[2].information)
@@ -30,12 +32,24 @@ export default function AllSubdivisions() {
     .concat(data[5].information)
     .concat(data[6].information)
     .concat(data[7].information);
+
+  useEffect(() => {
+    axios
+        .get(`${API}/departament`)
+        .then((res) => {
+          setFullDate(res.data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+  }, [setFullDate]);
+
   useEffect(() => {
     if (id) {
-      const currentBlockInfo = infoForSearch.filter((blockInfo) => blockInfo.id === +id);
+      const currentBlockInfo = fullDate.filter((blockInfo) => blockInfo.name === id);
       setInfo(currentBlockInfo);
     } else {
-      setInfo(infoForSearch);
+      setInfo(fullDate);
     }
   }, [id]);
 
@@ -50,7 +64,7 @@ export default function AllSubdivisions() {
     setMessage(event.target.value);
   };
 
-  infoForSearch.map((card) => {
+  fullDate.map((card) => {
     if (typeof card.name === 'string') {
       if (card.name.includes(message)) {
         result.push(card);
@@ -65,7 +79,7 @@ export default function AllSubdivisions() {
           result.map((element) => {
             return (
               <div key={element.id}>
-                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.id}`}>
+                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.name}`}>
                   {element.name}
                 </NavLink>
               </div>
@@ -123,6 +137,7 @@ export default function AllSubdivisions() {
             {info.length
               ? info.map((el) => (
                   <DopFunctional
+                      id={el._id}
                     key={el.id}
                     name={el.name}
                     contacts={el.contacts}
@@ -132,8 +147,9 @@ export default function AllSubdivisions() {
                     description={el.description}
                   />
                 ))
-              : infoForSearch.map((el) => (
+              : fullDate.map((el) => (
                   <DopFunctional
+                      id={el._id}
                     key={el.name}
                     name={el.name}
                     contacts={el.contacts}

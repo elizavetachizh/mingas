@@ -19,7 +19,6 @@ export default function GasSupplyTariffs() {
     if (element) {
       element.innerHTML += info[2];
     }
-    console.log(element.innerHTML);
   });
   return (
     <div>

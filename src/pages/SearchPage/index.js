@@ -1,7 +1,4 @@
-import React, { useCallback, useState } from 'react';
-import { data } from '../../assets/data/data_services';
-import { data as dataDepartment } from '../../assets/data/data_department';
-import { dataLegalEntities } from '../../assets/data/data_service_legalEntities_general';
+import React, { useCallback, useEffect, useState } from 'react';
 import { routers } from '../../assets/data/routers';
 import { ContainerFormSearch, Div, FormSearch } from './styles';
 import { NavLink } from 'react-router-dom';
@@ -9,6 +6,8 @@ import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import { IoIosSearchs } from '../../components/header/styles';
 import { ModalWindow } from '../../components/modalWindow/styles';
 import { searchDocuments } from '../../assets/data/searchDocuments';
+import axios from 'axios';
+import { API } from '../../backend';
 export default function SearchPage({ classname }) {
   const [isForm, setIsForm] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
@@ -22,18 +21,34 @@ export default function SearchPage({ classname }) {
   };
   const [message, setMessage] = useState('');
   const result = [];
-  const resultEntities = [];
   const resultRouters = [];
   const resultDepartments = [];
   const resultDocuments = [];
-  const infoForSearch = dataDepartment[0].information
-    .concat(dataDepartment[1].information)
-    .concat(dataDepartment[2].information)
-    .concat(dataDepartment[3].information)
-    .concat(dataDepartment[4].information)
-    .concat(dataDepartment[5].information)
-    .concat(dataDepartment[6].information)
-    .concat(dataDepartment[7].information);
+  const [departament, setDepartament] = useState([]);
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/departament`)
+      .then((res) => {
+        setDepartament(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setDepartament]);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/services`)
+      .then((res) => {
+        setServices(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setServices]);
+
   const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
@@ -42,25 +57,19 @@ export default function SearchPage({ classname }) {
     setMessage(event.target.value);
   };
 
-  data.map((card) => {
-    if (card?.nameCard.includes(message)) {
+  services.map((card) => {
+    if (card?.name.includes(message)) {
       result.push(card);
     }
     return <p>К сожалению, ничего не было найдено</p>;
   }) &&
-    dataLegalEntities.map((card) => {
-      if (card?.nameCard.includes(message)) {
-        resultEntities.push(card);
-      }
-      return <p>К сожалению, ничего не было найдено</p>;
-    }) &&
     routers.map((router) => {
       if (router.name.includes(message)) {
         resultRouters.push(router);
       }
       return null;
     }) &&
-    infoForSearch.map((element) => {
+    departament.map((element) => {
       if (typeof element.name === 'string') {
         if (element.name.includes(message)) {
           resultDepartments.push(element);
@@ -91,29 +100,27 @@ export default function SearchPage({ classname }) {
                 onClick={handleCloseCLick}
               />
               {result.map((element) => {
-                return (
-                  <div key={element.cardImg}>
-                    {
-                      <NavLink style={{ color: 'black' }} to={`/services/${element.serviceId}`}>
-                        {element.nameCard}
+                if (element.type === '1') {
+                  return (
+                    <div key={element._id}>
+                      <NavLink style={{ color: 'black' }} to={`/services/${element._id}`}>
+                        {element.name}
                       </NavLink>
-                    }
-                  </div>
-                );
-              })}
-              {resultEntities.map((element) => {
-                return (
-                  <div key={element.cardImg}>
-                    {
+                    </div>
+                  );
+                }
+                if (element.type === '2') {
+                  return (
+                    <div key={element._id}>
                       <NavLink
                         style={{ color: 'black' }}
-                        to={`/services-legal-entities/${element.serviceId}`}
+                        to={`/services-legal-entities/${element._id}`}
                       >
-                        {element.nameCard}
+                        {element.name}
                       </NavLink>
-                    }
-                  </div>
-                );
+                    </div>
+                  );
+                }
               })}
               {resultRouters.map((element) => {
                 return (
@@ -128,11 +135,11 @@ export default function SearchPage({ classname }) {
               })}
               {resultDepartments.map((element) => {
                 return (
-                  <div key={element.id}>
+                  <div key={element._id}>
                     {
                       <NavLink
                         style={{ color: 'black' }}
-                        to={`/company/management/${element.idNameInform}?id=${element.id}`}
+                        to={`/company/management/${element._id}?id=${element.name}`}
                       >
                         {element.name}
                       </NavLink>

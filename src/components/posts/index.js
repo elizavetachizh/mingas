@@ -15,7 +15,6 @@ export default function Posts() {
       .get(apiUrl)
       .then((res) => {
         setInfo(res.data);
-        console.log(res.data);
       })
       .catch((e) => {
         console.log(e);

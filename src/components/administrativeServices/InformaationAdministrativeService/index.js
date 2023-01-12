@@ -32,9 +32,7 @@ export default function InformationAdministrativeService() {
         console.log(e);
       });
   }, [setInfo]);
-  useEffect(() => {
-    console.log(info);
-  }, [info]);
+
   useEffect(() => {
     if (linkId) {
       const currentBlockInfo = info?.filter((blockInfo) => blockInfo._id === linkId);

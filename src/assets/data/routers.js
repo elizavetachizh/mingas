@@ -7,7 +7,7 @@ export const routers = [
   { id: 6, router: 'company/documentation', name: 'сертификаты, лицензии, свидетельства' },
   { id: 7, router: 'company/gratitude', name: 'благодарности и награды' },
   { id: 8, router: 'feedback/electronic-appeal', name: 'обращение граждан' },
-  { id: 9, router: 'regulatory-documents/1', name: 'регламинтирующие документы' },
+  { id: 9, router: 'regulatory-documents/Законы', name: 'регламинтирующие документы' },
   { id: 10, router: 'residents/price', name: 'прейскурант' },
   { id: 11, router: 'residents/price', name: 'Прейскурант' },
 ];

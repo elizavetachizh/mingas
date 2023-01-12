@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ContainerFunctionService,
   DescriptionService,
@@ -34,8 +34,6 @@ export default function DopFunctional({ id, name, photo, chief, description, con
     if (elementSchedule) {
       elementSchedule.innerHTML += schedule;
     }
-    console.log(element);
-    console.log(elementSchedule);
   }, []);
 
   return (

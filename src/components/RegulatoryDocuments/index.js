@@ -59,7 +59,6 @@ export default function DepartmentInformation() {
 
   {
     info?.map((el) => {
-      console.log(el.documents);
       el.documents.map((cardInform) => {
         if (cardInform.name.includes(message)) {
           result.push(cardInform);

@@ -33,17 +33,12 @@ export default function Management() {
     axios
       .get(`${API}/management`)
       .then((res) => {
-        console.log(res.data);
         setInfo(res.data);
       })
       .catch((e) => {
         console.log(e);
       });
   }, [setInfo]);
-
-  useEffect(() => {
-    info.map((el) => console.log(el.department));
-  }, [info]);
 
   return (
     <SchemaCompany
