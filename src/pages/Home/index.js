@@ -13,6 +13,7 @@ import StateInformResources from '../../components/stateInformResources';
 import { BackgroundStyle } from './services/styles';
 import linesOne from '../../assets/background/rig.webp';
 import { Container } from '../company/styles';
+import './slider/styles.css'
 export default function Home() {
   return (
     <Container>

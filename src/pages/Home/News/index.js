@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ButtonFun from '../../../components/button';
 import { DivInform } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
-import { ArticleForHome } from '../../PressCenter/styles';
 import { BlockContainerRequests } from '../../feedback/styles';
 import axios from 'axios';
 import LinkNews from './LinkToNews';
-import { API, APInews } from '../../../backend';
-import smi from '../../../assets/png/smi.jpg';
+import { API } from '../../../backend';
 export default function News() {
   const [info, setInfo] = useState(null);
   useEffect(() => {
@@ -18,12 +16,10 @@ export default function News() {
         setInfo(res.data);
       })
       .catch((e) => {
-        {
           console.log(e);
-        }
       });
   }, [setInfo]);
-  const arr = info && info.slice(0, 4);
+  const arr = info && info.slice(-4);
 
   return (
     <BlockContainerRequests>

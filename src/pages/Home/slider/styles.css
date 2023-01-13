@@ -127,7 +127,7 @@
   font-size: 0;
 }
 .BrainhubCarousel__arrows:hover:enabled {
-  background-color: #0d4475 !important;
+  background-color: transparent !important;
 }
 .BrainhubCarousel__arrows:hover:enabled span {
   border-color: #0d4475 !important;
