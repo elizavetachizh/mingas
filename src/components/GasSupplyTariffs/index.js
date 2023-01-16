@@ -15,11 +15,14 @@ export default function GasSupplyTariffs() {
       });
   }, [setInfo]);
   useEffect(() => {
+    console.log(info);
+  }, [info]);
+  useEffect(() => {
     const element = document.getElementById(`info`);
     if (element) {
       element.innerHTML += info[2];
     }
-  });
+  }, [info]);
   return (
     <div>
       <div id={'info'} />
