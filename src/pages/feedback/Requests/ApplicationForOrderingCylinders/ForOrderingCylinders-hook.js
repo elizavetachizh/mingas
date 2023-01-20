@@ -125,6 +125,5 @@ export const useForOrderingCylinders = () => {
     handleSubmit,
     form,
     msg,
-    setRequestValues,
   };
 };

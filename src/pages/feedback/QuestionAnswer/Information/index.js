@@ -130,7 +130,6 @@ export default function Information() {
       content={
         <DivBlocks>
           <div style={{ width: '80%' }}>
-            {' '}
             <BlockSearch className={'question-answer'}>
               {isForm ? (
                 <IoIosSearch style={{ display: 'none' }} />
@@ -205,7 +204,7 @@ export default function Information() {
             <ContainerInform>
               {titleId && <Name>{currentTheme?.title}</Name>}
               <>
-                {!!info.length &&
+                {!!info.length ? (
                   info.map((el) => (
                     <DopFunctionService
                       classname={'question-answer'}
@@ -213,7 +212,10 @@ export default function Information() {
                       inform={el.answer}
                       nameDescription={el.question}
                     />
-                  ))}
+                  ))
+                ) : (
+                  <p>Загрузка данных...</p>
+                )}
               </>
             </ContainerInform>
           )}

@@ -33,6 +33,8 @@ import Language from './language';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
 import { IoIosArrowForward } from 'react-icons/io';
+import axios from 'axios';
+import { API } from '../../backend';
 
 export default function Header({ backgroundHeader }) {
   const [open, setOpen] = useState(false);
@@ -58,6 +60,18 @@ export default function Header({ backgroundHeader }) {
       <IoIosCloses />
     </MenuClose>
   );
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${API}/services`)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setData]);
 
   return (
     <Container backgroundHeader={backgroundHeader}>
@@ -113,7 +127,6 @@ export default function Header({ backgroundHeader }) {
                   </ButtonLink>
                   <ContanerLink>
                     <ButtonLink to="/company/branches" style={{ width: '100%' }}>
-                      {' '}
                       Филиалы УП "Мингаз" <IoIosArrowForward color={'#0d4475'} />{' '}
                     </ButtonLink>
 
@@ -150,19 +163,23 @@ export default function Header({ backgroundHeader }) {
                       <NavLink to="/services/administrative-services">
                         Административные процедуры
                       </NavLink>
-                      <NavLink to="/services/1">Газоснабжение потребителей</NavLink>
-                      <NavLink to="/services/3">Техническое обслуживание</NavLink>
-                      <NavLink to="/services/10">Реконструкция</NavLink>
-                      <NavLink to="/services/11">Газификация</NavLink>
-                      <NavLink to="/services/2">Обмен и покупка баллонов</NavLink>
-                      <NavLink to="/services/9">Цены на газ и услуги</NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
-                      <NavLink to="/services/8">Заключение договоров</NavLink>
+                      {data.map((element) => {
+                        if (element.type === '1') {
+                          return (
+                            <NavLink key={element._id} to={`/services/${element._id}`}>
+                              {element.name}
+                            </NavLink>
+                          );
+                        }
+                      })}
                     </span>
                   </ContanerLink>
 
                   <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-                  <ButtonLink to="/regulatory-documents/Законы">Регламентирующие документы</ButtonLink>
+                  <ButtonLink to="/regulatory-documents/Законы">
+                    Регламентирующие документы
+                  </ButtonLink>
                   <ButtonLink to={'/feedback/question-answer/63930a954fe167e2981cc2e1'}>
                     Часто задаваемые вопросы
                   </ButtonLink>
@@ -176,7 +193,22 @@ export default function Header({ backgroundHeader }) {
                   Для бизнеса <span />
                 </ServicesButton>
                 <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
+                  <ContanerLink>
+                    <ButtonLink to="/services-legal-entities">
+                      Услуги <IoIosArrowForward color={'#0d4475'} />
+                    </ButtonLink>
+                    <span>
+                      {data.map((element) => {
+                        if (element.type === '2') {
+                          return (
+                            <NavLink key={element._id} to={`/services-legal-entities/${element._id}`}>
+                              {element.name}
+                            </NavLink>
+                          );
+                        }
+                      })}
+                    </span>
+                  </ContanerLink>
                   <ButtonLink to="/feedback/electronic-appeal">
                     Обращение юридических лиц
                   </ButtonLink>
