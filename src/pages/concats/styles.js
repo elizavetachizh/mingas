@@ -55,14 +55,15 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 3rem auto;
+  margin: 2rem auto;
   color: #0d4475;
 `;
 export const Text = styled.div`
-display: flex;
+  display: flex;
   justify-content: end;
   width: 97%;
-  h4{
+  margin: 0 auto;
+  h4 {
     margin: 0;
   }
-`
+`;

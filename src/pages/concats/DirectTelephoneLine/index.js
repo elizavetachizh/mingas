@@ -46,6 +46,15 @@ export default function PhoneLineServices() {
                       <a href={'tel:8017-299-29-08'}>+375(017)-299-29-08</a>
                     </td>
                   </tr>
+                  <tr>
+                    <td>
+                      прямая телефонная линия проводится каждую <br/> последнюю пятницу месяца с 11.00 до
+                      12.00
+                    </td>
+                    <td>
+                      <a href={'tel:8017-299 28 80'}>+375(017)-299-28-80</a>
+                    </td>
+                  </tr>
                 </Tbody>
               </Table>
             </PageSection>
