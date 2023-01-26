@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import DopFunctional from '../DopFunctional';
-import { NavLink, useSearchParams } from 'react-router-dom';
+import { NavLink, useParams, useSearchParams } from 'react-router-dom';
 import {
   DivBlocks,
   ContainerInform,
@@ -34,7 +34,7 @@ export default function DepartmentInformation() {
   const id = searchParams.get('id');
   const [infoDep, setInfoDep] = useState([]);
   const [content, setContent] = useState([]);
-
+  const { linkId } = useParams();
   useEffect(() => {
     axios
       .get(`${API}/management`)
@@ -63,7 +63,12 @@ export default function DepartmentInformation() {
       setInform(currentBlockInfo);
     }
   }, [id, content]);
-
+  useEffect(() => {
+    if (linkId) {
+      const current = content.filter((element) => element.nameMen === linkId);
+      setInform(current);
+    }
+  }, [content, linkId]);
   const changeDepartment = useCallback(
     (departamentId) => {
       const current = content.filter((element) => element.nameMen === departamentId);

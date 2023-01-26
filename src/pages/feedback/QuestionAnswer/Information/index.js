@@ -13,7 +13,7 @@ import {
   Name,
 } from '../../../../components/administrativeServices/Header/styles';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useSearchParams } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../Home/parallax/useMediaQuery';
@@ -33,6 +33,8 @@ export default function Information() {
   const [currentServiceID, setServiceID] = useState(null);
   const [links, setLinks] = useState([]);
   const [data, setData] = useState([]);
+  const [searchParams] = useSearchParams();
+  const questionId = searchParams.get('questionId');
   useEffect(() => {
     axios
       .get(`${API}/themes`)
@@ -45,6 +47,14 @@ export default function Information() {
   }, [setData]);
 
   const currentTheme = useMemo(() => data.find((element) => element._id === titleId), [titleId]);
+  useEffect(() => {
+    if (titleId) {
+      const current = data.find((element) => element._id === titleId);
+      // setServiceID(currentServiceID && currentServiceID === titleId ? '' : titleId);
+      setLinks(current?.questionAnswer);
+      setInfo(current?.questionAnswer);
+    }
+  }, [currentServiceID, data, titleId]);
 
   const handlerLinkClick = useCallback(
     (titleId) => {
@@ -56,14 +66,19 @@ export default function Information() {
     },
     [currentServiceID, data, navigate]
   );
-
+  useEffect(() => {
+    if (questionId) {
+      const currentBlockInfo = links.filter((questionAnswer) => questionAnswer._id === questionId);
+      setInfo(currentBlockInfo);
+    }
+  }, [links, pathname, questionId]);
   const handlerLinkClickUniqueName = useCallback(
     (questionId) => {
       navigate(`${pathname}?questionId=${questionId}`);
       const currentBlockInfo = links.filter((questionAnswer) => questionAnswer._id === questionId);
       setInfo(currentBlockInfo);
     },
-    [navigate, pathname, data]
+    [navigate, pathname, links]
   );
 
   const [isForm, setIsForm] = useState(false);
@@ -178,7 +193,7 @@ export default function Information() {
                     )}
                   </ContainerBtnIcon>
                   <DivOpen className={currentServiceID === element._id && `shake`}>
-                    {links.map((link) => (
+                    {links?.map((link) => (
                       <button onClick={() => handlerLinkClickUniqueName(link._id)} key={link._id}>
                         {link.question}
                       </button>
@@ -204,8 +219,8 @@ export default function Information() {
             <ContainerInform>
               {titleId && <Name>{currentTheme?.title}</Name>}
               <>
-                {!!info.length ? (
-                  info.map((el) => (
+                {!!info?.length ? (
+                  info?.map((el) => (
                     <DopFunctionService
                       classname={'question-answer'}
                       key={el._id}
