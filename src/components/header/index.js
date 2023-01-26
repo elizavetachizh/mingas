@@ -185,6 +185,7 @@ export default function Header({ backgroundHeader }) {
                   </ButtonLink>
                   <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
                   <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
+                  <ButtonLink to={'/posts/63d26abc50f01d5f3a95a214'}>Надо знать, безопасность</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
 
@@ -201,7 +202,10 @@ export default function Header({ backgroundHeader }) {
                       {data.map((element) => {
                         if (element.type === '2') {
                           return (
-                            <NavLink key={element._id} to={`/services-legal-entities/${element._id}`}>
+                            <NavLink
+                              key={element._id}
+                              to={`/services-legal-entities/${element._id}`}
+                            >
                               {element.name}
                             </NavLink>
                           );
