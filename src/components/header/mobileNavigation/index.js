@@ -133,6 +133,7 @@ export default function MobileNavigation() {
               </ButtonLink>
               <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
               <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
+              <ButtonLink to={'/posts/'}>Важно знать, безопасность</ButtonLink>
             </div>
           </DivButtonHeader>
         </Dropdown>

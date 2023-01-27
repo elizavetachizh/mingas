@@ -185,7 +185,7 @@ export default function Header({ backgroundHeader }) {
                   </ButtonLink>
                   <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
                   <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
-                  <ButtonLink to={'/posts/63d26abc50f01d5f3a95a214'}>Надо знать, безопасность</ButtonLink>
+                  <ButtonLink to={'/posts/'}>Важно знать, безопасность</ButtonLink>
                 </DivButtonHeader>
               </Dropdown>
 

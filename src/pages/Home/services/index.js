@@ -45,7 +45,6 @@ export default function HomeServices() {
                 <LinkServices
                   key={element._id}
                   cardId={element._id}
-                  img={element.image}
                   nameCard={element.name}
                 />
               );
@@ -53,13 +52,12 @@ export default function HomeServices() {
           })}
         </DivDown>
         <DivDown>
-          {data.slice(0, 11).map((element) => {
+          {data.slice(-7, -3).map((element) => {
             if (element.type === '2') {
               return (
                 <LinkServicesForLegalEntities
                   key={element._id}
                   cardId={element._id}
-                  img={element.image}
                   nameCard={element.name}
                 />
               );

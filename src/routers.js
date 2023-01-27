@@ -42,6 +42,7 @@ import ForBusiness from './components/ForBusiness';
 import Branches from './pages/company/Branches';
 import Telemetria from './components/telemetria';
 import Posts from './components/posts';
+import GetAllPosts from "./components/posts/getAllPosts";
 
 export default function Routers() {
   return (
@@ -100,6 +101,7 @@ export default function Routers() {
       <Route path={'/company/branches'} element={<Branches />} />
       <Route path={'/services-legal-entities/2/telemetria'} element={<Telemetria />} />
       <Route path={'/posts/:id'} element={<Posts />} />
+        <Route path={'/posts/'} element={<GetAllPosts />} />
     </Routes>
   );
 }

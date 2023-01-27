@@ -25,8 +25,9 @@ export const ContainerServices = styled.a`
     height: 120px;
   }
   @media (max-width: 392px) {
-    padding: 1rem 0.4rem;
+    padding: 0.4rem 0.4rem;
     height: 140px;
+    margin: 0.4rem;
   }
 `;
 
@@ -47,6 +48,14 @@ export const Imagecard = styled.img`
 export const Textcard = styled.p`
   @media (max-width: 596px) {
     font-size: 16px;
+    margin: 1px auto;
+  }
+  @media (max-width: 500px) {
+    font-size: 14px;
+    margin: 1px auto;
+  }
+  @media (max-width: 395px) {
+    font-size: 12px;
     margin: 1px auto;
   }
 `;

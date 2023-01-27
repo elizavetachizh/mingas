@@ -80,7 +80,8 @@ export const Button = styled(NavLink)`
     height: 40px;
   }
   @media (max-width: 400px) {
-    width: 150px;
+    width: 156px;
+    height: 44px;
   }
   ${({ backgrounder }) => buttonBackgroundColor[backgrounder]}
 `;
