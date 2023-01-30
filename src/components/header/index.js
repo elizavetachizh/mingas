@@ -99,12 +99,12 @@ export default function Header({ backgroundHeader }) {
                 </Div104>
               </DivPhone>
               <ContainerElements>
-                <PersonalAccButton
-                  title="Контакт-центр"
-                  href={'https://service.mingas.by:5002/auth/login#login'}
-                >
-                  <IoMdContacts className={'icon'} />
-                </PersonalAccButton>
+                {/*<PersonalAccButton*/}
+                {/*  title="Контакт-центр"*/}
+                {/*  href={'https://service.mingas.by:5002/auth/login#login'}*/}
+                {/*>*/}
+                {/*  <IoMdContacts className={'icon'} />*/}
+                {/*</PersonalAccButton>*/}
                 <SearchPage />
                 <Language />
                 <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
