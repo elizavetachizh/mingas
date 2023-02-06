@@ -10,6 +10,7 @@ export default function DopFunctional({
   boardSize,
   documents,
   contactInform,
+
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {

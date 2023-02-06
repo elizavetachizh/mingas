@@ -1,4 +1,4 @@
-import { NavLink, useSearchParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import DopFunctional from './DopFunctional';
 import {
@@ -17,31 +17,19 @@ import { API } from '../../../backend';
 
 export default function InformationAdministrativeService() {
   const { pathname } = useLocation();
-  const [searchParams] = useSearchParams();
-  const linkId = searchParams.get('linkId');
   const [info, setInfo] = useState([]);
   const navigate = useNavigate();
-  const [fullData, setFullData] = useState([]);
   useEffect(() => {
     axios
       .get(`${API}/administration`)
       .then((res) => {
         setInfo(res.data);
-        setFullData(res.data);
       })
       .catch((e) => {
         console.log(e);
       });
   }, [setInfo]);
 
-  useEffect(() => {
-    if (linkId) {
-      const currentBlockInfo = info?.filter((blockInfo) => blockInfo._id === linkId);
-      setInfo(currentBlockInfo);
-    } else {
-      setInfo(fullData);
-    }
-  }, [linkId]);
   const [isForm, setIsForm] = useState(false);
   const handleForm = () => {
     setIsForm(true);
@@ -129,22 +117,112 @@ export default function InformationAdministrativeService() {
           </BlockSearch>
           <DivBlocks>
             <ContainerInform>
+              <h3>
+                УП «МИНГАЗ» осуществляет административные процедуры в соответствии с{' '}
+                <a href={'https://etalonline.by/document/?regnum=h10800433&q_id=5918245'}>
+                  Законом Республики Беларусь от 28 октября 2008 г. № 433-З
+                </a>{' '}
+                «Об основах административных процедур».
+              </h3>
+              <h2>Жилищные правоотношения</h2>
               {info.map((el) => {
                 if (el.type === '1') {
-                  return (
-                    <DopFunctional
-                      id={el._id}
-                      key={el._id}
-                      uniqueName={el.uniqueName}
-                      maximumImplementationPeriod={el.maximumImplementationPeriod}
-                      certificateValidityPeriod={el.certificateValidityPeriod}
-                      boardSize={el.boardSize}
-                      documents={el.documents}
-                      contactInform={el.contactInform}
-                    />
-                  );
+                  if (el.typeAdministrativeService === 'Жилищные правоотношения') {
+                    return (
+                      <>
+                        <DopFunctional
+                          id={el._id}
+                          key={el._id}
+                          uniqueName={el.uniqueName}
+                          maximumImplementationPeriod={el.maximumImplementationPeriod}
+                          certificateValidityPeriod={el.certificateValidityPeriod}
+                          boardSize={el.boardSize}
+                          documents={el.documents}
+                          contactInform={el.contactInform}
+                        />
+                      </>
+                    );
+                  }
                 }
               })}
+              <>
+                <h2>Газоснабжение</h2>
+                {info.map((el) => {
+                  if (el.type === '1') {
+                    if (el.typeAdministrativeService === 'Газоснабжение') {
+                      return (
+                        <>
+                          <DopFunctional
+                            id={el._id}
+                            key={el._id}
+                            uniqueName={el.uniqueName}
+                            maximumImplementationPeriod={el.maximumImplementationPeriod}
+                            certificateValidityPeriod={el.certificateValidityPeriod}
+                            boardSize={el.boardSize}
+                            documents={el.documents}
+                            contactInform={el.contactInform}
+                          />
+                        </>
+                      );
+                    }
+                  }
+                })}
+              </>
+              <>
+                <h2>Другое</h2>
+                {info.map((el) => {
+                  if (el.type === '1') {
+                    if (el.typeAdministrativeService === 'Другое') {
+                      return (
+                        <>
+                          <DopFunctional
+                            id={el._id}
+                            key={el._id}
+                            uniqueName={el.uniqueName}
+                            maximumImplementationPeriod={el.maximumImplementationPeriod}
+                            certificateValidityPeriod={el.certificateValidityPeriod}
+                            boardSize={el.boardSize}
+                            documents={el.documents}
+                            contactInform={el.contactInform}
+                          />
+                        </>
+                      );
+                    }
+                  }
+                })}
+              </>
+              <div>
+                <p>
+                  [1] Нумерация административных процедур соответствует нумерации таких
+                  административных процедур в перечне административных процедур, осуществляемых
+                  государственными органами и иными организациями по заявлениям граждан,
+                  утвержденном
+                  <a href={'https://etalonline.by/document/?regnum=p31000200&q_id=5917741'}>
+                    Указом Президента Республики Беларусь от 26 апреля 2010 г. № 200
+                  </a>
+                  .
+                </p>
+                <p>
+                  [2] Заявление подается в произвольной форме на белорусском и (или) русском языках
+                  и должно содержать:{' '}
+                </p>
+                <ul>
+                  <li>наименование уполномоченного органа, в который подается заявление;</li>
+                  <li>
+                    сведения о заинтересованном лице: фамилия, собственное имя, отчество (если
+                    таковое имеется), место жительства (место пребывания);
+                  </li>
+                  <li>
+                    наименование административной процедуры, за осуществлением которой обращается
+                    заинтересованное лицо;
+                  </li>
+                  <li>
+                    перечень документов и (или) сведений (при их наличии), представляемых вместе с
+                    заявлением заинтересованного лица;
+                  </li>
+                  <li>подпись гражданина либо подпись представителя заинтересованного лица.</li>
+                </ul>
+              </div>
             </ContainerInform>
           </DivBlocks>
         </>
