@@ -23,7 +23,7 @@ export default function News() {
 
   return (
     <BlockContainerRequests>
-      <TitleForHome color={'blue'} infoTitle={'СМИ о нас'} />
+      <TitleForHome color={'blue'} infoTitle={'Лента новостей'} />
       <DivInform>
         {info && arr.map((el) => <LinkNews href={el.link} src={el.image} cardDesc={el.content} />)}
       </DivInform>

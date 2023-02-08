@@ -315,7 +315,7 @@ export const Prizes = styled.div`
   }
 `;
 export const BlockContent = styled.div`
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   //justify-content: flex-start;
   display: flex;
@@ -338,6 +338,7 @@ export const ContainerImage = styled.div`
   position: absolute;
   width: 100%;
   height: 500px;
+  margin: 0 auto;
 `;
 
 export const BlockText = styled.div`

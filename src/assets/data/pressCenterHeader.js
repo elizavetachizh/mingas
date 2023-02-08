@@ -7,7 +7,7 @@ export const pressCenter = [
   {
     id: 1,
     router: 'smi',
-    name: 'СМИ о нас',
+    name: 'Лента новостей',
     description: <SMI />,
   },
   {

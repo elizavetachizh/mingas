@@ -9,7 +9,7 @@ import useMediaQuery from '../parallax/useMediaQuery';
 import ContentMobile from './ContentMobile';
 
 export default function ContentHome() {
-  const isPhone = useMediaQuery('(max-width: 1066px)');
+  const isPhone = useMediaQuery('(max-width: 900px)');
   const [activeIndex, setActiveIndex] = useState(0);
   const [info, setInfo] = useState([]);
   useEffect(() => {

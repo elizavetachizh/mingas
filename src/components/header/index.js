@@ -13,7 +13,6 @@ import {
   PressCenterButtons,
   Dropdown,
   DivButtonHeader,
-  PersonalAccButton,
   DivColumn,
   BackgroundText,
   ContainerElements,
@@ -21,7 +20,6 @@ import {
   Div104,
   DivPhone,
   IoMdEyeOffs,
-  IoMdContacts,
   IoIosMenus,
   IoIosCloses,
   ContanerLink,
@@ -235,7 +233,7 @@ export default function Header({ backgroundHeader }) {
                   <span />
                 </PressCenterButtons>
                 <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/press-center/1">СМИ о нас</ButtonLink>
+                  <ButtonLink to="/press-center/1">Лента новостей</ButtonLink>
                   <ButtonLink to="/press-center/2">
                     Корпоротивная газета "Столичный газовик"
                   </ButtonLink>
