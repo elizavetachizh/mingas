@@ -1,15 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DivServices, NavLinkService } from '../styles';
-import { dataLegalEntities } from '../../../assets/data/data_service_legalEntities_general';
-import ServicesList from './serviceList';
-import { useNavigate } from 'react-router';
 import ContainerContent from '../../../components/Container';
 import axios from 'axios';
 import { API, APIimage } from '../../../backend';
 import { Name } from '../servicesList/styles';
 
 export default function ServicesForLegalEntities() {
-  const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
     axios

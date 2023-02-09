@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { dataLegalEntities } from '../../../../assets/data/data_service_legalEntities_general';
 import { Container } from '../../../company/styles';
 import Header from '../../../../components/header';
 import Footer from '../../../../components/footer';
@@ -9,7 +8,6 @@ import up from '../../../../assets/png/up_arrow_round.png';
 import { HeaderCompanyDiv } from '../../../concats/headerContacts/styles';
 import {
   BlockBtn,
-  Button,
   Name,
 } from '../../../../components/administrativeServices/Header/styles';
 import {
@@ -40,9 +38,7 @@ export default function CardOfService() {
         setData(res.data);
       })
       .catch((e) => {
-        {
           console.log(e);
-        }
       });
   }, [setData]);
   useEffect(() => {
