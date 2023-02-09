@@ -15,7 +15,7 @@ function SliderContent({ activeIndex, sliderImage }) {
 
   }, [sliderImage, getElement]);
   return (
-    <section className="section">
+    <>
       {sliderImage.map((slide, index) => (
         <div key={index} className={activeIndex === index ? 'slides active' : 'inactive'}>
 
@@ -27,7 +27,7 @@ function SliderContent({ activeIndex, sliderImage }) {
               </div>
             </div>
       ))}
-    </section>
+    </>
   );
 }
 

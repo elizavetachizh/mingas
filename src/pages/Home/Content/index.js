@@ -30,6 +30,9 @@ export default function ContentHome() {
       ) : (
         <ContainerContent>
           <BlockContent>
+            <ContainerImage>
+              <SliderContent activeIndex={activeIndex} sliderImage={info} />
+            </ContainerImage>
             <ContainerText>
               <Dots
                 activeIndex={activeIndex}
@@ -37,11 +40,6 @@ export default function ContentHome() {
                 onclick={(activeIndex) => setActiveIndex(activeIndex)}
               />
             </ContainerText>
-            <ContainerImage>
-              <div className="slider-container">
-                <SliderContent activeIndex={activeIndex} sliderImage={info} />
-              </div>
-            </ContainerImage>
           </BlockContent>
         </ContainerContent>
       )}

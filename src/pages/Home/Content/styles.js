@@ -4,8 +4,8 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
-  height: 500px;
-  margin-top: 155px;
+  height: 100%;
+  margin-top: 154px;
   //position: relative;
   
   @media (max-width: 2000px) {
@@ -337,10 +337,9 @@ export const ContainerImage = styled.div`
   //flex: 1 1 auto;
   position: absolute;
   width: 100%;
-  height: 500px;
+  height: 100%;
   margin: 0 auto;
 `;
 
 export const BlockText = styled.div`
-  min-height: 122px;
 `;
