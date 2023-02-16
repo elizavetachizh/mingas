@@ -40,19 +40,23 @@ export default function ReceptionSchedule() {
           </tr>
         </thead>
         <Tbody className={'firstColumn'}>
-          {info.map((el) => (
-            <tr key={el.id}>
-              <td>
-                <DopFunctionalForColumn
-                  handlerLeaderClick={handlerLeaderClick}
-                  fullName={el.fullName}
-                  idName={el._id}
-                  leader={el}
-                  position={el.position}
-                />
-              </td>
-            </tr>
-          ))}
+          {info.map((el) => {
+            if (el.fullName !== 'Манкевич Екатерина Васильевна' && el.fullName !== 'Ганзя Андрей Михайлович') {
+              return (
+                <tr key={el.id}>
+                  <td>
+                    <DopFunctionalForColumn
+                      handlerLeaderClick={handlerLeaderClick}
+                      fullName={el.fullName}
+                      idName={el._id}
+                      leader={el}
+                      position={el.position}
+                    />
+                  </td>
+                </tr>
+              );
+            }
+          })}
           <tr>
             <td>
               <NavLink
