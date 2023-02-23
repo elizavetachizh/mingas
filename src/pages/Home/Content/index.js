@@ -7,6 +7,7 @@ import { API } from '../../../backend';
 import { BlockContent, ContainerContent, ContainerImage, ContainerText } from './styles';
 import useMediaQuery from '../parallax/useMediaQuery';
 import ContentMobile from './ContentMobile';
+import { Button } from '../../../components/button/styles';
 
 export default function ContentHome() {
   const isPhone = useMediaQuery('(max-width: 900px)');
@@ -39,6 +40,9 @@ export default function ContentHome() {
                 sliderImage={info}
                 onclick={(activeIndex) => setActiveIndex(activeIndex)}
               />
+              <Button className={'for-article'} to={'/posts/63f72a399d09ade74ccd65aa'}>
+                Другие статьи
+              </Button>
             </ContainerText>
           </BlockContent>
         </ContainerContent>

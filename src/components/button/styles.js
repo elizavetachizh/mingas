@@ -83,5 +83,8 @@ export const Button = styled(NavLink)`
     width: 156px;
     height: 44px;
   }
+  &.for-article{
+    border: 1px solid white;
+  }
   ${({ backgrounder }) => buttonBackgroundColor[backgrounder]}
 `;
