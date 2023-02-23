@@ -19,13 +19,13 @@ export default function Posts() {
       .catch((e) => {
         console.log(e);
       });
-  }, [setInfo]);
+  }, []);
 
   useEffect(() => {
     const current = info.find((element) => element._id === id);
     setInform(current?.description);
     setName(current?.name);
-  }, [id, info, setInform]);
+  }, [id, info]);
 
   return <ContainerContent name={name} content={<DopFunctional id={id} description={inform} />} />;
 }
