@@ -23,6 +23,7 @@ import {
   IoIosMenus,
   IoIosCloses,
   ContanerLink,
+  PersonalAccButton,
 } from './styles';
 import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.webp';
 import { ButtonLink } from '../../pages/services/styles';
@@ -33,7 +34,7 @@ import SearchPage from '../../pages/SearchPage';
 import { IoIosArrowForward } from 'react-icons/io';
 import axios from 'axios';
 import { API } from '../../backend';
-
+import { FiShoppingCart } from 'react-icons/fi';
 export default function Header({ backgroundHeader }) {
   const [open, setOpen] = useState(false);
 
@@ -103,10 +104,13 @@ export default function Header({ backgroundHeader }) {
                 {/*>*/}
                 {/*  <IoMdContacts className={'icon'} />*/}
                 {/*</PersonalAccButton>*/}
+                <PersonalAccButton target={"_blank"} title="Магазин" href={'https://20393.shop.onliner.by/'}>
+                  <FiShoppingCart style={{width: '32px', height: '32px'}} className={'icon'} />
+                </PersonalAccButton>
                 <SearchPage />
                 <Language />
                 <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
-                  <IoMdEyeOffs className={'icon'} />
+                  <IoMdEyeOffs  className={'icon'} />
                 </a>
               </ContainerElements>
             </DivFirstHeader>

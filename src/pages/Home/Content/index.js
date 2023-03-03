@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import '../../../components/Content/slider.css';
 import Dots from '../../../components/Content/dots';
 import SliderContent from '../../../components/Content/SliderContent';
@@ -7,23 +7,40 @@ import { API } from '../../../backend';
 import { BlockContent, ContainerContent, ContainerImage, ContainerText } from './styles';
 import useMediaQuery from '../parallax/useMediaQuery';
 import ContentMobile from './ContentMobile';
-import { Button } from '../../../components/button/styles';
+import { Button } from '../../feedback/styles';
 
 export default function ContentHome() {
   const isPhone = useMediaQuery('(max-width: 900px)');
   const [activeIndex, setActiveIndex] = useState(0);
   const [info, setInfo] = useState([]);
+  const [sliceInfo, setSliceInfo] = useState([]);
+  const [infoNExt, setInfoNext] = useState([]);
   useEffect(() => {
     axios
       .get(`${API}/articles`)
       .then((res) => {
         setInfo(res.data);
+        setInfoNext(res.data);
       })
       .catch((e) => {
         console.log(e);
       });
-  }, [setInfo]);
-
+  }, []);
+  useEffect(() => {
+    setSliceInfo(info.slice(0, 4));
+  }, [info]);
+  const handleSliceInfo = useCallback(() => {
+    console.log(infoNExt);
+    // infoNExt.reverse()
+    if (infoNExt.length > 4) {
+      setSliceInfo(infoNExt.slice(4));
+    }
+  }, [infoNExt]);
+  useEffect(() => {
+    console.log(sliceInfo);
+    console.log(infoNExt.reverse());
+    console.log(info);
+  }, [info, infoNExt, sliceInfo]);
   return (
     <>
       {isPhone ? (
@@ -32,15 +49,15 @@ export default function ContentHome() {
         <ContainerContent>
           <BlockContent>
             <ContainerImage>
-              <SliderContent activeIndex={activeIndex} sliderImage={info} />
+              <SliderContent activeIndex={activeIndex} sliderImage={sliceInfo} />
             </ContainerImage>
             <ContainerText>
               <Dots
                 activeIndex={activeIndex}
-                sliderImage={info}
+                sliderImage={sliceInfo}
                 onclick={(activeIndex) => setActiveIndex(activeIndex)}
               />
-              <Button className={'for-article'} to={'/posts/63f72a399d09ade74ccd65aa'}>
+              <Button className={'for-article'} onClick={handleSliceInfo}>
                 Другие статьи
               </Button>
             </ContainerText>
