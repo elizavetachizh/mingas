@@ -17,7 +17,7 @@ export default function ContentHome() {
   const [infoNExt, setInfoNext] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost/admin/articles`)
+      .get(`${API}/articles`)
       .then((res) => {
         setInfoNext(res.data);
         setInfo(res.data);
