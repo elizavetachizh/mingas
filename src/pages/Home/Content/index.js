@@ -17,29 +17,29 @@ export default function ContentHome() {
   const [infoNExt, setInfoNext] = useState([]);
   useEffect(() => {
     axios
-      .get(`${API}/articles`)
+      .get(`http://localhost/admin/articles`)
       .then((res) => {
-        setInfo(res.data);
         setInfoNext(res.data);
+        setInfo(res.data);
       })
       .catch((e) => {
         console.log(e);
       });
   }, []);
   useEffect(() => {
-    setSliceInfo(info.slice(0, 4));
+    setSliceInfo(info.slice(0, 4).reverse());
   }, [info]);
   const handleSliceInfo = useCallback(() => {
     console.log(infoNExt);
     // infoNExt.reverse()
-    if (infoNExt.length > 4) {
-      setSliceInfo(infoNExt.slice(4));
-    }
-  }, [infoNExt]);
+    //  if (infoNExt.length > 3) {
+    setSliceInfo(info.slice(3,6));
+    // }
+  }, [info, infoNExt]);
   useEffect(() => {
     console.log(sliceInfo);
-    console.log(infoNExt.reverse());
     console.log(info);
+    console.log(infoNExt);
   }, [info, infoNExt, sliceInfo]);
   return (
     <>

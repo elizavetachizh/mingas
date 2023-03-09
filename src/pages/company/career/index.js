@@ -17,6 +17,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/i
 import { LinksNetwork } from '../../../components/footer/styles';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.webp';
+import {Table} from "../../feedback/receptionOfCitizens/styles";
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 
@@ -33,7 +34,6 @@ export default function Career() {
   document.body.appendChild(div);
   const script = document.createElement('script');
   useEffect(() => {
-    window.scrollTo(0, 0);
     script.src = url;
     script.async = true;
     div.appendChild(script);
@@ -71,6 +71,33 @@ export default function Career() {
             </div>
           </BtnIsOpen>
           <Div style={{ width: '70%', margin: '4% auto' }} className={isOpen && `shake`}>
+            <p>
+              УП «МИНГАЗ» приглашает на целевое обучение на факультете горного дела и инженерной
+              экологии Белорусского национального технического университета по следующим
+              специальностям:
+            </p>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Шифр и наименование специальности</th>
+                  <th>Наименование степени</th>
+                  <th>Квалификация специалиста, срок обучения</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7-07-0714-01 машины и оборудование для горнодобывающих производств</td>
+                  <td>Магистр</td>
+                  <td>Горный инженер, 5,5 лет</td>
+                </tr>
+                <tr>
+                  <td>7-07-0724-01 Разработка месторождений полезных ископаемых</td>
+                  <td>Магистр</td>
+                  <td>Горный инженер, 5,5 лет</td>
+                </tr>
+              </tbody>
+            </Table>
+            <p>Телефон для справки: <span>80171342740</span> </p>
             <p>
               УП «МИНГАЗ» приглашает кандидатов для направления на обучение по целевой подготовке.
               Обращаться по телефонам <a href={'tel:+375 (017) 299 28 30'}>+375 (017) 299 28 30</a>{' '}
