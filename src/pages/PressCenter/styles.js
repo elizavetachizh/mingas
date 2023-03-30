@@ -138,10 +138,19 @@ export const ArticleForHome = styled.div`
   }
   img {
     width: 100%;
-    height: auto;
+    height: 240px;
     border-radius: 20px;
     z-index: -1;
     position: relative;
+    @media (max-width: 1647px) {
+      height: 220px;
+    }
+    @media (max-width: 1300px) {
+      height: 200px;
+    }
+    @media (max-width: 1134px) {
+      height: 100%;
+    }
   }
   p {
     text-decoration: none;
