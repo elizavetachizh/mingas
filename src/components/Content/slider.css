@@ -144,7 +144,9 @@
   margin: 0;
   padding-top: 10px;
   color: white;
+  text-align: left;
   width: 100%;
+  direction: initial;
 }
 .dot a {
   margin: 0;

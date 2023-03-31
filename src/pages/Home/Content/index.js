@@ -27,20 +27,17 @@ export default function ContentHome() {
       });
   }, []);
   useEffect(() => {
-    setSliceInfo(info.slice(0, 4).reverse());
+    // setSliceInfo(info.slice(0, 4).reverse());
+    setSliceInfo(info);
   }, [info]);
   const handleSliceInfo = useCallback(() => {
-    console.log(infoNExt);
+   
     // infoNExt.reverse()
     //  if (infoNExt.length > 3) {
     setSliceInfo(info.slice(3,6));
     // }
-  }, [info, infoNExt]);
-  useEffect(() => {
-    console.log(sliceInfo);
-    console.log(info);
-    console.log(infoNExt);
-  }, [info, infoNExt, sliceInfo]);
+  }, [info]);
+ 
   return (
     <>
       {isPhone ? (
@@ -57,9 +54,9 @@ export default function ContentHome() {
                 sliderImage={sliceInfo}
                 onclick={(activeIndex) => setActiveIndex(activeIndex)}
               />
-              <Button className={'for-article'} onClick={handleSliceInfo}>
-                Другие статьи
-              </Button>
+              {/*<Button className={'for-article'} onClick={handleSliceInfo}>*/}
+              {/*  Другие статьи*/}
+              {/*</Button>*/}
             </ContainerText>
           </BlockContent>
         </ContainerContent>

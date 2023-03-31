@@ -7,18 +7,18 @@ export const ContainerContent = styled.div`
   height: 576px;
   margin-top: 154px;
   //position: relative;
-  
+
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
     background-image: linear-gradient(
-            -55deg,
-            rgb(1, 95, 156) 0%,
-            rgb(16, 69, 141) 0%,
-            rgb(15, 89, 141) 19%,
-            rgb(15, 78, 140) 60%,
-            rgb(14, 78, 129) 79%,
-            rgb(13, 68, 117) 100%
+      -55deg,
+      rgb(1, 95, 156) 0%,
+      rgb(16, 69, 141) 0%,
+      rgb(15, 89, 141) 19%,
+      rgb(15, 78, 140) 60%,
+      rgb(14, 78, 129) 79%,
+      rgb(13, 68, 117) 100%
     );
   }
 `;
@@ -322,13 +322,32 @@ export const BlockContent = styled.div`
   //flex-wrap: wrap;
   width: 100%;
   height: fit-content;
- 
 `;
 
 export const ContainerText = styled.div`
   width: calc(100% / 12 * 4);
   position: relative;
+  height: 500px;
+  overflow-y: scroll;
+  direction: rtl;
+  unicode-bidi: bidi-override;
   z-index: 2;
+  &::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: aliceblue;
+    border-radius: 100px;
+    margin: 1px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: #ccc;
+    
+  }
 `;
 
 export const ContainerImage = styled.div`
@@ -340,5 +359,4 @@ export const ContainerImage = styled.div`
   margin: 0 auto;
 `;
 
-export const BlockText = styled.div`
-`;
+export const BlockText = styled.div``;

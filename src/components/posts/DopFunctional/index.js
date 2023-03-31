@@ -1,11 +1,14 @@
 import { ContainerPosts } from './styles';
 import { useEffect } from 'react';
 export default function DopFunctional({ description, id }) {
-  const element = document.getElementById(`description-${id}`);
   useEffect(() => {
+    const element = document.getElementById(`description-${id}`);
     if (element) {
       element.innerHTML += description;
     }
-  }, [description, element]);
+  }, [description, id]);
+  useEffect(() => {
+    console.log(description);
+  }, [description]);
   return <ContainerPosts id={`description-${id}`} />;
 }

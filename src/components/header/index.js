@@ -24,6 +24,7 @@ import {
   IoIosCloses,
   ContanerLink,
   PersonalAccButton,
+  IoMdContacts,
 } from './styles';
 import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.webp';
 import { ButtonLink } from '../../pages/services/styles';
@@ -97,20 +98,25 @@ export default function Header({ backgroundHeader }) {
                   <p>Контакт-центр</p>
                 </Div104>
               </DivPhone>
+              <img src={require('../../assets/png/gerb.png')} style={{width: '70px'}} />
               <ContainerElements>
-                {/*<PersonalAccButton*/}
-                {/*  title="Контакт-центр"*/}
-                {/*  href={'https://service.mingas.by:5002/auth/login#login'}*/}
-                {/*>*/}
-                {/*  <IoMdContacts className={'icon'} />*/}
-                {/*</PersonalAccButton>*/}
-                <PersonalAccButton target={"_blank"} title="Магазин" href={'https://20393.shop.onliner.by/'}>
-                  <FiShoppingCart style={{width: '32px', height: '32px'}} className={'icon'} />
+                <PersonalAccButton
+                  title="Контакт-центр"
+                  href={'https://service.mingas.by:5002/auth/login#login'}
+                >
+                  <IoMdContacts className={'icon'} />
+                </PersonalAccButton>
+                <PersonalAccButton
+                  target={'_blank'}
+                  title="Магазин"
+                  href={'https://20393.shop.onliner.by/'}
+                >
+                  <FiShoppingCart style={{ width: '32px', height: '32px' }} className={'icon'} />
                 </PersonalAccButton>
                 <SearchPage />
                 <Language />
                 <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
-                  <IoMdEyeOffs  className={'icon'} />
+                  <IoMdEyeOffs className={'icon'} />
                 </a>
               </ContainerElements>
             </DivFirstHeader>

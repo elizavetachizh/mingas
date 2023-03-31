@@ -9,6 +9,7 @@ export default function Posts() {
   const [inform, setInform] = useState('');
   const [name, setName] = useState('');
   const [info, setInfo] = useState([]);
+  const [isId, setIsId] = useState(null);
   useEffect(() => {
     const apiUrl = `${API}/mainposts`;
     axios
@@ -25,7 +26,13 @@ export default function Posts() {
     const current = info.find((element) => element._id === id);
     setInform(current?.description);
     setName(current?.name);
+    setIsId(current?._id);
   }, [id, info]);
+  useEffect(() => {
+    console.log(info);
+  }, [info]);
 
-  return <ContainerContent name={name} content={<DopFunctional id={id} description={inform} />} />;
+  return (
+    <ContainerContent name={name} content={<DopFunctional id={isId} description={inform} />} />
+  );
 }

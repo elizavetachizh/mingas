@@ -6,6 +6,7 @@ import DopFunctional from './dopFunctional';
 
 export default function GetAllPosts() {
   const [info, setInfo] = useState([]);
+  const id ='642184e7552d357fa6d014ad'
   useEffect(() => {
     const apiUrl = `${API}/mainposts`;
     axios
@@ -17,12 +18,16 @@ export default function GetAllPosts() {
         console.log(e);
       });
   }, [setInfo]);
+    useEffect(()=>{
+        const current = info.find((element) => element._id === id);
+        console.log(current)
+        console.log(info)},[info])
   return (
     <ContainerContent
       name={'Важно знать, безопасность'}
       content={
         <>
-          {info.map((el) => (
+          {info.slice(0, 3).map((el) => (
             <DopFunctional name={el.name} description={el.description} id={el._id} />
           ))}
         </>
