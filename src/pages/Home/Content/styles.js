@@ -338,14 +338,14 @@ export const ContainerText = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background-color: aliceblue;
+    background-color: #ccc;
     border-radius: 100px;
     margin: 1px 0;
   }
 
   &::-webkit-scrollbar-thumb {
     border-radius: 100px;
-    background-color: #ccc;
+    background-color: #666;
     
   }
 `;

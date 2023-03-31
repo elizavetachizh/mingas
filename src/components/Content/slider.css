@@ -42,7 +42,8 @@
   max-width: 600px;
   height: 100%;
   margin: 200px 250px;
-  font-size: 16px;
+  font-size: 17px;
+  /*text-align: center;*/
 }
 @media (max-width: 1060px) {
   .container-text p {
@@ -55,6 +56,7 @@
   position: absolute;
   color: white;
   text-decoration: none;
+  text-align: center;
 }
 .slides {
   height: fit-content;
@@ -144,8 +146,9 @@
   margin: 0;
   padding-top: 10px;
   color: white;
-  text-align: left;
+  text-align: center;
   width: 100%;
+  font-size: 18px;
   direction: initial;
 }
 .dot a {
