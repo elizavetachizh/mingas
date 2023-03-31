@@ -37,7 +37,7 @@ export default function ContentHome() {
     setSliceInfo(info.slice(3,6));
     // }
   }, [info]);
- 
+ console.log('a')
   return (
     <>
       {isPhone ? (
