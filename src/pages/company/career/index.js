@@ -105,7 +105,7 @@ export default function Career() {
             </p>
             <p>
               При приеме на работу предлагаем заполнить{' '}
-              <a download href={anketa}>
+              <a style={{fontWeight:"bold"}} download href={anketa}>
                 анкету
               </a>{' '}
               и отправить на e-mail: ok@mingas.by.
