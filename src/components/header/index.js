@@ -98,7 +98,7 @@ export default function Header({ backgroundHeader }) {
                   <p>Контакт-центр</p>
                 </Div104>
               </DivPhone>
-              <img src={require('../../assets/png/gerb.png')} style={{width: '70px'}} />
+              <img src={require('../../assets/png/gerb_white.png')} style={{width: '70px'}} />
               <ContainerElements>
                 <PersonalAccButton
                   title="Контакт-центр"
