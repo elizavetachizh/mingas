@@ -31,13 +31,14 @@ export default function SMI() {
     axios
       .get(apiUrl)
       .then((res) => {
-        setInfo(res.data);
+        setInfo(res.data.reverse());
       })
       .catch((e) => {
           console.log(e);
       });
   }, [setInfo]);
-
+// const infoReverse = info.reverse()
+//   console.log(infoReverse)
   return (
     <div>
       <p>
@@ -91,7 +92,7 @@ export default function SMI() {
         <Div className={isClose && `shake`}>
           <ContainerArticles>
             {info &&
-              info.reverse().map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} date={el.date} />)}
+                info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} date={el.date} />)}
           </ContainerArticles>
         </Div>
       </General>

@@ -63,7 +63,7 @@ export const Article = styled.div`
   }
   p {
     text-decoration: none;
-    margin: -9% auto 2%;
+    margin: -6% auto 2%;
     padding: 0;
     color: white;
     font-weight: bold;
