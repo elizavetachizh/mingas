@@ -17,6 +17,19 @@ export default function Requisites() {
               <p>УП «МИНГАЗ»</p>
             </Abbreviated>
             <Certificate>
+              <span style={{marginBottom: '1rem', fontSize: '22px'}}>Контакты:</span>
+              <span>E-mail УП «МИНГАЗ»</span>
+              <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
+            </Certificate>
+            <Certificate>
+              <span>Приёмная руководителя</span>
+              <a href={'tel:8017-299 28 80'}>+375(017)-299-28-80</a>
+            </Certificate>
+            <Certificate>
+              <span>График работы</span>
+              <p>с 8.00 до 17.00 понедельник - четверг, с 8:00 до 15:45 - пятница, обед с 12:00 до 12:45 </p>
+            </Certificate>
+            <Certificate>
               <span>Свидетельство о государственной регистрации:</span>
               <p>
                 Выдано в соответствии с решением Минского горисполкома №931 от 18 августа 2000 года.
