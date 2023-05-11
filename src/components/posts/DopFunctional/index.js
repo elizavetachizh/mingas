@@ -4,11 +4,14 @@ export default function DopFunctional({ description, id }) {
   useEffect(() => {
     const element = document.getElementById(`description-${id}`);
     if (element) {
-      element.innerHTML += description;
+      element.innerHTML += description ? description : '';
     }
   }, [description, id]);
   useEffect(() => {
     console.log(description);
-  }, [description]);
-  return <ContainerPosts id={`description-${id}`} />;
+    console.log(id);
+  }, [id, description]);
+  return (<>
+    <ContainerPosts id={`description-${id}`} />
+  </>);
 }

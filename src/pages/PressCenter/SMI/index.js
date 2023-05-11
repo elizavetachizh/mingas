@@ -24,6 +24,13 @@ export default function SMI() {
       setIsClose(false);
     }
   };
+  const [isOpenTV, setIsOpenTV] = useState(false);
+  const animateVideo = () => {
+    setIsOpenTV(true);
+    if (isOpenTV) {
+      setIsOpenTV(false);
+    }
+  };
   //
   const [info, setInfo] = useState(null);
   useEffect(() => {
@@ -34,11 +41,13 @@ export default function SMI() {
         setInfo(res.data.reverse());
       })
       .catch((e) => {
-          console.log(e);
+        console.log(e);
       });
+    // document.getElementById("video").autoPlay = false;
   }, [setInfo]);
-// const infoReverse = info.reverse()
-//   console.log(infoReverse)
+  // const infoReverse = info.reverse()
+  //   console.log(infoReverse)
+
   return (
     <div>
       <p>
@@ -76,6 +85,15 @@ export default function SMI() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          <video
+            src="https://back.mingas.by/public/video/1.webm"
+            title="YouTube video player"
+            id={'video'}
+            autoPlay={false}
+            width={'70%'}
+            style={{ margin: '0 15%' }}
+            controls="true"
+          ></video>
         </Div>
       </General>
       <General>
@@ -92,26 +110,49 @@ export default function SMI() {
         <Div className={isClose && `shake`}>
           <ContainerArticles>
             {info &&
-                info.map((el) => <SchemaSMI href={el.link} src={el.image} content={el.content} date={el.date} />)}
+              info.map((el) => (
+                <SchemaSMI href={el.link} src={el.image} content={el.content} date={el.date} />
+              ))}
           </ContainerArticles>
         </Div>
       </General>
-      {/*<iframe*/}
-      {/*  width="560"*/}
-      {/*  height="315"*/}
-      {/*  src="https://www.youtube.com/embed/2ZdJV1isCWo"*/}
-      {/*  title="YouTube video player"*/}
-      {/*  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-      {/*  allowFullScreen*/}
-      {/*></iframe>*/}
-      {/*<iframe*/}
-      {/*  width="560"*/}
-      {/*  height="315"*/}
-      {/*  src="https://www.youtube.com/embed/skA0lmHdR7I"*/}
-      {/*  title="YouTube video player"*/}
-      {/*  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-      {/*  allowFullScreen*/}
-      {/*></iframe>*/}
+      <General>
+        <BtnIsOpen onClick={animateVideo}>
+          <p>Мингаз-ТВ</p>
+          <div>
+            {isOpenTV ? (
+              <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+            ) : (
+              <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
+            )}
+          </div>
+        </BtnIsOpen>
+        <Div className={isOpenTV && `shake`}>
+          <p>
+            СВЕРШИЛОСЬ!🤩 Мы вновь запускаем наш канал -МИНГАЗ-ТВ! Впереди нас ждёт много полезной и
+            нужной информации, встречи с интересными и неординарными людьми. Жизнь Мингаза мы увидим
+            с разных сторон. Не переключайтесь. Будет очень интересно!
+          </p>
+          <video
+            src="https://back.mingas.by/public/video/2.webm"
+            title="YouTube video player"
+            id={'video'}
+            autoPlay={false}
+            width={'70%'}
+            style={{ margin: '0 15%' }}
+            controls="true"
+          ></video>
+          <video
+            src="https://back.mingas.by/public/video/3.webm"
+            title="YouTube video player"
+            id={'video'}
+            autoPlay={false}
+            width={'70%'}
+            style={{ margin: '0 15%' }}
+            controls="true"
+          ></video>
+        </Div>
+      </General>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import '../../../components/Content/slider.css';
 import Dots from '../../../components/Content/dots';
 import SliderContent from '../../../components/Content/SliderContent';
@@ -7,19 +7,16 @@ import { API } from '../../../backend';
 import { BlockContent, ContainerContent, ContainerImage, ContainerText } from './styles';
 import useMediaQuery from '../parallax/useMediaQuery';
 import ContentMobile from './ContentMobile';
-import { Button } from '../../feedback/styles';
 
 export default function ContentHome() {
   const isPhone = useMediaQuery('(max-width: 900px)');
   const [activeIndex, setActiveIndex] = useState(0);
   const [info, setInfo] = useState([]);
   const [sliceInfo, setSliceInfo] = useState([]);
-  const [infoNExt, setInfoNext] = useState([]);
   useEffect(() => {
     axios
       .get(`${API}/articles`)
       .then((res) => {
-        setInfoNext(res.data);
         setInfo(res.data);
       })
       .catch((e) => {
@@ -27,17 +24,8 @@ export default function ContentHome() {
       });
   }, []);
   useEffect(() => {
-    // setSliceInfo(info.slice(0, 4).reverse());
     setSliceInfo(info);
   }, [info]);
-  const handleSliceInfo = useCallback(() => {
-   
-    // infoNExt.reverse()
-    //  if (infoNExt.length > 3) {
-    setSliceInfo(info.slice(3,6));
-    // }
-  }, [info]);
- console.log('a')
   return (
     <>
       {isPhone ? (
@@ -54,9 +42,6 @@ export default function ContentHome() {
                 sliderImage={sliceInfo}
                 onclick={(activeIndex) => setActiveIndex(activeIndex)}
               />
-              {/*<Button className={'for-article'} onClick={handleSliceInfo}>*/}
-              {/*  Другие статьи*/}
-              {/*</Button>*/}
             </ContainerText>
           </BlockContent>
         </ContainerContent>
