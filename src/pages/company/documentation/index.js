@@ -53,7 +53,6 @@ export default function Documentation() {
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const current = documents.find((element) => element.GeneralId === +generalId);
     setInform(current?.inform);
     setGeneralId(current?.GeneralId);

@@ -4,7 +4,7 @@ import { ContainerContent } from '../Content/styles';
 
 export default function ParallaxDiv() {
   return (
-    <ContainerContent style={{ marginTop: 0}}>
+    <ContainerContent className={"parallax"} style={{ marginTop: 0}}>
       <ParallaxD>
         <img
           alt={'загрузка картинки'}

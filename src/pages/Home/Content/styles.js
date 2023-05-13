@@ -7,7 +7,15 @@ export const ContainerContent = styled.div`
   height: 576px;
   margin-top: 154px;
   //position: relative;
-
+&.parallax{
+  height: 530px;
+  @media (max-width: 1500px) {
+    height: 380px;
+  }
+  @media (max-width: 630px) {
+    height: 320px;
+  }
+}
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
@@ -20,35 +28,6 @@ export const ContainerContent = styled.div`
       rgb(14, 78, 129) 79%,
       rgb(13, 68, 117) 100%
     );
-  }
-`;
-
-export const DivContent = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  //bottom: 0;
-  margin-top: 154px;
-  height: fit-content;
-  @media (min-width: 1500px) {
-    margin-top: 154px;
-    height: fit-content;
-  }
-  @media (min-width: 2000px) {
-    margin-top: 164px;
-  }
-  @media (max-width: 1700px) {
-    height: fit-content;
-  }
-  @media (max-width: 900px) {
-    margin-top: 80px;
-  }
-  @media (max-width: 600px) {
-    height: 400px;
-  }
-  @media (max-width: 424px) {
-    margin-top: 66px;
   }
 `;
 
