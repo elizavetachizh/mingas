@@ -93,6 +93,7 @@ export default function SMI() {
             width={'70%'}
             style={{ margin: '0 15%' }}
             controls="true"
+            playsInline
           ></video>
         </Div>
       </General>
@@ -141,6 +142,7 @@ export default function SMI() {
             width={'70%'}
             style={{ margin: '0 15%' }}
             controls="true"
+            playsInline
           ></video>
           <video
             src="https://back.mingas.by/public/video/3.webm"
@@ -150,6 +152,7 @@ export default function SMI() {
             width={'70%'}
             style={{ margin: '0 15%' }}
             controls="true"
+            playsInline
           ></video>
         </Div>
       </General>

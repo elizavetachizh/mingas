@@ -142,6 +142,18 @@ export const Logo = styled.img`
     width: 60px;
     height: 60px;
   }
+  &.gerb {
+    width: 70px;
+    height: 70px;
+    @media (max-width: 646px) {
+      width: 60px;
+      height: 60px;
+    }
+    @media (max-width: 424px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
 `;
 
 export const ButtonsContainer = styled.div`
