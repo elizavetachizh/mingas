@@ -42,7 +42,7 @@ export default function GetAllPosts() {
             <DopFunctional name={el.name} description={el.description} id={el._id} />
           ))}
           {dopInfo && (
-            <DopFunctional name={dopInfo.name} description={dopInfo.description} id={dopInfo._id} />
+            <DopFunctional name={dopInfo?.name} description={dopInfo?.description} id={dopInfo?._id} />
           )}
         </>
       }
