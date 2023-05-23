@@ -138,7 +138,7 @@ export default function SMI() {
             src="https://back.mingas.by/public/video/2.webm"
             title="YouTube video player"
             id={'video'}
-            autoPlay={false}
+            autoPlay={true}
             width={'70%'}
             style={{ margin: '0 15%' }}
             controls="true"
@@ -148,7 +148,7 @@ export default function SMI() {
             src="https://back.mingas.by/public/video/3.webm"
             title="YouTube video player"
             id={'video'}
-            autoPlay={false}
+            autoPlay={true}
             width={'70%'}
             style={{ margin: '0 15%' }}
             controls="true"

@@ -46,7 +46,7 @@ export default function Management() {
       content={
         <>
           <DivTextPhoto>
-            <ImageDiv data-aos={'fade-up'} src={photoHistory} />
+            <ImageDiv data-aos={'fade-up'} src={'https://back.mingas.by/public/images/management/0.webp'} />
             <DivText data-aos={'fade-up'}>
               <p>
                 Добро пожаловать на корпоративный сайт производственного республиканского унитарного
