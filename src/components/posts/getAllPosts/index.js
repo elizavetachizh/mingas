@@ -38,12 +38,16 @@ export default function GetAllPosts() {
       name={'Важно знать, безопасность'}
       content={
         <>
-          {info.slice(0, 3).map((el) => (
+          {info.slice(0, 4).map((el) => (
             <DopFunctional name={el.name} description={el.description} id={el._id} />
           ))}
-          {dopInfo && (
-            <DopFunctional name={dopInfo?.name} description={dopInfo?.description} id={dopInfo?._id} />
-          )}
+          {/*{dopInfo && (*/}
+          {/*  <DopFunctional*/}
+          {/*    name={dopInfo?.name}*/}
+          {/*    description={dopInfo?.description}*/}
+          {/*    id={dopInfo?._id}*/}
+          {/*  />*/}
+          {/*)}*/}
         </>
       }
     />
