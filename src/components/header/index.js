@@ -111,7 +111,7 @@ export default function Header({ backgroundHeader }) {
                   title="Магазин"
                   href={'https://20393.shop.onliner.by/'}
                 >
-                  <FiShoppingCart style={{ width: '32px', height: '32px' }} className={'icon'} />
+                  <FiShoppingCart style={{ width: '34px', height: '34px' }} className={'icon'} />
                 </PersonalAccButton>
                 <SearchPage />
                 <Language />

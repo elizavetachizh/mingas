@@ -411,7 +411,7 @@ export const Div104 = styled.div`
       font-weight: bold;
       margin: 0;
       padding: 0;
-      font-size: 68px;
+      font-size: 64px;
       text-decoration: none;
       transition: all 0.3s ease;
       @media (max-width: 1038px) {
@@ -440,23 +440,23 @@ export const Div104 = styled.div`
 `;
 
 export const IoMdContacts = styled(IoMdContact)`
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   @media (max-width: 760px) {
     width: 36px;
   }
 `;
 
 export const IoMdEyeOffs = styled(IoMdEyeOff)`
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   @media (max-width: 760px) {
     width: 36px;
     height: 36px;
   }
   &.iconMobile {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
   }
 `;
 export const IoIosSearchs = styled(IoIosSearch)`
