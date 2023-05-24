@@ -306,7 +306,7 @@ export const BlockContent = styled.div`
 export const ContainerText = styled.div`
   width: calc(100% / 12 * 4);
   position: relative;
-  height: 500px;
+  height: 576px;
   overflow-y: scroll;
   direction: rtl;
   unicode-bidi: bidi-override;

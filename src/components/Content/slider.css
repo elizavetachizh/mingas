@@ -150,6 +150,8 @@
   width: 100%;
   font-size: 18px;
   direction: initial;
+
+
 }
 .dot a {
   margin: 0;
@@ -186,7 +188,11 @@
 .container-button-text {
   display: flex;
 }
-
+@media (max-width: 1100px) {
+  .dot p{
+    font-size: 16px;
+  }
+}
 @media (max-width: 900px) {
   :root {
     --heights: 40vh;
