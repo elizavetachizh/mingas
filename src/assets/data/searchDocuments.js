@@ -5,10 +5,6 @@ import prilozhenie from '../wordFile/Prilozhenie-A-1-2-2.docx';
 import pismo from '../wordFile/pismo.doc';
 import perechen_doc from '../wordFile/Perechen-dokumentov.doc';
 import ispolnitelnaya_documentov from '../wordFile/Ispolnitelnaya-dokumentatsiya.doc';
-import akt_vvoda from '../pdf/akt_vvoda.pdf';
-import passport from '../wordFile/Passport.docx';
-import haracteristica from '../wordFile/HARAKTERISTIKA-OBEKTA.doc';
-import tseni_Gas from '../wordFile/price_gas.doc';
 import teh_zadanie from '../wordFile/teh_zadanie.doc';
 export const searchDocuments = [
   {
@@ -49,22 +45,22 @@ export const searchDocuments = [
   {
     id: 8,
     name: 'Акт ввода в эксплутацию узла учёта природного газа',
-    path: `${akt_vvoda}`,
+    path: 'back.mingas.by/public/documents/backend-mingas/public/documents/akt_vvoda.pdf',
   },
   {
     id: 9,
     name: 'Паспорт узла учёта природного газа',
-    path: `${passport}`,
+    path: 'mingas.by/static/media/Passport.61548aa9af1bc392c08e.docx',
   },
   {
     id: 10,
     name: 'Характеристика объекта',
-    path: `${haracteristica}`,
+    path: 'mingas.by/static/media/HARAKTERISTIKA-OBEKTA.7b4c9e2dfd648ad1ff49.doc',
   },
   {
     id: 11,
     name: 'Цены на природный газ',
-    path: `${tseni_Gas}`,
+    path: 'https://pravo.by/document/?guid=12551&p0=W22237575&p1=1',
   },
   {
     id: 12,
