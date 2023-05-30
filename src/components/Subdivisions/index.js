@@ -12,14 +12,16 @@ export default function Subdivisions() {
   const subdivisionId = useParams();
   const [info, setInfo] = useState([]);
   const object = Object.values(subdivisionId);
+  const current = subdivisions.filter((element) => element.id === +object[0]);
+  console.log(subdivisions);
   useEffect(() => {
     if (+object[0]) {
-      const current = subdivisions.filter((element) => element.id === +object[0]);
       setInfo(current);
     } else {
       setInfo(subdivisions);
     }
-  }, [subdivisionId, object]);
+  }, []);
+
   return (
     <ContainerContent
       name={'Подразделения'}

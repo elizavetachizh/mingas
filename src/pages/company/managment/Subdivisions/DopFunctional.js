@@ -30,11 +30,11 @@ export default function DopFunctional({ id, name, photo, chief, description, con
     if (element) {
       element.innerHTML += description;
     }
-    const elementSchedule = document.getElementById(`schedule-${id}`);
-    if (elementSchedule) {
-      elementSchedule.innerHTML += schedule;
-    }
-  }, []);
+    // const elementSchedule = document.getElementById(`schedule-${id}`);
+    // if (elementSchedule) {
+    //   elementSchedule.innerHTML += schedule;
+    // }
+  }, [description, id]);
 
   return (
     <ContainerFunctionService>
@@ -60,7 +60,8 @@ export default function DopFunctional({ id, name, photo, chief, description, con
         {schedule && (
           <LinksNetwork>
             <IoMdClocks />
-            <p id={`schedule-${id}`} />
+            {schedule}
+            {/*<p id={`schedule-${id}`} />*/}
           </LinksNetwork>
         )}
         {contacts && (
