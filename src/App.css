@@ -29,3 +29,6 @@ body {
 body.mobile {
   overflow: hidden;
 }
+.justwidget--asst{
+  bottom: 2rem !important;
+}
