@@ -88,12 +88,12 @@ export default function RegulatoryDocumentsForLegal() {
       content={
         <DivBlocks>
           <HeaderCompanyDiv>
-            <Name>Регламинтирующие документы</Name>
+            <Name>Регламентирующие документы</Name>
             {isForm ? (
               <IoIosSearch style={{ display: 'none' }} />
             ) : (
               <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
-                <p>Поиск по регламинтирующим документам</p>
+                <p>Поиск по регламентирующим документам</p>
                 <IoIosSearch
                   style={{ height: '30px', width: '30px' }}
                   color={'#0d4475'}
@@ -138,7 +138,7 @@ export default function RegulatoryDocumentsForLegal() {
                 <IoIosSearch style={{ display: 'none' }} />
               ) : (
                 <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
-                  <p>Поиск по регламинтирующим документам</p>
+                  <p>Поиск по регламентирующим документам</p>
                   <IoIosSearch
                     style={{ height: '30px', width: '30px' }}
                     color={'#0d4475'}
