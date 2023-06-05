@@ -95,6 +95,12 @@ export default function SMI() {
             controls="true"
             playsInline
           ></video>
+          <iframe
+            src="https://disk.yandex.ru/i/KRaYxotLNMNGPg"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </Div>
       </General>
       <General>
@@ -130,26 +136,28 @@ export default function SMI() {
         </BtnIsOpen>
         <Div className={isOpenTV && `shake`}>
           <p>
-            1. Первый выпуск МИНГАЗ-ТВ с генеральным директором УП «МИНГАЗ» Вадимом Евгеньевичем Шолоником
+            1. Первый выпуск МИНГАЗ-ТВ с генеральным директором УП «МИНГАЗ» Вадимом Евгеньевичем
+            Шолоником
           </p>
           <video
             src="https://back.mingas.by/public/video/2.webm"
             title="YouTube video player"
             id={'video'}
-            autoPlay={true}
+            autoPlay={false}
             width={'70%'}
             style={{ margin: '0 15%' }}
             controls="true"
             playsInline
           ></video>
           <p>
-            2. Об индивидуальных приборах учета газа с начальником службы учета потребленного газа населением Александром Владимировичем Пятницей
+            2. Об индивидуальных приборах учета газа с начальником службы учета потребленного газа
+            населением Александром Владимировичем Пятницей
           </p>
           <video
             src="https://back.mingas.by/public/video/3.webm"
             title="YouTube video player"
             id={'video'}
-            autoPlay={true}
+            autoPlay={false}
             width={'70%'}
             style={{ margin: '0 15%' }}
             controls="true"
