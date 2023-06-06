@@ -96,7 +96,7 @@ export default function SMI() {
             playsInline
           ></video>
           <iframe
-            src="https://disk.yandex.ru/i/KRaYxotLNMNGPg"
+            src="https://www.youtube.com/embed/-H9ziFYtdGU"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
