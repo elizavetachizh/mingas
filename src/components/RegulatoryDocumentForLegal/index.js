@@ -84,7 +84,7 @@ export default function RegulatoryDocumentsForLegal() {
   };
   return (
     <ContainerContent
-      name={'Регламинтирующие документы для юридических лиц'}
+      name={'Регламентирующие документы для юридических лиц'}
       content={
         <DivBlocks>
           <HeaderCompanyDiv>
