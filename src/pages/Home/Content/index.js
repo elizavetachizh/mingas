@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../../components/Content/slider.css';
 import Dots from '../../../components/Content/dots';
 import SliderContent from '../../../components/Content/SliderContent';

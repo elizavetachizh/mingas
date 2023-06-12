@@ -17,8 +17,8 @@ function SliderContent({ activeIndex, sliderImage }) {
     <>
       {sliderImage.map((slide, index) => (
         <div key={index} className={activeIndex === index ? 'slides active' : 'inactive'}>
-          <div className="container-text">
-            <p id={`content-image-${slide._id}`} />
+          <div className="container-text" id={`content-image-${slide._id}`}>
+            {/*<p id={`content-image-${slide._id}`} />*/}
           </div>
           <div className="container-image">
             <img className="slide-image" src={`${APIimage}/${slide.image}`} alt="" />
