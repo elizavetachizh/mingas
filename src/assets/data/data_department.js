@@ -1241,7 +1241,7 @@ export const data = [
         contacts: (
           <div>
             тел: <a href={'tel:8017-299-29-09'}>8017-299-29-09</a>, <br />
-            <a href={'tel:8017-299-28-34'}>8017-299-28-34</a>, <br />
+            {/*<a href={'tel:8017-299-28-34'}>8017-299-28-34</a>, <br />*/}
             <a href={'tel:8017-299-28-08'}>8017-299-28-08</a>, <br />{' '}
             <a href={'https://yandex.by/maps/-/CCURbUwY2B'} target="_blank" rel="noreferrer">
               г. Минск, ул. Ботаническая, 11
