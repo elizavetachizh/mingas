@@ -35,6 +35,9 @@ export default function HeaderCompany() {
             <DivButton className={'menu'}>
               <HeaderCompanyBtn to="/company/history">История предприятия</HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/management">Руководство</HeaderCompanyBtn>
+              <HeaderCompanyBtn to="/company/management/all-departments">
+                Подразделения
+              </HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/career">Работа в УП "МИНГАЗ"</HeaderCompanyBtn>
               <HeaderCompanyBtn to="/company/parent-organizations">
                 Вышестоящие организации
@@ -55,6 +58,7 @@ export default function HeaderCompany() {
           <DivButton>
             <HeaderCompanyBtn to="/company/history">История предприятия</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/management">Руководство</HeaderCompanyBtn>
+            <HeaderCompanyBtn to="/company/management/all-departments">Подразделения</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/career">Работа в УП "МИНГАЗ"</HeaderCompanyBtn>
             <HeaderCompanyBtn to="/company/parent-organizations">
               Вышестоящие организации

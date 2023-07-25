@@ -109,7 +109,7 @@ const [fullDate, setFullDate] = useState([])
               <IoIosSearch style={{ display: 'none' }} />
             ) : (
               <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>
-                <p>Поиск по отделам</p>
+                <p>Для поиска отдела введите его название</p>
                 <IoIosSearch
                   style={{ height: '30px', width: '30px' }}
                   color={'#0d4475'}
