@@ -17,7 +17,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/i
 import { LinksNetwork } from '../../../components/footer/styles';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.webp';
-import {Table} from "../../feedback/receptionOfCitizens/styles";
+import { Table } from '../../feedback/receptionOfCitizens/styles';
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 
@@ -48,7 +48,20 @@ export default function Career() {
       <HeaderCompany />
       <AdditionalDiv style={{ margin: '4% auto' }}>
         <DivForm className="form-div">
+          <h3 style={{ fontSize: '22px', width: '70%', margin: '0 auto', textAlign: 'justify' }}>
+            УП «МИНГАЗ» приглашает на работу слесарей по обслуживанию и ремонту газоиспользующего
+            оборудования (с подготовкой и без подготовки по профессии). Работа связана с монтажом и
+            установкой газовых счётчиков. Приветствуется наличие водительского удостоверения (парк
+            автомобилей до 5 лет). Заработная плата <b style={{ color: '#0000EE' }}>2000-3000</b>{' '}
+            рублей. Приходите на ул. Ботаническую, 11, кабинет 103. Телефон{' '}
+            <a href={'tel:80172992830'}>299 28 30</a>, <a href={'tel:80172992936'}>299 29 36</a>,{' '}
+            <a href={'tel:80172992862'}>299 28 62</a>.
+          </h3>
           <div className="form-div-career">
+            {/*<script*/}
+            {/*    className="hh-script"*/}
+            {/*    src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&area=16"*/}
+            {/*></script>*/}
             <script
               className="hh-script"
               src="https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2"
@@ -97,7 +110,9 @@ export default function Career() {
                 </tr>
               </tbody>
             </Table>
-            <p>Телефон для справки: <span>80171342740</span> </p>
+            <p>
+              Телефон для справки: <span>80171342740</span>{' '}
+            </p>
             <p>
               УП «МИНГАЗ» приглашает кандидатов для направления на обучение по целевой подготовке.
               Обращаться по телефонам <a href={'tel:+375 (017) 299 28 30'}>+375 (017) 299 28 30</a>{' '}
@@ -105,7 +120,7 @@ export default function Career() {
             </p>
             <p>
               При приеме на работу предлагаем заполнить{' '}
-              <a style={{fontWeight:"bold"}} download href={anketa}>
+              <a style={{ fontWeight: 'bold' }} download href={anketa}>
                 анкету
               </a>{' '}
               и отправить на e-mail: ok@mingas.by.

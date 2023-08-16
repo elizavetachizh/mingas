@@ -167,4 +167,14 @@ export const documents = [
     name: 'Аттестаты',
     inform: [{ id: 1, img: '64' }],
   },
+  {
+    GeneralId: 21,
+    name: 'Аттестаты',
+    inform: [{ id: 1, img: '65' }],
+  },
+  {
+    GeneralId: 22,
+    name: 'Сертификаты',
+    inform: [{ id: 1, img: '66' }],
+  },
 ];
