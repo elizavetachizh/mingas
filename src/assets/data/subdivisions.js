@@ -25,7 +25,7 @@ export const subdivisions = [
     contacts: (
       <div>
         Телефон:
-        <a href={'tel:8017-345-89-56'}>8017-345-89-56</a> <br />
+        <a href={'tel:80172301977'}>8017-230-19-77</a> <br />
         Адрес:{' '}
         <a href={'https://goo.gl/maps/gxxbY2quJ3cZxp6L8'} target="_blank" rel="noreferrer">
           д. Большой Тростенец, ул. Центральная, д.41/1
@@ -38,7 +38,7 @@ export const subdivisions = [
     name: 'Производственный участок №1',
     link: '/company/management/3/2',
     photo: '',
-    chief: 'Начальник - Горбач Марина Владимировна',
+    chief: 'Начальник - Семак Павел Александрович',
     description: (
       <div>
         <p>
@@ -64,9 +64,9 @@ export const subdivisions = [
     contacts: (
       <div>
         Телефон:
-        <a href={'tel:8017-299-28-29'}>
+        <a href={'tel:80172765506'}>
           <br />
-          8017-299-28-29
+          8017-276-55-06
         </a>{' '}
         <br />
         Адрес:{' '}
