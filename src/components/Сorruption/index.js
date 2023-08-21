@@ -5,19 +5,31 @@ import {
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { DescriptionService } from '../../pages/services/DopFunction/styles';
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { ContanerNewsPape } from '../../pages/PressCenter/newspaper/styles';
-import { data } from './data';
 import SchemaCompany from '../../pages/company/SchemaCompany';
+import axios from "axios";
+import {API} from "../../backend";
 
 export default function Corruption() {
   const [isOpen, setIsOpen] = useState(false);
+  const [info, setInfo] = useState([]);
   const animate = () => {
     setIsOpen(true);
     if (isOpen) {
       setIsOpen(false);
     }
   };
+  useEffect(() => {
+    axios
+        .get(`${API}/corruption`)
+        .then((res) => {
+          setInfo(Object.values(res.data));
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+  }, [setInfo]);
   return (
     <SchemaCompany
       name={'Противодействие коррупции'}
@@ -58,7 +70,7 @@ export default function Corruption() {
             </Div>
           </General>
           <div style={{ width: '80%', margin: '0 auto' }}>
-            {data.map((el) => (
+            {info.map((el) => (
               <ContanerNewsPape>
                 <a href={el.link} target={'_blank'} rel="noreferrer">
                   {el.name}
