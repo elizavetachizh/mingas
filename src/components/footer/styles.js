@@ -54,7 +54,7 @@ export const FooterContainer = styled.div`
   );
   bottom: 0;
   margin: 0;
-  padding: 0;
+  padding: 0 0 1rem;
   &.height {
     @media (max-width: 900px) {
       height: 67vh;

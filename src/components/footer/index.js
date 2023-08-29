@@ -55,7 +55,7 @@ export default function Footer({ classname }) {
             </a>
           </p>
           <p style={{ margin: '0' }}>
-            Факс: <a href={"tel:+375 (017) 366-36-33"}>+375 (017) 366-36-33</a> E-mail:
+            Факс: <a href={'tel:+375 (017) 366-36-33'}>+375 (017) 366-36-33</a> E-mail:
             <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
           </p>
         </ContactInform>
@@ -64,6 +64,11 @@ export default function Footer({ classname }) {
           <p>Понедельник – Четверг: с 8:00 до 17:00</p>
           <p>Пятница: с 8:00 до 15:45</p>
           <p>Обед с 12:00 до 12:45</p>
+          <p>
+            <a href={'https://mingas.by/contacts/phone-services'} target={'_blank'}>
+              График работы центра обслуживания населения
+            </a>
+          </p>
         </WorkTime>
       </Contacts>
     </FooterContainer>
