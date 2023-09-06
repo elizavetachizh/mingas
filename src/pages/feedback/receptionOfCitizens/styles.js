@@ -22,26 +22,7 @@ export const Table = styled.table`
     margin: 0 auto;
     font-size: 12px;
   }
-  &.firstColumn {
-    width: 40%;
-    tr {
-      td {
-        a {
-          color: #0d4475;
-        }
-      }
-    }
-  }
 `;
-
-export const Thead = styled.thead`
-  tr {
-    color: white;
-    background-color: #0d4475;
-    text-align: center;
-  }
-`;
-
 export const Tbody = styled.tbody`
   tr {
     height: 193px;
@@ -93,6 +74,24 @@ export const ContainerTable = styled.div`
   flex-direction: row;
   align-items: inherit;
   margin: 0 2%;
+  a{
+    color: #0d4475;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  table{
+    tbody{
+      td{
+        padding: 0 0.5rem;
+      }
+    }
+    thead{
+      text-align: center;
+      th {
+        padding: 0.5rem 0;
+      }
+    }
+  }
 `;
 
 export const BlockForAdmissionSchedule = styled.div`
