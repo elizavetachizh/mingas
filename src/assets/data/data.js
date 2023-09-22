@@ -3,7 +3,7 @@ export const data = [
     id: 1,
     cardImg: 1,
     cardDesc: 'Оплата за газ',
-    link: 'services/method-payment',
+    link: 'services/650d480b011c5298afa5f26f',
   },
   {
     id: 2,
@@ -23,6 +23,6 @@ export const data = [
     id: 6,
     cardImg: 6,
     cardDesc: 'Часто задаваемые вопросы',
-    link: 'feedback/question-answer/1',
+    link: 'feedback/question-answer/63930a954fe167e2981cc2e1',
   },
 ];

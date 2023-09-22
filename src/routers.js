@@ -14,7 +14,6 @@ import Subdivisions from './components/Subdivisions';
 import AllSubdivisions from './pages/company/managment/Subdivisions/allSubdivisions';
 import Corruption from './components/Сorruption';
 import NaturalGas from './pages/services/NaturalGas';
-import MethodPayment from './components/MethodPayment';
 import Career from './pages/company/career';
 import TBZ from './pages/company/Branches/TBZ';
 import Bubni from './pages/company/Branches/Bubni';
@@ -62,7 +61,6 @@ export default function Routers() {
       <Route path="/company/management/all-departments" element={<AllSubdivisions />} />
       <Route path={'/company/corruption'} element={<Corruption />} />
       <Route path="/services/:cardId" element={<NaturalGas />} />
-      <Route path="/services/method-payment" element={<MethodPayment />} />
       <Route path="/company/career" element={<Career />} />
       <Route path="/company/branches/TBZ" element={<TBZ />} />
       <Route path="/company/branches/Bubni" element={<Bubni />} />
