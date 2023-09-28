@@ -124,7 +124,7 @@ export const subdivisions = [
     name: 'Производственный участок №3',
     link: '/company/management/3/4',
     photo: '',
-    chief: 'Начальник - Пашинь Татьяна Владимировна',
+    chief: 'Начальник - ',
     description: (
       <div>
         <p>
