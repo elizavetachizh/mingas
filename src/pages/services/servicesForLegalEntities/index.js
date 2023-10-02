@@ -14,7 +14,7 @@ export default function ServicesForLegalEntities() {
         setData(res.data);
       })
       .catch((e) => {
-          console.log(e);
+        console.log(e);
       });
   }, [setData]);
 
@@ -23,16 +23,21 @@ export default function ServicesForLegalEntities() {
       name={'Услуги для бизнеса'}
       content={
         <DivServices>
-          {data.map((element) => {
-            if (element.type === '2') {
-              return (
-                <NavLinkService key={element._id} to={element._id}>
-                  <img alt={''} src={`${APIimage}/${element.image}`} />
-                  <Name>{element.name}</Name>
-                </NavLinkService>
-              );
-            }
-          })}
+          {data?.length ? (
+            <>
+              {data.map(
+                (element) =>
+                  element.type === '2' && (
+                    <NavLinkService key={element._id} to={element._id}>
+                      <img alt={''} src={`${APIimage}/${element.image}`} />
+                      <Name>{element.name}</Name>
+                    </NavLinkService>
+                  )
+              )}
+            </>
+          ) : (
+            <p>Загрузка данных...</p>
+          )}
         </DivServices>
       }
     />

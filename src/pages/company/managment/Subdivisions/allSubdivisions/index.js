@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { data } from '../../../../../assets/data/data_department';
 import DopFunctional from '../DopFunctional';
 import {
   BlockSearchService,
@@ -11,8 +10,8 @@ import { NavLink, useSearchParams } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router';
 import { IoIosSearch, IoMdClose } from 'react-icons/io';
 import ContainerContent from '../../../../../components/Container';
-import axios from "axios";
-import {API} from "../../../../../backend";
+import axios from 'axios';
+import { API } from '../../../../../backend';
 
 export default function AllSubdivisions() {
   const [isForm, setIsForm] = useState(false);
@@ -23,25 +22,17 @@ export default function AllSubdivisions() {
   const result = [];
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
-const [fullDate, setFullDate] = useState([])
-  const infoForSearch = data[0].information
-    .concat(data[1].information)
-    .concat(data[2].information)
-    .concat(data[3].information)
-    .concat(data[4].information)
-    .concat(data[5].information)
-    .concat(data[6].information)
-    .concat(data[7].information);
+  const [fullDate, setFullDate] = useState([]);
 
   useEffect(() => {
     axios
-        .get(`${API}/departament`)
-        .then((res) => {
-          setFullDate(res.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      .get(`${API}/departament`)
+      .then((res) => {
+        setFullDate(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   }, [setFullDate]);
 
   useEffect(() => {
@@ -51,7 +42,7 @@ const [fullDate, setFullDate] = useState([])
     } else {
       setInfo(fullDate);
     }
-  }, [id]);
+  }, [fullDate, id]);
 
   const handleForm = () => {
     setIsForm(true);
@@ -95,7 +86,6 @@ const [fullDate, setFullDate] = useState([])
     event.stopPropagation();
     setIsForm(false);
     setMessage('');
-    setInfo(infoForSearch);
     navigate('/company/management/all-departments');
   };
 
@@ -137,7 +127,7 @@ const [fullDate, setFullDate] = useState([])
             {info.length
               ? info.map((el) => (
                   <DopFunctional
-                      id={el._id}
+                    id={el._id}
                     key={el.id}
                     name={el.name}
                     contacts={el.contacts}
@@ -149,7 +139,7 @@ const [fullDate, setFullDate] = useState([])
                 ))
               : fullDate.map((el) => (
                   <DopFunctional
-                      id={el._id}
+                    id={el._id}
                     key={el.name}
                     name={el.name}
                     contacts={el.contacts}

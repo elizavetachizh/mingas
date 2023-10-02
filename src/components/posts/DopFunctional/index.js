@@ -4,14 +4,9 @@ export default function DopFunctional({ description, id }) {
   useEffect(() => {
     const element = document.getElementById(`description-${id}`);
     if (element) {
-      element.innerHTML += description ? description : '';
+      element.innerHTML += description ? description : 'Загрузка данных...';
     }
   }, [description, id]);
-  useEffect(() => {
-    console.log(description);
-    console.log(id);
-  }, [id, description]);
-  return (<>
-    <ContainerPosts id={`description-${id}`} />
-  </>);
+
+  return <ContainerPosts id={`description-${id}`} />;
 }

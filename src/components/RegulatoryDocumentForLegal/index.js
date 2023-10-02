@@ -49,14 +49,11 @@ export default function RegulatoryDocumentsForLegal() {
   const handleChange = (event) => {
     setMessage(event.target.value);
   };
+  // eslint-disable-next-line no-lone-blocks
   {
-    info?.map((el) => {
-      el.documents.map((cardInform) => {
-        if (cardInform.name.includes(message)) {
-          result.push(cardInform);
-        }
-      });
-    });
+    info?.map((el) =>
+      el.documents.map((cardInform) => cardInform.name.includes(message) && result.push(cardInform))
+    );
   }
   useEffect(() => {
     const current = info && info.find((element) => element.separation === documentId);
@@ -73,7 +70,7 @@ export default function RegulatoryDocumentsForLegal() {
       navigate(`/regulatory-documents-for-business/${current.separation}`);
       setName(current?.separation);
     },
-    [currentDocumentId, inform, name]
+    [currentDocumentId, info, navigate]
   );
 
   const handleInsideClick = (event) => {
@@ -165,17 +162,16 @@ export default function RegulatoryDocumentsForLegal() {
               {message && <BlockSerach result={result} />}
               {info ? (
                 info.map((el) =>
-                  el.documents.map((el) => {
-                    if (el.type === '2') {
-                      return (
+                  el.documents.map(
+                    (el) =>
+                      el.type === '2' && (
                         <BlockBtn key={el._id}>
                           <a href={el.link} target={'_blank'} rel="noreferrer">
                             {el.name}
                           </a>
                         </BlockBtn>
-                      );
-                    }
-                  })
+                      )
+                  )
                 )
               ) : (
                 <p>Загрузка данных...</p>
@@ -185,19 +181,18 @@ export default function RegulatoryDocumentsForLegal() {
             <ContainerInform>
               <Name>{name}</Name>
               {inform ? (
-                inform.map((el) => {
-                  if (el.type === '2') {
-                    return (
+                inform.map(
+                  (el) =>
+                    el.type === '2' && (
                       <BlockBtn key={el._id}>
                         <a href={el.link} target={'_blank'} rel="noreferrer">
                           {el.name}
                         </a>
                       </BlockBtn>
-                    );
-                  }
-                })
+                    )
+                )
               ) : (
-                <p>Loading</p>
+                <p>Загрузка данных...</p>
               )}
             </ContainerInform>
           )}

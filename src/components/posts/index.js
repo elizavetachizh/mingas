@@ -28,10 +28,6 @@ export default function Posts() {
     setName(current?.name);
     setIsId(current?._id);
   }, [id, info]);
-  useEffect(() => {
-    console.log(info);
-  }, [info]);
-
   return (
     <ContainerContent name={name} content={<DopFunctional id={isId} description={inform} />} />
   );

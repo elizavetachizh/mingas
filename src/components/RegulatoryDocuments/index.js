@@ -39,6 +39,7 @@ export default function DepartmentInformation() {
         console.log(e);
       });
   }, [setInfo]);
+
   const handleForm = () => {
     setIsForm(true);
     if (isForm) {
@@ -46,9 +47,9 @@ export default function DepartmentInformation() {
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = useCallback((event) => {
     setMessage(event.target.value);
-  };
+  }, []);
 
   useEffect(() => {
     const current = info && info.find((element) => element.separation === documentId);
@@ -57,15 +58,9 @@ export default function DepartmentInformation() {
     setName(current?.separation);
   }, [currentDocumentId, documentId, info]);
 
-  {
-    info?.map((el) => {
-      el.documents.map((cardInform) => {
-        if (cardInform.name.includes(message)) {
-          result.push(cardInform);
-        }
-      });
-    });
-  }
+  info?.map((el) =>
+    el.documents.map((cardInform) => cardInform.name.includes(message) && result.push(cardInform))
+  );
 
   const handleInsideClick = (event) => {
     event.stopPropagation();
@@ -81,7 +76,7 @@ export default function DepartmentInformation() {
       navigate(`/regulatory-documents/${current.separation}`);
       setName(current?.separation);
     },
-    [currentDocumentId, inform, name]
+    [currentDocumentId, info, navigate]
   );
 
   return (
@@ -120,18 +115,23 @@ export default function DepartmentInformation() {
               </ContainerFormSearchForService>
             )}
             {message && <BlockSerach result={result} />}
-            {!!info.length &&
-              info.map((element) => (
-                <BlockBtn key={element._id}>
-                  <ContainerBtnIcon>
-                    <DopFunctionalHeader
-                      nameCard={element.separation}
-                      className={currentDocumentId === element.separation ? 'background' : ''}
-                      onClick={() => changeDocument(element.separation)}
-                    />
-                  </ContainerBtnIcon>
-                </BlockBtn>
-              ))}
+            {!!info.length ? (
+              <>
+                {info.map((element) => (
+                  <BlockBtn key={element._id}>
+                    <ContainerBtnIcon>
+                      <DopFunctionalHeader
+                        nameCard={element.separation}
+                        className={currentDocumentId === element.separation ? 'background' : ''}
+                        onClick={() => changeDocument(element.separation)}
+                      />
+                    </ContainerBtnIcon>
+                  </BlockBtn>
+                ))}
+              </>
+            ) : (
+              <p>Загрузка данных...</p>
+            )}
           </HeaderCompanyDiv>
           {isPhone ? (
             <ContainerInform>
@@ -167,17 +167,16 @@ export default function DepartmentInformation() {
               {message && <BlockSerach result={result} />}
               {info ? (
                 info.map((el) =>
-                  el.documents.map((el) => {
-                    if (el.type === '1') {
-                      return (
+                  el.documents.map(
+                    (el) =>
+                      el.type === '1' && (
                         <BlockBtn key={el._id}>
                           <a href={el.link} target={'_blank'} rel="noreferrer">
                             {el.name}
                           </a>
                         </BlockBtn>
-                      );
-                    }
-                  })
+                      )
+                  )
                 )
               ) : (
                 <p>Загрузка данных...</p>
@@ -187,17 +186,16 @@ export default function DepartmentInformation() {
             <ContainerInform>
               <Name>{name}</Name>
               {inform ? (
-                inform.map((el) => {
-                  if (el.type === '1') {
-                    return (
+                inform.map(
+                  (el) =>
+                    el.type === '1' && (
                       <BlockBtn key={el._id}>
                         <a href={el.link} target={'_blank'} rel="noreferrer">
                           {el.name}
                         </a>
                       </BlockBtn>
-                    );
-                  }
-                })
+                    )
+                )
               ) : (
                 <p>Загрузка данных...</p>
               )}

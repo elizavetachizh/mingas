@@ -37,34 +37,36 @@ export default function HomeServices() {
           infoButton={'Для бизнеса'}
         />
       </ButtonServicesHome>
-      <ServicesDiv>
-        <DivDown>
-          {data.slice(0, 4).map((element) => {
-            if (element.type === '1') {
-              return (
-                <LinkServices
-                  key={element._id}
-                  cardId={element._id}
-                  nameCard={element.name}
-                />
-              );
-            }
-          })}
-        </DivDown>
-        <DivDown>
-          {data.slice(-7, -3).map((element) => {
-            if (element.type === '2') {
-              return (
-                <LinkServicesForLegalEntities
-                  key={element._id}
-                  cardId={element._id}
-                  nameCard={element.name}
-                />
-              );
-            }
-          })}
-        </DivDown>
-      </ServicesDiv>
+      {data?.length ? (
+        <ServicesDiv>
+          <DivDown>
+            {data
+              .slice(0, 4)
+              .map(
+                (element) =>
+                  element.type === '1' && (
+                    <LinkServices key={element._id} cardId={element._id} nameCard={element.name} />
+                  )
+              )}
+          </DivDown>
+          <DivDown>
+            {data
+              .slice(-7, -3)
+              .map(
+                (element) =>
+                  element.type === '2' && (
+                    <LinkServicesForLegalEntities
+                      key={element._id}
+                      cardId={element._id}
+                      nameCard={element.name}
+                    />
+                  )
+              )}
+          </DivDown>
+        </ServicesDiv>
+      ) : (
+        <p style={{ color: 'white' }}>Загрузка данных...</p>
+      )}
     </Container>
   );
 }

@@ -33,16 +33,21 @@ export default function Services() {
               <Name>{element.nameService}</Name>
             </NavLinkService>
           ))}
-          {data.map((element) => {
-            if (element.type === '1') {
-              return (
-                <NavLinkService key={element._id} to={element._id}>
-                  <img alt={''} src={`${APIimage}/${element.image}`} />
-                  <Name>{element.name}</Name>
-                </NavLinkService>
-              );
-            }
-          })}
+          {data?.length ? (
+            <>
+              {data.map(
+                (element) =>
+                  element.type === '1' && (
+                    <NavLinkService key={element._id} to={element._id}>
+                      <img alt={''} src={`${APIimage}/${element.image}`} />
+                      <Name>{element.name}</Name>
+                    </NavLinkService>
+                  )
+              )}
+            </>
+          ) : (
+            <p>Загрузка данных...</p>
+          )}
         </DivServices>
       }
     />
