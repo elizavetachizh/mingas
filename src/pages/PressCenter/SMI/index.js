@@ -43,10 +43,7 @@ export default function SMI() {
       .catch((e) => {
         console.log(e);
       });
-    // document.getElementById("video").autoPlay = false;
   }, [setInfo]);
-  // const infoReverse = info.reverse()
-  //   console.log(infoReverse)
 
   return (
     <div>

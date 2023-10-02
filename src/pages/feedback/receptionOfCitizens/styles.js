@@ -74,21 +74,59 @@ export const ContainerTable = styled.div`
   flex-direction: row;
   align-items: inherit;
   margin: 0 2%;
-  a{
+  @media (max-width: 400px) {
+    margin: 0 1%;
+  }
+  a {
     color: #0d4475;
     font-weight: bold;
     text-decoration: underline;
   }
-  table{
-    tbody{
-      td{
+  table {
+    tbody {
+      td {
         padding: 0 0.5rem;
+        @media (max-width: 538px) {
+          & {
+            font-size: 14px;
+          }
+        }
+        @media (max-width: 478px) {
+          & {
+            font-size: 12px;
+          }
+        }
+        @media (max-width: 416px) {
+          & {
+            padding: 0;
+          }
+        }
+        @media (max-width: 365px) {
+          & {
+            font-size: 10px;
+          }
+        }
       }
     }
-    thead{
+    thead {
       text-align: center;
       th {
         padding: 0.5rem 0;
+        @media (max-width: 538px) {
+          & {
+            font-size: 14px;
+          }
+        }
+        @media (max-width: 478px) {
+          & {
+            font-size: 12px;
+          }
+        }
+        @media (max-width: 365px) {
+          & {
+            font-size: 10px;
+          }
+        }
       }
     }
   }
