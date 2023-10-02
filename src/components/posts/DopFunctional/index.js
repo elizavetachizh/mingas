@@ -4,7 +4,7 @@ export default function DopFunctional({ description, id }) {
   useEffect(() => {
     const element = document.getElementById(`description-${id}`);
     if (element) {
-      element.innerHTML += description ? description : 'Загрузка данных...';
+      element.innerHTML += description ? description : '';
     }
   }, [description, id]);
 
