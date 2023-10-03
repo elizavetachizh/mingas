@@ -6,10 +6,7 @@ import DopFunctionService from '../../DopFunction';
 import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 import up from '../../../../assets/png/up_arrow_round.png';
 import { HeaderCompanyDiv } from '../../../concats/headerContacts/styles';
-import {
-  BlockBtn,
-  Name,
-} from '../../../../components/administrativeServices/Header/styles';
+import { BlockBtn, Name } from '../../../../components/administrativeServices/Header/styles';
 import {
   ContainerInform,
   DivBlocks,
@@ -20,9 +17,8 @@ import minsk from '../../../../assets/background/phone.webp';
 import Feedback from '../../../feedback';
 import { BackgroundStyleServices } from '../../styles';
 import linesOne from '../../../../assets/background/rig.webp';
-import { API } from '../../../../backend';
-import axios from 'axios';
 import DopFunctionalHeader from '../../NaturalGas/DopFunctionalHeader';
+import { useSelector } from 'react-redux';
 
 export default function CardOfService() {
   const [inform, setInform] = useState([]);
@@ -30,33 +26,24 @@ export default function CardOfService() {
   const [title, setTitle] = useState([]);
   const { cardId } = useParams();
   const navigate = useNavigate();
-  const [data, setData] = useState([]);
+  const service = useSelector((state) => state.services.data);
+
   useEffect(() => {
-    axios
-      .get(`${API}/services`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((e) => {
-          console.log(e);
-      });
-  }, [setData]);
-  useEffect(() => {
-    const current = data.find((element) => element._id === cardId);
+    const current = service.find((element) => element._id === cardId);
     setInform(current?.description);
     setTitle(current?.name);
     setServiceID(cardId);
-  }, [cardId, data]);
+  }, [cardId, service]);
 
   const animate = useCallback(
     (descriptionID) => {
-      const current = data.find((element) => element._id === descriptionID);
+      const current = service.find((element) => element._id === descriptionID);
       setInform(current?.description);
       setTitle(current?.name);
       setServiceID(descriptionID);
       navigate(`/services-legal-entities/${descriptionID}`);
     },
-    [navigate]
+    [navigate, service]
   );
 
   return (
@@ -68,9 +55,9 @@ export default function CardOfService() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Услуги для юридических лиц</Name>
-            {data.map((element) => {
-              if (element.type === '2') {
-                return (
+            {service.map(
+              (element) =>
+                element.type === '2' && (
                   <BlockBtn key={element._id}>
                     <DopFunctionalHeader
                       nameCard={element.name}
@@ -78,9 +65,8 @@ export default function CardOfService() {
                       onClick={() => animate(element._id)}
                     />
                   </BlockBtn>
-                );
-              }
-            })}
+                )
+            )}
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>

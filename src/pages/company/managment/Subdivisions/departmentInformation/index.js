@@ -1,12 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import DopFunctional from '../DopFunctional';
-import { NavLink, useParams, useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import {
   DivBlocks,
   ContainerInform,
   SearchService,
   ContainerFormSearchForService,
-  BlockSearchService,
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { HeaderCompanyDiv } from '../../../../concats/headerContacts/styles';
 import DopFunctionalHeader from '../../../../services/NaturalGas/DopFunctionalHeader';
@@ -23,18 +22,25 @@ import ButtonFun from '../../../../../components/button';
 import ContainerContent from '../../../../../components/Container';
 import axios from 'axios';
 import { API } from '../../../../../backend';
+import { useFetchDepartmentsQuery } from '../../../../../redux/services/departmentsDivisions';
 
 export default function DepartmentInformation() {
   const isPhone = useMediaQuery('(max-width: 800px)');
-  const [currentServiceID, setDepartamentId] = useState(null);
-  const [inform, setInform] = useState([]);
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
+  const [key, setKey] = useState('');
   const [infoDep, setInfoDep] = useState([]);
-  const [content, setContent] = useState([]);
+  const [nameMen, setNameMen] = useState('');
+  const [name, setName] = useState('');
+  const { data: departments } = useFetchDepartmentsQuery({ key, nameMen, name });
   const { linkId } = useParams();
+
+  useEffect(() => {
+    setName(id);
+  }, [id]);
+
   useEffect(() => {
     axios
       .get(`${API}/management`)
@@ -46,41 +52,19 @@ export default function DepartmentInformation() {
       });
   }, [setInfoDep]);
 
-  useEffect(() => {
-    axios
-      .get(`${API}/departament`)
-      .then((res) => {
-        setContent(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setContent]);
-
-  useEffect(() => {
-    if (id) {
-      const currentBlockInfo = content.filter((information) => information.name === id);
-      setInform(currentBlockInfo);
-    }
-  }, [id, content]);
-  useEffect(() => {
-    if (linkId) {
-      const current = content.filter((element) => element.nameMen === linkId);
-      setInform(current);
-    }
-  }, [content, linkId]);
   const changeDepartment = useCallback(
     (departamentId) => {
-      const current = content.filter((element) => element.nameMen === departamentId);
       navigate(`/company/management/${departamentId}`);
-      setDepartamentId(departamentId);
-      setInform(current);
+      setNameMen(departamentId);
+      setName('');
     },
     [navigate]
   );
 
   const handlerLinkClickUniqueName = useCallback(
     (id) => {
+      setNameMen('');
+      setName(id);
       navigate(`${pathname}?id=${id}`);
     },
     [pathname, navigate]
@@ -93,45 +77,15 @@ export default function DepartmentInformation() {
       setIsForm(false);
     }
   };
-  const [message, setMessage] = useState('');
-  const result = [];
 
-  const handleChange = (event) => {
-    setMessage(event.target.value);
-  };
+  const handleSearch = useCallback((event) => {
+    setKey(event.target.value);
+  }, []);
 
-  content.map((card) => {
-    if (typeof card.name === 'string') {
-      if (card.name.includes(message)) {
-        result.push(card);
-      }
-    }
-    return null;
-  });
-  const renderResult = () => {
-    return (
-      <BlockSearchService>
-        {result.length ? (
-          result.map((element) => {
-            return (
-              <div key={element.key}>
-                <NavLink style={{ margin: '20px auto' }} to={`${pathname}?id=${element.name}`}>
-                  {element.name}
-                </NavLink>
-              </div>
-            );
-          })
-        ) : (
-          <p>К сожалению, такого отдела найти не удалось</p>
-        )}
-      </BlockSearchService>
-    );
-  };
   const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
-    setMessage('');
-    navigate('/company/management/1');
+    setKey('');
   };
 
   return (
@@ -158,7 +112,7 @@ export default function DepartmentInformation() {
                 <form action={'search'}>
                   <input
                     placeholder="Введите название отдела"
-                    onChange={handleChange}
+                    onChange={handleSearch}
                     type={'text'}
                   />
                   <IoMdClose
@@ -169,23 +123,22 @@ export default function DepartmentInformation() {
                 </form>
               </ContainerFormSearchForService>
             )}
-            {message && renderResult()}
             {infoDep.map((element) => (
               <BlockBtn key={element._id}>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader
                     nameCard={element.fullName}
-                    className={currentServiceID === element._id ? 'background' : ''}
+                    className={nameMen === element._id ? 'background' : ''}
                     onClick={() => changeDepartment(element._id)}
                   />
-                  {currentServiceID === element._id ? (
+                  {nameMen === element._id ? (
                     <IoIosArrowUp onClick={() => changeDepartment(element._id)} />
                   ) : (
                     <IoIosArrowDown onClick={() => changeDepartment(element._id)} />
                   )}
                 </ContainerBtnIcon>
 
-                <DivOpen className={currentServiceID === element._id && `shake`}>
+                <DivOpen className={linkId === element._id && `shake`}>
                   {element.department.map((link) => (
                     <button
                       onClick={() => handlerLinkClickUniqueName(link)}
@@ -201,8 +154,8 @@ export default function DepartmentInformation() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <>
-              {inform.length ? (
-                inform.map((el) => (
+              {departments?.length ? (
+                departments.map((el) => (
                   <DopFunctional
                     id={el._id}
                     key={el.name}

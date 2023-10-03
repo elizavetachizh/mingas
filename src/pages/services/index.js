@@ -1,24 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React  from 'react';
 
 import { DivServices, NavLinkService } from './styles';
 import { links } from '../../assets/data/liksForServices';
 import { Name } from './servicesList/styles';
 import ContainerContent from '../../components/Container';
-import { API, APIimage } from '../../backend';
-import axios from 'axios';
+import { APIimage } from '../../backend';
+import {  useSelector } from 'react-redux';
 
 export default function Services() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/services`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setData]);
+  const service = useSelector((state) => state.services.data);
   return (
     <ContainerContent
       name={'Услуги жителям столичного региона'}
@@ -33,9 +23,9 @@ export default function Services() {
               <Name>{element.nameService}</Name>
             </NavLinkService>
           ))}
-          {data?.length ? (
+          {service?.length ? (
             <>
-              {data.map(
+              {service.map(
                 (element) =>
                   element.type === '1' && (
                     <NavLinkService key={element._id} to={element._id}>

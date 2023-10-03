@@ -33,12 +33,27 @@ import Language from './language';
 import { NavLink } from 'react-router-dom';
 import SearchPage from '../../pages/SearchPage';
 import { IoIosArrowForward } from 'react-icons/io';
-import axios from 'axios';
-import { API } from '../../backend';
 import { FiShoppingCart } from 'react-icons/fi';
+import {useDispatch, useSelector} from 'react-redux';
+import {useFetchServicesQuery} from "../../redux/services/services";
+import {useFetchMainPostsQuery} from "../../redux/services/mainpost";
+import {useFetchPostsQuery} from "../../redux/services/posts";
+import {setServices} from "../../redux/slices/servicesSlice";
+import {setMainPosts} from "../../redux/slices/mainPostsSlice";
+import {setPosts} from "../../redux/slices/postsSlice";
 export default function Header({ backgroundHeader }) {
   const [open, setOpen] = useState(false);
-
+  const dispatch = useDispatch();
+  const { data: services, isLoading } = useFetchServicesQuery();
+  const { data: mainPosts } = useFetchMainPostsQuery();
+  const { data: posts } = useFetchPostsQuery();
+  useEffect(() => {
+    if (!isLoading) {
+      dispatch(setServices(services));
+      dispatch(setMainPosts(mainPosts));
+      dispatch(setPosts(posts));
+    }
+  }, [isLoading, dispatch, services, mainPosts, posts]);
   const onClick = () => {
     setOpen(!open);
   };
@@ -60,18 +75,7 @@ export default function Header({ backgroundHeader }) {
       <IoIosCloses />
     </MenuClose>
   );
-
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/services`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setData]);
+  const service = useSelector((state) => state.services.data);
 
   return (
     <Container backgroundHeader={backgroundHeader}>
@@ -98,7 +102,7 @@ export default function Header({ backgroundHeader }) {
                   <p>Контакт-центр</p>
                 </Div104>
               </DivPhone>
-              <Logo className={'gerb'} src={require('../../assets/png/gerb_white.webp')}  />
+              <Logo className={'gerb'} src={require('../../assets/png/gerb_white.webp')} />
               <ContainerElements>
                 <PersonalAccButton
                   title="Контакт-центр"
@@ -129,7 +133,9 @@ export default function Header({ backgroundHeader }) {
                 <DivButtonHeader className={'header-btns'}>
                   <ButtonLink to="/company/history">История предприятия</ButtonLink>
                   <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
-                  <ButtonLink to="/company/management/all-departments">Подразделения УП "МИНГАЗ"</ButtonLink>
+                  <ButtonLink to="/company/management/all-departments">
+                    Подразделения УП "МИНГАЗ"
+                  </ButtonLink>
                   <ButtonLink to="/company/career"> Работа в УП "Мингаз"</ButtonLink>
                   <ButtonLink to="/company/parent-organizations">
                     Вышестоящие организации
@@ -173,15 +179,14 @@ export default function Header({ backgroundHeader }) {
                         Административные процедуры
                       </NavLink>
                       <NavLink to="/residents/price">Прейскурант цен</NavLink>
-                      {data.map((element) => {
-                        if (element.type === '1') {
-                          return (
+                      {service.map(
+                        (element) =>
+                          element.type === '1' && (
                             <NavLink key={element._id} to={`/services/${element._id}`}>
                               {element.name}
                             </NavLink>
-                          );
-                        }
-                      })}
+                          )
+                      )}
                     </span>
                   </ContanerLink>
 
@@ -208,18 +213,17 @@ export default function Header({ backgroundHeader }) {
                       Услуги <IoIosArrowForward color={'#0d4475'} />
                     </ButtonLink>
                     <span>
-                      {data.map((element) => {
-                        if (element.type === '2') {
-                          return (
+                      {service.map(
+                        (element) =>
+                          element.type === '2' && (
                             <NavLink
                               key={element._id}
                               to={`/services-legal-entities/${element._id}`}
                             >
                               {element.name}
                             </NavLink>
-                          );
-                        }
-                      })}
+                          )
+                      )}
                     </span>
                   </ContanerLink>
                   <ButtonLink to="/feedback/electronic-appeal">

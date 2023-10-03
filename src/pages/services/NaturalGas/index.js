@@ -9,40 +9,32 @@ import { useNavigate, useParams } from 'react-router';
 import DopFunctionalHeader from './DopFunctionalHeader';
 import ContainerContent from '../../../components/Container';
 import DopFunctionService from '../DopFunction';
-import axios from 'axios';
-import { API } from '../../../backend';
+import { useSelector } from 'react-redux';
+
 export default function NaturalGas() {
   const [inform, setInform] = useState([]);
   const [currentServiceID, setServiceID] = useState(null);
   const [title, setTitle] = useState([]);
   const { cardId } = useParams();
   const navigate = useNavigate();
-  const [data, setData] = useState([]);
+  const service = useSelector((state) => state.services.data);
+
   useEffect(() => {
-    axios
-      .get(`${API}/services`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setData]);
-  useEffect(() => {
-    const current = data.find((element) => element._id === cardId);
+    const current = service.find((element) => element._id === cardId);
     setInform(current?.description);
     setTitle(current?.name);
     setServiceID(cardId);
-  }, [cardId, data]);
+  }, [cardId, service]);
+
   const animate = useCallback(
     (descriptionID) => {
-      const current = data.find((element) => element._id === descriptionID);
+      const current = service.find((element) => element._id === descriptionID);
       setInform(current?.description);
       setTitle(current?.name);
       setServiceID(descriptionID);
       navigate(`/services/${descriptionID}`);
     },
-    [navigate]
+    [navigate, service]
   );
 
   return (
@@ -52,9 +44,9 @@ export default function NaturalGas() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Наименование услуги</Name>
-            {data.map((element) => {
-              if (element.type === '1') {
-                return (
+            {service.map(
+              (element) =>
+                element.type === '1' && (
                   <BlockBtn key={element._id}>
                     <DopFunctionalHeader
                       nameCard={element.name}
@@ -62,9 +54,8 @@ export default function NaturalGas() {
                       onClick={() => animate(element._id)}
                     />
                   </BlockBtn>
-                );
-              }
-            })}
+                )
+            )}
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>

@@ -2,42 +2,33 @@ import {
   ContainerInform,
   DivBlocks,
 } from '../administrativeServices/InformaationAdministrativeService/styles';
-import { subdivisions } from '../../assets/data/subdivisions';
 import DopFunctional from '../../pages/company/managment/Subdivisions/DopFunctional';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router';
 import ContainerContent from '../Container';
+import { useFetchDivisionsByIdQuery } from '../../redux/services/departmentsDivisions';
 
 export default function Subdivisions() {
   const subdivisionId = useParams();
-  const [info, setInfo] = useState([]);
-  const object = Object.values(subdivisionId);
-  const current = subdivisions.filter((element) => element.id === +object[0]);
-
-  useEffect(() => {
-    if (+object[0]) {
-      setInfo(current);
-    } else {
-      setInfo(subdivisions);
-    }
-  }, [current, object]);
-
+  const { data: divisionsById } = useFetchDivisionsByIdQuery(subdivisionId.subdivisionId);
   return (
     <ContainerContent
       name={'Подразделения'}
       content={
         <DivBlocks>
           <ContainerInform>
-            {info.map((el) => (
+            {divisionsById ? (
               <DopFunctional
-                name={el.name}
-                contacts={el.contacts}
-                schedule={el.schedule}
-                photo={el.photo}
-                chief={el.chief}
-                description={el.description}
+                name={divisionsById?.name}
+                contacts={divisionsById?.contacts}
+                schedule={divisionsById?.schedule}
+                photo={divisionsById?.photo}
+                chief={divisionsById?.chief}
+                description={divisionsById?.description}
               />
-            ))}
+            ) : (
+              <p>Загрузка данных...</p>
+            )}
           </ContainerInform>
         </DivBlocks>
       }

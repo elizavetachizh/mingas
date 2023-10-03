@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState, lazy, Suspense } from 'react';
-import photoHistory from '../../../assets/management/0.webp';
 import { DivLeadersPhotoPosition } from './styles';
 import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
 import Modal from '../../../components/modalWindow';
@@ -46,7 +45,10 @@ export default function Management() {
       content={
         <>
           <DivTextPhoto>
-            <ImageDiv data-aos={'fade-up'} src={'https://back.mingas.by/public/images/management/0.webp'} />
+            <ImageDiv
+              data-aos={'fade-up'}
+              src={'https://back.mingas.by/public/images/management/0.webp'}
+            />
             <DivText data-aos={'fade-up'}>
               <p>
                 Добро пожаловать на корпоративный сайт производственного республиканского унитарного
@@ -74,17 +76,23 @@ export default function Management() {
           </DivTextPhoto>
           <DivLeadersPhotoPosition>
             <Suspense fallback={renderLoader()}>
-              {info.map((element) => (
-                <Leaders
-                  idName={element._id}
-                  handlerLeaderClick={handlerLeaderClick}
-                  cardImg={element.image}
-                  leader={element}
-                  key={element._id}
-                  fullName={element.fullName}
-                  position={element.position}
-                />
-              ))}
+              {info?.length ? (
+                <>
+                  {info.map((element) => (
+                    <Leaders
+                      idName={element._id}
+                      handlerLeaderClick={handlerLeaderClick}
+                      cardImg={element.image}
+                      leader={element}
+                      key={element._id}
+                      fullName={element.fullName}
+                      position={element.position}
+                    />
+                  ))}
+                </>
+              ) : (
+                <p>Загрузка данных...</p>
+              )}
             </Suspense>
           </DivLeadersPhotoPosition>
           {isModalVisible && (

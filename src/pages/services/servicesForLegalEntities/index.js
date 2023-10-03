@@ -1,31 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { DivServices, NavLinkService } from '../styles';
 import ContainerContent from '../../../components/Container';
-import axios from 'axios';
-import { API, APIimage } from '../../../backend';
+
+import { APIimage } from '../../../backend';
 import { Name } from '../servicesList/styles';
+import { useSelector } from 'react-redux';
 
 export default function ServicesForLegalEntities() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/services`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setData]);
+  const service = useSelector((state) => state.services.data);
 
   return (
     <ContainerContent
       name={'Услуги для бизнеса'}
       content={
         <DivServices>
-          {data?.length ? (
+          {service?.length ? (
             <>
-              {data.map(
+              {service.map(
                 (element) =>
                   element.type === '2' && (
                     <NavLinkService key={element._id} to={element._id}>

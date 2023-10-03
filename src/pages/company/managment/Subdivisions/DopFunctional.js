@@ -30,10 +30,6 @@ export default function DopFunctional({ id, name, photo, chief, description, con
     if (element) {
       element.innerHTML += description;
     }
-    // const elementSchedule = document.getElementById(`schedule-${id}`);
-    // if (elementSchedule) {
-    //   elementSchedule.innerHTML += schedule;
-    // }
   }, [description, id]);
 
   return (

@@ -1,34 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import DopFunctional from './DopFunctional';
 import ContainerContent from '../Container';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { API } from '../../backend';
+import { useFetchMainPostByIdQuery } from '../../redux/services/mainpost';
 export default function Posts() {
   const { id } = useParams();
-  const [inform, setInform] = useState('');
-  const [name, setName] = useState('');
-  const [info, setInfo] = useState([]);
-  const [isId, setIsId] = useState(null);
-  useEffect(() => {
-    const apiUrl = `${API}/mainposts`;
-    axios
-      .get(apiUrl)
-      .then((res) => {
-        setInfo(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+  const { data: mainPostsById } = useFetchMainPostByIdQuery(id);
 
-  useEffect(() => {
-    const current = info.find((element) => element._id === id);
-    setInform(current?.description);
-    setName(current?.name);
-    setIsId(current?._id);
-  }, [id, info]);
   return (
-    <ContainerContent name={name} content={<DopFunctional id={isId} description={inform} />} />
+    <ContainerContent
+      name={mainPostsById?.name}
+      content={
+        mainPostsById ? (
+          <DopFunctional id={mainPostsById?._id} description={mainPostsById?.description} />
+        ) : (
+          <p>Загрузка данных...</p>
+        )
+      }
+    />
   );
 }

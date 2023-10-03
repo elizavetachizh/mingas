@@ -1,5 +1,5 @@
 import Header from '../../components/header';
-import React from 'react';
+import React  from 'react';
 import ContentHome from './Content';
 import UsefulInform from './useful_information';
 import HomeServices from './services';
@@ -13,8 +13,9 @@ import StateInformResources from '../../components/stateInformResources';
 import { BackgroundStyle } from './services/styles';
 import linesOne from '../../assets/background/rig.webp';
 import { Container } from '../company/styles';
-import './slider/styles.css'
+import './slider/styles.css';
 export default function Home() {
+
   return (
     <Container>
       <Header />
