@@ -4,8 +4,7 @@ import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
 import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import SchemaCompany from '../SchemaCompany';
-import axios from 'axios';
-import { API } from '../../../backend';
+import { useFetchManagementQuery } from '../../../redux/services/management';
 const renderLoader = () => <p>Загрузка данных...</p>;
 const Leaders = lazy(() => import('./divmagement'));
 export default function Management() {
@@ -26,18 +25,7 @@ export default function Management() {
     window.scrollTo(0, 0);
   }, []);
 
-  const [info, setInfo] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${API}/management`)
-      .then((res) => {
-        setInfo(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setInfo]);
+  const { data: management } = useFetchManagementQuery();
 
   return (
     <SchemaCompany
@@ -76,9 +64,9 @@ export default function Management() {
           </DivTextPhoto>
           <DivLeadersPhotoPosition>
             <Suspense fallback={renderLoader()}>
-              {info?.length ? (
+              {management?.length ? (
                 <>
-                  {info.map((element) => (
+                  {management.map((element) => (
                     <Leaders
                       idName={element._id}
                       handlerLeaderClick={handlerLeaderClick}

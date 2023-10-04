@@ -7,8 +7,8 @@ export const divisionsAPI = createApi({
     fetchDepartments: build.query({
       query: ({ key, nameMen, name }) => ({
         url: `/departament/${key === '' || key === undefined ? '' : `search/${key}`}${
-          nameMen === '' ? '' : `?nameMen=${nameMen}`
-        }${name === '' || name === null ? '' : `?name=${name}`}`,
+          nameMen === '' || nameMen === undefined ? '' : `?nameMen=${nameMen}`
+        }${name === '' || name === null || name === undefined ? '' : `?name=${name}`}`,
         headers: {
           Authorization: 'Bearer ',
           'Content-type': 'application/json',

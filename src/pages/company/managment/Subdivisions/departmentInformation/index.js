@@ -20,9 +20,8 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icon
 import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
 import ButtonFun from '../../../../../components/button';
 import ContainerContent from '../../../../../components/Container';
-import axios from 'axios';
-import { API } from '../../../../../backend';
 import { useFetchDepartmentsQuery } from '../../../../../redux/services/departmentsDivisions';
+import { useFetchManagementQuery } from '../../../../../redux/services/management';
 
 export default function DepartmentInformation() {
   const isPhone = useMediaQuery('(max-width: 800px)');
@@ -31,26 +30,15 @@ export default function DepartmentInformation() {
   const [searchParams] = useSearchParams();
   const id = searchParams.get('id');
   const [key, setKey] = useState('');
-  const [infoDep, setInfoDep] = useState([]);
   const [nameMen, setNameMen] = useState('');
   const [name, setName] = useState('');
   const { data: departments } = useFetchDepartmentsQuery({ key, nameMen, name });
+  const { data: management } = useFetchManagementQuery();
   const { linkId } = useParams();
 
   useEffect(() => {
     setName(id);
   }, [id]);
-
-  useEffect(() => {
-    axios
-      .get(`${API}/management`)
-      .then((res) => {
-        setInfoDep(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setInfoDep]);
 
   const changeDepartment = useCallback(
     (departamentId) => {
@@ -123,7 +111,7 @@ export default function DepartmentInformation() {
                 </form>
               </ContainerFormSearchForService>
             )}
-            {infoDep.map((element) => (
+            {management?.map((element) => (
               <BlockBtn key={element._id}>
                 <ContainerBtnIcon>
                   <DopFunctionalHeader

@@ -58,7 +58,7 @@ export default function SearchPage({ classname }) {
   };
 
   services.map((card) => {
-    if (card?.name.includes(message)) {
+    if (card?.name.toLowerCase().includes(message)) {
       result.push(card);
     }
     return <p>К сожалению, ничего не было найдено</p>;
@@ -71,7 +71,7 @@ export default function SearchPage({ classname }) {
     }) &&
     departament.map((element) => {
       if (typeof element.name === 'string') {
-        if (element.name.includes(message)) {
+        if (element.name.toLowerCase().includes(message)) {
           resultDepartments.push(element);
         }
       }
@@ -99,18 +99,15 @@ export default function SearchPage({ classname }) {
                 color={'black'}
                 onClick={handleCloseCLick}
               />
-              {result.map((element) => {
-                if (element.type === '1') {
-                  return (
-                    <div key={element._id}>
-                      <NavLink style={{ color: 'black' }} to={`/services/${element._id}`}>
-                        {element.name}
-                      </NavLink>
-                    </div>
-                  );
-                }
-                if (element.type === '2') {
-                  return (
+              {result.map((element) =>
+                element.type === '1' ? (
+                  <div key={element._id}>
+                    <NavLink style={{ color: 'black' }} to={`/services/${element._id}`}>
+                      {element.name}
+                    </NavLink>
+                  </div>
+                ) : (
+                  element.type === '2' && (
                     <div key={element._id}>
                       <NavLink
                         style={{ color: 'black' }}
@@ -119,34 +116,26 @@ export default function SearchPage({ classname }) {
                         {element.name}
                       </NavLink>
                     </div>
-                  );
-                }
-              })}
-              {resultRouters.map((element) => {
-                return (
-                  <div key={element.id}>
-                    {
-                      <NavLink style={{ color: 'black' }} to={`/${element.router}`}>
-                        {element.name}
-                      </NavLink>
-                    }
-                  </div>
-                );
-              })}
-              {resultDepartments.map((element) => {
-                return (
-                  <div key={element._id}>
-                    {
-                      <NavLink
-                        style={{ color: 'black' }}
-                        to={`/company/management/${element._id}?id=${element.name}`}
-                      >
-                        {element.name}
-                      </NavLink>
-                    }
-                  </div>
-                );
-              })}
+                  )
+                )
+              )}
+              {resultRouters.map((element) => (
+                <div key={element.id}>
+                  <NavLink style={{ color: 'black' }} to={`/${element.router}`}>
+                    {element.name}
+                  </NavLink>
+                </div>
+              ))}
+              {resultDepartments.map((element) => (
+                <div key={element._id}>
+                  <NavLink
+                    style={{ color: 'black' }}
+                    to={`/company/management/${element.nameMen}?id=${element.name}`}
+                  >
+                    {element.name}
+                  </NavLink>
+                </div>
+              ))}
               {resultDocuments.map((doc) => {
                 return (
                   <div key={doc.id}>

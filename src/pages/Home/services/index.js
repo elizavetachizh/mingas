@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ButtonFun from '../../../components/button';
 import { Container, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
 import TitleForHome from '../../../components/TitleForHome';
 import LinkServicesForLegalEntities from './dataComponentsForLEgalEntities';
-import axios from 'axios';
-import { API } from '../../../backend';
+import { useSelector } from 'react-redux';
 
 export default function HomeServices() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/services`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, [setData]);
+  const service = useSelector((state) => state.services.data);
   return (
     <Container>
       <TitleForHome
@@ -37,10 +26,10 @@ export default function HomeServices() {
           infoButton={'Для бизнеса'}
         />
       </ButtonServicesHome>
-      {data?.length ? (
+      {service?.length ? (
         <ServicesDiv>
           <DivDown>
-            {data
+            {service
               .slice(0, 4)
               .map(
                 (element) =>
@@ -50,7 +39,7 @@ export default function HomeServices() {
               )}
           </DivDown>
           <DivDown>
-            {data
+            {service
               .slice(-7, -3)
               .map(
                 (element) =>

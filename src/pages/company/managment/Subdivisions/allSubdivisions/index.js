@@ -15,7 +15,7 @@ export default function AllSubdivisions() {
   const [isForm, setIsForm] = useState(false);
   const [key, setKey] = useState('');
   const dispatch = useDispatch();
-  const { data: departments, isLoading } = useFetchDepartmentsQuery(key);
+  const { data: departments, isLoading } = useFetchDepartmentsQuery({key});
   useEffect(() => {
     if (!isLoading) {
       dispatch(setDepartments(departments));

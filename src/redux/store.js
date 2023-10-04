@@ -11,6 +11,8 @@ import { servicesAPI } from './services/services';
 import { mainPostsAPI } from './services/mainpost';
 import { postsAPI } from './services/posts';
 import { divisionsAPI } from './services/departmentsDivisions';
+import { managementAPI } from './services/management';
+import { questionAnswerAPI } from './services/questonAnswer';
 
 const rootReducer = combineReducers({
   services: servicesReducer,
@@ -23,6 +25,8 @@ const rootReducer = combineReducers({
   [mainPostsAPI.reducerPath]: mainPostsAPI.reducer,
   [postsAPI.reducerPath]: postsAPI.reducer,
   [divisionsAPI.reducerPath]: divisionsAPI.reducer,
+  [managementAPI.reducerPath]: managementAPI.reducer,
+  [questionAnswerAPI.reducerPath]: questionAnswerAPI.reducer,
 });
 
 export const store = configureStore({
@@ -32,5 +36,7 @@ export const store = configureStore({
     ...getDefaultMiddleware().concat(mainPostsAPI.middleware),
     ...getDefaultMiddleware().concat(postsAPI.middleware),
     ...getDefaultMiddleware().concat(divisionsAPI.middleware),
+    ...getDefaultMiddleware().concat(managementAPI.middleware),
+    ...getDefaultMiddleware().concat(questionAnswerAPI.middleware),
   ],
 });
