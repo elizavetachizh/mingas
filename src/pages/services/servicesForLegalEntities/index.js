@@ -5,6 +5,7 @@ import ContainerContent from '../../../components/Container';
 import { APIimage } from '../../../backend';
 import { Name } from '../servicesList/styles';
 import { useSelector } from 'react-redux';
+import Loader from "../../../components/Loader";
 
 export default function ServicesForLegalEntities() {
   const service = useSelector((state) => state.services.data);
@@ -27,7 +28,7 @@ export default function ServicesForLegalEntities() {
               )}
             </>
           ) : (
-            <p>Загрузка данных...</p>
+            <Loader/>
           )}
         </DivServices>
       }

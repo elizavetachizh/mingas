@@ -5,6 +5,7 @@ import LinkServices from './dataComponents';
 import TitleForHome from '../../../components/TitleForHome';
 import LinkServicesForLegalEntities from './dataComponentsForLEgalEntities';
 import { useSelector } from 'react-redux';
+import Loader from "../../../components/Loader";
 
 export default function HomeServices() {
   const service = useSelector((state) => state.services.data);
@@ -54,7 +55,7 @@ export default function HomeServices() {
           </DivDown>
         </ServicesDiv>
       ) : (
-        <p style={{ color: 'white' }}>Загрузка данных...</p>
+       <Loader/>
       )}
     </Container>
   );

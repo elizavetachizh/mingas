@@ -20,7 +20,7 @@ export default function GetAllPosts() {
       name={'Важно знать, безопасность'}
       content={
         <>
-          {posts.map(
+          {posts?.map(
             (el) =>
               el.type === 'safety' && (
                 <DopFunctional name={el.name} description={el.description} id={el._id} />

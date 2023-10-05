@@ -1,12 +1,12 @@
-import React, { useCallback, useEffect, useState, lazy, Suspense } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { DivLeadersPhotoPosition } from './styles';
 import { DivText, DivTextPhoto, ImageDiv } from '../history/styles';
 import Modal from '../../../components/modalWindow';
 import Aos from 'aos';
 import SchemaCompany from '../SchemaCompany';
 import { useFetchManagementQuery } from '../../../redux/services/management';
-const renderLoader = () => <p>Загрузка данных...</p>;
-const Leaders = lazy(() => import('./divmagement'));
+import Loader from '../../../components/Loader';
+import Leaders from './divmagement';
 export default function Management() {
   const [isModalVisible, setModalVisible] = useState(false);
   const [currentLeader, setCurrentLeader] = useState({});
@@ -63,25 +63,23 @@ export default function Management() {
             </DivText>
           </DivTextPhoto>
           <DivLeadersPhotoPosition>
-            <Suspense fallback={renderLoader()}>
-              {management?.length ? (
-                <>
-                  {management.map((element) => (
-                    <Leaders
-                      idName={element._id}
-                      handlerLeaderClick={handlerLeaderClick}
-                      cardImg={element.image}
-                      leader={element}
-                      key={element._id}
-                      fullName={element.fullName}
-                      position={element.position}
-                    />
-                  ))}
-                </>
-              ) : (
-                <p>Загрузка данных...</p>
-              )}
-            </Suspense>
+            {management?.length ? (
+              <>
+                {management.map((element) => (
+                  <Leaders
+                    idName={element._id}
+                    handlerLeaderClick={handlerLeaderClick}
+                    cardImg={element.image}
+                    leader={element}
+                    key={element._id}
+                    fullName={element.fullName}
+                    position={element.position}
+                  />
+                ))}
+              </>
+            ) : (
+              <Loader />
+            )}
           </DivLeadersPhotoPosition>
           {isModalVisible && (
             <Modal

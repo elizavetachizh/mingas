@@ -7,6 +7,7 @@ import React from 'react';
 import { useParams } from 'react-router';
 import ContainerContent from '../Container';
 import { useFetchDivisionsByIdQuery } from '../../redux/services/departmentsDivisions';
+import Loader from '../Loader';
 
 export default function Subdivisions() {
   const subdivisionId = useParams();
@@ -27,7 +28,7 @@ export default function Subdivisions() {
                 description={divisionsById?.description}
               />
             ) : (
-              <p>Загрузка данных...</p>
+              <Loader />
             )}
           </ContainerInform>
         </DivBlocks>
