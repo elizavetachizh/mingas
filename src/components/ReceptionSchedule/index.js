@@ -16,9 +16,9 @@ export default function ReceptionSchedule() {
       });
   }, [setTable]);
   useEffect(() => {
-    const element = document.getElementById('test');
+    const element = document.getElementById('table');
     element.innerHTML = table[0]?.name;
   }, [table]);
 
-  return <ContainerTable id={'test'} />;
+  return <ContainerTable id={'table'} />;
 }

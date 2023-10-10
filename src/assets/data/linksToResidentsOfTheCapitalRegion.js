@@ -17,12 +17,6 @@ export const links = [
     name: 'Регламентирующие документы',
     cardImg: 9,
   },
-  // {
-  //   id: 7,
-  //   link: '/feedback/reception-of-citizens',
-  //   name: 'Приём граждан',
-  //   cardImg: 13,
-  // },
   {
     id: 8,
     link: '/feedback/question-answer/1',
@@ -39,6 +33,12 @@ export const links = [
     id: 10,
     link: '/feedback/leave-feedback',
     name: 'Оставить отзыв',
+    cardImg: 15,
+  },
+  {
+    id: 10,
+    link: '/posts',
+    name: 'Важно знать, безопасность',
     cardImg: 15,
   },
 ];

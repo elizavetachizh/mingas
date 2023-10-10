@@ -26,61 +26,8 @@ export const PageSection = styled.div`
   margin: 0 2%;
 `;
 
-export const Table = styled.table`
-  max-width: 100%;
-  width: 100%;
-  background-color: transparent;
-  margin-bottom: 30px;
-  border-collapse: collapse;
-  th {
-    border: 1px solid black;
-    padding: 1rem 0.5rem;
-  }
-`;
-
-export const Tbody = styled.tbody`
-  border-top: 0.1rem solid #e0e0e0;
-  text-align: left;
-  a {
-    color: #0d4475;
-  }
-`;
-
 export const Tr = styled.tr`
   font-size: 1rem;
   border-bottom: 1px solid #e0e0e0;
 `;
 
-export const Td = styled.td`
-  vertical-align: top;
-  padding: 0.2rem 0.2rem 0.6rem 0.6rem;
-  border: 0.1rem solid #e0e0e0;
-`;
-
-export const TableServices = styled.table`
-  width: 90%;
-  margin: 30px auto;
-  border-collapse: collapse;
-  @media(max-width: 700px) {
-    width: 96%;
-  }
-  td {
-    border: 1px solid #ccc;
-    text-align: center;
-    padding: 0.2rem 0.5rem;
-    font-size: 14px;
-    @media (max-width: 1152px) {
-      font-size: 12px;
-    }
-    @media (max-width: 880px) {
-      font-size: 10px;
-    }
-    @media (max-width: 540px) {
-      padding: 0;
-      font-size: 9px;
-    }
-    @media (max-width: 418px) {
-      font-size: 7px;
-    }
-  }
-`;

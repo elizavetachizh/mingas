@@ -58,6 +58,14 @@ export const Button = styled.button`
   @media (max-width: 464px) {
     font-size: 16px;
   }
+  &.cookie-container {
+    background-color:   white;
+    color: #0d4475;
+    margin: 0.5rem 0.2rem;
+    border-radius: 0;
+    padding: 1%;
+    font-size: 14px;
+  }
 `;
 
 export const ButtonForms = styled.div`

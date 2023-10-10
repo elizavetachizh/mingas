@@ -21,10 +21,16 @@ export default function Newspaper() {
     <div>
       <ContanerNewsPape>
         <img alt={''} src={require('../../../assets/png/newspaper.png')} />
+        <a href={require('../../../assets/pdf/newspaper/august_2023.pdf')} target={'_blank'} rel="opener">
+          47 выпуск / август 2023
+        </a>
+      </ContanerNewsPape>
+      <ContanerNewsPape>
+        <img alt={''} src={require('../../../assets/png/newspaper.png')} />
         <a
-            href={require('../../../assets/pdf/newspaper/last.pdf')}
-            target={'_blank'}
-            rel="opener"
+          href={require('../../../assets/pdf/newspaper/last.pdf')}
+          target={'_blank'}
+          rel="opener"
         >
           Последний выпуск от 05.12.2022
         </a>

@@ -13,7 +13,4 @@ export const DivInform = styled.div`
       text-indent: 0;
     }
   }
-  //@media (max-width: 1034px) {
-  //  flex-direction: column;
-  //}
 `;

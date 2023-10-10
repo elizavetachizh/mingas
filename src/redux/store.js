@@ -13,6 +13,7 @@ import { postsAPI } from './services/posts';
 import { divisionsAPI } from './services/departmentsDivisions';
 import { managementAPI } from './services/management';
 import { questionAnswerAPI } from './services/questonAnswer';
+import { ogonekAPI } from './services/ogonek';
 
 const rootReducer = combineReducers({
   services: servicesReducer,
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   [divisionsAPI.reducerPath]: divisionsAPI.reducer,
   [managementAPI.reducerPath]: managementAPI.reducer,
   [questionAnswerAPI.reducerPath]: questionAnswerAPI.reducer,
+  [ogonekAPI.reducerPath]: ogonekAPI.reducer,
 });
 
 export const store = configureStore({
@@ -38,5 +40,6 @@ export const store = configureStore({
     ...getDefaultMiddleware().concat(divisionsAPI.middleware),
     ...getDefaultMiddleware().concat(managementAPI.middleware),
     ...getDefaultMiddleware().concat(questionAnswerAPI.middleware),
+    ...getDefaultMiddleware().concat(ogonekAPI.middleware),
   ],
 });

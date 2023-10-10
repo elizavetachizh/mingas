@@ -42,11 +42,13 @@ import Branches from './pages/company/Branches';
 import Telemetria from './components/telemetria';
 import Posts from './components/posts';
 import GetAllPosts from './components/posts/getAllPosts';
+import ContainerCookies from "./components/ContainerCokies";
 
 export default function Routers() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+        <Route path="/politika-cookie" element={<ContainerCookies />} />
       <Route path="/services" element={<Services />} />
       <Route path="/company/history" element={<History />} />
       <Route path="/press-center/:descriptionID" element={<PressCenter />} />

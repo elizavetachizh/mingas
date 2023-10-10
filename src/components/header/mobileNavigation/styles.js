@@ -68,9 +68,6 @@ export const CompanyButton = styled(NavLink)`
   }
 `;
 
-export const ServicesButton = CompanyButton;
-export const PressCenterButtons = CompanyButton;
-
 export const DivButtonHeader = styled.div`
   display: none;
   //position: absolute;

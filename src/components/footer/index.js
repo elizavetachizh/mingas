@@ -1,7 +1,7 @@
 import React from 'react';
 import { LinkLogo, LinksContainer, Logo } from '../header/styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.webp';
-import { Contacts, Telephons, ContactInform, WorkTime, FooterContainer } from './styles';
+import { Contacts, Telephons, FooterContainer } from './styles';
 import ButtonFun from '../button';
 
 import { Prizes } from '../../pages/Home/Content/styles';
@@ -14,11 +14,11 @@ export default function Footer({ classname }) {
           <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogo} />
         </LinkLogo>
         <Prizes>
-          <img alt={'image'} src={require(`../../assets/prizes/1.webp`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/2.webp`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/3.webp`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/4.webp`)} />
-          <img alt={'image'} src={require(`../../assets/prizes/5.webp`)} />
+          <img alt={'image1'} src={require(`../../assets/prizes/1.webp`)} />
+          <img alt={'image2'} src={require(`../../assets/prizes/2.webp`)} />
+          <img alt={'image3'} src={require(`../../assets/prizes/3.webp`)} />
+          <img alt={'image4'} src={require(`../../assets/prizes/4.webp`)} />
+          <img alt={'image5'} src={require(`../../assets/prizes/5.webp`)} />
         </Prizes>
       </LinksContainer>
       <Contacts>
@@ -46,7 +46,7 @@ export default function Footer({ classname }) {
             Контакт-центр УП «МИНГАЗ» тел. <a href={'tel:162'}>162</a>
           </p>
         </Telephons>
-        <ContactInform>
+        <Telephons>
           <ButtonFun href={'/contacts/phone-services'} infoButton={'Контактная информация'} />
           <p>
             220037, г.Минск,{' '}
@@ -58,8 +58,8 @@ export default function Footer({ classname }) {
             Факс: <a href={'tel:+375 (017) 366-36-33'}>+375 (017) 366-36-33</a> E-mail:
             <a href={'mailto:root@mingas.by'}>root@mingas.by</a>
           </p>
-        </ContactInform>
-        <WorkTime>
+        </Telephons>
+        <Telephons>
           <ButtonFun href={'/contacts/work-schedule'} infoButton={'График работы'} />
           <p>Понедельник – Четверг: с 8:00 до 17:00</p>
           <p>Пятница: с 8:00 до 15:45</p>
@@ -69,7 +69,7 @@ export default function Footer({ classname }) {
               График работы центра обслуживания населения
             </a>
           </p>
-        </WorkTime>
+        </Telephons>
       </Contacts>
     </FooterContainer>
   );

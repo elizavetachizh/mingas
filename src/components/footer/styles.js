@@ -34,8 +34,6 @@ export const Telephons = styled.div`
   text-align: center;
   color: white;
 `;
-export const ContactInform = Telephons;
-export const WorkTime = Telephons;
 
 export const FooterContainer = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);

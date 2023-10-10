@@ -19,12 +19,6 @@ export const Div = styled.div`
   }
 `;
 
-export const Form = styled.form`
-  width: 250px;
-  max-width: 100%;
-  position: relative;
-`;
-
 export const Button = styled.button`
   top: 4px;
   right: 0.75rem;

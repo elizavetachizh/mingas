@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect } from 'react';
-import { BlockText } from '../../pages/Home/Content/styles';
 
 function Dots({ activeIndex, onclick, sliderImage }) {
   const getElement = useCallback((id) => {
@@ -15,7 +14,7 @@ function Dots({ activeIndex, onclick, sliderImage }) {
     });
   }, [sliderImage, getElement]);
   return (
-    <BlockText>
+    <div>
       {sliderImage.map((slide, index) => (
         <>
           {slide.button !== '' && (
@@ -29,7 +28,7 @@ function Dots({ activeIndex, onclick, sliderImage }) {
           )}
         </>
       ))}
-    </BlockText>
+    </div>
   );
 }
 

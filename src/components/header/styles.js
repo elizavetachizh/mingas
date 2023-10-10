@@ -199,7 +199,7 @@ export const LinksContainer = styled.div`
   }
 `;
 
-export const CompanyButton = styled(NavLink)`
+export const ButtonForMenu = styled(NavLink)`
   text-decoration: none;
   padding: 0 20px;
   display: flex;
@@ -232,9 +232,6 @@ export const CompanyButton = styled(NavLink)`
   }
 `;
 
-export const ServicesButton = CompanyButton;
-export const ContactButton = CompanyButton;
-export const PressCenterButtons = CompanyButton;
 export const PersonalAccButton = styled.a`
   text-decoration: none;
   justify-content: space-between;

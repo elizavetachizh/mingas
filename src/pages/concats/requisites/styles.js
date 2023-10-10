@@ -30,11 +30,3 @@ export const Abbreviated = styled.div`
     font-weight: lighter;
   }
 `;
-
-export const Certificate = Abbreviated;
-
-export const NameBank = Abbreviated;
-
-export const NumberScore = Abbreviated;
-
-export const Codbank = Abbreviated;

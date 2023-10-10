@@ -4,43 +4,29 @@ import {
   Background,
   Menu,
   MenuClose,
-  LinkLogo,
-  Logo,
   ButtonsContainer,
-  CompanyButton,
-  ServicesButton,
-  ContactButton,
-  PressCenterButtons,
   Dropdown,
   DivButtonHeader,
   DivColumn,
   BackgroundText,
-  ContainerElements,
-  DivFirstHeader,
-  Div104,
-  DivPhone,
-  IoMdEyeOffs,
   IoIosMenus,
   IoIosCloses,
   ContanerLink,
-  PersonalAccButton,
-  IoMdContacts,
+  ButtonForMenu,
 } from './styles';
-import HeaderLogoBlue from '../../assets/png/mingaz_logo_white.webp';
 import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
-import Language from './language';
 import { NavLink } from 'react-router-dom';
-import SearchPage from '../../pages/SearchPage';
 import { IoIosArrowForward } from 'react-icons/io';
-import { FiShoppingCart } from 'react-icons/fi';
-import {useDispatch, useSelector} from 'react-redux';
-import {useFetchServicesQuery} from "../../redux/services/services";
-import {useFetchMainPostsQuery} from "../../redux/services/mainpost";
-import {useFetchPostsQuery} from "../../redux/services/posts";
-import {setServices} from "../../redux/slices/servicesSlice";
-import {setMainPosts} from "../../redux/slices/mainPostsSlice";
-import {setPosts} from "../../redux/slices/postsSlice";
+import { useDispatch } from 'react-redux';
+import { useFetchServicesQuery } from '../../redux/services/services';
+import { useFetchMainPostsQuery } from '../../redux/services/mainpost';
+import { useFetchPostsQuery } from '../../redux/services/posts';
+import { setServices } from '../../redux/slices/servicesSlice';
+import { setMainPosts } from '../../redux/slices/mainPostsSlice';
+import { setPosts } from '../../redux/slices/postsSlice';
+import linksForMenu from '../../const/consts';
+import UpperContainerHeader from './UpperContainerHeader';
 export default function Header({ backgroundHeader }) {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -75,7 +61,6 @@ export default function Header({ backgroundHeader }) {
       <IoIosCloses />
     </MenuClose>
   );
-  const service = useSelector((state) => state.services.data);
 
   return (
     <Container backgroundHeader={backgroundHeader}>
@@ -84,198 +69,35 @@ export default function Header({ backgroundHeader }) {
         {open ? closeMobile : openMobile}
         <BackgroundText>
           <DivColumn>
-            <DivFirstHeader>
-              <DivPhone>
-                <LinkLogo to="/">
-                  <Logo src={HeaderLogoBlue} />
-                </LinkLogo>
-                <Div104>
-                  <div>
-                    <a href={'tel:104'}>104</a>
-                  </div>
-                  <p>Аварийная служба</p>
-                </Div104>
-                <Div104>
-                  <div>
-                    <a href={'tel:162'}>162</a>
-                  </div>
-                  <p>Контакт-центр</p>
-                </Div104>
-              </DivPhone>
-              <Logo className={'gerb'} src={require('../../assets/png/gerb_white.webp')} />
-              <ContainerElements>
-                <PersonalAccButton
-                  title="Контакт-центр"
-                  href={'https://service.mingas.by:5002/auth/login#login'}
-                >
-                  <IoMdContacts className={'icon'} />
-                </PersonalAccButton>
-                <PersonalAccButton
-                  target={'_blank'}
-                  title="Магазин"
-                  href={'https://20393.shop.onliner.by/'}
-                >
-                  <FiShoppingCart style={{ width: '34px', height: '34px' }} className={'icon'} />
-                </PersonalAccButton>
-                <SearchPage />
-                <Language />
-                <a href={'http://finevision.ru/?hostname=mingas.by&path=/'}>
-                  <IoMdEyeOffs className={'icon'} />
-                </a>
-              </ContainerElements>
-            </DivFirstHeader>
+            <UpperContainerHeader />
             <ButtonsContainer>
-              <Dropdown className={'header-btns'}>
-                <CompanyButton to="/company/history">
-                  Мингаз сегодня
-                  <span />
-                </CompanyButton>
-                <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/company/history">История предприятия</ButtonLink>
-                  <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
-                  <ButtonLink to="/company/management/all-departments">
-                    Подразделения УП "МИНГАЗ"
-                  </ButtonLink>
-                  <ButtonLink to="/company/career"> Работа в УП "Мингаз"</ButtonLink>
-                  <ButtonLink to="/company/parent-organizations">
-                    Вышестоящие организации
-                  </ButtonLink>
-                  <ContanerLink>
-                    <ButtonLink to="/company/branches" style={{ width: '100%' }}>
-                      Филиалы УП "Мингаз" <IoIosArrowForward color={'#0d4475'} />{' '}
-                    </ButtonLink>
-
-                    <span style={{ margin: '20% 0 0' }}>
-                      <NavLink to="/company/branches/ogonek">
-                        Филиал оздоровительный комплекс "Огонёк"
-                      </NavLink>
-                      <NavLink to="/company/branches/Bubni">Филиал "Бубны"</NavLink>
-                      <NavLink to="/company/branches/TBZ">
-                        Филиал "Торфобрикетный завод "Сергеевическое"
-                      </NavLink>
-                    </span>
-                  </ContanerLink>
-                  {/*</ButtonLink>*/}
-                  <ButtonLink to="/company/corruption">Противодействие коррупции</ButtonLink>
-                  <ButtonLink to="/company/documentation">
-                    Сертификаты, лицензии, свидетельства
-                  </ButtonLink>
-                  <ButtonLink to="/company/gratitude">Благодарности и награды</ButtonLink>
-                </DivButtonHeader>
-              </Dropdown>
-
-              <Dropdown>
-                <ServicesButton to="/residents-of-the-capital-region">
-                  Жителям столичного региона
-                  <span />
-                </ServicesButton>
-                <DivButtonHeader className={'header-btns'}>
-                  <ContanerLink>
-                    <ButtonLink rel="canonical" to="/services">
-                      Услуги <IoIosArrowForward color={'#0d4475'} />
-                    </ButtonLink>
-                    <span>
-                      <NavLink to="/services/administrative-services">
-                        Административные процедуры
-                      </NavLink>
-                      <NavLink to="/residents/price">Прейскурант цен</NavLink>
-                      {service.map(
-                        (element) =>
-                          element.type === '1' && (
-                            <NavLink key={element._id} to={`/services/${element._id}`}>
-                              {element.name}
-                            </NavLink>
-                          )
+              {linksForMenu().map((el) => (
+                <Dropdown>
+                  <ButtonForMenu to={`${el.link}`}>
+                    {el.name} <span />
+                  </ButtonForMenu>
+                  {el.arrayOfLinks && (
+                    <DivButtonHeader className={'header-btns'}>
+                      {el.arrayOfLinks.map((link) =>
+                        link?.arrayOfSubLinks ? (
+                          <ContanerLink>
+                            <ButtonLink to={`${link.link}`}>
+                              {link.name} <IoIosArrowForward color={'#0d4475'} />
+                            </ButtonLink>
+                            <span style={{ margin: '20% 0 0' }}>
+                              {link?.arrayOfSubLinks.map((subLink) => (
+                                <NavLink to={`${subLink.link}`}>{subLink.name}</NavLink>
+                              ))}
+                            </span>
+                          </ContanerLink>
+                        ) : (
+                          <ButtonLink to={`${link.link}`}>{link.name}</ButtonLink>
+                        )
                       )}
-                    </span>
-                  </ContanerLink>
-
-                  <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-                  <ButtonLink to="/regulatory-documents/Законы">
-                    Регламентирующие документы
-                  </ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer/63930a954fe167e2981cc2e1'}>
-                    Часто задаваемые вопросы
-                  </ButtonLink>
-                  <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
-                  <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
-                  <ButtonLink to={'/posts/'}>Важно знать, безопасность</ButtonLink>
-                </DivButtonHeader>
-              </Dropdown>
-
-              <Dropdown>
-                <ServicesButton rel="canonical" to="/for-business">
-                  Для бизнеса <span />
-                </ServicesButton>
-                <DivButtonHeader className={'header-btns'}>
-                  <ContanerLink>
-                    <ButtonLink to="/services-legal-entities">
-                      Услуги <IoIosArrowForward color={'#0d4475'} />
-                    </ButtonLink>
-                    <span>
-                      {service.map(
-                        (element) =>
-                          element.type === '2' && (
-                            <NavLink
-                              key={element._id}
-                              to={`/services-legal-entities/${element._id}`}
-                            >
-                              {element.name}
-                            </NavLink>
-                          )
-                      )}
-                    </span>
-                  </ContanerLink>
-                  <ButtonLink to="/feedback/electronic-appeal">
-                    Обращение юридических лиц
-                  </ButtonLink>
-                  <ButtonLink to="/tenders">Тендеры</ButtonLink>
-                  <ButtonLink to={'/feedback/question-answer/63930a954fe167e2981cc2e1'}>
-                    Часто задаваемые вопросы
-                  </ButtonLink>
-                  <ButtonLink to="/services-legal-entities/administrative-services-legal/">
-                    Административные процедуры
-                  </ButtonLink>
-                  <ButtonLink to="/regulatory-documents-for-business/Законы">
-                    Регламентирующие документы
-                  </ButtonLink>
-                </DivButtonHeader>
-              </Dropdown>
-
-              <Dropdown>
-                <PressCenterButtons to="/press-center/1">
-                  Пресс-центр
-                  <span />
-                </PressCenterButtons>
-                <DivButtonHeader className={'header-btns'}>
-                  <ButtonLink to="/press-center/1">Лента новостей</ButtonLink>
-                  <ButtonLink to="/press-center/2">
-                    Корпоротивная газета "Столичный газовик"
-                  </ButtonLink>
-                  <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
-                </DivButtonHeader>
-              </Dropdown>
-              <Dropdown>
-                <ContactButton rel="canonical" to="/contacts/phone-services">
-                  Контакты
-                  <span />
-                </ContactButton>
-                <DivButtonHeader className={'header-btns'}>
-                  {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
-                  <ButtonLink to="/contacts/work-schedule">
-                    График личного приёма граждан
-                  </ButtonLink>
-                  <ButtonLink to="/contacts/phone-services">
-                    Телефоны служб по работе с клиентами
-                  </ButtonLink>
-                  <ButtonLink to="/contacts/requisites">Реквизиты предприятия</ButtonLink>
-                </DivButtonHeader>
-              </Dropdown>
-              <ServicesButton to="/company/union">
-                Профсоюз
-                <span />
-              </ServicesButton>
-              {/*<MingasShopBtn href={'https://mingas-shop.by/'}>Интернет-магазин</MingasShopBtn>*/}
+                    </DivButtonHeader>
+                  )}
+                </Dropdown>
+              ))}
             </ButtonsContainer>
           </DivColumn>
         </BackgroundText>

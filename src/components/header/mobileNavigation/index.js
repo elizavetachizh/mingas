@@ -3,8 +3,6 @@ import {
   DivButtonHeader,
   Dropdown,
   LinksContainer,
-  PressCenterButtons,
-  ServicesButton,
   DivBlocksHeader,
   ContainerAbsolute,
 } from './styles';
@@ -169,13 +167,13 @@ export default function MobileNavigation() {
 
         <Dropdown>
           <DivBlocksHeader>
-            <PressCenterButtons
+            <CompanyButton
               className={isOpenBtnForPressCenter && `handleBtn`}
               to="/press-center/1"
             >
               Пресс-центр
               <span />
-            </PressCenterButtons>
+            </CompanyButton>
             <div>
               {isOpenBtnForPressCenter ? (
                 <IoIosArrowUp onClick={animateOpenBtnForPressCenter} />
@@ -186,9 +184,7 @@ export default function MobileNavigation() {
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtnForPressCenter && `handleBtn`}>
             <div>
-              {' '}
               <ButtonLink to="/press-center/1">Лента новостей</ButtonLink>
-              {/*<ButtonLink to="/press-center/2">Новости</ButtonLink>*/}
               <ButtonLink to="/press-center/2">Корпоротивная газета "Столичный газовик"</ButtonLink>
               <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
             </div>
@@ -213,8 +209,6 @@ export default function MobileNavigation() {
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtnForContacts && `handleBtn`}>
             <div>
-              {' '}
-              {/*<ButtonLink to="/contacts/phone-services">Контактная информация</ButtonLink>*/}
               <ButtonLink to="/contacts/work-schedule">График личного приёма граждан</ButtonLink>
               <ButtonLink to="/contacts/phone-services">
                 Телефоны служб по работе с клиентами
@@ -224,7 +218,7 @@ export default function MobileNavigation() {
           </DivButtonHeader>
         </Dropdown>
 
-        <ServicesButton to="/company/union">Профсоюз</ServicesButton>
+        <CompanyButton to="/company/union">Профсоюз</CompanyButton>
       </LinksContainer>
     </ContainerAbsolute>
   );

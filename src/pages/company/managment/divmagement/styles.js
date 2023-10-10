@@ -43,6 +43,3 @@ export const ImageLeader = styled.img`
 export const FullNameLeader = styled.p`
   text-align: center;
 `;
-export const PositionLeader = styled.p`
-  text-align: center;
-`;

@@ -7,15 +7,15 @@ export const ContainerContent = styled.div`
   height: 576px;
   margin-top: 154px;
   //position: relative;
-&.parallax{
-  height: 530px;
-  @media (max-width: 1500px) {
-    height: 380px;
+  &.parallax {
+    height: 530px;
+    @media (max-width: 1500px) {
+      height: 380px;
+    }
+    @media (max-width: 630px) {
+      height: 320px;
+    }
   }
-  @media (max-width: 630px) {
-    height: 320px;
-  }
-}
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
@@ -188,11 +188,6 @@ export const DivText = styled.div`
     }
 `;
 
-export const DivInformAbout = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const Text = styled.p`
   font-weight: bold;
   font-size: 30px;
@@ -325,17 +320,12 @@ export const ContainerText = styled.div`
   &::-webkit-scrollbar-thumb {
     border-radius: 100px;
     background-color: #666;
-    
   }
 `;
 
 export const ContainerImage = styled.div`
-  //height: 500px;
-  //display: flex;
-  //flex: 1 1 auto;
   position: absolute;
   width: 100%;
   margin: 0 auto;
 `;
 
-export const BlockText = styled.div``;

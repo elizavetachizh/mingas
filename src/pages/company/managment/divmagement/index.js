@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { ContainerLeaders, ImageLeader, FullNameLeader, PositionLeader } from './styles';
+import { ContainerLeaders, ImageLeader, FullNameLeader } from './styles';
 
 export default function Leaders({
   cardImg,
@@ -19,7 +19,7 @@ export default function Leaders({
       </div>
       <p style={{ display: 'none' }}>{idName}</p>
       <FullNameLeader>{fullName}</FullNameLeader>
-      <PositionLeader>{position}</PositionLeader>
+      <FullNameLeader>{position}</FullNameLeader>
     </ContainerLeaders>
   );
 }
