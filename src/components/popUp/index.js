@@ -7,13 +7,11 @@ export default function PopUp({ handleCloseCLick, text }) {
     event.stopPropagation();
   };
   return (
-    <>
-      <ModalWindow onClick={handleCloseCLick}>
-        <ModalWindowOpenAndClose onClick={handleInsideClick}>
-          <InformModal>{text}</InformModal>
-          <Button onClick={handleCloseCLick}>ok</Button>
-        </ModalWindowOpenAndClose>
-      </ModalWindow>
-    </>
+    <ModalWindow onClick={handleCloseCLick}>
+      <ModalWindowOpenAndClose onClick={handleInsideClick}>
+        <InformModal>{text}</InformModal>
+        <Button onClick={handleCloseCLick}>ok</Button>
+      </ModalWindowOpenAndClose>
+    </ModalWindow>
   );
 }

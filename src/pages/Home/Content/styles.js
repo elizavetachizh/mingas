@@ -78,27 +78,6 @@ export const DivText = styled.div`
       font-weight: bold;
     }
   }
-  &.priem {
-    flex-direction: column;
-    width: 40%;
-    margin: 0 50%;
-    align-items: center;
-    @media(max-width: 1000px){
-      margin: -10px 50%;
-    }
-    @media(max-width: 600px){
-      position: absolute;
-      color: black;
-      width: 90%;
-      margin: 0 auto;
-      height: 100%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
   }
   &.phone {
     @media (max-width: 1100px) {
@@ -197,27 +176,6 @@ export const Text = styled.p`
   a {
     color: white;
   }
-  &.priem {
-    color: black;
-    font-size: 22px;
-    text-align: justify;
-    padding-left: 20px;
-    @media (max-width: 1000px) {
-      font-size: 18px;
-    }
-    @media (max-width: 800px) {
-      font-size: 16px;
-    }
-    @media (max-width: 650px) {
-      font-size: 14px;
-    }
-    @media (max-width: 600px) {
-      color: #ffff;
-      text-align: center;
-      font-size: 16px;
-      padding-left: 0;
-    }
-  }
   &.phone {
     @media (max-width: 600px) {
       margin-bottom: 50px;
@@ -273,16 +231,12 @@ export const Prizes = styled.div`
     margin: 10px;
     width: 50px;
     height: 50px;
-  }
-  @media (max-width: 438px) {
-    img {
+    @media (max-width: 438px) {
       width: 40px;
       height: 40px;
       margin: 8px;
     }
-  }
-  @media (max-width: 348px) {
-    img {
+    @media (max-width: 348px) {
       width: 34px;
       height: 34px;
     }
@@ -328,4 +282,3 @@ export const ContainerImage = styled.div`
   width: 100%;
   margin: 0 auto;
 `;
-

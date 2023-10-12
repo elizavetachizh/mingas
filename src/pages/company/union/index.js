@@ -10,7 +10,7 @@ import ContainerContent from '../../../components/Container';
 
 export default function Union() {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1000 });
   }, []);
   return (
     <ContainerContent

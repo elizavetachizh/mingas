@@ -87,24 +87,16 @@ export const ContainerTable = styled.div`
       td {
         padding: 0 0.5rem;
         @media (max-width: 538px) {
-          & {
-            font-size: 14px;
-          }
+          font-size: 14px;
         }
         @media (max-width: 478px) {
-          & {
-            font-size: 12px;
-          }
+          font-size: 12px;
         }
         @media (max-width: 416px) {
-          & {
-            padding: 0;
-          }
+          padding: 0;
         }
         @media (max-width: 365px) {
-          & {
-            font-size: 10px;
-          }
+          font-size: 10px;
         }
       }
     }
@@ -113,30 +105,15 @@ export const ContainerTable = styled.div`
       th {
         padding: 0.5rem 0;
         @media (max-width: 538px) {
-          & {
-            font-size: 14px;
-          }
+          font-size: 14px;
         }
         @media (max-width: 478px) {
-          & {
-            font-size: 12px;
-          }
+          font-size: 12px;
         }
         @media (max-width: 365px) {
-          & {
-            font-size: 10px;
-          }
+          font-size: 10px;
         }
       }
     }
-  }
-`;
-
-export const BlockForAdmissionSchedule = styled.div`
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-  &:hover {
-    text-decoration-line: underline;
   }
 `;

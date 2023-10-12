@@ -20,26 +20,8 @@ export default function SMI() {
     }
   }, [isLoading, dispatch, fetchPosts]);
   const [isOpen, setIsOpen] = useState(false);
-  const animate = () => {
-    setIsOpen(true);
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  };
   const [isClose, setIsClose] = useState(false);
-  const animateClose = () => {
-    setIsClose(true);
-    if (isClose) {
-      setIsClose(false);
-    }
-  };
   const [isOpenTV, setIsOpenTV] = useState(false);
-  const animateVideo = () => {
-    setIsOpenTV(true);
-    if (isOpenTV) {
-      setIsOpenTV(false);
-    }
-  };
   //
   const posts = useSelector((state) => state.posts.data);
 
@@ -51,7 +33,7 @@ export default function SMI() {
         является для нас приоритетом. Контактный телефон: 8017-299-29-47
       </p>
       <General>
-        <BtnIsOpen onClick={animate}>
+        <BtnIsOpen onClick={() => setIsOpen(!isOpen)}>
           <p>Видеотека</p>
           <div>
             {isOpen ? (
@@ -99,7 +81,7 @@ export default function SMI() {
         </Div>
       </General>
       <General>
-        <BtnIsOpen onClick={animateClose}>
+        <BtnIsOpen onClick={() => setIsClose(!isClose)}>
           <p>Статьи</p>
           <div>
             {isClose ? (
@@ -122,7 +104,7 @@ export default function SMI() {
         </Div>
       </General>
       <General>
-        <BtnIsOpen onClick={animateVideo}>
+        <BtnIsOpen onClick={() => setIsOpenTV(!isOpenTV)}>
           <p>Мингаз-ТВ</p>
           <div>
             {isOpenTV ? (

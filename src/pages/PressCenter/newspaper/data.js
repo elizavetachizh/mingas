@@ -155,16 +155,4 @@ export const data = [
     data: 'май 2018 г.',
     link: 'thirty_two',
   },
-  // {
-  //   id: 29,
-  //   name: 'Столичный Газовик № 33',
-  //   data: 'август 2018 г.',
-  //   link: 'https://back.mingas.by/public/newspapers/gazeta_33.pdf',
-  // },
-  // {
-  //   id: 30,
-  //   name: 'Столичный Газовик № 34',
-  //   data: 'декабрь 2018 г.',
-  //   link: 'https://back.mingas.by/public/newspapers/gazeta_34.pdf',
-  // },
 ];

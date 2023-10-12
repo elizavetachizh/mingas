@@ -41,13 +41,6 @@ export default function RegulatoryDocumentComponent({ title, type, router }) {
       });
   }, [setInfo]);
 
-  const handleForm = () => {
-    setIsForm(true);
-    if (isForm) {
-      setIsForm(false);
-    }
-  };
-
   const handleChange = useCallback((event) => {
     setMessage(event.target.value);
   }, []);
@@ -93,7 +86,7 @@ export default function RegulatoryDocumentComponent({ title, type, router }) {
                 {isForm ? (
                   <IoIosSearch style={{ display: 'none' }} />
                 ) : (
-                  <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
+                  <SearchService style={{ width: '80%' }} onClick={() => setIsForm(!isForm)}>
                     <p>Поиск по регламентирующим документам</p>
                     <IoIosSearch
                       style={{ height: '30px', width: '30px' }}
@@ -137,7 +130,7 @@ export default function RegulatoryDocumentComponent({ title, type, router }) {
                   {isForm ? (
                     <IoIosSearch style={{ display: 'none' }} />
                   ) : (
-                    <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
+                    <SearchService style={{ width: '80%' }} onClick={() => setIsForm(!isForm)}>
                       <p>Поиск по регламентирующим документам</p>
                       <IoIosSearch
                         style={{ height: '30px', width: '30px' }}

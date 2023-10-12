@@ -15,25 +15,21 @@ export default function DopFunctionService({
   keys,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const animate = () => {
-    setIsOpen(true);
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  };
 
   const getElement = useCallback((inform) => {
     return document.getElementById(`description-${inform}`);
   }, []);
+
   useEffect(() => {
     const element = getElement(inform);
     if (element && !element.innerHTML) {
       element.innerHTML += inform;
     }
   }, [getElement, inform]);
+
   return (
     <General key={keys} className={classnamegeneral} style={style}>
-      <BtnIsOpen className={classname} onClick={animate}>
+      <BtnIsOpen className={classname} onClick={() => setIsOpen(!isOpen)}>
         <p>{nameDescription}</p>
         <div>
           {isOpen ? (
@@ -44,7 +40,6 @@ export default function DopFunctionService({
         </div>
       </BtnIsOpen>
       <Div className={isOpen && `shake`}>
-        {/*<DescriptionService id={`description-${inform}`}>{inform}</DescriptionService>*/}
         <DescriptionService id={`description-${inform}`} />
       </Div>
     </General>

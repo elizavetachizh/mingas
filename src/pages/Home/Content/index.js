@@ -23,9 +23,11 @@ export default function ContentHome() {
         console.log(e);
       });
   }, []);
+
   useEffect(() => {
     setSliceInfo(info);
   }, [info]);
+
   return (
     <>
       {isPhone ? (

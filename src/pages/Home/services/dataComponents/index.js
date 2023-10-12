@@ -2,11 +2,11 @@ import React, { useCallback } from 'react';
 import { ContainerServices, Imagecard, Textcard } from './styles';
 import { useNavigate } from 'react-router';
 
-export default function LinkServices({nameCard, cardId }) {
+export default function LinkServices({nameCard, cardId, link }) {
   const navigate = useNavigate();
   const handlerLinkClick = useCallback(() => {
-    navigate(`/services/${cardId}`);
-  }, [cardId, navigate]);
+    navigate(`/${link}/${cardId}`);
+  }, [cardId, link, navigate]);
 
   return (
     <ContainerServices onClick={() => handlerLinkClick(nameCard)}>

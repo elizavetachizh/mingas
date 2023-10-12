@@ -7,7 +7,6 @@ export default function LinkNews({ href, src, cardDesc }) {
       <a rel="noopener" target={'_blank'} href={href}>
         <img alt={''} src={src} />
         <p>{cardDesc}</p>
-        {/*<p>{''}</p>*/}
       </a>
     </ArticleForHome>
   );

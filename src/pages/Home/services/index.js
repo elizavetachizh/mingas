@@ -3,9 +3,8 @@ import ButtonFun from '../../../components/button';
 import { Container, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
 import TitleForHome from '../../../components/TitleForHome';
-import LinkServicesForLegalEntities from './dataComponentsForLEgalEntities';
 import { useSelector } from 'react-redux';
-import Loader from "../../../components/Loader";
+import Loader from '../../../components/Loader';
 
 export default function HomeServices() {
   const service = useSelector((state) => state.services.data);
@@ -35,7 +34,12 @@ export default function HomeServices() {
               .map(
                 (element) =>
                   element.type === '1' && (
-                    <LinkServices key={element._id} cardId={element._id} nameCard={element.name} />
+                    <LinkServices
+                      key={element._id}
+                      cardId={element._id}
+                      nameCard={element.name}
+                      link={'services'}
+                    />
                   )
               )}
           </DivDown>
@@ -45,7 +49,8 @@ export default function HomeServices() {
               .map(
                 (element) =>
                   element.type === '2' && (
-                    <LinkServicesForLegalEntities
+                    <LinkServices
+                      link={'services-legal-entities'}
                       key={element._id}
                       cardId={element._id}
                       nameCard={element.name}
@@ -55,7 +60,7 @@ export default function HomeServices() {
           </DivDown>
         </ServicesDiv>
       ) : (
-       <Loader/>
+        <Loader />
       )}
     </Container>
   );

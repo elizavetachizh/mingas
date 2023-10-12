@@ -17,11 +17,8 @@ export default function Management() {
     setNameId(leader._id);
   }, []);
 
-  const handleCloseCLick = useCallback(() => {
-    setModalVisible(false);
-  }, []);
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 1000 });
     window.scrollTo(0, 0);
   }, []);
 
@@ -65,7 +62,7 @@ export default function Management() {
           <DivLeadersPhotoPosition>
             {management?.length ? (
               <>
-                {management.map((element) => (
+                {management?.map((element) => (
                   <Leaders
                     idName={element._id}
                     handlerLeaderClick={handlerLeaderClick}
@@ -84,7 +81,7 @@ export default function Management() {
           {isModalVisible && (
             <Modal
               index={nameId}
-              handleCloseCLick={handleCloseCLick}
+              handleCloseCLick={()=>setModalVisible(false)}
               currentLeader={currentLeader}
               nameId={nameId}
             />

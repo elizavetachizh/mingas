@@ -154,15 +154,6 @@ export const DivImage = styled.div`
       object-fit: cover;
       height: 400px;
     }
-    &.priem {
-      filter: blur(3px) brightness(0.5);
-      width: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      object-fit: cover;
-      height: 400px;
-    }
   }
   &.none:after {
     content: none;
@@ -242,15 +233,6 @@ export const DivImageNew = styled.div`
     }
 
     &.newpost {
-      width: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      object-fit: cover;
-      height: 400px;
-    }
-    &.priem {
-      filter: blur(3px) brightness(0.5);
       width: 100%;
       background-size: cover;
       background-position: 50% 50%;

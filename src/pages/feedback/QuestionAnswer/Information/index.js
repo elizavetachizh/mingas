@@ -61,17 +61,6 @@ export default function Information() {
     [navigate, pathname, themById]
   );
 
-  const handleForm = () => {
-    setIsForm(true);
-    if (isForm) {
-      setIsForm(false);
-    }
-  };
-
-  const handleSearch = useCallback((event) => {
-    setKey(event.target.value);
-  }, []);
-
   const handleInsideClick = (event) => {
     event.stopPropagation();
     setIsForm(false);
@@ -95,7 +84,7 @@ export default function Information() {
                   {isForm ? (
                     <IoIosSearch style={{ display: 'none' }} />
                   ) : (
-                    <SearchService style={{ width: '80%' }} onClick={() => handleForm()}>
+                    <SearchService style={{ width: '80%' }} onClick={() => setIsForm(!isForm)}>
                       <p>Поиск по часто задаваемым вопросам</p>
                       <IoIosSearch
                         style={{ height: '30px', width: '30px' }}
@@ -109,7 +98,7 @@ export default function Information() {
                       <form action={'search'}>
                         <input
                           placeholder="Введите интересующий вас вопрос"
-                          onChange={handleSearch}
+                          onChange={(event) => setKey(event.target.value)}
                           type={'text'}
                         />
                         <IoMdClose

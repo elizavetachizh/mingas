@@ -12,7 +12,7 @@ import DopFunctionalHeader from '../../pages/services/NaturalGas/DopFunctionalHe
 import DopFunctionService from '../../pages/services/DopFunction';
 import Loader from '../Loader';
 
-export default function ServicesComponent({router, type, titleName}) {
+export default function ServicesComponent({ router, type, titleName }) {
   const [inform, setInform] = useState([]);
   const [currentServiceID, setServiceID] = useState(null);
   const [title, setTitle] = useState([]);

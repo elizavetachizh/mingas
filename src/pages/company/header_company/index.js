@@ -7,21 +7,17 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { linksHeaderCompany } from '../../../const/consts';
 
 export default function HeaderCompany() {
   const isPhone = useMediaQuery('(max-width: 720px)');
   const [isOpen, setIsOpen] = useState(false);
-  const animate = () => {
-    setIsOpen(true);
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  };
+
   return (
     <HeaderCompanyContainer>
       {isPhone ? (
         <General className={'menu'}>
-          <BtnIsOpen className={'menu'} onClick={animate}>
+          <BtnIsOpen className={'menu'} onClick={() => setIsOpen(!isOpen)}>
             <p>Меню</p>
             <div>
               {isOpen ? (
@@ -33,42 +29,18 @@ export default function HeaderCompany() {
           </BtnIsOpen>
           <Div className={isOpen && `shake menu`}>
             <DivButton className={'menu'}>
-              <HeaderCompanyBtn to="/company/history">История предприятия</HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/management">Руководство</HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/management/all-departments">
-                Подразделения
-              </HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/career">Работа в УП "МИНГАЗ"</HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/parent-organizations">
-                Вышестоящие организации
-              </HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/branches">Филиалы УП "Мингаз"</HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/corruption">
-                Противодействие коррупции
-              </HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/documentation">
-                Сертификаты, лицензии, свидетельства
-              </HeaderCompanyBtn>
-              <HeaderCompanyBtn to="/company/gratitude">Благодарности и награды</HeaderCompanyBtn>
+              {linksHeaderCompany.map((el) => (
+                <HeaderCompanyBtn to={`/company/${el.link}`}>{el.name}</HeaderCompanyBtn>
+              ))}
             </DivButton>
           </Div>
         </General>
       ) : (
         <HeaderCompanyDiv>
           <DivButton>
-            <HeaderCompanyBtn to="/company/history">История предприятия</HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/management">Руководство</HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/management/all-departments">Подразделения</HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/career">Работа в УП "МИНГАЗ"</HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/parent-organizations">
-              Вышестоящие организации
-            </HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/branches/">Филиалы УП "Мингаз"</HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/corruption">Противодействие коррупции</HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/documentation">
-              Сертификаты, лицензии, свидетельства
-            </HeaderCompanyBtn>
-            <HeaderCompanyBtn to="/company/gratitude">Благодарности и награды</HeaderCompanyBtn>
+            {linksHeaderCompany.map((el) => (
+              <HeaderCompanyBtn to={`/company/${el.link}`}>{el.name}</HeaderCompanyBtn>
+            ))}
           </DivButton>
           <hr />
         </HeaderCompanyDiv>
