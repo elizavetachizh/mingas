@@ -90,7 +90,7 @@ export default function linksForMenu() {
       arrayOfLinks: [
         { name: 'Услуги', link: '/services' },
         { name: 'Административные процедуры', link: '/services/administrative-services' },
-        { name: 'Онлайн заявки', link: 'feedback/online-application' },
+        { name: 'Онлайн заявки', link: '/feedback/online-application' },
         { name: 'Регламентирующие документы', link: '/regulatory-documents/Законы' },
         {
           name: 'Часто задаваемые вопросы',
@@ -110,7 +110,7 @@ export default function linksForMenu() {
       arrayOfLinks: [
         { name: 'Услуги', link: '/services-legal-entities' },
         { name: 'Обращение юридических лиц', link: '/feedback/electronic-appeal' },
-        { name: 'Тендеры', link: '/feedback/electronic-appeal' },
+        { name: 'Тендеры', link: '/tenders' },
         {
           name: 'Часто задаваемые вопросы',
           link: '/feedback/question-answer/63930a954fe167e2981cc2e1',
