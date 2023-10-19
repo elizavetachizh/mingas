@@ -17,6 +17,7 @@ import { ContainerParallax } from '../styles';
 import { BtnOpenInform } from '../../../../components/MethodPayment/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../../../assets/png/up_arrow_round.png';
+import Loader from '../../../../components/Loader';
 
 export default function SchemaOfBranches({ name, background, carta, info }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function SchemaOfBranches({ name, background, carta, info }) {
       }
       if (id === el._id) {
         setId('');
-        setContent('')
+        setContent('');
       }
     },
     [id, isOpen]
@@ -47,6 +48,7 @@ export default function SchemaOfBranches({ name, background, carta, info }) {
     });
   };
   const element = document.getElementById(`content-${id}`);
+
   useEffect(() => {
     if (element && !element.innerHTML) {
       element.innerHTML += content;
@@ -67,29 +69,36 @@ export default function SchemaOfBranches({ name, background, carta, info }) {
         </Parallax>
       </ContainerParallax>
       <AdditionalDiv style={{ margin: '0 auto 4%' }} ref={myRef}>
-        {info?.map((el) => (
-          <General className={'leave-feedback'}>
-            <BtnIsOpen onClick={() => animate(el)}>
-              <p style={{ textAlign: 'center', fontSize: '18px' }}>{el.title}</p>
-              <div>
-                {isOpen && id === el._id ? (
-                  <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
-                ) : (
-                  <IoIosArrowDown
-                    onClick={() => {
-                      setId(el._id);
-                      setContent(el.content);
-                    }}
-                    style={{ color: '#0e43af', margin: '38% 0' }}
-                  />
-                )}
-              </div>
-            </BtnIsOpen>
-            <Div className={id === el._id && `shake`}>
-              <DescriptionService id={`content-${el._id}`} />
-            </Div>
-          </General>
-        ))}
+        {info?.length ? (
+          <>
+            {' '}
+            {info?.map((el) => (
+              <General className={'leave-feedback'}>
+                <BtnIsOpen onClick={() => animate(el)}>
+                  <p style={{ textAlign: 'center', fontSize: '18px' }}>{el.title}</p>
+                  <div>
+                    {isOpen && id === el._id ? (
+                      <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
+                    ) : (
+                      <IoIosArrowDown
+                        onClick={() => {
+                          setId(el._id);
+                          setContent(el.content);
+                        }}
+                        style={{ color: '#0e43af', margin: '38% 0' }}
+                      />
+                    )}
+                  </div>
+                </BtnIsOpen>
+                <Div className={id === el._id && `shake`}>
+                  <DescriptionService id={`content-${el._id}`} />
+                </Div>
+              </General>
+            ))}
+          </>
+        ) : (
+          <Loader />
+        )}
         <General style={{ borderRadius: 'none', border: 'none' }} className={'leave-feedback'}>
           {carta}
         </General>

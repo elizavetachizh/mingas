@@ -35,6 +35,34 @@ export const HeaderBtnFeedback = styled.div`
     width: 90%;
   }
 `;
+
+export const ContainerPagination = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  a,
+  button {
+    @media (max-width: 420px) {
+      font-size: 14px;
+    }
+    @media (max-width: 360px) {
+      font-size: 12px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    width: 40%;
+    padding: 0;
+    padding-inline-start: 0;
+    justify-content: space-around;
+    display: flex;
+    li.uk-active a {
+      font-weight: bold;
+    }
+  }
+`;
 export const Button = styled.button`
   color: white;
   font-size: 18px;
@@ -52,6 +80,11 @@ export const Button = styled.button`
     border-radius: 30px;
     color: #0d4475;
   }
+  &.pagination {
+    background-color: white;
+    border-radius: 30px;
+    color: #0d4475;
+  }
   @media (max-width: 700px) {
     text-align: center;
   }
@@ -59,7 +92,7 @@ export const Button = styled.button`
     font-size: 16px;
   }
   &.cookie-container {
-    background-color:   white;
+    background-color: white;
     color: #0d4475;
     margin: 0.5rem 0.2rem;
     border-radius: 0;

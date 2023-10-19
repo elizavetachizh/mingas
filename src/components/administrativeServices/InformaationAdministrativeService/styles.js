@@ -19,7 +19,7 @@ export const Div = styled.div`
   &.shake {
     display: block;
     opacity: 0;
-    animation: ${opacityAnimation} 2s forwards;
+    animation: ${opacityAnimation} 1s forwards;
   }
   &.menu {
     border-radius: 0;

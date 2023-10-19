@@ -5,38 +5,23 @@ import {
 } from '../administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { DescriptionService } from '../../pages/services/DopFunction/styles';
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import { ContanerNewsPape } from '../../pages/PressCenter/newspaper/styles';
 import SchemaCompany from '../../pages/company/SchemaCompany';
-import axios from "axios";
-import {API} from "../../backend";
+import { useFetchCorruptionQuery } from '../../redux/services/corruption';
+import Loader from '../Loader';
 
 export default function Corruption() {
   const [isOpen, setIsOpen] = useState(false);
-  const [info, setInfo] = useState([]);
-  const animate = () => {
-    setIsOpen(true);
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  };
-  useEffect(() => {
-    axios
-        .get(`${API}/corruption`)
-        .then((res) => {
-          setInfo(Object.values(res.data));
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-  }, [setInfo]);
+  const { data: corruption } = useFetchCorruptionQuery();
+
   return (
     <SchemaCompany
       name={'Противодействие коррупции'}
       content={
         <>
           <General>
-            <BtnIsOpen onClick={animate}>
+            <BtnIsOpen onClick={() => setIsOpen(!isOpen)}>
               <p>Информация</p>
               <div>
                 {isOpen ? (
@@ -70,13 +55,19 @@ export default function Corruption() {
             </Div>
           </General>
           <div style={{ width: '80%', margin: '0 auto' }}>
-            {info.map((el) => (
-              <ContanerNewsPape>
-                <a href={el.link} target={'_blank'} rel="noreferrer">
-                  {el.name}
-                </a>
-              </ContanerNewsPape>
-            ))}
+            {corruption?.length ? (
+              <>
+                {corruption?.map((el) => (
+                  <ContanerNewsPape>
+                    <a href={el.link} target={'_blank'} rel="noreferrer">
+                      {el.name}
+                    </a>
+                  </ContanerNewsPape>
+                ))}
+              </>
+            ) : (
+              <Loader />
+            )}
           </div>
         </>
       }

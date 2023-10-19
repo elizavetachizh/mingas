@@ -5,8 +5,8 @@ export const postsAPI = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: `${API}` }),
   endpoints: (build) => ({
     fetchPosts: build.query({
-      query: () => ({
-        url: `/posts`,
+      query: ({ page }) => ({
+        url: `/posts${page === null || page === undefined ? '' : `?page=${page}&limit=5`}`,
         headers: {
           Authorization: 'Bearer ',
           'Content-type': 'application/json',

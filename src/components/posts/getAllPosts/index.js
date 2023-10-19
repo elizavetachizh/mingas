@@ -4,6 +4,7 @@ import DopFunctional from './dopFunctional';
 import { useFetchMainPostsQuery } from '../../../redux/services/mainpost';
 import { setMainPosts } from '../../../redux/slices/mainPostsSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import Loader from '../../Loader';
 
 export default function GetAllPosts() {
   const dispatch = useDispatch();
@@ -20,11 +21,17 @@ export default function GetAllPosts() {
       name={'Важно знать, безопасность'}
       content={
         <>
-          {posts?.map(
-            (el) =>
-              el.type === 'safety' && (
-                <DopFunctional name={el.name} description={el.description} id={el._id} />
-              )
+          {posts?.length ? (
+            <>
+              {posts?.map(
+                (el) =>
+                  el.type === 'safety' && (
+                    <DopFunctional name={el.name} description={el.description} id={el._id} />
+                  )
+              )}
+            </>
+          ) : (
+            <Loader />
           )}
         </>
       }

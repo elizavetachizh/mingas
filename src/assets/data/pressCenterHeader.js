@@ -14,20 +14,12 @@ export const pressCenter = [
     id: 2,
     router: 'newspaper',
     name: 'Корпоротивная газета "Столичный газовик"',
-    description: (
-      <>
-        <Newspaper />
-      </>
-    ),
+    description: <Newspaper />,
   },
   {
     id: 3,
     router: 'life-of-mingas',
     name: 'Жизнь в стиле "Мингаз"',
-    description: (
-      <>
-        <LifeOfMingas />
-      </>
-    ),
+    description: <LifeOfMingas />,
   },
 ];

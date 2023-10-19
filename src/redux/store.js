@@ -14,6 +14,8 @@ import { divisionsAPI } from './services/departmentsDivisions';
 import { managementAPI } from './services/management';
 import { questionAnswerAPI } from './services/questonAnswer';
 import { ogonekAPI } from './services/ogonek';
+import { mainCorruptionAPI } from './services/corruption';
+import {tendersAPI} from "./services/tenders";
 
 const rootReducer = combineReducers({
   services: servicesReducer,
@@ -29,6 +31,8 @@ const rootReducer = combineReducers({
   [managementAPI.reducerPath]: managementAPI.reducer,
   [questionAnswerAPI.reducerPath]: questionAnswerAPI.reducer,
   [ogonekAPI.reducerPath]: ogonekAPI.reducer,
+  [mainCorruptionAPI.reducerPath]: mainCorruptionAPI.reducer,
+  [tendersAPI.reducerPath]: tendersAPI.reducer,
 });
 
 export const store = configureStore({
@@ -41,5 +45,7 @@ export const store = configureStore({
     ...getDefaultMiddleware().concat(managementAPI.middleware),
     ...getDefaultMiddleware().concat(questionAnswerAPI.middleware),
     ...getDefaultMiddleware().concat(ogonekAPI.middleware),
+    ...getDefaultMiddleware().concat(mainCorruptionAPI.middleware),
+    ...getDefaultMiddleware().concat(tendersAPI.middleware),
   ],
 });

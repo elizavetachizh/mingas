@@ -4,26 +4,13 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { ContainerArticles } from '../styles';
-import React, { useEffect, useState } from 'react';
-import SchemaSMI from './schema';
-import { useDispatch, useSelector } from 'react-redux';
-import { useFetchPostsQuery } from '../../../redux/services/posts';
-import { setPosts } from '../../../redux/slices/postsSlice';
+import React, { useState } from 'react';
+import ComponentContainerArticles from './ComponentContainerArticles';
 
 export default function SMI() {
-  const dispatch = useDispatch();
-  const { data: fetchPosts, isLoading } = useFetchPostsQuery();
-  useEffect(() => {
-    if (!isLoading) {
-      dispatch(setPosts(fetchPosts));
-    }
-  }, [isLoading, dispatch, fetchPosts]);
   const [isOpen, setIsOpen] = useState(false);
   const [isClose, setIsClose] = useState(false);
   const [isOpenTV, setIsOpenTV] = useState(false);
-  //
-  const posts = useSelector((state) => state.posts.data);
 
   return (
     <div>
@@ -92,15 +79,7 @@ export default function SMI() {
           </div>
         </BtnIsOpen>
         <Div className={isClose && `shake`}>
-          <ContainerArticles>
-            {posts?.length ? (
-              posts.map((el) => (
-                <SchemaSMI href={el.link} src={el.image} content={el.content} date={el.date} />
-              ))
-            ) : (
-              <p>Загрузка данных...</p>
-            )}
-          </ContainerArticles>
+          <ComponentContainerArticles />
         </Div>
       </General>
       <General>
