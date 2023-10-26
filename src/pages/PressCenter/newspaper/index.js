@@ -10,43 +10,23 @@ import React, { useState } from 'react';
 
 export default function Newspaper() {
   const [isOpen, setIsOpen] = useState(false);
-  const animate = () => {
-    setIsOpen(true);
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  };
+
   const dataReverse = data.reverse();
+
   return (
     <div>
       <ContanerNewsPape>
         <img alt={''} src={require('../../../assets/png/newspaper.png')} />
-        <a href={require('../../../assets/pdf/newspaper/august_2023.pdf')} target={'_blank'} rel="opener">
-          47 выпуск / август 2023
-        </a>
-      </ContanerNewsPape>
-      <ContanerNewsPape>
-        <img alt={''} src={require('../../../assets/png/newspaper.png')} />
         <a
-          href={require('../../../assets/pdf/newspaper/last.pdf')}
+          href={require('../../../assets/pdf/newspaper/august_2023.pdf')}
           target={'_blank'}
-          rel="opener"
+          rel="opener noreferrer"
         >
-          Последний выпуск от 05.12.2022
-        </a>
-      </ContanerNewsPape>
-      <ContanerNewsPape>
-        <img alt={''} src={require('../../../assets/png/newspaper.png')} />
-        <a
-          href={require('../../../assets/pdf/newspaper/last_gazeta.pdf')}
-          target={'_blank'}
-          rel="opener"
-        >
-          Последний выпуск
+          Столичный Газовик № 47 / август 2023
         </a>
       </ContanerNewsPape>
       <General>
-        <BtnIsOpen onClick={animate}>
+        <BtnIsOpen onClick={() => setIsOpen(!isOpen)}>
           <p>Архив газет</p>
           <div>
             {isOpen ? (
@@ -65,7 +45,7 @@ export default function Newspaper() {
                 target={'_blank'}
                 rel="noreferrer"
               >
-                {el.name}
+                {el.name} / {el.data}
               </a>
             </ContanerNewsPape>
           ))}

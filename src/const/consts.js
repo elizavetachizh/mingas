@@ -119,7 +119,7 @@ export default function linksForMenu() {
           name: 'Административные процедуры',
           link: '/services-legal-entities/administrative-services-legal/',
         },
-        { name: 'Регламентирующие документы', link: '/regulatory-documents/Законы' },
+        { name: 'Регламентирующие документы', link: '/regulatory-documents-for-business/Законы' },
       ],
     },
     {
@@ -127,7 +127,7 @@ export default function linksForMenu() {
       link: '/press-center/1',
       arrayOfLinks: [
         { name: 'Лента новостей', link: '/press-center/1' },
-        { name: 'Корпоротивная газета "Столичный газовик"', link: '/press-center/2' },
+        { name: 'Корпоративная газета "Столичный газовик"', link: '/press-center/2' },
         { name: 'Жизнь в стиле "Мингаз"', link: '/press-center/3' },
       ],
     },

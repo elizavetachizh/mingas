@@ -6,11 +6,11 @@ import {
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import React, { useState } from 'react';
 import ComponentContainerArticles from './ComponentContainerArticles';
+import TV from './TV';
 
 export default function SMI() {
   const [isOpen, setIsOpen] = useState(false);
   const [isClose, setIsClose] = useState(false);
-  const [isOpenTV, setIsOpenTV] = useState(false);
 
   return (
     <div>
@@ -82,48 +82,7 @@ export default function SMI() {
           <ComponentContainerArticles />
         </Div>
       </General>
-      <General>
-        <BtnIsOpen onClick={() => setIsOpenTV(!isOpenTV)}>
-          <p>Мингаз-ТВ</p>
-          <div>
-            {isOpenTV ? (
-              <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
-            ) : (
-              <IoIosArrowDown style={{ color: '#0e43af', margin: '38% 0' }} />
-            )}
-          </div>
-        </BtnIsOpen>
-        <Div className={isOpenTV && `shake`}>
-          <p>
-            1. Первый выпуск МИНГАЗ-ТВ с генеральным директором УП «МИНГАЗ» Вадимом Евгеньевичем
-            Шолоником
-          </p>
-          <video
-            src="https://back.mingas.by/public/video/2.webm"
-            title="YouTube video player"
-            id={'video'}
-            autoPlay={false}
-            width={'70%'}
-            style={{ margin: '0 15%' }}
-            controls="true"
-            playsInline
-          ></video>
-          <p>
-            2. Об индивидуальных приборах учета газа с начальником службы учета потребленного газа
-            населением Александром Владимировичем Пятницей
-          </p>
-          <video
-            src="https://back.mingas.by/public/video/3.webm"
-            title="YouTube video player"
-            id={'video'}
-            autoPlay={false}
-            width={'70%'}
-            style={{ margin: '0 15%' }}
-            controls="true"
-            playsInline
-          ></video>
-        </Div>
-      </General>
+      <TV />
     </div>
   );
 }

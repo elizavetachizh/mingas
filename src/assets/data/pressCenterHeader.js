@@ -13,7 +13,7 @@ export const pressCenter = [
   {
     id: 2,
     router: 'newspaper',
-    name: 'Корпоротивная газета "Столичный газовик"',
+    name: 'Корпоративная газета "Столичный газовик"',
     description: <Newspaper />,
   },
   {

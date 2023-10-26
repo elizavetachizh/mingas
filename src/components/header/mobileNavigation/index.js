@@ -185,7 +185,7 @@ export default function MobileNavigation() {
           <DivButtonHeader className={isOpenBtnForPressCenter && `handleBtn`}>
             <div>
               <ButtonLink to="/press-center/1">Лента новостей</ButtonLink>
-              <ButtonLink to="/press-center/2">Корпоротивная газета "Столичный газовик"</ButtonLink>
+              <ButtonLink to="/press-center/2">Корпоративная газета "Столичный газовик"</ButtonLink>
               <ButtonLink to="/press-center/3">Жизнь в стиле "Мингаз"</ButtonLink>
             </div>
           </DivButtonHeader>

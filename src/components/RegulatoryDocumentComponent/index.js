@@ -158,11 +158,11 @@ export default function RegulatoryDocumentComponent({ title, type, router }) {
                   {message && <BlockSerach result={result} />}
                   {info?.map((el) =>
                     el.documents.map(
-                      (el) =>
-                        el.type === type && (
-                          <BlockBtn key={el._id}>
-                            <a href={el.link} target={'_blank'} rel="noreferrer">
-                              {el.name}
+                      (element) =>
+                        +element.type === +type && (
+                          <BlockBtn key={element._id}>
+                            <a href={element.link} target={'_blank'} rel="noreferrer">
+                              {element.name}
                             </a>
                           </BlockBtn>
                         )
@@ -174,7 +174,7 @@ export default function RegulatoryDocumentComponent({ title, type, router }) {
                   <Name>{name}</Name>
                   {inform?.map(
                     (el) =>
-                      el.type === type && (
+                      +el.type === +type && (
                         <BlockBtn key={el._id}>
                           <a href={el.link} target={'_blank'} rel="noreferrer">
                             {el.name}
