@@ -45,12 +45,15 @@ export default function Footer({ classname }) {
           <p>
             Контакт-центр УП «МИНГАЗ» тел. <a href={'tel:162'}>162</a>
           </p>
+          <a type={'download'} href={'https://back.mingas.by/public/documents/confidentiality.pdf'}>
+            Политика обработки персональных данных УП "МИНГАЗ"
+          </a>
         </Telephons>
         <Telephons>
           <ButtonFun href={'/contacts/phone-services'} infoButton={'Контактная информация'} />
           <p>
             220037, г.Минск,{' '}
-            <a href={'https://yandex.by/maps/-/CCUVf2cXKC'} target={'_blank'}>
+            <a href={'https://yandex.by/maps/-/CCUVf2cXKC'} target={'_blank'} rel="noreferrer">
               ул.Ботаническая, 11/1
             </a>
           </p>
@@ -65,7 +68,7 @@ export default function Footer({ classname }) {
           <p>Пятница: с 8:00 до 15:45</p>
           <p>Обед с 12:00 до 12:45</p>
           <p>
-            <a href={'https://mingas.by/contacts/phone-services'} target={'_blank'}>
+            <a href={'https://mingas.by/contacts/phone-services'} target={'_blank'} rel="noreferrer">
               График работы центра обслуживания населения
             </a>
           </p>

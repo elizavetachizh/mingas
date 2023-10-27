@@ -78,6 +78,44 @@ export default function ContainerCookies() {
               </li>
             </ul>
             <li>
+              <strong>чат-бот (функциональные)</strong>
+            </li>
+            <ul style={{ listStyleType: 'none' }}>
+              <li>
+                <div
+                  style={{ margin: '0.5rem 0 0.5rem' }}
+                  className="uk-grid-small uk-child-width-auto uk-grid"
+                >
+                  <label htmlFor={'radio1-true'}>
+                    <input
+                      id={'radio2-true'}
+                      onChange={() => {
+                        setCookie('waSessionId');
+                        setCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
+                      }}
+                      className="uk-radio"
+                      type="radio"
+                      name="radio2"
+                    />
+                    <span>Принять</span>
+                  </label>
+                  <label htmlFor={'radio1-false'}>
+                    <input
+                      id={'radio2-false'}
+                      onChange={() => {
+                        removeCookie('waSessionId');
+                        removeCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
+                      }}
+                      className="isObject"
+                      type="radio"
+                      name="radio2"
+                    />
+                    <span>Отклонить</span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+            <li>
               <strong>
                 возможность «Принять все» или «Отклонить все» обрабатываемые на сайте куки.
               </strong>
@@ -109,6 +147,8 @@ export default function ContainerCookies() {
                         removeCookie('_ga');
                         removeCookie('googtrans');
                         removeCookie('CookieConsent');
+                        removeCookie('waSessionId');
+                        removeCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
                       }}
                       className="isObject"
                       type="radio"
