@@ -37,7 +37,7 @@ export default function PhoneLineServices() {
                   <tr>
                     <td>«Горячая линия»</td>
                     <td>
-                      <a href={'tel:+375(017)-299-28-70'}> +375(017)-299-28-70</a>,
+                      <a href={'tel:+375(17)-299-28-70'}> +375(17)-299-28-70</a>,
                       круглосуточно
                     </td>
                   </tr>
@@ -47,7 +47,7 @@ export default function PhoneLineServices() {
                       11.00 до 12.00
                     </td>
                     <td>
-                      <a href={'tel:8017-299 28 80'}>+375(017)-299-28-80</a>
+                      <a href={'tel:8017-299 28 80'}>+375(17)-299-28-80</a>
                     </td>
                   </tr>
                 </Tbody>
