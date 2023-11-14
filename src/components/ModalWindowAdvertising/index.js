@@ -16,9 +16,8 @@ export default function ModalWindowAdvertising() {
   useEffect(() => {
     const arrayImages = [1, 2, 3, 4];
     const rand = Math.floor(Math.random() * arrayImages.length);
-    setImages(rand);
+    setImages(rand+1);
   }, []);
-  console.log(image);
   return (
     <Overlay id="overlay">
       <div className="popup">
