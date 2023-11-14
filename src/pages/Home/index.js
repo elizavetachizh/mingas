@@ -14,11 +14,13 @@ import { BackgroundStyle } from './services/styles';
 import linesOne from '../../assets/background/rig.webp';
 import { Container } from '../company/styles';
 import './slider/styles.css';
+import ModalWindowAdvertising from '../../components/ModalWindowAdvertising';
 export default function Home() {
   return (
     <Container>
       <Header />
       <>
+        <ModalWindowAdvertising />
         <ContentHome />
         <UsefulInform />
         <BackgroundStyle src={linesOne} />
