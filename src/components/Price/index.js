@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Links } from './styles';
 import ContainerContent from '../Container';
 import axios from 'axios';
-import { API, APIimage } from '../../backend';
+import { API } from '../../backend';
+import Loader from '../Loader';
 export default function ResidentsOfCapitalRegion() {
   const [info, setInfo] = useState([]);
   useEffect(() => {
@@ -19,19 +20,19 @@ export default function ResidentsOfCapitalRegion() {
     <ContainerContent
       name={'Прейскурант цен'}
       content={
-        <Links>
-          {!!info.length &&
-            info.map((el) => (
-              <a
-                href={`${APIimage}/${el.description}`}
-                id={'href'}
-                target={'_blank'}
-                rel="opener noreferrer"
-              >
-                {el.name}
-              </a>
-            ))}
-        </Links>
+        <>
+          {info?.length ? (
+            <Links>
+              {info.map((el) => (
+                <a href={el.description} id={'href'} target={'_blank'} rel="opener noreferrer">
+                  {el.name}
+                </a>
+              ))}
+            </Links>
+          ) : (
+            <Loader />
+          )}
+        </>
       }
     />
   );
