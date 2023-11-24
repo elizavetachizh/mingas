@@ -9,29 +9,29 @@ export const documents = [
     name: 'Сертификаты',
     inform: [{ id: 1, img: '18' }],
   },
-  {
-    GeneralId: 4,
-    name: 'Сертификаты',
-    inform: [
-      { id: 1, img: '24' },
-      { id: 2, img: '25' },
-      { id: 3, img: '26' },
-      { id: 4, img: '27' },
-      { id: 5, img: '28' },
-      { id: 6, img: '29' },
-    ],
-  },
-  {
-    GeneralId: 5,
-    name: 'Сертификаты',
-    inform: [
-      { id: 1, img: '19' },
-      { id: 2, img: '20' },
-      { id: 3, img: '21' },
-      { id: 4, img: '22' },
-      { id: 5, img: '23' },
-    ],
-  },
+  // {
+  //   GeneralId: 4,
+  //   name: 'Сертификаты',
+  //   inform: [
+  //     { id: 1, img: '24' },
+  //     { id: 2, img: '25' },
+  //     { id: 3, img: '26' },
+  //     { id: 4, img: '27' },
+  //     { id: 5, img: '28' },
+  //     { id: 6, img: '29' },
+  //   ],
+  // },
+  // {
+  //   GeneralId: 5,
+  //   name: 'Сертификаты',
+  //   inform: [
+  //     { id: 1, img: '19' },
+  //     { id: 2, img: '20' },
+  //     { id: 3, img: '21' },
+  //     { id: 4, img: '22' },
+  //     { id: 5, img: '23' },
+  //   ],
+  // },
   {
     GeneralId: 6,
     name: 'Сертификаты',
