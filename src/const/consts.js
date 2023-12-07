@@ -153,7 +153,7 @@ export default function linksForMenu() {
 
 export const APPLICATION_BUTTONS = [
   { type: 'ApplicationForOrderingCylinders', name: 'Заказать баллон СУГ 50 литров' },
-  { type: 'ApplicationForVerificationOfGasMeters', name: 'Снятие счётчика в проверку' },
+  { type: 'ApplicationForVerificationOfGasMeters', name: 'Снятие счётчика в поверку' },
   { type: 'ApplicationForRepairOfGasUsingEquipment', name: 'Ремонт газового оборудования' },
   {
     type: 'ApplicationToCallRepresentativeOfGasSupplyOrganization',
