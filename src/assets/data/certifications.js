@@ -53,6 +53,7 @@ export const documents = [
       { id: 5, img: '15' },
       { id: 6, img: '17' },
       { id: 7, img: '18' },
+      { id: 8, img: '18' },
     ],
   },
   {
