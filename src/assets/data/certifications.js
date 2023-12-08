@@ -4,11 +4,11 @@ export const documents = [
     name: 'Сертификаты',
     inform: [{ id: 1, img: '16' }],
   },
-  {
-    GeneralId: 3,
-    name: 'Сертификаты',
-    inform: [{ id: 1, img: '18' }],
-  },
+  // {
+  //   GeneralId: 3,
+  //   name: 'Сертификаты',
+  //   inform: [{ id: 1, img: '18' }],
+  // },
   // {
   //   GeneralId: 4,
   //   name: 'Сертификаты',
@@ -51,6 +51,8 @@ export const documents = [
       { id: 3, img: '13' },
       { id: 4, img: '14' },
       { id: 5, img: '15' },
+      { id: 6, img: '17' },
+      { id: 7, img: '18' },
     ],
   },
   {
