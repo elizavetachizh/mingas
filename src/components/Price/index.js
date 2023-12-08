@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Links } from './styles';
 import ContainerContent from '../Container';
 import axios from 'axios';
-import { API } from '../../backend';
+import { API, APIimage } from '../../backend';
 import Loader from '../Loader';
 export default function ResidentsOfCapitalRegion() {
   const [info, setInfo] = useState([]);
@@ -24,7 +24,12 @@ export default function ResidentsOfCapitalRegion() {
           {info?.length ? (
             <Links>
               {info.map((el) => (
-                <a href={el.description} id={'href'} target={'_blank'} rel="opener noreferrer">
+                <a
+                  href={`${APIimage}/${el.description}`}
+                  id={'href'}
+                  target={'_blank'}
+                  rel="opener noreferrer"
+                >
                   {el.name}
                 </a>
               ))}
