@@ -2,7 +2,7 @@ export const documents = [
   {
     GeneralId: 1,
     name: 'Сертификаты',
-    inform: [{ id: 1, img: '16' }],
+    inform: [{ id: 1, img: '67' }],
   },
   // {
   //   GeneralId: 3,
@@ -51,9 +51,8 @@ export const documents = [
       { id: 3, img: '13' },
       { id: 4, img: '14' },
       { id: 5, img: '15' },
-      { id: 6, img: '17' },
-      { id: 7, img: '18' },
-      { id: 8, img: '18' },
+      { id: 6, img: '16' },
+      { id: 7, img: '17' },
     ],
   },
   {
