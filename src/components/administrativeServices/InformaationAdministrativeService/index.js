@@ -77,6 +77,22 @@ export default function InformationAdministrativeService() {
                 )
             )}
           </>
+          <div>
+            <h2 style={{ textDecoration: 'underline' }}>
+              Полный перечень административных процедур осуществляемых УП «МИНГАЗ»
+            </h2>
+            <a
+              href={require('../../../assets/pdf/administariveServices.pdf')}
+              rel={'noreferrer'}
+              target={'_blank'}
+            >
+              <img
+                style={{ width: '80px' }}
+                alt={'doc'}
+                src={require('../../../assets/icons_services/12.png')}
+              />
+            </a>
+          </div>
         </>
       }
     />

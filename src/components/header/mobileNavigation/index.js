@@ -8,12 +8,14 @@ import {
 } from './styles';
 import { ButtonLink } from '../../../pages/services/styles';
 import React, { useEffect, useState } from 'react';
-import next from '../../../assets/png/next.png';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from '../styles';
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
 import { useLocation, useNavigate } from 'react-router';
+import { links } from '../../../assets/data/linksToResidentsOfTheCapitalRegion';
+import { linksForBusiness } from '../../../assets/data/linksForBusines';
+import { linksHeaderCompany } from '../../../const/consts';
 
 export default function MobileNavigation() {
   const navigate = useNavigate();
@@ -87,18 +89,9 @@ export default function MobileNavigation() {
           </DivBlocksHeader>
           <DivButtonHeader className={isOpen && `handleBtn`}>
             <div>
-              <ButtonLink to="/company/history">История предприятия</ButtonLink>
-              <ButtonLink to="/company/management">Руководство предприятия</ButtonLink>
-              <ButtonLink to="/company/career">Работа в УП "Мингаз"</ButtonLink>
-              <ButtonLink to="/company/parent-organizations">Вышестоящие организации</ButtonLink>
-              <ButtonLink to="/company/branches" style={{ width: '100%' }}>
-                Филиалы УП "Мингаз" <img alt={''} src={next} />
-              </ButtonLink>
-              <ButtonLink to="/company/corruption">Противодействие коррупции</ButtonLink>
-              <ButtonLink to="/company/documentation">
-                Сертификаты, лицензии, свидетельства
-              </ButtonLink>
-              <ButtonLink to="/company/gratitude">Благодарности и награды</ButtonLink>
+              {linksHeaderCompany.map((el) => (
+                <ButtonLink to={el.link}>{el.name}</ButtonLink>
+              ))}
             </div>
           </DivButtonHeader>
         </Dropdown>
@@ -121,17 +114,9 @@ export default function MobileNavigation() {
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtn && `handleBtn`}>
             <div>
-              <ButtonLink to="/services">
-                Услуги <img alt={'меню'} src={next} />
-              </ButtonLink>
-              <ButtonLink to={'/feedback/online-application'}>Онлайн заявки</ButtonLink>
-              <ButtonLink to="/regulatory-documents/Законы">Регламентирующие документы</ButtonLink>
-              <ButtonLink to={'/feedback/question-answer/63930a954fe167e2981cc2e1'}>
-                Часто задаваемые вопросы
-              </ButtonLink>
-              <ButtonLink to={'/feedback/electronic-appeal'}>Обращение граждан</ButtonLink>
-              <ButtonLink to={'/feedback/leave-feedback'}>Оставить отзыв</ButtonLink>
-              <ButtonLink to={'/posts/'}>Важно знать, безопасность</ButtonLink>
+              {links.map((el) => (
+                <ButtonLink to={el.link}>{el.name}</ButtonLink>
+              ))}
             </div>
           </DivButtonHeader>
         </Dropdown>
@@ -151,26 +136,16 @@ export default function MobileNavigation() {
           </DivBlocksHeader>
           <DivButtonHeader className={isOpenBtnForBusiness && `handleBtn`}>
             <div>
-              <ButtonLink to="/services-legal-entities">Услуги</ButtonLink>
-              <ButtonLink to="/feedback/electronic-appeal">Обращение юридических лиц</ButtonLink>
-              <ButtonLink to="/tenders">Тендеры</ButtonLink>
-              <ButtonLink to={'/feedback/question-answer/1'}>Часто задаваемые вопросы</ButtonLink>
-              <ButtonLink to="/services-legal-entities/administrative-services-legal/">
-                Административные процедуры
-              </ButtonLink>
-              <ButtonLink to="/regulatory-documents-for-business/1">
-                Регламентирующие документы
-              </ButtonLink>
+              {linksForBusiness.map((el) => (
+                <ButtonLink to={el.link}>{el.name}</ButtonLink>
+              ))}
             </div>
           </DivButtonHeader>
         </Dropdown>
 
         <Dropdown>
           <DivBlocksHeader>
-            <CompanyButton
-              className={isOpenBtnForPressCenter && `handleBtn`}
-              to="/press-center/1"
-            >
+            <CompanyButton className={isOpenBtnForPressCenter && `handleBtn`} to="/press-center/1">
               Пресс-центр
               <span />
             </CompanyButton>

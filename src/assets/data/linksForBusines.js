@@ -1,4 +1,4 @@
-export const links = [
+export const linksForBusiness = [
   {
     id: 1,
     link: '/services-legal-entities',
@@ -7,7 +7,7 @@ export const links = [
   },
   {
     id: 2,
-    link: '/feedback/electronic-appeal-for-entity',
+    link: '/feedback/electronic-appeal',
     name: 'Обращение юридических лиц',
     cardImg: 1,
   },
