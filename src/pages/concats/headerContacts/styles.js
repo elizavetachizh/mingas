@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 const MenuWidth = {
-  s: `
-    width: 30%;
-  
-    `,
+  s: `width: 30%;`,
 };
 export const HeaderCompanyDiv = styled.div`
   margin: 4% 2% 0;

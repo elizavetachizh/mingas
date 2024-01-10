@@ -3,8 +3,6 @@ import { Overlay } from './styles';
 export default function ModalWindowAdvertising() {
   const [image, setImages] = useState(1);
 
-  // setTimeout(() => (document.getElementById('overlay').style.display = 'block'), 3000);
-
   useEffect(() => {
     const timer = setTimeout(
       () => (document.getElementById('overlay').style.display = 'block'),

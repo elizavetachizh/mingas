@@ -19,16 +19,6 @@ export const Div = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  top: 4px;
-  right: 0.75rem;
-  background: rgba(0, 0, 0, 0) 50% 50% no-repeat;
-  border-radius: 4px;
-  width: 42px;
-  height: 28px;
-  border: 0;
-  transition: all 0.3s;
-`;
 export const ContainerFormSearch = styled.div`
   z-index: 3;
   position: absolute;
