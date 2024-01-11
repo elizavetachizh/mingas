@@ -72,6 +72,7 @@ export const documents = [
     ],
   },
 
+
   {
     GeneralId: 10,
     name: 'Лицензии',
@@ -178,5 +179,13 @@ export const documents = [
     GeneralId: 22,
     name: 'Сертификаты',
     inform: [{ id: 1, img: '66' }],
+  },
+  {
+    GeneralId: 23,
+    name: 'Свидетельства',
+    inform: [
+      { id: 1, img: '68' },
+      { id: 2, img: '69' },
+    ],
   },
 ];
