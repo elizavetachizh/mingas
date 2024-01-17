@@ -167,6 +167,17 @@ export default function StateInformResources() {
                 </a>
               </figure>
             </DivCarousel>
+                         <DivCarousel title={'Министерство по чрезвычайным ситуациям Республики Беларусь'}>
+              <figure>
+                <a rel="noopener" target={'_blank'} href={'https://mchs.gov.by/'}>
+                  <img
+                    style={{ width: '30%' }}
+                    src={require('../../assets/png/mchs.png')}
+                    alt=""
+                  />
+                </a>
+              </figure>
+            </DivCarousel>
             <DivCarousel title={'БЕЛТА'}>
               <figure>
                 <a rel="noopener" target={'_blank'} href={'https://www.belta.by/ru'}>
