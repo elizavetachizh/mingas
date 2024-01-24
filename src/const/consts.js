@@ -164,13 +164,13 @@ export const APPLICATION_BUTTONS = [
 ];
 
 export const linksHeaderCompany = [
-  { name: 'История предприятия', link: 'history' },
-  { name: 'Руководство', link: 'management' },
-  { name: 'Подразделения', link: 'management/all-departments' },
-  { name: 'Работа в УП "МИНГАЗ"', link: 'career' },
-  { name: 'Вышестоящие организации', link: 'parent-organizations' },
-  { name: 'Филиалы УП "Мингаз"', link: 'branches' },
-  { name: 'Противодействие коррупции', link: 'corruption' },
-  { name: 'Сертификаты, лицензии, свидетельства', link: 'documentation' },
-  { name: 'Благодарности и награды', link: 'gratitude' },
+  { name: 'История предприятия', link: '/company/history' },
+  { name: 'Руководство', link: '/company/management' },
+  { name: 'Подразделения', link: '/company/management/all-departments' },
+  { name: 'Работа в УП "МИНГАЗ"', link: '/company/career' },
+  { name: 'Вышестоящие организации', link: '/company/parent-organizations' },
+  { name: 'Филиалы УП "Мингаз"', link: '/company/branches' },
+  { name: 'Противодействие коррупции', link: '/company/corruption' },
+  { name: 'Сертификаты, лицензии, свидетельства', link: '/company/documentation' },
+  { name: 'Благодарности и награды', link: '/company/gratitude' },
 ];

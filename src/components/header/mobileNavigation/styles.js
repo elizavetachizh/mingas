@@ -114,12 +114,13 @@ export const Dropdown = styled.div`
 export const ContainerAbsolute = styled.div`
   flex-direction: column;
   top: 80px;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   background-color: rgba(13, 68, 117, 90%);
   display: flex;
   position: fixed;
-  margin: 0;
+  margin: 0 0 50px;
+  padding-bottom: 20px;
   z-index: 2;
   opacity: 0;
   overflow-y: scroll;
