@@ -7,13 +7,11 @@ import {
   Label,
   Span,
 } from '../../formQuestion/styles';
-import InputName from '../../input';
-import InputAddress from '../../input/inputAddress';
-import InputPhone from '../../input/inputPhone';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useFeedback } from '../leaveFeedback-hook';
 import PopUp from '../../popUp';
 import InputText from '../../input/inputText';
+import FormInput from '../../input/inputPhone';
 
 export default function LeaveFeedbackMingas() {
   const {
@@ -111,15 +109,19 @@ export default function LeaveFeedbackMingas() {
 
   return (
     <DivApplication>
-      <Form style={{ border: 'none', borderRadius: 'none', width: '90%' }} onSubmit={handleSubmit} ref={form}>
+      <Form
+        style={{ border: 'none', borderRadius: 'none', width: '90%' }}
+        onSubmit={handleSubmit}
+        ref={form}
+      >
         <DivInput>
           <Label>
             ФИО полностью: <Span>*</Span>
           </Label>
-          <InputName
+          <FormInput
             type={'text'}
             placeholder={'Введите ФИО полностью'}
-            inputName={'name'}
+            name={'name'}
             onChange={handleUserInput}
             value={formValues.name}
             error={errors.name}
@@ -131,9 +133,9 @@ export default function LeaveFeedbackMingas() {
             Адрес электронной почты
             <Span>*</Span>
           </Label>
-          <InputAddress
+          <FormInput
+            name={'email'}
             type="email"
-            inputAddress={'email'}
             placeholder={'Введите ваш e-mail'}
             onChange={handleUserInput}
             value={formValues.email}
@@ -146,9 +148,9 @@ export default function LeaveFeedbackMingas() {
             Контактный телефон
             <Span>*</Span>
           </Label>
-          <InputPhone
+          <FormInput
+            name={'phone'}
             type="tel"
-            inputPhone={'phone'}
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={formValues.phone}
@@ -158,8 +160,8 @@ export default function LeaveFeedbackMingas() {
 
         <DivInput>
           <Label>Тема:</Label>
-          <InputName
-            inputName={'text'}
+          <FormInput
+            name={'text'}
             type={'text'}
             placeholder={'Напишите тему'}
             onChange={handleUserInput}

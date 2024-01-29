@@ -10,10 +10,8 @@ import {
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
-import InputName from '../../../../components/input';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
-import InputAddress from '../../../../components/input/inputAddress';
-import InputPhone from '../../../../components/input/inputPhone';
+import FormInput from '../../../../components/input/inputPhone';
 
 export default function ProvidingGasMeterReadings() {
   const {
@@ -63,13 +61,13 @@ export default function ProvidingGasMeterReadings() {
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
-          <InputName
+          <FormInput
             type={'text'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
             value={requestValues.name}
             error={errors.name}
-            inputName={'name'}
+            name={'name'}
           />
         </DivInput>
         <DivInput>
@@ -77,9 +75,9 @@ export default function ProvidingGasMeterReadings() {
             Введите ваш e-mail:
             <Span>*</Span>
           </Label>
-          <InputAddress
+          <FormInput
             type="email"
-            inputAddress={'email'}
+            name={'email'}
             placeholder={'ваш e-mail'}
             onChange={handleUserInput}
             value={requestValues.email}
@@ -90,8 +88,8 @@ export default function ProvidingGasMeterReadings() {
           <Label>
             Номер договора (лицевой счёт): <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'text'}
+          <FormInput
+            name={'text'}
             type={'text'}
             placeholder={'Введите абонентский номер'}
             onChange={handleUserInput}
@@ -104,10 +102,9 @@ export default function ProvidingGasMeterReadings() {
             Контактный телефон:
             <Span>*</Span>
           </Label>
-          <InputPhone
-            maxlength="13"
+          <FormInput
             type="tel"
-            inputPhone={'phone'}
+            name={'phone'}
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
             value={requestValues.phone}
@@ -119,8 +116,8 @@ export default function ProvidingGasMeterReadings() {
             Адрес объекта:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'address'}
+          <FormInput
+            name={'address'}
             type="text"
             placeholder={'Введите адрес проживания'}
             onChange={handleUserInput}
@@ -154,10 +151,10 @@ export default function ProvidingGasMeterReadings() {
           Отправить
         </Button>
         {isButtonDisabled && (
-            <span style={{ color: 'red' }}>Заполните, пожалуйста, все необходимые поля</span>
+          <span style={{ color: 'red' }}>Заполните, пожалуйста, все необходимые поля</span>
         )}
         {!isButtonDisabled && !msg && (
-            <span style={{ color: 'red' }}>
+          <span style={{ color: 'red' }}>
             Форма успешно заполнена, нажмите кнопку отправить и ожидайте ответа "Форма успешно
             отправлена".
           </span>

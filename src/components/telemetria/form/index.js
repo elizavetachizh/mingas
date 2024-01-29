@@ -1,7 +1,7 @@
 import { Button, DivInput, Form, Label, Span } from '../../formQuestion/styles';
-import InputName from '../../input';
 import React from 'react';
 import { useFormTelemetria } from './telemetria-hook';
+import FormInput from '../../input/inputPhone';
 
 export default function FormTelemetria() {
   const { handleUserInput, formValues, errors, isButtonDisabled, handleSubmit, form, msg } =
@@ -13,8 +13,7 @@ export default function FormTelemetria() {
           Наименование организации (согласно договора на газоснабжение)
           <Span>*</Span>
         </Label>
-        <InputName
-          inputName={'organization'}
+        <FormInput
           name={'organization'}
           type={'text'}
           placeholder={'Введите Наименование организации (согласно договора на газоснабжение)'}
@@ -28,15 +27,13 @@ export default function FormTelemetria() {
           ФИО контактного лица
           <Span>*</Span>
         </Label>
-        <InputName
-          inputName={'name'}
+        <FormInput
           name={'name'}
           type={'text'}
           placeholder={'Введите ФИО'}
           onChange={handleUserInput}
           value={formValues.name}
           error={errors.name}
-          label={'ФИО заявителя полностью'}
         />
       </DivInput>
       <DivInput>
@@ -44,15 +41,13 @@ export default function FormTelemetria() {
           Адрес электронной почты
           <Span>*</Span>
         </Label>
-        <InputName
-          inputName={'email'}
+        <FormInput
           type="email"
           name="email"
           placeholder={'Введите e-mail контактного лица'}
           onChange={handleUserInput}
           value={formValues.email}
           error={errors.email}
-          label={'Адрес электронной почты'}
         />
       </DivInput>
       <DivInput>
@@ -60,15 +55,13 @@ export default function FormTelemetria() {
           Адрес объекта
           <Span>*</Span>
         </Label>
-        <InputName
-          inputName={'address'}
+        <FormInput
           type="text"
           name={'address'}
           placeholder={'Введите адрес объекта'}
           onChange={handleUserInput}
           value={formValues.address}
           error={errors.address}
-          label={'Адрес объекта'}
         />
       </DivInput>
       <DivInput>
@@ -76,21 +69,18 @@ export default function FormTelemetria() {
           Телефон контактного лица
           <Span>*</Span>
         </Label>
-        <InputName
-          inputName={'phone'}
+        <FormInput
           type="tel"
           name="phone"
           placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}
           onChange={handleUserInput}
           value={formValues.phone}
           error={errors.phone}
-          label={'Телефон контактного лица'}
         />
       </DivInput>
       <DivInput>
         <Label>Номер sim-карт(ы), через запятую, если их несколько:</Label>
-        <InputName
-          inputName={'text'}
+        <FormInput
           name={'text'}
           type={'text'}
           placeholder={'+375ХХ-ХХХ-ХХ-ХХ'}

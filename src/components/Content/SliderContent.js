@@ -5,6 +5,7 @@ function SliderContent({ activeIndex, sliderImage }) {
   const getElement = useCallback((id) => {
     return document.getElementById(`content-image-${id}`);
   }, []);
+
   useEffect(() => {
     sliderImage.forEach((el) => {
       const element = getElement(el._id);
@@ -13,9 +14,9 @@ function SliderContent({ activeIndex, sliderImage }) {
       }
     });
   }, [sliderImage, getElement]);
+
   return (
-    <>
-      {sliderImage.map((slide, index) => (
+    sliderImage.map((slide, index) => (
         <div key={index} className={activeIndex === index ? 'slides active' : 'inactive'}>
           <div className="container-text" id={`content-image-${slide._id}`}>
             {/*<p id={`content-image-${slide._id}`} />*/}
@@ -24,8 +25,7 @@ function SliderContent({ activeIndex, sliderImage }) {
             <img className="slide-image" src={`${APIimage}/${slide.image}`} alt="" />
           </div>
         </div>
-      ))}
-    </>
+      ))
   );
 }
 

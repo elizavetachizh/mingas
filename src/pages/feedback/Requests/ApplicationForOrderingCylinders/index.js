@@ -8,8 +8,8 @@ import {
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
-import InputName from '../../../../components/input';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
+import FormInput from '../../../../components/input/inputPhone';
 
 export default function ApplicationForOrderingCylinders() {
   const {
@@ -30,8 +30,8 @@ export default function ApplicationForOrderingCylinders() {
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'name'}
+          <FormInput
+            name={'name'}
             type={'text'}
             placeholder={'ФИО заявителя полностью'}
             onChange={handleUserInput}
@@ -44,21 +44,21 @@ export default function ApplicationForOrderingCylinders() {
             Введите ваш e-mail:
             <Span>*</Span>
           </Label>
-          <InputName
-              inputName={'email'}
-              type="email"
-              placeholder={'ваш e-mail'}
-              onChange={handleUserInput}
-              value={requestValues.email}
-              error={errors.email}
+          <FormInput
+            name={'email'}
+            type="email"
+            placeholder={'ваш e-mail'}
+            onChange={handleUserInput}
+            value={requestValues.email}
+            error={errors.email}
           />
         </DivInput>
         <DivInput>
           <Label>
             Номер абонента: <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'text'}
+          <FormInput
+            name={'text'}
             type={'text'}
             placeholder={'Номер абонента'}
             onChange={handleUserInput}
@@ -71,8 +71,8 @@ export default function ApplicationForOrderingCylinders() {
             Адрес проживания:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'address'}
+          <FormInput
+            name={'address'}
             type="text"
             placeholder={'Адрес проживания'}
             onChange={handleUserInput}
@@ -85,8 +85,8 @@ export default function ApplicationForOrderingCylinders() {
             Контактный телефон:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'phone'}
+          <FormInput
+            name={'phone'}
             type="tel"
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}

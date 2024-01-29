@@ -68,7 +68,11 @@ export default function Footer({ classname }) {
           <p>Пятница: с 8:00 до 15:45</p>
           <p>Обед с 12:00 до 12:45</p>
           <p>
-            <a href={'https://mingas.by/contacts/phone-services'} target={'_blank'} rel="noreferrer">
+            <a
+              href={'https://mingas.by/contacts/phone-services'}
+              target={'_blank'}
+              rel="noreferrer"
+            >
               График работы центра обслуживания населения
             </a>
           </p>

@@ -3,34 +3,14 @@ import styled from 'styled-components';
 export const DivCarousel = styled.div`
   text-align: center;
   img {
-    width: 64%;
-    height: 64%;
-    @media (max-width: 1200px) {
-      width: 74%;
-      height: 74%;
-    }
-    @media (max-width: 1100px) {
-      width: 94%;
-      height: 94%;
+    width: 110px;
+    @media (max-width: 800px) {
+      width: 100px;
     }
   }
-  &.isPhone {
-    img {
-      width: 64%;
-      height: 64%;
-      @media (max-width: 600px) {
-        width: 74%;
-        height: 74%;
-      }
-      @media (max-width: 500px) {
-        width: 96%;
-        height: 96%;
-      }
-    }
-  }
+
   figure {
     display: flex;
-
     flex-direction: column;
     align-items: center;
     justify-content: center;

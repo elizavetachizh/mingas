@@ -8,13 +8,11 @@ import {
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
-import InputName from '../../../../components/input';
 import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
-import InputAddress from '../../../../components/input/inputAddress';
-import InputPhone from '../../../../components/input/inputPhone';
 import { useRequestForIssuance } from './IssuanceOfTS-hook';
 import InputDate from '../../../../components/input/InputDate';
+import FormInput from '../../../../components/input/inputPhone';
 
 export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   const {
@@ -36,8 +34,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'name'}
+          <FormInput
+            name={'name'}
             type={'text'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
@@ -50,8 +48,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             Введите ваш e-mail:
             <Span>*</Span>
           </Label>
-          <InputAddress
-            inputAddress={'email'}
+          <FormInput
+            name={'email'}
             type="email"
             placeholder={'ваш e-mail'}
             onChange={handleUserInput}
@@ -63,8 +61,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
           <Label>
             Номер договора (лицевой счёт): <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'text'}
+          <FormInput
+            name={'text'}
             type={'text'}
             placeholder={'лицевой счёт'}
             onChange={handleUserInput}
@@ -77,8 +75,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             Адрес:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'address'}
+          <FormInput
+            name={'address'}
             type="text"
             placeholder={'Введите ваш адрес'}
             onChange={handleUserInput}
@@ -91,8 +89,8 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
             Контактный телефон:
             <Span>*</Span>
           </Label>
-          <InputPhone
-            inputPhone={'phone'}
+          <FormInput
+            name={'phone'}
             type="tel"
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}

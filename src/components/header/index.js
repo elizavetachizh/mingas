@@ -33,6 +33,7 @@ export default function Header({ backgroundHeader }) {
   const { data: services, isLoading } = useFetchServicesQuery();
   const { data: mainPosts } = useFetchMainPostsQuery();
   const { data: posts } = useFetchPostsQuery();
+
   useEffect(() => {
     if (!isLoading) {
       dispatch(setServices(services));
@@ -43,6 +44,7 @@ export default function Header({ backgroundHeader }) {
   const onClick = () => {
     setOpen(!open);
   };
+
   useEffect(() => {
     if (!open) {
       document.body.classList.remove('mobile');
@@ -50,6 +52,7 @@ export default function Header({ backgroundHeader }) {
       document.body.classList.add('mobile');
     }
   }, [open]);
+
   const openMobile = (
     <Menu onClick={onClick}>
       <IoIosMenus />

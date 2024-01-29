@@ -49,15 +49,6 @@ export const Tbody = styled.tbody`
       }
     }
   }
-  &.regulatory-docs-for-legal {
-    tr {
-      height: fit-content;
-      td {
-        height: fit-content;
-        padding: 10px 0;
-      }
-    }
-  }
   &.general {
     tr {
       height: fit-content;

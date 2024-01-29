@@ -65,9 +65,6 @@ export const Button = styled(NavLink)`
       font-size: 12px;
     }
   }
-  &.slide-text {
-    position: inherit;
-  }
   @media (max-width: 950px) {
     width: 250px;
     font-size: 16px;

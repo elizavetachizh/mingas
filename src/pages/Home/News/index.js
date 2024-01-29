@@ -16,16 +16,18 @@ export default function News() {
         setInfo(res.data);
       })
       .catch((e) => {
-          console.log(e);
+        console.log(e);
       });
   }, [setInfo]);
-  const arr = info?.results?.slice(0,4);
+  const arr = info?.results?.slice(0, 4);
 
   return (
     <BlockContainerRequests>
       <TitleForHome color={'blue'} infoTitle={'Лента новостей'} />
       <DivInform>
-        {arr?.map((el) => <LinkNews href={el.link} src={el.image} cardDesc={el.content} />)}
+        {arr?.map((el) => (
+          <LinkNews href={el.link} src={el.image} cardDesc={el.content} />
+        ))}
       </DivInform>
       <ButtonFun
         href={'/press-center/1'}

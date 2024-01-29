@@ -22,14 +22,12 @@ export default function GetAllPosts() {
       content={
         <>
           {posts?.length ? (
-            <>
-              {posts?.map(
-                (el) =>
-                  el.type === 'safety' && (
-                    <DopFunctional name={el.name} description={el.description} id={el._id} />
-                  )
-              )}
-            </>
+            posts?.map(
+              (el) =>
+                el.type === 'safety' && (
+                  <DopFunctional name={el.name} description={el.description} id={el._id} />
+                )
+            )
           ) : (
             <Loader />
           )}

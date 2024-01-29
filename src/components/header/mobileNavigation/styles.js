@@ -22,18 +22,6 @@ const HeaderBackgroundColor = {
     `,
 };
 
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 20px;
-  position: fixed;
-  margin-bottom: 3%;
-  top: 0;
-  z-index: 2;
-  ${({ backgroundHeader }) => HeaderBackgroundColor[backgroundHeader]};
-  }
-`;
 export const DivBlocksHeader = styled.div`
   display: flex;
   flex-direction: row;

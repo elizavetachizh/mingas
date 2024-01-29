@@ -8,11 +8,9 @@ import {
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
-import InputName from '../../../../components/input';
-import InputAddress from '../../../../components/input/inputAddress';
-import InputPhone from '../../../../components/input/inputPhone';
 import { useRequestForVerificationOfGasMeters } from './verificationOfGasMeters-hook';
 import InputDate from '../../../../components/input/InputDate';
+import FormInput from '../../../../components/input/inputPhone';
 
 export default function ApplicationForVerificationOfGasMeters() {
   const {
@@ -32,9 +30,9 @@ export default function ApplicationForVerificationOfGasMeters() {
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
-          <InputName
+          <FormInput
             type={'text'}
-            inputName={'name'}
+            name={'name'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
             value={requestValues.name}
@@ -46,8 +44,8 @@ export default function ApplicationForVerificationOfGasMeters() {
             Введите ваш e-mail:
             <Span>*</Span>
           </Label>
-          <InputAddress
-            inputAddress={'email'}
+          <FormInput
+            name={'email'}
             type="email"
             placeholder={'ваш e-mail'}
             onChange={handleUserInput}
@@ -59,8 +57,8 @@ export default function ApplicationForVerificationOfGasMeters() {
           <Label>
             Номер договора (лицевой счёт): <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'text'}
+          <FormInput
+            name={'text'}
             type={'text'}
             placeholder={'Введите абонентский номер'}
             onChange={handleUserInput}
@@ -73,8 +71,7 @@ export default function ApplicationForVerificationOfGasMeters() {
             Контактный телефон:
             <Span>*</Span>
           </Label>
-          <InputPhone
-            inputPhone={'phone'}
+          <FormInput
             type="tel"
             name="phone"
             placeholder={'+375ХХХХХХХХХ'}
@@ -88,8 +85,8 @@ export default function ApplicationForVerificationOfGasMeters() {
             Адрес объекта:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'address'}
+          <FormInput
+            name={'address'}
             type="text"
             placeholder={'Введите адрес объекта'}
             onChange={handleUserInput}

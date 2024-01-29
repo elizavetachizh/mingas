@@ -12,6 +12,7 @@ import InputName from '../../../../components/input';
 import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';
+import FormInput from '../../../../components/input/inputPhone';
 
 export default function ApplicationForRepairOfGasUsingEquipment() {
   const {
@@ -33,8 +34,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           <Label>
             ФИО заявителя полностью: <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'name'}
+          <FormInput
+            name={'name'}
             type={'text'}
             placeholder={'Введите ФИО полностью'}
             onChange={handleUserInput}
@@ -47,8 +48,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             Введите ваш e-mail:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'email'}
+          <FormInput
+            name={'email'}
             type="email"
             placeholder={'ваш e-mail'}
             onChange={handleUserInput}
@@ -60,8 +61,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           <Label>
             Номер договора (лицевой счёт): <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'text'}
+          <FormInput
+            name={'text'}
             type={'text'}
             placeholder={'Введите абонентский номер'}
             onChange={handleUserInput}
@@ -74,8 +75,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             Контактный телефон:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'phone'}
+          <FormInput
+            name={'phone'}
             type="tel"
             placeholder={'+375ХХХХХХХХХ'}
             onChange={handleUserInput}
@@ -88,8 +89,8 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
             Адрес:
             <Span>*</Span>
           </Label>
-          <InputName
-            inputName={'address'}
+          <FormInput
+            name={'address'}
             type="text"
             placeholder={'Введите ваш адрес'}
             onChange={handleUserInput}
@@ -126,9 +127,9 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           <Label>
             Желаемая дата выполнения работы: <Span>*</Span>
           </Label>
-          <InputName
+          <FormInput
             error={errors.date}
-            inputName={'date'}
+            name={'date'}
             onChange={handleUserInput}
             type={'date'}
             value={requestValues.date}

@@ -1,6 +1,7 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import axios from 'axios';
 import { INITIAL_FORM_STATE } from '../../const/consts';
+import { isValidateEmail, isValidatePhone, stringIncludesNumber } from '../functionFalidateForm';
 
 export const useFeedback = () => {
   const [formValues, setFormValues] = useState(INITIAL_FORM_STATE);
@@ -11,18 +12,8 @@ export const useFeedback = () => {
   //const url = 'http://localhost/feedback';
 
   const [msg, setMsg] = useState('');
-  const isValidateEmail = (email) => {
-    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
-      email
-    );
-  };
   const form = useRef();
-  const stringIncludesNumber = (string) => {
-    return /\d/.test(string);
-  };
-  const isValidatePhone = (phone) => {
-    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
-  };
+
   const [errors, setErrors] = useState({});
   const isButtonDisabled = useMemo(() => {
     return !!(

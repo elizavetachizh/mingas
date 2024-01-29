@@ -16,6 +16,7 @@ export default function ModalWindowAdvertising() {
     const rand = Math.floor(Math.random() * arrayImages.length);
     setImages(rand+1);
   }, []);
+
   return (
     <Overlay id="overlay">
       <div className="popup">
