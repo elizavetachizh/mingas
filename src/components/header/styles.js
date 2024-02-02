@@ -143,16 +143,30 @@ export const Logo = styled.img`
     height: 60px;
   }
   &.gerb {
-    width: 70px;
-    height: 70px;
-    @media (max-width: 646px) {
-      width: 60px;
-      height: 60px;
-    }
-    @media (max-width: 424px) {
-      width: 50px;
-      height: 50px;
-    }
+      width: 70px;
+      height: 70px;
+      @media (max-width: 646px) {
+          width: 60px;
+          height: 60px;
+      }
+      @media (max-width: 424px) {
+          width: 50px;
+          height: 50px;
+      }
+
+  }
+    &.sign {
+      width: 75px;
+      height: 70px;
+      @media (max-width: 646px) {
+        width: 65px;
+        height: 60px;
+      }
+      @media (max-width: 424px) {
+        width: 55px;
+        height: 50px;
+      }
+    
   }
 `;
 

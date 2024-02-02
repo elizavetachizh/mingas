@@ -36,6 +36,7 @@ export default function UpperContainerHeader() {
         </Div104>
       </DivPhone>
       <Logo className={'gerb'} src={require('../../../assets/png/gerb_white.webp')} />
+      <Logo className={'sign'} src={require('../../../assets/png/sign.png')} />
       <ContainerElements>
         <PersonalAccButton
           title="Контакт-центр"
