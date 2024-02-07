@@ -3,8 +3,6 @@ import { DivApplication, Form } from '../styles';
 import {
   Button,
   DivInput,
-  DivInputCheckbox,
-  InputCheckbox,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';

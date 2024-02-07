@@ -3,9 +3,7 @@ import { DivApplication, Form } from '../styles';
 import {
   Button,
   DivInput,
-  DivInputCheckbox,
   DivInputFile,
-  InputCheckbox,
   InputFile,
   Label,
   Span,
