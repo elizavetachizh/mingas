@@ -12,6 +12,7 @@ import {
 } from '../../../../components/formQuestion/styles';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 import FormInput from '../../../../components/input/inputPhone';
+import AgreeWithRules from '../../../../components/AgreeWithRules';
 
 export default function ProvidingGasMeterReadings() {
   const {
@@ -129,19 +130,11 @@ export default function ProvidingGasMeterReadings() {
           <InputFile type="file" id="file-input" />
           <label>Прикрепить фото прибора учёта</label>
         </DivInputFile>
-        <DivInputCheckbox>
-          <InputCheckbox
-            type="checkbox"
-            onChange={handleCheckBox}
-            checked={requestValues.isAgree}
-            inputName="isAgree"
-            error={errors.isAgree}
-          />
-          <Label>
-            Согласен на обработку данных
-            <Span>*</Span>
-          </Label>
-        </DivInputCheckbox>
+        <AgreeWithRules
+          errors={errors}
+          handleCheckBox={handleCheckBox}
+          requestValues={requestValues}
+        />
         <Button
           disabled={isButtonDisabled}
           type="submit"

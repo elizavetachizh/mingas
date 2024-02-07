@@ -12,6 +12,7 @@ import { useFeedback } from '../leaveFeedback-hook';
 import PopUp from '../../popUp';
 import InputText from '../../input/inputText';
 import FormInput from '../../input/inputPhone';
+import AgreeWithRules from '../../AgreeWithRules';
 
 export default function LeaveFeedbackMingas() {
   const {
@@ -218,20 +219,11 @@ export default function LeaveFeedbackMingas() {
           </ol>
         </div>
 
-        <DivInputCheckbox>
-          <InputCheckbox
-            type="checkbox"
-            inputName="isAgree"
-            onChange={handleCheckBox}
-            checked={formValues.isAgree}
-            error={errors.isAgree}
-          />
-          <Label>
-            Согласен на обработку данных
-            <Span>*</Span>
-          </Label>
-        </DivInputCheckbox>
-
+        <AgreeWithRules
+          errors={errors}
+          handleCheckBox={handleCheckBox}
+          requestValues={formValues}
+        />
         <Button disabled={isButtonDisabled} type="submit" onClick={handleSubmit}>
           Отправить
         </Button>

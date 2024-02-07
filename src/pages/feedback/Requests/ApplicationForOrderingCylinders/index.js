@@ -10,6 +10,7 @@ import {
 } from '../../../../components/formQuestion/styles';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
 import FormInput from '../../../../components/input/inputPhone';
+import AgreeWithRules from '../../../../components/AgreeWithRules';
 
 export default function ApplicationForOrderingCylinders() {
   const {
@@ -95,19 +96,11 @@ export default function ApplicationForOrderingCylinders() {
           />
         </DivInput>
 
-        <DivInputCheckbox>
-          <InputCheckbox
-            type="checkbox"
-            onChange={handleCheckBox}
-            checked={requestValues.isAgree}
-            inputName="isAgree"
-            error={errors.isAgree}
-          />
-          <Label>
-            Cогласен на обработку персональных данных
-            <Span>*</Span>
-          </Label>
-        </DivInputCheckbox>
+        <AgreeWithRules
+          errors={errors}
+          handleCheckBox={handleCheckBox}
+          requestValues={requestValues}
+        />
         <Button
           disabled={isButtonDisabled}
           type="submit"

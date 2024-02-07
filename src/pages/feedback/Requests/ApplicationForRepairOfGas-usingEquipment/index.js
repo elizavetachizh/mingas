@@ -3,8 +3,6 @@ import { DivApplication, Form } from '../styles';
 import {
   Button,
   DivInput,
-  DivInputCheckbox,
-  InputCheckbox,
   Label,
   Span,
 } from '../../../../components/formQuestion/styles';
@@ -13,6 +11,7 @@ import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';
 import FormInput from '../../../../components/input/inputPhone';
+import AgreeWithRules from '../../../../components/AgreeWithRules';
 
 export default function ApplicationForRepairOfGasUsingEquipment() {
   const {
@@ -140,19 +139,11 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         <span style={{ color: 'red' }}>
           *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
         </span>
-        <DivInputCheckbox>
-          <InputCheckbox
-            type="checkbox"
-            onChange={handleCheckBox}
-            checked={requestValues.isAgree}
-            inputName="isAgree"
-            error={errors.isAgree}
-          />
-          <Label>
-            Согласен на обработку данных
-            <Span>*</Span>
-          </Label>
-        </DivInputCheckbox>
+        <AgreeWithRules
+          errors={errors}
+          handleCheckBox={handleCheckBox}
+          requestValues={requestValues}
+        />
         <Button
           disabled={isButtonDisabled}
           type="submit"

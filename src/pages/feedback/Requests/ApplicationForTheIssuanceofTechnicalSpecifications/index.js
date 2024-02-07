@@ -13,6 +13,7 @@ import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import { useRequestForIssuance } from './IssuanceOfTS-hook';
 import InputDate from '../../../../components/input/InputDate';
 import FormInput from '../../../../components/input/inputPhone';
+import AgreeWithRules from "../../../../components/AgreeWithRules";
 
 export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   const {
@@ -122,19 +123,11 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
         <span style={{ color: 'red' }}>
           *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
         </span>
-        <DivInputCheckbox>
-          <InputCheckbox
-            type="checkbox"
-            onChange={handleCheckBox}
-            checked={requestIssuanceValues.isAgree}
-            inputName="isAgree"
-            error={errors.isAgree}
-          />
-          <Label>
-            Согласен на обработку данных
-            <Span>*</Span>
-          </Label>
-        </DivInputCheckbox>
+        <AgreeWithRules
+            errors={errors}
+            handleCheckBox={handleCheckBox}
+            requestValues={requestIssuanceValues}
+        />
         <Button
           disabled={isButtonDisabled}
           type="submit"
