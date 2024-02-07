@@ -2,8 +2,6 @@ import { DivApplication, Form } from '../../../pages/feedback/Requests/styles';
 import {
   Button,
   DivInput,
-  DivInputCheckbox,
-  InputCheckbox,
   Label,
   Span,
 } from '../../formQuestion/styles';
