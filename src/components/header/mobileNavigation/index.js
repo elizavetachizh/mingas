@@ -13,6 +13,7 @@ import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from 
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
 import linksForMenu from '../../../const/consts';
+import {FiShoppingBag, FiShoppingCart} from "react-icons/fi";
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +34,20 @@ export default function MobileNavigation() {
         <ContainerElements className={'mobile'}>
           <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
             <IoMdContacts className={'icon iconMobile'} />
+          </PersonalAccButton>
+          <PersonalAccButton
+              target={'_blank'}
+              title="Магазин"
+              href={'https://shop.mingas.by/'}
+          >
+            <FiShoppingCart style={{ width: '34px', height: '34px' }} className={'icon'} />
+          </PersonalAccButton>
+          <PersonalAccButton
+              target={'_blank'}
+              title="Магазин"
+              href={'https://20393.shop.onliner.by/'}
+          >
+            <FiShoppingBag style={{ width: '34px', height: '34px' }}  className={'icon'} />
           </PersonalAccButton>
           <SearchPage classname={'header'} />
           <Language />

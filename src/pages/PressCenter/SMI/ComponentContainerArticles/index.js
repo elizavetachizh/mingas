@@ -25,7 +25,7 @@ export default function ComponentContainerArticles() {
           {fetchPosts?.results?.map((el) => (
             <SchemaSMI href={el.link} src={el.image} content={el.content} date={el.date} />
           ))}
-          <Pagination countOfOperations={fetchPosts?.count} setPage={setPage} page={page} />
+          <Pagination setPage={setPage} page={page} />
         </>
       ) : (
         <Loader />

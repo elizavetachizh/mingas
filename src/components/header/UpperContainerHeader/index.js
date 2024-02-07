@@ -10,7 +10,7 @@ import {
   PersonalAccButton,
 } from '../styles';
 import HeaderLogoBlue from '../../../assets/png/mingaz_logo_white.webp';
-import { FiShoppingCart } from 'react-icons/fi';
+import {FiShoppingBag, FiShoppingCart} from 'react-icons/fi';
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
 import React from 'react';
@@ -46,10 +46,17 @@ export default function UpperContainerHeader() {
         </PersonalAccButton>
         <PersonalAccButton
           target={'_blank'}
-          title="Магазин"
-          href={'https://20393.shop.onliner.by/'}
+          title="Магазин УП 'МИНГАЗ'"
+          href={'https://shop.mingas.by/'}
         >
           <FiShoppingCart style={{ width: '34px', height: '34px' }} className={'icon'} />
+        </PersonalAccButton>
+        <PersonalAccButton
+            target={'_blank'}
+            title="Onliner"
+            href={'https://20393.shop.onliner.by/'}
+        >
+          <FiShoppingBag style={{ width: '34px', height: '34px' }}  className={'icon'} />
         </PersonalAccButton>
         <SearchPage />
         <Language />

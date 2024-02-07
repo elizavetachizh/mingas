@@ -4,34 +4,34 @@ export const documents = [
     name: 'Сертификаты',
     inform: [{ id: 1, img: '67' }],
   },
-  // {
-  //   GeneralId: 3,
-  //   name: 'Сертификаты',
-  //   inform: [{ id: 1, img: '18' }],
-  // },
-  // {
-  //   GeneralId: 4,
-  //   name: 'Сертификаты',
-  //   inform: [
-  //     { id: 1, img: '24' },
-  //     { id: 2, img: '25' },
-  //     { id: 3, img: '26' },
-  //     { id: 4, img: '27' },
-  //     { id: 5, img: '28' },
-  //     { id: 6, img: '29' },
-  //   ],
-  // },
-  // {
-  //   GeneralId: 5,
-  //   name: 'Сертификаты',
-  //   inform: [
-  //     { id: 1, img: '19' },
-  //     { id: 2, img: '20' },
-  //     { id: 3, img: '21' },
-  //     { id: 4, img: '22' },
-  //     { id: 5, img: '23' },
-  //   ],
-  // },
+   {
+    GeneralId: 4,
+    name: 'Сертификаты',
+    inform: [
+      { id: 1, img: '22' },
+      { id: 2, img: '23' },
+      { id: 3, img: '24' },
+      { id: 4, img: '25' },
+      { id: 5, img: '26' },
+      { id: 6, img: '27' },
+      { id: 7, img: '28' },
+      { id: 8, img: '29' },
+    ],
+  },
+  {
+    GeneralId: 5,
+    name: 'Сертификаты',
+    inform: [
+      { id: 1, img: '70' },
+      { id: 2, img: '71' },
+      { id: 3, img: '72' },
+      { id: 4, img: '73' },
+      { id: 5, img: '74' },
+      { id: 6, img: '75' },
+      { id: 7, img: '76' },
+      { id: 8, img: '77' },
+    ],
+  },
   {
     GeneralId: 6,
     name: 'Сертификаты',
@@ -102,16 +102,7 @@ export const documents = [
       { id: 4, img: '48' },
       { id: 5, img: '49' },
       { id: 6, img: '50' },
-      { id: 7, img: '51' },
-    ],
-  },
-  {
-    GeneralId: 13,
-    name: 'Лицензии',
-    inform: [
-      { id: 1, img: '52' },
-      { id: 2, img: '53' },
-      { id: 3, img: '54' },
+
     ],
   },
   {
@@ -153,6 +144,7 @@ export const documents = [
     inform: [
       { id: 1, img: '9' },
       { id: 2, img: '10' },
+      { id: 2, img: '51' },
     ],
   },
   {

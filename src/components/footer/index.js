@@ -5,7 +5,7 @@ import { Contacts, Telephons, FooterContainer } from './styles';
 import ButtonFun from '../button';
 
 import { Prizes } from '../../pages/Home/Content/styles';
-import { IoLogoInstagram } from 'react-icons/io';
+import {IoLogoInstagram, IoLogoYoutube} from 'react-icons/io';
 export default function Footer({ classname }) {
   return (
     <FooterContainer className={classname}>
@@ -24,24 +24,40 @@ export default function Footer({ classname }) {
       <Contacts>
         <Telephons>
           <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
           >
             <p>Смотри нас в </p>
             <a
-              title={'Инстаграм'}
-              href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
-              target={'_blank'}
-              rel="noreferrer"
+                title={'Инстаграм'}
+                href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
+                target={'_blank'}
+                rel="noreferrer"
             >
-              <IoLogoInstagram style={{ width: '46px', height: '46px' }} />
+              <IoLogoInstagram style={{width: '40px', height: '40px'}}/>
+            </a>
+            <a
+                title={'Telegram'}
+                href={'https://t.me/mingasby'}
+                target={'_blank'}
+                rel="noreferrer" style={{margin:'0 8px 0 4px'}}
+            >
+              <img alt={'telegram'} src={require('../../assets/png/telegram.png')} style={{width: '32px', height: '32px'}}/>
+            </a>
+            <a
+                title={'YouTube'}
+                href={'https://www.youtube.com/@user-ui4mh4wv6t'}
+                target={'_blank'}
+                rel="noreferrer"
+            >
+              <IoLogoYoutube style={{width: '36px', height: '40px'}}/>
             </a>
           </div>
-          <ButtonFun href={'/contacts/phone-services'} infoButton={'Телефоны для связи'} />
+          <ButtonFun href={'/contacts/phone-services'} infoButton={'Телефоны для связи'}/>
           <p>
             Контакт-центр УП «МИНГАЗ» тел. <a href={'tel:162'}>162</a>
           </p>
