@@ -17,7 +17,6 @@ export default function ComponentContainerArticles() {
     }
   }, [isLoading, dispatch, fetchPosts]);
 
-  console.log(fetchPosts);
   return (
     <ContainerArticles>
       {fetchPosts?.results?.length ? (

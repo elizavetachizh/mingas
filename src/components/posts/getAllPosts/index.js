@@ -1,28 +1,17 @@
-import { useEffect } from 'react';
 import ContainerContent from '../../Container';
 import DopFunctional from './dopFunctional';
-import { useFetchMainPostsQuery } from '../../../redux/services/mainpost';
-import { setMainPosts } from '../../../redux/slices/mainPostsSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useFetchMainPostsByTypeQuery } from '../../../redux/services/mainpost';
 import Loader from '../../Loader';
 
 export default function GetAllPosts() {
-  const dispatch = useDispatch();
-  const { data: fetchMainPosts, isLoading } = useFetchMainPostsQuery();
-  useEffect(() => {
-    if (!isLoading) {
-      dispatch(setMainPosts(fetchMainPosts));
-    }
-  }, [isLoading, dispatch, fetchMainPosts]);
-  const posts = useSelector((state) => state.mainPosts.data);
-
+  const { data: fetchMainPostsByType } = useFetchMainPostsByTypeQuery();
   return (
     <ContainerContent
       name={'Важно знать, безопасность'}
       content={
         <>
-          {posts?.length ? (
-            posts?.map(
+          {fetchMainPostsByType?.length ? (
+            fetchMainPostsByType?.map(
               (el) =>
                 el.type === 'safety' && (
                   <DopFunctional name={el.name} description={el.description} id={el._id} />

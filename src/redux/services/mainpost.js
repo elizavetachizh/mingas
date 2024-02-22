@@ -13,6 +13,15 @@ export const mainPostsAPI = createApi({
         },
       }),
     }),
+    fetchMainPostsByType: build.query({
+      query: () => ({
+        url: `/mainposts/limit`,
+        headers: {
+          Authorization: 'Bearer ',
+          'Content-type': 'application/json',
+        },
+      }),
+    }),
     fetchMainPostById: build.query({
       query: (id) => ({
         url: `/mainposts/${id === undefined ? '' : `${id}`}`,
@@ -24,7 +33,5 @@ export const mainPostsAPI = createApi({
     }),
   }),
 });
-export const {
-  useFetchMainPostsQuery,
-  useFetchMainPostByIdQuery,
-} = mainPostsAPI;
+export const { useFetchMainPostsQuery, useFetchMainPostByIdQuery, useFetchMainPostsByTypeQuery } =
+  mainPostsAPI;
