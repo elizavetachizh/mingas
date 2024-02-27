@@ -62,7 +62,6 @@ export const DivDown = styled.div`
 export const ServicesDiv = styled.div`
   width: 100%;
   display: flex;
-  padding-bottom: 20px;
   justify-content: space-between;
 `;
 export const BackgroundStyle = styled.img`

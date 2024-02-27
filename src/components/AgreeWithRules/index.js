@@ -1,22 +1,21 @@
-import { DivInputCheckbox, InputCheckbox, Label, Span } from '../formQuestion/styles';
+import { DivInputCheckbox, Label } from '../formQuestion/styles';
 import React from 'react';
 
-export default function AgreeWithRules({ handleCheckBox, requestValues, errors }) {
+export default function AgreeWithRules({ handleCheckBox, requestValues }) {
   return (
     <DivInputCheckbox>
-      <InputCheckbox
+      <input
         type="checkbox"
         onChange={handleCheckBox}
         checked={requestValues.isAgree}
-        inputName="isAgree"
-        error={errors.isAgree}
+        name="isAgree"
       />
       <Label>
-        Даю согласие на обработку моих персональных данных для выбранной цели в соответствии с{" "}
+        Даю согласие на обработку моих персональных данных для выбранной цели в соответствии с{' '}
         <a type={'download'} href={'https://back.mingas.by/public/documents/confidentiality.pdf'}>
           Политикой обработки персональных данных
         </a>
-        <Span>*</Span>
+        <span>*</span>
       </Label>
     </DivInputCheckbox>
   );

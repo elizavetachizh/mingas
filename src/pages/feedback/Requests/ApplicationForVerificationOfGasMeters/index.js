@@ -1,13 +1,7 @@
 import React from 'react';
 import { DivApplication, Form } from '../styles';
-import {
-  Button,
-  DivInput,
-  Label,
-  Span,
-} from '../../../../components/formQuestion/styles';
+import { Button } from '../../../../components/formQuestion/styles';
 import { useRequestForVerificationOfGasMeters } from './verificationOfGasMeters-hook';
-import InputDate from '../../../../components/input/InputDate';
 import FormInput from '../../../../components/input/inputPhone';
 import AgreeWithRules from '../../../../components/AgreeWithRules';
 
@@ -25,91 +19,76 @@ export default function ApplicationForVerificationOfGasMeters() {
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit}>
-        <DivInput>
-          <Label>
-            ФИО заявителя полностью: <Span>*</Span>
-          </Label>
-          <FormInput
-            type={'text'}
-            name={'name'}
-            placeholder={'Введите ФИО полностью'}
-            onChange={handleUserInput}
-            value={requestValues.name}
-            error={errors.name}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Введите ваш e-mail:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'email'}
-            type="email"
-            placeholder={'ваш e-mail'}
-            onChange={handleUserInput}
-            value={requestValues.email}
-            error={errors.email}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Номер договора (лицевой счёт): <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'text'}
-            type={'text'}
-            placeholder={'Введите абонентский номер'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Контактный телефон:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            type="tel"
-            name="phone"
-            placeholder={'+375ХХХХХХХХХ'}
-            onChange={handleUserInput}
-            value={requestValues.phone}
-            error={errors.phone}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Адрес объекта:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'address'}
-            type="text"
-            placeholder={'Введите адрес объекта'}
-            onChange={handleUserInput}
-            value={requestValues.address}
-            error={errors.address}
-          />
-        </DivInput>
-
-        <InputDate
-          span={'*'}
-          label={'Желаемая дата выполнения работы'}
-          error={errors.date}
-          inputDate={'date'}
+        <FormInput
+          type={'text'}
+          label={'ФИО заявителя полностью:'}
+          span={true}
+          name={'name'}
+          placeholder={'Введите ФИО полностью'}
           onChange={handleUserInput}
-          type={'date'}
-          value={requestValues.date}
+          value={requestValues.name}
+          error={errors.name}
+        />
+
+        <FormInput
+          span={true}
+          label={'Введите ваш e-mail:'}
+          name={'email'}
+          type="email"
+          placeholder={'ваш e-mail'}
+          onChange={handleUserInput}
+          value={requestValues.email}
+          error={errors.email}
+        />
+
+        <FormInput
+          span={true}
+          label={'Номер договора (лицевой счёт):'}
+          name={'text'}
+          type={'text'}
+          placeholder={'Введите абонентский номер'}
+          onChange={handleUserInput}
+          value={requestValues.text}
+          error={errors.text}
+        />
+
+        <FormInput
+          type="tel"
+          span={true}
+          label={'Контактный телефон:'}
+          name="phone"
+          placeholder={'+375ХХХХХХХХХ'}
+          onChange={handleUserInput}
+          value={requestValues.phone}
+          error={errors.phone}
+        />
+
+        <FormInput
+          name={'address'}
+          span={true}
+          label={'Адрес объекта:'}
+          type="text"
+          placeholder={'Введите адрес объекта'}
+          onChange={handleUserInput}
+          value={requestValues.address}
+          error={errors.address}
+        />
+
+        <FormInput
+          span={true}
+          label={'Желаемая дата выполнения работы'}
           placeholder={'Введите желаемую дату выполнения работы'}
+          error={errors.date}
+          type={'date'}
+          onChange={handleUserInput}
+          value={requestValues.date}
+          name={'date'}
         />
 
         <span style={{ color: 'red' }}>
           *при обратном звонке специалист Вам предложит доступную дату выполнения работ
         </span>
         <AgreeWithRules
-          errors={errors}
           handleCheckBox={handleCheckBox}
           requestValues={requestValues}
         />

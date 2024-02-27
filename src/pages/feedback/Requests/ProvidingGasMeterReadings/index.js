@@ -1,13 +1,6 @@
 import React from 'react';
 import { DivApplication, Form } from '../styles';
-import {
-  Button,
-  DivInput,
-  DivInputFile,
-  InputFile,
-  Label,
-  Span,
-} from '../../../../components/formQuestion/styles';
+import { Button, DivInputFile, InputFile } from '../../../../components/formQuestion/styles';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 import FormInput from '../../../../components/input/inputPhone';
 import AgreeWithRules from '../../../../components/AgreeWithRules';
@@ -56,83 +49,66 @@ export default function ProvidingGasMeterReadings() {
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit} id={'form'}>
-        <DivInput>
-          <Label>
-            ФИО заявителя полностью: <Span>*</Span>
-          </Label>
-          <FormInput
-            type={'text'}
-            placeholder={'Введите ФИО полностью'}
-            onChange={handleUserInput}
-            value={requestValues.name}
-            error={errors.name}
-            name={'name'}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Введите ваш e-mail:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            type="email"
-            name={'email'}
-            placeholder={'ваш e-mail'}
-            onChange={handleUserInput}
-            value={requestValues.email}
-            error={errors.email}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Номер договора (лицевой счёт): <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'text'}
-            type={'text'}
-            placeholder={'Введите абонентский номер'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Контактный телефон:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            type="tel"
-            name={'phone'}
-            placeholder={'+375ХХХХХХХХХ'}
-            onChange={handleUserInput}
-            value={requestValues.phone}
-            error={errors.phone}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Адрес объекта:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'address'}
-            type="text"
-            placeholder={'Введите адрес проживания'}
-            onChange={handleUserInput}
-            value={requestValues.address}
-            error={errors.address}
-          />
-        </DivInput>
+        <FormInput
+          type={'text'}
+          span={true}
+          label={'ФИО заявителя полностью:'}
+          placeholder={'Введите ФИО полностью'}
+          onChange={handleUserInput}
+          value={requestValues.name}
+          error={errors.name}
+          name={'name'}
+        />
+
+        <FormInput
+          span={true}
+          label={'Введите ваш e-mail:'}
+          type="email"
+          name={'email'}
+          placeholder={'ваш e-mail'}
+          onChange={handleUserInput}
+          value={requestValues.email}
+          error={errors.email}
+        />
+
+        <FormInput
+          span={true}
+          label={'Номер договора (лицевой счёт):'}
+          name={'text'}
+          type={'text'}
+          placeholder={'Введите абонентский номер'}
+          onChange={handleUserInput}
+          value={requestValues.text}
+          error={errors.text}
+        />
+
+        <FormInput
+          span={true}
+          label={'Контактный телефон:'}
+          type="tel"
+          name={'phone'}
+          placeholder={'+375ХХХХХХХХХ'}
+          onChange={handleUserInput}
+          value={requestValues.phone}
+          error={errors.phone}
+        />
+
+        <FormInput
+          name={'address'}
+          span={true}
+          label={'Адрес объекта:'}
+          type="text"
+          placeholder={'Введите адрес проживания'}
+          onChange={handleUserInput}
+          value={requestValues.address}
+          error={errors.address}
+        />
+
         <DivInputFile>
           <InputFile type="file" id="file-input" />
           <label>Прикрепить фото прибора учёта</label>
         </DivInputFile>
-        <AgreeWithRules
-          errors={errors}
-          handleCheckBox={handleCheckBox}
-          requestValues={requestValues}
-        />
+        <AgreeWithRules handleCheckBox={handleCheckBox} requestValues={requestValues} />
         <Button
           disabled={isButtonDisabled}
           type="submit"

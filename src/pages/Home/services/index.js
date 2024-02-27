@@ -10,10 +10,7 @@ export default function HomeServices() {
   const service = useSelector((state) => state.services.data);
   return (
     <Container>
-      <TitleForHome
-        fontSize={'m'}
-        infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'}
-      />
+      <TitleForHome infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'} />
       <ButtonServicesHome>
         <ButtonFun
           href={'/services'}

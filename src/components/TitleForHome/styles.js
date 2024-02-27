@@ -25,35 +25,14 @@ export const Title = styled.h2`
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  font-size: 28px;
   justify-content: center;
-  margin: 2% auto;
+  margin: 2rem auto;
   text-align: center;
   ${({ color }) => titleColor[color]};
   ${({ margin }) => titleMargin[margin]};
-  &.branches {
-    margin: 2% auto;
-    @media (max-width: 600px) {
-      margin-top: 4%;
-    }
-  }
-
   @media (max-width: 700px) {
-    margin-top: 10%;
-    &.company {
-      margin-top: 4%;
-      font-size: 18px;
-      @media (max-width: 440px) {
-        font-size: 16px;
-      }
-    }
-  }
-  @media (max-width: 640px) {
-    font-size: 22px;
-  }
-  @media (max-width: 500px) {
-    margin-top: 16%;
     font-size: 20px;
   }
+
   ${({ fontSize }) => titleFontSize[fontSize]}
 `;

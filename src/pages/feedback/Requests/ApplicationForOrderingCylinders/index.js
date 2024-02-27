@@ -1,11 +1,6 @@
 import React from 'react';
 import { DivApplication, Form } from '../styles';
-import {
-  Button,
-  DivInput,
-  Label,
-  Span,
-} from '../../../../components/formQuestion/styles';
+import { Button } from '../../../../components/formQuestion/styles';
 import { useForOrderingCylinders } from './ForOrderingCylinders-hook';
 import FormInput from '../../../../components/input/inputPhone';
 import AgreeWithRules from '../../../../components/AgreeWithRules';
@@ -25,77 +20,58 @@ export default function ApplicationForOrderingCylinders() {
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit} id={'form'}>
-        <DivInput>
-          <Label>
-            ФИО заявителя полностью: <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'name'}
-            type={'text'}
-            placeholder={'ФИО заявителя полностью'}
-            onChange={handleUserInput}
-            value={requestValues.name}
-            error={errors.name}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Введите ваш e-mail:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'email'}
-            type="email"
-            placeholder={'ваш e-mail'}
-            onChange={handleUserInput}
-            value={requestValues.email}
-            error={errors.email}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Номер абонента: <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'text'}
-            type={'text'}
-            placeholder={'Номер абонента'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Адрес проживания:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'address'}
-            type="text"
-            placeholder={'Адрес проживания'}
-            onChange={handleUserInput}
-            value={requestValues.address}
-            error={errors.address}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Контактный телефон:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'phone'}
-            type="tel"
-            placeholder={'+375ХХХХХХХХХ'}
-            onChange={handleUserInput}
-            value={requestValues.phone}
-            error={errors.phone}
-          />
-        </DivInput>
+        <FormInput
+          span={true}
+          label={'ФИО заявителя полностью:'}
+          name={'name'}
+          type={'text'}
+          placeholder={'ФИО заявителя полностью'}
+          onChange={handleUserInput}
+          value={requestValues.name}
+          error={errors.name}
+        />
+        <FormInput
+          name={'email'}
+          span={true}
+          label={' Введите ваш e-mail:'}
+          type="email"
+          placeholder={'ваш e-mail'}
+          onChange={handleUserInput}
+          value={requestValues.email}
+          error={errors.email}
+        />
+        <FormInput
+          span={true}
+          label={' Номер абонента:'}
+          name={'text'}
+          type={'text'}
+          placeholder={'Номер абонента'}
+          onChange={handleUserInput}
+          value={requestValues.text}
+          error={errors.text}
+        />
+        <FormInput
+          span={true}
+          label={'Адрес проживания:'}
+          name={'address'}
+          type="text"
+          placeholder={'Адрес проживания'}
+          onChange={handleUserInput}
+          value={requestValues.address}
+          error={errors.address}
+        />
+        <FormInput
+          name={'phone'}
+          label={'Контактный телефон:'}
+          span={true}
+          type="tel"
+          placeholder={'+375ХХХХХХХХХ'}
+          onChange={handleUserInput}
+          value={requestValues.phone}
+          error={errors.phone}
+        />
 
         <AgreeWithRules
-          errors={errors}
           handleCheckBox={handleCheckBox}
           requestValues={requestValues}
         />

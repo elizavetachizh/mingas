@@ -32,12 +32,6 @@ export const Label = styled.label`
   }
 `;
 
-export const Span = styled.span`
-  color: red;
-`;
-
-export const InputCheckbox = styled.input``;
-
 export const DivInputFile = styled.div`
   position: relative;
   overflow: hidden;

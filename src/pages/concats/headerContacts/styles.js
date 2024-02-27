@@ -4,7 +4,7 @@ const MenuWidth = {
   s: `width: 30%;`,
 };
 export const HeaderCompanyDiv = styled.div`
-  margin: 4% 2% 0;
+  margin: 0 2%;
   height: fit-content;
   width: 50%;
   display: flex;

@@ -92,7 +92,7 @@ export default function Documentation() {
       content={
         <>
           <ContainerOfDocuments>
-            <TitleForHome className={'company'} color={'blue'} infoTitle={certifications[0].name} />
+            <TitleForHome color={'blue'} infoTitle={certifications[0].name} />
             <BlockOfGraditude>
               {certifications.map((element) => (
                 <ContainerGraditude

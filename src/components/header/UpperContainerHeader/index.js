@@ -5,7 +5,6 @@ import {
   DivPhone,
   IoMdContacts,
   IoMdEyeOffs,
-  LinkLogo,
   Logo,
   PersonalAccButton,
 } from '../styles';
@@ -14,14 +13,15 @@ import {FiShoppingBag, FiShoppingCart} from 'react-icons/fi';
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 export default function UpperContainerHeader() {
   return (
     <DivFirstHeader>
       <DivPhone>
-        <LinkLogo to="/">
+        <NavLink to="/">
           <Logo src={HeaderLogoBlue} />
-        </LinkLogo>
+        </NavLink>
         <Div104>
           <div>
             <a href={'tel:104'}>104</a>

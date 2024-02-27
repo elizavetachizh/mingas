@@ -22,7 +22,7 @@ export const DivInform = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 90%;
-  margin: 2% auto;
+  //margin: 2% auto;
 
   @media (max-width: 1100px) {
     width: 96%;

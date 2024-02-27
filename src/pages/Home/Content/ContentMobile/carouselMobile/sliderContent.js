@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
-import {APIimage} from "../../../../../backend";
-import ButtonFun from "../../../../../components/button";
+import { APIimage } from '../../../../../backend';
+import ButtonFun from '../../../../../components/button';
 
 function SliderContent({ activeIndex, sliderImage }) {
   const getElement = useCallback((id) => {
@@ -19,7 +19,10 @@ function SliderContent({ activeIndex, sliderImage }) {
   return (
     <section>
       {sliderImage.map((slide, index) => (
-        <div key={index} className={index === activeIndex ? 'slides-mobile active-mobile' : 'inactive-mobile'}>
+        <div
+          key={index}
+          className={index === activeIndex ? 'slides-mobile active-mobile' : 'inactive-mobile'}
+        >
           <img className="slide-image-image" src={`${APIimage}/${slide.image}`} alt="" />
           <h2 id={`content-${slide._id}`} className="slide-title-mobile" />
           {slide.link !== '' && (

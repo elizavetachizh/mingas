@@ -105,17 +105,13 @@ export const ButtonForms = styled.div`
   display: flex;
   flex-direction: row;
   width: 90%;
-  margin: 2% auto;
+  margin: 0 auto;
   @media (max-width: 950px) {
     flex-direction: column;
   }
-  &.without-margin {
-    margin: 10px auto;
-    @media (max-width: 1600px) {
-      box-shadow: none;
-      border-radius: 0;
-      margin: 0 auto 0;
-    }
+  @media (max-width: 1600px) {
+    box-shadow: none;
+    border-radius: 0;
   }
 `;
 
@@ -177,15 +173,6 @@ export const DivImage = styled.div`
       @media (max-width: 400px) {
         width: 230%;
       }
-    }
-
-    &.newpost {
-      width: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      object-fit: cover;
-      height: 400px;
     }
   }
   &.none:after {
@@ -263,15 +250,6 @@ export const DivImageNew = styled.div`
       @media (max-width: 400px) {
         width: 230%;
       }
-    }
-
-    &.newpost {
-      width: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      object-fit: cover;
-      height: 400px;
     }
   }
   &.none:after {

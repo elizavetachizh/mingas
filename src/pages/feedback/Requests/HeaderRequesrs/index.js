@@ -13,12 +13,8 @@ export default function HeaderRequests({ style }) {
   const [active, setActive] = useState('ApplicationForOrderingCylinders');
   return (
     <BlockContainerRequests style={style}>
-      <TitleForHome
-        style={{ margin: '0 auto' }}
-        color={'blue'}
-        infoTitle={'Оставить онлайн-заявку'}
-      />{' '}
-      <ButtonForms className={'without-margin'}>
+      <TitleForHome color={'blue'} infoTitle={'Оставить онлайн-заявку'} />{' '}
+      <ButtonForms>
         <HeaderBtnFeedback>
           {APPLICATION_BUTTONS.map((el) => (
             <Button

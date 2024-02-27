@@ -1,6 +1,11 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { INITIAL_REQUEST_STATE } from '../../../../const/consts';
 import axios from 'axios';
+import {
+  isValidateEmail,
+  isValidatePhone,
+  stringIncludesNumber,
+} from '../../../../components/functionFalidateForm';
 
 export const useProvidingGasMasterReadings = () => {
   //for site
@@ -12,18 +17,7 @@ export const useProvidingGasMasterReadings = () => {
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE);
   const [errors, setErrors] = useState({});
   const [msg, setMsg] = useState('');
-  const isValidateEmail = (email) => {
-    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/.test(
-      email
-    );
-  };
   const form = useRef();
-  const isValidatePhone = (phone) => {
-    return /\+375\d{2}\d{3}\d{2}\d{2}/g.test(phone);
-  };
-  const stringIncludesNumber = (string) => {
-    return /\d/.test(string);
-  };
   const isButtonDisabled = useMemo(() => {
     return !!(
       stringIncludesNumber(requestValues.name) ||

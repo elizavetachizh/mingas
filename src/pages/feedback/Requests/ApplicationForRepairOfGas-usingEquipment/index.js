@@ -1,17 +1,12 @@
 import React from 'react';
 import { DivApplication, Form } from '../styles';
-import {
-  Button,
-  DivInput,
-  Label,
-  Span,
-} from '../../../../components/formQuestion/styles';
-import InputName from '../../../../components/input';
+import { Button } from '../../../../components/formQuestion/styles';
 import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
 import { UseForRepairOfGasUsingEquipment } from './useHookForRepair';
 import FormInput from '../../../../components/input/inputPhone';
 import AgreeWithRules from '../../../../components/AgreeWithRules';
+import InputText from '../../../../components/input/inputText';
 
 export default function ApplicationForRepairOfGasUsingEquipment() {
   const {
@@ -29,74 +24,56 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
   return (
     <DivApplication>
       <Form ref={form} onSubmit={handleSubmit}>
-        <DivInput>
-          <Label>
-            ФИО заявителя полностью: <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'name'}
-            type={'text'}
-            placeholder={'Введите ФИО полностью'}
-            onChange={handleUserInput}
-            value={requestValues.name}
-            error={errors.name}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Введите ваш e-mail:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'email'}
-            type="email"
-            placeholder={'ваш e-mail'}
-            onChange={handleUserInput}
-            value={requestValues.email}
-            error={errors.email}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Номер договора (лицевой счёт): <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'text'}
-            type={'text'}
-            placeholder={'Введите абонентский номер'}
-            onChange={handleUserInput}
-            value={requestValues.text}
-            error={errors.text}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Контактный телефон:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'phone'}
-            type="tel"
-            placeholder={'+375ХХХХХХХХХ'}
-            onChange={handleUserInput}
-            value={requestValues.phone}
-            error={errors.phone}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Адрес:
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'address'}
-            type="text"
-            placeholder={'Введите ваш адрес'}
-            onChange={handleUserInput}
-            value={requestValues.address}
-            error={errors.address}
-          />
-        </DivInput>
+        <FormInput
+          name={'name'}
+          label={'ФИО заявителя полностью:'}
+          span={true}
+          type={'text'}
+          placeholder={'Введите ФИО полностью'}
+          onChange={handleUserInput}
+          value={requestValues.name}
+          error={errors.name}
+        />
+        <FormInput
+          span={true}
+          label={'Введите ваш e-mail:'}
+          name={'email'}
+          type="email"
+          placeholder={'ваш e-mail'}
+          onChange={handleUserInput}
+          value={requestValues.email}
+          error={errors.email}
+        />
+        <FormInput
+          name={'text'}
+          label={'Номер договора (лицевой счёт):'}
+          span={true}
+          type={'text'}
+          placeholder={'Введите абонентский номер'}
+          onChange={handleUserInput}
+          value={requestValues.text}
+          error={errors.text}
+        />
+        <FormInput
+          span={true}
+          label={'Контактный телефон:'}
+          name={'phone'}
+          type="tel"
+          placeholder={'+375ХХХХХХХХХ'}
+          onChange={handleUserInput}
+          value={requestValues.phone}
+          error={errors.phone}
+        />
+        <FormInput
+          span={true}
+          label={'Адрес:'}
+          name={'address'}
+          type="text"
+          placeholder={'Введите ваш адрес'}
+          onChange={handleUserInput}
+          value={requestValues.address}
+          error={errors.address}
+        />
 
         <Select
           label={'Тип оборудования:'}
@@ -106,41 +83,37 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
           inputName={'time'}
           error={errors.time}
           options={OPTIONS_EQUIPMENT}
-        ></Select>
+        />
 
-        <DivInput style={{ margin: '30px auto' }}>
-          <Label>
-            Опишите неисправность: <Span>*</Span>
-          </Label>
-          <InputName
-            style={{ height: '100px', padding: '0 18px' }}
-            error={errors.message}
-            inputName={'message'}
-            onChange={handleUserInput}
-            type={'text'}
-            value={requestValues.message}
-            placeholder={'Опишите неисправность'}
-          />
-        </DivInput>
-        <DivInput>
-          <Label>
-            Желаемая дата выполнения работы: <Span>*</Span>
-          </Label>
-          <FormInput
-            error={errors.date}
-            name={'date'}
-            onChange={handleUserInput}
-            type={'date'}
-            value={requestValues.date}
-            placeholder={'Введите желаемую дату выполнения работы'}
-          />
-        </DivInput>
+        <InputText
+          wrap={'soft'}
+          label={'Опишите неисправность:'}
+          span={true}
+          text={'message'}
+          className={'message'}
+          type="message"
+          name="message"
+          placeholder={'Опишите неисправность'}
+          onChange={handleUserInput}
+          value={requestValues.message}
+          error={errors.message}
+        />
+
+        <FormInput
+          span={true}
+          label={'Желаемая дата выполнения работы:'}
+          error={errors.date}
+          name={'date'}
+          onChange={handleUserInput}
+          type={'date'}
+          value={requestValues.date}
+          placeholder={'Введите желаемую дату выполнения работы'}
+        />
 
         <span style={{ color: 'red' }}>
           *при обратном звонке специалист Вам предложит доступную дат у выполнения работ
         </span>
         <AgreeWithRules
-          errors={errors}
           handleCheckBox={handleCheckBox}
           requestValues={requestValues}
         />

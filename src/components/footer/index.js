@@ -1,18 +1,19 @@
 import React from 'react';
-import { LinkLogo, LinksContainer, Logo } from '../header/styles';
+import { LinksContainer, Logo } from '../header/styles';
 import HeaderLogo from '../../assets/png/mingaz_logo_white.webp';
 import { Contacts, Telephons, FooterContainer } from './styles';
 import ButtonFun from '../button';
 
 import { Prizes } from '../../pages/Home/Content/styles';
 import {IoLogoInstagram, IoLogoYoutube} from 'react-icons/io';
+import {NavLink} from "react-router-dom";
 export default function Footer({ classname }) {
   return (
     <FooterContainer className={classname}>
       <LinksContainer>
-        <LinkLogo to="/">
+        <NavLink to="/">
           <Logo style={{ width: '70px', height: '70px' }} src={HeaderLogo} />
-        </LinkLogo>
+        </NavLink>
         <Prizes>
           <img alt={'image1'} src={require(`../../assets/prizes/1.webp`)} />
           <img alt={'image2'} src={require(`../../assets/prizes/2.webp`)} />

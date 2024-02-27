@@ -79,7 +79,8 @@ export default function Information() {
         <DivBlocks>
           {info?.length ? (
             <>
-              <div style={{ width: '80%' }}>
+              <HeaderCompanyDiv>
+                <Name>Тема</Name>
                 <BlockSearch className={'question-answer'}>
                   {isForm ? (
                     <IoIosSearch style={{ display: 'none' }} />
@@ -110,36 +111,31 @@ export default function Information() {
                     </ContainerFormSearchForService>
                   )}
                 </BlockSearch>
-                <HeaderCompanyDiv style={{ width: '80%', margin: '0 auto' }}>
-                  <Name>Тема</Name>
-                  {themes?.map((element) => (
-                    <BlockBtn key={element._id}>
-                      <ContainerBtnIcon>
-                        <DopFunctionalHeader
-                          nameCard={element.title}
-                          className={titleId === element._id ? 'background' : ''}
-                          onClick={() => handlerLinkClick(element._id)}
-                        />
-                        {titleId === element._id ? (
-                          <IoIosArrowUp onClick={() => handlerLinkClick(element._id)} />
-                        ) : (
-                          <IoIosArrowDown onClick={() => handlerLinkClick(element._id)} />
-                        )}
-                      </ContainerBtnIcon>
-                      <DivOpen className={titleId === element._id && `shake`}>
-                        {themById?.questionAnswer?.map((link) => (
-                          <button
-                            onClick={() => handlerLinkClickUniqueName(link._id)}
-                            key={link._id}
-                          >
-                            {link.question}
-                          </button>
-                        ))}
-                      </DivOpen>
-                    </BlockBtn>
-                  ))}
-                </HeaderCompanyDiv>
-              </div>
+                {themes?.map((element) => (
+                  <BlockBtn key={element._id}>
+                    <ContainerBtnIcon>
+                      <DopFunctionalHeader
+                        nameCard={element.title}
+                        className={titleId === element._id ? 'background' : ''}
+                        onClick={() => handlerLinkClick(element._id)}
+                      />
+                      {titleId === element._id ? (
+                        <IoIosArrowUp onClick={() => handlerLinkClick(element._id)} />
+                      ) : (
+                        <IoIosArrowDown onClick={() => handlerLinkClick(element._id)} />
+                      )}
+                    </ContainerBtnIcon>
+                    <DivOpen className={titleId === element._id && `shake`}>
+                      {themById?.questionAnswer?.map((link) => (
+                        <button onClick={() => handlerLinkClickUniqueName(link._id)} key={link._id}>
+                          {link.question}
+                        </button>
+                      ))}
+                    </DivOpen>
+                  </BlockBtn>
+                ))}
+              </HeaderCompanyDiv>
+
               <ContainerInform>
                 {isPhone ? (
                   <>

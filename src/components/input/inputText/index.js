@@ -1,4 +1,6 @@
 import { TextArea } from '../styles';
+import { DivInput, Label } from '../../formQuestion/styles';
+import React from 'react';
 
 const divStyle = {
   margin: '0',
@@ -15,9 +17,15 @@ export default function InputText({
   style,
   className,
   wrap,
+  label,
+  span,
 }) {
   return (
-    <div style={divStyle}>
+    <DivInput>
+      <Label>
+        {label}
+        {span && <span>*</span>}
+      </Label>
       <TextArea
         style={style}
         type={type}
@@ -29,6 +37,6 @@ export default function InputText({
         wrap={wrap}
       />
       {error && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
+    </DivInput>
   );
 }

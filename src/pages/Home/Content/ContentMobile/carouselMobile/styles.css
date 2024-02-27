@@ -133,7 +133,7 @@
     }
     .slider-container-mobile {
         margin: 80px 0 0 0;
-        height: 340px;
+        height: 320px;
     }
     .slide-title-mobile,
     .slide-text-mobile {
@@ -157,7 +157,6 @@
 @media (max-width: 438px) {
     .slider-container-mobile {
         margin: 65px 0 0 0;
-        height: 280px;
     }
     .slide-title-mobile,
     .slide-text-mobile {

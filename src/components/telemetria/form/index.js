@@ -1,4 +1,4 @@
-import { Button, DivInput, Form, Label, Span } from '../../formQuestion/styles';
+import { Button, DivInput, Form, Label } from '../../formQuestion/styles';
 import React from 'react';
 import { useFormTelemetria } from './telemetria-hook';
 import FormInput from '../../input/inputPhone';
@@ -11,7 +11,7 @@ export default function FormTelemetria() {
       <DivInput>
         <Label>
           Наименование организации (согласно договора на газоснабжение)
-          <Span>*</Span>
+          <span>*</span>
         </Label>
         <FormInput
           name={'organization'}
@@ -25,7 +25,7 @@ export default function FormTelemetria() {
       <DivInput>
         <Label>
           ФИО контактного лица
-          <Span>*</Span>
+          <span>*</span>
         </Label>
         <FormInput
           name={'name'}
@@ -39,7 +39,7 @@ export default function FormTelemetria() {
       <DivInput>
         <Label>
           Адрес электронной почты
-          <Span>*</Span>
+          <span>*</span>
         </Label>
         <FormInput
           type="email"
@@ -53,7 +53,7 @@ export default function FormTelemetria() {
       <DivInput>
         <Label>
           Адрес объекта
-          <Span>*</Span>
+          <span>*</span>
         </Label>
         <FormInput
           type="text"
@@ -67,7 +67,7 @@ export default function FormTelemetria() {
       <DivInput>
         <Label>
           Телефон контактного лица
-          <Span>*</Span>
+          <span>*</span>
         </Label>
         <FormInput
           type="tel"

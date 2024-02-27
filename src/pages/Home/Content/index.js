@@ -31,7 +31,7 @@ export default function ContentHome() {
   return (
     <>
       {isPhone ? (
-        <ContentMobile />
+        <ContentMobile info={info} />
       ) : (
         <ContainerContent>
           <BlockContent>

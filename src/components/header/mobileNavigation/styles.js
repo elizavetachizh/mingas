@@ -4,23 +4,6 @@ const opacityAnimation = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
 `;
-const HeaderBackgroundColor = {
-  gray: `
-    background-color: #E9F1F5;
-    color: #314D5C
-    `,
-
-  blue: `
-    background-color: #0D4475;
-    color: #FFF;
-    `,
-  border: `
-    color: #FFF;
-    border: 1px solid white;
-    padding: 10px;
-    background-color: rgba(0,0,0,0);
-    `,
-};
 
 export const DivBlocksHeader = styled.div`
   display: flex;

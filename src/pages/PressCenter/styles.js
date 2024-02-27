@@ -95,7 +95,7 @@ export const ArticleForHome = styled.div`
   border: 1px solid #0d4475;
   width: 280px;
   height: 190px;
-  margin: 2% auto;
+  margin: 1rem auto;
   background-size: contain;
   text-align: center;
   background-repeat: no-repeat;

@@ -5,7 +5,6 @@ export const DivServices = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 6% auto;
   justify-content: center;
 `;
 

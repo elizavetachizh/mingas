@@ -8,7 +8,6 @@ export const Form = styled.form`
   width: 60%;
   padding: 2%;
   border-radius: 30px;
-  margin: 2% auto;
   @media (max-width: 880px) {
     width: 70%;
   }

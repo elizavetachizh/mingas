@@ -1,15 +1,7 @@
 import { Label } from '../formQuestion/styles';
 import { DivSelect, SelectDiv } from './styles';
 
-export default function Select({
-  label,
-  span,
-  error,
-  inputName,
-  onChange,
-  value,
-  options,
-}) {
+export default function Select({ label, span, error, inputName, onChange, value, options }) {
   return (
     <DivSelect>
       <Label>

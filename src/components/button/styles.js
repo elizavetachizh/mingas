@@ -32,7 +32,7 @@ const buttonBackgroundColor = {
 export const Button = styled(NavLink)`
   color: white;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
   width: 300px;
   text-align: center;
   border-radius: 7px;
@@ -41,30 +41,8 @@ export const Button = styled(NavLink)`
   justify-content: center;
   align-items: center;
   height: 50px;
-  margin: 2% auto;
-  z-index: 2;
+  margin: 1rem auto;
   cursor: pointer;
-  &.post {
-    @media (max-width: 950px) {
-      width: 220px;
-      font-size: 16px;
-      height: 40px;
-    }
-    @media (max-width: 600px) {
-      width: 170px;
-      height: 30px;
-      margin: 2% 0;
-    }
-    @media (max-width: 480px) {
-      width: 140px;
-      font-size: 14px;
-    }
-    @media (max-width: 400px) {
-      width: 120px;
-      height: 30px;
-      font-size: 12px;
-    }
-  }
   @media (max-width: 950px) {
     width: 250px;
     font-size: 16px;
@@ -79,9 +57,6 @@ export const Button = styled(NavLink)`
   @media (max-width: 400px) {
     width: 156px;
     height: 44px;
-  }
-  &.for-article {
-    border: 1px solid white;
   }
   ${({ backgrounder }) => buttonBackgroundColor[backgrounder]}
 `;

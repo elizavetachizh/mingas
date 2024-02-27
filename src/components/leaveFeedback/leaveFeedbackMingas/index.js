@@ -1,10 +1,5 @@
 import { DivApplication, Form } from '../../../pages/feedback/Requests/styles';
-import {
-  Button,
-  DivInput,
-  Label,
-  Span,
-} from '../../formQuestion/styles';
+import { Button, DivInput, Label } from '../../formQuestion/styles';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useFeedback } from '../leaveFeedback-hook';
 import PopUp from '../../popUp';
@@ -113,79 +108,61 @@ export default function LeaveFeedbackMingas() {
         onSubmit={handleSubmit}
         ref={form}
       >
-        <DivInput>
-          <Label>
-            ФИО полностью: <Span>*</Span>
-          </Label>
-          <FormInput
-            type={'text'}
-            placeholder={'Введите ФИО полностью'}
-            name={'name'}
-            onChange={handleUserInput}
-            value={formValues.name}
-            error={errors.name}
-          />
-        </DivInput>
+        <FormInput
+          span={true}
+          label={'ФИО полностью:'}
+          type={'text'}
+          placeholder={'Введите ФИО полностью'}
+          name={'name'}
+          onChange={handleUserInput}
+          value={formValues.name}
+          error={errors.name}
+        />
+        <FormInput
+          name={'email'}
+          label={'Адрес электронной почты'}
+          span={true}
+          type="email"
+          placeholder={'Введите ваш e-mail'}
+          onChange={handleUserInput}
+          value={formValues.email}
+          error={errors.email}
+        />
+        <FormInput
+          span={true}
+          label={'Контактный телефон'}
+          name={'phone'}
+          type="tel"
+          placeholder={'+375ХХХХХХХХХ'}
+          onChange={handleUserInput}
+          value={formValues.phone}
+          error={errors.phone}
+        />
 
-        <DivInput>
-          <Label>
-            Адрес электронной почты
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'email'}
-            type="email"
-            placeholder={'Введите ваш e-mail'}
-            onChange={handleUserInput}
-            value={formValues.email}
-            error={errors.email}
-          />
-        </DivInput>
+        <FormInput
+          name={'text'}
+          span={true}
+          label={'Тема:'}
+          type={'text'}
+          placeholder={'Напишите тему'}
+          onChange={handleUserInput}
+          value={formValues.text}
+          error={errors.text}
+        />
 
-        <DivInput>
-          <Label>
-            Контактный телефон
-            <Span>*</Span>
-          </Label>
-          <FormInput
-            name={'phone'}
-            type="tel"
-            placeholder={'+375ХХХХХХХХХ'}
-            onChange={handleUserInput}
-            value={formValues.phone}
-            error={errors.phone}
-          />
-        </DivInput>
-
-        <DivInput>
-          <Label>Тема:</Label>
-          <FormInput
-            name={'text'}
-            type={'text'}
-            placeholder={'Напишите тему'}
-            onChange={handleUserInput}
-            value={formValues.text}
-            error={errors.text}
-          />
-        </DivInput>
-
-        <DivInput>
-          <Label>
-            Текст сообщения
-            <Span>*</Span>
-          </Label>
-          <InputText
-            wrap={'soft'}
-            text={'message'}
-            className={'message'}
-            type="message"
-            name="message"
-            placeholder={'Текст сообщения'}
-            onChange={handleUserInput}
-            value={formValues.message}
-            error={errors.message}
-          />
-        </DivInput>
+        <InputText
+          wrap={'soft'}
+          label={'Текст сообщения'}
+          span={true}
+          text={'message'}
+          className={'message'}
+          type="message"
+          name="message"
+          placeholder={'Текст сообщения'}
+          onChange={handleUserInput}
+          value={formValues.message}
+          error={errors.message}
+        />
 
         <input type="file" multiple onChange={changeHAnder} id="file-input" />
         <p style={{ fontSize: '12px' }}>
@@ -218,7 +195,6 @@ export default function LeaveFeedbackMingas() {
         </div>
 
         <AgreeWithRules
-          errors={errors}
           handleCheckBox={handleCheckBox}
           requestValues={formValues}
         />

@@ -6,16 +6,11 @@ import React from 'react';
 import { BlockContainerRequests } from '../../pages/feedback/styles';
 import { arrayData } from './arrayaData';
 import Schema from './schema';
-const styledTitle = {
-  margin: '0',
-};
 export default function StateInformResources() {
   const isPhone = useMediaQuery('(max-width: 800px)');
   return (
     <BlockContainerRequests>
       <TitleForHome
-        style={styledTitle}
-        fontSize={'m'}
         color={'blue'}
         infoTitle={'ГОСУДАРСТВЕННЫЕ ИНФОРМАЦИОННЫЕ РЕСУРСЫ'}
       />
