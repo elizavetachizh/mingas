@@ -11,12 +11,9 @@ export default function GetAllPosts() {
       content={
         <>
           {fetchMainPostsByType?.length ? (
-            fetchMainPostsByType?.map(
-              (el) =>
-                el.type === 'safety' && (
-                  <DopFunctional name={el.name} description={el.description} id={el._id} />
-                )
-            )
+            fetchMainPostsByType?.map((el) => (
+              <DopFunctional name={el.name} description={el.description} id={el._id} />
+            ))
           ) : (
             <Loader />
           )}

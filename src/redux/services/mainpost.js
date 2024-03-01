@@ -15,7 +15,7 @@ export const mainPostsAPI = createApi({
     }),
     fetchMainPostsByType: build.query({
       query: () => ({
-        url: `/mainposts/limit`,
+        url: `/mainposts/type`,
         headers: {
           Authorization: 'Bearer ',
           'Content-type': 'application/json',
