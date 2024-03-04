@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { useSelector } from 'react-redux';
 import ContainerContent from '../Container';
 import {
   ContainerInform,
@@ -11,31 +10,28 @@ import { BlockBtn, Name } from '../administrativeServices/Header/styles';
 import DopFunctionalHeader from '../../pages/services/NaturalGas/DopFunctionalHeader';
 import DopFunctionService from '../../pages/services/DopFunction';
 import Loader from '../Loader';
+import { useFetchServicesByIdQuery, useFetchServicesQuery } from '../../redux/services/services';
 
 export default function ServicesComponent({ router, type, titleName }) {
-  const [inform, setInform] = useState([]);
-  const [currentServiceID, setServiceID] = useState(null);
-  const [title, setTitle] = useState([]);
+  const [title, setTitle] = useState('');
+  const [description, setDscription] = useState([]);
   const { cardId } = useParams();
   const navigate = useNavigate();
-  const service = useSelector((state) => state.services.data);
+  const { data: servicesById, isFetching } = useFetchServicesByIdQuery(cardId);
+  const { data: servicesName } = useFetchServicesQuery();
 
   useEffect(() => {
-    const current = service.find((element) => element._id === cardId);
-    setInform(current?.description);
-    setTitle(current?.name);
-    setServiceID(cardId);
-  }, [cardId, service]);
+    setTitle(servicesById?.name);
+    setDscription(servicesById?.description);
+  }, [servicesById?.description, servicesById?.name]);
 
   const animate = useCallback(
     (descriptionID) => {
-      const current = service.find((element) => element._id === descriptionID);
-      setInform(current?.description);
-      setTitle(current?.name);
-      setServiceID(descriptionID);
+      setTitle(servicesById?.name);
+      setDscription(servicesById?.description);
       navigate(`/${router}/${descriptionID}`);
     },
-    [navigate, router, service]
+    [navigate, router, servicesById?.description, servicesById?.name]
   );
 
   return (
@@ -43,27 +39,29 @@ export default function ServicesComponent({ router, type, titleName }) {
       name={titleName}
       content={
         <DivBlocks>
-          {inform?.length ? (
-            <>
-              <HeaderCompanyDiv>
-                <Name>Наименование услуги</Name>
-                {service.map(
-                  (element) =>
-                    element.type === type && (
-                      <BlockBtn key={element._id}>
-                        <DopFunctionalHeader
-                          nameCard={element.name}
-                          className={currentServiceID === element._id ? 'background' : ''}
-                          onClick={() => animate(element._id)}
-                        />
-                      </BlockBtn>
-                    )
-                )}
-              </HeaderCompanyDiv>
+          <HeaderCompanyDiv>
+            <Name>Наименование услуги</Name>
+            {servicesName?.map(
+              (element) =>
+                element.type === type && (
+                  <BlockBtn key={element._id}>
+                    <DopFunctionalHeader
+                      nameCard={element.name}
+                      className={cardId === element._id ? 'background' : ''}
+                      onClick={() => animate(element._id)}
+                    />
+                  </BlockBtn>
+                )
+            )}
+          </HeaderCompanyDiv>
 
-              <ContainerInform>
-                <Name>{title}</Name>
-                {inform.map((el) => (
+          <ContainerInform>
+            <Name>{title}</Name>
+            {isFetching ? (
+              <Loader />
+            ) : (
+              <>
+                {description?.map((el) => (
                   <DopFunctionService
                     classname={'question-answer'}
                     key={el.nameDescription}
@@ -71,11 +69,9 @@ export default function ServicesComponent({ router, type, titleName }) {
                     inform={el.inform}
                   />
                 ))}
-              </ContainerInform>
-            </>
-          ) : (
-            <Loader />
-          )}
+              </>
+            )}
+          </ContainerInform>
         </DivBlocks>
       }
     />

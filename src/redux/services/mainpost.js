@@ -4,15 +4,6 @@ export const mainPostsAPI = createApi({
   reducerPath: 'getMainPosts',
   baseQuery: fetchBaseQuery({ baseUrl: `${API}` }),
   endpoints: (build) => ({
-    fetchMainPosts: build.query({
-      query: () => ({
-        url: `/mainposts`,
-        headers: {
-          Authorization: 'Bearer ',
-          'Content-type': 'application/json',
-        },
-      }),
-    }),
     fetchMainPostsByType: build.query({
       query: () => ({
         url: `/mainposts/type`,
@@ -33,5 +24,4 @@ export const mainPostsAPI = createApi({
     }),
   }),
 });
-export const { useFetchMainPostsQuery, useFetchMainPostByIdQuery, useFetchMainPostsByTypeQuery } =
-  mainPostsAPI;
+export const { useFetchMainPostByIdQuery, useFetchMainPostsByTypeQuery } = mainPostsAPI;

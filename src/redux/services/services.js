@@ -8,24 +8,18 @@ export const servicesAPI = createApi({
       query: () => ({
         url: `/services`,
         headers: {
-          Authorization: 'Bearer ',
           'Content-type': 'application/json',
         },
       }),
     }),
-    // fetchDepartmentById: build.query({
-    //     query: (id) => ({
-    //         url: `/${typeBookDepartment}/${id === undefined ? "" : `${id}`}`,
-    //         headers: {
-    //             Authorization: "Bearer " + token,
-    //             "Content-type": "application/json",
-    //         },
-    //     }),
-    // }),
+    fetchServicesById: build.query({
+      query: (id) => ({
+        url: `/services/${id === undefined ? '' : `${id}`}`,
+        headers: {
+          'Content-type': 'application/json',
+        },
+      }),
+    }),
   }),
 });
-export const {
-  useFetchServicesQuery,
-  useFetchDepartmentByIdQuery,
-  useFetchArrayDepartmentsByOrganizationQuery,
-} = servicesAPI;
+export const { useFetchServicesQuery, useFetchServicesByIdQuery } = servicesAPI;

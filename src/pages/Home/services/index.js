@@ -3,11 +3,11 @@ import ButtonFun from '../../../components/button';
 import { Container, DivDown, ButtonServicesHome, ServicesDiv } from './styles';
 import LinkServices from './dataComponents';
 import TitleForHome from '../../../components/TitleForHome';
-import { useSelector } from 'react-redux';
 import Loader from '../../../components/Loader';
+import { useFetchServicesQuery } from '../../../redux/services/services';
 
 export default function HomeServices() {
-  const service = useSelector((state) => state.services.data);
+  const { data: servicesName } = useFetchServicesQuery();
   return (
     <Container>
       <TitleForHome infoTitle={'Услуги республиканского унитарного предприятия "Мингаз"'} />
@@ -23,10 +23,10 @@ export default function HomeServices() {
           infoButton={'Для бизнеса'}
         />
       </ButtonServicesHome>
-      {service?.length ? (
+      {servicesName?.length ? (
         <ServicesDiv>
           <DivDown>
-            {service
+            {servicesName
               .slice(0, 4)
               .map(
                 (element) =>
@@ -41,7 +41,7 @@ export default function HomeServices() {
               )}
           </DivDown>
           <DivDown>
-            {service
+            {servicesName
               .slice(-7, -3)
               .map(
                 (element) =>

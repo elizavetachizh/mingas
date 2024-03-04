@@ -19,28 +19,20 @@ import MobileNavigation from './mobileNavigation';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
-import { useFetchServicesQuery } from '../../redux/services/services';
-import { useFetchMainPostsQuery } from '../../redux/services/mainpost';
 import { useFetchPostsQuery } from '../../redux/services/posts';
-import { setServices } from '../../redux/slices/servicesSlice';
-import { setMainPosts } from '../../redux/slices/mainPostsSlice';
 import { setPosts } from '../../redux/slices/postsSlice';
 import linksForMenu from '../../const/consts';
 import UpperContainerHeader from './UpperContainerHeader';
 export default function Header({ backgroundHeader }) {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  const { data: services, isLoading } = useFetchServicesQuery();
-  const { data: mainPosts } = useFetchMainPostsQuery();
-  const { data: posts } = useFetchPostsQuery();
+  const { data: posts, isLoading } = useFetchPostsQuery();
 
   useEffect(() => {
     if (!isLoading) {
-      dispatch(setServices(services));
-      dispatch(setMainPosts(mainPosts));
       dispatch(setPosts(posts));
     }
-  }, [isLoading, dispatch, services, mainPosts, posts]);
+  }, [isLoading, dispatch, posts]);
   const onClick = () => {
     setOpen(!open);
   };

@@ -1,22 +1,22 @@
-import { useSelector } from 'react-redux';
 import ContainerContent from '../Container';
 import { DivServices, NavLinkService } from '../../pages/services/styles';
 import { Name } from '../../pages/services/servicesList/styles';
 import { APIimage } from '../../backend';
 import Loader from '../Loader';
 import React from 'react';
+import { useFetchServicesQuery } from '../../redux/services/services';
 
 export default function ServicesLinkComponent({ name, type, linksForServices }) {
-  const service = useSelector((state) => state.services.data);
+  const { data: servicesName } = useFetchServicesQuery();
   return (
     <ContainerContent
       name={name}
       content={
         <DivServices>
-          {service?.length ? (
+          {servicesName?.length ? (
             <>
               {linksForServices}
-              {service.map(
+              {servicesName.map(
                 (element) =>
                   element.type === type && (
                     <NavLinkService key={element._id} to={element._id}>
