@@ -167,11 +167,27 @@ export const documents = [
   },
   {
     GeneralId: 22,
+    name: 'Аттестаты',
+    inform: [
+      { id: 1, img: '81' },
+      { id: 2, img: '82' },
+      { id: 3, img: '83' },
+      { id: 4, img: '84' },
+      { id: 5, img: '85' },
+      { id: 6, img: '86' },
+      { id: 7, img: '87' },
+      { id: 8, img: '88' },
+      { id: 9, img: '89' },
+      { id: 10, img: '90' },
+    ],
+  },
+  {
+    GeneralId: 23,
     name: 'Сертификаты',
     inform: [{ id: 1, img: '66' }],
   },
   {
-    GeneralId: 23,
+    GeneralId: 24,
     name: 'Свидетельства',
     inform: [
       { id: 1, img: '68' },
