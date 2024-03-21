@@ -40,7 +40,7 @@ export const arrayData = [
     image: 'minsk-today.webp',
   },
   {
-    title: 'Портал рейтинговой оценки качества оказания услуг орагнизациями Республики Беларусь',
+    title: 'Портал рейтинговой оценки качества оказания услуг организациями Республики Беларусь',
     href: 'http://xn----7sbgfh2alwzdhpc0c.xn--90ais/organization/33279/org-page',
     image: 'quality.png',
   },
