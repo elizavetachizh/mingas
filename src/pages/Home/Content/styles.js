@@ -108,6 +108,9 @@ export const ContainerText = styled.div`
   direction: rtl;
   unicode-bidi: bidi-override;
   z-index: 2;
+  a {
+    text-decoration: none;
+  }
   &::-webkit-scrollbar {
     width: 10px;
     border-radius: 100px;

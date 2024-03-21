@@ -15,18 +15,20 @@ function SliderContent({ activeIndex, sliderImage }) {
     });
   }, [sliderImage, getElement]);
 
-  return (
-    sliderImage.map((slide, index) => (
-        <div key={index} className={activeIndex === index ? 'slides active' : 'inactive'}>
-          <div className="container-text" id={`content-image-${slide._id}`}>
-            {/*<p id={`content-image-${slide._id}`} />*/}
-          </div>
-          <div className="container-image">
-            <img className="slide-image" src={`${APIimage}/${slide.image}`} alt="" />
-          </div>
-        </div>
-      ))
-  );
+  return sliderImage.map((slide, index) => (
+    <div key={index} className={activeIndex === index ? 'slides active' : 'inactive'}>
+      <div className="container-text" id={`content-image-${slide._id}`}>
+        {/*<p id={`content-image-${slide._id}`} />*/}
+      </div>
+      <div className="container-image">
+        <img
+          className="slide-image"
+          src={`${APIimage}/${slide.image ? slide.image : 'phone.webp'}`}
+          alt=""
+        />
+      </div>
+    </div>
+  ));
 }
 
 export default SliderContent;

@@ -16,17 +16,17 @@ function Dots({ activeIndex, onclick, sliderImage }) {
   return (
     <div>
       {sliderImage.map((slide, index) => (
-        <>
-          {slide.button !== '' && (
-            <div
-              key={index}
-              className={`${activeIndex === index ? 'dot active-dot' : 'dot'}`}
-              onMouseOver={() => onclick(index)}
-            >
+        <a href={slide?.link ? slide?.link : '/'} target={'_blank'} rel="noreferrer">
+          <div
+            key={index}
+            className={`${activeIndex === index ? 'dot active-dot' : 'dot'}`}
+            onMouseOver={() => onclick(index)}
+          >
+            <a href={slide?.link ? slide?.link : '/'} target={'_blank'} rel="noreferrer">
               <p id={`content-${slide._id}`} />
-            </div>
-          )}
-        </>
+            </a>
+          </div>
+        </a>
       ))}
     </div>
   );
