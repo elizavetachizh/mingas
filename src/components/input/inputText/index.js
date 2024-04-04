@@ -1,12 +1,6 @@
 import { TextArea } from '../styles';
 import { DivInput, Label } from '../../formQuestion/styles';
 import React from 'react';
-
-const divStyle = {
-  margin: '0',
-  width: '100%',
-  textAlign: 'center',
-};
 export default function InputText({
   error,
   text,
