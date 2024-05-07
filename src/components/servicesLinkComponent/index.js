@@ -7,13 +7,15 @@ import React from 'react';
 import { useFetchServicesQuery } from '../../redux/services/services';
 
 export default function ServicesLinkComponent({ name, type, linksForServices }) {
-  const { data: servicesName } = useFetchServicesQuery();
+  const { data: servicesName, isLoading } = useFetchServicesQuery();
   return (
     <ContainerContent
       name={name}
       content={
         <DivServices>
-          {servicesName?.length ? (
+          {isLoading ? (
+            <Loader />
+          ) : (
             <>
               {linksForServices}
               {servicesName.map(
@@ -26,8 +28,6 @@ export default function ServicesLinkComponent({ name, type, linksForServices }) 
                   )
               )}
             </>
-          ) : (
-            <Loader />
           )}
         </DivServices>
       }

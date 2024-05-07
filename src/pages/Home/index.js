@@ -19,17 +19,15 @@ export default function Home() {
   return (
     <Container>
       <Header />
-      <>
-        <ModalWindowAdvertising />
-        <ContentHome />
-        <UsefulInform />
-        <BackgroundStyle src={linesOne} />
-        <HeaderRequests />
-        <ParallaxDiv />
-        <HomeServices />
-        <News />
-        <StateInformResources />
-      </>
+      <ModalWindowAdvertising />
+      <ContentHome />
+      <UsefulInform />
+      <BackgroundStyle src={linesOne} />
+      <HeaderRequests />
+      <ParallaxDiv />
+      <HomeServices />
+      <News />
+      <StateInformResources />
       <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
         <img src={up} alt={'up'} />
       </ScrollToTop>

@@ -11,14 +11,18 @@ import Loader from '../Loader';
 
 export default function Subdivisions() {
   const subdivisionId = useParams();
-  const { data: divisionsById } = useFetchDivisionsByIdQuery(subdivisionId.subdivisionId);
+  const { data: divisionsById, isLoading } = useFetchDivisionsByIdQuery(
+    subdivisionId.subdivisionId
+  );
   return (
     <ContainerContent
       name={'Подразделения'}
       content={
         <DivBlocks>
           <ContainerInform>
-            {divisionsById ? (
+            {isLoading ? (
+              <Loader />
+            ) : (
               <DopFunctional
                 name={divisionsById?.name}
                 contacts={divisionsById?.contacts}
@@ -27,8 +31,6 @@ export default function Subdivisions() {
                 chief={divisionsById?.chief}
                 description={divisionsById?.description}
               />
-            ) : (
-              <Loader />
             )}
           </ContainerInform>
         </DivBlocks>

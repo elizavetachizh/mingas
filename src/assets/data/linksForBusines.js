@@ -35,4 +35,5 @@ export const linksForBusiness = [
     name: 'Регламентирующие документы',
     cardImg: 9,
   },
+  { id: 7, link: '/illiquid-assets', name: 'Реализация неликвидов', cardImg: 1 },
 ];

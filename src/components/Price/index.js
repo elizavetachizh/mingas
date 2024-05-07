@@ -6,6 +6,7 @@ import { API, APIimage } from '../../backend';
 import Loader from '../Loader';
 export default function ResidentsOfCapitalRegion() {
   const [info, setInfo] = useState([]);
+
   useEffect(() => {
     axios(`${API}/prices`)
       .then((res) => {

@@ -12,7 +12,7 @@ export default function ContentHome() {
   const isPhone = useMediaQuery('(max-width: 900px)');
   const [activeIndex, setActiveIndex] = useState(0);
   const [info, setInfo] = useState([]);
-  const [sliceInfo, setSliceInfo] = useState([]);
+
   useEffect(() => {
     axios
       .get(`${API}/articles`)
@@ -24,10 +24,6 @@ export default function ContentHome() {
       });
   }, []);
 
-  useEffect(() => {
-    setSliceInfo(info);
-  }, [info]);
-
   return (
     <>
       {isPhone ? (
@@ -36,12 +32,12 @@ export default function ContentHome() {
         <ContainerContent>
           <BlockContent>
             <ContainerImage>
-              <SliderContent activeIndex={activeIndex} sliderImage={sliceInfo} />
+              <SliderContent activeIndex={activeIndex} sliderImage={info} />
             </ContainerImage>
             <ContainerText>
               <Dots
                 activeIndex={activeIndex}
-                sliderImage={sliceInfo}
+                sliderImage={info}
                 onclick={(activeIndex) => setActiveIndex(activeIndex)}
               />
             </ContainerText>

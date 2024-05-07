@@ -120,6 +120,7 @@ export default function linksForMenu() {
           link: '/services-legal-entities/administrative-services-legal/',
         },
         { name: 'Регламентирующие документы', link: '/regulatory-documents-for-business/Законы' },
+        { name: 'Реализация неликвидов', link: '/illiquid-assets' },
       ],
     },
     {

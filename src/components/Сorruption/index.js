@@ -5,14 +5,16 @@ import { useFetchCorruptionQuery } from '../../redux/services/corruption';
 import Loader from '../Loader';
 
 export default function Corruption() {
-  const { data: corruption } = useFetchCorruptionQuery();
+  const { data: corruption, isLoading } = useFetchCorruptionQuery();
 
   return (
     <SchemaCompany
       name={'Противодействие коррупции'}
       content={
         <div style={{ width: '80%', margin: '0 auto' }}>
-          {corruption?.length ? (
+          {isLoading ? (
+            <Loader />
+          ) : (
             <>
               {corruption?.map((el) => (
                 <ContanerNewsPape>
@@ -22,8 +24,6 @@ export default function Corruption() {
                 </ContanerNewsPape>
               ))}
             </>
-          ) : (
-            <Loader />
           )}
         </div>
       }

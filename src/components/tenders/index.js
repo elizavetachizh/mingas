@@ -10,7 +10,7 @@ import { useFetchTendersQuery } from '../../redux/services/tenders';
 import Loader from '../Loader';
 
 export default function Tenders() {
-  const { data: tenders } = useFetchTendersQuery();
+  const { data: tenders, isLoading } = useFetchTendersQuery();
   const getElement = useCallback((id) => {
     return document.getElementById(`electronic-appeal-${id}`);
   }, []);
@@ -27,23 +27,21 @@ export default function Tenders() {
       name={'Тендеры и закупки'}
       content={
         <>
-          <div>
-            {!!tenders?.length ? (
-              <>
-                {tenders?.map((el) => (
-                  <ContainerInform style={{ marginBottom: '50px' }}>
-                    <SubTitleFun
-                      color={'blue'}
-                      infoSubTitle={'Приглашение на участие в процедуре переговоров'}
-                    />
-                    <TextForInformation id={`electronic-appeal-${el._id}`} />
-                  </ContainerInform>
-                ))}
-              </>
-            ) : (
-              <Loader />
-            )}
-          </div>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>
+              {tenders?.map((el) => (
+                <ContainerInform style={{ marginBottom: '50px' }}>
+                  <SubTitleFun
+                    color={'blue'}
+                    infoSubTitle={'Приглашение на участие в процедуре переговоров'}
+                  />
+                  <TextForInformation id={`electronic-appeal-${el._id}`} />
+                </ContainerInform>
+              ))}
+            </>
+          )}
           <Link>
             <a
               rel={'noreferrer'}

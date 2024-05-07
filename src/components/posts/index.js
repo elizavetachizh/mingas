@@ -6,16 +6,16 @@ import { useFetchMainPostByIdQuery } from '../../redux/services/mainpost';
 import Loader from '../Loader';
 export default function Posts() {
   const { id } = useParams();
-  const { data: mainPostsById } = useFetchMainPostByIdQuery(id);
+  const { data: mainPostsById, isLoading } = useFetchMainPostByIdQuery(id);
 
   return (
     <ContainerContent
       name={mainPostsById?.name}
       content={
-        mainPostsById ? (
-          <DopFunctional id={mainPostsById?._id} description={mainPostsById?.description} />
-        ) : (
+        isLoading ? (
           <Loader />
+        ) : (
+          <DopFunctional id={mainPostsById?._id} description={mainPostsById?.description} />
         )
       }
     />

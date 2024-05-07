@@ -19,10 +19,9 @@ export default function Management() {
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
-    window.scrollTo(0, 0);
   }, []);
 
-  const { data: management } = useFetchManagementQuery();
+  const { data: management, isLoading } = useFetchManagementQuery();
 
   return (
     <SchemaCompany
@@ -60,7 +59,9 @@ export default function Management() {
             </DivText>
           </DivTextPhoto>
           <DivLeadersPhotoPosition>
-            {management?.length ? (
+            {isLoading ? (
+              <Loader />
+            ) : (
               <>
                 {management?.map((element) => (
                   <Leaders
@@ -74,14 +75,12 @@ export default function Management() {
                   />
                 ))}
               </>
-            ) : (
-              <Loader />
             )}
           </DivLeadersPhotoPosition>
           {isModalVisible && (
             <Modal
               index={nameId}
-              handleCloseCLick={()=>setModalVisible(false)}
+              handleCloseCLick={() => setModalVisible(false)}
               currentLeader={currentLeader}
               nameId={nameId}
             />

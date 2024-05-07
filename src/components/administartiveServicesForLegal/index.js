@@ -19,25 +19,21 @@ export default function AdministartiveServicesForLegal() {
   return (
     <AdministrativeServicesComponent
       title={'Административные процедуры для юридических лиц'}
-      content={
-        <>
-          {info.map(
-            (el) =>
-              el.type === '2' && (
-                <DopFunctional
-                  id={el._id}
-                  key={el._id}
-                  uniqueName={el.uniqueName}
-                  maximumImplementationPeriod={el.maximumImplementationPeriod}
-                  certificateValidityPeriod={el.certificateValidityPeriod}
-                  boardSize={el.boardSize}
-                  documents={el.documents}
-                  contactInform={el.contactInform}
-                />
-              )
-          )}
-        </>
-      }
+      content={info.map(
+        (el) =>
+          el.type === '2' && (
+            <DopFunctional
+              id={el._id}
+              key={el._id}
+              uniqueName={el.uniqueName}
+              maximumImplementationPeriod={el.maximumImplementationPeriod}
+              certificateValidityPeriod={el.certificateValidityPeriod}
+              boardSize={el.boardSize}
+              documents={el.documents}
+              contactInform={el.contactInform}
+            />
+          )
+      )}
     />
   );
 }

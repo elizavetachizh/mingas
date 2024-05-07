@@ -3,9 +3,8 @@ import DopFunctional from '../DopFunctional';
 import {
   ContainerFormSearchForService,
   ContainerInform,
-  SearchService,
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
-import { IoIosSearch, IoMdClose } from 'react-icons/io';
+import { IoMdClose } from 'react-icons/io';
 import ContainerContent from '../../../../../components/Container';
 import { useDispatch } from 'react-redux';
 import { useFetchDepartmentsQuery } from '../../../../../redux/services/departmentsDivisions';
@@ -13,7 +12,6 @@ import { setDepartments } from '../../../../../redux/slices/departmentsSlice';
 import Loader from '../../../../../components/Loader';
 
 export default function AllSubdivisions() {
-  const [isForm, setIsForm] = useState(false);
   const [key, setKey] = useState('');
   const dispatch = useDispatch();
   const { data: departments, isLoading } = useFetchDepartmentsQuery({ key });
@@ -23,55 +21,39 @@ export default function AllSubdivisions() {
     }
   }, [isLoading, dispatch, departments]);
 
-  const handleForm = () => {
-    setIsForm(true);
-    if (isForm) {
-      setIsForm(false);
-    }
-  };
-
   const handleSearch = useCallback((event) => {
     setKey(event.target.value);
   }, []);
 
-  const handleInsideClick = (event) => {
+  const handleInsideClick = useCallback((event) => {
     event.stopPropagation();
-    setIsForm(false);
     setKey('');
-  };
+  }, []);
 
   return (
     <ContainerContent
       name={'Службы УП "МИНГАЗ"'}
       content={
         <ContainerInform>
-          {isForm ? (
-            <IoIosSearch style={{ display: 'none' }} />
-          ) : (
-            <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>
-              <p>Для поиска отдела введите его название</p>
-              <IoIosSearch
-                style={{ height: '30px', width: '30px' }}
-                color={'#0d4475'}
-                type={'submit'}
+          <ContainerFormSearchForService style={{ margin: '4% auto' }}>
+            <form action={'search'}>
+              <input
+                placeholder="Для поиска отдела введите его название"
+                onChange={handleSearch}
+                type={'text'} value={key}
               />
-            </SearchService>
-          )}
-          {isForm && (
-            <ContainerFormSearchForService style={{ margin: '4% auto' }}>
-              <form action={'search'}>
-                <input
-                  placeholder="Введите название отдела"
-                  onChange={handleSearch}
-                  type={'text'}
-                />
-                <IoMdClose style={{ width: '60px' }} color={'black'} onClick={handleInsideClick} />
-              </form>
-            </ContainerFormSearchForService>
-          )}
-          {departments?.length ? (
+              <IoMdClose
+                style={{ width: '60px', cursor: 'pointer' }}
+                color={'black'}
+                onClick={handleInsideClick}
+              />
+            </form>
+          </ContainerFormSearchForService>
+          {isLoading ? (
+            <Loader />
+          ) : (
             <>
-              {departments.map((el) => (
+              {departments?.map((el) => (
                 <DopFunctional
                   id={el._id}
                   key={el.name}
@@ -84,8 +66,6 @@ export default function AllSubdivisions() {
                 />
               ))}
             </>
-          ) : (
-            <Loader />
           )}
         </ContainerInform>
       }

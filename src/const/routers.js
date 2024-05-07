@@ -38,6 +38,7 @@ import Branches from '../pages/company/Branches';
 import Telemetria from '../components/telemetria';
 import Posts from '../components/posts';
 import GetAllPosts from '../components/posts/getAllPosts';
+import IlliquidAssets from '../pages/IlliquidAssets';
 
 export const routers = [
   { path: '/', element: <Home /> },
@@ -109,6 +110,7 @@ export const routers = [
       />
     ),
   },
+  { path: '/illiquid-assets', element: <IlliquidAssets /> },
   { path: '/tenders', element: <Tenders /> },
   { path: '/residents-of-the-capital-region', element: <ResidentsOfTheCapitalRegion /> },
   { path: '/for-business', element: <ForBusiness /> },

@@ -256,7 +256,9 @@ export const ContainerFormSearchForService = styled.div`
       font-size: 1rem;
       margin: 0;
       background: none;
+      padding: 0.5rem 0;
       width: 100%;
+      border-bottom: 1px solid #0d4475;
     }
   }
 `;
