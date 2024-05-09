@@ -1,9 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import DopFunctional from '../DopFunctional';
 import { useParams, useSearchParams } from 'react-router-dom';
 import {
   DivBlocks,
   ContainerInform,
+  SearchService,
   ContainerFormSearchForService,
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { HeaderCompanyDiv } from '../../../../concats/headerContacts/styles';
@@ -15,13 +16,12 @@ import {
   Name,
 } from '../../../../../components/administrativeServices/Header/styles';
 import { useLocation, useNavigate } from 'react-router';
-import { IoIosArrowDown, IoIosArrowUp, IoMdClose } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp, IoIosSearch, IoMdClose } from 'react-icons/io';
 import useMediaQuery from '../../../../Home/parallax/useMediaQuery';
 import ButtonFun from '../../../../../components/button';
 import ContainerContent from '../../../../../components/Container';
 import { useFetchDepartmentsQuery } from '../../../../../redux/services/departmentsDivisions';
 import { useFetchManagementQuery } from '../../../../../redux/services/management';
-import Loader from '../../../../../components/Loader';
 
 export default function DepartmentInformation() {
   const isPhone = useMediaQuery('(max-width: 800px)');
@@ -31,18 +31,20 @@ export default function DepartmentInformation() {
   const id = searchParams.get('id');
   const [key, setKey] = useState('');
   const [nameMen, setNameMen] = useState('');
-  const { data: departments, isLoading } = useFetchDepartmentsQuery({
-    key,
-    nameMen,
-    name: id ? id : '',
-  });
+  const [name, setName] = useState('');
+  const { data: departments, isLoading } = useFetchDepartmentsQuery({ key, nameMen, name });
   const { data: management } = useFetchManagementQuery();
   const { linkId } = useParams();
+
+  useEffect(() => {
+    setName(id);
+  }, [id]);
 
   const changeDepartment = useCallback(
     (departamentId) => {
       navigate(`/company/management/${departamentId}`);
       setNameMen(departamentId);
+      setName('');
     },
     [navigate]
   );
@@ -50,19 +52,29 @@ export default function DepartmentInformation() {
   const handlerLinkClickUniqueName = useCallback(
     (id) => {
       setNameMen('');
+      setName(id);
       navigate(`${pathname}?id=${id}`);
     },
     [pathname, navigate]
   );
 
+  const [isForm, setIsForm] = useState(false);
+  const handleForm = () => {
+    setIsForm(true);
+    if (isForm) {
+      setIsForm(false);
+    }
+  };
+
   const handleSearch = useCallback((event) => {
     setKey(event.target.value);
   }, []);
 
-  const handleInsideClick = useCallback((event) => {
+  const handleInsideClick = (event) => {
     event.stopPropagation();
+    setIsForm(false);
     setKey('');
-  }, []);
+  };
 
   return (
     <ContainerContent
@@ -71,17 +83,34 @@ export default function DepartmentInformation() {
         <DivBlocks>
           <HeaderCompanyDiv>
             <Name>Наименования подразделений</Name>
-            <ContainerFormSearchForService style={{ margin: '4% auto' }}>
-              <form action={'search'}>
-                <input
-                  placeholder="Введите название отдела"
-                  onChange={handleSearch}
-                  type={'text'}
-                  value={key}
+            {isForm ? (
+              <IoIosSearch style={{ display: 'none' }} />
+            ) : (
+              <SearchService style={{ width: '100%' }} onClick={() => handleForm()}>
+                <p>Поиск по отделам</p>
+                <IoIosSearch
+                  style={{ height: '30px', width: '30px' }}
+                  color={'#0d4475'}
+                  type={'submit'}
                 />
-                <IoMdClose style={{ width: '60px' }} color={'black'} onClick={handleInsideClick} />
-              </form>
-            </ContainerFormSearchForService>
+              </SearchService>
+            )}
+            {isForm && (
+              <ContainerFormSearchForService style={{ margin: '4% auto' }}>
+                <form action={'search'}>
+                  <input
+                    placeholder="Введите название отдела"
+                    onChange={handleSearch}
+                    type={'text'}
+                  />
+                  <IoMdClose
+                    style={{ width: '60px' }}
+                    color={'black'}
+                    onClick={handleInsideClick}
+                  />
+                </form>
+              </ContainerFormSearchForService>
+            )}
             {management?.map((element) => (
               <BlockBtn key={element._id}>
                 <ContainerBtnIcon>
@@ -113,9 +142,7 @@ export default function DepartmentInformation() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <>
-              {isLoading ? (
-                <Loader />
-              ) : (
+              {departments?.length ? (
                 departments.map((el) => (
                   <DopFunctional
                     id={el._id}
@@ -128,6 +155,8 @@ export default function DepartmentInformation() {
                     description={el.description}
                   />
                 ))
+              ) : (
+                <p>Данные загружаются...</p>
               )}
             </>
             {isPhone && (

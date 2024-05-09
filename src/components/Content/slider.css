@@ -44,6 +44,9 @@
   font-size: 17px;
   /*text-align: center;*/
 }
+.container-text p img {
+margin: 50px;
+}
 /*.container-text a {*/
 /*  !*position: absolute;*!*/
 /*  !*color: white;*!*/
