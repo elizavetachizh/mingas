@@ -8,7 +8,7 @@ import {
   Logo,
   PersonalAccButton,
 } from '../styles';
-import HeaderLogoBlue from '../../../assets/png/9_MAI.JPG';
+import HeaderLogoBlue from '../../../assets/png/mingaz_logo_white.webp';
 import {FiShoppingBag, FiShoppingCart} from 'react-icons/fi';
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
