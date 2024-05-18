@@ -15,10 +15,12 @@ import linesOne from '../../assets/background/rig.webp';
 import { Container } from '../company/styles';
 import './slider/styles.css';
 import ModalWindowAdvertising from '../../components/ModalWindowAdvertising';
+import ModalWindowAIS from "../../components/ModalWindowAIS";
 export default function Home() {
   return (
     <Container>
       <Header />
+        <ModalWindowAIS/>
       <ModalWindowAdvertising />
       <ContentHome />
       <UsefulInform />

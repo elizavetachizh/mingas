@@ -6,7 +6,7 @@ export default function ModalWindowAdvertising() {
   useEffect(() => {
     const timer = setTimeout(
       () => (document.getElementById('overlay').style.display = 'block'),
-      3000
+      7000
     );
     return () => clearTimeout(timer);
   }, []);
@@ -14,7 +14,7 @@ export default function ModalWindowAdvertising() {
   useEffect(() => {
     const arrayImages = [1, 2, 3, 4];
     const rand = Math.floor(Math.random() * arrayImages.length);
-    setImages(rand+1);
+    setImages(rand + 1);
   }, []);
 
   return (
@@ -29,7 +29,7 @@ export default function ModalWindowAdvertising() {
           onClick={() => {
             document.getElementById('overlay').style.display = 'none';
           }}
-        ></button>
+        />
       </div>
     </Overlay>
   );
