@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <Container>
       <Header />
-        <ModalWindowAIS/>
+        {/*<ModalWindowAIS/>*/}
       <ModalWindowAdvertising />
       <ContentHome />
       <UsefulInform />
