@@ -2,6 +2,7 @@ import React from 'react';
 import SMI from '../../pages/PressCenter/SMI';
 import Newspaper from '../../pages/PressCenter/newspaper';
 import LifeOfMingas from '../../pages/PressCenter/lifeOfMingas';
+import EDI from "../../pages/PressCenter/EDI";
 
 export const pressCenter = [
   {
@@ -21,5 +22,11 @@ export const pressCenter = [
     router: 'life-of-mingas',
     name: 'Жизнь в стиле "Мингаз"',
     description: <LifeOfMingas />,
+  },
+  {
+    id: 4,
+    router: 'edi',
+    name: 'Единый день информирования',
+    description: <EDI />,
   },
 ];
