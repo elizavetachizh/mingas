@@ -212,7 +212,7 @@ export const LinksContainer = styled.div`
 
 export const ButtonForMenu = styled(NavLink)`
   text-decoration: none;
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

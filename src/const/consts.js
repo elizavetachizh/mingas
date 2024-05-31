@@ -123,6 +123,7 @@ export default function linksForMenu() {
         { name: 'Реализация неликвидов', link: '/illiquid-assets' },
       ],
     },
+    {name:'Услуги лаборатории', link:"/laboratory"},
     {
       name: 'Пресс-центр',
       link: '/press-center/1',

@@ -46,57 +46,57 @@ export default function Header({ backgroundHeader }) {
   }, [open]);
 
   const openMobile = (
-      <Menu onClick={onClick}>
-        <IoIosMenus />
-      </Menu>
+    <Menu onClick={onClick}>
+      <IoIosMenus />
+    </Menu>
   );
 
   const closeMobile = (
-      <MenuClose onClick={onClick}>
-        <IoIosCloses />
-      </MenuClose>
+    <MenuClose onClick={onClick}>
+      <IoIosCloses />
+    </MenuClose>
   );
 
   return (
-      <Container backgroundHeader={backgroundHeader}>
-        <Background backgroundHeader={backgroundHeader}>
-          {open && <MobileNavigation />}
-          {open ? closeMobile : openMobile}
-          <BackgroundText>
-            <DivColumn>
-              <UpperContainerHeader />
-              <ButtonsContainer>
-                {linksForMenu().map((el) => (
-                    <Dropdown>
-                      <ButtonForMenu to={`${el.link}`}>
-                        {el.name} <span />
-                      </ButtonForMenu>
-                      {el.arrayOfLinks && (
-                          <DivButtonHeader className={'header-btns'}>
-                            {el.arrayOfLinks.map((link) =>
-                                    link?.arrayOfSubLinks ? (
-                                        <ContanerLink>
-                                          <ButtonLink to={`${link.link}`}>
-                                            {link.name} <IoIosArrowForward color={'#0d4475'} />
-                                          </ButtonLink>
-                                          <span style={{ margin: '20% 0 0' }}>
+    <Container backgroundHeader={backgroundHeader}>
+      <Background backgroundHeader={backgroundHeader}>
+        {open && <MobileNavigation />}
+        {open ? closeMobile : openMobile}
+        <BackgroundText>
+          <DivColumn>
+            <UpperContainerHeader />
+            <ButtonsContainer>
+              {linksForMenu().map((el) => (
+                <Dropdown>
+                  <ButtonForMenu to={`${el.link}`}>
+                    {el.name} <span />
+                  </ButtonForMenu>
+                  {el.arrayOfLinks && (
+                    <DivButtonHeader className={'header-btns'}>
+                      {el.arrayOfLinks.map((link) =>
+                        link?.arrayOfSubLinks ? (
+                          <ContanerLink>
+                            <ButtonLink to={`${link.link}`}>
+                              {link.name} <IoIosArrowForward color={'#0d4475'} />
+                            </ButtonLink>
+                            <span style={{ margin: '20% 0 0' }}>
                               {link?.arrayOfSubLinks.map((subLink) => (
-                                  <NavLink to={`${subLink.link}`}>{subLink.name}</NavLink>
+                                <NavLink to={`${subLink.link}`}>{subLink.name}</NavLink>
                               ))}
                             </span>
-                                        </ContanerLink>
-                                    ) : (
-                                        <ButtonLink to={`${link.link}`}>{link.name}</ButtonLink>
-                                    )
-                            )}
-                          </DivButtonHeader>
+                          </ContanerLink>
+                        ) : (
+                          <ButtonLink to={`${link.link}`}>{link.name}</ButtonLink>
+                        )
                       )}
-                    </Dropdown>
-                ))}
-              </ButtonsContainer>
-            </DivColumn>
-          </BackgroundText>
-        </Background>
-      </Container>
+                    </DivButtonHeader>
+                  )}
+                </Dropdown>
+              ))}
+            </ButtonsContainer>
+          </DivColumn>
+        </BackgroundText>
+      </Background>
+    </Container>
   );
 }

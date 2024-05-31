@@ -39,6 +39,7 @@ import Telemetria from '../components/telemetria';
 import Posts from '../components/posts';
 import GetAllPosts from '../components/posts/getAllPosts';
 import IlliquidAssets from '../pages/IlliquidAssets';
+import Laboratory from '../components/laboratory';
 
 export const routers = [
   { path: '/', element: <Home /> },
@@ -118,4 +119,5 @@ export const routers = [
   { path: '/services-legal-entities/2/telemetria', element: <Telemetria /> },
   { path: '/posts/:id', element: <Posts /> },
   { path: '/posts', element: <GetAllPosts /> },
+  { path: '/laboratory', element: <Laboratory /> },
 ];
