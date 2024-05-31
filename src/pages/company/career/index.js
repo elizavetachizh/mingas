@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Container } from '../styles';
 import HeaderCompany from '../header_company';
 import Header from '../../../components/header';
@@ -12,8 +12,9 @@ import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import {
   BtnIsOpen,
   Div,
+  General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
-import { IoIosArrowDown, IoIosArrowUp, IoIosPin, IoMdClock } from 'react-icons/io';
+import {  IoIosPin, IoMdClock } from 'react-icons/io';
 import { LinksNetwork } from '../../../components/footer/styles';
 import Feedback from '../../feedback';
 import minsk from '../../../assets/background/phone.webp';
@@ -22,14 +23,6 @@ const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 
 export default function Career() {
-  const [isOpen, setIsOpen] = useState(false);
-  const animate = () => {
-    setIsOpen(true);
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  };
-
   const div = document.createElement('div');
   document.body.appendChild(div);
   const script = document.createElement('script');
@@ -81,17 +74,29 @@ export default function Career() {
               ></script>
             </Helmet>
           </div>
-          <BtnIsOpen className={'btn-is-open'} onClick={animate}>
-            <p>Полезная информация:</p>
-            <div>
-              {isOpen ? (
-                <IoIosArrowUp style={{ color: '#0e43af', margin: '36% 0' }} />
-              ) : (
-                <IoIosArrowDown style={{ color: '#0e43af', margin: '36% 0' }} />
-              )}
-            </div>
-          </BtnIsOpen>
-          <Div style={{ width: '70%', margin: '4% auto' }} className={isOpen && `shake`}>
+          <Div style={{ width: '70%', margin: '0 auto' }} className={`shake`}>
+            <General>
+              <BtnIsOpen>
+                <a
+                  style={{ color: 'white', padding: '0 0.5rem' }}
+                  href={require('./vacancy.docx')}
+                  download
+                >
+                  Приглашаем на работу приемщиков заказов и контролёров газоснабжающей организации
+                </a>
+              </BtnIsOpen>
+            </General>
+            <General>
+              <BtnIsOpen>
+                <a
+                  style={{ color: 'white', padding: '0 0.5rem' }}
+                  href={require('./vacancy_2.docx')}
+                  download
+                >
+                  Приглашаем на работу машиниста экскаватора
+                </a>
+              </BtnIsOpen>
+            </General>
             <p>
               УП «МИНГАЗ» приглашает на целевое обучение на факультете горного дела и инженерной
               экологии Белорусского национального технического университета по следующим
@@ -156,7 +161,6 @@ export default function Career() {
             </ul>
             <LinksNetwork
               style={{ left: '0', margin: '0 0 2%' }}
-              // style={{ width: '51%' }}
             >
               <IoMdClock
                 style={{ margin: '0 4%', color: '#0e43af', width: '40px', height: '40px' }}
@@ -170,7 +174,6 @@ export default function Career() {
             </LinksNetwork>
             <LinksNetwork
               style={{ left: '0', margin: '0' }}
-              // style={{ width: '51%' }}
             >
               <IoIosPin
                 style={{ margin: '0 4%', color: '#0e43af', width: '40px', height: '40px' }}
