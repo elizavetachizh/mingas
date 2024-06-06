@@ -5,7 +5,7 @@ import { Links } from '../Price/styles';
 export default function Laboratory() {
   return (
     <ContainerContent
-      name={'Услуги лаборатории'}
+      name={'Диагностические услуги'}
       content={
         <Links>
           <a href={require('./Буклет.docx')} download>

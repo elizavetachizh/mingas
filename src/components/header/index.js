@@ -7,7 +7,6 @@ import {
   ButtonsContainer,
   Dropdown,
   DivButtonHeader,
-  DivColumn,
   BackgroundText,
   IoIosMenus,
   IoIosCloses,
@@ -63,7 +62,6 @@ export default function Header({ backgroundHeader }) {
         {open && <MobileNavigation />}
         {open ? closeMobile : openMobile}
         <BackgroundText>
-          <DivColumn>
             <UpperContainerHeader />
             <ButtonsContainer>
               {linksForMenu().map((el) => (
@@ -94,7 +92,6 @@ export default function Header({ backgroundHeader }) {
                 </Dropdown>
               ))}
             </ButtonsContainer>
-          </DivColumn>
         </BackgroundText>
       </Background>
     </Container>

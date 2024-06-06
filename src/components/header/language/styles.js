@@ -18,7 +18,7 @@ export const Div = styled.div`
   div.goog-te-gadget-simple span a::before {
     content: 'Язык';
     color: white;
-    font-size: 14px;
+    font-size: 12px;
   }
   div.goog-te-gadget img {
     display: none;

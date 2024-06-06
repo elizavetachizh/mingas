@@ -5,7 +5,6 @@ import {
   ContainerInform,
 } from '../../../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoMdClose } from 'react-icons/io';
-import ContainerContent from '../../../../../components/Container';
 import { useDispatch } from 'react-redux';
 import { useFetchDepartmentsQuery } from '../../../../../redux/services/departmentsDivisions';
 import { setDepartments } from '../../../../../redux/slices/departmentsSlice';
@@ -31,44 +30,42 @@ export default function AllSubdivisions() {
   }, []);
 
   return (
-    <ContainerContent
-      name={'Службы УП "МИНГАЗ"'}
-      content={
-        <ContainerInform>
-          <ContainerFormSearchForService style={{ margin: '4% auto' }}>
-            <form action={'search'}>
-              <input
-                placeholder="Для поиска отдела введите его название"
-                onChange={handleSearch}
-                type={'text'} value={key}
+    <>
+      <ContainerInform>
+        <ContainerFormSearchForService style={{ margin: '4% auto' }}>
+          <form action={'search'}>
+            <input
+              placeholder="Для поиска отдела введите его название"
+              onChange={handleSearch}
+              type={'text'}
+              value={key}
+            />
+            <IoMdClose
+              style={{ width: '60px', cursor: 'pointer' }}
+              color={'black'}
+              onClick={handleInsideClick}
+            />
+          </form>
+        </ContainerFormSearchForService>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            {departments?.map((el) => (
+              <DopFunctional
+                id={el._id}
+                key={el.name}
+                name={el.name}
+                contacts={el.contacts}
+                schedule={el.schedule}
+                photo={el.photo}
+                chief={el.chief}
+                description={el.description}
               />
-              <IoMdClose
-                style={{ width: '60px', cursor: 'pointer' }}
-                color={'black'}
-                onClick={handleInsideClick}
-              />
-            </form>
-          </ContainerFormSearchForService>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <>
-              {departments?.map((el) => (
-                <DopFunctional
-                  id={el._id}
-                  key={el.name}
-                  name={el.name}
-                  contacts={el.contacts}
-                  schedule={el.schedule}
-                  photo={el.photo}
-                  chief={el.chief}
-                  description={el.description}
-                />
-              ))}
-            </>
-          )}
-        </ContainerInform>
-      }
-    />
+            ))}
+          </>
+        )}
+      </ContainerInform>
+    </>
   );
 }

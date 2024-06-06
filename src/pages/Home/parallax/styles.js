@@ -8,14 +8,14 @@ export const ParallaxD = styled.div`
     background-position: 50% 50%;
     background-repeat: no-repeat;
     object-fit: cover;
-    height: 380px;
+    height: 360px;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     @media (max-width: 630px) {
-      height: 320px;
+      height: 270px;
     }
     @media (min-width: 1500px) {
-      height: 530px;
+      height: 500px;
     }
   }
   @media (max-width: 2000px) {

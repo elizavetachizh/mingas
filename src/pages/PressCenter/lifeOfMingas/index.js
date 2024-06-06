@@ -72,6 +72,40 @@ function LifeOfMingas() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+            <iframe
+                src="https://www.youtube.com/embed/Dd3zsFaCKT8"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
+            <iframe
+                src="https://www.youtube.com/embed/QCBY6awvF-E"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
+            <iframe
+                src="https://www.youtube.com/embed/cBJcdXWlgV4"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
+            <video
+                src="https://back.mingas.by/public/video/1.webm"
+                title="YouTube video player"
+                id={'video'}
+                autoPlay={false}
+                width={'70%'}
+                style={{ margin: '0 15%' }}
+                controls="true"
+                playsInline
+            ></video>
+            <iframe
+                src="https://www.youtube.com/embed/-H9ziFYtdGU"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
         </div>
       </div>
     </>

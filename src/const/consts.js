@@ -58,7 +58,7 @@ export default function linksForMenu() {
       arrayOfLinks: [
         { name: 'История предприятия', link: '/company/history' },
         { name: 'Руководство предприятия', link: '/company/management' },
-        { name: 'Подразделения УП "МИНГАЗ"', link: '/company/management/all-departments' },
+        { name: 'Подразделения УП "МИНГАЗ"', link: '/company/all-departments' },
         { name: 'Работа в УП "Мингаз"', link: '/company/career' },
         { name: 'Вышестоящие организации', link: '/company/parent-organizations' },
         {
@@ -123,15 +123,16 @@ export default function linksForMenu() {
         { name: 'Реализация неликвидов', link: '/illiquid-assets' },
       ],
     },
-    {name:'Услуги лаборатории', link:"/laboratory"},
+    {name:'Диагностические услуги', link:"/laboratory"},
     {
       name: 'Пресс-центр',
       link: '/press-center/1',
       arrayOfLinks: [
         { name: 'Лента новостей', link: '/press-center/1' },
-        { name: 'Корпоративная газета "Столичный газовик"', link: '/press-center/2' },
-        { name: 'Жизнь в стиле "Мингаз"', link: '/press-center/3' },
-        { name: 'Единый день информирования', link: '/press-center/4' },
+        { name: 'Мингаз-ТВ', link: '/press-center/2' },
+        { name: 'Корпоративная газета "Столичный газовик"', link: '/press-center/3' },
+        { name: 'Жизнь в стиле "Мингаз"', link: '/press-center/4' },
+        { name: 'Единый день информирования', link: '/press-center/5' },
       ],
     },
     {

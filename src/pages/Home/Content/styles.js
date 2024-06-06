@@ -5,15 +5,15 @@ export const ContainerContent = styled.div`
   border-radius: 20px;
   width: 100%;
   height: 576px;
-  margin-top: 154px;
+  margin-top: 147px;
   //position: relative;
   &.parallax {
-    height: 530px;
+    height: 500px;
     @media (max-width: 1500px) {
-      height: 380px;
+      height: 360px;
     }
     @media (max-width: 630px) {
-      height: 320px;
+      height: 270px;
     }
   }
   @media (max-width: 2000px) {

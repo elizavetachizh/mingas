@@ -27,6 +27,10 @@ export const DivServicesList = styled.button`
     text-decoration-color: rgba(49, 77, 93, 0.6);
     transform: translateY(-1rem);
   }
+
+  &.branches {
+    max-width: 60%;
+  }
   @media (max-width: 800px) {
     margin: 2rem;
     flex: 0 0 30%;

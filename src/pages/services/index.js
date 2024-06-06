@@ -9,7 +9,7 @@ export default function Services() {
     <ServicesLinkComponent
       type={'1'}
       name={'Услуги жителям столичного региона'}
-      linksForServices={links.map((element) => (
+      linksForServices={links?.map((element) => (
         <NavLinkService key={element.idService} to={element.linkService}>
           <img alt={''} src={require(`../../assets/icons_services/${element.imgService}.png`)} />
           <Name>{element.nameService}</Name>

@@ -3,7 +3,6 @@ import {
   Div104,
   DivFirstHeader,
   DivPhone,
-  IoMdContacts,
   IoMdEyeOffs,
   Logo,
   PersonalAccButton,
@@ -36,27 +35,27 @@ export default function UpperContainerHeader() {
         </Div104>
       </DivPhone>
       <Logo className={'gerb'} src={require('../../../assets/png/gerb_white.webp')} />
-      <Logo className={'sign'} src={require('../../../assets/png/sign.png')} />
+      {/*<Logo className={'sign'} src={require('../../../assets/png/sign.png')} />*/}
       <ContainerElements>
-        <PersonalAccButton
-          title="Контакт-центр"
-          href={'https://service.mingas.by:5002/auth/login#login'}
-        >
-          <IoMdContacts className={'icon'} />
-        </PersonalAccButton>
+        {/*<PersonalAccButton*/}
+        {/*  title="Контакт-центр"*/}
+        {/*  href={'https://service.mingas.by:5002/auth/login#login'}*/}
+        {/*>*/}
+        {/*  <IoMdContacts className={'icon'} />*/}
+        {/*</PersonalAccButton>*/}
         <PersonalAccButton
           target={'_blank'}
           title="Магазин УП 'МИНГАЗ'"
           href={'https://shop.mingas.by/'}
         >
-          <FiShoppingCart style={{ width: '34px', height: '34px' }} className={'icon'} />
+          <FiShoppingCart style={{ width: '30px', height: '30px' }} className={'icon'} />
         </PersonalAccButton>
         <PersonalAccButton
             target={'_blank'}
             title="Onliner"
             href={'https://20393.shop.onliner.by/'}
         >
-          <FiShoppingBag style={{ width: '34px', height: '34px' }}  className={'icon'} />
+          <FiShoppingBag style={{ width: '30px', height: '30px' }}  className={'icon'} />
         </PersonalAccButton>
         <SearchPage />
         <Language />

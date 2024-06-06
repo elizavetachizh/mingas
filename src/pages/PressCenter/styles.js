@@ -46,7 +46,7 @@ export const Article = styled.div`
   border-radius: 20px;
   border: 1px solid #0d4475;
   width: 74%;
-  margin: 4% auto;
+  margin: 2% auto;
   background-size: contain;
   text-align: center;
   background-repeat: no-repeat;

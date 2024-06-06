@@ -9,7 +9,7 @@ export default function SchemaSMI({ href, src, content, date }) {
           <p>{content}</p>
         </a>
       </Article>
-      {date && <p>Статья была добавлена: {date}</p>}
+      {date && <p style={{ marginTop: 0 }}>Статья была добавлена: {date}</p>}
     </div>
   );
 }

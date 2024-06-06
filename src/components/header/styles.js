@@ -119,21 +119,22 @@ export const Background = styled.div`
 `;
 export const BackgroundText = styled.div`
   max-width: 1200px;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   z-index: 5;
   align-items: center;
   margin: 0 auto;
   @media (max-width: 900px) {
     max-width: 100%;
-    width: 100%;
+    
   }
 `;
 
 export const Logo = styled.img`
   width: 90px;
   height: 90px;
-  @media (max-width: 646px) {
+  @media (max-width: 900px) {
     width: 70px;
     height: 70px;
   }
@@ -311,18 +312,10 @@ export const DivFirstHeader = styled.div`
     border-bottom: none;
   }
 `;
-
-export const DivColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-`;
 export const DivPhone = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 4px 0;
   justify-content: space-around;
   width: 40%;
   @media (max-width: 900px) {
@@ -340,7 +333,6 @@ export const ContainerElements = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 12px 0;
   justify-content: space-around;
   width: 20%;
   @media (max-width: 900px) {
@@ -386,7 +378,7 @@ export const Div104 = styled.div`
   }
   p {
     font-size: 1rem;
-    margin: 4px 0;
+    margin: 0;
     font-weight: bold;
     @media (max-width: 1144px) {
       margin: 2px auto;
@@ -411,7 +403,6 @@ export const Div104 = styled.div`
     border-radius: 20px;
     margin: 0;
     padding: 0;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -419,7 +410,7 @@ export const Div104 = styled.div`
       font-weight: bold;
       margin: 0;
       padding: 0;
-      font-size: 64px;
+      font-size: 56px;
       text-decoration: none;
       transition: all 0.3s ease;
       @media (max-width: 1038px) {
@@ -456,8 +447,8 @@ export const IoMdContacts = styled(IoMdContact)`
 `;
 
 export const IoMdEyeOffs = styled(IoMdEyeOff)`
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   @media (max-width: 760px) {
     width: 36px;
     height: 36px;
@@ -468,8 +459,8 @@ export const IoMdEyeOffs = styled(IoMdEyeOff)`
   }
 `;
 export const IoIosSearchs = styled(IoIosSearch)`
-  height: 36px;
-  width: 36px;
+  height: 34px;
+  width: 34px;
   color: white;
   cursor: pointer;
 `;

@@ -10,7 +10,6 @@ import {
   ModalWindowOpenAndClose,
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
-import SchemaCompany from '../SchemaCompany';
 
 export default function Documentation() {
   const [numPage, setNumPage] = useState(null);
@@ -87,98 +86,92 @@ export default function Documentation() {
   }, []);
 
   return (
-    <SchemaCompany
-      name={'Сертификаты, лицензии, свидетельства'}
-      content={
-        <>
-          <ContainerOfDocuments>
-            <TitleForHome color={'blue'} infoTitle={certifications[0].name} />
-            <BlockOfGraditude>
-              {certifications.map((element) => (
-                <ContainerGraditude
-                  key={element.GeneralId}
-                  onClick={() => openImage(element.GeneralId)}
-                >
-                  <img
-                    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                    alt={''}
-                  />
-                </ContainerGraditude>
-              ))}
-            </BlockOfGraditude>
-          </ContainerOfDocuments>
-          <ContainerOfDocuments>
-            <TitleForHome color={'blue'} infoTitle={licenses[0].name} />
-            <BlockOfGraditude>
-              {licenses.map((element) => (
-                <ContainerGraditude
-                  key={element.GeneralId}
-                  onClick={() => openImage(element.GeneralId)}
-                >
-                  <img
-                    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                    alt={''}
-                  />
-                </ContainerGraditude>
-              ))}
-            </BlockOfGraditude>
-          </ContainerOfDocuments>
-          <ContainerOfDocuments>
-            <TitleForHome color={'blue'} infoTitle={evidence[0].name} />
-            <BlockOfGraditude>
-              {evidence.map((element) => (
-                <ContainerGraditude
-                  key={element.GeneralId}
-                  onClick={() => openImage(element.GeneralId)}
-                >
-                  <img
-                    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                    alt={''}
-                  />
-                </ContainerGraditude>
-              ))}{' '}
-            </BlockOfGraditude>
-          </ContainerOfDocuments>
-          <ContainerOfDocuments>
-            {' '}
-            <TitleForHome color={'blue'} infoTitle={chits[0].name} />
-            <BlockOfGraditude>
-              {chits.map((element) => (
-                <ContainerGraditude
-                  key={element.GeneralId}
-                  onClick={() => openImage(element.GeneralId)}
-                >
-                  <img
-                    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                    alt={''}
-                  />
-                </ContainerGraditude>
-              ))}
-            </BlockOfGraditude>
-          </ContainerOfDocuments>
-          {isModalVisible && (
-            <ModalWindow onClick={handleCloseCLick}>
-              <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
-                <Close src={close} onClick={handleCloseCLick} />
-                <InformModal>
-                  <img
-                    className={'gratitude'}
-                    src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${image}.webp`)}
-                    alt={''}
-                  />
-                  <DivButtons>
-                    {pageNumber > 1 && <button onClick={changePageBAck}>Предыдущая</button>}
-                    <p>
-                      Страница {pageNumber} из {numPage}
-                    </p>
-                    <button onClick={changePageNext}>Следующая</button>
-                  </DivButtons>
-                </InformModal>
-              </ModalWindowOpenAndClose>
-            </ModalWindow>
-          )}
-        </>
-      }
-    />
+    <>
+      <ContainerOfDocuments>
+        <TitleForHome color={'blue'} infoTitle={certifications[0].name} />
+        <BlockOfGraditude>
+          {certifications.map((element) => (
+            <ContainerGraditude
+              key={element.GeneralId}
+              onClick={() => openImage(element.GeneralId)}
+            >
+              <img
+                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
+                alt={''}
+              />
+            </ContainerGraditude>
+          ))}
+        </BlockOfGraditude>
+      </ContainerOfDocuments>
+      <ContainerOfDocuments>
+        <TitleForHome color={'blue'} infoTitle={licenses[0].name} />
+        <BlockOfGraditude>
+          {licenses.map((element) => (
+            <ContainerGraditude
+              key={element.GeneralId}
+              onClick={() => openImage(element.GeneralId)}
+            >
+              <img
+                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
+                alt={''}
+              />
+            </ContainerGraditude>
+          ))}
+        </BlockOfGraditude>
+      </ContainerOfDocuments>
+      <ContainerOfDocuments>
+        <TitleForHome color={'blue'} infoTitle={evidence[0].name} />
+        <BlockOfGraditude>
+          {evidence.map((element) => (
+            <ContainerGraditude
+              key={element.GeneralId}
+              onClick={() => openImage(element.GeneralId)}
+            >
+              <img
+                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
+                alt={''}
+              />
+            </ContainerGraditude>
+          ))}{' '}
+        </BlockOfGraditude>
+      </ContainerOfDocuments>
+      <ContainerOfDocuments>
+        <TitleForHome color={'blue'} infoTitle={chits[0].name} />
+        <BlockOfGraditude>
+          {chits.map((element) => (
+            <ContainerGraditude
+              key={element.GeneralId}
+              onClick={() => openImage(element.GeneralId)}
+            >
+              <img
+                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
+                alt={''}
+              />
+            </ContainerGraditude>
+          ))}
+        </BlockOfGraditude>
+      </ContainerOfDocuments>
+      {isModalVisible && (
+        <ModalWindow onClick={handleCloseCLick}>
+          <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
+            <Close src={close} onClick={handleCloseCLick} />
+            <InformModal>
+              <img
+                className={'gratitude'}
+                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${image}.webp`)}
+                alt={''}
+              />
+              <DivButtons>
+                {pageNumber > 1 && <button onClick={changePageBAck}>Предыдущая</button>}
+                <p>
+                  Страница {pageNumber} из {numPage}
+                </p>
+                <button onClick={changePageNext}>Следующая</button>
+              </DivButtons>
+            </InformModal>
+          </ModalWindowOpenAndClose>
+        </ModalWindow>
+      )}
+    </>
   );
 }

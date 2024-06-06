@@ -122,7 +122,7 @@ export const Divbackground = styled.div`
   overflow: hidden;
   height: 100%;
   width: 100%;
-  top: 154px;
+  top: 147px;
   border-radius: 20px;
   @media (min-width: 2000px) {
     top: 174px;
