@@ -9,14 +9,6 @@ export default function IlliquidAssets() {
         <div style={{ margin: '0 auto', width: '70%', display: 'flex', flexDirection: 'column' }}>
           <a
             style={{ margin: '1rem 0' }}
-            href={require('./documents/ballons.docx')}
-            target={'_blank'}
-            download
-          >
-            Баллоны СУГ 50 литров
-          </a>
-          <a
-            style={{ margin: '1rem 0' }}
             href={require('./documents/grp.docx')}
             target={'_blank'}
             download
