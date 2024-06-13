@@ -12,6 +12,9 @@
   display: inline-block;
   transition: all ease 0.6s;
 }
+.inactive {
+  display: none;
+}
 .container-text {
   position: relative;
   z-index: 3;
@@ -59,8 +62,8 @@
   font-size: 22px;
   position: absolute;
   text-align: center;
-  margin: 0 5%;
-  top: 20%;
+  margin: auto 5%;
+  /*top: 20%;*/
 }
 
 .slide-title a {

@@ -24,7 +24,7 @@ function SliderContent({ activeIndex, sliderImage }) {
         >
           <img
             className="slide-image-image"
-            src={`${APIimage}/${slide.image ? slide.image : 'phone.webp'}`}
+            src={slide.image}
             alt=""
           />
           <div id={`content-${slide._id}`} className="slide-title-mobile" />

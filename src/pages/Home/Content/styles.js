@@ -5,7 +5,7 @@ export const ContainerContent = styled.div`
   border-radius: 20px;
   width: 100%;
   height: 557px;
-  margin-top: 147px;
+  margin-top: 128px;
   //position: relative;
   &.parallax {
     height: 500px;
