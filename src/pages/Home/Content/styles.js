@@ -138,7 +138,7 @@ export const ContainerParagraph = styled.div`
   z-index: 2;
   width: 100%;
   color: white;
-  margin: auto 0;
+  margin: auto 5%;
   max-width: 700px;
   a,
   p {

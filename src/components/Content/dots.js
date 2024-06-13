@@ -33,9 +33,7 @@ function Dots({ activeIndex, onclick, sliderImage }) {
           ))}
         </div>
       </ContainerText>
-      <ContainerParagraph
-        style={{ zIndex: 2, width: '100%', color: 'white', margin: 'auto 0', maxWidth: '600px' }}
-      >
+      <ContainerParagraph>
         {sliderImage.map((slide, index) => (
           <div
             style={activeIndex === index ? { display: 'block' } : { display: 'none' }}
