@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
 import { APIimage } from '../../../../../backend';
-import ButtonFun from '../../../../../components/button';
 
 function SliderContent({ activeIndex, sliderImage }) {
   const getElement = useCallback((id) => {
@@ -23,16 +22,12 @@ function SliderContent({ activeIndex, sliderImage }) {
           key={index}
           className={index === activeIndex ? 'slides-mobile active-mobile' : 'inactive-mobile'}
         >
-          <img className="slide-image-image" src={`${APIimage}/${slide.image ? slide.image : 'phone.webp'}`} alt="" />
+          <img
+            className="slide-image-image"
+            src={`${APIimage}/${slide.image ? slide.image : 'phone.webp'}`}
+            alt=""
+          />
           <div id={`content-${slide._id}`} className="slide-title-mobile" />
-          {slide.link !== '' && (
-            <ButtonFun
-              classname={'slide-text-mobile'}
-              href={`${slide.link}`}
-              infoButton={`${slide.button}`}
-              backgrounder={'border'}
-            />
-          )}
         </div>
       ))}
     </section>
