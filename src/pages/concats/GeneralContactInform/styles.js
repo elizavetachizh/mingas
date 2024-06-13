@@ -14,7 +14,7 @@ export const AdditionalDiv = styled.div`
     margin-top: 18%;
   }
   @media (min-width: 2000px) {
-    margin: 10% auto 4%;
+    margin: 8% auto 4%;
   }
 `;
 

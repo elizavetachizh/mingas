@@ -12,11 +12,6 @@
   display: inline-block;
   transition: all ease 0.6s;
 }
-
-.inactive {
-  display: none;
-  transition: all ease 0.6s;
-}
 .container-text {
   position: relative;
   z-index: 3;
@@ -25,48 +20,17 @@
   margin: auto;
 }
 .container-text p {
-  /*position: absolute;*/
-  /*color: white;*/
-  /*width: 100%;*/
-  /*margin: 5rem;*/
   position: absolute;
   color: white;
-  /*width: 70%;*/
-  /*height: fit-content;*/
-  /*margin: 7% 17%;*/
-  /*width: 30%;*/
-  /*height: 100%;*/
-  /*margin: 6% 13%;*/
   width: 100%;
   max-width: 600px;
   height: 100%;
   margin: 200px 250px;
   font-size: 17px;
-  /*text-align: center;*/
 }
 .container-text p img {
-margin: 50px;
+  margin: 50px;
 }
-/*.container-text a {*/
-/*  !*position: absolute;*!*/
-/*  !*color: white;*!*/
-/*  !*width: 100%;*!*/
-/*  !*margin: 5rem;*!*/
-/*  position: absolute;*/
-/*  color: white;*/
-/*  !*width: 70%;*!*/
-/*  !*height: fit-content;*!*/
-/*  !*margin: 7% 17%;*!*/
-/*  !*width: 30%;*!*/
-/*  !*height: 100%;*!*/
-/*  !*margin: 6% 13%;*!*/
-/*  width: 100%;*/
-/*  max-width: 600px;*/
-/*  height: 100%;*/
-/*  margin: 200px 250px;*/
-/*  font-size: 17px;*/
-/*  !*text-align: center;*!*/
-/*}*/
 @media (max-width: 1060px) {
   .container-text p {
     font-size: 14px;
@@ -88,15 +52,6 @@ margin: 50px;
   transition: all ease 0.6s;
 }
 
-.slide-image {
-  width: 100%;
-  height: 575px;
-  position: absolute;
-  object-fit: cover;
-  transition: all ease 0.6s;
-  margin-top: -15px;
-}
-
 .slide-title {
   width: 90%;
   height: 100%;
@@ -105,7 +60,7 @@ margin: 50px;
   position: absolute;
   text-align: center;
   margin: 0 5%;
-  top: 25%;
+  top: 20%;
 }
 
 .slide-title a {

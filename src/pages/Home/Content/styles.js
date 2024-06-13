@@ -4,7 +4,7 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
-  height: 576px;
+  height: 557px;
   margin-top: 147px;
   //position: relative;
   &.parallax {
@@ -97,13 +97,13 @@ export const BlockContent = styled.div`
   display: flex;
   //flex-wrap: wrap;
   width: 100%;
-  height: fit-content;
+  //height: fit-content;
 `;
 
 export const ContainerText = styled.div`
   width: calc(100% / 12 * 4);
   position: relative;
-  height: 576px;
+  height: 552px;
   overflow-y: scroll;
   direction: rtl;
   unicode-bidi: bidi-override;
@@ -132,4 +132,17 @@ export const ContainerImage = styled.div`
   position: absolute;
   width: 100%;
   margin: 0 auto;
+`;
+
+export const ContainerParagraph = styled.div`
+  z-index: 2;
+  width: 100%;
+  color: white;
+  margin: auto 0;
+  max-width: 700px;
+  a,
+  p {
+    text-align: center;
+    color: white;
+  }
 `;

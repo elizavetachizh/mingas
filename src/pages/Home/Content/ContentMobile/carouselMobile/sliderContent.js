@@ -23,8 +23,8 @@ function SliderContent({ activeIndex, sliderImage }) {
           key={index}
           className={index === activeIndex ? 'slides-mobile active-mobile' : 'inactive-mobile'}
         >
-          <img className="slide-image-image" src={`${APIimage}/${slide.image}`} alt="" />
-          <h2 id={`content-${slide._id}`} className="slide-title-mobile" />
+          <img className="slide-image-image" src={`${APIimage}/${slide.image ? slide.image : 'phone.webp'}`} alt="" />
+          <div id={`content-${slide._id}`} className="slide-title-mobile" />
           {slide.link !== '' && (
             <ButtonFun
               classname={'slide-text-mobile'}

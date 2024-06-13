@@ -125,7 +125,7 @@ export const Divbackground = styled.div`
   top: 147px;
   border-radius: 20px;
   @media (min-width: 2000px) {
-    top: 174px;
+    top: 160px;
   }
   @media (max-width: 2000px) {
     border-radius: 0;

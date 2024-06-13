@@ -4,7 +4,7 @@ import Dots from '../../../components/Content/dots';
 import SliderContent from '../../../components/Content/SliderContent';
 import axios from 'axios';
 import { API } from '../../../backend';
-import { BlockContent, ContainerContent, ContainerImage, ContainerText } from './styles';
+import { ContainerContent } from './styles';
 import useMediaQuery from '../parallax/useMediaQuery';
 import ContentMobile from './ContentMobile';
 
@@ -30,18 +30,12 @@ export default function ContentHome() {
         <ContentMobile info={info} />
       ) : (
         <ContainerContent>
-          <BlockContent>
-            <ContainerImage>
-              <SliderContent activeIndex={activeIndex} sliderImage={info} />
-            </ContainerImage>
-            <ContainerText>
-              <Dots
-                activeIndex={activeIndex}
-                sliderImage={info}
-                onclick={(activeIndex) => setActiveIndex(activeIndex)}
-              />
-            </ContainerText>
-          </BlockContent>
+          <SliderContent activeIndex={activeIndex} sliderImage={info} />
+          <Dots
+            activeIndex={activeIndex}
+            sliderImage={info}
+            onclick={(activeIndex) => setActiveIndex(activeIndex)}
+          />
         </ContainerContent>
       )}
     </>
