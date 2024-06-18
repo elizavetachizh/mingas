@@ -26,7 +26,7 @@ export const Title = styled.h2`
   align-items: center;
   text-transform: uppercase;
   justify-content: center;
-  margin: 2rem auto;
+  margin: 1rem auto;
   text-align: center;
   ${({ color }) => titleColor[color]};
   ${({ margin }) => titleMargin[margin]};

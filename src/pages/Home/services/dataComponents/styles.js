@@ -46,8 +46,9 @@ export const Imagecard = styled.img`
 `;
 
 export const Textcard = styled.p`
-  @media (max-width: 596px) {
     font-size: 16px;
+  @media (max-width: 596px) {
+   
     margin: 1px auto;
   }
   @media (max-width: 500px) {

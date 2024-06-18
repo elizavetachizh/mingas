@@ -138,7 +138,7 @@
     }
     .slider-container-mobile {
         margin: 80px 0 0 0;
-        height: 346px;
+        height: fit-content;
     }
     .slide-title-mobile,
     .slide-text-mobile {
@@ -150,14 +150,14 @@
         --heights: 33vh;
         --widths: 100%;
     }
-    .slider-container-mobile{
-        margin: 66px 0 0 0;
-        height: 280px;
-    }
+    /*.slider-container-mobile{*/
+    /*    margin: 66px 0 0 0;*/
+    /*    height: 280px;*/
+    /*}*/
 }
 @media (max-width: 438px) {
     .slider-container-mobile {
-        margin: 55px 0 0 0;
+        margin: 66px 0 0 0;
     }
     .slide-title-mobile,
     .slide-text-mobile {

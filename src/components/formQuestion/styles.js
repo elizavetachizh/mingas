@@ -10,7 +10,7 @@ export const Form = styled.form`
 export const DivInput = styled.div`
   display: flex;
   width: 90%;
-  margin: 2% auto;
+  margin: 1% auto;
   flex-direction: column;
   @media (max-width: 640px) {
     text-align: center;
@@ -19,13 +19,12 @@ export const DivInput = styled.div`
 
 export const DivInputCheckbox = styled.div`
   display: flex;
-  margin: 1.5rem 0;
   justify-content: center;
 `;
 
 export const Label = styled.label`
   color: #2d4c6b;
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 4px;
   span {
     color: red;
@@ -83,15 +82,14 @@ export const Button = styled.button`
   border-radius: 20px;
   font-size: 16px;
   font-weight: 500;
-  width: 240px;
+  width: fit-content;
+  padding: 0.7rem 2rem;
   text-align: center;
   text-decoration: none;
-  //border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  margin: 4% auto;
+  margin: 2% auto;
   cursor: pointer;
   transition: 0.8s linear;
 `;

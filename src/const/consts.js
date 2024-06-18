@@ -29,6 +29,7 @@ export const INITIAL_REQUEST_STATE = {
   reading: '',
   marka: '',
   file: '',
+  information: [],
 };
 
 export const OPTIONS_EQUIPMENT = [

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { DivApplication, Form } from '../styles';
 import { Button, DivInputFile, InputFile } from '../../../../components/formQuestion/styles';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 import FormInput from '../../../../components/input/inputPhone';
 import AgreeWithRules from '../../../../components/AgreeWithRules';
+import PopUp from '../../../../components/popUp';
 
 export default function ProvidingGasMeterReadings() {
   const {
@@ -17,34 +18,83 @@ export default function ProvidingGasMeterReadings() {
     form,
     msg,
   } = useProvidingGasMasterReadings();
-
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVarningVisible, setModalVarningVisible] = useState(false);
+  const [documentq, setDocumentq] = useState([]);
   const formImage = document.getElementById('file-input');
-  formImage?.addEventListener('change', () => {
-    uploadFile(formImage.files[0]);
-  });
 
-  function uploadFile(file) {
-    if (!['image/png', 'image/jpeg', 'application/pdf'].includes(file.type)) {
-      alert('Не подходит формат файла, вставьте, пожалуйста картинку/фотографию');
-      formImage.value = '';
-    }
-    if (file.size > 60000) {
-      alert('Файл является слишком большим');
-      formImage.value = '';
-    }
-    let reader = new FileReader();
-    reader.onload = function () {
-      setRequestValues({
-        ...requestValues,
-        file: reader.result,
-      });
-    };
+  const handleCloseCLick = useCallback(() => {
+    setModalVisible(false);
+  }, []);
 
-    reader.onerror = function (e) {
-      console.log(e);
-    };
-    reader.readAsDataURL(file);
-  }
+  const handlewoCloseCLick = useCallback(() => {
+    setModalVarningVisible(false);
+  }, []);
+
+  const handleFileChosen = async (file) => {
+    return new Promise((resolve, reject) => {
+      let fileReader = new FileReader();
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = reject;
+      fileReader.readAsDataURL(file);
+    });
+  };
+
+  const readAllFiles = async (AllFiles) => {
+    return await Promise.all(
+      AllFiles.map(async (file) => {
+        return await handleFileChosen(file);
+      })
+    );
+  };
+
+  const getFileURL = (file) => {
+    const blob = new Blob([file], {
+      type: 'application/octetstream, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf, application/vnd.ms-excel, text/plain',
+    });
+
+    return URL.createObjectURL(blob);
+  };
+  const changeHAnder = useCallback(
+    (event) => {
+      if (Object.values(event.target.files)[0].size > 8000000) {
+        // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
+        setModalVisible(true);
+        formImage.value = '';
+        setDocumentq([]);
+      } else if (
+        ![
+          'application/msword',
+          'application/pdf',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          'application/vnd.ms-excel',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          'application/zip',
+          'application/octet-stream',
+          'application/x-zip-compressed',
+          'multipart/x-zip',
+          'text/plain',
+          'text/plain',
+          'image/jpeg',
+          'image/png',
+        ].includes(Object.values(event.target.files)[0].type)
+      ) {
+        // alert('Не подходит формат файла');
+        setModalVarningVisible(true);
+        formImage.value = '';
+        setDocumentq([]);
+      } else {
+        setDocumentq(Object.values(event.target.files));
+      }
+
+      readAllFiles(Object.values(event.target.files)).then((result) =>
+        setRequestValues({ ...requestValues, information: result })
+      );
+    },
+    [requestValues]
+  );
 
   return (
     <DivApplication>
@@ -103,11 +153,47 @@ export default function ProvidingGasMeterReadings() {
           value={requestValues.address}
           error={errors.address}
         />
+        <FormInput
+          name={'reading'}
+          span={true}
+          label={'показания счётчика:'}
+          type="text"
+          placeholder={'Введите показания счётчика'}
+          onChange={handleUserInput}
+          value={requestValues.reading}
+          error={errors.reading}
+        />
 
-        <DivInputFile>
-          <InputFile type="file" id="file-input" />
-          <label>Прикрепить фото прибора учёта</label>
-        </DivInputFile>
+        <input type="file" multiple onChange={changeHAnder} id="file-input" />
+        <p style={{ fontSize: '12px' }}>
+          Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip;
+          файлов изображений: jpg, jpeg, png; табличных файлов: xls, xlsx. Размер вложенного файла
+          не может превышать 8 Мб. Для отправки нескольких документов, необходимо их поместить в
+          архив формата .zip
+        </p>
+        {isModalVisible && (
+          <PopUp
+            text={' Файл является слишком большим, пожалуйста уменьшите размер файла'}
+            handleCloseCLick={handleCloseCLick}
+          />
+        )}
+        {isModalVarningVisible && (
+          <PopUp text={'Не подходит формат файла'} handleCloseCLick={handlewoCloseCLick} />
+        )}
+        <div>
+          <ol>
+            {documentq.length
+              ? documentq.map((element) => (
+                  <li key={getFileURL(element)}>
+                    <a href={getFileURL(element)} download>
+                      {element.name}
+                    </a>
+                  </li>
+                ))
+              : null}
+          </ol>
+        </div>
+
         <AgreeWithRules handleCheckBox={handleCheckBox} requestValues={requestValues} />
         <Button
           disabled={isButtonDisabled}

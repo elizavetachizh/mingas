@@ -55,7 +55,7 @@ export const useProvidingGasMasterReadings = () => {
         break;
       case 'isAgree':
         if (!!requestValues.isAgree) {
-          setErrors({ ...errors, isAgree: 'Заполните все поля со *' });
+          setErrors({ ...errors, isAgree: 'Заполните все поля с *' });
         }
         break;
       case 'text':

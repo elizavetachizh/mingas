@@ -4,8 +4,8 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
-  height: 557px;
-  margin-top: 128px;
+  height: 570px;
+  margin-top: 130px;
   //position: relative;
   &.parallax {
     height: 500px;

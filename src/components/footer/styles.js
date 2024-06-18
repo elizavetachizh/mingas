@@ -5,7 +5,6 @@ export const Contacts = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-around;
-  margin: 20px 0 0;
   @media (max-width: 990px) {
     flex-direction: column;
     justify-content: center;
@@ -33,6 +32,10 @@ export const LinksNetwork = styled.div`
 export const Telephons = styled.div`
   text-align: center;
   color: white;
+    p, a{
+        font-size: 14px;
+    }
+    
 `;
 
 export const FooterContainer = styled.div`

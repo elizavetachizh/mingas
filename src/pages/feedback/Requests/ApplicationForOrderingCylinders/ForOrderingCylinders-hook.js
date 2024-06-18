@@ -6,7 +6,7 @@ import {isValidateEmail, isValidatePhone, stringIncludesNumber} from "../../../.
 export const useForOrderingCylinders = () => {
   //КУДА БУДЕТ ОТПРАВЛЯТЬСЯ: kc@mingas.by
   //for me
-  // const url = 'http://localhost/cylinders';
+  // const url = 'http://localhost:3000/cylinders';
 
   //for site
   const url = 'https://back.mingas.by/cylinders';

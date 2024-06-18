@@ -1,6 +1,6 @@
 import { DivApplication, Form } from '../../../pages/feedback/Requests/styles';
-import { Button, DivInput, Label } from '../../formQuestion/styles';
-import React, { useCallback, useEffect, useState } from 'react';
+import { Button } from '../../formQuestion/styles';
+import React, { useCallback, useState } from 'react';
 import { useFeedback } from '../leaveFeedback-hook';
 import PopUp from '../../popUp';
 import InputText from '../../input/inputText';
@@ -19,9 +19,6 @@ export default function LeaveFeedbackMingas() {
     form,
     msg,
   } = useFeedback();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [isModalVarningVisible, setModalVarningVisible] = useState(false);
@@ -194,10 +191,7 @@ export default function LeaveFeedbackMingas() {
           </ol>
         </div>
 
-        <AgreeWithRules
-          handleCheckBox={handleCheckBox}
-          requestValues={formValues}
-        />
+        <AgreeWithRules handleCheckBox={handleCheckBox} requestValues={formValues} />
         <Button disabled={isButtonDisabled} type="submit" onClick={handleSubmit}>
           Отправить
         </Button>

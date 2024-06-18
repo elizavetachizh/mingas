@@ -81,7 +81,7 @@ export const company = [
   {
     id: 6,
     router: 'branches',
-    name: '"Филиалы УП "Мингаз"',
+    name: 'Филиалы УП "Мингаз"',
     description: <Branches />,
   },
   {
