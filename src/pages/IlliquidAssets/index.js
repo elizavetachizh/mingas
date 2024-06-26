@@ -7,6 +7,14 @@ export default function IlliquidAssets() {
       name={'Реализация неликвидов'}
       content={
         <div style={{ margin: '0 auto', width: '70%', display: 'flex', flexDirection: 'column' }}>
+            <a
+                style={{ margin: '1rem 0' }}
+                href={require('./documents/windows_doors.docx')}
+                target={'_blank'}
+                download
+            >
+              Окна, двери ПВХ, ванны акриловые, двери алюминиевые
+            </a>
           <a
             style={{ margin: '1rem 0' }}
             href={require('./documents/grp.docx')}
