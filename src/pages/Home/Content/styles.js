@@ -90,15 +90,6 @@ export const Prizes = styled.div`
     }
   }
 `;
-export const BlockContent = styled.div`
-  max-width: 100%;
-  margin: 0 auto;
-  //justify-content: flex-start;
-  display: flex;
-  //flex-wrap: wrap;
-  width: 100%;
-  //height: fit-content;
-`;
 
 export const ContainerText = styled.div`
   width: calc(100% / 12 * 4);
@@ -126,12 +117,6 @@ export const ContainerText = styled.div`
     border-radius: 100px;
     background-color: #666;
   }
-`;
-
-export const ContainerImage = styled.div`
-  position: absolute;
-  width: 100%;
-  margin: 0 auto;
 `;
 
 export const ContainerParagraph = styled.div`

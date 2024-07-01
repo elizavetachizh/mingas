@@ -12,7 +12,7 @@ export default function App() {
       <Routers />
       {!cookies?.CookieConsent && (
         <CookieConsent ref={ref}>
-          Для обеспечения удобства пользователей сайта используются cookies
+          Для обеспечения удобства пользователей сайта используются файлы cookie
           <Button
             onClick={() => {
               ref.current.classList.add('passive');

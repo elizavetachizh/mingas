@@ -10,7 +10,7 @@ export default function LinkServices({nameCard, cardId, link }) {
 
   return (
     <ContainerServices onClick={() => handlerLinkClick(nameCard)}>
-      <Imagecard alt={''} src={require('../../../../assets/icons_services/62.png')} />
+      <Imagecard alt={''} src={require(`../../../../assets/icons_services/62.png`)} />
       <Textcard>{nameCard}</Textcard>
     </ContainerServices>
   );

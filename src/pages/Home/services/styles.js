@@ -39,30 +39,13 @@ export const DivDown = styled.div`
     grid-template-rows: 250px;
   }
   @media (max-width: 990px) {
-    grid-template-columns: 300px;
+    grid-template-columns: 280px;
     grid-template-rows: 300px;
   }
   @media (max-width: 596px) {
-    grid-template-columns: 250px;
     grid-template-rows: none;
   }
-  @media (max-width: 486px) {
-    grid-template-columns: 220px;
-    grid-template-rows: none;
-  }
-  @media (max-width: 422px) {
-    grid-template-columns: 200px;
-    grid-template-rows: none;
-  }
-  @media (max-width: 392px) {
-    grid-template-columns: 180px;
-    grid-template-rows: none;
-  }
-`;
-export const ServicesDiv = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+ 
 `;
 export const BackgroundStyle = styled.img`
   position: absolute;
@@ -95,5 +78,8 @@ export const ButtonServicesHome = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  @media(max-width: 600px){
+    flex-direction: column;
+  }
 `;

@@ -6,7 +6,7 @@ export default function ModalWindowAdvertising() {
   useEffect(() => {
     const timer = setTimeout(
       () => (document.getElementById('overlay').style.display = 'block'),
-      7000
+      3000
     );
     return () => clearTimeout(timer);
   }, []);

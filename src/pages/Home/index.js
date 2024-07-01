@@ -27,6 +27,7 @@ export default function Home() {
       <BackgroundStyle src={linesOne} />
       <HeaderRequests />
       <ParallaxDiv />
+        <BackgroundStyle src={linesOne} />
       <HomeServices />
       <News />
       <StateInformResources />

@@ -149,7 +149,7 @@
 }
 
 .active-dot {
-  background-color: rgba(37, 114, 193, 1);
+  background-color: rgba(37, 114, 193, 0.8);
 }
 
 .slider-container:hover .dot {

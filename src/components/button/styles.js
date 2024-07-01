@@ -47,13 +47,7 @@ export const Button = styled(NavLink)`
     width: 250px;
   }
   @media (max-width: 596px) {
-    width: 200px;
-  }
-  @media (max-width: 480px) {
-    width: 170px;
-  }
-  @media (max-width: 400px) {
-    width: 156px;
+    font-size: 14px;
   }
   ${({ backgrounder }) => buttonBackgroundColor[backgrounder]}
 `;

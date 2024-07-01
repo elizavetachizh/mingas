@@ -28,7 +28,7 @@ export const DivApplication = styled.div`
   align-items: center;
   max-width: 1440px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0.5rem auto;
   @media (max-width: 640px) {
     width: 100%;
     max-width: 100%;

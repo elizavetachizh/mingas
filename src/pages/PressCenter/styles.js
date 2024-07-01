@@ -93,8 +93,8 @@ export const Article = styled.div`
 export const ArticleForHome = styled.div`
   border-radius: 20px;
   border: 1px solid #0d4475;
-  width: 280px;
-  height: 190px;
+  width: 290px;
+  height: 200px;
   margin: 1rem auto;
   background-size: contain;
   text-align: center;
@@ -102,9 +102,10 @@ export const ArticleForHome = styled.div`
   background-position: bottom;
   box-shadow: inset 0 -80px 50px -25px #0d4475;
   text-decoration-line: none;
+  position: relative;
   @media (min-width: 2400px) {
-    width: 420px;
-    height: 280px;
+    width: 450px;
+    height: 320px;
   }
   @media (min-width: 1800px) {
     width: 400px;
@@ -126,22 +127,24 @@ export const ArticleForHome = styled.div`
     width: 380px;
     height: 252px;
   }
+  @media (max-width: 800px) {
+    width: 330px;
+    height: 230px;
+  }
   @media (max-width: 410px) {
     width: 300px;
     height: 200px;
   }
   a {
     display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-direction: column;
+    //position: relative;
   }
   img {
     width: 100%;
     height: 240px;
     border-radius: 20px;
     z-index: -1;
-    position: relative;
+    display: block;
     @media (max-width: 1647px) {
       height: 220px;
     }
@@ -160,36 +163,16 @@ export const ArticleForHome = styled.div`
     color: white;
     font-weight: bold;
     font-size: 16px;
-    @media (min-width: 330px) {
-      width: 76%;
-    }
-    @media (min-width: 530px) {
-      width: 60%;
-    }
-    @media (min-width: 700px) {
-      width: 46%;
-    }
-    @media (min-width: 900px) {
-      width: 34%;
-    }
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    transform: translateX(0%);
+
     @media (min-width: 1150px) {
-      width: 22%;
       font-size: 14px;
     }
 
-    @media (min-width: 1500px) {
-      width: 18%;
-    }
     @media (min-width: 2000px) {
-      width: 16%;
-      font-size: 18px;
-    }
-    @media (min-width: 2300px) {
-      width: 14%;
-      font-size: 18px;
-    }
-    @media (min-width: 2900px) {
-      width: 12%;
       font-size: 18px;
     }
   }

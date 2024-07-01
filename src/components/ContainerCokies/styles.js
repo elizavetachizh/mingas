@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 export const CookieConsent = styled.div`
-  background-color: rgba(14, 78, 129, 1);
+  background-color: rgba(14, 78, 129, 0.8);
   width: 100%;
+  //max-width: calc(100% - 40px);
   margin: 0 auto;
   justify-content: center;
   color: white;

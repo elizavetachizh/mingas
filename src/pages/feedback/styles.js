@@ -70,8 +70,8 @@ export const Button = styled.button`
   text-align: left;
   background: none;
   border: none;
-  margin: 2% 0;
-  padding: 2%;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   cursor: pointer;
   transition: 0.8s linear;
