@@ -54,4 +54,9 @@ export const arrayData = [
     href: 'https://minsk.gov.by/ru/',
     image: 'comitet-ispolkom.jpg',
   },
+  {
+    title: 'Национальный центр законодательства и правовой информации Республики Беларусь',
+    href: 'https://center.gov.by/',
+    image: 'gov.jpg',
+  },
 ];
