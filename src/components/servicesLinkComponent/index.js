@@ -18,7 +18,7 @@ export default function ServicesLinkComponent({ name, type, linksForServices }) 
           ) : (
             <>
               {linksForServices}
-              {servicesName.map(
+              {servicesName?.map(
                 (element) =>
                   element.type === type && (
                     <NavLinkService key={element._id} to={element._id}>

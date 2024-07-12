@@ -59,8 +59,6 @@ export const ContainerInform = styled.div`
   }
 `;
 export const General = styled.div`
-  border: 1px solid #1b3a91;
-  border-radius: 30px;
   margin: 1rem auto;
   padding: 0;
   width: 90%;
@@ -87,13 +85,11 @@ export const General = styled.div`
 export const BtnIsOpen = styled.div`
   display: flex;
   flex-direction: row;
-  font-size: 16px;
   justify-content: space-between;
   align-items: center;
-  height: 64px;
   width: 100%;
   color: white;
-  padding: 0 0.1rem;
+  padding: 0.5rem;
   background-image: linear-gradient(
     -55deg,
     rgb(1, 95, 156) 0%,
@@ -104,31 +100,8 @@ export const BtnIsOpen = styled.div`
     rgb(13, 68, 117) 100%
   );
   cursor: pointer;
-  //margin: 4% auto;
   border-radius: 30px;
-  @media (max-width: 430px) {
-    height: 80px;
-  }
-  &.question-answer {
-    @media (max-width: 430px) {
-      height: 80px;
-      div {
-        @media (max-width: 430px) {
-          width: 70px;
-          height: 72%;
-        }
-      }
-    }
-    @media (max-width: 400px) {
-      height: 94px;
-      div {
-        @media (max-width: 400px) {
-          width: 70px;
-          height: 62%;
-        }
-      }
-    }
-  }
+  border: 1px solid #1b3a91;
   &.btn-is-open {
     width: 50%;
     margin: 4% auto;
@@ -150,26 +123,14 @@ export const BtnIsOpen = styled.div`
   div {
     background: white;
     border-radius: 50%;
-    height: 92%;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     text-align: center;
-    @media (max-width: 720px) {
-      height: 84%;
-    }
-    @media (max-width: 540px) {
-      height: 80%;
-    }
-    @media (max-width: 430px) {
-      width: 50px;
-      height: 50%;
-    }
   }
   p {
     width: 90%;
     padding: 0 20px;
-    @media (max-width: 684px) {
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
   h3 {
     text-align: center;
@@ -191,16 +152,12 @@ export const ContainerInformAboutService = styled.div`
 
 export const IoIosArrowUps = styled(IoIosArrowUp)`
   color: #0e43af;
-  width: 24px;
-  height: 24px;
   margin: 30% auto;
 `;
 
 export const IoIosArrowDowns = styled(IoIosArrowDown)`
   color: #0e43af;
-  width: 24px;
   margin: 30% auto;
-  height: 24px;
 `;
 
 export const IoMdClocks = styled(IoMdClock)`
