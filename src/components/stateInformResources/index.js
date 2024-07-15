@@ -19,7 +19,7 @@ export default function StateInformResources() {
         style={{ width: '100%', height: 'auto' }}
         src={require('../../assets/background/ornament.png')}
       />
-      <DivInform>
+      <DivInform style={{margin: "0 auto"}}>
         <Carousel
           plugins={[
             'infinite',
