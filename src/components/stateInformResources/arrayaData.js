@@ -3,6 +3,7 @@ export const arrayData = [
     title: 'Портал Президента Республики Беларусь',
     href: 'https://president.gov.by/ru',
     image: 'portal-prezidenta.png',
+    width: '150px',
   },
   {
     title: 'Администрация Первомайского района г. Минска',
@@ -23,6 +24,7 @@ export const arrayData = [
     title: 'БЕЛТА',
     href: 'https://www.belta.by/ru',
     image: 'belta.webp',
+    width: '150px',
   },
   {
     title: 'Беларусь сегодня',
@@ -33,11 +35,13 @@ export const arrayData = [
     title: 'Минская правда',
     href: 'https://mlyn.by/',
     image: 'minsk_truth.webp',
+    width: '150px',
   },
   {
     title: 'Минск-сегодня',
     href: 'https://minsknews.by/',
     image: 'minsk-today.webp',
+
   },
   {
     title: 'Портал рейтинговой оценки качества оказания услуг организациями Республики Беларусь',
@@ -53,10 +57,12 @@ export const arrayData = [
     title: 'Минский городской исполнительный комитет',
     href: 'https://minsk.gov.by/ru/',
     image: 'comitet-ispolkom.jpg',
+    width: '150px',
   },
   {
     title: 'Национальный центр законодательства и правовой информации Республики Беларусь',
     href: 'https://center.gov.by/',
     image: 'gov.jpg',
+    width: '150px',
   },
 ];

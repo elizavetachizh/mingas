@@ -18,15 +18,6 @@ export const DivCarousel = styled.div`
       margin: 0;
     }
   }
-  a {
-    text-decoration: none;
-    color: #0d4475;
-    font-size: 18px;
-
-    @media (max-width: 568px) {
-      font-size: 16px;
-    }
-  }
   &:hover {
     transform: scale(1.1);
     transition: 1s;

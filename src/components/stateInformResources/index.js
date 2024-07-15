@@ -7,19 +7,17 @@ import { BlockContainerRequests } from '../../pages/feedback/styles';
 import { arrayData } from './arrayaData';
 import Schema from './schema';
 export default function StateInformResources() {
+  const isMiddle = useMediaQuery('(max-width: 800px)');
   const isPhone = useMediaQuery('(max-width: 800px)');
   return (
     <BlockContainerRequests>
-      <TitleForHome
-        color={'blue'}
-        infoTitle={'ГОСУДАРСТВЕННЫЕ ИНФОРМАЦИОННЫЕ РЕСУРСЫ'}
-      />
+      <TitleForHome color={'blue'} infoTitle={'ГОСУДАРСТВЕННЫЕ ИНФОРМАЦИОННЫЕ РЕСУРСЫ'} />
       <img
         alt={'ornament'}
         style={{ width: '100%', height: 'auto' }}
         src={require('../../assets/background/ornament.png')}
       />
-      <DivInform style={{margin: "0 auto"}}>
+      <DivInform style={{ margin: '0 auto' }}>
         <Carousel
           plugins={[
             'infinite',
@@ -27,13 +25,13 @@ export default function StateInformResources() {
             {
               resolve: slidesToShowPlugin,
               options: {
-                numberOfSlides: isPhone ? 2 : 3,
+                numberOfSlides: isPhone ? 1 : isMiddle ? 2 : 3,
               },
             },
             {
               resolve: autoplayPlugin,
               options: {
-                interval: isPhone ? 4000 : 3000,
+                interval: 3000,
               },
             },
           ]}
@@ -44,6 +42,7 @@ export default function StateInformResources() {
               href={el.href}
               alt={el.title}
               title={el.title}
+              styleImage={{ width: `${el?.width}` }}
               image={require(`../../assets/png/${el.image}`)}
             />
           ))}

@@ -22,12 +22,14 @@ function SliderContent({ activeIndex, sliderImage }) {
           key={index}
           className={index === activeIndex ? 'slides-mobile active-mobile' : 'inactive-mobile'}
         >
-          <img
-            className="slide-image-image"
-            src={slide.image}
-            alt=""
-          />
-          <div id={`content-${slide._id}`} className="slide-title-mobile" />
+          <a href={slide?.link ? slide?.link : '/'} target={'_blank'} rel="noreferrer">
+            <img
+                className="slide-image-image"
+                src={slide.image}
+                alt=""
+            />
+            <div id={`content-${slide._id}`} className="slide-title-mobile"/>
+          </a>
         </div>
       ))}
     </section>
