@@ -83,6 +83,7 @@ export default function linksForMenu() {
         { name: 'Противодействие коррупции', link: '/company/corruption' },
         { name: 'Сертификаты, лицензии, свидетельства', link: '/company/documentation' },
         { name: 'Благодарности и награды', link: '/company/gratitude' },
+        { name: 'Система менеджмента УП "МИНГАЗ" ', link: '/company/management-system' },
       ],
     },
     {

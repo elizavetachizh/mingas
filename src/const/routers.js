@@ -31,7 +31,7 @@ import Posts from '../components/posts';
 import GetAllPosts from '../components/posts/getAllPosts';
 import IlliquidAssets from '../pages/IlliquidAssets';
 import Laboratory from '../components/laboratory';
-import Company from "../pages/company";
+import Company from '../pages/company';
 
 export const routers = [
   { path: '/', element: <Home /> },
@@ -55,6 +55,7 @@ export const routers = [
   { path: '/company/branches/Bubni', element: <Bubni /> },
   { path: '/company/branches/ogonek', element: <Ogonek /> },
   { path: '/company/union', element: <Union /> },
+  // { path: '/company/management-system', element: <ManagmentSystem /> },
   { path: '/services-legal-entities', element: <ServicesForLegalEntities /> },
   {
     path: '/services-legal-entities/administrative-services-legal',

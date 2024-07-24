@@ -96,6 +96,7 @@ export default function LeaveFeedback() {
             <SubTitleFun color={'blue'} infoSubTitle={'Форма обратной связи'} />
             <LeaveFeedbackMingas />
           </ContainerInform>
+
           <ContainerInform style={{ margin: '2% auto' }}>
             <SubTitleFun
               color={'blue'}

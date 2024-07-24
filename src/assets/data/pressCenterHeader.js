@@ -13,6 +13,7 @@ import Branches from '../../pages/company/Branches';
 import Corruption from '../../components/Сorruption';
 import Documentation from '../../pages/company/documentation';
 import Gratitude from '../../pages/company/Gratitude';
+import ManagmentSystem from '../../pages/company/ManagmentSystem';
 
 export const pressCenter = [
   {
@@ -101,5 +102,11 @@ export const company = [
     router: 'gratitude',
     name: 'Благодарности и награды',
     description: <Gratitude />,
+  },
+  {
+    id: 9,
+    router: 'management-system',
+    name: 'Система менеджмента УП "МИНГАЗ"',
+    description: <ManagmentSystem />,
   },
 ];
