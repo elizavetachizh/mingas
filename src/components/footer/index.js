@@ -90,7 +90,7 @@ export default function Footer({ classname }) {
               target={'_blank'}
               rel="noreferrer"
             >
-              График работы центра обслуживания населения
+              График работы центра обслуживания клиентов
             </a>
           </p>
         </Telephons>
