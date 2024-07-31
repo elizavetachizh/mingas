@@ -2,14 +2,14 @@ import { Article } from '../styles';
 
 export default function SchemaSMI({ href, src, content, date }) {
   return (
-    <div>
-      <Article>
-        <a rel="noopener" target={'_blank'} href={href}>
+    <>
+      <a rel="noopener" target={'_blank'} href={href}>
+        <Article>
           <img alt={''} src={src} />
           <p>{content}</p>
-        </a>
-      </Article>
+        </Article>
+      </a>
       {date && <p style={{ marginTop: 0 }}>Статья была добавлена: {date}</p>}
-    </div>
+    </>
   );
 }

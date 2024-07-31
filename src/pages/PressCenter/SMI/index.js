@@ -6,7 +6,7 @@ import ComponentContainerArticles from './ComponentContainerArticles';
 
 export default function SMI() {
   return (
-    <div>
+    <>
       <p>
         УП «МИНГАЗ» проводит честную и открытую политику сотрудничества со СМИ. Мы открыты для
         предложений, совместного взаимодействия, предоставление актуальной и достоверной информации
@@ -16,6 +16,6 @@ export default function SMI() {
       <Div className={`shake`}>
         <ComponentContainerArticles />
       </Div>
-    </div>
+    </>
   );
 }

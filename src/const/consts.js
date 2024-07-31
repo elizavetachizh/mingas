@@ -179,4 +179,5 @@ export const linksHeaderCompany = [
   { name: 'Противодействие коррупции', link: 'corruption' },
   { name: 'Сертификаты, лицензии, свидетельства', link: 'documentation' },
   { name: 'Благодарности и награды', link: 'gratitude' },
+  { name: 'Система менеджмента УП "МИНГАЗ" ', link: 'management-system' },
 ];
