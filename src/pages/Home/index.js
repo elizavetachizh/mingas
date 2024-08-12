@@ -20,8 +20,8 @@ export default function Home() {
   return (
     <Container>
       <Header />
-        {/*<ModalWindowAIS/>*/}
-      <ModalWindowAdvertising />
+        <ModalWindowAIS/>
+      {/*<ModalWindowAdvertising />*/}
       <ContentHome />
       <UsefulInform />
       <BackgroundStyle src={linesOne} />
