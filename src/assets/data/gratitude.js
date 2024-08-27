@@ -10,4 +10,5 @@ export const gratitude = [
   { id: 9, img: '9' },
   { id: 10, img: '10' },
   { id: 11, img: '11' },
+  { id: 12, img: '12' },
 ];

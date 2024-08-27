@@ -4,7 +4,8 @@ export const Links = styled.div`
   display: flex;
   flex-direction: column;
   a,
-  button {
+  button,
+  p {
     text-decoration: none;
     display: flex;
     flex-direction: row;

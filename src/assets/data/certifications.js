@@ -136,15 +136,15 @@ export const documents = [
       { id: 8, img: '8' },
     ],
   },
-  {
-    GeneralId: 17,
-    name: 'Аттестаты',
-    inform: [
-      { id: 1, img: '78' },
-      { id: 2, img: '79' },
-      { id: 3, img: '80' },
-    ],
-  },
+  // {
+  //   GeneralId: 17,
+  //   name: 'Аттестаты',
+  //   inform: [
+  //     { id: 1, img: '78' },
+  //     { id: 2, img: '79' },
+  //     { id: 3, img: '80' },
+  //   ],
+  // },
   {
     GeneralId: 18,
     name: 'Аттестаты',
@@ -214,6 +214,15 @@ export const documents = [
     inform: [
       { id: 1, img: '68' },
       { id: 2, img: '69' },
+    ],
+  },
+  {
+    GeneralId: 27,
+    name: 'Аттестаты',
+    inform: [
+      { id: 1, img: '97' },
+      { id: 2, img: '98' },
+      { id: 3, img: '99' },
     ],
   },
 ];
