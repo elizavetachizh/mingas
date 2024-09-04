@@ -6,8 +6,8 @@ export default function ModalSubdivision({ links, linksId }) {
   const handlerLinkClick = useCallback(
     (linkId) => {
       if (linksId) {
-        const current = links.find((element) => element === linkId);
-        navigate(`/company/management/${linksId}?id=${current}`);
+        const current = links.find((element) => element.name === linkId);
+        navigate(`/company/management/${linksId}?id=${current.name}`);
         window.scrollTo(0, 0);
       }
     },
@@ -16,8 +16,8 @@ export default function ModalSubdivision({ links, linksId }) {
   return (
     <Container>
       {links.map((link) => (
-        <Name key={link.index} onClick={() => handlerLinkClick(link)}>
-          {link}
+        <Name key={link.index} onClick={() => handlerLinkClick(link.name)}>
+          {link?.name}
         </Name>
       ))}
     </Container>

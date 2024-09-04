@@ -16,7 +16,7 @@ export default function ResidentsOfCapitalRegion() {
         console.log(e);
       });
   }, [setInfo]);
-
+    console.log(info)
   return (
     <ContainerContent
       name={'Прейскурант цен'}
@@ -26,7 +26,7 @@ export default function ResidentsOfCapitalRegion() {
             <Links>
               {info.map((el) => (
                 <a
-                  href={`${APIimage}/${el.description}`}
+                  href={`${el.url}`}
                   id={'href'}
                   target={'_blank'}
                   rel="opener noreferrer"
