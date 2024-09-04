@@ -75,7 +75,7 @@ export default function DepartmentInformation() {
     setIsForm(false);
     setKey('');
   };
-
+  console.log(management)
   return (
     <ContainerContent
       name={'Службы УП "МИНГАЗ"'}
@@ -133,7 +133,7 @@ export default function DepartmentInformation() {
                       key={link}
                       className={id === link ? 'shake' : ''}
                     >
-                      {link}
+                      {link.name}
                     </button>
                   ))}
                 </DivOpen>

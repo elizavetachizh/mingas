@@ -16,15 +16,11 @@ export default function Management() {
   }, []);
 
   const { data: management, isLoading } = useFetchManagementQuery();
-
   return (
     <>
       <DivTextPhoto>
-        <ImageDiv
-          data-aos={'fade-up'}
-          src={'https://back.mingas.by/public/images/management/0.webp'}
-        />
-        <DivText data-aos={'fade-up'}>
+        <ImageDiv src={'https://back.mingas.by/public/images/management/0.webp'} />
+        <DivText>
           <p>
             Добро пожаловать на корпоративный сайт производственного республиканского унитарного
             предприятия «МИНГАЗ». Основная задача предприятия — обеспечение безопасной и
