@@ -8,7 +8,7 @@ export const DivUsefulInform = styled.div`
   justify-content: center;
   margin: 10px auto 10px;
   align-items: center;
-  background-color: rgba(14, 78, 129, 0.2);
+  background-color: rgba(14, 78, 129, 0.1);
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;

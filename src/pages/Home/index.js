@@ -10,27 +10,28 @@ import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
 import HeaderRequests from '../feedback/Requests/HeaderRequesrs';
 import StateInformResources from '../../components/stateInformResources';
-import { BackgroundStyle } from './services/styles';
-import linesOne from '../../assets/background/rig.webp';
+import linesOne from '../../assets/background/test2.png';
 import { Container } from '../company/styles';
 import './slider/styles.css';
-import ModalWindowAdvertising from '../../components/ModalWindowAdvertising';
-import ModalWindowAIS from "../../components/ModalWindowAIS";
+import ModalWindowAIS from '../../components/ModalWindowAIS';
+import { BackgroundWithImage } from './styles';
 export default function Home() {
   return (
     <Container>
       <Header />
-        <ModalWindowAIS/>
+      <ModalWindowAIS />
       {/*<ModalWindowAdvertising />*/}
-      <ContentHome />
-      <UsefulInform />
-      <BackgroundStyle src={linesOne} />
-      <HeaderRequests />
-      <ParallaxDiv />
-        <BackgroundStyle src={linesOne} />
-      <HomeServices />
-      <News />
-      <StateInformResources />
+      <BackgroundWithImage bgImage={linesOne}>
+        <ContentHome />
+        <UsefulInform />
+        {/*<BackgroundStyle src={linesOne} />*/}
+        <HeaderRequests />
+        <ParallaxDiv />
+        {/*<BackgroundStyle src={linesOne} />*/}
+        <HomeServices />
+        <News />
+        <StateInformResources />
+      </BackgroundWithImage>
       <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
         <img src={up} alt={'up'} />
       </ScrollToTop>

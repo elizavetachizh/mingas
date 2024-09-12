@@ -8,7 +8,7 @@ function Dots({ activeIndex, onclick, sliderImage }) {
           key={index}
           className={`${activeIndex === index ? 'dot-mobile active-dot-mobile' : 'dot-mobile'}`}
           onClick={() => onclick(index)}
-        ></span>
+        />
       ))}
     </div>
   );

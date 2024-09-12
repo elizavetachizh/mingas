@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Links } from './styles';
 import ContainerContent from '../Container';
 import axios from 'axios';
-import { API, APIimage } from '../../backend';
+import { API } from '../../backend';
 import Loader from '../Loader';
 export default function ResidentsOfCapitalRegion() {
   const [info, setInfo] = useState([]);
@@ -16,7 +16,7 @@ export default function ResidentsOfCapitalRegion() {
         console.log(e);
       });
   }, [setInfo]);
-    console.log(info)
+
   return (
     <ContainerContent
       name={'Прейскурант цен'}
