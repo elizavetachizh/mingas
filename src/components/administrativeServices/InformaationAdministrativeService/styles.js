@@ -59,6 +59,10 @@ export const ContainerInform = styled.div`
   }
 `;
 export const General = styled.div`
+  &.with-border {
+    border: 1px solid #1b3a91;
+    border-radius: 30px;
+  }
   margin: 1rem auto;
   padding: 0;
   width: 90%;
@@ -87,7 +91,7 @@ export const BtnIsOpen = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  //width: 100%;
   color: white;
   padding: 0.5rem;
   background-image: linear-gradient(

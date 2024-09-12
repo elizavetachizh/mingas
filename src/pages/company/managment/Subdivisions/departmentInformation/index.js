@@ -32,7 +32,7 @@ export default function DepartmentInformation() {
   const [key, setKey] = useState('');
   const [nameMen, setNameMen] = useState('');
   const [name, setName] = useState('');
-  const { data: departments, isLoading } = useFetchDepartmentsQuery({ key, nameMen, name });
+  const { data: departments } = useFetchDepartmentsQuery({ key, nameMen, name });
   const { data: management } = useFetchManagementQuery();
   const { linkId } = useParams();
 
@@ -75,7 +75,7 @@ export default function DepartmentInformation() {
     setIsForm(false);
     setKey('');
   };
-  console.log(management)
+
   return (
     <ContainerContent
       name={'Службы УП "МИНГАЗ"'}
@@ -129,7 +129,7 @@ export default function DepartmentInformation() {
                 <DivOpen className={linkId === element._id && `shake`}>
                   {element.department.map((link) => (
                     <button
-                      onClick={() => handlerLinkClickUniqueName(link)}
+                        onClick={() => handlerLinkClickUniqueName(link.name)}
                       key={link}
                       className={id === link ? 'shake' : ''}
                     >

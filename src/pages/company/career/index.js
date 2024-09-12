@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
 import {
@@ -8,7 +8,8 @@ import {
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosPin, IoMdClock } from 'react-icons/io';
 import { LinksNetwork } from '../../../components/footer/styles';
-import { Table } from '../../feedback/receptionOfCitizens/styles';
+import { useFetchVacanciesQuery } from '../../../redux/services/vacancies';
+import Loader from '../../../components/Loader';
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 
@@ -24,6 +25,19 @@ export default function Career() {
       div.removeChild(script);
     };
   }, [div, script]);
+  const { data: vacancies, isLoading } = useFetchVacanciesQuery();
+  const getElement = useCallback((id) => {
+    return document.getElementById(`vacancy-${id}`);
+  }, []);
+  useEffect(() => {
+    vacancies?.forEach((el) => {
+      const element = getElement(el._id);
+      if (element) {
+        element.innerHTML += el.description;
+      }
+    });
+  }, [getElement, vacancies]);
+
   return (
     <>
       <div style={{ marginTop: '1rem' }} className="form-div-career">
@@ -39,69 +53,18 @@ export default function Career() {
         </Helmet>
       </div>
       <Div style={{ width: '100%', margin: '0 auto' }} className={`shake`}>
-        <General>
-          <BtnIsOpen>
-            <p>Приглашаем на работу приемщиков заказов и контролёров газоснабжающей организации</p>
-          </BtnIsOpen>
-          <Div className={`shake`}>
-            <strong>УП «МИНГАЗ» в новый офис на улице П.Бровки</strong>
-            <p>
-              Приглашает на работу{' '}
-              <u>приемщиков заказов и контролёров газоснабжающей организации</u>
-            </p>
-            <p>НАШИ ПЛЮСЫ:</p>
-            <p> стабильная работа</p> <p>офис в центре города (рядом метро Академия наук)</p>{' '}
-            <p> расширенный социальный пакет</p> <p>удобный график</p>{' '}
-            <p>возможность построения карьеры</p> <p>достойная заработная плата</p>{' '}
-            <p>НАШИ МИНУСЫ: НЕТ</p> <p> Всему можно научиться, у тебя тоже получится!</p>{' '}
-            <p>По вопросам трудоустройства обращаться по тел. 299 29 36, 299 28 30, 299 28 62.</p>
-          </Div>
-        </General>
-        <General>
-          <BtnIsOpen>
-            <p>Приглашаем на работу машиниста экскаватора</p>
-          </BtnIsOpen>
-          <Div className={`shake`}>
-            <strong>УП «МИНГАЗ» приглашает на работу</strong>
-            <p>
-              Приглашает на работу <u>машиниста экскаватора</u>
-            </p>
-            <p>Условия оплаты труда достойные </p>
-            <p>Стабильная работа</p> <p>Расширенный социальный пакет</p>{' '}
-            <p>
-              Приходите по адресу: ул. Ботаническая, 11 1-ый подъезд, кабинет 103. Телефон 299 28
-              30, 299 29 36, 299 28 62.
-            </p>
-          </Div>
-        </General>
-        <p>
-          УП «МИНГАЗ» приглашает на целевое обучение на факультете горного дела и инженерной
-          экологии Белорусского национального технического университета по следующим специальностям:
-        </p>
-        <Table>
-          <thead>
-            <tr>
-              <th>Шифр и наименование специальности</th>
-              <th>Наименование степени</th>
-              <th>Квалификация специалиста, срок обучения</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>7-07-0714-01 машины и оборудование для горнодобывающих производств</td>
-              <td>Магистр</td>
-              <td>Горный инженер, 5,5 лет</td>
-            </tr>
-            <tr>
-              <td>7-07-0724-01 Разработка месторождений полезных ископаемых</td>
-              <td>Магистр</td>
-              <td>Горный инженер, 5,5 лет</td>
-            </tr>
-          </tbody>
-        </Table>
-        <p>
-          Телефон для справки: <span>80171342740</span>{' '}
-        </p>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          vacancies?.map((vacancy, index) => (
+            <General key={index} className={'with-border'}>
+              <BtnIsOpen>
+                <p>{vacancy.name}</p>
+              </BtnIsOpen>
+              <Div className={`shake`} id={`vacancy-${vacancy._id}`} />
+            </General>
+          ))
+        )}
         <p>
           УП «МИНГАЗ» приглашает кандидатов для направления на обучение по целевой подготовке.
           Обращаться по телефонам <a href={'tel:+375 (017) 299 28 30'}>+375 (017) 299 28 30</a> и{' '}

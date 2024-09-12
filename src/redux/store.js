@@ -18,6 +18,7 @@ import { mainCorruptionAPI } from './services/corruption';
 import { tendersAPI } from './services/tenders';
 import { TVAPI } from './services/TV';
 import { documentsEDIAPI } from './services/documentsEDI';
+import {vacanciesAPI} from "./services/vacancies";
 
 const rootReducer = combineReducers({
   services: servicesReducer,
@@ -37,6 +38,7 @@ const rootReducer = combineReducers({
   [tendersAPI.reducerPath]: tendersAPI.reducer,
   [TVAPI.reducerPath]: TVAPI.reducer,
   [documentsEDIAPI.reducerPath]: documentsEDIAPI.reducer,
+  [vacanciesAPI.reducerPath]: vacanciesAPI.reducer,
 });
 
 export const store = configureStore({
@@ -53,5 +55,6 @@ export const store = configureStore({
     ...getDefaultMiddleware().concat(tendersAPI.middleware),
     ...getDefaultMiddleware().concat(TVAPI.middleware),
     ...getDefaultMiddleware().concat(documentsEDIAPI.middleware),
+    ...getDefaultMiddleware().concat(vacanciesAPI.middleware),
   ],
 });
