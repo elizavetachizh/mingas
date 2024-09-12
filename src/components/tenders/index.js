@@ -6,42 +6,49 @@ import {
   TextForInformation,
 } from '../../pages/feedback/electronicСirculation/styles';
 import SubTitleFun from '../SubTitle';
-import { useFetchTendersQuery } from '../../redux/services/tenders';
-import Loader from '../Loader';
+import axios from 'axios';
+import { API } from '../../backend';
 
 export default function Tenders() {
-  const { data: tenders, isLoading } = useFetchTendersQuery();
+  const [inform, setInform] = React.useState([]);
+  useEffect(() => {
+    axios
+      .get(`${API}/tenders`)
+      .then((res) => {
+        setInform(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+  console.log(inform);
   const getElement = useCallback((id) => {
     return document.getElementById(`electronic-appeal-${id}`);
   }, []);
   useEffect(() => {
-    tenders?.forEach((el) => {
+    inform?.forEach((el) => {
       const element = getElement(el._id);
       if (element) {
         element.innerHTML += el.content;
       }
     });
-  }, [getElement, tenders]);
+  }, [getElement, inform]);
+
   return (
     <ContainerContent
       name={'Тендеры и закупки'}
       content={
         <>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <>
-              {tenders?.map((el) => (
-                <ContainerInform style={{ marginBottom: '50px' }}>
-                  <SubTitleFun
-                    color={'blue'}
-                    infoSubTitle={'Приглашение на участие в процедуре переговоров'}
-                  />
-                  <TextForInformation id={`electronic-appeal-${el._id}`} />
-                </ContainerInform>
-              ))}
-            </>
-          )}
+          {inform?.map((el) => (
+            <ContainerInform style={{ marginBottom: '50px' }}>
+              <SubTitleFun
+                color={'blue'}
+                infoSubTitle={'Приглашение на участие в процедуре переговоров'}
+              />
+              <TextForInformation id={`electronic-appeal-${el._id}`} />
+            </ContainerInform>
+          ))}
+
           <Link>
             <a
               rel={'noreferrer'}
