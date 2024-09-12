@@ -145,16 +145,6 @@
         font-size: 13px;
     }
 }
-@media (max-width: 600px) {
-    :root {
-        --heights: 33vh;
-        --widths: 100%;
-    }
-    /*.slider-container-mobile{*/
-    /*    margin: 66px 0 0 0;*/
-    /*    height: 280px;*/
-    /*}*/
-}
 @media (max-width: 438px) {
     .slider-container-mobile {
         margin: 66px 0 0 0;

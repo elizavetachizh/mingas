@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContainerImage = styled.div`
   img {
     width: 100%;
-    height: 570px;
+    height: 530px;
     position: absolute;
     object-fit: cover;
     transition: all ease 0.6s;

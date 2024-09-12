@@ -4,7 +4,7 @@ export const ContainerContent = styled.div`
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 100%;
-  height: 570px;
+  height: 530px;
   margin-top: 130px;
   //position: relative;
   &.parallax {
@@ -19,15 +19,7 @@ export const ContainerContent = styled.div`
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
-    background-image: linear-gradient(
-      -55deg,
-      rgb(1, 95, 156) 0%,
-      rgb(16, 69, 141) 0%,
-      rgb(15, 89, 141) 19%,
-      rgb(15, 78, 140) 60%,
-      rgb(14, 78, 129) 79%,
-      rgb(13, 68, 117) 100%
-    );
+   background-color: rgba(14,78,129,0.2);
   }
 `;
 
@@ -94,7 +86,7 @@ export const Prizes = styled.div`
 export const ContainerText = styled.div`
   width: calc(100% / 12 * 4);
   position: relative;
-  height: 552px;
+  height: 530px;
   overflow-y: scroll;
   direction: rtl;
   unicode-bidi: bidi-override;
