@@ -21,7 +21,7 @@ export const ParallaxD = styled.div`
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
-    background-color: #0d4475;
+    background-color:rgba(14,78,129,0.1);
     margin: 0 auto 0;
     img {
       box-shadow: none;

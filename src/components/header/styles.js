@@ -127,7 +127,6 @@ export const BackgroundText = styled.div`
   margin: 0 auto;
   @media (max-width: 900px) {
     max-width: 100%;
-    
   }
 `;
 
@@ -269,7 +268,7 @@ export const PersonalAccButton = styled.a`
 export const DivButtonHeader = styled.div`
   display: none;
   position: absolute;
-  border-radius: 30px;
+  border-radius: 20px;
   &.header-btns {
     a {
       color: #0d4475;
@@ -282,6 +281,7 @@ export const Dropdown = styled.div`
   &:hover div {
     display: flex;
     min-width: 220px;
+    box-shadow: 0 5px 12px #00000026;
     width: 250px;
     //margin-top: 4px;
     z-index: 3;
@@ -289,7 +289,6 @@ export const Dropdown = styled.div`
     align-items: flex-start;
     flex-direction: column;
     background-color: white;
-    border: 1px solid #0d4475;
     padding: 14px;
   }
   &:hover div a {
@@ -495,13 +494,13 @@ export const ContanerLink = styled.div`
     left: 100%;
     flex-direction: column;
     text-align: left;
-    border-radius: 30px;
-    border: 1px solid #0d4475;
+    border-radius: 20px;
     //box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
     background-color: white;
     padding: 0 24px;
     margin: 0 auto;
     top: 0;
+    box-shadow: 0 5px 12px #00000026;
     a {
       color: #0d4475;
       text-decoration: none;

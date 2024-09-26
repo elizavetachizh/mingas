@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContainerParallax = styled.div`
-  margin-top: 150px;
+  margin-top: 147px;
   height: fit-content;
   @media (max-width: 1400px) {
     height: 500px;

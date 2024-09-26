@@ -33,7 +33,7 @@ export const Button = styled.button`
       rgb(14, 78, 129) 79%,
       rgb(13, 68, 117) 100%
     );
-    border-radius: 30px;
+    border-radius: 20px;
     color: white;
     padding: 12px;
   }
@@ -83,7 +83,7 @@ export const DivOpen = styled.div`
 `;
 
 export const Name = styled.div`
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   color: #fff;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

@@ -12,7 +12,7 @@ export const Links = styled.div`
     font-size: 18px;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 50px;
     width: 80%;
     color: white;
     padding: 0 0.8rem;
@@ -26,8 +26,8 @@ export const Links = styled.div`
       rgb(13, 68, 117) 100%
     );
     cursor: pointer;
-    margin: 2% auto;
-    border-radius: 30px;
+    margin: 1% auto;
+    border-radius: 20px;
     @media (max-width: 800px) {
       width: 90%;
     }

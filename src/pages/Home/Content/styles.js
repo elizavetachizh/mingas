@@ -19,7 +19,7 @@ export const ContainerContent = styled.div`
   @media (max-width: 2000px) {
     box-shadow: none;
     border-radius: 0;
-   background-color: rgba(14,78,129,0.2);
+   background-color: rgba(14,78,129,0.1);
   }
 `;
 

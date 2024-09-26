@@ -7,7 +7,7 @@ export const Form = styled.form`
   background-color: rgba(255, 255, 255, 0.6);
   width: 60%;
   padding: 2%;
-  border-radius: 30px;
+  border-radius: 20px;
   @media (max-width: 880px) {
     width: 70%;
   }

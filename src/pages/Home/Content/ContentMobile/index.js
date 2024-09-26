@@ -8,7 +8,7 @@ export default function ContentMobile({ info }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex(activeIndex === info.length - 1 ? 0 : activeIndex + 1);
-    }, 60000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [activeIndex, info.length]);
 

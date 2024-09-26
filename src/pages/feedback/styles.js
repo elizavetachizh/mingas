@@ -16,7 +16,7 @@ export const HeaderBtnFeedback = styled.div`
     rgb(13, 68, 117) 100%
   );
   height: fit-content;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   @media (max-width: 950px) {
     margin: 0 auto;
@@ -77,12 +77,12 @@ export const Button = styled.button`
   transition: 0.8s linear;
   &.active {
     background-color: white;
-    border-radius: 30px;
+    border-radius: 20px;
     color: #0d4475;
   }
   &.pagination {
     background-color: white;
-    border-radius: 30px;
+    border-radius: 20px;
     color: #0d4475;
   }
   @media (max-width: 700px) {

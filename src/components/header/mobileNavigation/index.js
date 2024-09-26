@@ -13,9 +13,9 @@ import { ContainerElements, IoMdContacts, IoMdEyeOffs, PersonalAccButton } from 
 import SearchPage from '../../../pages/SearchPage';
 import Language from '../language';
 import linksForMenu from '../../../const/consts';
-import {FiShoppingBag, FiShoppingCart} from "react-icons/fi";
+import { FiShoppingBag, FiShoppingCart } from 'react-icons/fi';
 
-export default function MobileNavigation() {
+export default function MobileNavigation({ setOpen }) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef('test');
   const animate = (name) => {
@@ -35,19 +35,15 @@ export default function MobileNavigation() {
           <PersonalAccButton href={'https://service.mingas.by:5002/auth/login#login'}>
             <IoMdContacts className={'icon iconMobile'} />
           </PersonalAccButton>
-          <PersonalAccButton
-              target={'_blank'}
-              title="Магазин"
-              href={'https://shop.mingas.by/'}
-          >
+          <PersonalAccButton target={'_blank'} title="Магазин" href={'https://shop.mingas.by/'}>
             <FiShoppingCart style={{ width: '34px', height: '34px' }} className={'icon'} />
           </PersonalAccButton>
           <PersonalAccButton
-              target={'_blank'}
-              title="Магазин"
-              href={'https://20393.shop.onliner.by/'}
+            target={'_blank'}
+            title="Магазин"
+            href={'https://20393.shop.onliner.by/'}
           >
-            <FiShoppingBag style={{ width: '34px', height: '34px' }}  className={'icon'} />
+            <FiShoppingBag style={{ width: '34px', height: '34px' }} className={'icon'} />
           </PersonalAccButton>
           <SearchPage classname={'header'} />
           <Language />
@@ -74,7 +70,9 @@ export default function MobileNavigation() {
               <DivButtonHeader className={ref.current === el.name && `handleBtn`}>
                 <div>
                   {el.arrayOfLinks.map((link) => (
-                    <ButtonLink to={`${link.link}`}>{link.name}</ButtonLink>
+                    <ButtonLink onClick={() => setOpen(false)} to={`${link.link}`}>
+                      {link.name}
+                    </ButtonLink>
                   ))}
                 </div>
               </DivButtonHeader>

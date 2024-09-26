@@ -79,7 +79,7 @@ export const Button = styled.button`
     rgb(14, 78, 129) 79%,
     rgb(13, 68, 117) 100%
   );
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
   width: fit-content;

@@ -39,60 +39,52 @@ export const BlockPressCenter = styled.div`
 export const ContainerArticles = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 `;
 export const Article = styled.div`
-  border-radius: 20px;
-  border: 1px solid #0d4475;
-  width: 74%;
-  margin: 2% auto;
-  background-size: contain;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  box-shadow: inset 0 -124px 50px -44px #0d4475;
-  @media (max-width: 600px) {
-    width: 84%;
+  margin-bottom: 1rem;
+  width: 100%;
+  a {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    @media (max-width: 640px) {
+      justify-content: center;
+        align-items: center;
+      flex-direction: column;
+    }
+  }
+  div {
+    margin: 1rem;
+    @media (max-width: 640px) {
+      margin: 0 0 1rem;
+    }
   }
   img {
-    width: 100%;
-    border-radius: 20px;
-    z-index: -1;
-    position: relative;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 5px 12px #00000026;
+    transition: filter 0.3s ease; /* Плавный переход для фильтра */
+
+    &:hover {
+      filter: brightness(0.8); /* Увеличение яркости при наведении */
+    }
   }
   p {
     text-decoration: none;
-    margin: -6% auto 2%;
     padding: 0;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    @media (max-width: 1120px) {
-      margin: -13% auto 2%;
-    }
-    @media (max-width: 1120px) {
-      margin: -13% auto 2%;
-    }
-    @media (max-width: 820px) {
-      margin: -10% auto 2%;
-    }
-    @media (max-width: 720px) {
-      margin: -13% auto 2%;
-    }
-    @media (max-width: 520px) {
-      margin: -15% auto 2%;
-      font-size: 16px;
-    }
-    @media (max-width: 420px) {
-      margin: -22% auto 2%;
+    transition: text-decoration 0.3s ease; /* Плавный переход для фильтра */
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 `;
 
 export const ArticleForHome = styled.div`
-  border-radius: 20px;
-  border: 1px solid #0d4475;
+  border-radius: 10px;
+  //border: 1px solid #0d4475;
   width: 290px;
   height: 200px;
   margin: 1rem auto;
@@ -100,7 +92,7 @@ export const ArticleForHome = styled.div`
   text-align: center;
   background-repeat: no-repeat;
   background-position: bottom;
-  box-shadow: inset 0 -80px 50px -25px #0d4475;
+  box-shadow: inset 0 -30px 50px -15px #0d4475;
   text-decoration-line: none;
   position: relative;
   @media (min-width: 2400px) {
@@ -142,7 +134,7 @@ export const ArticleForHome = styled.div`
   img {
     width: 100%;
     height: 240px;
-    border-radius: 20px;
+    border-radius: 10px;
     z-index: -1;
     display: block;
     @media (max-width: 1647px) {

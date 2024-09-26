@@ -6,7 +6,7 @@ export const ContainerServices = styled.a`
   cursor: pointer;
   padding: 2rem 0.5rem;
   margin: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
