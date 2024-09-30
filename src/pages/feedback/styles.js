@@ -8,8 +8,6 @@ export const HeaderBtnFeedback = styled.div`
   //background: linear-gradient(to bottom right, #3d6990 50%, #3d6990 50%, 60%, #0d4475);
   background-image: linear-gradient(
     -55deg,
-    rgb(1, 95, 156) 0%,
-    rgb(16, 69, 141) 0%,
     rgb(15, 89, 141) 19%,
     rgb(15, 78, 140) 60%,
     rgb(14, 78, 129) 79%,
@@ -69,20 +67,21 @@ export const Button = styled.button`
   font-weight: bold;
   text-align: left;
   background: none;
-  border: none;
   margin: 0.5rem 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
   padding: 0.5rem 1rem;
   text-decoration: none;
   cursor: pointer;
   transition: 0.8s linear;
   &.active {
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     color: #0d4475;
   }
   &.pagination {
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     color: #0d4475;
   }
   @media (max-width: 700px) {

@@ -51,7 +51,7 @@ export const Article = styled.div`
     justify-content: flex-start;
     @media (max-width: 640px) {
       justify-content: center;
-        align-items: center;
+      align-items: center;
       flex-direction: column;
     }
   }
@@ -85,48 +85,14 @@ export const Article = styled.div`
 export const ArticleForHome = styled.div`
   border-radius: 10px;
   //border: 1px solid #0d4475;
-  width: 290px;
-  height: 200px;
   margin: 1rem auto;
   background-size: contain;
   text-align: center;
   background-repeat: no-repeat;
   background-position: bottom;
-  box-shadow: inset 0 -30px 50px -15px #0d4475;
+  box-shadow: inset 0 -20px 40px -15px #0d4475;
   text-decoration-line: none;
   position: relative;
-  @media (min-width: 2400px) {
-    width: 450px;
-    height: 320px;
-  }
-  @media (min-width: 1800px) {
-    width: 400px;
-    height: 266px;
-  }
-  @media (max-width: 2046px) {
-    width: 360px;
-    height: 240px;
-  }
-  @media (max-width: 1647px) {
-    width: 320px;
-    height: 220px;
-  }
-  @media (max-width: 1300px) {
-    width: 280px;
-    height: 200px;
-  }
-  @media (max-width: 1134px) {
-    width: 380px;
-    height: 252px;
-  }
-  @media (max-width: 800px) {
-    width: 330px;
-    height: 230px;
-  }
-  @media (max-width: 410px) {
-    width: 300px;
-    height: 200px;
-  }
   a {
     display: flex;
     //position: relative;
@@ -139,12 +105,6 @@ export const ArticleForHome = styled.div`
     display: block;
     @media (max-width: 1647px) {
       height: 220px;
-    }
-    @media (max-width: 1300px) {
-      height: 200px;
-    }
-    @media (max-width: 1134px) {
-      height: 100%;
     }
   }
   p {

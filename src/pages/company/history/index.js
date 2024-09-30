@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
-import Aos from 'aos';
 import history_2 from '../../../assets/history/7.webp';
 import history_3 from '../../../assets/history/4.webp';
 import history_4 from '../../../assets/history/5.webp';
@@ -11,10 +10,6 @@ import history_10 from '../../../assets/history/11.webp';
 import { PWithImg, ImgBackground, BlockImage } from './styles';
 import TitleForHome from '../../../components/TitleForHome';
 export default function History() {
-  useEffect(() => {
-    Aos.init({ duration: 3000 });
-    window.scrollTo(0, 0);
-  }, []);
   return (
       <>
         <AdditionalDiv style={{ margin: '2% auto' }}>

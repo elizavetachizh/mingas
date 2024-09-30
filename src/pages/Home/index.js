@@ -20,14 +20,11 @@ export default function Home() {
     <Container>
       <Header />
       <ModalWindowAIS />
-      {/*<ModalWindowAdvertising />*/}
       <BackgroundWithImage bgImage={linesOne}>
         <ContentHome />
         <UsefulInform />
-        {/*<BackgroundStyle src={linesOne} />*/}
         <HeaderRequests />
         <ParallaxDiv />
-        {/*<BackgroundStyle src={linesOne} />*/}
         <HomeServices />
         <News />
         <StateInformResources />

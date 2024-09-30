@@ -126,6 +126,8 @@ export const Img = styled.img`
 `;
 
 export const ImgCarousel = styled.img`
+  border-radius: 20px;
+  margin: 0.5rem;
   max-width: 500px;
   @media (max-width: 900px) {
     max-width: 400px;

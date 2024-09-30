@@ -45,9 +45,15 @@ export default function Menu({ dataAnswer }) {
               onClick={() => handlerLinkClick(element._id)}
             />
             {currentServiceID === element._id ? (
-              <IoIosArrowUp onClick={() => handlerLinkClick(element._id)} />
+              <IoIosArrowUp
+                style={{ cursor: 'pointer' }}
+                onClick={() => handlerLinkClick(element._id)}
+              />
             ) : (
-              <IoIosArrowDown onClick={() => handlerLinkClick(element._id)} />
+              <IoIosArrowDown
+                style={{ cursor: 'pointer' }}
+                onClick={() => handlerLinkClick(element._id)}
+              />
             )}
           </ContainerBtnIcon>
           <DivOpen className={currentServiceID === element._id && `shake`}>

@@ -54,10 +54,6 @@ function LifeOfMingas() {
               <ImgCarousel
                 src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.webp`)}
                 alt="image"
-                style={{
-                  borderRadius: '20px',
-                  margin: '.5rem',
-                }}
               />
               <IoIosArrowRoundForward style={{ width: '28', height: '28' }} />
             </div>
