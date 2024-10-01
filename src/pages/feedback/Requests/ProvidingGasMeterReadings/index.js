@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { DivApplication, Form } from '../styles';
-import { Button, DivInputFile, InputFile } from '../../../../components/formQuestion/styles';
+import { Button } from '../../../../components/formQuestion/styles';
 import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
 import FormInput from '../../../../components/input/inputPhone';
 import AgreeWithRules from '../../../../components/AgreeWithRules';
@@ -93,7 +93,7 @@ export default function ProvidingGasMeterReadings() {
         setRequestValues({ ...requestValues, information: result })
       );
     },
-    [requestValues]
+    [formImage, readAllFiles, requestValues, setRequestValues]
   );
 
   return (
@@ -156,7 +156,7 @@ export default function ProvidingGasMeterReadings() {
         <FormInput
           name={'reading'}
           span={true}
-          label={'показания счётчика:'}
+          label={'Показания счётчика:'}
           type="text"
           placeholder={'Введите показания счётчика'}
           onChange={handleUserInput}

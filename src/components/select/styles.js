@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const SelectDiv = styled.select`
-  padding: 1rem;
-  border-radius: 30px;
+  padding: 0.7rem;
+  border-radius: 10px;
   border: 1px solid #0d4475;
   option {
     color: rgb(118, 118, 118);

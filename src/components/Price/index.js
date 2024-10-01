@@ -6,6 +6,7 @@ import { API } from '../../backend';
 import Loader from '../Loader';
 export default function ResidentsOfCapitalRegion() {
   const [info, setInfo] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
     axios(`${API}/prices`)
@@ -17,24 +18,44 @@ export default function ResidentsOfCapitalRegion() {
       });
   }, [setInfo]);
 
+  const handlePreview = (fileUrl) => {
+    setSelectedFile(fileUrl);
+  };
+
   return (
     <ContainerContent
       name={'Прейскурант цен'}
       content={
         <>
           {info?.length ? (
-            <Links>
-              {info.map((el) => (
-                <a
-                  href={`${el.url}`}
-                  id={'href'}
-                  target={'_blank'}
-                  rel="opener noreferrer"
-                >
-                  {el.name}
-                </a>
-              ))}
-            </Links>
+            <>
+              <Links>
+                {info.map((el) => (
+                  <React.Fragment>
+                    <button onClick={() => handlePreview(`${el.url}`)}>{el.name}</button>
+                    {selectedFile && selectedFile === el.url && (
+                      <div style={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
+                        <iframe
+                          className={'iframe'}
+                          src={selectedFile}
+                          height={'600px'}
+                          title={selectedFile}
+                        />
+                        <a
+                          className={'right-link'}
+                          href={`${el.url}`}
+                          id={'href'}
+                          target={'_blank'}
+                          rel="opener noreferrer"
+                        >
+                          Скачать
+                        </a>
+                      </div>
+                    )}
+                  </React.Fragment>
+                ))}
+              </Links>
+            </>
           ) : (
             <Loader />
           )}

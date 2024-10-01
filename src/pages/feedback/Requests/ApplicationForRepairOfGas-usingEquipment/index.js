@@ -113,10 +113,7 @@ export default function ApplicationForRepairOfGasUsingEquipment() {
         <span style={{ color: 'red' }}>
           *при обратном звонке специалист Вам предложит доступную дату выполнения работ
         </span>
-        <AgreeWithRules
-          handleCheckBox={handleCheckBox}
-          requestValues={requestValues}
-        />
+        <AgreeWithRules handleCheckBox={handleCheckBox} requestValues={requestValues} />
         <Button
           disabled={isButtonDisabled}
           type="submit"
