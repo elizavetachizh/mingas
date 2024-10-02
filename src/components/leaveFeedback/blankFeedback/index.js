@@ -6,6 +6,7 @@ import { Table } from './styles';
 import axios from 'axios';
 
 export default function BlankFeedback() {
+  const [loading, setLoading] = useState(false);
   const form = useRef();
   const [name, setName] = useState('');
   const [service, setService] = useState('');
@@ -50,7 +51,7 @@ export default function BlankFeedback() {
       options,
     },
   ];
-
+  const [success, setSuccess] = useState('');
   const initialAnswers = questionsData.reduce((acc, curr) => {
     acc[curr.question] = { selectedOption: '', comment: '' };
     return acc;
@@ -68,20 +69,24 @@ export default function BlankFeedback() {
     });
   };
   const handleSubmit = async (e) => {
-
+    setLoading(true); // Показываем loader
     e.preventDefault();
-    try {
-      await axios
-        .post('https://back.mingas.by/submit-survey', {
-          name,
-          service,
-          date,
-          answers: Object.values(answers),
-        })
-        .then((res) => console.log(res));
-    } catch (err) {
-      console.log(err);
-    }
+
+    await axios
+      .post('https://back.mingas.by/submit-survey', {
+        name,
+        service,
+        date,
+        answers: Object.values(answers),
+      })
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+        setSuccess('Форма успешно отправлена, спасибо!');
+      });
   };
   const handleCommentChange = (question, comment) => {
     setAnswers({
@@ -199,17 +204,12 @@ export default function BlankFeedback() {
           дата заполнения анкеты
         </label>
         {/*<AgreeWithRules handleCheckBox={handleCheckBox} requestValues={formValues} />*/}
-        <Button type="submit" onClick={handleSubmit}>
+        <Button type="submit" disabled={loading} onClick={handleSubmit}>
           Отправить
         </Button>
-        {/*{!isButtonDisabled && !msg && (*/}
-        {/*  <span style={{ color: 'red' }}>*/}
-        {/*    Форма успешно заполнена, нажмите кнопку отправить и ожидайте, когда форма очистится.*/}
-        {/*  </span>*/}
-        {/*)}*/}
-        {/*<p>*/}
-        {/*  <b>{msg}</b>*/}
-        {/*</p>*/}
+        {loading && <span style={{ color: 'red' }}>Пожалуйста, подождите...</span>}
+
+        {success && <span style={{ color: 'red' }}>{success}</span>}
       </Form>
     </DivApplication>
   );
