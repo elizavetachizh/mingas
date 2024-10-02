@@ -101,7 +101,7 @@ export const routers = [
   { path: '/tenders', element: <Tenders /> },
   { path: '/residents-of-the-capital-region', element: <ResidentsOfTheCapitalRegion /> },
   { path: '/for-business', element: <ForBusiness /> },
-  { path: '/services-legal-entities/2/telemetria', element: <Telemetria /> },
+  { path: '/services-legal-entities/telemetria', element: <Telemetria /> },
   { path: '/posts/:id', element: <Posts /> },
   { path: '/posts', element: <GetAllPosts /> },
   { path: '/laboratory', element: <Laboratory /> },

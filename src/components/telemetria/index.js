@@ -12,7 +12,7 @@ export default function Telemetria() {
       content={
         <>
           <LinkAsButtonFun stylesLink={"blue"} info={<IoMdContacts className={'icon'} />}
-            href={'http://178.124.164.50:82/'}
+            href={'https://indel.mingas.by'}
             name={'Личный кабинет учёта газа INDEL'}
           />
           <ContainerInform>
