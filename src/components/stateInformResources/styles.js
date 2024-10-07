@@ -16,6 +16,10 @@ export const SliderWrapper = styled.div`
   display: flex;
   align-items: center;
   animation: ${slide} 30s linear infinite;
+  a {
+    height: auto;
+    --heights: auto;
+  }
 `;
 
 export const Image = styled.img`

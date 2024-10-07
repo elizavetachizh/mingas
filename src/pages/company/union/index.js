@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles.css';
+import Aos from 'aos';
 import 'aos/dist/aos.css';
 import napravlenie from '../../../assets/union/napravlenie.jpg';
 import TitleForHome from '../../../components/TitleForHome';
@@ -8,6 +9,9 @@ import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 import ContainerContent from '../../../components/Container';
 
 export default function Union() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <ContainerContent
       name={'Первичная профсоюзная организация УП «МИНГАЗ»'}

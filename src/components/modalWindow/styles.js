@@ -27,7 +27,7 @@ export const ModalWindowOpenAndClose = styled.div`
   text-align: center;
   border-radius: 20px;
   &.gratitude {
-    width: 600px;
+    width: 800px;
   }
   @media (max-width: 530px) {
     margin: 0 2%;
@@ -54,6 +54,6 @@ export const InformModal = styled.div`
 export const Close = styled.img`
   display: flex;
   cursor: pointer;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 `;

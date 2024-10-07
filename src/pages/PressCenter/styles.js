@@ -95,6 +95,8 @@ export const ArticleForHome = styled.div`
   position: relative;
   a {
     display: flex;
+      --heights: auto;
+      height: auto;
     //position: relative;
   }
   img {
