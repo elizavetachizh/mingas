@@ -18,10 +18,11 @@ export default function StateInformResources() {
         <SliderWrapper>
           {arrayData.concat(arrayData).map((src, index) => (
             <Schema
+              key={index}
               href={src.href}
               alt={src.title}
               title={src.title}
-              styleImage={{ width: `${src?.width}` }}
+              styleImage={{ width: `${src?.width}`, height: 'auto' }}
               image={require(`../../assets/png/${src.image}`)}
             />
           ))}

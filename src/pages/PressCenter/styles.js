@@ -84,7 +84,6 @@ export const Article = styled.div`
 
 export const ArticleForHome = styled.div`
   border-radius: 10px;
-  //border: 1px solid #0d4475;
   margin: 1rem auto;
   background-size: contain;
   text-align: center;
@@ -93,11 +92,8 @@ export const ArticleForHome = styled.div`
   box-shadow: inset 0 -20px 40px -15px #0d4475;
   text-decoration-line: none;
   position: relative;
-  a {
-    display: flex;
-      --heights: auto;
-      height: auto;
-    //position: relative;
+  @media (max-width: 600px) {
+    width: 90%;
   }
   img {
     width: 100%;
@@ -105,8 +101,8 @@ export const ArticleForHome = styled.div`
     border-radius: 10px;
     z-index: -1;
     display: block;
-    @media (max-width: 1647px) {
-      height: 220px;
+    @media (max-width: 600px) {
+      height: auto;
     }
   }
   p {
