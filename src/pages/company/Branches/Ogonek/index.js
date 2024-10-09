@@ -1,5 +1,5 @@
 import SchemaOfBranches from '../ChemaOfBranches';
-import background from '../../../../assets/Ogonek/background.webp';
+import background from '../../../../assets/Ogonek/new.webp';
 import React from 'react';
 import { useFetchOgonekQuery } from '../../../../redux/services/ogonek';
 
