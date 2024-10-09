@@ -84,6 +84,10 @@ export default function linksForMenu() {
         { name: 'Сертификаты, лицензии, свидетельства', link: '/company/documentation' },
         { name: 'Благодарности и награды', link: '/company/gratitude' },
         { name: 'Система менеджмента УП "МИНГАЗ" ', link: '/company/management-system' },
+        {
+          name: 'Реестр экологической информации',
+          link: '/company/environmental-information-register',
+        },
       ],
     },
     {
@@ -125,7 +129,7 @@ export default function linksForMenu() {
         { name: 'Реализация неликвидов', link: '/illiquid-assets' },
       ],
     },
-    {name:'Диагностические услуги', link:"/laboratory"},
+    { name: 'Диагностические услуги', link: '/laboratory' },
     {
       name: 'Пресс-центр',
       link: '/press-center/1',
@@ -167,17 +171,4 @@ export const APPLICATION_BUTTONS = [
   },
   { type: 'ProvidingGasMeterReadings', name: 'Предоставление показаний счётчика газа' },
   { type: 'ApplicationForTheIssuanceOfTechnicalSpecifications', name: 'Техническое обслуживание' },
-];
-
-export const linksHeaderCompany = [
-  { name: 'История предприятия', link: 'history' },
-  { name: 'Руководство', link: 'management' },
-  { name: 'Подразделения', link: 'management/all-departments' },
-  { name: 'Работа в УП "МИНГАЗ"', link: 'career' },
-  { name: 'Вышестоящие организации', link: 'parent-organizations' },
-  { name: 'Филиалы УП "Мингаз"', link: 'branches' },
-  { name: 'Противодействие коррупции', link: 'corruption' },
-  { name: 'Сертификаты, лицензии, свидетельства', link: 'documentation' },
-  { name: 'Благодарности и награды', link: 'gratitude' },
-  { name: 'Система менеджмента УП "МИНГАЗ" ', link: 'management-system' },
 ];

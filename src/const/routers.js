@@ -55,7 +55,6 @@ export const routers = [
   { path: '/company/branches/Bubni', element: <Bubni /> },
   { path: '/company/branches/ogonek', element: <Ogonek /> },
   { path: '/company/union', element: <Union /> },
-  // { path: '/company/management-system', element: <ManagmentSystem /> },
   { path: '/services-legal-entities', element: <ServicesForLegalEntities /> },
   {
     path: '/services-legal-entities/administrative-services-legal',

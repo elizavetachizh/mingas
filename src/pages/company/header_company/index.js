@@ -7,7 +7,7 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { linksHeaderCompany } from '../../../const/consts';
+import { company } from '../../../assets/data/pressCenterHeader';
 
 export default function HeaderCompany() {
   const isPhone = useMediaQuery('(max-width: 720px)');
@@ -29,8 +29,8 @@ export default function HeaderCompany() {
           </BtnIsOpen>
           <Div className={isOpen && `shake menu`}>
             <DivButton className={'menu'}>
-              {linksHeaderCompany.map((el) => (
-                <HeaderCompanyBtn to={`/company/${el.link}`}>{el.name}</HeaderCompanyBtn>
+              {company.map((el) => (
+                <HeaderCompanyBtn to={`/company/${el.router}`}>{el.name}</HeaderCompanyBtn>
               ))}
             </DivButton>
           </Div>
@@ -38,8 +38,8 @@ export default function HeaderCompany() {
       ) : (
         <HeaderCompanyDiv>
           <DivButton>
-            {linksHeaderCompany.map((el) => (
-              <HeaderCompanyBtn to={`/company/${el.link}`}>{el.name}</HeaderCompanyBtn>
+            {company.map((el) => (
+              <HeaderCompanyBtn to={`/company/${el.router}`}>{el.name}</HeaderCompanyBtn>
             ))}
           </DivButton>
           <hr />

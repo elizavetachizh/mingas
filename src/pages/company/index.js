@@ -15,7 +15,6 @@ export default function Company() {
   const [inform, setInform] = useState('');
   const [currentNewsID, setNewsID] = useState(null);
   const [title, setTitle] = useState('');
-  const [key, setKeys] = useState(null);
   const { descriptionID } = useParams();
   const navigate = useNavigate();
 
@@ -23,7 +22,6 @@ export default function Company() {
     const current = company.find((element) => element.router === descriptionID);
     setInform(current.description);
     setTitle(current.name);
-    setKeys(current.id);
     setNewsID(descriptionID);
   }, [descriptionID]);
 
@@ -57,7 +55,7 @@ export default function Company() {
           </HeaderCompanyDiv>
           <ContainerInform>
             <Name>{title}</Name>
-            <DopFunctionalPressCenter index={key} inform={inform} />
+            <DopFunctionalPressCenter inform={inform} />
           </ContainerInform>
         </DivBlocks>
       }

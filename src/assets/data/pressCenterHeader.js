@@ -14,6 +14,7 @@ import Corruption from '../../components/Сorruption';
 import Documentation from '../../pages/company/documentation';
 import Gratitude from '../../pages/company/Gratitude';
 import ManagmentSystem from '../../pages/company/ManagmentSystem';
+import EnvironmentalInformationRegister from '../../pages/company/environmentalInformationRegister';
 
 export const pressCenter = [
   {
@@ -104,9 +105,15 @@ export const company = [
     description: <Gratitude />,
   },
   {
-    id: 9,
+    id: 10,
     router: 'management-system',
     name: 'Система менеджмента УП "МИНГАЗ"',
     description: <ManagmentSystem />,
+  },
+  {
+    id: 11,
+    router: 'environmental-information-register',
+    name: 'Реестр экологической информации',
+    description: <EnvironmentalInformationRegister />,
   },
 ];
