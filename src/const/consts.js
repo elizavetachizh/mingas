@@ -118,7 +118,7 @@ export default function linksForMenu() {
         { name: 'Обращение юридических лиц', link: '/feedback/electronic-appeal' },
         { name: 'Тендеры', link: '/tenders' },
         {
-          name: 'Часто задаваемые вопросы',
+          name: 'Часто задаваемые вопросы для физ. лиц',
           link: '/feedback/question-answer/63930a954fe167e2981cc2e1',
         },
         {
