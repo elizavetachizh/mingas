@@ -15,6 +15,7 @@ import { Container } from '../company/styles';
 import './slider/styles.css';
 import ModalWindowAIS from '../../components/ModalWindowAIS';
 import { BackgroundWithImage } from './styles';
+import { BlockContainerRequests } from '../feedback/styles';
 export default function Home() {
   return (
     <Container>
@@ -27,6 +28,28 @@ export default function Home() {
         <ParallaxDiv />
         <HomeServices />
         <News />
+        <BlockContainerRequests>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto',
+            }}
+          >
+            <img
+              alt={'загрузка картинки'}
+              style={{
+                borderRadius: '20px',
+                margin: '0 auto',
+                boxShadow: '0 0 5px 3px rgba(0, 0, 0, 0.2)',
+              }}
+              src={require('../../assets/png/banner.webp')}
+            />
+          </div>
+        </BlockContainerRequests>
+
         <StateInformResources />
       </BackgroundWithImage>
       <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
