@@ -1,7 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 //import reducers
-import servicesReducer from './slices/servicesSlice';
 import mainPostsReducer from './slices/mainPostsSlice';
 import postsReducer from './slices/postsSlice';
 import departmentsReducer from './slices/departmentsSlice';
@@ -21,7 +20,6 @@ import { documentsEDIAPI } from './services/documentsEDI';
 import {vacanciesAPI} from "./services/vacancies";
 
 const rootReducer = combineReducers({
-  services: servicesReducer,
   mainPosts: mainPostsReducer,
   posts: postsReducer,
   departments: departmentsReducer,

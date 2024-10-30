@@ -120,9 +120,15 @@ export default function Information() {
                         onClick={() => handlerLinkClick(element._id)}
                       />
                       {titleId === element._id ? (
-                        <IoIosArrowUp onClick={() => handlerLinkClick(element._id)} />
+                        <IoIosArrowUp
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => handlerLinkClick(element._id)}
+                        />
                       ) : (
-                        <IoIosArrowDown onClick={() => handlerLinkClick(element._id)} />
+                        <IoIosArrowDown
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => handlerLinkClick(element._id)}
+                        />
                       )}
                     </ContainerBtnIcon>
                     <DivOpen className={titleId === element._id && `shake`}>

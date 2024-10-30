@@ -78,7 +78,7 @@ export default function SearchPage({ classname }) {
       return <p>К сожалению, ничего не было найдено</p>;
     }) &&
     searchDocuments.map((doc) => {
-      if (doc.name.includes(message)) {
+      if (doc.name.toLowerCase().includes(message)) {
         resultDocuments.push(doc);
       }
       return <p>К сожалению, ничего не было найдено</p>;

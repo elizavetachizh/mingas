@@ -19,12 +19,6 @@ export default function ServicesComponent({ router, type, titleName }) {
   const navigate = useNavigate();
   const { data: servicesById, isFetching } = useFetchServicesByIdQuery(cardId);
   const { data: servicesName } = useFetchServicesQuery();
-
-  useEffect(() => {
-    setTitle(servicesById?.name);
-    setDscription(servicesById?.description);
-  }, [servicesById?.description, servicesById?.name]);
-
   const animate = useCallback(
     (descriptionID) => {
       setTitle(servicesById?.name);
@@ -33,6 +27,10 @@ export default function ServicesComponent({ router, type, titleName }) {
     },
     [navigate, router, servicesById?.description, servicesById?.name]
   );
+  useEffect(() => {
+    setTitle(servicesById?.name);
+    setDscription(servicesById?.description);
+  }, [servicesById]);
 
   return (
     <ContainerContent
@@ -61,10 +59,10 @@ export default function ServicesComponent({ router, type, titleName }) {
               <Loader />
             ) : (
               <>
-                {description?.map((el) => (
+                {description?.map((el, index) => (
                   <DopFunctionService
                     classname={'question-answer'}
-                    key={el.nameDescription}
+                    key={index}
                     nameDescription={el.nameDescription}
                     inform={el.inform}
                   />

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { DescriptionService } from './styles';
 import {
   BtnIsOpen,
@@ -6,29 +6,15 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-export default function DopFunctionService({
-  nameDescription,
-  inform,
-  style,
-  classname,
-  classnamegeneral,
-  keys,
-}) {
+export default function DopFunctionService({ nameDescription, inform, classname }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const getElement = useCallback((inform) => {
-    return document.getElementById(`description-${inform}`);
-  }, []);
-
-  useEffect(() => {
-    const element = getElement(inform);
-    if (element && !element.innerHTML) {
-      element.innerHTML += inform;
-    }
-  }, [getElement, inform]);
+  const HtmlRenderer = ({ html }) => {
+    return <DescriptionService dangerouslySetInnerHTML={{ __html: html }} />;
+  };
 
   return (
-    <General key={keys} className={classnamegeneral} style={style}>
+    <General>
       <BtnIsOpen className={classname} onClick={() => setIsOpen(!isOpen)}>
         <p>{nameDescription}</p>
         <div>
@@ -40,7 +26,7 @@ export default function DopFunctionService({
         </div>
       </BtnIsOpen>
       <Div className={isOpen && `shake`}>
-        <DescriptionService id={`description-${inform}`} />
+        <HtmlRenderer html={inform} />
       </Div>
     </General>
   );
