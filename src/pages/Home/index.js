@@ -38,15 +38,17 @@ export default function Home() {
               margin: '0 auto',
             }}
           >
-            <img
-              alt={'загрузка картинки'}
-              style={{
-                borderRadius: '20px',
-                margin: '0 auto',
-                boxShadow: '0 0 5px 3px rgba(0, 0, 0, 0.2)',
-              }}
-              src={require('../../assets/png/banner.webp')}
-            />
+            <a href={'https://www.rec.gov.by/ru'} target={'_blank'} rel="noreferrer">
+              <img
+                alt={'загрузка картинки'}
+                style={{
+                  borderRadius: '20px',
+                  margin: '0 auto',
+                  boxShadow: '0 0 5px 3px rgba(0, 0, 0, 0.2)',
+                }}
+                src={require('../../assets/png/banner.webp')}
+              />
+            </a>
           </div>
         </BlockContainerRequests>
 
