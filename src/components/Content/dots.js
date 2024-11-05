@@ -35,10 +35,30 @@ function Dots({ activeIndex, onclick, sliderImage }) {
       </ContainerText>
       <ContainerParagraph>
         {sliderImage.map((slide, index) => (
-          <div
-            style={activeIndex === index ? { display: 'block' } : { display: 'none' }}
-            id={`content-image-${slide._id}`}
-          />
+          <a
+            style={
+              slide?.content
+                ? { width: '100%' }
+                : {
+                    zIndex: 2,
+                    width: '100%',
+                    color: 'white',
+                    margin: '0',
+                    maxWidth: '700px',
+                    position: 'fixed',
+                    height: '40%',
+                    marginTop: '-5rem',
+                  }
+            }
+            href={slide?.link ? slide?.link : '/'}
+            target={'_blank'}
+            rel="noreferrer"
+          >
+            <div
+              style={activeIndex === index ? { display: 'block' } : { display: 'none' }}
+              id={`content-image-${slide._id}`}
+            />
+          </a>
         ))}
       </ContainerParagraph>
     </div>

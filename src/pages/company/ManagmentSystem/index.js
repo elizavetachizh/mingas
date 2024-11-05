@@ -11,8 +11,8 @@ import close from '../../../assets/png/close.png';
 
 export default function ManagmentSystem() {
   const [isModalVisible, setModalVisible] = useState(false);
-  const openImage = useCallback(() => {
-    setModalVisible(true);
+  const openImage = useCallback((id) => {
+    setModalVisible(id);
   }, []);
   const handleInsideClick = (event) => {
     event.stopPropagation();
@@ -23,11 +23,18 @@ export default function ManagmentSystem() {
   return (
     <AdditionalDiv style={{ margin: '4% auto' }}>
       <BlockOfGraditude>
-        <ContainerGraditude key={'1'} onClick={() => openImage()}>
+        <ContainerGraditude key={'1'}>
           <img
-            style={{ width: '600px', maxWidth:'100%' }}
-            src={require(`../../../assets/pdf/managment/1.webp`)}
+            style={{ width: '600px', maxWidth: '100%' }}
+            src={require(`../../../assets/pdf/managment/3.webp`)}
             alt={''}
+            onClick={() => openImage(3)}
+          />
+          <img
+            style={{ width: '600px', maxWidth: '100%' }}
+            src={require(`../../../assets/pdf/managment/2.webp`)}
+            alt={''}
+            onClick={() => openImage(2)}
           />
         </ContainerGraditude>
       </BlockOfGraditude>
@@ -38,7 +45,7 @@ export default function ManagmentSystem() {
             <InformModal>
               <img
                 className={'gratitude'}
-                src={require(`../../../assets/pdf/managment/1.webp`)}
+                src={require(`../../../assets/pdf/managment/${isModalVisible}.webp`)}
                 alt={''}
               />
             </InformModal>
