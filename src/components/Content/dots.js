@@ -45,8 +45,8 @@ function Dots({ activeIndex, onclick, sliderImage }) {
                     color: 'white',
                     margin: '0',
                     maxWidth: '700px',
-                    position: 'fixed',
-                    height: '40%',
+                    position: 'absolute',
+                    height: '10%',
                     marginTop: '-5rem',
                   }
             }
