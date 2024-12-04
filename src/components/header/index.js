@@ -57,7 +57,7 @@ export default function Header({ backgroundHeader }) {
   );
 
   return (
-    <Container backgroundHeader={backgroundHeader}>
+    <Container className={"header"} backgroundHeader={backgroundHeader}>
       <Background backgroundHeader={backgroundHeader}>
         {open && <MobileNavigation setOpen={setOpen} />}
         {open ? closeMobile : openMobile}

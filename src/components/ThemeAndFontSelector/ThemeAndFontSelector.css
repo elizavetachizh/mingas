@@ -1,0 +1,27 @@
+/* Стили для выбора темы и размера шрифта */
+.theme-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.theme-options,
+.font-options {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button.active {
+    background-color: #007bff;
+    color: #fff;
+}

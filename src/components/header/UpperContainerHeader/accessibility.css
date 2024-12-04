@@ -1,0 +1,68 @@
+/* Стили для слабовидящих */
+[data-accessibility='on'] {
+  background-color: #000;
+  color: #fff;
+}
+
+[data-accessibility='on'] img {
+  filter: grayscale(100%);
+}
+
+[data-accessibility='on'] a {
+  color: #1e90ff;
+  text-decoration: underline;
+}
+
+/* Темы */
+[data-theme='light'] {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+[data-theme='dark'] {
+  background-color: #000;
+  color: #fff !important;
+}
+
+/* Размеры шрифта */
+[data-font-size='small'] {
+  font-size: 14px;
+}
+
+[data-font-size='medium'] {
+  font-size: 18px;
+}
+
+[data-font-size='large'] {
+  font-size: 22px;
+}
+
+/* Меню для слабовидящих */
+.accessibility-menu {
+  padding: 20px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.accessibility-menu h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.accessibility-menu button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  color: #000;
+  transition: background 0.3s;
+}
+
+.accessibility-menu button.active {
+  background-color: #007bff;
+  color: #fff;
+}

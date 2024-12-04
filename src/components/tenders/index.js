@@ -21,7 +21,7 @@ export default function Tenders() {
         console.log(e);
       });
   }, []);
-  console.log(inform);
+
   const getElement = useCallback((id) => {
     return document.getElementById(`electronic-appeal-${id}`);
   }, []);

@@ -7,6 +7,7 @@ import { useRef } from 'react';
 export default function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['CookieConsent']);
   const ref = useRef();
+
   return (
     <div>
       <Routers />

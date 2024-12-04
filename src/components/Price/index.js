@@ -32,24 +32,25 @@ export default function ResidentsOfCapitalRegion() {
               <Links>
                 {info.map((el) => (
                   <React.Fragment>
-                    <button onClick={() => handlePreview(`${el.url}`)}>{el.name}</button>
-                    {selectedFile && selectedFile === el.url && (
+                    <button onClick={() => handlePreview(`${el.file}`)}>{el.name}</button>
+
+                    {selectedFile && selectedFile === el.file && (
                       <div style={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
-                        <iframe
-                          className={'iframe'}
-                          src={selectedFile}
-                          height={'600px'}
-                          title={selectedFile}
-                        />
                         <a
                           className={'right-link'}
-                          href={`${el.url}`}
+                          href={`https://mingas.by/${selectedFile}`}
                           id={'href'}
                           target={'_blank'}
                           rel="opener noreferrer"
                         >
                           Скачать
                         </a>
+                        <iframe
+                          className={'iframe'}
+                          src={`https://mingas.by/${selectedFile}`}
+                          height={'600px'}
+                          title={selectedFile}
+                        />
                       </div>
                     )}
                   </React.Fragment>

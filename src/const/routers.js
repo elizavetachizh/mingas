@@ -41,7 +41,7 @@ export const routers = [
   { path: '/feedback/question-answer/:titleId', element: <Information /> },
   { path: '/feedback/online-application', element: <Requests /> },
   { path: '/feedback/electronic-appeal', element: <ElectronicAppeal /> },
-  { path: '/*', element: <NoMatch /> },
+  // { path: '/*', element: <NoMatch /> },
   { path: '/company/:descriptionID', element: <Company /> },
   { path: '/company/management/:linkId', element: <DepartmentInformation /> },
   { path: '/company/management/division/:subdivisionId', element: <Subdivisions /> },

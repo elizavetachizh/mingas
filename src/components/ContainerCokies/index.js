@@ -39,8 +39,13 @@ export default function ContainerCookies() {
               качества его функционирования, чтобы определить наиболее и наименее популярные
               страницы.
             </p>
+            <p>
+              Вы можете настроить использование каждого типа файлов cookie, за исключением типа
+              «технические/функциональные (обязательные) cookie», без которых невозможно корректное
+              функционирование сайта УП "МИНГАЗ" (далее – Сайт).
+            </p>
             <li>
-              <strong>выбор языковых предпочтений (функциональные)</strong>
+              <strong>Функциональные/Технические файлы cookie</strong>
             </li>
             <ul style={{ listStyleType: 'none' }}>
               <li>
@@ -51,34 +56,21 @@ export default function ContainerCookies() {
                   <label htmlFor={'radio1-true'}>
                     <input
                       id={'radio1-true'}
-                      onChange={() => {
-                        setCookie('_ga', 'GA1.1.1461999740.1696242335', { path: '/' });
-                        setCookie('googtrans', '/ru/ru', { path: '/' });
-                      }}
                       className="uk-radio"
-                      type="radio"
+                      type="checkbox"
+                      disabled={true}
+                      checked={true}
                       name="radio1"
                     />
-                    <span>Принять</span>
-                  </label>
-                  <label htmlFor={'radio1-false'}>
-                    <input
-                      id={'radio1-false'}
-                      onChange={() => {
-                        removeCookie('_ga');
-                        removeCookie('googtrans');
-                      }}
-                      className="isObject"
-                      type="radio"
-                      name="radio1"
-                    />
-                    <span>Отклонить</span>
+                    <span>
+                      Эти файлы cookie необходимы для корректного функционирования веб-сайта
+                    </span>
                   </label>
                 </div>
               </li>
             </ul>
             <li>
-              <strong>чат-бот (функциональные)</strong>
+              <strong>Рекламные файлы cookie</strong>
             </li>
             <ul style={{ listStyleType: 'none' }}>
               <li>
@@ -90,8 +82,62 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-true'}
                       onChange={() => {
-                        setCookie('waSessionId');
-                        setCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
+                        setCookie('APISID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('DV', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('HSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('NID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PSIDCC', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PSIDTS', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('SAPISID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PAPISID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PAPISID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PSIDCC', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PSIDTS', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('SID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
                       }}
                       className="uk-radio"
                       type="radio"
@@ -103,8 +149,96 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-false'}
                       onChange={() => {
-                        removeCookie('waSessionId');
-                        removeCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
+                        removeCookie('APISID', {
+                          path: '/',
+                        });
+                        removeCookie('DV', {
+                          path: '/',
+                        });
+                        removeCookie('HSID', {
+                          path: '/',
+                        });
+                        removeCookie('NID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PSID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PSIDCC', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PSIDTS', {
+                          path: '/',
+                        });
+                        removeCookie('SAPISID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PAPISID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PSID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PAPISID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PSIDCC', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PSIDTS', {
+                          path: '/',
+                        });
+                        removeCookie('SID', {
+                          path: '/',
+                        });
+                      }}
+                      className="isObject"
+                      type="radio"
+                      name="radio2"
+                    />
+                    <span>Отклонить</span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+            <li>
+              <strong>Аналитические файлы cookie</strong>
+            </li>
+            <ul style={{ listStyleType: 'none' }}>
+              <li>
+                <div
+                  style={{ margin: '0.5rem 0 0.5rem' }}
+                  className="uk-grid-small uk-child-width-auto uk-grid"
+                >
+                  <label htmlFor={'radio1-true'}>
+                    <input
+                      id={'radio2-true'}
+                      onChange={() => {
+                        setCookie('SSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('_ga', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                      }}
+                      className="uk-radio"
+                      type="radio"
+                      name="radio2"
+                    />
+                    <span>Принять</span>
+                  </label>
+                  <label htmlFor={'radio1-false'}>
+                    <input
+                      id={'radio2-false'}
+                      onChange={() => {
+                        removeCookie('SSID', {
+                          path: '/',
+                        });
+                        removeCookie('_ga', {
+                          path: '/',
+                        });
                       }}
                       className="isObject"
                       type="radio"
@@ -117,7 +251,7 @@ export default function ContainerCookies() {
             </ul>
             <li>
               <strong>
-                возможность «Принять все» или «Отклонить все» обрабатываемые на сайте куки.
+                Возможность «Принять все» или «Отклонить все» обрабатываемые на сайте куки.
               </strong>
             </li>
             <ul style={{ listStyleType: 'none' }}>
@@ -130,9 +264,70 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-true'}
                       onChange={() => {
-                        setCookie('_ga', 'GA1.1.1461999740.1696242335', { path: '/' });
-                        setCookie('googtrans', '/ru/ru', { path: '/' });
-                        setCookie('CookieConsent', true, { path: '/' });
+                        setCookie('APISID', "hOju7gGjtkzaejt-/A2NaiF1iklIpmJGaA", {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('DV', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('HSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('NID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PSIDCC', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PSIDTS', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('SAPISID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-1PAPISID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PAPISID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PSIDCC', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('__Secure-3PSIDTS', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('SID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('SSID', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
+                        setCookie('_ga', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
                       }}
                       className="uk-radio"
                       type="radio"
@@ -149,6 +344,48 @@ export default function ContainerCookies() {
                         removeCookie('CookieConsent');
                         removeCookie('waSessionId');
                         removeCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
+                        removeCookie('APISID', {
+                          path: '/',
+                        });
+                        removeCookie('DV', {
+                          path: '/',
+                        });
+                        removeCookie('HSID', {
+                          path: '/',
+                        });
+                        removeCookie('NID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PSID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PSIDCC', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PSIDTS', {
+                          path: '/',
+                        });
+                        removeCookie('SAPISID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-1PAPISID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PSID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PAPISID', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PSIDCC', {
+                          path: '/',
+                        });
+                        removeCookie('__Secure-3PSIDTS', {
+                          path: '/',
+                        });
+                        removeCookie('SID', {
+                          path: '/',
+                        });
                       }}
                       className="isObject"
                       type="radio"

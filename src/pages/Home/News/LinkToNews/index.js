@@ -1,12 +1,12 @@
 import React from 'react';
 import { ArticleForHome } from '../../../PressCenter/styles';
 
-export default function LinkNews({ href, src, cardDesc }) {
+export default function LinkNews({ href, src,  name }) {
   return (
     <ArticleForHome>
       <a rel="noopener" target={'_blank'} href={href}>
         <img alt={''} src={src} />
-        {/*<p>{cardDesc}</p>*/}
+        {name && <p>{name}</p>}
       </a>
     </ArticleForHome>
   );

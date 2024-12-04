@@ -26,7 +26,7 @@ export default function News() {
       <TitleForHome color={'blue'} infoTitle={'Лента новостей'} />
       <DivInform>
         {arr?.map((el) => (
-          <LinkNews href={el.link} src={el.image} cardDesc={el.content} />
+          <LinkNews href={el.link} src={el.image} name={el?.name} />
         ))}
       </DivInform>
       <ButtonFun
