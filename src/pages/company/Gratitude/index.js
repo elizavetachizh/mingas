@@ -38,6 +38,7 @@ export default function Gratitude() {
         console.log(e);
       });
   }, [setInfo]);
+  console.log(info);
   return (
     <AdditionalDiv style={{ margin: '4% auto' }}>
       {info?.length ? (
@@ -45,7 +46,7 @@ export default function Gratitude() {
           <BlockOfGraditude>
             {info.map((element) => (
               <ContainerGraditude key={element._id} onClick={() => openImage(element.url)}>
-                <img src={`${element.url}`} alt={''} />
+                <img src={`https://mingas.by/${element.file}`} alt={''} />
               </ContainerGraditude>
             ))}
           </BlockOfGraditude>

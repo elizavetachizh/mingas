@@ -6,7 +6,6 @@ export default function HeaderConcats({ width }) {
   return (
     <HeaderCompanyDiv width={width}>
       <Name>Контактная информация</Name>
-      {/*<HeaderConcatsBtn to="/contacts">Общая информация</HeaderConcatsBtn>*/}
       <HeaderConcatsBtn to="/contacts/work-schedule">
         График личного приёма граждан
       </HeaderConcatsBtn>

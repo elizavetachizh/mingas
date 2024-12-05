@@ -1,6 +1,4 @@
-import {
-  Div,
-} from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
+import { Div } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import React from 'react';
 import ComponentContainerArticles from './ComponentContainerArticles';
 

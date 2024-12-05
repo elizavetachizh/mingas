@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArticleForHome } from '../../../PressCenter/styles';
 
-export default function LinkNews({ href, src,  name }) {
+export default function LinkNews({ href, src, name }) {
   return (
     <ArticleForHome>
       <a rel="noreferrer" target={'_blank'} href={href}>

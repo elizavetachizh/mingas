@@ -21,7 +21,7 @@ export default function ResidentsOfCapitalRegion() {
   const handlePreview = (fileUrl) => {
     setSelectedFile(fileUrl);
   };
-
+  console.log(info);
   return (
     <ContainerContent
       name={'Прейскурант цен'}
@@ -32,19 +32,25 @@ export default function ResidentsOfCapitalRegion() {
               <Links>
                 {info.map((el) => (
                   <React.Fragment>
-                    <button onClick={() => handlePreview(`${el.file}`)}>{el.name}</button>
+                    <button
+                      style={{ display: 'flex', justifyContent: 'space-between' }}
+                      onClick={() => handlePreview(`${el.file}`)}
+                    >
+                      <p style={{ background: 'none', width:'100%' }}>{el.name}</p>{' '}
+                      <a
+                        style={{ margin: '0' }}
+                        className={'right-link'}
+                        href={`https://mingas.by/${selectedFile}`}
+                        id={'href'}
+                        target={'_blank'}
+                        rel="opener noreferrer"
+                      >
+                        Скачать
+                      </a>
+                    </button>
 
                     {selectedFile && selectedFile === el.file && (
                       <div style={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
-                        <a
-                          className={'right-link'}
-                          href={`https://mingas.by/${selectedFile}`}
-                          id={'href'}
-                          target={'_blank'}
-                          rel="opener noreferrer"
-                        >
-                          Скачать
-                        </a>
                         <iframe
                           className={'iframe'}
                           src={`https://mingas.by/${selectedFile}`}

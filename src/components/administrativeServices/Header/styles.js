@@ -4,7 +4,7 @@ export const BlockBtn = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0.2rem;
-  padding: 10px;
+  padding: 2px 10px;
   //background-color: #e8f3ff;
   border-color: #0e43af;
   a {
