@@ -7,10 +7,7 @@ import Loader from '../../components/Loader';
 
 export default function IlliquidAssets() {
   const [info, setInfo] = useState([]);
-  const [selectedFile, setSelectedFile] = useState(null);
-  const handlePreview = (fileUrl) => {
-    setSelectedFile(fileUrl);
-  };
+
   useEffect(() => {
     const apiUrl = `${API}/illiquids`;
     axios
@@ -22,6 +19,12 @@ export default function IlliquidAssets() {
         console.log(e);
       });
   }, [setInfo]);
+
+  const handleFileClick = (fileName) => {
+    // Здесь мы создаем ссылку для скачивания файла
+    const fileUrl = `https://mingas.by/${fileName}`; // Замените на ваш URL для скачивания
+    window.open(fileUrl, '_blank');
+  };
 
   return (
     <ContainerContent
@@ -35,31 +38,10 @@ export default function IlliquidAssets() {
                   <React.Fragment>
                     <button
                       style={{ display: 'flex', justifyContent: 'space-between' }}
-                      onClick={() => handlePreview(`${el.file}`)}
+                      onClick={() => handleFileClick(`${el.file}`)}
                     >
-                      <p style={{ background: 'none', width: '100%' }}>{el.name}</p>{' '}
-                      <a
-                        style={{ margin: '0' }}
-                        className={'right-link'}
-                        href={`https://mingas.by/${selectedFile}`}
-                        id={'href'}
-                        target={'_blank'}
-                        rel="opener noreferrer"
-                      >
-                        Скачать
-                      </a>
+                      <p style={{ background: 'none', width: '100%' }}>{el.name}</p>
                     </button>
-
-                    {selectedFile && selectedFile === el.file && (
-                      <div style={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
-                        <iframe
-                          className={'iframe'}
-                          src={`https://mingas.by/${selectedFile}`}
-                          height={'600px'}
-                          title={selectedFile}
-                        />
-                      </div>
-                    )}
                   </React.Fragment>
                 ))}
               </Links>

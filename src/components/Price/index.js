@@ -21,7 +21,7 @@ export default function ResidentsOfCapitalRegion() {
   const handlePreview = (fileUrl) => {
     setSelectedFile(fileUrl);
   };
-  console.log(info);
+
   return (
     <ContainerContent
       name={'Прейскурант цен'}

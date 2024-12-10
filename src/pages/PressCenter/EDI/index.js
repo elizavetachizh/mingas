@@ -28,7 +28,6 @@ export default function EDI() {
       setGroupedArray(array);
     }
   }, [documents]);
-  console.log(groupedArray);
 
   return (
     <div>

@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { BlockOfGraditude, ContainerGraditude, ContainerOfDocuments, DivButtons } from '../styles';
 import TitleForHome from '../../../components/TitleForHome';
 import '@brainhubeu/react-carousel/lib/style.css';
-import { documents } from '../../../assets/data/certifications';
 import {
   Close,
   InformModal,
@@ -10,70 +9,66 @@ import {
   ModalWindowOpenAndClose,
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
+import { API } from '../../../backend';
+import axios from 'axios';
 
 export default function Documentation() {
-  const [numPage, setNumPage] = useState(null);
-  const [pageNumber, setPageNumber] = useState(null);
-  const [isModalVisible, setModalVisible] = useState(false);
-  const [generalId, setGeneralId] = useState(null);
-  const [inform, setInform] = useState([]);
-  const [image, setImage] = useState(null);
-  const [name, setName] = useState('');
-  const certifications = useMemo(
-    () => documents.filter((document) => document.name === 'Сертификаты'),
-    [documents]
-  );
-
-  const licenses = useMemo(
-    () => documents.filter((document) => document.name === 'Лицензии'),
-    [documents]
-  );
-  const evidence = useMemo(
-    () => documents.filter((document) => document.name === 'Свидетельства'),
-    [documents]
-  );
-  const chits = useMemo(
-    () => documents.filter((document) => document.name === 'Аттестаты'),
-    [documents]
-  );
-
-  const openImage = useCallback(
-    (id) => {
-      const current = documents.find((element) => element.GeneralId === id);
-      setInform(current?.inform);
-      setNumPage(inform?.length);
-      setModalVisible(true);
-      setGeneralId(id);
-      setName(current?.name);
-      setPageNumber(1);
-      setImage(current?.inform[0].img);
-    },
-    [generalId, inform, name]
-  );
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    const current = documents.find((element) => element.GeneralId === +generalId);
-    setInform(current?.inform);
-    setGeneralId(current?.GeneralId);
-    if (!name) {
-      setName(current?.name);
-    }
-    setNumPage(inform?.length);
-  }, [pageNumber, inform, generalId, name]);
+    const apiUrl = `${API}/certificates`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        const groupByFileType = (array) => {
+          return array.reduce((acc, current) => {
+            const { fileType, ...rest } = current;
+            // Проверяем, есть ли уже такая группа
+            if (!acc[fileType]) {
+              acc[fileType] = { fileType, info: [] };
+            }
+            // Добавляем информацию в соответствующую группу
+            acc[fileType].info.push(rest);
+            return acc;
+          }, {});
+        };
 
+        // Преобразуем объект в массив
+        const groupedData = Object.values(groupByFileType(res.data));
+        setInfo(groupedData);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setInfo]);
+
+  const [pageNumber, setPageNumber] = useState(null);
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [image, setImage] = useState(null);
+  const [element, setElement] = useState('');
+  const openImage = useCallback(
+    (fileType, id) => {
+      const current = info.find((element) => element.fileType === fileType);
+      const element = current.info.find((element) => element._id === id);
+      setElement(element);
+      setModalVisible(true);
+      setPageNumber(1);
+      setImage(0);
+    },
+    [info]
+  );
   const changePage = (offSet) => {
-    setPageNumber((prevPAgeNumber) => prevPAgeNumber + offSet);
+    setPageNumber((prevPageNumber) => prevPageNumber + offSet);
+    setImage((prevImage) => prevImage + offSet);
   };
 
   const changePageBAck = () => {
     changePage(-1);
-    setImage(+image - +1);
   };
 
   const changePageNext = () => {
-    if (pageNumber < numPage) {
+    if (pageNumber < element?.paths?.length) {
       changePage(+1);
-      setImage(+image + +1);
     }
   };
 
@@ -87,70 +82,33 @@ export default function Documentation() {
 
   return (
     <>
-      <ContainerOfDocuments>
-        <TitleForHome color={'blue'} infoTitle={certifications[0].name} />
-        <BlockOfGraditude>
-          {certifications.map((element) => (
-            <ContainerGraditude
-              key={element.GeneralId}
-              onClick={() => openImage(element.GeneralId)}
-            >
-              <img
-                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                alt={''}
-              />
-            </ContainerGraditude>
-          ))}
-        </BlockOfGraditude>
-      </ContainerOfDocuments>
-      <ContainerOfDocuments>
-        <TitleForHome color={'blue'} infoTitle={licenses[0].name} />
-        <BlockOfGraditude>
-          {licenses.map((element) => (
-            <ContainerGraditude
-              key={element.GeneralId}
-              onClick={() => openImage(element.GeneralId)}
-            >
-              <img
-                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                alt={''}
-              />
-            </ContainerGraditude>
-          ))}
-        </BlockOfGraditude>
-      </ContainerOfDocuments>
-      <ContainerOfDocuments>
-        <TitleForHome color={'blue'} infoTitle={evidence[0].name} />
-        <BlockOfGraditude>
-          {evidence.map((element) => (
-            <ContainerGraditude
-              key={element.GeneralId}
-              onClick={() => openImage(element.GeneralId)}
-            >
-              <img
-                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                alt={''}
-              />
-            </ContainerGraditude>
-          ))}{' '}
-        </BlockOfGraditude>
-      </ContainerOfDocuments>
-      <ContainerOfDocuments>
-        <TitleForHome color={'blue'} infoTitle={chits[0].name} />
-        <BlockOfGraditude>
-          {chits.map((element) => (
-            <ContainerGraditude
-              key={element.GeneralId}
-              onClick={() => openImage(element.GeneralId)}
-            >
-              <img
-                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${element.inform[0].img}.webp`)}
-                alt={''}
-              />
-            </ContainerGraditude>
-          ))}
-        </BlockOfGraditude>
-      </ContainerOfDocuments>
+      {info.map((element) => (
+        <ContainerOfDocuments>
+          <TitleForHome
+            color={'blue'}
+            infoTitle={
+              element.fileType === 'certificates'
+                ? 'Сертификаты'
+                : element.fileType === 'attestations'
+                ? 'Аттестаты'
+                : element.fileType === 'licenses'
+                ? 'Лицензии'
+                : 'Свидетельства'
+            }
+          />
+          <BlockOfGraditude>
+            {element.info?.map((file) => (
+              <ContainerGraditude
+                key={file._id}
+                onClick={() => openImage(element.fileType, file._id)}
+              >
+                <img src={`https://mingas.by/${file.paths[0]}`} alt={''} />
+              </ContainerGraditude>
+            ))}
+          </BlockOfGraditude>
+        </ContainerOfDocuments>
+      ))}
+
       {isModalVisible && (
         <ModalWindow onClick={handleCloseCLick}>
           <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
@@ -158,13 +116,13 @@ export default function Documentation() {
             <InformModal>
               <img
                 className={'gratitude'}
-                src={require(`../../../assets/pdf/certificates/Certificate_SNKIiTD/${image}.webp`)}
+                src={`https://mingas.by/${element.paths[image]}`}
                 alt={''}
               />
               <DivButtons>
                 {pageNumber > 1 && <button onClick={changePageBAck}>Предыдущая</button>}
                 <p>
-                  Страница {pageNumber} из {numPage}
+                  Страница {pageNumber} из {element?.paths?.length}
                 </p>
                 <button onClick={changePageNext}>Следующая</button>
               </DivButtons>
