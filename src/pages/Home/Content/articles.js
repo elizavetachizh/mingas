@@ -1,98 +1,80 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
-import { API } from '../../../backend';
 
-const articles = [
-  {
-    title: 'Article 1',
-    content: 'This is the content of Article 1.',
-    image: 'https://via.placeholder.com/300x200?text=Article+1',
-  },
-  {
-    title: 'Article 2',
-    content: 'This is the content of Article 2.',
-    image: 'https://via.placeholder.com/300x200?text=Article+2',
-  },
-  {
-    title: 'Article 3',
-    content: 'This is the content of Article 3.',
-    image: 'https://via.placeholder.com/300x200?text=Article+3',
-  },
-  {
-    title: 'Article 4',
-    content: 'This is the content of Article 4.',
-    image: 'https://via.placeholder.com/300x200?text=Article+4',
-  },
-  {
-    title: 'Article 1',
-    content: 'This is the content of Article 1.',
-    image: 'https://via.placeholder.com/300x200?text=Article+1',
-  },
-  {
-    title: 'Article 2',
-    content: 'This is the content of Article 2.',
-    image: 'https://via.placeholder.com/300x200?text=Article+2',
-  },
-  {
-    title: 'Article 3',
-    content: 'This is the content of Article 3.',
-    image: 'https://via.placeholder.com/300x200?text=Article+3',
-  },
-  {
-    title: 'Article 4',
-    content: 'This is the content of Article 4.',
-    image: 'https://via.placeholder.com/300x200?text=Article+4',
-  },
-  {
-    title: 'Article 1',
-    content: 'This is the content of Article 1.',
-    image: 'https://via.placeholder.com/300x200?text=Article+1',
-  },
-  {
-    title: 'Article 2',
-    content: 'This is the content of Article 2.',
-    image: 'https://via.placeholder.com/300x200?text=Article+2',
-  },
-  {
-    title: 'Article 3',
-    content: 'This is the content of Article 3.',
-    image: 'https://via.placeholder.com/300x200?text=Article+3',
-  },
-  {
-    title: 'Article 4',
-    content:
-      'В настоящее время происходит поэтапный перевод потребителей газа в единую систему начислений жилищно-коммунальных услуг АИС "Расчет-ЖКУ" (ЕРИП) для начисления платы за услуги газоснабжения..При оплате за услугу газоснабжения необходимо перейти на новую ветку ЕРИП: В случае отсутствия информации по Вашему лицевому счету либо в случае ошибки в новой ветке ЕРИП просим Вас повторить попытку оплаты в старой ветке по следующему алгоритму: Система «Расчет» (ЕРИП) - Коммунальные платежи - Газоснабжение - Минск - Мингаз - Газоснабжение - № Вашего лицевого счета.',
-    image: 'https://via.placeholder.com/300x200?text=Article+4',
-  },
-];
 const GeneralContainer = styled.div`
   width: 100%;
   background-color: rgba(14, 78, 129, 0.1);
   margin: 147px auto 0;
+  @media (max-width: 900px) {
+    margin: 79px auto 0;
+  }
 `;
 const ArticleContainer = styled.div`
   display: flex;
   width: 80%;
-  height: 400px;
+  height: 450px;
   margin: 0 auto;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  //border: 1px solid #ddd;
+  //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  @media (max-width: 1256px) {
+    width: 90%;
+  }
+  @media (max-width: 1130px) {
+    width: 100%;
+  }
 `;
 
 const Sidebar = styled.div`
   width: 30%;
   overflow-y: auto;
-  border-right: 1px solid #ddd;
-  background: #f9f9f9;
+  //border-right: 1px solid #ddd;
+  background-color: transparent;
+  //background-image: linear-gradient(
+  //  -55deg,
+  //  rgb(1, 95, 156) 0%,
+  //  rgb(16, 69, 141) 0%,
+  //  rgb(15, 89, 141) 19%,
+  //  rgb(15, 78, 140) 60%,
+  //  rgb(14, 78, 129) 79%,
+  //  rgb(13, 68, 117) 100%
+  //);
+  &::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 1px 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #666;
+  }
 `;
 
 const Title = styled.div`
-  padding: 10px;
+  padding: 15px 25px;
   cursor: pointer;
+  border-bottom: 1px solid white;
+  //color: white;
+  color: #0d4475;
+  a {
+    //color: white;
+    text-decoration: none;
+    color: #0d4475;
+  }
+  font-weight: bold;
   &:hover {
-    background-color: #e0e0e0;
+    background-color: rgba(37, 114, 193, 0.8);
+    color: white;
+    border-radius: 5px;
+    a {
+      color: white;
+    }
   }
 `;
 
@@ -122,42 +104,49 @@ const ArticleText = styled.div`
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 14px;
   max-width: 80%;
   text-align: center;
+  overflow-y: auto;
+  margin: 1rem auto;
+  a,
+  p {
+    color: white;
+  }
 `;
 
-const Articles = () => {
-  const [info, setInfo] = useState([]);
+const Articles = ({ info }) => {
   const [selectedArticle, setSelectedArticle] = useState(null);
   useEffect(() => {
-    axios
-      .get(`${API}/articles`)
-      .then((res) => {
-        setInfo(res.data);
-        setSelectedArticle(res.data[0])
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+    setSelectedArticle(info[0]);
+  }, [info]);
 
-  console.log(info);
   return (
     <GeneralContainer>
       <ArticleContainer>
         <Sidebar>
-          {articles.map((article, index) => (
-            <Title key={index} onMouseEnter={() => setSelectedArticle(article)}>
-              {article.title}
+          {info.map((article, index) => (
+            <Title key={index} onMouseOver={() => setSelectedArticle(article)}>
+              <a href={article?.link ? article?.link : '#'} target={'_blank'} rel="noreferrer">
+                {article.button}
+              </a>
             </Title>
           ))}
         </Sidebar>
         <ContentArea>
-          <ArticleImage src={selectedArticle?.image} alt={selectedArticle?.button} />
-          <ArticleText>{selectedArticle?.content}</ArticleText>
+          <a
+            style={{ textDecoration: 'none' }}
+            target={'_blank'}
+            rel="noreferrer"
+            href={selectedArticle?.link ? selectedArticle?.link : '#'}
+          >
+            <ArticleImage src={selectedArticle?.image} alt={selectedArticle?.button} />
+            {selectedArticle?.content && (
+              <ArticleText dangerouslySetInnerHTML={{ __html: selectedArticle?.content }} />
+            )}
+          </a>
         </ContentArea>
       </ArticleContainer>
     </GeneralContainer>
