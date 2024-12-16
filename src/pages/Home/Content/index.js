@@ -23,7 +23,7 @@ export default function ContentHome() {
         console.log(e);
       });
   }, []);
-
+  console.log(info);
   return (
     <>
       {isPhone ? (
