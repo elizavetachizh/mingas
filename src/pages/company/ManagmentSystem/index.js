@@ -36,6 +36,12 @@ export default function ManagmentSystem() {
             alt={''}
             onClick={() => openImage(2)}
           />
+          <img
+            style={{ width: '600px', maxWidth: '100%' }}
+            src={require(`../../../assets/pdf/managment/4.webp`)}
+            alt={''}
+            onClick={() => openImage(4)}
+          />
         </ContainerGraditude>
       </BlockOfGraditude>
       {isModalVisible && (
