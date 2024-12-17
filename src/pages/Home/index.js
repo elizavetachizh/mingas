@@ -16,7 +16,6 @@ import './slider/styles.css';
 import ModalWindowAIS from '../../components/ModalWindowAIS';
 import { BackgroundWithImage } from './styles';
 import { BlockContainerRequests } from '../feedback/styles';
-import Articles from './Content/articles';
 export default function Home() {
   return (
     <Container>
@@ -24,7 +23,6 @@ export default function Home() {
       <ModalWindowAIS />
       <BackgroundWithImage bgImage={linesOne}>
         <ContentHome />
-        {/*<Articles />*/}
         <UsefulInform />
         <HeaderRequests />
         <ParallaxDiv />

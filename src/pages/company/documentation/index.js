@@ -45,29 +45,25 @@ export default function Documentation() {
   const [pageNumber, setPageNumber] = useState(null);
   const [isModalVisible, setModalVisible] = useState(false);
   const [image, setImage] = useState(null);
-  const [element, setElement] = useState('');
-  const openImage = useCallback(
-    (fileType, id) => {
-      const current = info.find((element) => element.fileType === fileType);
-      const element = current.info.find((element) => element._id === id);
-      setElement(element);
-      setModalVisible(true);
-      setPageNumber(1);
-      setImage(0);
-    },
-    [info]
-  );
-  const changePage = (offSet) => {
+  const [paths, setPaths] = useState('');
+  const openImage = useCallback((paths) => {
+    setPaths(paths);
+    setModalVisible(true);
+    setPageNumber(1);
+    setImage(0);
+  }, []);
+
+  const changePage = useCallback((offSet) => {
     setPageNumber((prevPageNumber) => prevPageNumber + offSet);
     setImage((prevImage) => prevImage + offSet);
-  };
+  }, []);
 
   const changePageBAck = () => {
     changePage(-1);
   };
 
   const changePageNext = () => {
-    if (pageNumber < element?.paths?.length) {
+    if (pageNumber < paths?.length) {
       changePage(+1);
     }
   };
@@ -98,10 +94,7 @@ export default function Documentation() {
           />
           <BlockOfGraditude>
             {element.info?.map((file) => (
-              <ContainerGraditude
-                key={file._id}
-                onClick={() => openImage(element.fileType, file._id)}
-              >
+              <ContainerGraditude key={file._id} onClick={() => openImage(file.paths)}>
                 <img src={`https://mingas.by/${file.paths[0]}`} alt={''} />
               </ContainerGraditude>
             ))}
@@ -114,15 +107,11 @@ export default function Documentation() {
           <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
             <Close src={close} onClick={handleCloseCLick} />
             <InformModal>
-              <img
-                className={'gratitude'}
-                src={`https://mingas.by/${element.paths[image]}`}
-                alt={''}
-              />
+              <img className={'gratitude'} src={`https://mingas.by/${paths[image]}`} alt={''} />
               <DivButtons>
                 {pageNumber > 1 && <button onClick={changePageBAck}>Предыдущая</button>}
                 <p>
-                  Страница {pageNumber} из {element?.paths?.length}
+                  Страница {pageNumber} из {paths?.length}
                 </p>
                 <button onClick={changePageNext}>Следующая</button>
               </DivButtons>
