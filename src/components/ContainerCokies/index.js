@@ -15,6 +15,14 @@ export default function ContainerCookies() {
       content={
         <ContainerInform>
           <h3>Политика в отношении обработки cookie</h3>
+          <a
+            type={'download'}
+            href={
+              'https://back.mingas.by/admin/upload/files/1734512353959-Политика_куки_Мингаз (2).docx'
+            }
+          >
+            Политика обработки файлов cookie УП «МИНГАЗ»
+          </a>
           <ol>
             <li>
               <strong>Куки</strong> (англ. cookies) являются текстовым файлом, сохраненным в
@@ -24,17 +32,19 @@ export default function ContainerCookies() {
             </li>
             <p>
               Этот файл позволяет не вводить заново или выбирать те же параметры при повторном
-              посещении сайта, например, выбор языковой версии. Целью обработки куки является
-              обеспечение удобства пользователей сайта и повышение качества его функционирования. Мы
-              не передаем куки третьим лицам и не используем их для идентификации субъектов
-              персональных данных.
+              посещении сайта, например, выбор языковой версии. <br /> Целью обработки куки является
+              обеспечение удобства пользователей сайта и повышение качества его функционирования.{' '}
+              <br /> Мы не передаем куки третьим лицам и не используем их для идентификации
+              субъектов персональных данных.
             </p>
             <li>
               <strong> На сайте обрабатываются следующие типы куки:</strong>
             </li>
             <p>
               функциональные – позволяют обеспечить индивидуальный опыт использования сайта и
-              устанавливаются в ответ на действия субъекта персональных данных; <br />
+              устанавливаются в ответ на действия субъекта персональных данных;
+            </p>
+            <p>
               статистические – позволяют хранить историю посещений страниц сайта в целях повышения
               качества его функционирования, чтобы определить наиболее и наименее популярные
               страницы.
@@ -82,59 +92,7 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-true'}
                       onChange={() => {
-                        setCookie('APISID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('DV', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
                         setCookie('HSID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('NID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-1PSID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-1PSIDCC', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-1PSIDTS', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('SAPISID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-1PAPISID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PSID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PAPISID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PSIDCC', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PSIDTS', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('SID', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
@@ -150,45 +108,6 @@ export default function ContainerCookies() {
                       id={'radio2-false'}
                       onChange={() => {
                         removeCookie('APISID', {
-                          path: '/',
-                        });
-                        removeCookie('DV', {
-                          path: '/',
-                        });
-                        removeCookie('HSID', {
-                          path: '/',
-                        });
-                        removeCookie('NID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PSID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PSIDCC', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PSIDTS', {
-                          path: '/',
-                        });
-                        removeCookie('SAPISID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PAPISID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PSID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PAPISID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PSIDCC', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PSIDTS', {
-                          path: '/',
-                        });
-                        removeCookie('SID', {
                           path: '/',
                         });
                       }}
@@ -214,11 +133,7 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-true'}
                       onChange={() => {
-                        setCookie('SSID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('_ga', true, {
+                        setCookie('ymex', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
@@ -233,10 +148,7 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-false'}
                       onChange={() => {
-                        removeCookie('SSID', {
-                          path: '/',
-                        });
-                        removeCookie('_ga', {
+                        removeCookie('ymex', {
                           path: '/',
                         });
                       }}
@@ -264,67 +176,35 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-true'}
                       onChange={() => {
-                        setCookie('APISID', "hOju7gGjtkzaejt-/A2NaiF1iklIpmJGaA", {
+                        setCookie('yandexuid', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
-                        setCookie('DV', true, {
+                        setCookie('googtrans', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
-                        setCookie('HSID', true, {
+                        setCookie('CookieConsent', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
-                        setCookie('NID', true, {
+                        setCookie('connect.sid', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
-                        setCookie('__Secure-1PSID', true, {
+                        setCookie('i', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
-                        setCookie('__Secure-1PSIDCC', true, {
+                        setCookie('is_gdpr', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
-                        setCookie('__Secure-1PSIDTS', true, {
+                        setCookie('is_gdpr_b', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
-                        setCookie('SAPISID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-1PAPISID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PSID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PAPISID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PSIDCC', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('__Secure-3PSIDTS', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('SID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('SSID', true, {
-                          path: '/',
-                          maxAge: 365 * 24 * 60 * 60,
-                        });
-                        setCookie('_ga', true, {
+                        setCookie('ymex', true, {
                           path: '/',
                           maxAge: 365 * 24 * 60 * 60,
                         });
@@ -339,53 +219,16 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-false'}
                       onChange={() => {
-                        removeCookie('_ga');
+                        removeCookie('yandexuid');
                         removeCookie('googtrans');
                         removeCookie('CookieConsent');
                         removeCookie('waSessionId');
-                        removeCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
-                        removeCookie('APISID', {
-                          path: '/',
-                        });
-                        removeCookie('DV', {
-                          path: '/',
-                        });
-                        removeCookie('HSID', {
-                          path: '/',
-                        });
-                        removeCookie('NID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PSID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PSIDCC', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PSIDTS', {
-                          path: '/',
-                        });
-                        removeCookie('SAPISID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-1PAPISID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PSID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PAPISID', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PSIDCC', {
-                          path: '/',
-                        });
-                        removeCookie('__Secure-3PSIDTS', {
-                          path: '/',
-                        });
-                        removeCookie('SID', {
-                          path: '/',
-                        });
+                        removeCookie('widget_spinner_id');
+                        removeCookie('connect.sid');
+                        removeCookie('i');
+                        removeCookie('is_gdpr');
+                        removeCookie('is_gdpr_b');
+                        removeCookie('ymex');
                       }}
                       className="isObject"
                       type="radio"
@@ -396,10 +239,69 @@ export default function ContainerCookies() {
                 </div>
               </li>
             </ul>
+            <Button style={{ width: '350px' }} type="submit" onClick={() => navigate(-1)}>
+              Подтвердить выбор настроек cookies
+            </Button>
+            <li>
+              <strong>
+                Помимо настроек куки на сайте субъекты персональных данных могут принять или
+                отклонить сбор всех или некоторых куки в настройках своего браузера.
+              </strong>
+              <p>
+                При этом некоторые браузеры позволяют посещать интернет-сайты в режиме «инкогнито»,
+                чтобы ограничить хранимый на компьютере объем информации и автоматически удалять
+                сессионные куки. Кроме того, субъект персональных данных может удалить ранее
+                сохраненные куки, выбрав соответствующую опцию в истории браузера.
+              </p>
+              <p>
+                Подробнее о параметрах управления куки можно ознакомиться, перейдя по внешним
+                ссылкам, ведущим на соответствующие страницы сайтов основных браузеров:
+              </p>
+              <div>
+                <a
+                  href={
+                    'https://support.mozilla.org/ru/kb/udalenie-kukov-i-dannyh-sajtov-v-firefox?redirectslug=udalenie-kukov-dlya-udaleniya-informacii-kotoruyu-&redirectlocale=ru'
+                  }
+                  target={'_blank'}
+                  rel={'noreferrer'}
+                >
+                  <img src={require('./images/Firefox_Icon.png')} alt={'firefox'} />
+                </a>
+                <a
+                  href={'https://support.google.com/chrome/answer/95647?hl=ru'}
+                  target={'_blank'}
+                  rel={'noreferrer'}
+                >
+                  <img src={require('./images/Chrome_Icon.png')} alt={'chrome'} />
+                </a>
+                <a
+                  href={'https://support.apple.com/ru-ru/guide/safari/sfri11471/mac'}
+                  target={'_blank'}
+                  rel={'noreferrer'}
+                >
+                  <img src={require('./images/Safari_Icon.png')} alt={'safari'} />
+                </a>
+                <a
+                  href={
+                    'https://help.opera.com/ru/latest/web-preferences/#%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0%D0%BC%D0%B8-cookie'
+                  }
+                  target={'_blank'}
+                  rel={'noreferrer'}
+                >
+                  <img src={require('./images/Opera_Icon.png')} alt={'opera'} />
+                </a>
+                <a
+                  href={
+                    'https://support.microsoft.com/ru-ru/windows/%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0%D0%BC%D0%B8-cookie-%D0%B2-microsoft-edge-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-168dab11-0753-043d-7c16-ede5947fc64d'
+                  }
+                  target={'_blank'}
+                  rel={'noreferrer'}
+                >
+                  <img src={require('./images/Edge_Icon.png')} alt={'edge'} />
+                </a>
+              </div>
+            </li>
           </ol>
-          <Button style={{ width: '350px' }} type="submit" onClick={() => navigate(-1)}>
-            Подтвердить выбор настроек cookies
-          </Button>
         </ContainerInform>
       }
     />

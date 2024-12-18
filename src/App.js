@@ -17,9 +17,42 @@ export default function App() {
           <Button
             onClick={() => {
               ref.current.classList.add('passive');
-              setCookie('_ga', 'GA1.1.1461999740.1696242335', { path: '/' });
-              setCookie('googtrans', '/ru/ru', { path: '/' });
-              setCookie('CookieConsent', true, { path: '/' });
+              setCookie('yandexuid', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('googtrans', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('waSessionId', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('CookieConsent', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('connect.sid', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('i', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('is_gdpr', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('is_gdpr_b', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
+              setCookie('ymex', {
+                path: '/',
+                maxAge: 365 * 24 * 60 * 60,
+              });
             }}
             className={'cookie-container'}
           >
@@ -28,11 +61,16 @@ export default function App() {
           <Button
             onClick={() => {
               ref.current.classList.add('passive');
-              removeCookie('_ga');
+              removeCookie('yandexuid');
               removeCookie('googtrans');
               removeCookie('CookieConsent');
               removeCookie('waSessionId');
-              removeCookie('waUserId_1000088280-mingazbot-1000088280-XWf-20942513239');
+              removeCookie('widget_spinner_id');
+              removeCookie('connect.sid');
+              removeCookie('i');
+              removeCookie('is_gdpr');
+              removeCookie('is_gdpr_b');
+              removeCookie('ymex');
             }}
             className={'cookie-container'}
           >

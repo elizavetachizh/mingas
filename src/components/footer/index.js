@@ -5,8 +5,8 @@ import { Contacts, Telephons, FooterContainer } from './styles';
 import ButtonFun from '../button';
 
 import { Prizes } from '../../pages/Home/Content/styles';
-import {IoLogoInstagram, IoLogoYoutube} from 'react-icons/io';
-import {NavLink} from "react-router-dom";
+import { IoLogoInstagram, IoLogoYoutube } from 'react-icons/io';
+import { NavLink } from 'react-router-dom';
 export default function Footer({ classname }) {
   return (
     <FooterContainer className={classname}>
@@ -25,45 +25,63 @@ export default function Footer({ classname }) {
       <Contacts>
         <Telephons>
           <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
             <p>Смотри нас в </p>
             <a
-                title={'Инстаграм'}
-                href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
-                target={'_blank'}
-                rel="noreferrer"
+              title={'Инстаграм'}
+              href={'https://instagram.com/mingas.by?igshid=YmMyMTA2M2Y='}
+              target={'_blank'}
+              rel="noreferrer"
             >
-              <IoLogoInstagram style={{width: '40px', height: '40px'}}/>
+              <IoLogoInstagram style={{ width: '40px', height: '40px' }} />
             </a>
             <a
-                title={'Telegram'}
-                href={'https://t.me/mingasby'}
-                target={'_blank'}
-                rel="noreferrer" style={{margin:'0 8px 0 4px'}}
+              title={'Telegram'}
+              href={'https://t.me/mingasby'}
+              target={'_blank'}
+              rel="noreferrer"
+              style={{ margin: '0 8px 0 4px' }}
             >
-              <img alt={'telegram'} src={require('../../assets/png/telegram.png')} style={{width: '32px', height: '32px'}}/>
+              <img
+                alt={'telegram'}
+                src={require('../../assets/png/telegram.png')}
+                style={{ width: '32px', height: '32px' }}
+              />
             </a>
             <a
-                title={'YouTube'}
-                href={'https://www.youtube.com/@user-ui4mh4wv6t'}
-                target={'_blank'}
-                rel="noreferrer"
+              title={'YouTube'}
+              href={'https://www.youtube.com/@user-ui4mh4wv6t'}
+              target={'_blank'}
+              rel="noreferrer"
             >
-              <IoLogoYoutube style={{width: '36px', height: '40px'}}/>
+              <IoLogoYoutube style={{ width: '36px', height: '40px' }} />
             </a>
           </div>
-          <ButtonFun href={'/contacts/phone-services'} infoButton={'Телефоны для связи'}/>
+          <ButtonFun href={'/contacts/phone-services'} infoButton={'Телефоны для связи'} />
           <p>
             Контакт-центр УП «МИНГАЗ» тел. <a href={'tel:162'}>162</a>
           </p>
-          <a type={'download'} href={'https://back.mingas.by/public/documents/confidentiality.pdf'}>
-            Политика обработки персональных данных УП "МИНГАЗ"
+          <div style={{ marginBottom: '0.5rem' }}>
+            <a
+              type={'download'}
+              href={'https://back.mingas.by/public/documents/confidentiality.pdf'}
+            >
+              Политика обработки персональных данных УП "МИНГАЗ"
+            </a>
+          </div>
+          <a
+            type={'download'}
+            href={
+              'https://back.mingas.by/admin/upload/files/1734512353959-Политика_куки_Мингаз (2).docx'
+            }
+          >
+            Политика обработки файлов cookie УП «МИНГАЗ»
           </a>
         </Telephons>
         <Telephons>
