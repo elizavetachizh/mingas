@@ -7,7 +7,7 @@ import Loader from '../Loader';
 export default function Posts() {
   const { id } = useParams();
   const { data: mainPostsById, isLoading } = useFetchMainPostByIdQuery(id);
-
+  console.log(mainPostsById);
   return (
     <ContainerContent
       name={mainPostsById?.name}
@@ -15,7 +15,11 @@ export default function Posts() {
         isLoading ? (
           <Loader />
         ) : (
-          <DopFunctional id={mainPostsById?._id} description={mainPostsById?.description} />
+          <DopFunctional
+            id={mainPostsById?._id}
+            description={mainPostsById?.description}
+            images={mainPostsById?.images}
+          />
         )
       }
     />

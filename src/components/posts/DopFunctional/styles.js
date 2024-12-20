@@ -1,15 +1,27 @@
 import styled from 'styled-components';
 
 export const ContainerPosts = styled.div`
-  width: 80%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+`;
+
+export const ContainerInfoPosts = styled.div`
+  width: 45%;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 16px;
   text-align: justify;
+  @media (max-width: 960px) {
+    width: 90%;
+  }
   img {
-    width: 50%;
-    margin: 0 25%;
+    width: 70%;
+    margin-left: 1rem;
     @media (max-width: 900px) {
-      width: 70%;
       margin: 0 15%;
     }
     @media (max-width: 600px) {

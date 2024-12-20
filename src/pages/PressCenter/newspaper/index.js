@@ -6,10 +6,25 @@ import {
   General,
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { API } from '../../../backend';
+import axios from 'axios';
 
 export default function Newspaper() {
   const [isOpen, setIsOpen] = useState(false);
+  const [info, setInfo] = useState(null);
+  useEffect(() => {
+    const apiUrl = `${API}/newspapers_get`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setInfo]);
+  console.log(info);
 
   const dataReverse = data.reverse();
 
@@ -25,6 +40,21 @@ export default function Newspaper() {
           Столичный Газовик № 47 / август 2023
         </a>
       </ContanerNewsPape>
+      {info?.map(
+        (newspaper) =>
+          !newspaper.archive && (
+            <ContanerNewsPape>
+              <img alt={''} src={require('../../../assets/png/newspaper.png')} />
+              <a
+                href={`https://mingas.by/${newspaper.file}`}
+                target={'_blank'}
+                rel="opener noreferrer"
+              >
+                {newspaper.name}
+              </a>
+            </ContanerNewsPape>
+          )
+      )}
       <General>
         <BtnIsOpen onClick={() => setIsOpen(!isOpen)}>
           <p>Архив газет</p>
@@ -37,6 +67,21 @@ export default function Newspaper() {
           </div>
         </BtnIsOpen>
         <Div className={isOpen && `shake`}>
+          {info?.map(
+            (newspaper) =>
+              newspaper.archive && (
+                <ContanerNewsPape>
+                  <img alt={''} src={require('../../../assets/png/newspaper.png')} />
+                  <a
+                    href={`https://mingas.by/${newspaper.file}`}
+                    target={'_blank'}
+                    rel="opener noreferrer"
+                  >
+                    {newspaper.name}
+                  </a>
+                </ContanerNewsPape>
+              )
+          )}
           {dataReverse.map((el) => (
             <ContanerNewsPape key={el.id}>
               <img alt={''} src={require('../../../assets/png/newspaper.png')} />
