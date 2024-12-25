@@ -16,9 +16,19 @@ import './slider/styles.css';
 import ModalWindowAIS from '../../components/ModalWindowAIS';
 import { BackgroundWithImage } from './styles';
 import { BlockContainerRequests } from '../feedback/styles';
+import { Snowfall } from 'react-snowfall';
 export default function Home() {
   return (
     <Container>
+      <Snowfall
+        color="#ffffff" // Цвет снега
+        snowflakeCount={300} // Количество снежинок
+        snowflakeStyle={{
+            width: '20px', // Увеличьте размер снежинок
+            height: '20px',
+        }}
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} // Стиль для полного экрана
+      />
       <Header />
       <ModalWindowAIS />
       <BackgroundWithImage bgImage={linesOne}>

@@ -8,7 +8,7 @@ export const CookieConsent = styled.div`
   color: white;
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   left: 0;
   position: fixed;
   z-index: 100;
