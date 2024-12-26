@@ -13,9 +13,9 @@ export default function DopFunctional({ description, id, images }) {
   }, [description, id, images]);
 
   return (
-    <ContainerPosts>
-      <ContainerInfoPosts id={`description-${id}`} />
-      <ContainerInfoPosts id={`images-${id}`} />
+    <ContainerPosts withImages={!!images}>
+      <ContainerInfoPosts  withImages={!!images} id={`description-${id}`} />
+      <ContainerInfoPosts  withImages={!!images} id={`images-${id}`} />
     </ContainerPosts>
   );
 }

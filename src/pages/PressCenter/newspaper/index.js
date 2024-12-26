@@ -1,4 +1,3 @@
-import { data } from './data';
 import { ContanerNewsPape } from './styles';
 import {
   BtnIsOpen,
@@ -24,22 +23,9 @@ export default function Newspaper() {
         console.log(e);
       });
   }, [setInfo]);
-  console.log(info);
-
-  const dataReverse = data.reverse();
 
   return (
     <div>
-      <ContanerNewsPape>
-        <img alt={''} src={require('../../../assets/png/newspaper.png')} />
-        <a
-          href={require('../../../assets/pdf/newspaper/august_2023.pdf')}
-          target={'_blank'}
-          rel="opener noreferrer"
-        >
-          Столичный Газовик № 47 / август 2023
-        </a>
-      </ContanerNewsPape>
       {info?.map(
         (newspaper) =>
           !newspaper.archive && (
@@ -82,18 +68,6 @@ export default function Newspaper() {
                 </ContanerNewsPape>
               )
           )}
-          {dataReverse.map((el) => (
-            <ContanerNewsPape key={el.id}>
-              <img alt={''} src={require('../../../assets/png/newspaper.png')} />
-              <a
-                href={require(`../../../assets/pdf/newspaper/${el.link}.pdf`)}
-                target={'_blank'}
-                rel="noreferrer"
-              >
-                {el.name} / {el.data}
-              </a>
-            </ContanerNewsPape>
-          ))}
         </Div>
       </General>
     </div>

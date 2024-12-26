@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerPosts = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.withImages ? 'row' : 'column')};
   width: 100%;
   justify-content: space-between;
   @media (max-width: 960px) {
@@ -11,7 +11,7 @@ export const ContainerPosts = styled.div`
 `;
 
 export const ContainerInfoPosts = styled.div`
-  width: 45%;
+  flex-direction: ${(props) => (props.withImages ? '45%' : '80%')};
   margin: 0 auto;
   font-size: 16px;
   text-align: justify;
