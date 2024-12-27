@@ -11,7 +11,7 @@ export const ContainerPosts = styled.div`
 `;
 
 export const ContainerInfoPosts = styled.div`
-  flex-direction: ${(props) => (props.withImages ? '45%' : '80%')};
+  width: ${(props) => (props.withImages ? '45%' : '80%')};
   margin: 0 auto;
   font-size: 16px;
   text-align: justify;
@@ -19,7 +19,7 @@ export const ContainerInfoPosts = styled.div`
     width: 90%;
   }
   img {
-    width: 70%;
+    width: 66%;
     margin-left: 1rem;
     @media (max-width: 900px) {
       margin: 0 15%;
