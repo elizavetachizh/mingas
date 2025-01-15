@@ -7,6 +7,7 @@ export const Name = styled.button`
   border: none;
   font-size: 16px;
   text-align: justify;
+    padding: 0.2rem 0;
   &:hover {
     text-decoration: underline;
   }

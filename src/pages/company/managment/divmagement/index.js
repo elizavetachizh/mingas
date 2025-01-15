@@ -7,7 +7,7 @@ export default function Leaders({
   position,
   handlerLeaderClick,
   leader,
-  idName,
+  contactPhone,
 }) {
   const onClick = useCallback(() => {
     handlerLeaderClick(leader);
@@ -17,9 +17,14 @@ export default function Leaders({
       <div>
         <ImageLeader src={`${cardImg}`} key={cardImg} />
       </div>
-      <p style={{ display: 'none' }}>{idName}</p>
       <FullNameLeader>{fullName}</FullNameLeader>
       <FullNameLeader>{position}</FullNameLeader>
+      <p style={{ margin: '0.5rem auto', textAlign: 'left', fontWeight: 'normal', color: '#333', opacity: "0.8" }}>
+        Телефон:{' '}
+        <a style={{ color: '#0077c1' }} href={`tel:${contactPhone}`} type={'phone'}>
+          {contactPhone}
+        </a>
+      </p>
     </ContainerLeaders>
   );
 }

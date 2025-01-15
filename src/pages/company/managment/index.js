@@ -52,13 +52,13 @@ export default function Management() {
           <>
             {management?.map((element) => (
               <Leaders
-                idName={element._id}
                 handlerLeaderClick={handlerLeaderClick}
                 cardImg={element.image}
                 leader={element}
                 key={element._id}
                 fullName={element.fullName}
                 position={element.position}
+                contactPhone={element?.contact_phone}
               />
             ))}
           </>

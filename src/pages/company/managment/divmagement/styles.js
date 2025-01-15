@@ -42,4 +42,5 @@ export const ImageLeader = styled.img`
 `;
 export const FullNameLeader = styled.p`
   text-align: center;
+  margin: 0.5rem auto;
 `;

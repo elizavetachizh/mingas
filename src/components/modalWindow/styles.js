@@ -40,6 +40,9 @@ export const InformModal = styled.div`
   align-items: center;
   flex-direction: column;
   color: #314d5c;
+  p {
+    margin: 0.5rem 0;
+  }
   img {
     width: 56%;
     @media (max-width: 555px) {
