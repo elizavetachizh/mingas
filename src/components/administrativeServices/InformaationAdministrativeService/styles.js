@@ -61,7 +61,7 @@ export const ContainerInform = styled.div`
 export const General = styled.div`
   &.with-border {
     border: 1px solid #1b3a91;
-    border-radius: 30px;
+    border-radius: 20px;
   }
   margin: 1rem auto;
   padding: 0;
@@ -78,6 +78,15 @@ export const General = styled.div`
     margin: 14% auto 4%;
     padding: 0;
     width: 90%;
+  }
+  &.career {
+    /* Плавный переход для тени */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px); /* Немного поднимаем элемент при наведении */
+    }
   }
   &.leave-feedback {
     width: 70%;
@@ -104,8 +113,18 @@ export const BtnIsOpen = styled.div`
     rgb(13, 68, 117) 100%
   );
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 20px;
   border: 1px solid #1b3a91;
+  &.career {
+    border: none;
+    background-color: transparent;
+    background-image: none;
+    p {
+      color: #0d4475;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
   &.btn-is-open {
     width: 50%;
     margin: 4% auto;

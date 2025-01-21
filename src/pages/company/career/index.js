@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import anketa from '../../../assets/wordFile/ANKETA.doc';
 import {
@@ -10,6 +10,7 @@ import { IoIosPin, IoMdClock } from 'react-icons/io';
 import { LinksNetwork } from '../../../components/footer/styles';
 import { useFetchVacanciesQuery } from '../../../redux/services/vacancies';
 import Loader from '../../../components/Loader';
+import VacancyModalWindow from './vacancyModalWindow';
 const url =
   'https://api.hh.ru/widgets/vacancies/employer?employer_id=1063725&locale=RU&links_color=1560b2&border_color=1560b2&host=rabota.by';
 
@@ -17,6 +18,9 @@ export default function Career() {
   const div = document.createElement('div');
   document.body.appendChild(div);
   const script = document.createElement('script');
+  const [vacancyId, setVacancyId] = useState(null);
+  const [vacancyDetailsInfo, setVacancyDetailsInfo] = useState({});
+
   useEffect(() => {
     script.src = url;
     script.async = true;
@@ -25,18 +29,13 @@ export default function Career() {
       div.removeChild(script);
     };
   }, [div, script]);
+
   const { data: vacancies, isLoading } = useFetchVacanciesQuery();
-  const getElement = useCallback((id) => {
-    return document.getElementById(`vacancy-${id}`);
+
+  const handleVacancy = useCallback((vacancy) => {
+    setVacancyId(vacancy._id);
+    setVacancyDetailsInfo(vacancy);
   }, []);
-  useEffect(() => {
-    vacancies?.forEach((el) => {
-      const element = getElement(el._id);
-      if (element) {
-        element.innerHTML += el.description;
-      }
-    });
-  }, [getElement, vacancies]);
 
   return (
     <>
@@ -57,11 +56,20 @@ export default function Career() {
           <Loader />
         ) : (
           vacancies?.map((vacancy, index) => (
-            <General key={index} className={'with-border'}>
-              <BtnIsOpen>
+            <General
+              style={{ cursor: 'pointer' }}
+              onClick={() => handleVacancy(vacancy)}
+              key={index}
+              className={'with-border career'}
+            >
+              <BtnIsOpen className={'career'}>
                 <p>{vacancy.name}</p>
               </BtnIsOpen>
-              <Div className={`shake`} id={`vacancy-${vacancy._id}`} />
+              <div style={{ margin: '0 0.5rem' }}>
+                <p style={{ marginTop: '0' }}>{vacancy?.salary}</p>
+                <p>Опыт работы: {vacancy?.work_experience}</p>
+                <p>График работы: {vacancy?.schedule}</p>
+              </div>
             </General>
           ))
         )}
@@ -122,6 +130,15 @@ export default function Career() {
           </div>
         </LinksNetwork>
       </Div>
+      {vacancyId && (
+        <VacancyModalWindow
+          handleCloseCLick={() => {
+            setVacancyId(null);
+            setVacancyDetailsInfo({});
+          }}
+          vacancyDetailsInfo={vacancyDetailsInfo}
+        />
+      )}
     </>
   );
 }

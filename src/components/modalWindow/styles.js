@@ -25,9 +25,20 @@ export const ModalWindowOpenAndClose = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   padding: 2%;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
   &.gratitude {
     width: 800px;
+  }
+  &.career {
+    width: 50%;
+    overflow-y: auto;
+    @media (max-width: 900px) {
+      width: 80%;
+      height: 90%;
+    }
+    @media (max-width: 590px) {
+      width: 90%;
+    }
   }
   @media (max-width: 530px) {
     margin: 0 2%;
