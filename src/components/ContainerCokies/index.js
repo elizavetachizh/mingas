@@ -31,7 +31,7 @@ export default function ContainerCookies() {
               type={'download'}
               style={{ color: '#007eff', fontWeight: 'bold' }}
               href={
-                'https://back.mingas.by/admin/upload/files/1734512353959-Политика_куки_Мингаз (2).docx'
+                'https://back.mingas.by/admin/upload/files/1737614292790-Политика_куки_Мингаз_для сайта.pdf'
               }
             >
               Политикой обработки файлов cookie УП «МИНГАЗ»
