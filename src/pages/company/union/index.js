@@ -84,7 +84,7 @@ export default function Union() {
             <div>
               <p>
                 Контактный телефон первичной профсоюзной организация УП «МИНГАЗ»{' '}
-                <a href={'tel:8 (0232) 299-28-22'}>8 (0232) 299-28-22</a>
+                <a href={'tel:8 (017) 299-28-22'}>8 (017) 299-28-22</a>
               </p>
             </div>
             <Link style={{ marginLeft: '40px' }} data-aos={'fade-up'} className={'social-networks'}>
