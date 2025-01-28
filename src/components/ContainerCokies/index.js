@@ -14,6 +14,7 @@ export default function ContainerCookies() {
       name={'Политика в отношении обработки cookie'}
       content={
         <ContainerInform style={{ width: '80%' }}>
+
           <h3>&nbsp;&nbsp;&nbsp;&nbsp;Политика в отношении обработки cookie</h3>
           <p>
             &nbsp;&nbsp;&nbsp;Вы можете настроить использование каждого типа файлов cookie, за
