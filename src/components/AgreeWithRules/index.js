@@ -12,7 +12,7 @@ export default function AgreeWithRules({ handleCheckBox, requestValues }) {
       />
       <Label>
         Даю согласие на обработку моих персональных данных для выбранной цели в соответствии с{' '}
-        <a style={{fontSize:'14px'}} type={'download'} href={'https://back.mingas.by/public/documents/confidentiality.pdf'}>
+        <a style={{fontSize:'14px'}} type={'download'} href={'https://back.mingas.by/admin/upload/files/1738046979037-Политика_Мингаз_для сайта.pdf'}>
           Политикой обработки персональных данных
         </a>
         <span>*</span>

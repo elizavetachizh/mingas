@@ -70,7 +70,7 @@ export default function Footer({ classname }) {
           <div style={{ marginBottom: '0.5rem' }}>
             <a
               type={'download'}
-              href={'https://back.mingas.by/public/documents/confidentiality.pdf'}
+              href={'https://back.mingas.by/admin/upload/files/1738046979037-Политика_Мингаз_для сайта.pdf'}
             >
               Политика обработки персональных данных УП "МИНГАЗ"
             </a>
