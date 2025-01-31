@@ -1,5 +1,5 @@
 import Header from '../../components/header';
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContentHome from './Content';
 import UsefulInform from './useful_information';
 import HomeServices from './services';
@@ -16,52 +16,49 @@ import './slider/styles.css';
 import ModalWindowAIS from '../../components/ModalWindowAIS';
 import { BackgroundWithImage } from './styles';
 import { BlockContainerRequests } from '../feedback/styles';
-// import { Snowfall } from 'react-snowfall';
 export default function Home() {
+  useEffect(() => {
+    // Создаем элемент script
+    const script = document.createElement('script');
+    script.src = 'https://pogoda.by/assets/static/widget/widget.js';
+    script.defer = true;
+    document.body.appendChild(script);
+
+    // Удаляем скрипт при размонтировании компонента
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <Container>
-      {/*<Snowfall*/}
-      {/*  color="#ffffff" // Цвет снега*/}
-      {/*  snowflakeCount={300} // Количество снежинок*/}
-      {/*  snowflakeStyle={{*/}
-      {/*      width: '20px', // Увеличьте размер снежинок*/}
-      {/*      height: '20px',*/}
-      {/*  }}*/}
-      {/*  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} // Стиль для полного экрана*/}
-      {/*/>*/}
       <Header />
       <ModalWindowAIS />
       <BackgroundWithImage bgImage={linesOne}>
         <ContentHome />
         <UsefulInform />
-        <HeaderRequests />
+        <BlockContainerRequests
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ width: '30%' }}>
+            <p></p>
+          </div>
+          <HeaderRequests />
+          <div
+            id="widget__pogoda"
+            data-city_id="26851"
+            style={{ minWidth: '200px', maxWidth: '350px', marginRight:"2rem" }}
+            aria-label="Прогноз погоды"
+          ></div>
+        </BlockContainerRequests>
         <ParallaxDiv />
         <HomeServices />
         <News />
-        <BlockContainerRequests>
-          <div
-            style={{
-              width: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto',
-            }}
-          >
-            <a href={'https://www.rec.gov.by/ru'} target={'_blank'} rel="noreferrer">
-              <img
-                alt={'загрузка картинки'}
-                style={{
-                  borderRadius: '20px',
-                  margin: '0 auto',
-                  boxShadow: '0 0 5px 3px rgba(0, 0, 0, 0.2)',
-                }}
-                src={require('../../assets/png/banner.webp')}
-              />
-            </a>
-          </div>
-        </BlockContainerRequests>
-
         <StateInformResources />
       </BackgroundWithImage>
       <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>

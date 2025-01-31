@@ -12,7 +12,7 @@ import { APPLICATION_BUTTONS } from '../../../../const/consts';
 export default function HeaderRequests({ style }) {
   const [active, setActive] = useState('ApplicationForOrderingCylinders');
   return (
-    <BlockContainerRequests style={style}>
+    <div>
       <TitleForHome color={'blue'} infoTitle={'Оставить онлайн-заявку'} />{' '}
       <ButtonForms>
         <HeaderBtnFeedback>
@@ -42,6 +42,6 @@ export default function HeaderRequests({ style }) {
           <ApplicationForTheIssuanceOfTechnicalSpecifications />
         )}
       </ButtonForms>
-    </BlockContainerRequests>
+    </div>
   );
 }
