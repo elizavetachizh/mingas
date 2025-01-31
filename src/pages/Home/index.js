@@ -41,13 +41,14 @@ export default function Home() {
           style={{
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'space-between',
+            justifyContent: 'flex-end',
             alignItems: 'center',
           }}
         >
-          <div style={{ width: '30%' }}>
-            <p></p>
-          </div>
+
+          {/*<div style={{ width: '30%' }}>*/}
+          {/*  <p></p>*/}
+          {/*</div>*/}
           <HeaderRequests />
           <div
             id="widget__pogoda"

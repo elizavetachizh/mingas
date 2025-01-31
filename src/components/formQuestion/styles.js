@@ -34,15 +34,7 @@ export const Label = styled.label`
 export const Button = styled.button`
   border: 1px solid #0d4475;
   color: #fff; /* Цвет текста */
-  background-image: linear-gradient(
-    -55deg,
-    rgb(1, 95, 156) 0%,
-    rgb(16, 69, 141) 0%,
-    rgb(15, 89, 141) 19%,
-    rgb(15, 78, 140) 69%,
-    rgb(14, 78, 129) 79%,
-    rgb(13, 68, 117) 100%
-  );
+  background-color: rgb(15, 89, 141);
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -56,4 +48,26 @@ export const Button = styled.button`
   margin: 2% auto;
   cursor: pointer;
   transition: 0.8s linear;
+  &:hover {
+    background-image: linear-gradient(
+      -55deg,
+      rgb(1, 95, 156) 0%,
+      rgb(16, 69, 141) 0%,
+      rgb(15, 89, 141) 19%,
+      rgb(15, 78, 140) 60%,
+      rgb(14, 78, 129) 79%,
+      rgb(13, 68, 117) 100%
+    );
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+  }
+
+  &:active {
+    transform: scale(0.95); /* Эффект нажатия */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень при нажатии */
+  }
+
+  &:focus {
+    outline: none; /* Убираем стандартный контур фокуса */
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.5); /* Тень при фокусе */
+  }
 `;
