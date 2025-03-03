@@ -9,10 +9,10 @@ import {
 
 export const useWelding = () => {
   //for site
-  // const url = 'https://back.mingas.by/users';
+   const url = 'https://back.mingas.by/welding';
 
   //for me
-  const url = 'http://localhost:3000/welding';
+  // const url = 'http://localhost:3000/welding';
 
   const [requestValues, setRequestValues] = useState(INITIAL_REQUEST_STATE_WELDING);
   const [errors, setErrors] = useState({});
