@@ -1,12 +1,16 @@
-import React, { useCallback, useState } from 'react';
-import {  Form } from '../styles';
-import { Button } from '../../../../components/formQuestion/styles';
-import { useProvidingGasMasterReadings } from './ProvidingGasMasterReadings-hook';
-import FormInput from '../../../../components/input/inputPhone';
-import AgreeWithRules from '../../../../components/AgreeWithRules';
-import PopUp from '../../../../components/popUp';
+//выполнение работ с применением сварки
 
-export default function ProvidingGasMeterReadings() {
+import { DivApplication, Form } from '../styles';
+import FormInput from '../../../../components/input/inputPhone';
+import PopUp from '../../../../components/popUp';
+import AgreeWithRules from '../../../../components/AgreeWithRules';
+import { Button, DivInput, Label } from '../../../../components/formQuestion/styles';
+import React, { useCallback, useState } from 'react';
+import { useWelding } from './useWelding';
+import Select from '../../../../components/select';
+import { feedbackMethod, gasEquipmentOptions } from '../../../../const/consts';
+
+export default function Welding() {
   const {
     handleUserInput,
     requestValues,
@@ -17,17 +21,17 @@ export default function ProvidingGasMeterReadings() {
     setRequestValues,
     form,
     msg,
-  } = useProvidingGasMasterReadings();
+  } = useWelding();
   const [isModalVisible, setModalVisible] = useState(false);
   const [isModalVarningVisible, setModalVarningVisible] = useState(false);
-  const [documentq, setDocumentq] = useState([]);
+  const [file, setFile] = useState([]);
   const formImage = document.getElementById('file-input');
 
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
 
-  const handlewoCloseCLick = useCallback(() => {
+  const handleVarningCloseCLick = useCallback(() => {
     setModalVarningVisible(false);
   }, []);
 
@@ -57,13 +61,13 @@ export default function ProvidingGasMeterReadings() {
 
     return URL.createObjectURL(blob);
   };
-  const changeHAnder = useCallback(
+  const changeHandler = useCallback(
     (event) => {
       if (Object.values(event.target.files)[0].size > 8000000) {
         // alert('Файл является слишком большим, пожалуйста уменьшите размер файла');
         setModalVisible(true);
         formImage.value = '';
-        setDocumentq([]);
+        setFile([]);
       } else if (
         ![
           'application/msword',
@@ -84,9 +88,9 @@ export default function ProvidingGasMeterReadings() {
         // alert('Не подходит формат файла');
         setModalVarningVisible(true);
         formImage.value = '';
-        setDocumentq([]);
+        setFile([]);
       } else {
-        setDocumentq(Object.values(event.target.files));
+        setFile(Object.values(event.target.files));
       }
 
       readAllFiles(Object.values(event.target.files)).then((result) =>
@@ -95,8 +99,8 @@ export default function ProvidingGasMeterReadings() {
     },
     [formImage, readAllFiles, requestValues, setRequestValues]
   );
-
   return (
+    <DivApplication>
       <Form ref={form} onSubmit={handleSubmit} id={'form'}>
         <FormInput
           type={'text'}
@@ -123,12 +127,12 @@ export default function ProvidingGasMeterReadings() {
         <FormInput
           span={true}
           label={'Номер договора (лицевой счёт):'}
-          name={'text'}
+          name={'personal_account'}
           type={'text'}
           placeholder={'Введите абонентский номер'}
           onChange={handleUserInput}
-          value={requestValues.text}
-          error={errors.text}
+          value={requestValues.personal_account}
+          error={errors.personal_account}
         />
 
         <FormInput
@@ -153,17 +157,59 @@ export default function ProvidingGasMeterReadings() {
           error={errors.address}
         />
         <FormInput
-          name={'reading'}
+          name={'location'}
           span={true}
-          label={'Показания счётчика:'}
+          label={'Расположение переносимого участка газопровода:'}
           type="text"
-          placeholder={'Введите показания счётчика'}
+          placeholder={'Введите расположение переносимого участка газопровода'}
           onChange={handleUserInput}
-          value={requestValues.reading}
-          error={errors.reading}
+          value={requestValues.location}
+          error={errors.location}
         />
-
-        <input type="file" multiple onChange={changeHAnder} id="file-input" />
+        <Select
+          label={'Планируемое газовое оборудование:'}
+          span={'*'}
+          onChange={handleUserInput}
+          value={requestValues.gas_equipment}
+          inputName={'gas_equipment'}
+          error={errors.gas_equipment}
+          options={gasEquipmentOptions}
+        />
+        <DivInput>
+          <Label>Выполнен ли потолок (стена) из горючих материалов:</Label>
+          <div>
+            <input
+              type={'radio'}
+              id={'yes'}
+              name={'flammable_materials'}
+              value={'Да'}
+              checked
+              onChange={handleUserInput}
+            />
+            <label>Да</label>
+          </div>
+          <div>
+            <input
+              type={'radio'}
+              id={'no'}
+              name={'flammable_materials'}
+              value={'Нет'}
+              onChange={handleUserInput}
+            />
+            <label>Нет</label>
+          </div>
+        </DivInput>
+        <Select
+          label={'Способ обратной связи:'}
+          span={'*'}
+          onChange={handleUserInput}
+          value={requestValues.feedback_method}
+          inputName={'feedback_method'}
+          error={errors.feedback_method}
+          options={feedbackMethod}
+        />
+        <Label>Возможность прикрепить фото</Label>
+        <input type="file" multiple onChange={changeHandler} id="file-input" />
         <p style={{ fontSize: '12px' }}>
           Допустимые расширения для текстовых файлов: doc, docx, txt, pdf; файлов архива: zip;
           файлов изображений: jpg, jpeg, png; табличных файлов: xls, xlsx. Размер вложенного файла
@@ -177,12 +223,12 @@ export default function ProvidingGasMeterReadings() {
           />
         )}
         {isModalVarningVisible && (
-          <PopUp text={'Не подходит формат файла'} handleCloseCLick={handlewoCloseCLick} />
+          <PopUp text={'Не подходит формат файла'} handleCloseCLick={handleVarningCloseCLick} />
         )}
         <div>
           <ol>
-            {documentq.length
-              ? documentq.map((element) => (
+            {file.length
+              ? file.map((element) => (
                   <li key={getFileURL(element)}>
                     <a href={getFileURL(element)} download>
                       {element.name}
@@ -197,7 +243,10 @@ export default function ProvidingGasMeterReadings() {
         <Button
           disabled={isButtonDisabled}
           type="submit"
-          onClick={handleSubmit}
+          onClick={async () => {
+            await handleSubmit;
+            setFile([]);
+          }}
           data-testid="submit-button"
         >
           Отправить
@@ -215,5 +264,6 @@ export default function ProvidingGasMeterReadings() {
           <b>{msg}</b>
         </p>
       </Form>
+    </DivApplication>
   );
 }

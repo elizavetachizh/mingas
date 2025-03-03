@@ -32,9 +32,8 @@ export const Label = styled.label`
 `;
 
 export const Button = styled.button`
-  border: 1px solid #0d4475;
   color: #fff; /* Цвет текста */
-  background-color: rgb(15, 89, 141);
+  background-color: ${(props) => (props.disabled ? '#F0F0F0' : 'rgb(15, 89, 141)')};
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -48,7 +47,9 @@ export const Button = styled.button`
   margin: 2% auto;
   cursor: pointer;
   transition: 0.8s linear;
-  &:hover {
+  ${(props) =>
+    !props.disabled &&
+    ` &:hover {
     background-image: linear-gradient(
       -55deg,
       rgb(1, 95, 156) 0%,
@@ -59,7 +60,7 @@ export const Button = styled.button`
       rgb(13, 68, 117) 100%
     );
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Тень при наведении */
-  }
+  }`}
 
   &:active {
     transform: scale(0.95); /* Эффект нажатия */

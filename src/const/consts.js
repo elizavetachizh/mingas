@@ -1,3 +1,12 @@
+import ApplicationForOrderingCylinders from '../pages/feedback/Requests/ApplicationForOrderingCylinders';
+import React from 'react';
+import ApplicationForVerificationOfGasMeters from '../pages/feedback/Requests/ApplicationForVerificationOfGasMeters';
+import ApplicationForRepairOfGasUsingEquipment from '../pages/feedback/Requests/ApplicationForRepairOfGas-usingEquipment';
+import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../pages/feedback/Requests/ApplicationToCallRepresentativeOfGasSupplyOrganization';
+import ProvidingGasMeterReadings from '../pages/feedback/Requests/ProvidingGasMeterReadings';
+import ApplicationForTheIssuanceOfTechnicalSpecifications from '../pages/feedback/Requests/ApplicationForTheIssuanceofTechnicalSpecifications';
+import Welding from '../pages/feedback/Requests/Welding';
+
 export const INITIAL_FORM_STATE = {
   name: '',
   email: '',
@@ -32,10 +41,25 @@ export const INITIAL_REQUEST_STATE = {
   information: [],
 };
 
+export const INITIAL_REQUEST_STATE_WELDING = {
+  name: '',
+  email: '',
+  personal_account: '',
+  phone: '',
+  address: '',
+  location: '',
+  gas_equipment: '',
+  isAgree: false,
+  flammable_materials: 'Да',
+  feedback_method: '',
+  file: '',
+  information: [],
+};
+
 export const OPTIONS_EQUIPMENT = [
   {
     value: '',
-    label: 'Выберете тип оборудования',
+    label: 'Выберите тип оборудования',
   },
   {
     value: 'Плита',
@@ -49,6 +73,46 @@ export const OPTIONS_EQUIPMENT = [
     value: 'Котёл отопительный',
     label: 'Котёл отопительный',
   },
+];
+
+export const gasEquipmentOptions = [
+  {
+    value: '',
+    label: 'Выберите планируемое газовое оборудование',
+  },
+  {
+    value: 'Плита напольная',
+    label: 'Плита напольная',
+  },
+  {
+    value: 'Варочная панель',
+    label: 'Варочная панель',
+  },
+  {
+    value: 'Счётчик',
+    label: 'Счётчик',
+  },
+  {
+    value: 'Колонка',
+    label: 'Колонка',
+  },
+  {
+    value: 'Котёл',
+    label: 'Котёл',
+  },
+  {
+    value: 'Духовой шкаф',
+    label: 'Духовой шкаф',
+  },
+];
+
+export const feedbackMethod = [
+  { value: '', label: 'Выберите способ обратной связи' },
+  {
+    value: 'Обратный телефонный звонок по указанному номеру телефона',
+    label: 'Обратный телефонный звонок по указанному номеру телефона',
+  },
+  { value: 'Письмо на электронную почту', label: 'Письмо на электронную почту' },
 ];
 
 export default function linksForMenu() {
@@ -162,13 +226,20 @@ export default function linksForMenu() {
 }
 
 export const APPLICATION_BUTTONS = [
-  { type: 'ApplicationForOrderingCylinders', name: 'Заказать баллон СУГ 50 литров' },
-  { type: 'ApplicationForVerificationOfGasMeters', name: 'Снятие счётчика в поверку' },
-  { type: 'ApplicationForRepairOfGasUsingEquipment', name: 'Ремонт газового оборудования' },
+  { type: <ApplicationForOrderingCylinders />, name: 'Заказать баллон СУГ 50 литров' },
+  { type: <ApplicationForVerificationOfGasMeters />, name: 'Снятие счётчика в поверку' },
+  { type: <ApplicationForRepairOfGasUsingEquipment />, name: 'Ремонт газового оборудования' },
   {
-    type: 'ApplicationToCallRepresentativeOfGasSupplyOrganization',
+    type: <ApplicationToCallRepresentativeOfGasSupplyOrganization />,
     name: 'Вызов представителя газоснабжающей организации',
   },
-  { type: 'ProvidingGasMeterReadings', name: 'Предоставление показаний счётчика газа' },
-  { type: 'ApplicationForTheIssuanceOfTechnicalSpecifications', name: 'Техническое обслуживание' },
+  { type: <ProvidingGasMeterReadings />, name: 'Предоставление показаний счётчика газа' },
+  {
+    type: <ApplicationForTheIssuanceOfTechnicalSpecifications />,
+    name: 'Техническое обслуживание',
+  },
+  {
+    type: <Welding />,
+    name: 'Выполнение работ с применением сварки',
+  },
 ];

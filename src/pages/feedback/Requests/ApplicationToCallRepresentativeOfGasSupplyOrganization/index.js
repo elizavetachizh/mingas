@@ -1,11 +1,10 @@
 import React from 'react';
-import { DivApplication } from '../styles';
 import control from '../../../../assets/png/control.png';
 import { LinkToCallRepresentative } from './styles';
 import TitleForHome from '../../../../components/TitleForHome';
 export default function ApplicationToCallRepresentativeOfGasSupplyOrganization() {
   return (
-    <DivApplication>
+    <>
       <TitleForHome
         color={'blue'}
         infoTitle={'Заявка на вызов представителя газоснабжающей организации'}
@@ -14,6 +13,6 @@ export default function ApplicationToCallRepresentativeOfGasSupplyOrganization()
         <img src={control} alt={''} />
         Оставить заявку
       </LinkToCallRepresentative>
-    </DivApplication>
+    </>
   );
 }

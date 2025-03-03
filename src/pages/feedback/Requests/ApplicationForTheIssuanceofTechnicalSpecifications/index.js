@@ -1,5 +1,5 @@
 import React from 'react';
-import { DivApplication, Form } from '../styles';
+import {  Form } from '../styles';
 import { Button } from '../../../../components/formQuestion/styles';
 import Select from '../../../../components/select';
 import { OPTIONS_EQUIPMENT } from '../../../../const/consts';
@@ -21,7 +21,7 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
   } = useRequestForIssuance();
 
   return (
-    <DivApplication>
+
       <Form ref={form} onSubmit={handleSubmit}>
         <FormInput
           span={true}
@@ -121,6 +121,5 @@ export default function ApplicationForTheIssuanceofTechnicalSpecifications() {
           <b>{msg}</b>
         </p>
       </Form>
-    </DivApplication>
   );
 }

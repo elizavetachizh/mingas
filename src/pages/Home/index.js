@@ -53,7 +53,7 @@ export default function Home() {
           <div
             id="widget__pogoda"
             data-city_id="26851"
-            style={{ minWidth: '200px', maxWidth: '350px', marginRight:"2rem" }}
+            style={{ minWidth: '200px', maxWidth: '350px', marginRight: '2rem' }}
             aria-label="Прогноз погоды"
           ></div>
         </BlockContainerRequests>
