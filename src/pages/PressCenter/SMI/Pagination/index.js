@@ -17,9 +17,11 @@ export default function Pagination({ page, setPage }) {
 
   return (
     <ContainerPagination>
-      <Button className={'pagination'} onClick={() => handlePrevPage()}>
-        Предыдущая
-      </Button>
+      {page !== 0 && (
+        <Button className={'pagination'} onClick={() => handlePrevPage()}>
+          Предыдущая
+        </Button>
+      )}
       <Button className={'pagination'} onClick={() => handleNextPage()}>
         Следущая
       </Button>
