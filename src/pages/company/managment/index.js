@@ -59,6 +59,7 @@ export default function Management() {
                 fullName={element.fullName}
                 position={element.position}
                 contactPhone={element?.contact_phone}
+                mail={element?.mail}
               />
             ))}
           </>

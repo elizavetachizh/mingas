@@ -8,6 +8,7 @@ export default function Leaders({
   handlerLeaderClick,
   leader,
   contactPhone,
+  mail,
 }) {
   const onClick = useCallback(() => {
     handlerLeaderClick(leader);
@@ -19,10 +20,32 @@ export default function Leaders({
       </div>
       <FullNameLeader>{fullName}</FullNameLeader>
       <FullNameLeader>{position}</FullNameLeader>
-      <p style={{ margin: '0.5rem auto', textAlign: 'left', fontWeight: 'normal', color: '#333', opacity: "0.8" }}>
+      <p
+        style={{
+          margin: '0.5rem auto',
+          textAlign: 'left',
+          fontWeight: 'normal',
+          color: '#333',
+          opacity: '0.8',
+        }}
+      >
         Телефон:{' '}
         <a style={{ color: '#0077c1' }} href={`tel:${contactPhone}`} type={'phone'}>
           {contactPhone}
+        </a>
+      </p>
+      <p
+        style={{
+          margin: '0.5rem auto',
+          textAlign: 'left',
+          fontWeight: 'normal',
+          color: '#333',
+          opacity: '0.8',
+        }}
+      >
+        Email:{' '}
+        <a style={{ color: '#0077c1' }} href={`mailto:${mail}`}>
+          {mail}
         </a>
       </p>
     </ContainerLeaders>
