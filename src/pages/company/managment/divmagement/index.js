@@ -8,7 +8,7 @@ export default function Leaders({
   handlerLeaderClick,
   leader,
   contactPhone,
-  mail,
+                                  email,
 }) {
   const onClick = useCallback(() => {
     handlerLeaderClick(leader);
@@ -44,8 +44,8 @@ export default function Leaders({
         }}
       >
         Email:{' '}
-        <a style={{ color: '#0077c1' }} href={`mailto:${mail}`}>
-          {mail}
+        <a style={{ color: '#0077c1' }} href={`mailto:${email}`}>
+          {email}
         </a>
       </p>
     </ContainerLeaders>
