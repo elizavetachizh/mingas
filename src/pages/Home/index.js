@@ -16,6 +16,7 @@ import './slider/styles.css';
 import ModalWindowAIS from '../../components/ModalWindowAIS';
 import { BackgroundWithImage } from './styles';
 import { BlockContainerRequests } from '../feedback/styles';
+import UsefulResourcesHome from './usefulResources';
 export default function Home() {
   useEffect(() => {
     // Создаем элемент script
@@ -43,9 +44,9 @@ export default function Home() {
             flexDirection: 'row',
             justifyContent: 'flex-end',
             alignItems: 'center',
+            flexWrap: 'wrap',
           }}
         >
-
           {/*<div style={{ width: '30%' }}>*/}
           {/*  <p></p>*/}
           {/*</div>*/}
@@ -53,13 +54,14 @@ export default function Home() {
           <div
             id="widget__pogoda"
             data-city_id="26851"
-            style={{ minWidth: '200px', maxWidth: '350px', marginRight: '2rem' }}
+            style={{ minWidth: '100px', maxWidth: '350px', marginRight: '2rem' }}
             aria-label="Прогноз погоды"
-          ></div>
+          />
         </BlockContainerRequests>
         <ParallaxDiv />
         <HomeServices />
         <News />
+        <UsefulResourcesHome />
         <StateInformResources />
       </BackgroundWithImage>
       <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>

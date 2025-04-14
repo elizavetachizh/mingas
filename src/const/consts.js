@@ -203,6 +203,7 @@ export default function linksForMenu() {
         { name: 'Корпоративная газета "Столичный газовик"', link: '/press-center/3' },
         { name: 'Жизнь в стиле "Мингаз"', link: '/press-center/4' },
         { name: 'Единый день информирования', link: '/press-center/5' },
+        { name: 'Полезные ресурсы', link: '/press-center/6' },
       ],
     },
     {

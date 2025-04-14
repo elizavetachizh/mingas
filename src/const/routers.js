@@ -32,6 +32,8 @@ import GetAllPosts from '../components/posts/getAllPosts';
 import IlliquidAssets from '../pages/IlliquidAssets';
 import Laboratory from '../components/laboratory';
 import Company from '../pages/company';
+import UsefulResources from '../pages/PressCenter/usefulResources';
+import UsefulResourceComponent from '../pages/PressCenter/usefulResources/usefulResourceComponent';
 
 export const routers = [
   { path: '/', element: <Home /> },
@@ -102,6 +104,8 @@ export const routers = [
   { path: '/for-business', element: <ForBusiness /> },
   { path: '/services-legal-entities/telemetria', element: <Telemetria /> },
   { path: '/posts/:id', element: <Posts /> },
+  { path: '/useful-resources/:id', element: <UsefulResourceComponent /> },
+  { path: '/useful-resources/', element: <UsefulResources /> },
   { path: '/posts', element: <GetAllPosts /> },
   { path: '/laboratory', element: <Laboratory /> },
 ];

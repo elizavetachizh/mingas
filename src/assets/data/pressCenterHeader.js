@@ -15,6 +15,7 @@ import Documentation from '../../pages/company/documentation';
 import Gratitude from '../../pages/company/Gratitude';
 import ManagmentSystem from '../../pages/company/ManagmentSystem';
 import EnvironmentalInformationRegister from '../../pages/company/environmentalInformationRegister';
+import UsefulResources from '../../pages/PressCenter/usefulResources';
 
 export const pressCenter = [
   {
@@ -46,6 +47,12 @@ export const pressCenter = [
     router: 'edi',
     name: 'Единый день информирования',
     description: <EDI />,
+  },
+  {
+    id: 6,
+    router: 'useful-resources',
+    name: 'Полезные ресурсы',
+    description: <UsefulResources />,
   },
 ];
 

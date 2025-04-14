@@ -38,6 +38,7 @@ export default function InformationAdministrativeService() {
                   contactInform={el.contactInform}
                 />
               )
+
           )}
           <>
             <h2>Газоснабжение</h2>

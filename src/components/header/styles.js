@@ -80,7 +80,7 @@ export const Background = styled.div`
   border-radius: 0 0 20px 20px;
   z-index: 5;
   background-image: linear-gradient(
-    -55deg,
+    -10deg,
     rgb(1, 95, 156) 0%,
     rgb(16, 69, 141) 0%,
     rgb(15, 89, 141) 19%,

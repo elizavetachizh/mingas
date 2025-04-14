@@ -44,6 +44,16 @@ export const ContainerArticles = styled.div`
 export const Article = styled.div`
   margin-bottom: 1rem;
   width: 100%;
+  &:hover {
+    filter: brightness(0.8); /* Увеличение яркости при наведении */
+    img {
+      transition: 0.3s; /* Время эффекта */
+      transform: scale(1.05);
+    }
+    p {
+      text-decoration: underline;
+    }
+  }
   a {
     display: flex;
     align-items: flex-start;
@@ -66,19 +76,11 @@ export const Article = styled.div`
     border-radius: 5px;
     box-shadow: 0 5px 12px #00000026;
     transition: filter 0.3s ease; /* Плавный переход для фильтра */
-
-    &:hover {
-      filter: brightness(0.8); /* Увеличение яркости при наведении */
-    }
   }
   p {
     text-decoration: none;
     padding: 0;
     transition: text-decoration 0.3s ease; /* Плавный переход для фильтра */
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 `;
 
@@ -94,6 +96,13 @@ export const ArticleForHome = styled.div`
   position: relative;
   @media (max-width: 600px) {
     width: 90%;
+  }
+  &:hover {
+    filter: brightness(0.8); /* Увеличение яркости при наведении */
+    img {
+      transition: 0.3s; /* Время эффекта */
+      transform: scale(1.05);
+    }
   }
   img {
     width: 100%;
