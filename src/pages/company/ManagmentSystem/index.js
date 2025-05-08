@@ -24,6 +24,36 @@ export default function ManagmentSystem() {
     <AdditionalDiv style={{ margin: '4% auto' }}>
       <BlockOfGraditude>
         <ContainerGraditude key={'1'}>
+        <div>
+          <a
+            type={'download'}
+            href={
+              'https://back.mingas.by/admin/upload/files/1738046979037-Политика_Мингаз_для сайта.pdf'
+            }
+          >
+            Политика обработки персональных данных УП "МИНГАЗ"
+          </a>
+        </div>
+        <div>
+          <a
+            type={'download'}
+            href={
+              'https://back.mingas.by/admin/upload/files/1737614292790-Политика_куки_Мингаз_для сайта.pdf'
+            }
+          >
+            Политика обработки файлов cookie УП «МИНГАЗ»
+          </a>
+        </div>
+        <div>
+          <a
+            type={'download'}
+            href={
+              'https://back.mingas.by/admin/upload/files/1746681219432-Политика видеонаблюдения УП МИНГАЗ.pdf'
+            }
+          >
+            Политика видеонаблюдения УП «МИНГАЗ»
+          </a>
+        </div>
           <img
             style={{ width: '600px', maxWidth: '100%' }}
             src={require(`../../../assets/pdf/managment/3.webp`)}
