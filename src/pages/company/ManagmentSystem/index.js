@@ -48,7 +48,7 @@ export default function ManagmentSystem() {
           <a
             type={'download'}
             href={
-              'https://back.mingas.by/admin/upload/files/1747124283204-Политика_видеонаблюдения_УП_МИНГАЗ.pdf'
+              'https://back.mingas.by/admin/upload/files/1747130437815-Политика_видеонаблюдения_УП_МИНГАЗ.doc'
             }
           >
             Политика видеонаблюдения УП «МИНГАЗ»
