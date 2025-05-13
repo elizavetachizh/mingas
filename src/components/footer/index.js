@@ -77,26 +77,26 @@ export default function Footer({ classname }) {
               Политика обработки персональных данных УП "МИНГАЗ"
             </a>
           </div>
-         <div style={{ marginBottom: '0.5rem' }}>
-           <a
-             type={'download'}
-             href={
-               'https://back.mingas.by/admin/upload/files/1737614292790-Политика_куки_Мингаз_для сайта.pdf'
-             }
-           >
-             Политика обработки файлов cookie УП «МИНГАЗ»
-           </a>
-         </div>
-         <div>
-           <a
-             type={'download'}
-             href={
-               'https://back.mingas.by/admin/upload/files/1746681219432-Политика видеонаблюдения УП МИНГАЗ.pdf'
-             }
-           >
-             Политика видеонаблюдения УП «МИНГАЗ»
-           </a>
-         </div>
+          <div style={{ marginBottom: '0.5rem' }}>
+            <a
+              type={'download'}
+              href={
+                'https://back.mingas.by/admin/upload/files/1737614292790-Политика_куки_Мингаз_для сайта.pdf'
+              }
+            >
+              Политика обработки файлов cookie УП «МИНГАЗ»
+            </a>
+          </div>
+          <div>
+            <a
+              type={'download'}
+              href={
+                'https://back.mingas.by/admin/upload/files/1747124283204-Политика_видеонаблюдения_УП_МИНГАЗ.pdf'
+              }
+            >
+              Политика видеонаблюдения УП «МИНГАЗ»
+            </a>
+          </div>
         </Telephons>
         <Telephons>
           <ButtonFun href={'/contacts/phone-services'} infoButton={'Контактная информация'} />
