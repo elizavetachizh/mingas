@@ -17,39 +17,35 @@ export default function App() {
           <Button
             onClick={() => {
               ref.current.classList.add('passive');
-              setCookie('yandexuid', {
+              setCookie('yandexuid', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });
-              setCookie('googtrans', {
+              setCookie('googtrans', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });
-              setCookie('waSessionId', {
+              setCookie('CookieConsent', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });
-              setCookie('CookieConsent', {
+              setCookie('connect.sid', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });
-              setCookie('connect.sid', {
+              setCookie('i', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });
-              setCookie('i', {
+              setCookie('is_gdpr', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });
-              setCookie('is_gdpr', {
+              setCookie('is_gdpr_b', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });
-              setCookie('is_gdpr_b', {
-                path: '/',
-                maxAge: 365 * 24 * 60 * 60,
-              });
-              setCookie('ymex', {
+              setCookie('ymex', true, {
                 path: '/',
                 maxAge: 365 * 24 * 60 * 60,
               });

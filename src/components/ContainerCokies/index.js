@@ -169,9 +169,13 @@ export default function ContainerCookies() {
                     <input
                       id={'radio2-false'}
                       onChange={() => {
+                        setCookie('CookieConsent', true, {
+                          path: '/',
+                          maxAge: 365 * 24 * 60 * 60,
+                        });
                         removeCookie('yandexuid');
                         removeCookie('googtrans');
-                        removeCookie('CookieConsent');
+
                         removeCookie('waSessionId');
                         removeCookie('widget_spinner_id');
                         removeCookie('connect.sid');
@@ -189,7 +193,17 @@ export default function ContainerCookies() {
                 </div>
               </li>
             </ul>
-            <Button style={{ width: '350px' }} type="submit" onClick={() => navigate(-1)}>
+            <Button
+              style={{ width: '350px' }}
+              type="submit"
+              onClick={() => {
+                setCookie('CookieConsent', true, {
+                  path: '/',
+                  maxAge: 365 * 24 * 60 * 60,
+                });
+                navigate(-1);
+              }}
+            >
               Подтвердить выбор настроек cookies
             </Button>
             <li>
