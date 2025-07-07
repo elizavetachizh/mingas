@@ -83,7 +83,7 @@ export default function InformationAdministrativeService() {
               Полный перечень административных процедур осуществляемых УП «МИНГАЗ»
             </h2>
             <a
-              href={require('../../../assets/pdf/administariveServices.pdf')}
+              href={"https://back.mingas.by/admin/upload/files/1751442874274-АДМИНИСТРАТИВНЫЕ_УСЛУГИ.pdf"}
               rel={'noreferrer'}
               target={'_blank'}
             >
