@@ -85,7 +85,7 @@ const ContentArea = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  background: #fff;
+  background: transparent;
 `;
 
 const ArticleImage = styled.img`
