@@ -28,7 +28,7 @@ export default function Posts() {
       name={infoNew ? infoNew?.content : mainPostsById ? mainPostsById?.content : ''}
       content={
         <DopFunctional
-          id={infoNew?._id}
+          id={infoNew ? infoNew?._id : mainPostsById ? mainPostsById?._id : ''}
           description={infoNew ? infoNew?.description : mainPostsById?.description}
           images={infoNew ? infoNew?.images : mainPostsById ? mainPostsById?.images : ''}
         />
