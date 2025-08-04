@@ -7,26 +7,44 @@ import axios from 'axios';
 import LinkNews from './LinkToNews';
 import { API } from '../../../backend';
 export default function News() {
-  const [info, setInfo] = useState(null);
+  // const [info, setInfo] = useState(null);
+  // useEffect(() => {
+  //   const apiUrl = `${API}/posts`;
+  //   axios
+  //     .get(apiUrl)
+  //     .then((res) => {
+  //       setInfo(res.data);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // }, []);
+
+  const [infoNew, setInfoNew] = useState(null);
   useEffect(() => {
-    const apiUrl = `${API}/posts`;
+    const apiUrl = `${API}/new-posts`;
     axios
       .get(apiUrl)
       .then((res) => {
-        setInfo(res.data);
+        setInfoNew(res.data);
       })
       .catch((e) => {
         console.log(e);
       });
-  }, [setInfo]);
-  const arr = info?.results?.slice(0, 4);
-
+  }, []);
+  console.log(infoNew);
+  const arr = infoNew?.slice(0, 4);
   return (
     <BlockContainerRequests>
       <TitleForHome color={'blue'} infoTitle={'Лента новостей'} />
+      {/*<DivInform>*/}
+      {/*  {arr?.map((el) => (*/}
+      {/*    <LinkNews href={el.link} src={el.image} name={el?.name} />*/}
+      {/*  ))}*/}
+      {/*</DivInform>*/}
       <DivInform>
         {arr?.map((el) => (
-          <LinkNews href={el.link} src={el.image} name={el?.name} />
+          <LinkNews href={`posts/${el._id}`} src={el.image} name={el?.name} />
         ))}
       </DivInform>
       <ButtonFun
