@@ -44,7 +44,7 @@ export default function News() {
       {/*</DivInform>*/}
       <DivInform>
         {arr?.map((el) => (
-          <LinkNews href={`posts/${el._id}`} src={el.image} name={el?.name} />
+          <LinkNews href={el?.link ? el.link : `posts/${el._id}`} src={el.image} name={el?.name} />
         ))}
       </DivInform>
       <ButtonFun

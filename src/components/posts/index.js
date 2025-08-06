@@ -22,7 +22,7 @@ export default function Posts() {
         console.log(e);
       });
   }, [id]);
-  // console.log(infoNew);
+   console.log(infoNew);
   return (
     <ContainerContent
       name={infoNew ? infoNew?.content : mainPostsById ? mainPostsById?.content : ''}
