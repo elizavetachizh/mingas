@@ -121,11 +121,12 @@ export const ArticleForHome = styled.div`
     position: absolute;
     color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px !important;
     bottom: 10px;
     left: 0;
     right: 0;
     transform: translateX(0%);
+    text-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
 
     @media (min-width: 1150px) {
       font-size: 14px;

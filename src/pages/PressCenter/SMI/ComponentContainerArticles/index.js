@@ -35,7 +35,7 @@ export default function ComponentContainerArticles() {
     <ContainerArticles>
       {infoNew?.map((el) => (
         <SchemaSMI
-          href={el?.link ? el.link : `posts/${el._id}`}
+          href={el?.link ? el.link : `/posts/${el._id}`}
           src={el.image}
           content={el.content}
           date={el.date}
