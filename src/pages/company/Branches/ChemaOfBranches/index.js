@@ -1,59 +1,46 @@
 import { Parallax } from 'react-parallax';
 import { Container } from '../../styles';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { AdditionalDiv } from '../../../concats/GeneralContactInform/styles';
 import Header from '../../../../components/header';
 import Footer from '../../../../components/footer';
 import {
-  BtnIsOpen,
+  ContainerInform,
   Div,
+  DivBlocks,
   General,
 } from '../../../../components/administrativeServices/InformaationAdministrativeService/styles';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { DescriptionService } from '../../../services/DopFunction/styles';
 import { Text } from '../../../Home/Content/styles';
 import { Main, WindowDiv } from '../../../Home/slider/styles';
 import { ContainerParallax } from '../styles';
-import { BtnOpenInform } from '../../../../components/MethodPayment/styles';
-import ScrollToTop from 'react-scroll-up';
-import up from '../../../../assets/png/up_arrow_round.png';
 import Loader from '../../../../components/Loader';
+import { HeaderCompanyDiv } from '../../../concats/headerContacts/styles';
+import { BlockBtn, Name } from '../../../../components/administrativeServices/Header/styles';
+import DopFunctionalHeader from '../../../services/NaturalGas/DopFunctionalHeader';
 
-export default function SchemaOfBranches({ name, background, carta, info }) {
-  const [isOpen, setIsOpen] = useState(false);
+const HtmlRenderer = ({ html }) => {
+  return <DescriptionService dangerouslySetInnerHTML={{ __html: html }} />;
+};
+
+export default function SchemaOfBranches({ name, background, carta, info, isLoading }) {
   const [id, setId] = useState('');
+  const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
-  const animate = useCallback(
-    (el) => {
-      setIsOpen(true);
-      setId(el._id);
-      setContent(el.content);
-      if (isOpen) {
-        setIsOpen(false);
-      }
-      if (id === el._id) {
-        setId('');
-        setContent('');
-      }
-    },
-    [id, isOpen]
-  );
-
-  const myRef = useRef(null);
-  const scrollEffect = (targetRef) => {
-    targetRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  };
-  const element = document.getElementById(`content-${id}`);
+  const animate = useCallback((el) => {
+    setId(el._id);
+    setContent(el.content);
+    setTitle(el.title);
+  }, []);
 
   useEffect(() => {
-    if (element && !element.innerHTML) {
-      element.innerHTML += content;
+    if (info?.length) {
+      setId(info[0]?._id);
+      setContent(info[0]?.content);
+      setTitle(info[0]?.title);
     }
-  }, [content, element]);
+  }, [info]);
 
   return (
     <Container>
@@ -63,49 +50,46 @@ export default function SchemaOfBranches({ name, background, carta, info }) {
           <Main className={'branches'}>
             <WindowDiv>
               <Text style={{ textAlign: 'center' }}>{name}</Text>
-              <BtnOpenInform onClick={() => scrollEffect(myRef)}>Подробнее</BtnOpenInform>
             </WindowDiv>
           </Main>
         </Parallax>
       </ContainerParallax>
-      <AdditionalDiv style={{ margin: '0 auto 4%' }} ref={myRef}>
-        {info?.length ? (
-          <>
-            {' '}
-            {info?.map((el) => (
-              <General className={'leave-feedback'}>
-                <BtnIsOpen onClick={() => animate(el)}>
-                  <p style={{ textAlign: 'center', fontSize: '18px' }}>{el.title}</p>
-                  <div>
-                    {isOpen && id === el._id ? (
-                      <IoIosArrowUp style={{ color: '#0e43af', margin: '38% 0' }} />
-                    ) : (
-                      <IoIosArrowDown
-                        onClick={() => {
-                          setId(el._id);
-                          setContent(el.content);
-                        }}
-                        style={{ color: '#0e43af', margin: '38% 0' }}
-                      />
-                    )}
-                  </div>
-                </BtnIsOpen>
-                <Div className={id === el._id && `shake`}>
-                  <DescriptionService id={`content-${el._id}`} />
-                </Div>
-              </General>
-            ))}
-          </>
-        ) : (
-          <Loader />
-        )}
-        <General style={{ borderRadius: 'none', border: 'none' }} className={'leave-feedback'}>
-          {carta}
-        </General>
+      <AdditionalDiv style={{ margin: '4rem auto' }}>
+        {' '}
+        <DivBlocks>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>
+              <HeaderCompanyDiv>
+                <Name>Наименование раздела</Name>
+                {info?.map((element) => (
+                  <BlockBtn key={element._id}>
+                    <DopFunctionalHeader
+                      nameCard={element.title}
+                      className={id.toString() === element._id ? 'background' : ''}
+                      onClick={() => animate(element)}
+                    />
+                  </BlockBtn>
+                ))}
+              </HeaderCompanyDiv>
+              <ContainerInform>
+                <Name>{title}</Name>
+                <General>
+                  <Div className={`shake`}>
+                    <HtmlRenderer html={content} />
+                  </Div>
+                </General>
+              </ContainerInform>
+            </>
+          )}
+        </DivBlocks>
       </AdditionalDiv>
-      <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
-        <img src={up} alt={'Вверх'} />
-      </ScrollToTop>
+
+      <General style={{ borderRadius: 'none', border: 'none' }} className={'leave-feedback'}>
+        {carta}
+      </General>
+
       <Footer />
     </Container>
   );

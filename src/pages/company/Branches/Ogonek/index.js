@@ -4,12 +4,13 @@ import React from 'react';
 import { useFetchOgonekQuery } from '../../../../redux/services/ogonek';
 
 export default function Ogonek() {
-  const { data: infoOgonek } = useFetchOgonekQuery({ typeBranch: 'огонек' });
+  const { data: infoOgonek, isLoading } = useFetchOgonekQuery({ typeBranch: 'огонек' });
   return (
     <SchemaOfBranches
       name={'Оздровительный комплекс Огонек'}
       background={background}
       info={infoOgonek}
+      isLoading={isLoading}
       carta={
         <div style={{ position: 'relative', overflow: 'hidden' }}>
           <a

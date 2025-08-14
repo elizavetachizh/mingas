@@ -38,6 +38,7 @@ import EcoBox from '../pages/ecoBox';
 
 export const routers = [
   { path: '/', element: <Home /> },
+  { path: '/', element: <Home /> },
   { path: '/politika-cookie', element: <ContainerCookies /> },
   { path: '/services', element: <Services /> },
   { path: '/press-center/:descriptionID', element: <PressCenter /> },
