@@ -6,6 +6,8 @@ import ApplicationToCallRepresentativeOfGasSupplyOrganization from '../pages/fee
 import ProvidingGasMeterReadings from '../pages/feedback/Requests/ProvidingGasMeterReadings';
 import ApplicationForTheIssuanceOfTechnicalSpecifications from '../pages/feedback/Requests/ApplicationForTheIssuanceofTechnicalSpecifications';
 import Welding from '../pages/feedback/Requests/Welding';
+import { linksForBusiness } from '../assets/data/linksForBusines';
+import { links } from '../assets/data/linksToResidentsOfTheCapitalRegion';
 
 export const INITIAL_FORM_STATE = {
   name: '',
@@ -157,41 +159,12 @@ export default function linksForMenu() {
     {
       name: 'Жителям столичного региона',
       link: '/residents-of-the-capital-region',
-      arrayOfLinks: [
-        { name: 'Услуги', link: '/services' },
-        { name: 'Административные процедуры', link: '/services/administrative-services' },
-        { name: 'Онлайн заявки', link: '/feedback/online-application' },
-        { name: 'Регламентирующие документы', link: '/regulatory-documents/Законы' },
-        {
-          name: 'Часто задаваемые вопросы',
-          link: '/feedback/question-answer/63930a954fe167e2981cc2e1',
-        },
-        { name: 'Обращение граждан', link: '/feedback/electronic-appeal' },
-        {
-          name: 'Оставить отзыв',
-          link: '/feedback/leave-feedback',
-        },
-        { name: 'Важно знать, безопасность', link: '/posts' },
-      ],
+      arrayOfLinks: links,
     },
     {
       name: 'Для бизнеса',
       link: '/for-business',
-      arrayOfLinks: [
-        { name: 'Услуги', link: '/services-legal-entities' },
-        { name: 'Обращение юридических лиц', link: '/feedback/electronic-appeal' },
-        { name: 'Тендеры', link: '/tenders' },
-        {
-          name: 'Часто задаваемые вопросы для физ. лиц',
-          link: '/feedback/question-answer/63930a954fe167e2981cc2e1',
-        },
-        {
-          name: 'Административные процедуры',
-          link: '/services-legal-entities/administrative-services-legal/',
-        },
-        { name: 'Регламентирующие документы', link: '/regulatory-documents-for-business/Законы' },
-        { name: 'Реализация неликвидов', link: '/illiquid-assets' },
-      ],
+      arrayOfLinks: linksForBusiness,
     },
     { name: 'Диагностические услуги', link: '/laboratory' },
     {
