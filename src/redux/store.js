@@ -19,6 +19,8 @@ import { TVAPI } from './services/TV';
 import { documentsEDIAPI } from './services/documentsEDI';
 import { vacanciesAPI } from './services/vacancies';
 import { usefulResourcesAPI } from './services/usefulResources';
+import { ecoBoxThemeAPI } from './services/ecoBoxTheme';
+import { ecoBoxContentAPI } from './services/ecoBoxContent';
 
 const rootReducer = combineReducers({
   mainPosts: mainPostsReducer,
@@ -39,6 +41,8 @@ const rootReducer = combineReducers({
   [documentsEDIAPI.reducerPath]: documentsEDIAPI.reducer,
   [vacanciesAPI.reducerPath]: vacanciesAPI.reducer,
   [usefulResourcesAPI.reducerPath]: usefulResourcesAPI.reducer,
+  [ecoBoxThemeAPI.reducerPath]: ecoBoxThemeAPI.reducer,
+  [ecoBoxContentAPI.reducerPath]: ecoBoxContentAPI.reducer,
 });
 
 export const store = configureStore({
@@ -57,5 +61,7 @@ export const store = configureStore({
     ...getDefaultMiddleware().concat(documentsEDIAPI.middleware),
     ...getDefaultMiddleware().concat(vacanciesAPI.middleware),
     ...getDefaultMiddleware().concat(usefulResourcesAPI.middleware),
+    ...getDefaultMiddleware().concat(ecoBoxThemeAPI.middleware),
+    ...getDefaultMiddleware().concat(ecoBoxContentAPI.middleware),
   ],
 });

@@ -6,6 +6,7 @@ export const DescriptionService = styled.div`
   p {
     text-align: justify;
     text-indent: 1.5em;
+    margin: 0.5rem;
   }
   a {
     color: #0170b9;

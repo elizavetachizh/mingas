@@ -34,6 +34,7 @@ import Laboratory from '../components/laboratory';
 import Company from '../pages/company';
 import UsefulResources from '../pages/PressCenter/usefulResources';
 import UsefulResourceComponent from '../pages/PressCenter/usefulResources/usefulResourceComponent';
+import EcoBox from '../pages/ecoBox';
 
 export const routers = [
   { path: '/', element: <Home /> },
@@ -108,4 +109,5 @@ export const routers = [
   { path: '/useful-resources/', element: <UsefulResources /> },
   { path: '/posts', element: <GetAllPosts /> },
   { path: '/laboratory', element: <Laboratory /> },
+  { path: '/ecobox', element: <EcoBox /> },
 ];

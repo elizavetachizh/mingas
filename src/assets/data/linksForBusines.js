@@ -36,4 +36,5 @@ export const linksForBusiness = [
     cardImg: 9,
   },
   { id: 7, link: '/illiquid-assets', name: 'Реализация неликвидов', cardImg: 1 },
+  { id: 8, link: '/ecobox', name: 'Строительство домов из морских контейнеров', cardImg: 1 },
 ];

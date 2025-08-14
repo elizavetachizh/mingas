@@ -63,7 +63,15 @@ function LifeOfMingas() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/K0XX5F8COro"
+            src="https://www.youtube.com/embed/PhR_6OVJjX4?si=d6bZmc5H5AS17WPB"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/K0XX5F8COro?si=va-ZaGOYPmJ7H5C5"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

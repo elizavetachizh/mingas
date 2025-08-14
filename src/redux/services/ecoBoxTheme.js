@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 import { API } from '../../backend';
-export const postsAPI = createApi({
-  reducerPath: 'getPosts',
+export const ecoBoxThemeAPI = createApi({
+  reducerPath: 'getEcoBoxTheme',
   baseQuery: fetchBaseQuery({ baseUrl: `${API}` }),
   endpoints: (build) => ({
-    fetchPosts: build.query({
-      query: ({ page }) => ({
-        url: `/posts${page === null || page === undefined ? '' : `?page=${page}&limit=5`}`,
+    fetchEcoBoxTheme: build.query({
+      query: () => ({
+        url: `/ecobox-themes`,
         headers: {
           Authorization: 'Bearer ',
           'Content-type': 'application/json',
@@ -15,4 +15,4 @@ export const postsAPI = createApi({
     }),
   }),
 });
-export const { useFetchPostsQuery } = postsAPI;
+export const { useFetchEcoBoxThemeQuery } = ecoBoxThemeAPI;

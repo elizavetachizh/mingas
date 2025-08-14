@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const BlockBtn = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0.2rem;
-  padding: 2px 10px;
+  margin: 0.1rem;
+  padding: 0.1rem 10px;
   //background-color: #e8f3ff;
   border-color: #0e43af;
+
   a {
     color: #0d4475;
   }
@@ -35,7 +36,7 @@ export const Button = styled.button`
     );
     border-radius: 20px;
     color: white;
-    padding: 12px;
+    padding: 0.5rem 1rem;
   }
 `;
 

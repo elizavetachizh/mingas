@@ -102,7 +102,7 @@ export const BtnIsOpen = styled.div`
   align-items: center;
   //width: 100%;
   color: white;
-  padding: 0.5rem;
+  padding: 0.2rem;
   background-image: linear-gradient(
     -55deg,
     rgb(1, 95, 156) 0%,
@@ -154,10 +154,57 @@ export const BtnIsOpen = styled.div`
     width: 90%;
     padding: 0 20px;
     font-size: 14px;
+    margin: 0.5rem auto;
   }
   h3 {
     text-align: center;
     width: 100%;
+  }
+`;
+
+export const BtnIsOpenWithoutBackground = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  //width: 100%;
+  padding: 0.2rem;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #1b3a91;
+
+  &.btn-is-open {
+    width: 50%;
+    margin: 4% auto;
+    @media (max-width: 600px) {
+      width: 70%;
+    }
+    @media (max-width: 400px) {
+      width: 80%;
+    }
+  }
+  &.menu {
+    border-radius: 0;
+    height: 50px;
+    div {
+      width: 42px;
+      height: 80%;
+    }
+  }
+  div {
+    background: white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+  }
+  p {
+    width: 90%;
+    padding: 0 20px;
+    margin: 0.5rem auto;
+    color: #0d4475;
+    font-weight: bold;
+    font-size: 16px;
   }
 `;
 
