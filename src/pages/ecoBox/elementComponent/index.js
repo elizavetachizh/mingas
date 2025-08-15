@@ -8,7 +8,14 @@ import {
 } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
-export default function ElementComponent({ additionalProps, nameDescription, inform, classname }) {
+export default function ElementComponent({
+  additionalProps,
+  nameDescription,
+  inform,
+  classname,
+  images,
+  isPhone,
+}) {
   const [isOpen, setIsOpen] = useState(true);
 
   const HtmlRenderer = ({ html }) => {
@@ -29,10 +36,29 @@ export default function ElementComponent({ additionalProps, nameDescription, inf
       </BtnIsOpenWithoutBackground>
       <Div className={isOpen && `shake`}>
         <HtmlRenderer html={inform} />
-        {additionalProps && (
-          <div style={{ display: 'flex', alignItems: 'center', margin: '1rem 0.5rem 0' }}>
+        {!!additionalProps && (
+          <div style={{ display: 'flex', alignItems: 'center', margin: '1rem 0.5rem' }}>
             <BtnIsOpen style={{ padding: '0.2rem 0.5rem' }}>Стоимость</BtnIsOpen>
             <p style={{ margin: '0 0.5rem' }}>{additionalProps}</p>
+          </div>
+        )}
+        {!!images && (
+          <div style={{ textAlign: 'center' }}>
+            {images?.map(
+              (image, index) =>
+                image !== '' && (
+                  <img
+                    style={
+                      isPhone
+                        ? { maxWidth: '300px', marginBottom: '0.5rem' }
+                        : { maxWidth: '500px', marginBottom: '0.5rem' }
+                    }
+                    src={image}
+                    alt={index}
+                    key={index}
+                  />
+                )
+            )}
           </div>
         )}
       </Div>

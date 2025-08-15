@@ -10,13 +10,10 @@ import {
   BackgroundText,
   IoIosMenus,
   IoIosCloses,
-  ContanerLink,
   ButtonForMenu,
 } from './styles';
 import { ButtonLink } from '../../pages/services/styles';
 import MobileNavigation from './mobileNavigation';
-import { NavLink } from 'react-router-dom';
-import { IoIosArrowForward } from 'react-icons/io';
 import { useDispatch } from 'react-redux';
 import { useFetchPostsQuery } from '../../redux/services/posts';
 import { setPosts } from '../../redux/slices/postsSlice';

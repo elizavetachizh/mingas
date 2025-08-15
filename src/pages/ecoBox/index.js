@@ -8,70 +8,107 @@ import { HeaderCompanyDiv } from '../concats/headerContacts/styles';
 import { BlockBtn, Name } from '../../components/administrativeServices/Header/styles';
 import DopFunctionalHeader from '../services/NaturalGas/DopFunctionalHeader';
 import Loader from '../../components/Loader';
-import DopFunctionService from '../services/DopFunction';
 import React, { useEffect, useState } from 'react';
 import { useFetchEcoBoxThemeQuery } from '../../redux/services/ecoBoxTheme';
 import { useFetchEcoBoxContentQuery } from '../../redux/services/ecoBoxContent';
 import ElementComponent from './elementComponent';
+import useMediaQuery from '../Home/parallax/useMediaQuery';
 
 export default function EcoBox() {
+  const isPhone = useMediaQuery('(max-width: 820px)');
   const [theme, setTheme] = useState(null);
   const { data: content, isFetching } = useFetchEcoBoxContentQuery({ theme: theme?._id });
   const { data: themes, isLoading } = useFetchEcoBoxThemeQuery();
-  console.log(themes);
-  console.log(content);
+
   useEffect(() => {
-    setTheme(themes?.[0]);
-  }, [themes]);
+    if (!isPhone) setTheme(themes?.[0]);
+  }, [isPhone, themes]);
+
   return (
     <ContainerContent
       name={'ECOBOX — ДОМА И БИЗНЕС-ОБЪЕКТЫ ИЗ МОРСКИХ КОНТЕЙНЕРОВ'}
       content={
-        <DivBlocks>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <>
-              {' '}
-              <HeaderCompanyDiv>
-                <Name>Наименование раздела</Name>
-                {themes?.map((element) => (
-                  <BlockBtn key={element._id}>
-                    <DopFunctionalHeader
-                      nameCard={element.title}
-                      className={theme?._id === element._id ? 'background' : ''}
-                      onClick={() => setTheme(element)}
-                    />
-                  </BlockBtn>
-                ))}
-              </HeaderCompanyDiv>
-              <ContainerInform>
+        isPhone ? (
+          <DivBlocks>
+            {themes?.map((theme, key) => (
+              <ContainerInform key={key}>
                 <Name>{theme?.title}</Name>
                 {isFetching ? (
                   <Loader />
                 ) : (
-                  <>
-                    {content?.map((el, index) =>
-                      el?.name === 'Основное' ? (
-                        <General>
-                          <p dangerouslySetInnerHTML={{ __html: el.description }} />
-                        </General>
-                      ) : (
-                        <ElementComponent
-                          classname={'question-answer'}
-                          key={index}
-                          nameDescription={el.name}
-                          inform={el.description}
-                          additionalProps={el?.price}
-                        />
+                  content?.map(
+                    (element, index) =>
+                      element?.theme?._id === theme?._id && (
+                        <>
+                          {element?.name === 'Основное' ? (
+                            <General>
+                              <p dangerouslySetInnerHTML={{ __html: element.description }} />
+                            </General>
+                          ) : (
+                            <ElementComponent
+                              classname={'question-answer'}
+                              key={index}
+                              nameDescription={element.name}
+                              inform={element.description}
+                              additionalProps={element?.price}
+                              images={element?.images}
+                              isPhone={isPhone}
+                            />
+                          )}
+                        </>
                       )
-                    )}
-                  </>
+                  )
                 )}
               </ContainerInform>
-            </>
-          )}
-        </DivBlocks>
+            ))}
+          </DivBlocks>
+        ) : (
+          <DivBlocks>
+            {isLoading ? (
+              <Loader />
+            ) : (
+              <>
+                <HeaderCompanyDiv>
+                  <Name>Наименование раздела</Name>
+                  {themes?.map((element) => (
+                    <BlockBtn key={element._id}>
+                      <DopFunctionalHeader
+                        nameCard={element.title}
+                        className={theme?._id === element._id ? 'background' : ''}
+                        onClick={() => setTheme(element)}
+                      />
+                    </BlockBtn>
+                  ))}
+                </HeaderCompanyDiv>
+                <ContainerInform>
+                  <Name>{theme?.title}</Name>
+                  {isFetching ? (
+                    <Loader />
+                  ) : (
+                    <>
+                      {content?.map((el, index) =>
+                        el?.name === 'Основное' ? (
+                          <General>
+                            <p dangerouslySetInnerHTML={{ __html: el.description }} />
+                          </General>
+                        ) : (
+                          <ElementComponent
+                            classname={'question-answer'}
+                            key={index}
+                            nameDescription={el.name}
+                            inform={el.description}
+                            additionalProps={el?.price}
+                            images={el?.images}
+                          />
+                        )
+                      )}
+                    </>
+                  )}
+                </ContainerInform>
+              </>
+            )}
+          </DivBlocks>
+        )
       }
     />
   );

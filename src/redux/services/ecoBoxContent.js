@@ -7,7 +7,9 @@ export const ecoBoxContentAPI = createApi({
   endpoints: (build) => ({
     fetchEcoBoxContent: build.query({
       query: ({ theme }) => ({
-        url: `/ecobox-content${theme === '' || theme === null ? '' : `?theme=${theme}`}`,
+        url: `/ecobox-content${
+          theme === '' || theme === null || theme === undefined ? '' : `?theme=${theme}`
+        }`,
         headers: {
           Authorization: 'Bearer ',
           'Content-type': 'application/json',
