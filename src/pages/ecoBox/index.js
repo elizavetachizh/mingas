@@ -24,7 +24,7 @@ export default function EcoBox() {
   useEffect(() => {
     if (!isPhone) setTheme(themes?.[themes?.length - 1]);
   }, [isPhone, themes]);
-
+  console.log(content);
   return (
     <ContainerContent
       name={'ECOBOX — ДОМА И БИЗНЕС-ОБЪЕКТЫ ИЗ МОРСКИХ КОНТЕЙНЕРОВ'}
@@ -92,6 +92,25 @@ export default function EcoBox() {
                       el?.name === 'Основное' ? (
                         <General>
                           <p dangerouslySetInnerHTML={{ __html: el.description }} />
+                          {!!el.images && (
+                            <div style={{ textAlign: 'center' }}>
+                              {el.images?.map(
+                                (image, index) =>
+                                  image !== '' && (
+                                    <img
+                                      style={
+                                        isPhone
+                                          ? { maxWidth: '300px', marginBottom: '0.5rem' }
+                                          : { maxWidth: '500px', marginBottom: '0.5rem' }
+                                      }
+                                      src={image}
+                                      alt={index}
+                                      key={index}
+                                    />
+                                  )
+                              )}
+                            </div>
+                          )}
                         </General>
                       ) : (
                         <ElementComponent
