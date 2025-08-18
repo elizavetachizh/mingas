@@ -43,21 +43,16 @@ export default function EcoBox() {
                     (element, index) =>
                       element?.theme?._id === theme?._id && (
                         <>
-                          {element?.name === 'Основное' ? (
-                            <General>
-                              <p dangerouslySetInnerHTML={{ __html: element.description }} />
-                            </General>
-                          ) : (
-                            <ElementComponent
-                              classname={'question-answer'}
-                              key={index}
-                              nameDescription={element.name}
-                              inform={element.description}
-                              additionalProps={element?.price}
-                              images={element?.images}
-                              isPhone={isPhone}
-                            />
-                          )}
+                          <ElementComponent
+                            classname={'question-answer'}
+                            key={index}
+                            nameDescription={element.name}
+                            inform={element.description}
+                            additionalProps={element?.price}
+                            images={element?.images}
+                            isPhone={isPhone}
+                          />
+
                           {theme?.title ===
                             'ECOBOX — ДОМА И БИЗНЕС-ОБЪЕКТЫ ИЗ МОРСКИХ КОНТЕЙНЕРОВ' && (
                             <EcoBoxForm />
