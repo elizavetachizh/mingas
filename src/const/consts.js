@@ -43,6 +43,13 @@ export const INITIAL_REQUEST_STATE = {
   information: [],
 };
 
+export const INITIAL_REQUEST_STATE_ECOBOX = {
+  name: '',
+  email: '',
+  phone: '',
+  type: '',
+};
+
 export const INITIAL_REQUEST_STATE_WELDING = {
   name: '',
   email: '',
@@ -74,6 +81,33 @@ export const OPTIONS_EQUIPMENT = [
   {
     value: 'Котёл отопительный',
     label: 'Котёл отопительный',
+  },
+];
+
+export const OPTIONS_ECOBOX_TYPE = [
+  {
+    value: '',
+    label: 'Выберите тип объекта',
+  },
+  {
+    value: 'Дом',
+    label: 'Дом',
+  },
+  {
+    value: 'Баня',
+    label: 'Баня',
+  },
+  {
+    value: 'Кафе',
+    label: 'Кафе',
+  },
+  {
+    value: 'Магазин',
+    label: 'Магазин',
+  },
+  {
+    value: 'Другое',
+    label: 'Другое',
   },
 ];
 
