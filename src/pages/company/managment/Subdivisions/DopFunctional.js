@@ -16,7 +16,7 @@ import {
 import TitleForHome from '../../../../components/TitleForHome';
 import { LinksNetwork } from '../../../../components/footer/styles';
 import { Name } from '../../../../components/administrativeServices/Header/styles';
-export default function DopFunctional({ id, name, photo, chief, description, contacts, schedule }) {
+export default function DopFunctional({ id, name,  chief, description, contacts, schedule }) {
   const [isOpen, setIsOpen] = useState(false);
   const animate = () => {
     setIsOpen(true);
@@ -24,7 +24,6 @@ export default function DopFunctional({ id, name, photo, chief, description, con
       setIsOpen(false);
     }
   };
-
   useEffect(() => {
     const element = document.getElementById(`description-${id}`);
     if (element) {
@@ -35,9 +34,6 @@ export default function DopFunctional({ id, name, photo, chief, description, con
   return (
     <ContainerFunctionService>
       <Name style={{ color: 'white', textDecoration: 'none' }}>{name}</Name>
-      {photo && (
-        <img src={require(`../../../../assets/management/departaments/${photo}.jpg`)} alt={''} />
-      )}
       <div>
         <TitleForHome className={'company'} color={'blue'} infoTitle={chief} fontSize={'s'} />
       </div>

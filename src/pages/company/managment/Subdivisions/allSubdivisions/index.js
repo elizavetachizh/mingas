@@ -58,7 +58,6 @@ export default function AllSubdivisions() {
                 name={el.name}
                 contacts={el.contacts}
                 schedule={el.schedule}
-                photo={el.photo}
                 chief={el.chief}
                 description={el.description}
               />

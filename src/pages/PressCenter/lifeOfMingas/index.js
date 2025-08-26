@@ -52,7 +52,7 @@ function LifeOfMingas() {
             >
               <IoIosArrowRoundBack style={{ width: '28', height: '28' }} />
               <ImgCarousel
-                src={require(`../../../assets/lifeinstyleOFMingas/${image.img}.webp`)}
+                src={image.img}
                 alt="image"
               />
               <IoIosArrowRoundForward style={{ width: '28', height: '28' }} />

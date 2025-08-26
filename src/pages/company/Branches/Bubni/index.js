@@ -1,12 +1,11 @@
 import React from 'react';
 import SchemaOfBranches from '../ChemaOfBranches';
-import background from '../../../../assets/Bubni/background2.webp';
 import { useFetchOgonekQuery } from '../../../../redux/services/ogonek';
 export default function Bubni() {
   const { data: infoBubni } = useFetchOgonekQuery({ typeBranch: 'бубны' });
   return (
     <SchemaOfBranches
-      background={background}
+      background={"https://back.mingas.by/admin/upload/files/1756198476875-background2_bubni.webp"}
       name={'Филиал Бубны'}
       info={infoBubni}
       carta={

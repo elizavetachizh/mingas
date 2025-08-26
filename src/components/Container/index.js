@@ -1,6 +1,5 @@
 import Header from '../header';
 import Feedback from '../../pages/feedback';
-import minsk from '../../assets/background/phone.webp';
 import { AdditionalDiv } from '../../pages/concats/GeneralContactInform/styles';
 import ScrollToTop from 'react-scroll-up';
 import up from '../../assets/png/up_arrow_round.png';
@@ -12,7 +11,7 @@ export default function ContainerContent({ name, content }) {
   return (
     <Container>
       <Header backgroundHeader={'blue'} />
-      <Feedback className={'none'} img={minsk} name={name} />
+      <Feedback className={'none'} img={"https://back.mingas.by/admin/upload/files/1718283945809-phone.webp"} name={name} />
       <AdditionalDiv>{content}</AdditionalDiv>
       <ScrollToTop style={{ bottom: '80px' }} showUnder={120}>
         <img src={up} alt={'Вверх'} />
