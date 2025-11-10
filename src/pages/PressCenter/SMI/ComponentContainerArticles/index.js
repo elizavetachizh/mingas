@@ -30,7 +30,7 @@ export default function ComponentContainerArticles() {
         console.log(e);
       });
   }, []);
-  console.log(infoNew);
+
   return (
     <ContainerArticles>
       {infoNew?.map((el) => (

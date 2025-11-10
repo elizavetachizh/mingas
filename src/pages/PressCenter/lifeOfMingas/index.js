@@ -4,7 +4,25 @@ import { photo } from '../../../assets/data/liveInStyleOfMingas';
 import { Link, ImgCarousel } from '../../company/styles';
 import { IoLogoInstagram, IoMdPaperPlane } from 'react-icons/io';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+import React, { useEffect, useState } from 'react';
+import { API } from '../../../backend';
+import axios from 'axios';
+import Loader from '../../../components/Loader';
+import { Div } from '../../../components/administrativeServices/InformaationAdministrativeService/styles';
 function LifeOfMingas() {
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    const apiUrl = `${API}/pressCenterVideo`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setInfo]);
+
   return (
     <>
       <Link className={'social-networks'}>
@@ -60,40 +78,23 @@ function LifeOfMingas() {
           ))}
         </ReactCarousel>
         <div className={'video'}>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/PhR_6OVJjX4?si=d6bZmc5H5AS17WPB"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/K0XX5F8COro?si=va-ZaGOYPmJ7H5C5"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            src="https://www.youtube.com/embed/Dd3zsFaCKT8"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            src="https://www.youtube.com/embed/QCBY6awvF-E"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            src="https://www.youtube.com/embed/cBJcdXWlgV4"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          {!!info?.length ? (
+            <>
+              {info?.map((el) => (
+                <>
+                  <p style={{marginBottom:0}}>{el.name}</p>
+                  <iframe
+                    src={el.link}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </>
+              ))}
+            </>
+          ) : (
+            <Loader />
+          )}
           <video
             src="https://back.mingas.by/public/video/1.webm"
             title="YouTube video player"

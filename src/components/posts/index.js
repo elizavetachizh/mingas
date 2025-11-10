@@ -8,9 +8,8 @@ import { useFetchMainPostByIdQuery } from '../../redux/services/mainpost';
 export default function Posts() {
   const { id } = useParams();
   const { data: mainPostsById, isLoading } = useFetchMainPostByIdQuery(id);
-  // console.log(mainPostsById);
-  // console.log(id);
   const [infoNew, setInfoNew] = useState(null);
+
   useEffect(() => {
     const apiUrl = `${API}/new-posts/${id}`;
     axios
@@ -22,7 +21,7 @@ export default function Posts() {
         console.log(e);
       });
   }, [id]);
-   console.log(infoNew);
+
   return (
     <ContainerContent
       name={infoNew ? infoNew?.content : mainPostsById ? mainPostsById?.content : ''}

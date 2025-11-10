@@ -11,12 +11,12 @@ export default function DopFunctional({ description, id, images }) {
       imagesElement.innerHTML += images ? images : '';
     }
   }, [description, id, images]);
-  console.log(images);
+
   return (
     <ContainerPosts withImages={!!images}>
       <ContainerInfoPosts withImages={!!images} id={`description-${id}`} />
       {images?.length > 0 ? (
-        <ContainerInfoPosts>
+        <ContainerInfoPosts style={{textAlign:"center"}}>
           {images?.map((image) => (
             <img style={{ maxWidth: '600px', marginBottom: '1rem' }} src={image} alt={''} />
           ))}

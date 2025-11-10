@@ -11,24 +11,27 @@ export const ContainerPosts = styled.div`
 `;
 
 export const ContainerInfoPosts = styled.div`
-  width: ${(props) => (props.withImages ? '50%' : '70%')};
-  margin: 0 auto;
+  // width: ${(props) => (props.withImages ? '50%' : '70%')};
+  width: 70%;
+  margin: 0 0.5rem 0 1rem;
   font-size: 16px;
   text-align: justify;
   @media (max-width: 960px) {
     width: 90%;
+    margin: 0 auto;
   }
   img {
     //width: 66%;
     max-width: 600px;
-    margin-left: 1rem;
-    @media (max-width: 900px) {
-      margin: 0 15%;
-    }
-    @media (max-width: 600px) {
+    //margin-left: 1rem;
+    //@media (max-width: 900px) {
+    //  margin: 0 15%;
+    //}
+    @media (max-width: 700px) {
       width: 80%;
       margin: 0 10%;
     }
+
     @media (max-width: 500px) {
       width: 100%;
       margin: 0 auto;

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { ContainerGraditude, BlockOfGraditude } from '../styles';
 import { AdditionalDiv } from '../../concats/GeneralContactInform/styles';
 import {
@@ -8,85 +8,63 @@ import {
   ModalWindowOpenAndClose,
 } from '../../../components/modalWindow/styles';
 import close from '../../../assets/png/close.png';
+import { API } from '../../../backend';
+import axios from 'axios';
+import Loader from '../../../components/Loader';
 
 export default function ManagmentSystem() {
+  const [info, setInfo] = useState([]);
   const [isModalVisible, setModalVisible] = useState(false);
-  const openImage = useCallback((id) => {
-    setModalVisible(id);
+  const [image, setImage] = useState('');
+  const openImage = useCallback((file) => {
+    setImage(file);
+    setModalVisible(true);
   }, []);
+
   const handleInsideClick = (event) => {
     event.stopPropagation();
   };
+
   const handleCloseCLick = useCallback(() => {
     setModalVisible(false);
   }, []);
+
+  useEffect(() => {
+    const apiUrl = `${API}/managementSystem_get`;
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setInfo(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [setInfo]);
+
   return (
     <AdditionalDiv style={{ margin: '4% auto' }}>
-      <BlockOfGraditude>
-        <ContainerGraditude key={'1'}>
-        <div>
-          <a
-            type={'download'}
-            href={
-              'https://back.mingas.by/admin/upload/files/1738046979037-Политика_Мингаз_для сайта.pdf'
-            }
-          >
-            Политика обработки персональных данных УП "МИНГАЗ"
-          </a>
-        </div>
-        <div>
-          <a
-            type={'download'}
-            href={
-              'https://back.mingas.by/admin/upload/files/1737614292790-Политика_куки_Мингаз_для сайта.pdf'
-            }
-          >
-            Политика обработки файлов cookie УП «МИНГАЗ»
-          </a>
-        </div>
-        <div>
-          <a
-            type={'download'}
-            href={
-              'https://back.mingas.by/admin/upload/files/1749621311501-Политика видеонаблюдения.pdf'
-            }
-          >
-            Политика видеонаблюдения УП «МИНГАЗ»
-          </a>
-        </div>
-          <img
-            style={{ width: '600px', maxWidth: '100%' }}
-            src={require(`../../../assets/pdf/managment/3.webp`)}
-            alt={''}
-            onClick={() => openImage(3)}
-          />
-          <img
-            style={{ width: '600px', maxWidth: '100%' }}
-            src={require(`../../../assets/pdf/managment/2.webp`)}
-            alt={''}
-            onClick={() => openImage(2)}
-          />
-          <img
-            style={{ width: '600px', maxWidth: '100%' }}
-            src={require(`../../../assets/pdf/managment/4.webp`)}
-            alt={''}
-            onClick={() => openImage(4)}
-          />
-        </ContainerGraditude>
-      </BlockOfGraditude>
-      {isModalVisible && (
-        <ModalWindow onClick={handleCloseCLick}>
-          <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
-            <Close src={close} onClick={handleCloseCLick} />
-            <InformModal>
-              <img
-                className={'gratitude'}
-                src={require(`../../../assets/pdf/managment/${isModalVisible}.webp`)}
-                alt={''}
-              />
-            </InformModal>
-          </ModalWindowOpenAndClose>
-        </ModalWindow>
+      {info?.length ? (
+        <React.Fragment>
+          <BlockOfGraditude>
+            {info.map((element) => (
+              <ContainerGraditude key={element._id} onClick={() => openImage(element.file)}>
+                <img src={`https://mingas.by/${element.file}`} alt={''} />
+              </ContainerGraditude>
+            ))}
+          </BlockOfGraditude>
+          {isModalVisible && (
+            <ModalWindow onClick={handleCloseCLick}>
+              <ModalWindowOpenAndClose className={'gratitude'} onClick={handleInsideClick}>
+                <Close src={close} onClick={handleCloseCLick} />
+                <InformModal>
+                  <img className={'gratitude'} src={`https://mingas.by/${image}`} alt={''} />
+                </InformModal>
+              </ModalWindowOpenAndClose>
+            </ModalWindow>
+          )}
+        </React.Fragment>
+      ) : (
+        <Loader />
       )}
     </AdditionalDiv>
   );
